@@ -1,0 +1,99 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { weapons } from "@/lib/weapons";
+
+export const metadata: Metadata = {
+  title: "Where Winds Meet Weapons Overview & Roles",
+  description:
+    "Overview of every current Where Winds Meet weapon with roles, official showcase art, and notes on how they connect to tier lists and builds.",
+  alternates: {
+    canonical: "https://wherewindsmeet.org/guides/weapons",
+  },
+};
+
+export default function WeaponsPage() {
+  return (
+    <article className="space-y-10">
+      <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
+        <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
+          Where Winds Meet weapons and how they feel to play.
+        </h1>
+        <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
+          This page collects every current Where Winds Meet weapon in one place.
+          Instead of only listing raw damage or patch notes, it focuses on how
+          each weapon actually feels to play—its reach, rhythm, and ideal
+          matchups.
+        </p>
+        <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
+          Use this overview alongside the{" "}
+          <Link
+            href="/guides/tier-list"
+            className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+          >
+            Where Winds Meet tier list
+          </Link>{" "}
+          and{" "}
+          <Link
+            href="/guides/builds"
+            className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+          >
+            recommended builds
+          </Link>{" "}
+          to decide which weapon truly fits your pace, not just the current
+          meta.
+        </p>
+      </section>
+
+      <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+          Weapon gallery and quick roles.
+        </h2>
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {weapons.map((weapon) => (
+            <article
+              key={weapon.id}
+              className="group flex flex-col overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 shadow-sm shadow-slate-950/60 transition hover:border-emerald-400/80 hover:shadow-emerald-500/30"
+            >
+              <div className="relative aspect-[16/9] w-full bg-slate-900/80">
+                <Image
+                  src={weapon.officialArt}
+                  alt={weapon.name}
+                  fill
+                  className="object-contain object-center"
+                  sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
+                />
+              </div>
+              <div className="flex flex-1 flex-col gap-2 p-4">
+                <div className="flex items-center justify-between gap-2">
+                  <h3 className="text-sm font-semibold text-slate-50">
+                    {weapon.name}
+                  </h3>
+                  <span className="rounded-full bg-slate-900/80 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-emerald-300">
+                    {weapon.role}
+                  </span>
+                </div>
+                <p className="text-xs text-slate-300">{weapon.description}</p>
+                <div className="mt-3 flex flex-wrap gap-2 text-[11px]">
+                  <Link
+                    href={`/guides/weapons/${weapon.id}`}
+                    className="rounded-full bg-slate-900/80 px-3 py-1 text-emerald-300 ring-1 ring-emerald-400/60 hover:bg-emerald-500/10"
+                  >
+                    View weapon details
+                  </Link>
+                  <Link
+                    href="/guides/tier-list"
+                    className="rounded-full bg-slate-900/80 px-3 py-1 text-slate-200 ring-1 ring-slate-700/70 hover:ring-emerald-400/60"
+                  >
+                    Check tier list context
+                  </Link>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </article>
+  );
+}
+

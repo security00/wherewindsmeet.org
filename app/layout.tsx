@@ -64,6 +64,18 @@ export default function RootLayout({
                   Guides
                 </Link>
                 <Link
+                  href="/guides/bosses"
+                  className="transition-colors hover:text-emerald-400"
+                >
+                  Bosses
+                </Link>
+                <Link
+                  href="/guides/weapons"
+                  className="transition-colors hover:text-emerald-400"
+                >
+                  Weapons
+                </Link>
+                <Link
                   href="/guides/tier-list"
                   className="transition-colors hover:text-emerald-400"
                 >
@@ -107,6 +119,18 @@ export default function RootLayout({
                   className="transition-colors hover:text-emerald-400"
                 >
                   Guides
+                </Link>
+                <Link
+                  href="/guides/bosses"
+                  className="transition-colors hover:text-emerald-400"
+                >
+                  Bosses
+                </Link>
+                <Link
+                  href="/guides/weapons"
+                  className="transition-colors hover:text-emerald-400"
+                >
+                  Weapons
                 </Link>
                 <Link
                   href="/news"

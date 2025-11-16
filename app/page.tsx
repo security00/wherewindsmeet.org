@@ -16,6 +16,13 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    slug: "/guides/new-players",
+    label: "Beginner Guide",
+    summary:
+      "Follow a structured Where Winds Meet beginner route from your very first login through the first weekly reset, with recommended settings, a safe story path, and daily and weekly checklists.",
+    tag: "New Players",
+  },
+  {
     slug: "/guides/tier-list",
     label: "Tier List",
     summary:

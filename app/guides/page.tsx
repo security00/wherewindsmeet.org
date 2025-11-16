@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 const guideSections = [
   {
     title: "Start here if you are new to Where Winds Meet",
-    slug: "/guides/tier-list",
-    label: "Tier List & Early Choices",
+    slug: "/guides/new-players",
+    label: "Beginner Route",
     description:
-      "This section explains how the Where Winds Meet tier list fits into your first ten to twenty hours of play. Instead of pushing you into the highest rated weapons immediately, it shows how to read rankings in context, when to switch paths, and why some B-tier options feel amazing for beginners who are still learning movement, parries, and camera control.",
+      "A focused Where Winds Meet beginner guide that walks you from first launch to your first weekly reset with smart settings, a safe story route, and simple daily and weekly checklists.",
   },
   {
     title: "Builds that respect your pace and style",
@@ -31,6 +31,20 @@ const guideSections = [
     label: "Codes & Rewards",
     description:
       "Codes pages summarize active and expired Where Winds Meet codes, the platforms they work on, and the kinds of rewards they grant. Simple step-by-step redeem instructions make sure you never lose progress because a code expired while you were still trying to figure out the in-game menus.",
+  },
+  {
+    title: "Understand every current Where Winds Meet weapon",
+    slug: "/guides/weapons",
+    label: "Weapon Overview",
+    description:
+      "This section offers a clear overview of every current Where Winds Meet weapon, blending official showcase art with practical notes about roles, feel, and which kinds of players they tend to suit best.",
+  },
+  {
+    title: "Learn about major bosses and encounters",
+    slug: "/guides/bosses",
+    label: "Bosses & Encounters",
+    description:
+      "This section introduces key Where Winds Meet bosses and named encounters with short backstories and encounter tone notes so you can decide which legends of Jianghu to face first, then pair them with fitting weapons and builds.",
   },
 ];
 
