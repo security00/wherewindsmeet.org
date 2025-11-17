@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "./analytics";
+import BackgroundWrapper from "../components/BackgroundWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,10 +36,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-950 text-slate-50`}
       >
         <Analytics />
+        <BackgroundWrapper />
 
-        <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950">
+        <div className="relative min-h-screen z-10">
           <header className="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur">
-            <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+            <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
               <Link href="/" className="flex items-center gap-2">
                 <div className="h-8 w-8 rounded-full bg-gradient-to-br from-emerald-400 to-cyan-500 shadow-lg shadow-emerald-500/40" />
                 <div className="flex flex-col leading-tight">
@@ -103,12 +105,12 @@ export default function RootLayout({
             </div>
           </header>
 
-          <main className="mx-auto max-w-6xl px-4 pb-16 pt-8 sm:px-6 lg:px-8">
+          <main className="mx-auto max-w-7xl px-4 pb-16 pt-8 sm:px-6 lg:px-8">
             {children}
           </main>
 
           <footer className="border-t border-slate-800/80 bg-slate-950/80 py-6 text-xs text-slate-400">
-            <div className="mx-auto flex max-w-6xl flex-col justify-between gap-3 px-4 sm:flex-row sm:px-6 lg:px-8">
+            <div className="mx-auto flex max-w-7xl flex-col justify-between gap-3 px-4 sm:flex-row sm:px-6 lg:px-8">
               <p>
                 Unofficial Where Winds Meet fan hub. All trademarks are the
                 property of their respective owners.

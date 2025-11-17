@@ -15,42 +15,54 @@ export const metadata: Metadata = {
 export default function BossesPage() {
   return (
     <article className="space-y-10">
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
-        <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-          Meet the bosses and legends of Jianghu.
-        </h1>
-        <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-          This page gathers the major Where Winds Meet bosses and named foes in
-          one place, focusing on who they are in the world and what their fights
-          feel like, not on precise damage numbers. It is meant as a spoiler
-          light overview that helps you decide which legendary encounters you
-          want to chase first.
-        </p>
-        <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-          Use it alongside the{" "}
-          <Link
-            href="/guides/weapons"
-            className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
-          >
-            weapons overview
-          </Link>{" "}
-          and{" "}
-          <Link
-            href="/guides/builds"
-            className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
-          >
-            build guides
-          </Link>{" "}
-          to pair each fight with a weapon and playstyle that matches its tone
-          and your preferences.
-        </p>
-        <p className="mt-3 text-xs text-slate-400 sm:text-sm">
-          All descriptions on this page are based on official Where Winds Meet
-          material and general action RPG experience. They are written to set
-          expectations about story tone and encounter feel, not to make hard
-          claims about exact mechanics or balance. In game experience and patch
-          notes always come first.
-        </p>
+      <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
+        <div className="pointer-events-none absolute inset-0">
+          <Image
+            src="/background/bg4.png"
+            alt="Where Winds Meet bosses background art"
+            fill
+            className="object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/30" />
+        </div>
+
+        <div className="relative">
+          <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
+            Meet the bosses and legends of Jianghu.
+          </h1>
+          <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
+            This page gathers the major Where Winds Meet bosses and named foes
+            in one place, focusing on who they are in the world and what their
+            fights feel like, not on precise damage numbers. It is meant as a
+            spoiler light overview that helps you decide which legendary
+            encounters you want to chase first.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
+            Use it alongside the{" "}
+            <Link
+              href="/guides/weapons"
+              className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+            >
+              weapons overview
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="/guides/builds"
+              className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+            >
+              build guides
+            </Link>{" "}
+            to pair each fight with a weapon and playstyle that matches its tone
+            and your preferences.
+          </p>
+          <p className="mt-3 text-xs text-slate-400 sm:text-sm">
+            All descriptions on this page are based on official Where Winds Meet
+            material and general action RPG experience. They are written to set
+            expectations about story tone and encounter feel, not to make hard
+            claims about exact mechanics or balance. In game experience and
+            patch notes always come first.
+          </p>
+        </div>
       </section>
 
       <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Beginner Guide & First Week Roadmap",
@@ -12,26 +13,40 @@ export const metadata: Metadata = {
 export default function NewPlayersGuidePage() {
   return (
     <article className="space-y-10">
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
-        <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-          Where Winds Meet beginner guide: from first login to your first week.
-        </h1>
-        <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-          This Where Winds Meet beginner guide combines practical onboarding
-          tips with long-term habits so your very first character scales cleanly
-          into mid and late game. Instead of throwing dozens of disconnected
-          tricks at you, it follows the same order you will actually experience:
-          first-time settings, early combat, story progress, daily and weekly
-          routines, and which systems are worth your attention right now.
-        </p>
-        <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-          The advice here is grounded in detailed community technical guides and
-          step-by-step newcomer wikis, then rewritten to match a simple goal:
-          save time without killing your curiosity. You will see clear
-          recommendations for your opening configuration, a safe main story
-          route, what to do each day and week, and a short list of genuine
-          pitfalls worth avoiding on your first trip through Jianghu.
-        </p>
+      <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
+        <div className="pointer-events-none absolute inset-0">
+          <Image
+            src="/background/bg2.png"
+            alt="Where Winds Meet beginner guide background art"
+            fill
+            className="object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/30" />
+        </div>
+
+        <div className="relative">
+          <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
+            Where Winds Meet beginner guide: from first login to your first
+            week.
+          </h1>
+          <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
+            This Where Winds Meet beginner guide combines practical onboarding
+            tips with long-term habits so your very first character scales
+            cleanly into mid and late game. Instead of throwing dozens of
+            disconnected tricks at you, it follows the same order you will
+            actually experience: first-time settings, early combat, story
+            progress, daily and weekly routines, and which systems are worth
+            your attention right now.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
+            The advice here is grounded in detailed community technical guides
+            and step-by-step newcomer wikis, then rewritten to match a simple
+            goal: save time without killing your curiosity. You will see clear
+            recommendations for your opening configuration, a safe main story
+            route, what to do each day and week, and a short list of genuine
+            pitfalls worth avoiding on your first trip through Jianghu.
+          </p>
+        </div>
       </section>
 
       <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
@@ -536,4 +551,3 @@ export default function NewPlayersGuidePage() {
     </article>
   );
 }
-

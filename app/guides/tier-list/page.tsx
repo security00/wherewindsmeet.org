@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Tier List for PVE & PVP",
@@ -35,37 +36,49 @@ const tiers = [
 export default function TierListPage() {
   return (
     <article className="space-y-10">
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
-        <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-          Where Winds Meet tier list for practical PVE and respectful PVP.
-        </h1>
-        <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-          This Where Winds Meet tier list is built for real players, not only
-          lab-perfect spreadsheets. Instead of ranking every weapon and path
-          purely by theoretical damage output, it focuses on how comfortably a
-          typical player can clear content, handle mistakes, and still feel like
-          the star of a wuxia drama. You will see clear recommendations for S
-          tier and A tier options, but also honest explanations of why a beloved
-          B tier favorite might be worth keeping if it matches your personal
-          rhythm in Where Winds Meet.
-        </p>
-        <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-          A good Where Winds Meet tier list also respects time. If you only
-          play a few nights a week, you should not feel pressured to reroll your
-          entire character after each balance adjustment. That is why every tier
-          ranking below includes context about learning curves, input comfort,
-          and synergy with common Where Winds Meet builds. Instead of chasing
-          tiny numbers, you can focus on the choices that make your sessions
-          smoother and more cinematic.
-        </p>
-        <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-          Remember that a Where Winds Meet tier list is a snapshot, not a law.
-          The wuxia world will continue to expand with new weapons, systems, and
-          events. Treat this page as a compass that points toward strong
-          options, then adjust based on your own experiences. If you love a
-          lower ranked path, use the tips here to shore up its weaknesses and
-          keep it viable in the content you care about most.
-        </p>
+      <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
+        <div className="pointer-events-none absolute inset-0">
+          <Image
+            src="/background/bg1.png"
+            alt="Where Winds Meet tier list background art"
+            fill
+            className="object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/30" />
+        </div>
+
+        <div className="relative">
+          <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
+            Where Winds Meet tier list for practical PVE and respectful PVP.
+          </h1>
+          <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
+            This Where Winds Meet tier list is built for real players, not only
+            lab-perfect spreadsheets. Instead of ranking every weapon and path
+            purely by theoretical damage output, it focuses on how comfortably a
+            typical player can clear content, handle mistakes, and still feel
+            like the star of a wuxia drama. You will see clear recommendations
+            for S tier and A tier options, but also honest explanations of why a
+            beloved B tier favorite might be worth keeping if it matches your
+            personal rhythm in Where Winds Meet.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
+            A good Where Winds Meet tier list also respects time. If you only
+            play a few nights a week, you should not feel pressured to reroll
+            your entire character after each balance adjustment. That is why
+            every tier ranking below includes context about learning curves,
+            input comfort, and synergy with common Where Winds Meet builds.
+            Instead of chasing tiny numbers, you can focus on the choices that
+            make your sessions smoother and more cinematic.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
+            Remember that a Where Winds Meet tier list is a snapshot, not a law.
+            The wuxia world will continue to expand with new weapons, systems,
+            and events. Treat this page as a compass that points toward strong
+            options, then adjust based on your own experiences. If you love a
+            lower ranked path, use the tips here to shore up its weaknesses and
+            keep it viable in the content you care about most.
+          </p>
+        </div>
       </section>
 
       <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">

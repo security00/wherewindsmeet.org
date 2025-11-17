@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -51,39 +52,54 @@ const guideSections = [
 export default function GuidesPage() {
   return (
     <div className="space-y-10">
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
-        <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-          Where Winds Meet guides that grow with your journey.
-        </h1>
-        <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-          This page collects every major Where Winds Meet guide in one place so
-          you can move smoothly from beginner curiosity to confident mastery.
-          Instead of scattering short tips across dozens of posts, each guide is
-          designed as a long-form route through a specific question, whether you
-          are wondering which weapon to pick from the very first chest, how to
-          read the current Where Winds Meet tier list without feeling
-          overwhelmed, or which builds make the open world feel alive rather
-          than like a checklist of icons.
-        </p>
-        <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-          The core idea is simple: a good Where Winds Meet guide should save you
-          time instead of stealing it. That means clearly labeled sections,
-          scannable headings, and internal links that connect related topics.
-          When you arrive here from search results for phrases like &quot;where
-          winds meet tier list&quot;, &quot;where winds meet builds&quot;, or
-          &quot;where winds meet codes&quot;, you should know exactly where to
-          scroll and which chapter to read next. We want every visit to feel
-          like a calm planning session before you dive back into Jianghu.
-        </p>
-        <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-          These Where Winds Meet guides are written for players who juggle busy
-          lives with a love of big RPGs. Instead of assuming you can grind every
-          day, recommendations highlight activities that deliver the most
-          satisfaction per session. You will find notes about when to push the
-          main story, when to roam freely, when to experiment with a new build,
-          and when to pause and redeem a fresh batch of Where Winds Meet codes
-          so you enter the next arc with a healthy cushion of resources.
-        </p>
+      <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
+        <div className="pointer-events-none absolute inset-0">
+          <Image
+            src="/background/bg2.png"
+            alt="Where Winds Meet guides background art"
+            fill
+            className="object-cover opacity-40"
+            priority={false}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/30" />
+        </div>
+
+        <div className="relative">
+          <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
+            Where Winds Meet guides that grow with your journey.
+          </h1>
+          <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
+            This page collects every major Where Winds Meet guide in one place
+            so you can move smoothly from beginner curiosity to confident
+            mastery. Instead of scattering short tips across dozens of posts,
+            each guide is designed as a long-form route through a specific
+            question, whether you are wondering which weapon to pick from the
+            very first chest, how to read the current Where Winds Meet tier list
+            without feeling overwhelmed, or which builds make the open world
+            feel alive rather than like a checklist of icons.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
+            The core idea is simple: a good Where Winds Meet guide should save
+            you time instead of stealing it. That means clearly labeled
+            sections, scannable headings, and internal links that connect
+            related topics. When you arrive here from search results for phrases
+            like &quot;where winds meet tier list&quot;, &quot;where winds meet
+            builds&quot;, or &quot;where winds meet codes&quot;, you should
+            know exactly where to scroll and which chapter to read next. We want
+            every visit to feel like a calm planning session before you dive
+            back into Jianghu.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
+            These Where Winds Meet guides are written for players who juggle
+            busy lives with a love of big RPGs. Instead of assuming you can
+            grind every day, recommendations highlight activities that deliver
+            the most satisfaction per session. You will find notes about when to
+            push the main story, when to roam freely, when to experiment with a
+            new build, and when to pause and redeem a fresh batch of Where Winds
+            Meet codes so you enter the next arc with a healthy cushion of
+            resources.
+          </p>
+        </div>
       </section>
 
       <section className="grid gap-8 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1.3fr)]">

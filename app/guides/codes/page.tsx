@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Codes, Rewards & Redeem Guide",
@@ -33,37 +34,49 @@ const exampleCodes = [
 export default function CodesPage() {
   return (
     <article className="space-y-10">
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
-        <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-          Where Winds Meet codes, rewards tracking, and redeem tips.
-        </h1>
-        <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-          This page serves as your one-stop reference for Where Winds Meet
-          codes. Instead of scrambling between social feeds, screenshots, and
-          expired links, you can check a single structured list that separates
-          active and expired Where Winds Meet codes, tracks their usual reward
-          types, and explains how to redeem them on each platform. The goal is
-          to protect your time and make sure every visit turns into concrete
-          progress or a fun cosmetic upgrade.
-        </p>
-        <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-          A good Where Winds Meet codes guide does more than shout code strings
-          at you. It clarifies when new players should redeem them, which
-          rewards matter most if you only log in occasionally, and how long you
-          can safely wait before an event ends. Throughout this page, you will
-          see practical notes that blend launch surge excitement with a calm,
-          long-term view. You will never be told to sacrifice sleep or family
-          time for fear of missing a minor boost.
-        </p>
-        <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-          Because Where Winds Meet codes change over time, the emphasis is on
-          teaching patterns. Once you understand how official announcements,
-          content creator campaigns, and in-game notices usually roll out codes,
-          you can quickly judge which new Where Winds Meet codes deserve your
-          attention. That way, even if you visit this site less frequently, you
-          will still feel confident about the choices you make with your limited
-          playtime.
-        </p>
+      <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
+        <div className="pointer-events-none absolute inset-0">
+          <Image
+            src="/background/bg5.png"
+            alt="Where Winds Meet codes background art"
+            fill
+            className="object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/30" />
+        </div>
+
+        <div className="relative">
+          <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
+            Where Winds Meet codes, rewards tracking, and redeem tips.
+          </h1>
+          <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
+            This page serves as your one-stop reference for Where Winds Meet
+            codes. Instead of scrambling between social feeds, screenshots, and
+            expired links, you can check a single structured list that separates
+            active and expired Where Winds Meet codes, tracks their usual reward
+            types, and explains how to redeem them on each platform. The goal is
+            to protect your time and make sure every visit turns into concrete
+            progress or a fun cosmetic upgrade.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
+            A good Where Winds Meet codes guide does more than shout code
+            strings at you. It clarifies when new players should redeem them,
+            which rewards matter most if you only log in occasionally, and how
+            long you can safely wait before an event ends. Throughout this page,
+            you will see practical notes that blend launch surge excitement with
+            a calm, long-term view. You will never be told to sacrifice sleep or
+            family time for fear of missing a minor boost.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
+            Because Where Winds Meet codes change over time, the emphasis is on
+            teaching patterns. Once you understand how official announcements,
+            content creator campaigns, and in-game notices usually roll out
+            codes, you can quickly judge which new Where Winds Meet codes
+            deserve your attention. That way, even if you visit this site less
+            frequently, you will still feel confident about the choices you make
+            with your limited playtime.
+          </p>
+        </div>
       </section>
 
       <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">

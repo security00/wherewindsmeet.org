@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Best Builds & Combat Tips",
@@ -33,40 +34,52 @@ const archetypes = [
 export default function BuildsPage() {
   return (
     <article className="space-y-10">
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
-        <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-          Where Winds Meet builds that feel powerful and personal.
-        </h1>
-        <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-          The best Where Winds Meet builds do more than chase numbers. They
-          translate your favorite wuxia fantasy into a reliable combat loop that
-          fits your schedule, reflexes, and patience for experimentation. This
-          page gathers flexible Where Winds Meet builds for solo progression,
-          co-op adventures, and light PVP, focusing on options that remain fun
-          even when balance patches shift the meta. Instead of forcing you into
-          one narrow route, each build explains core principles so you can tweak
-          details without losing its identity.
-        </p>
-        <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-          When you scan typical build lists, it is easy to feel overwhelmed by
-          walls of stats and abbreviations. Here, every Where Winds Meet build
-          begins with a short &quot;how it feels&quot; description before any
-          numbers appear. You will learn whether a setup rewards aggression or
-          patience, how punishing it is when you miss an input, and what kind of
-          controller or mouse and keyboard players usually enjoy it most. That
-          way you can quickly rule out styles that clash with how you like to
-          experience Where Winds Meet.
-        </p>
-        <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-          Every build on this page is designed to work as a long-term home for
-          your character, not a fragile trend that collapses after one patch.
-          When major updates arrive, notes will highlight how popular Where
-          Winds Meet builds change, which talents or passives deserve respec
-          priority, and when it might be worth pivoting to a new archetype you
-          have not tried before. You will never be asked to throw months of
-          progress away just because a new tier list claims something else is
-          suddenly mandatory.
-        </p>
+      <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
+        <div className="pointer-events-none absolute inset-0">
+          <Image
+            src="/background/bg4.png"
+            alt="Where Winds Meet builds background art"
+            fill
+            className="object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/30" />
+        </div>
+
+        <div className="relative">
+          <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
+            Where Winds Meet builds that feel powerful and personal.
+          </h1>
+          <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
+            The best Where Winds Meet builds do more than chase numbers. They
+            translate your favorite wuxia fantasy into a reliable combat loop
+            that fits your schedule, reflexes, and patience for experimentation.
+            This page gathers flexible Where Winds Meet builds for solo
+            progression, co-op adventures, and light PVP, focusing on options
+            that remain fun even when balance patches shift the meta. Instead of
+            forcing you into one narrow route, each build explains core
+            principles so you can tweak details without losing its identity.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
+            When you scan typical build lists, it is easy to feel overwhelmed by
+            walls of stats and abbreviations. Here, every Where Winds Meet build
+            begins with a short &quot;how it feels&quot; description before any
+            numbers appear. You will learn whether a setup rewards aggression or
+            patience, how punishing it is when you miss an input, and what kind
+            of controller or mouse and keyboard players usually enjoy it most.
+            That way you can quickly rule out styles that clash with how you
+            like to experience Where Winds Meet.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
+            Every build on this page is designed to work as a long-term home for
+            your character, not a fragile trend that collapses after one patch.
+            When major updates arrive, notes will highlight how popular Where
+            Winds Meet builds change, which talents or passives deserve respec
+            priority, and when it might be worth pivoting to a new archetype you
+            have not tried before. You will never be asked to throw months of
+            progress away just because a new tier list claims something else is
+            suddenly mandatory.
+          </p>
+        </div>
       </section>
 
       <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">

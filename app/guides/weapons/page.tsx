@@ -15,34 +15,46 @@ export const metadata: Metadata = {
 export default function WeaponsPage() {
   return (
     <article className="space-y-10">
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
-        <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-          Where Winds Meet weapons and how they feel to play.
-        </h1>
-        <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-          This page collects every current Where Winds Meet weapon in one place.
-          Instead of only listing raw damage or patch notes, it focuses on how
-          each weapon actually feels to play—its reach, rhythm, and ideal
-          matchups.
-        </p>
-        <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-          Use this overview alongside the{" "}
-          <Link
-            href="/guides/tier-list"
-            className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
-          >
-            Where Winds Meet tier list
-          </Link>{" "}
-          and{" "}
-          <Link
-            href="/guides/builds"
-            className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
-          >
-            recommended builds
-          </Link>{" "}
-          to decide which weapon truly fits your pace, not just the current
-          meta.
-        </p>
+      <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
+        <div className="pointer-events-none absolute inset-0">
+          <Image
+            src="/background/bg3.png"
+            alt="Where Winds Meet weapons background art"
+            fill
+            className="object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/30" />
+        </div>
+
+        <div className="relative">
+          <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
+            Where Winds Meet weapons and how they feel to play.
+          </h1>
+          <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
+            This page collects every current Where Winds Meet weapon in one
+            place. Instead of only listing raw damage or patch notes, it focuses
+            on how each weapon actually feels to play—its reach, rhythm, and
+            ideal matchups.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
+            Use this overview alongside the{" "}
+            <Link
+              href="/guides/tier-list"
+              className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+            >
+              Where Winds Meet tier list
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="/guides/builds"
+              className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+            >
+              recommended builds
+            </Link>{" "}
+            to decide which weapon truly fits your pace, not just the current
+            meta.
+          </p>
+        </div>
       </section>
 
       <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
@@ -96,4 +108,3 @@ export default function WeaponsPage() {
     </article>
   );
 }
-

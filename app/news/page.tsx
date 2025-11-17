@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { newsItems } from "@/lib/news";
 
@@ -36,62 +37,75 @@ export default function NewsPage() {
 
   return (
     <article className="space-y-10">
-      <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
-        <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-          Latest Where Winds Meet news and official articles.
-        </h1>
-        <p className="mt-2 text-sm leading-relaxed text-slate-200 sm:text-base">
-          These entries summarize recent official Where Winds Meet announcements,
-          launch guides, system instructions, and beta notices. Each card links
-          back to the original news source so you can double-check details and
-          read the full context when needed.
-        </p>
-        <div className="mt-4 space-y-3">
-          {sortedNews.map((item) => (
-            <div
-              key={item.id}
-              className="flex flex-col gap-2 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 text-sm shadow-sm shadow-slate-950/60 sm:flex-row sm:items-start sm:justify-between"
-            >
-              <div className="space-y-1">
-                <div className="flex flex-wrap items-center gap-2">
-                  <h2 className="text-sm font-semibold text-slate-50">
-                    {item.title}
-                  </h2>
-                  <span className="rounded-full bg-slate-900/80 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-emerald-300">
-                    {item.type}
-                  </span>
+      <section className="relative overflow-hidden rounded-3xl border border-slate-700/70 bg-slate-950/40 p-6 shadow-lg shadow-slate-950/40 sm:p-8 backdrop-blur-sm">
+        <div className="pointer-events-none absolute inset-0">
+          <Image
+            src="/background/bg6.png"
+            alt="Where Winds Meet news background art"
+            fill
+            className="object-cover opacity-55"
+            priority={false}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/40 to-slate-950/5" />
+        </div>
+
+        <div className="relative space-y-4">
+          <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
+            Latest Where Winds Meet news and official articles.
+          </h1>
+          <p className="mt-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+            These entries summarize recent official Where Winds Meet
+            announcements, launch guides, system instructions, and beta notices.
+            Each card links back to the original news source so you can
+            double-check details and read the full context when needed.
+          </p>
+          <div className="mt-4 space-y-3">
+            {sortedNews.map((item) => (
+              <div
+                key={item.id}
+                className="flex flex-col gap-2 rounded-2xl border border-slate-700/70 bg-slate-950/75 p-4 text-sm shadow-sm shadow-slate-950/40 sm:flex-row sm:items-start sm:justify-between backdrop-blur-sm"
+              >
+                <div className="space-y-1">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <h2 className="text-sm font-semibold text-slate-50">
+                      {item.title}
+                    </h2>
+                    <span className="rounded-full bg-slate-900/80 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-emerald-300">
+                      {item.type}
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-400">
+                    {item.date}
+                    {item.tags && item.tags.length > 0 && (
+                      <>
+                        {" "}
+                        · {item.tags.join(" · ")}
+                      </>
+                    )}
+                  </p>
+                  <p className="text-xs leading-relaxed text-slate-200 sm:text-[13px]">
+                    {item.summary}
+                  </p>
                 </div>
-                <p className="text-xs text-slate-400">
-                  {item.date}
-                  {item.tags && item.tags.length > 0 && (
-                    <>
-                      {" "}
-                      · {item.tags.join(" · ")}
-                    </>
-                  )}
-                </p>
-                <p className="text-xs leading-relaxed text-slate-200 sm:text-[13px]">
-                  {item.summary}
-                </p>
+                {item.officialUrl && (
+                  <div className="mt-2 flex shrink-0 justify-end sm:mt-0 sm:pl-4">
+                    <Link
+                      href={item.officialUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center justify-center rounded-full bg-slate-900/80 px-3 py-1 text-xs font-medium text-emerald-300 ring-1 ring-emerald-400/60 hover:bg-emerald-500/10"
+                    >
+                      Read on official site
+                    </Link>
+                  </div>
+                )}
               </div>
-              {item.officialUrl && (
-                <div className="mt-2 flex shrink-0 justify-end sm:mt-0 sm:pl-4">
-                  <Link
-                    href={item.officialUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center justify-center rounded-full bg-slate-900/80 px-3 py-1 text-xs font-medium text-emerald-300 ring-1 ring-emerald-400/60 hover:bg-emerald-500/10"
-                  >
-                    Read on official site
-                  </Link>
-                </div>
-              )}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
+      <section className="rounded-3xl border border-slate-700/70 bg-slate-950/55 p-6 shadow-lg shadow-slate-950/40 sm:p-8 backdrop-blur-sm">
         <h2 className="text-balance text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl">
           How this page fits into the rest of the hub.
         </h2>
@@ -156,7 +170,7 @@ export default function NewsPage() {
         </p>
       </section>
 
-      <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+      <section className="space-y-5 rounded-3xl border border-slate-700/70 bg-slate-950/55 p-6 shadow-lg shadow-slate-950/40 backdrop-blur-sm">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
           Making sense of Where Winds Meet patch notes.
         </h2>
