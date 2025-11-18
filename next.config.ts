@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "yysls-build-na.fp.ps.easebar.com",
       },
+      {
+        protocol: "https",
+        hostname: "www.ludens.com.tw",
+      },
     ],
   },
   async rewrites() {

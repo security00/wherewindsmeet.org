@@ -165,6 +165,454 @@ export function WeaponDetail({ weaponId }: { weaponId: WeaponId }) {
         </section>
       )}
 
+      {weapon.id === "mo-blade" && (
+        <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+          <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+            Sample Mo Blade builds for PVE and PVP.
+          </h2>
+          <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+            The Mo Blade has quickly become one of the most popular heavy
+            weapons in Traditional Chinese community guides because it supports
+            both ultra-safe story runs and demanding endgame encounters. The
+            builds below are adapted from high level Traditional Chinese
+            write-ups and rewritten in English so that global players can apply
+            the same principles without needing to read the original sources.
+          </p>
+          <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+            Treat them as starting points, not strict scripts. Names for
+            specific martial arts, inner arts, and gear may appear in Chinese in
+            your client; when that happens, use the descriptions and roles
+            listed here to match skills rather than chasing exact translations.
+          </p>
+
+          <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5">
+            <h3 className="text-lg font-semibold tracking-tight text-slate-50">
+              1. Wheelchair umbrella tank – relaxed story & solo PVE.
+            </h3>
+            <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+              This build is designed for players who mainly want to enjoy the
+              story and vistas without wrestling with tight reaction checks. You
+              pair Mo Blade with a healing umbrella set-up and play almost
+              entirely on defense, letting shields, regeneration, and executions
+              slowly grind bosses down.
+            </p>
+            <ul className="space-y-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  <span className="font-semibold">Core idea:</span> commit to a
+                  “shield → defend → execute” loop. You largely stop pressing
+                  regular attacks and focus on guarding, parrying, and dodging
+                  until posture breaks.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  <span className="font-semibold">Weapon pairing:</span> Mo
+                  Blade with a healing umbrella (often described in Chinese
+                  guides as a “奶傘” setup that applies long duration regen).
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  <span className="font-semibold">Inner arts focus:</span> max
+                  out survivability first—max HP, sustained healing, and
+                  damage reduction. Community guides often highlight combinations
+                  that extend shield uptime and smooth chip damage rather than
+                  spiking DPS.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  <span className="font-semibold">Gear priorities:</span>{" "}
+                  defensive sets that extend shield coverage or add emergency
+                  healing. When in doubt, favor HP% and flat HP over greedy
+                  offense.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  <span className="font-semibold">Typical rotation:</span> open
+                  with umbrella to apply a long regeneration buff → swap to Mo
+                  Blade and activate your shield skill → play pure defense,
+                  using parries and dodges to deplete posture → when the boss
+                  falls, land a full charged light attack and execute → back
+                  away and repeat. Save your strongest emergency mystic art for
+                  genuine mistakes rather than every small hit.
+                </span>
+              </li>
+            </ul>
+            <p className="text-xs text-slate-400 sm:text-sm">
+              Use this build when you are learning boss patterns, returning
+              after a long break, or simply want a low-stress way to clear
+              story content while still feeling the weight of Mo Blade swings.
+            </p>
+          </div>
+
+          <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5">
+            <h3 className="text-lg font-semibold tracking-tight text-slate-50">
+              2. Offensive Mo Blade – balanced bruiser for PVE & light PVP.
+            </h3>
+            <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+              This variant targets players who already have reasonable
+              fundamentals and want to hit much harder without giving up the
+              front-line, heavy-armor fantasy. You partner Mo Blade with a
+              long-weapon style (often a spear) that applies vulnerability
+              effects, then cash them in with heavy Mo Blade swings.
+            </p>
+            <ul className="space-y-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  <span className="font-semibold">Core idea:</span> alternate
+                  between a debuffing spear stance and a shielded Mo Blade
+                  stance. The spear sets up vulnerability and personal buffs;
+                  Mo Blade spends those windows on 2–3 carefully placed charged
+                  attacks.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  <span className="font-semibold">Inner arts focus:</span>{" "}
+                  traits that boost charged attack damage and crit scaling,
+                  backed up by just enough survivability to stay on the front
+                  line. If you are unsure, bias towards more HP and defense
+                  until you rarely die to stray hits.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  <span className="font-semibold">Gear priorities:</span> sets
+                  that reward crits and strengthen burst windows, often paired
+                  with some baseline mitigation. Community builds frequently
+                  stack crit chance and crit damage once basic defenses feel
+                  comfortable.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  <span className="font-semibold">Typical rotation:</span> start
+                  in spear stance to land a charged hit that applies your main
+                  damage buff → optionally tag on a vulnerability special →
+                  swap to Mo Blade, activate your shield skill (converting buffs
+                  into a stronger damage window) → perform 2–3 full charged
+                  light attacks → swap back and repeat. You accept some chip
+                  damage but always respect lethal telegraphs.
+                </span>
+              </li>
+            </ul>
+            <p className="text-xs text-slate-400 sm:text-sm">
+              This build works well for players who enjoy seeing big numbers
+              without abandoning the security of a sturdy weapon. It is a
+              natural next step after you outgrow the pure wheelchair setup.
+            </p>
+          </div>
+
+          <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5">
+            <h3 className="text-lg font-semibold tracking-tight text-slate-50">
+              3. Pure tank Mo Blade – raid main tank.
+            </h3>
+            <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+              The pure tank setup assumes group content where your job is to
+              stabilize bosses, hold their attention, and protect teammates. You
+              treat personal damage as a bonus and spend most of your resources
+              on staying alive, maintaining shields, and controlling boss
+              facing.
+            </p>
+            <ul className="space-y-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  <span className="font-semibold">Core idea:</span> use a
+                  taunting spear skill to secure aggro, then switch to Mo Blade
+                  and play a classic shield tank—maximizing uptime on damage
+                  reduction tools, staying glued to the boss&apos;s front, and
+                  only swinging hard during obvious recovery windows.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  <span className="font-semibold">Inner arts focus:</span>{" "}
+                  heavy investment into flat mitigation, max HP, and any traits
+                  that reward blocking or guarding frequently. Damage-oriented
+                  options are largely optional here.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  <span className="font-semibold">Gear priorities:</span> full
+                  defensive sets with tank-oriented set bonuses. Threat
+                  generation and damage reduction are worth more than raw attack
+                  on this setup.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  <span className="font-semibold">Typical rotation:</span> open
+                  in spear stance with a taunt or high-threat skill to lock
+                  aggro → swap to Mo Blade, keep your main shield and defensive
+                  stance active at all times → reposition bosses so cone and
+                  line attacks never clip your backline → only commit to long
+                  charged swings when you are certain mechanics will not force
+                  sudden movement.
+                </span>
+              </li>
+            </ul>
+            <p className="text-xs text-slate-400 sm:text-sm">
+              If you enjoy being the anchor of a group and do not mind trading
+              personal damage meters for team stability, this is where Mo Blade
+              shines brightest in organized content.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {weapon.id === "spear" && (
+        <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+          <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+            Sample Spear builds from Traditional Chinese guides.
+          </h2>
+          <div className="relative h-40 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80 sm:h-52">
+            <Image
+              src="https://www.ludens.com.tw/wp-content/uploads/2025/11/20251116012957_1.jpg"
+              alt="Where Winds Meet spear and sword build screenshot"
+              fill
+              className="object-cover object-center opacity-75"
+              sizes="(min-width: 1280px) 40vw, (min-width: 768px) 60vw, 100vw"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
+          </div>
+          <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+            Community builds written in Traditional Chinese describe three major
+            spear families: simple Nameless basics, a complex bleed-and-burn
+            engine centered on Nine Swords and Nine Spears, and a tanky
+            Bloodbath-ready setup based on Bafang Thunder Spear. The notes
+            below translate those ideas into English so you can copy the
+            structure even if your client shows Chinese skill names.
+          </p>
+          <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5">
+            <h3 className="text-lg font-semibold tracking-tight text-slate-50">
+              1. Nameless basics – starter spear and sword.
+            </h3>
+            <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+              The default Nameless Sword and Nameless Spear form a forgiving
+              hybrid that focuses on stamina, mobility, and readable combos.
+              Guides recommend treating this as a “training deck” for learning
+              spacing, stagger breaks, and dodge timing before climbing into
+              harder flows.
+            </p>
+            <ul className="space-y-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  Keep combos short—two to three hits—then reposition. The goal
+                  is to build the habit of attacking only when you have stamina
+                  to dodge.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  Favor inner arts that stabilize stamina, basic attack power,
+                  and stagger damage. You can reassign points later once you
+                  commit to a more advanced flow.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5">
+            <h3 className="text-lg font-semibold tracking-tight text-slate-50">
+              2. Nine Swords &amp; Nine Spears – advanced bleed/burn engine.
+            </h3>
+            <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+              This flow uses a specific spear style to stack bleed, burn, and
+              other damage-over-time effects, then swaps to sword to detonate
+              them. It has one of the highest ceilings in the game but expects
+              you to follow a strict combo script.
+            </p>
+            <ul className="space-y-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  Typical PVE loop in guides: apply a fire qi art → spear skill
+                  that consumes burning to trigger a flurry → charged spear hit
+                  → swap to sword for follow-up strings → return to spear and
+                  repeat. The exact names differ by language, but the pattern is
+                  “apply status → consume with spear → extend with sword.”
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  Inner arts lean heavily on bleed and “extra damage based on
+                  max attack” effects. Gear prioritizes crit rate and any
+                  affixes that enhance dots or status detonations.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5">
+            <h3 className="text-lg font-semibold tracking-tight text-slate-50">
+              3. Bafang Thunder Spear – PVE “unkillable” tank.
+            </h3>
+            <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+              Another popular Traditional Chinese build stacks multiple additive
+              damage-reduction sources around Bafang Thunder Spear, turning your
+              character into a near-unkillable tank for dungeons and Bloodbath
+              bosses.
+            </p>
+            <ul className="space-y-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  Combine spear skills that grant mitigation with inner arts and
+                  qi arts that further reduce incoming damage or redirect it to
+                  companions. The goal is to stack many moderate reductions
+                  rather than a single massive buff.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  Offensively, this setup often leans on qi arts for damage
+                  while you stand your ground. It is an excellent “comfort pick”
+                  for players who would rather memorize mechanics slowly than
+                  race through them.
+                </span>
+              </li>
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {(weapon.id === "umbrella" || weapon.id === "fan") && (
+        <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+          <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+            Umbrella &amp; fan builds inspired by Traditional Chinese guides.
+          </h2>
+          <div className="relative h-40 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80 sm:h-52">
+            <Image
+              src="https://www.ludens.com.tw/wp-content/uploads/2025/11/20251116015118_1.jpg"
+              alt="Where Winds Meet umbrella and fan builds screenshot"
+              fill
+              className="object-cover object-center opacity-75"
+              sizes="(min-width: 1280px) 40vw, (min-width: 768px) 60vw, 100vw"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
+          </div>
+          <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+            Umbrella and fan weapons support three standout playstyles in
+            Traditional Chinese builds: a pure damage umbrella that plays like a
+            roaming turret, a PVP control fan, and a full healer archetype. All
+            share a focus on positioning and resource flow rather than raw
+            button mashing.
+          </p>
+
+          <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5">
+            <h3 className="text-lg font-semibold tracking-tight text-slate-50">
+              1. Ninefold Spring umbrella – sustained DPS turret.
+            </h3>
+            <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+              This build revolves around an umbrella art often translated as
+              “Ninefold Spring,” which builds a flower-like resource and spends
+              it on a special that throws the umbrella out to attack on its own.
+              While it spins, you can freely swap weapons or cast qi arts.
+            </p>
+            <ul className="space-y-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  Core loop in guides: apply a debuff skill → throw the umbrella
+                  so it auto-attacks → swap to a second weapon or spam qi arts →
+                  swap back when the special ends and repeat.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  Inner arts prioritize crit chance, projectile damage, and
+                  attack speed so the umbrella&apos;s shots stack effects quickly.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5">
+            <h3 className="text-lg font-semibold tracking-tight text-slate-50">
+              2. Qingshan Brush fan – PVP control and burst.
+            </h3>
+            <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+              In duels, Traditional Chinese guides highlight a fan style often
+              called “Qingshan Brush” as the core of a control-focused build.
+              The idea is to use the fan&apos;s strong openers and stuns to set
+              up high-damage qi arts.
+            </p>
+            <ul className="space-y-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  Open with a fan skill that locks the opponent in place, then
+                  immediately chain into your strongest qi art or a pre-planned
+                  combo string. The goal is to compress as much damage as
+                  possible into each control window.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  For stats, favor accuracy, crit, and tools that help you land
+                  the opening hit reliably in PVP—range, movement, and quick
+                  start-up matter more than pure raw attack.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5">
+            <h3 className="text-lg font-semibold tracking-tight text-slate-50">
+              3. Healing umbrella/fan – full support specialist.
+            </h3>
+            <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+              A third family pairs healing-focused umbrella and fan arts into a
+              pure support build. Chinese guides frame this as the backbone of
+              safer dungeon groups, where your job is to erase mistakes and keep
+              everyone moving.
+            </p>
+            <ul className="space-y-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  Prioritize inner arts and gear that boost healing, shields,
+                  and damage reduction rather than personal DPS. Treat your own
+                  damage as a bonus that happens while you keep buffs and
+                  regen ticking.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  This style shines in coordinated co-op or difficult PVE where
+                  the limiting factor is survival, not kill speed. It is less
+                  solo-efficient but can dramatically raise party success rates.
+                </span>
+              </li>
+            </ul>
+          </div>
+        </section>
+      )}
+
       <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
           Watching {weapon.name} in motion.
@@ -210,4 +658,3 @@ export function WeaponDetail({ weaponId }: { weaponId: WeaponId }) {
     </article>
   );
 }
-

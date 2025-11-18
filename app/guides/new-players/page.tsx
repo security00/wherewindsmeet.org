@@ -10,6 +10,51 @@ export const metadata: Metadata = {
   },
 };
 
+const sectSnapshots = [
+  {
+    id: "qingxi",
+    name: "Qingxi",
+    role: "Healer / support",
+    summary:
+      "Traveling physicians who keep allies alive with medicine, buffs, and defensive tools. Ideal if you enjoy stabilizing co-op runs and smoothing out other players’ mistakes.",
+  },
+  {
+    id: "sangeng",
+    name: "Sangeng Sky",
+    role: "Assassin",
+    summary:
+      "Night assassins built around burst windows and risky engages. Best for players who like learning boss patterns and committing hard when openings appear.",
+  },
+  {
+    id: "drunken-flowers",
+    name: "Drunken Flowers",
+    role: "Mobile skirmisher",
+    summary:
+      "Free-spirited wanderers who mix social play with agile combat. A good fit if you care as much about vibes and fashion as raw numbers.",
+  },
+  {
+    id: "jiuliu",
+    name: "Jiuliu",
+    role: "Rogue / gray morality",
+    summary:
+      "Streetwise drifters sitting between orthodox and underworld. Suits players who like side content, flexible morals, and living in the margins of Jianghu.",
+  },
+  {
+    id: "lonely-cloud",
+    name: "Lonely Cloud",
+    role: "Duelist",
+    summary:
+      "Hermit swordsmen focused on precise 1v1 play. Great if you enjoy practicing timing and spacing until difficult duels feel effortless.",
+  },
+  {
+    id: "qingxi-alt",
+    name: "Heavier frontline sects",
+    role: "Tank / bruiser",
+    summary:
+      "Guides also describe more direct frontline sect options oriented around shields, damage reduction, and drawing enemy attention—good for players who like anchoring groups.",
+  },
+];
+
 export default function NewPlayersGuidePage() {
   return (
     <article className="space-y-10">
@@ -508,6 +553,54 @@ export default function NewPlayersGuidePage() {
           None of these are mandatory, but together they make the game feel much
           closer to its intended rhythm, especially in tougher duels and
           co-op-heavy content.
+        </p>
+      </section>
+
+      <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+          Bonus – Choosing your first sect without stress.
+        </h2>
+        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+          Sects in Where Winds Meet add a long-term identity on top of your
+          weapons and inner arts. Detailed Traditional Chinese community guides
+          spend many pages comparing them, but for a first character you mostly
+          need to know what each feels like in broad strokes.
+        </p>
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {sectSnapshots.map((sect) => (
+            <article
+              key={sect.id}
+              className="flex flex-col overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 shadow-sm shadow-slate-950/60"
+            >
+              <div className="relative h-28 w-full overflow-hidden bg-slate-900/80 sm:h-32">
+                <Image
+                  src="https://www.ludens.com.tw/wp-content/uploads/2025/11/image-167.png"
+                  alt="Where Winds Meet sects illustration"
+                  fill
+                  className="object-cover object-center opacity-80"
+                  sizes="(min-width: 1280px) 20vw, (min-width: 768px) 33vw, 100vw"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
+              </div>
+              <div className="flex flex-1 flex-col gap-2 p-4">
+                <div className="flex items-center justify-between gap-2">
+                  <h3 className="text-sm font-semibold text-slate-50">
+                    {sect.name}
+                  </h3>
+                  <span className="rounded-full bg-slate-900/80 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-emerald-300">
+                    {sect.role}
+                  </span>
+                </div>
+                <p className="text-xs text-slate-300">{sect.summary}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+          Your first sect rarely makes or breaks a character. Pick the one whose
+          fantasy and role line up with how you already enjoy playing—healer,
+          assassin, tank, duelist, or carefree wanderer—then treat any future
+          sect swap as a story decision rather than a mistake.
         </p>
       </section>
 

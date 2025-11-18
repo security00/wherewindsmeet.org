@@ -224,6 +224,123 @@ export default function BuildsPage() {
           imagined.
         </p>
       </section>
+
+      <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+          Popular PVE and PVP archetypes from community guides.
+        </h2>
+        <div className="relative h-40 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80 sm:h-52">
+          <Image
+            src="https://www.ludens.com.tw/wp-content/uploads/2025/11/20251116005338_1.jpg"
+            alt="Where Winds Meet builds overview from Traditional Chinese guides"
+            fill
+            className="object-cover object-center opacity-70"
+            sizes="(min-width: 1280px) 40vw, (min-width: 768px) 60vw, 100vw"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
+        </div>
+        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+          Long-form Traditional Chinese guides for Where Winds Meet break the
+          game&apos;s martial arts and weapon system into a handful of clear
+          archetypes. You do not need to memorize every name, but understanding
+          what each family is trying to do will make it much easier to adapt
+          builds as the meta changes.
+        </p>
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <article className="space-y-2 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 text-sm shadow-sm shadow-slate-950/60">
+            <h3 className="text-sm font-semibold text-slate-50">
+             裂石·威 – Mo Blade + Spear frontline bruiser
+            </h3>
+            <p className="text-xs uppercase tracking-wide text-emerald-300">
+              Tanky heavy weapon core
+            </p>
+            <p className="text-xs leading-relaxed text-slate-200">
+              Built around Mo Blade and spear pairings that stack super armor,
+              shields, and damage reduction. These builds shine in PVE when you
+              want to hold aggro, punish openings with huge swings, and keep
+              runs stable for friends who are still learning fights.
+            </p>
+          </article>
+          <article className="space-y-2 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 text-sm shadow-sm shadow-slate-950/60">
+            <h3 className="text-sm font-semibold text-slate-50">
+             鳴金·影 – Bleed-focused sword and spear
+            </h3>
+            <p className="text-xs uppercase tracking-wide text-emerald-300">
+              High-APM bleed / burn setups
+            </p>
+            <p className="text-xs leading-relaxed text-slate-200">
+              Combines complex sword and spear strings that stack bleed and
+              other damage-over-time statuses before detonating them. Extremely
+              strong on paper but demands strict rotations and comfort with
+              multi-step combos, making it better for advanced players chasing
+              ceiling damage.
+            </p>
+          </article>
+          <article className="space-y-2 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 text-sm shadow-sm shadow-slate-950/60">
+            <h3 className="text-sm font-semibold text-slate-50">
+             鳴金·虹 – Starter sword and spear basics
+            </h3>
+            <p className="text-xs uppercase tracking-wide text-emerald-300">
+              Beginner-friendly hybrid
+            </p>
+            <p className="text-xs leading-relaxed text-slate-200">
+              Centered on the default Nameless Sword and Nameless Spear, this
+              family emphasizes stamina management, mobility, and straightforward
+              combos. It is the easiest way to learn the game systems before
+              graduating into more specialized flows.
+            </p>
+          </article>
+          <article className="space-y-2 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 text-sm shadow-sm shadow-slate-950/60">
+            <h3 className="text-sm font-semibold text-slate-50">
+             牽絲·玉 – Umbrella and fan damage/control
+            </h3>
+            <p className="text-xs uppercase tracking-wide text-emerald-300">
+              Ranged pressure and CC
+            </p>
+            <p className="text-xs leading-relaxed text-slate-200">
+              Pairs the Ninefold Spring umbrella with arts like Qingshan Brush
+              to create long-range sustained damage and strong crowd control.
+              Mastery involves managing resources and positioning while your
+              umbrella or fan continues attacking on its own.
+            </p>
+          </article>
+          <article className="space-y-2 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 text-sm shadow-sm shadow-slate-950/60">
+            <h3 className="text-sm font-semibold text-slate-50">
+             牽絲·霖 – Pure healer umbrella and fan
+            </h3>
+            <p className="text-xs uppercase tracking-wide text-emerald-300">
+              Dedicated support
+            </p>
+            <p className="text-xs leading-relaxed text-slate-200">
+              Focuses on arts like Mingchuan Medicine Canon and healing umbrellas
+              to keep teammates alive through heavy pressure. Damage output is
+              lower, but in tough group content these builds can turn near-wipes
+              into comfortable clears.
+            </p>
+          </article>
+          <article className="space-y-2 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 text-sm shadow-sm shadow-slate-950/60">
+            <h3 className="text-sm font-semibold text-slate-50">
+             破竹·風 – Dual blades and rope dart hunters
+            </h3>
+            <p className="text-xs uppercase tracking-wide text-emerald-300">
+              Hyper-mobile melee
+            </p>
+            <p className="text-xs leading-relaxed text-slate-200">
+              Uses fast, aggressive tools to dive in, punish, and disengage
+              before enemies can retaliate. In PVP and high-end PVE it rewards
+              sharp reactions and map knowledge, turning positioning mistakes
+              into clean executions.
+            </p>
+          </article>
+        </div>
+        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+          You do not need to memorize every Chinese flow name to benefit from
+          these ideas. Use them as reference points: if you like the fantasy of
+          a particular family, look for weapon pages and example builds that
+          echo its goals, then adapt the details to your own reflexes and
+          schedule.
+        </p>
+      </section>
     </article>
   );
 }

@@ -126,6 +126,86 @@ export default function BossesPage() {
           ))}
         </div>
       </section>
+
+      <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+          General boss survival tips from high-difficulty runs.
+        </h2>
+        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+          Community guides written in Traditional Chinese for the highest
+          difficulty settings repeatedly highlight the same handful of tools
+          that make brutal encounters more forgiving. Even if you never look up
+          specific “cheese” routes, understanding these patterns can turn
+          frustrating bosses into fair challenges.
+        </p>
+        <ul className="space-y-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+          <li className="flex gap-3">
+            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            <span>
+              <span className="font-semibold">Do not solo out of pride:</span>{" "}
+              story and Bloodbath bosses in Where Winds Meet are tuned assuming
+              you may bring help. Summoned companions that act as tanks, healers
+              or posture breakers can dramatically lower execution requirements,
+              especially on three-phase “memory test” fights.
+            </span>
+          </li>
+          <li className="flex gap-3">
+            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            <span>
+              <span className="font-semibold">Lean on powerful qi arts:</span>{" "}
+              several offensive and defensive qi arts offer longer i-frames than
+              a standard guard or dodge, or can instantly interrupt key skills.
+              Consider assigning at least one panic button art (for unavoidable
+              bursts) and one proactive tool that lets you safely punish long
+              animations.
+            </span>
+          </li>
+          <li className="flex gap-3">
+            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            <span>
+              <span className="font-semibold">
+                Use weapon pairings that cover your weaknesses:
+              </span>{" "}
+              a secondary fan can provide healing and stabilizing support, while
+              heavy weapons like Mo Blade offer shields and super armor on
+              charged swings. If you dislike parry timing, combine a sturdier
+              weapon with supportive tools instead of forcing a pure glass
+              cannon.
+            </span>
+          </li>
+          <li className="flex gap-3">
+            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            <span>
+              <span className="font-semibold">
+                Respect level scaling and invest sideways:
+              </span>{" "}
+              bosses scale with your level, so blindly leveling can make fights
+              feel worse. If you are stuck, pause leveling and funnel resources
+              into gear, martial arts, and inner arts upgrades instead; a
+              slightly lower level with stronger tools often feels easier than a
+              higher level with weak equipment.
+            </span>
+          </li>
+        </ul>
+        <p className="text-xs text-slate-400 sm:text-sm">
+          For players who want to go deeper, combine these principles with the{" "}
+          <Link
+            href="/guides/builds"
+            className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+          >
+            builds section
+          </Link>{" "}
+          and weapon-specific pages like{" "}
+          <Link
+            href="/guides/weapons/mo-blade"
+            className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+          >
+            Mo Blade
+          </Link>{" "}
+          to design setups tuned for your reflexes and preferred difficulty
+          rather than a single “correct” meta.
+        </p>
+      </section>
     </article>
   );
 }
