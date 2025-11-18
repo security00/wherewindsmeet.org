@@ -20,7 +20,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/guides/pvp-tier-list`,
+      changeFrequency: "daily",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/guides/weapons/tier-list`,
+      changeFrequency: "daily",
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/guides/builds`,
+      changeFrequency: "daily",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/guides/endgame`,
+      changeFrequency: "daily",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/guides/patch-notes`,
       changeFrequency: "daily",
       priority: 0.8,
     },

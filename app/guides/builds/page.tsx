@@ -79,6 +79,12 @@ export default function BuildsPage() {
             progress away just because a new tier list claims something else is
             suddenly mandatory.
           </p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
+            If you landed here by typing{" "}
+            <span className="font-semibold">Where Winds Meet builds</span> into
+            a search bar, think of this page as your long-term reference for
+            both leveling and endgame setups.
+          </p>
         </div>
       </section>
 

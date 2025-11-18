@@ -167,6 +167,13 @@ export default function NewPlayersGuidePage() {
             unintentionally away from the enemy you are trying to read.
           </li>
         </ul>
+        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+          If you are experimenting with{" "}
+          <span className="font-semibold">Where Winds Meet aim assist</span>{" "}
+          options on controller, start with a medium strength setting so the
+          game helps you stay on target without completely removing the feeling
+          of manual control.
+        </p>
       </section>
 
       <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">

@@ -54,6 +54,18 @@ export default function WeaponsPage() {
             to decide which weapon truly fits your pace, not just the current
             meta.
           </p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
+            Players looking for a{" "}
+            <span className="font-semibold">
+              Where Winds Meet weapon tier list
+            </span>{" "}
+            or{" "}
+            <span className="font-semibold">
+              Where Winds Meet weapons tier list
+            </span>{" "}
+            can use this gallery plus the tier list together to judge where each
+            choice sits in the overall power curve.
+          </p>
         </div>
       </section>
 

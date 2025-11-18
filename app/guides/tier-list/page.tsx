@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Tier List for PVE & PVP",
@@ -93,6 +94,17 @@ export default function TierListPage() {
           similar weapons, the list groups them into bands of power so you can
           quickly see which picks feel safe, which demand practice, and which
           exist mostly for stylish experiments.
+        </p>
+        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+          If you searched for a{" "}
+          <span className="font-semibold">Where Winds Meet PVP tier list</span>{" "}
+          or a{" "}
+          <span className="font-semibold">Where Winds Meet weapon tier list</span>,{" "}
+          this guide is meant to cover both sides at once. Weapons are grouped
+          by how they perform in real endgame content, not just early leveling,
+          so you can treat it as a practical{" "}
+          <span className="font-semibold">Where Winds Meet endgame tier list</span>{" "}
+          when planning long-term characters.
         </p>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
           PVE and PVP priorities are also balanced differently. In group PVE,
@@ -208,6 +220,50 @@ export default function TierListPage() {
           it with your own taste and the site&apos;s broader guides, and you
           will find a path through Jianghu that feels powerful, stylish, and
           uniquely your own.
+        </p>
+      </section>
+
+      <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+          Specialized tier lists for PVP and weapons.
+        </h2>
+        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+          This general Where Winds Meet tier list covers both PVE and PVP equally,
+          but some players want deeper dives into specific areas. If you are focused
+          on competitive PVP or interested in detailed weapon-by-weapon analysis, we
+          have dedicated tier lists for those topics.
+        </p>
+        <div className="grid gap-4 md:grid-cols-2">
+          <Link
+            href="/guides/pvp-tier-list"
+            className="rounded-lg border border-slate-700 bg-slate-900/40 p-4 transition-colors hover:border-slate-600 hover:bg-slate-900/60"
+          >
+            <h3 className="text-sm font-semibold text-slate-50">
+              Where Winds Meet PVP Tier List
+            </h3>
+            <p className="mt-2 text-xs text-slate-300">
+              Competitive weapon rankings for dueling, matchups, and PVP skill
+              development
+            </p>
+          </Link>
+          <Link
+            href="/guides/weapons/tier-list"
+            className="rounded-lg border border-slate-700 bg-slate-900/40 p-4 transition-colors hover:border-slate-600 hover:bg-slate-900/60"
+          >
+            <h3 className="text-sm font-semibold text-slate-50">
+              Where Winds Meet Weapon Tier List
+            </h3>
+            <p className="mt-2 text-xs text-slate-300">
+              Complete weapon rankings by power, ease of use, and versatility
+            </p>
+          </Link>
+        </div>
+        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+          Each specialized tier list provides deeper context than can fit in a
+          general guide, allowing you to find the exact information you need without
+          scrolling through irrelevant content. Whether you are optimizing for
+          endgame bosses, preparing for PVP competition, or simply curious about a
+          specific weapon, these focused guides have you covered.
         </p>
       </section>
     </article>

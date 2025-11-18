@@ -20,32 +20,67 @@ const guideSections = [
       "A focused Where Winds Meet beginner guide that walks you from first launch to your first weekly reset with smart settings, a safe story route, and simple daily and weekly checklists.",
   },
   {
+    title: "Practical tier list for PVE and PVP",
+    slug: "/guides/tier-list",
+    label: "Tier List",
+    description:
+      "A Where Winds Meet tier list ranked for real players, not just lab spreadsheets. Explains how to read rankings, adapt them to your playstyle, and use them alongside patch notes to stay competitive.",
+  },
+  {
+    title: "Dominate PVP duels with the right weapon",
+    slug: "/guides/pvp-tier-list",
+    label: "PVP Tier List",
+    description:
+      "Where Winds Meet PVP tier list focused on dueling, matchups, and competitive weapon rankings. Explains why PVP differs from PVE and how to develop the skill necessary to win consistently.",
+  },
+  {
+    title: "Rank all Where Winds Meet weapons",
+    slug: "/guides/weapons/tier-list",
+    label: "Weapon Tier List",
+    description:
+      "Complete Where Winds Meet weapon tier list ranking every weapon by power, ease of use, and versatility. Includes weapon categories, learning curves, and endgame optimization tips.",
+  },
+  {
     title: "Builds that respect your pace and style",
     slug: "/guides/builds",
     label: "Flexible Builds",
     description:
-      "Here you will find core Where Winds Meet builds grouped by fantasy, not just by numbers. Each build explains its main loop, what kind of player usually enjoys it, and how to adapt it if future patches shake up the meta. The goal is for a build to feel like your character, not a rigid spreadsheet.",
+      "Where Winds Meet builds grouped by fantasy, not just by numbers. Each build explains its main loop, what kind of player enjoys it, and how to adapt it if patches shift the meta.",
+  },
+  {
+    title: "Master Where Winds Meet endgame",
+    slug: "/guides/endgame",
+    label: "Endgame Guide",
+    description:
+      "Where Winds Meet endgame guide covering boss farming, resource farming, stat optimization, and post-story progression. Understand endgame phases and how to approach challenging late-game content.",
+  },
+  {
+    title: "Track balance changes and patch updates",
+    slug: "/guides/patch-notes",
+    label: "Patch Notes",
+    description:
+      "Where Winds Meet patch notes guide explaining balance updates, how to read patch changes, and adapting your builds after major patches land.",
   },
   {
     title: "Stay on top of time-limited rewards",
     slug: "/guides/codes",
     label: "Codes & Rewards",
     description:
-      "Codes pages summarize active and expired Where Winds Meet codes, the platforms they work on, and the kinds of rewards they grant. Simple step-by-step redeem instructions make sure you never lose progress because a code expired while you were still trying to figure out the in-game menus.",
+      "Where Winds Meet codes guide summarizing active and expired codes, platforms they work on, and the kinds of rewards they grant. Step-by-step redeem instructions.",
   },
   {
     title: "Understand every current Where Winds Meet weapon",
     slug: "/guides/weapons",
     label: "Weapon Overview",
     description:
-      "This section offers a clear overview of every current Where Winds Meet weapon, blending official showcase art with practical notes about roles, feel, and which kinds of players they tend to suit best.",
+      "Clear overview of every current Where Winds Meet weapon with official showcase art and practical notes about roles, feel, and which players they suit best.",
   },
   {
     title: "Learn about major bosses and encounters",
     slug: "/guides/bosses",
     label: "Bosses & Encounters",
     description:
-      "This section introduces key Where Winds Meet bosses and named encounters with short backstories and encounter tone notes so you can decide which legends of Jianghu to face first, then pair them with fitting weapons and builds.",
+      "Where Winds Meet boss guides for key bosses and named encounters with backstories and encounter tone notes to decide which legends of Jianghu to face first.",
   },
 ];
 
@@ -188,7 +223,7 @@ export default function GuidesPage() {
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
           Explore the main Where Winds Meet guide pillars.
         </h2>
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {guideSections.map((section) => (
             <Link
               key={section.slug}

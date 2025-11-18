@@ -53,12 +53,17 @@ export default function NewsPage() {
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
             Latest Where Winds Meet news and official articles.
           </h1>
-          <p className="mt-2 text-sm leading-relaxed text-slate-200 sm:text-base">
-            These entries summarize recent official Where Winds Meet
-            announcements, launch guides, system instructions, and beta notices.
-            Each card links back to the original news source so you can
-            double-check details and read the full context when needed.
-          </p>
+        <p className="mt-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+          These entries summarize recent official Where Winds Meet
+          announcements, launch guides, system instructions, and beta notices.
+          Each card links back to the original news source so you can
+          double-check details and read the full context when needed.
+        </p>
+        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+          When you simply want to skim{" "}
+          <span className="font-semibold">Where Winds Meet patch notes</span>{" "}
+          without reading every bullet, start here.
+        </p>
           <div className="mt-4 space-y-3">
             {sortedNews.map((item) => (
               <div
