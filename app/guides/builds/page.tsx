@@ -231,8 +231,8 @@ export default function BuildsPage() {
         </h2>
         <div className="relative h-40 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80 sm:h-52">
           <Image
-            src="https://www.ludens.com.tw/wp-content/uploads/2025/11/20251116005338_1.jpg"
-            alt="Where Winds Meet builds overview from Traditional Chinese guides"
+            src="/background/builds.png"
+            alt="Where Winds Meet builds overview art"
             fill
             className="object-cover object-center opacity-70"
             sizes="(min-width: 1280px) 40vw, (min-width: 768px) 60vw, 100vw"

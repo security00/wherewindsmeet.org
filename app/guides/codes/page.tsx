@@ -31,6 +31,39 @@ const exampleCodes = [
   },
 ];
 
+const liveCodes = [
+  {
+    code: "WWMGLtiktok",
+    label: "Global launch TikTok campaign",
+    notes:
+      "Shared through launch social campaigns; typically grants a small bundle of cosmetics and progression items. Listed in Traditional Chinese launch coverage on 2025-11-17, so treat it as time-limited.",
+  },
+  {
+    code: "WWMGLyoutube",
+    label: "Global launch YouTube campaign",
+    notes:
+      "Companion code to the TikTok promotion. Rewards are similar in scale and also time-limited, so redeem it soon if it is still active.",
+  },
+  {
+    code: "WWMGO1114",
+    label: "Launch date celebration code",
+    notes:
+      "Celebrates the 2025-11-14 global launch window. If the game reports that the code has expired, it simply means the event window has closed.",
+  },
+  {
+    code: "WWM251115",
+    label: "Early launch event code",
+    notes:
+      "Another early launch-period gift code surfaced in Traditional Chinese community guides. Exact rewards may vary by region, but it generally offers helpful early-game materials.",
+  },
+  {
+    code: "WWMGO1115",
+    label: "Follow-up launch gift",
+    notes:
+      "Issued shortly after the main launch date. As with other codes, it is one-time per account and subject to expiration rules.",
+  },
+];
+
 export default function CodesPage() {
   return (
     <article className="space-y-10">
@@ -147,6 +180,50 @@ export default function CodesPage() {
 
       <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+          Sample currently reported Where Winds Meet codes.
+        </h2>
+        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+          Traditional Chinese launch guides have already catalogued several
+          Where Winds Meet gift codes. The entries below come from that coverage
+          as of <span className="font-semibold">2025-11-17</span>. They are{" "}
+          <span className="font-semibold">time-limited and region-dependent</span>
+          , so treat them as references rather than guarantees—if the game says
+          a code is invalid or expired, you have simply missed the window.
+        </p>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {liveCodes.map((entry) => (
+            <div
+              key={entry.code}
+              className="flex flex-col justify-between rounded-3xl border border-slate-800 bg-slate-950/80 p-4 text-sm shadow-sm shadow-slate-950/60"
+            >
+              <div className="space-y-1.5">
+                <p className="text-[11px] font-semibold uppercase tracking-wide text-emerald-300">
+                  One-time gift code
+                </p>
+                <p className="font-mono text-xs text-slate-50">
+                  {entry.code}
+                </p>
+                <p className="text-[11px] font-medium text-slate-200">
+                  {entry.label}
+                </p>
+              </div>
+              <p className="mt-2 text-xs leading-relaxed text-slate-300">
+                {entry.notes}
+              </p>
+            </div>
+          ))}
+        </div>
+        <p className="text-xs leading-relaxed text-slate-400 sm:text-sm">
+          These codes were originally documented in Traditional Chinese community
+          coverage and mirrored here in English for convenience. Always double-check
+          the in-game redeem screen for final validity, and never purchase codes from
+          unofficial sellers—legitimate Where Winds Meet codes are distributed for
+          free through official events and partners.
+        </p>
+      </section>
+
+      <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
           Redeeming Where Winds Meet codes on PC and PS5.
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
@@ -158,13 +235,23 @@ export default function CodesPage() {
           details change over time with updates.
         </p>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          On PC, most Where Winds Meet codes are redeemed either via an official
-          website or within a settings or account menu. After logging in with
-          your game account, you paste the code carefully, double-check
-          capitalization if the site is strict, and submit. Once the system
-          accepts it, you usually receive a confirmation message and can switch
-          back to the client. Within a few minutes, rewards appear in mail or a
-          notification panel ready to claim on your character.
+          Traditional Chinese launch guides describe the in-game flow like this:
+          open the menu in the{" "}
+          <span className="font-semibold">top-right corner</span>, go to{" "}
+          <span className="font-semibold">
+            Settings &gt; Other &gt; Exchange Code
+          </span>
+          , enter the string, and confirm. Most regions follow a very similar
+          pattern.
+        </p>
+        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+          On PC, some Where Winds Meet codes are also redeemed via an official
+          website or launcher account page. After logging in with your game
+          account, you paste the code carefully, double-check capitalization if
+          the site is strict, and submit. Once the system accepts it, you
+          usually receive a confirmation message and can switch back to the
+          client. Within a few minutes, rewards appear in mail or a notification
+          panel ready to claim on your character.
         </p>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
           On PS5, Where Winds Meet codes sometimes route through platform-level
@@ -174,6 +261,14 @@ export default function CodesPage() {
           accurately. If a code fails, do not panic; many Where Winds Meet codes
           are region specific or time limited. Simply cross-check the details
           listed beside each entry on this page before trying again.
+        </p>
+        <p className="text-xs leading-relaxed text-slate-400 sm:text-sm">
+          If redemption fails repeatedly, the most common reasons reported in
+          Traditional Chinese guides are simple: the code has expired, there is
+          a stray space copied at the end, the case does not match, or you have
+          already redeemed it on that account. Where Winds Meet gift codes are{" "}
+          <span className="font-semibold">one-time per account</span>—you
+          cannot redeem the same string twice.
         </p>
       </section>
 

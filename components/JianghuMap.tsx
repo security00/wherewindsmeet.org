@@ -15,6 +15,7 @@ interface MapLandmark {
   description: string;
   category: 'beginner' | 'combat' | 'rewards' | 'knowledge';
   backgroundPreview: string;
+  tooltipSide?: 'top' | 'bottom';
 }
 
 const landmarks: MapLandmark[] = [
@@ -24,7 +25,7 @@ const landmarks: MapLandmark[] = [
     label: 'Beginner Guide',
     chineseName: 'Newcomer Village',
     icon: '🏯',
-    position: { x: 15, y: 60 },
+    position: { x: 30, y: 58 },
     description: 'Start your journey in the Jianghu',
     category: 'beginner',
     backgroundPreview: '/design/background/11.png',
@@ -35,7 +36,7 @@ const landmarks: MapLandmark[] = [
     label: 'Tier List',
     chineseName: 'Peak Duel',
     icon: '🏔️',
-    position: { x: 50, y: 20 },
+    position: { x: 50, y: 24 },
     description: 'Compete at the peak of martial arts',
     category: 'combat',
     backgroundPreview: '/design/background/5.png',
@@ -46,10 +47,11 @@ const landmarks: MapLandmark[] = [
     label: 'Builds',
     chineseName: 'Martial Hall',
     icon: '⚔️',
-    position: { x: 75, y: 45 },
+    position: { x: 68, y: 38 },
     description: 'Master your combat style',
     category: 'combat',
     backgroundPreview: '/design/background/18.png',
+    tooltipSide: 'top',
   },
   {
     id: 'codes',
@@ -57,10 +59,11 @@ const landmarks: MapLandmark[] = [
     label: 'Codes',
     chineseName: 'Treasure Vault',
     icon: '💎',
-    position: { x: 30, y: 35 },
+    position: { x: 32, y: 38 },
     description: 'Claim your rewards',
     category: 'rewards',
     backgroundPreview: '/design/background/4.png',
+    tooltipSide: 'top',
   },
   {
     id: 'weapons',
@@ -68,7 +71,7 @@ const landmarks: MapLandmark[] = [
     label: 'Weapons',
     chineseName: 'Armory',
     icon: '🗡️',
-    position: { x: 85, y: 70 },
+    position: { x: 70, y: 60 },
     description: 'Explore legendary armaments',
     category: 'knowledge',
     backgroundPreview: '/design/background/25.png',
@@ -79,7 +82,7 @@ const landmarks: MapLandmark[] = [
     label: 'Bosses',
     chineseName: 'Boss Arena',
     icon: '👹',
-    position: { x: 60, y: 75 },
+    position: { x: 50, y: 72 },
     description: 'Face formidable foes',
     category: 'combat',
     backgroundPreview: '/design/background/13.png',
@@ -97,14 +100,14 @@ export default function JianghuMap() {
   const [hoveredLandmark, setHoveredLandmark] = useState<string | null>(null);
 
   return (
-    <div className="relative min-h-[600px] overflow-hidden rounded-3xl border border-slate-800/80 bg-slate-900/60 p-6 shadow-2xl shadow-emerald-500/10 sm:min-h-[700px] sm:p-10">
+    <div className="relative min-h-[600px] overflow-hidden rounded-3xl border border-slate-800/80 bg-slate-950/70 p-6 shadow-2xl shadow-emerald-500/15 sm:min-h-[700px] sm:p-10">
       {/* 标题区域 */}
       <div className="relative z-10 mb-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-3 rounded-full bg-slate-950/70 px-4 py-2 text-sm font-medium text-emerald-300 ring-1 ring-emerald-400/40"
+          className="inline-flex items-center gap-3 rounded-full bg-slate-950/80 px-4 py-2 text-sm font-medium text-emerald-300 ring-1 ring-emerald-400/40"
         >
           <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-400/10 text-emerald-300">
             ●
@@ -136,6 +139,11 @@ export default function JianghuMap() {
           {landmarks.map((landmark, index) => {
             const isHovered = hoveredLandmark === landmark.id;
             const color = categoryColors[landmark.category];
+            const tooltipSide = landmark.tooltipSide ?? 'bottom';
+            const tooltipPositionClass =
+              tooltipSide === 'top'
+                ? 'left-1/2 bottom-full mb-3 -translate-x-1/2'
+                : 'left-1/2 top-full mt-3 -translate-x-1/2';
 
             return (
               <motion.div
@@ -204,7 +212,7 @@ export default function JianghuMap() {
                       pointerEvents: isHovered ? 'auto' : 'none',
                     }}
                     transition={{ duration: 0.2 }}
-                    className="absolute left-1/2 top-full mt-3 w-48 -translate-x-1/2 rounded-2xl border border-slate-700 bg-slate-950/95 p-3 shadow-xl backdrop-blur-sm"
+                    className={`absolute ${tooltipPositionClass} w-48 rounded-2xl border border-slate-700 bg-slate-950/95 p-3 shadow-xl backdrop-blur-sm`}
                   >
                     <div className={`text-xs font-semibold uppercase tracking-wide text-${color}-300`}>
                       {landmark.chineseName}

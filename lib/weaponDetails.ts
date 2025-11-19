@@ -38,6 +38,7 @@ export const weaponDetails: Record<WeaponId, WeaponDetail> = {
       "In a training area or low‑pressure content, practice a fixed pattern: dash in → perform one short combo → immediately reposition out. Do not go for a second combo; the goal is to build “one pass, then leave” muscle memory.",
       "Pick a few bosses with exaggerated, clearly telegraphed moves and only focus on punishing those. Whenever you see the tell, get in for one clean string and then retreat. Over time your brain will map “this animation = free opening.”",
       "Try to create a comfortable “minimal button” combo using just a couple of core attacks plus one movement tool. Once that feels natural, slowly add more skills instead of chasing a perfect, complicated rotation on day one.",
+      "If you enjoy the hyper‑mobile “hunter” style that Traditional Chinese guides pair with Rope Dart, practice simple handoffs: use a pull or gap closer to drag an enemy into a predictable spot, then swap to Dual Blades for one clean combo before disengaging.",
     ],
     videoFocusPoints: [
       "Watch how far the player stands when they commit: Dual Blades is at its best when it dips in briefly and then leaves, not when it hugs the boss forever.",
@@ -70,6 +71,7 @@ export const weaponDetails: Record<WeaponId, WeaponDetail> = {
       "Build a simple loop: opener that breaks posture → short combo → hold a dodge or guard input instead of chasing extra hits. Learning when to stop matters more than squeezing one extra swing.",
       "Pick a single obvious heavy enemy attack and practice blocking only that one until you rarely miss it, rather than trying to perfect every block at once.",
       "During casual farming, impose a personal rule like “no more than three hits per approach” to gently correct greedy tendencies.",
+      "To echo the relaxed “Nameless Sword” flows from Traditional Chinese guides, run low‑pressure content with one rule: whenever stamina is full, begin charging a heavy slash; when stamina empties, swap briefly to your partner weapon (often a spear) or a mystic art to cover downtime before returning to charged swings.",
     ],
     videoFocusPoints: [
       "Watch the base combo rhythm: how long the player pauses after each string before recommitting. That pause is your decision point in real fights.",
@@ -102,6 +104,7 @@ export const weaponDetails: Record<WeaponId, WeaponDetail> = {
       "During farming, deliberately fight at the edge of your effective range: step in, poke twice, then drift back. This builds comfort with ideal spacing instead of stationary habits.",
       "Pick enemies with obvious gap‑closers and practice intercepting them with thrusts or control skills; this trains your sense of hitbox length and timing.",
       "Imagine a line between your team and the enemy and use your movement plus attacks to keep that line stable, preventing enemies from easily reaching the backline.",
+      "To sample the more advanced “Nine Swords Nine Spears” family from Traditional Chinese guides without memorizing full rotations, practice a short pattern: apply a fire or elemental mystic art, land one spear skill that clearly inflicts bleed or vulnerability, then swap to sword for a single detonation skill before resetting.",
     ],
     videoFocusPoints: [
       "Observe the average distance the player keeps from enemies: this is roughly where you want to stand in your own runs.",
@@ -135,6 +138,7 @@ export const weaponDetails: Record<WeaponId, WeaponDetail> = {
       "Practice only attacking during obvious boss recovery windows; spend the rest of the time just moving and defending to internalize that Mo Blade does not need constant swings.",
       "Use a basic charged attack on multiple enemy types to feel the delay between input and impact, then adjust how early you start each swing.",
       "In practice sessions, challenge yourself to clear encounters with as few swings as possible, focusing on correctness of each hit rather than raw DPS.",
+      "If you want to copy the ultra‑safe “wheelchair” Mo Blade + healing umbrella flow from Traditional Chinese guides, rehearse a loop where you always reapply a long regeneration effect first, then raise your Mo Blade shield, and only then step in for a single charged hit before backing away to reset.",
     ],
     videoFocusPoints: [
       "Watch the character’s body language and effects during charge‑up and mentally count the time from lift to impact.",
@@ -168,6 +172,7 @@ export const weaponDetails: Record<WeaponId, WeaponDetail> = {
       "In easy dungeons, practice always standing slightly behind and off to the side of your frontline so you can see both them and incoming threats.",
       "Set a small goal for each run: use one support tool to meaningfully save a teammate from danger, such as stabilizing low health or buying time during a messy pull.",
       "Play a few encounters using a reduced damage rotation so you can put more attention on tracking ally and enemy positions, training your overall battlefield awareness.",
+      "To sample the “Fan main” style that Traditional Chinese guides praise, spend a few fights concentrating on keeping a continuous wall of Fan skills between you and enemies, only stepping closer when your key control tools are off cooldown and ready.",
     ],
     videoFocusPoints: [
       "Look at how wide each Fan skill’s area is and how long effects last. Imagine where allies would stand and how many you could realistically cover.",
@@ -201,6 +206,7 @@ export const weaponDetails: Record<WeaponId, WeaponDetail> = {
       "In a safe environment, pick one obvious telegraphed attack and always attempt to block or parry it with your umbrella until the response becomes automatic.",
       "In easier content, set a goal of cleanly handling just one dangerous skill per fight with umbrella tools, instead of trying to perfect every interaction immediately.",
       "Experiment with chaining Umbrella’s movement and evasion skills into a full “avoidance route” through enemy attacks to understand its positional range.",
+      "If you plan to play a healer umbrella as described in Traditional Chinese guides, practice pre‑casting your largest heals or shields just before you expect damage—treat dungeon trash as a lab for learning how long your casts take to land.",
     ],
     videoFocusPoints: [
       "Watch which attacks are handled with the umbrella and which are avoided with movement; mentally tag which category each type falls into.",
@@ -234,6 +240,7 @@ export const weaponDetails: Record<WeaponId, WeaponDetail> = {
       "In training, practice pulling or dashing in and then immediately sidestepping or backing off, so Rope Dart becomes a positioning tool rather than a one‑way ticket forward.",
       "Find enemies with obvious leaps or rushes and only practice interrupting or intercepting those movements, instead of trying full combos right away.",
       "Experiment around complex terrain, using different elevations and angles to get a feel for rope range and travel paths.",
+      "To mirror the “hunter” family outlined in Traditional Chinese PVE/PVP guides, rehearse a simple handoff: pull a target into your team or toward a planned Dual Blades swap, then stop attacking and reposition instead of tunneling on extra hits.",
     ],
     videoFocusPoints: [
       "Watch the final distance between the character and the target after each rope hit; that spacing determines whether you can follow up or must disengage.",

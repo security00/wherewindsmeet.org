@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #020617;
-  --foreground: #f8fafc;
+  --background: #020617; /* 深墨蓝 / slate-950 底色 */
+  --foreground: #f9fafb;
 
-  /* 武侠配色 */
+  /* 武侠点缀色：以墨绿和金色为主 */
   --gold: #f59e0b;
   --ink-red: #dc2626;
-  --mist-gray: #334155;
-  --glow-cyan: #67e8f9;
-  --glow-purple: #a78bfa;
-  --emerald: #34d399;
+  --mist-gray: #1f2937;
+  --glow-cyan: #22c55e;
+  --glow-purple: #38bdf8;
+  --emerald: #16a34a;
 }
 
 @theme inline {
@@ -26,7 +26,7 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
-/* 增强卡片悬浮效果 */
+/* 增强卡片悬浮效果（墨绿作为光晕点缀） */
 .guide-card,
 a[class*="rounded-3xl"][class*="border"] {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

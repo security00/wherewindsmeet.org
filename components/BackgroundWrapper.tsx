@@ -13,11 +13,11 @@ export default function BackgroundWrapper() {
     <>
       <ParallaxBackground
         background={background}
-        opacity={0.65}
+        opacity={0.8}
         parallaxSpeed={0.5}
         enableMouseParallax={true}
       />
-      <MouseGlowEffect color="cyan" intensity={0.25} size={400} />
+      <MouseGlowEffect color="emerald" intensity={0.22} size={420} />
     </>
   );
 }

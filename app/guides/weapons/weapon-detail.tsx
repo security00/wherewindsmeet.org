@@ -380,6 +380,291 @@ export function WeaponDetail({ weaponId }: { weaponId: WeaponId }) {
       {weapon.id === "spear" && (
         <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
           <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+            Example spear flows based on Traditional Chinese guides.
+          </h2>
+          <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+            Traditional Chinese build write-ups for sword and spear focus on
+            three broad families: a relaxed &quot;wheelchair&quot; Nameless
+            Sword style that uses spear as a backup, a demanding Nine Swords
+            Nine Spears bleed/burn setup, and an Eight Directions spear route
+            that leans harder into front-line control. The summaries below adapt
+            those ideas into English so you can match them to the skills and
+            flow names in your own client.
+          </p>
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="space-y-3 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5">
+              <h3 className="text-lg font-semibold tracking-tight text-slate-50">
+                Nameless Sword with support spear – &quot;wheelchair&quot;
+                comfort.
+              </h3>
+              <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+                This approach uses Nameless Sword as the primary damage source
+                and Spear as a support slot for sustain or extra reach. Community
+                guides describe it as a low-stress way to clear story and light
+                dungeons without sweating strict rotations.
+              </p>
+              <ul className="space-y-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+                <li className="flex gap-3">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span>
+                    <span className="font-semibold">Core idea:</span> hold most
+                    of your damage on charged sword attacks, using Spear tools to
+                    cover downtime—either by dropping a debuff, providing extra
+                    shielding, or safely poking bosses you do not want to stand
+                    directly under.
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span>
+                    <span className="font-semibold">Inner arts focus:</span> mix
+                    one or two offensive options with plenty of stamina sustain
+                    and defense. Traditional Chinese lists often pair Nameless
+                    Heart arts with comfort picks that keep you alive while you
+                    learn boss patterns.
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span>
+                    <span className="font-semibold">Typical loop:</span> enter
+                    with a sword shield or buff → weave repeated charged sword
+                    swings as long as stamina allows → when drained or pressured,
+                    swap to Spear for a quick control or ranged poke → reset and
+                    repeat.
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-3 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5">
+              <h3 className="text-lg font-semibold tracking-tight text-slate-50">
+                Nine Swords Nine Spears – high-APM bleed specialist.
+              </h3>
+              <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+                The more advanced family stacks multiple damage-over-time effects
+                with spear skills and then detonates them with sword arts. It is
+                frequently highlighted in Traditional Chinese guides as top-tier
+                ceiling damage that demands strict execution.
+              </p>
+              <ul className="space-y-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+                <li className="flex gap-3">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span>
+                    <span className="font-semibold">Core idea:</span> open with
+                    a fire or elemental mystic art → run a short spear string
+                    that stacks bleed and other debuffs → swap to sword and
+                    trigger skills that consume or amplify those stacks. Most of
+                    your damage comes from overlapping DoTs rather than one big
+                    hit.
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span>
+                    <span className="font-semibold">Inner arts focus:</span>{" "}
+                    talents that boost bleed, burn, and other status damage, plus
+                    enough stamina tools to keep long strings flowing without
+                    collapsing halfway through.
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span>
+                    <span className="font-semibold">When to use it:</span> this
+                    is best for players who enjoy practicing long rotations on
+                    training dummies, then transferring that precision into high
+                    endgame bosses once the order is muscle memory.
+                  </span>
+                </li>
+              </ul>
+              <p className="text-xs text-slate-400 sm:text-sm">
+                If you prefer a simpler experience, treat these notes as
+                background and lean on the Nameless Sword–plus–spear comfort
+                setup instead.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {weapon.id === "umbrella" && (
+        <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+          <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+            Example Umbrella builds inspired by Traditional Chinese guides.
+          </h2>
+          <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+            Umbrella sits at the center of several popular Traditional Chinese
+            builds: a pure damage &quot;Ninefold Spring&quot; style, a dedicated
+            healer/support route built around arts like Mingchuan Medicine Canon,
+            and advanced mixes that pair Umbrella with Fan for PVP control. The
+            overviews below translate those ideas into broad English roles.
+          </p>
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="space-y-3 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5">
+              <h3 className="text-lg font-semibold tracking-tight text-slate-50">
+                Ninefold Spring umbrella – sustained ranged DPS.
+              </h3>
+              <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+                This variant treats Umbrella as a remote turret: you throw it
+                out, let it spin and fire on its own, then use your character to
+                reposition, drop mystic arts, or swap to a second weapon while
+                the canopy keeps dealing damage.
+              </p>
+              <ul className="space-y-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+                <li className="flex gap-3">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span>
+                    <span className="font-semibold">Core idea:</span> build up
+                    the flow resource associated with your umbrella art, then use
+                    its special to send the umbrella out like a drone. While it
+                    spins, you either reposition or weave in Fan or sword skills
+                    that keep enemies locked in the damage zone.
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span>
+                    <span className="font-semibold">Stats and gear:</span>{" "}
+                    prioritize crit and sustained damage uptime over tiny burst
+                    windows; Traditional Chinese builds often favor sets that
+                    reward long-lasting skills and DoTs.
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-3 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5">
+              <h3 className="text-lg font-semibold tracking-tight text-slate-50">
+                Pure healer umbrella – dedicated support.
+              </h3>
+              <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+                Here Umbrella becomes a raid backbone, using medicine-themed arts
+                and broad shields to keep everyone standing in stressful
+                content. Damage is secondary; your success is measured by how
+                calm the party feels.
+              </p>
+              <ul className="space-y-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+                <li className="flex gap-3">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span>
+                    <span className="font-semibold">Core idea:</span> pre-cast
+                    heals and shields before predictable boss bursts. Many
+                    Traditional Chinese guides emphasize{" "}
+                    <span className="font-semibold">pre-healing</span> over
+                    reaction—raising health bars ahead of time instead of
+                    chasing them afterward.
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span>
+                    <span className="font-semibold">Inner arts focus:</span> max
+                    HP, outgoing healing, shield strength, and tools that refund
+                    mystic energy so you can cast often. When in doubt, choose
+                    safety over damage.
+                  </span>
+                </li>
+              </ul>
+              <p className="text-xs text-slate-400 sm:text-sm">
+                Between mechanics, Traditional Chinese heal guides suggest using
+                basic attacks to refill mystic resources so you are ready for
+                the next spike, rather than standing idle.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {weapon.id === "fan" && (
+        <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+          <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+            Example Fan-focused builds from Traditional Chinese coverage.
+          </h2>
+          <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+            In Traditional Chinese build collections, Fan usually appears either
+            as a main weapon in graceful ranged-pressure builds, or as part of a
+            high-skill &quot;umbrella–fan dual cultivation&quot; setup where Fan
+            does the risky front-line work and Umbrella covers gaps with shields
+            and control.
+          </p>
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="space-y-3 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5">
+              <h3 className="text-lg font-semibold tracking-tight text-slate-50">
+                Fan main – ranged pressure and soft control.
+              </h3>
+              <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+                This is the natural home for players who enjoy standing a bit
+                back, layering slow fields, projectiles, and debuffs while
+                occasionally stepping in for stylish finishers.
+              </p>
+              <ul className="space-y-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+                <li className="flex gap-3">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span>
+                    <span className="font-semibold">Core idea:</span> maintain a
+                    &quot;wall&quot; of Fan skills between you and enemies,
+                    using slows and knockbacks to protect yourself and your
+                    team. When everything is on cooldown, reposition rather than
+                    forcing greedy melee trades.
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span>
+                    <span className="font-semibold">Inner arts focus:</span>{" "}
+                    damage over time, crit consistency, and just enough
+                    survivability to survive dive attempts. Traditional Chinese
+                    guides frequently mention traits that extend special skill
+                    uptime and widen their areas.
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-3 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5">
+              <h3 className="text-lg font-semibold tracking-tight text-slate-50">
+                Umbrella–Fan dual cultivation – advanced hybrid.
+              </h3>
+              <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+                This is the most technical umbrella–fan setup described in
+                Traditional Chinese guides. Fan handles most of the committed
+                trades, while Umbrella dips in during safe windows to add
+                shields, crowd control, or extra chip damage.
+              </p>
+              <ul className="space-y-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+                <li className="flex gap-3">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span>
+                    <span className="font-semibold">Core idea:</span> wait for
+                    bosses to finish big swings, then briefly swap to Umbrella
+                    to drop a shield or regeneration zone before returning to
+                    Fan for active pressure. You respect umbrella recovery
+                    frames instead of casting it in unsafe windows.
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span>
+                    <span className="font-semibold">Recommended players:</span>{" "}
+                    people who already feel comfortable on pure Fan or Umbrella
+                    and want a high-ceiling style that rewards planning, rhythm,
+                    and awareness in both PVE and PVP.
+                  </span>
+                </li>
+              </ul>
+              <p className="text-xs text-slate-400 sm:text-sm">
+                If you are new to Fan, start with the simpler ranged-pressure
+                variant above before attempting this dual-weapon flow.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {weapon.id === "spear" && (
+        <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+          <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
             Sample Spear builds from Traditional Chinese guides.
           </h2>
           <div className="relative h-40 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80 sm:h-52">

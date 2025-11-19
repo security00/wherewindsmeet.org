@@ -39,7 +39,7 @@ export default function MouseGlowEffect({
   const colorMap = {
     cyan: 'rgba(103, 232, 249, ',
     purple: 'rgba(167, 139, 250, ',
-    emerald: 'rgba(52, 211, 153, ',
+    emerald: 'rgba(22, 163, 74, ',
   };
 
   const glowColor = colorMap[color];

@@ -52,7 +52,14 @@ const guideSections = [
     slug: "/guides/endgame",
     label: "Endgame Guide",
     description:
-      "Where Winds Meet endgame guide covering boss farming, resource farming, stat optimization, and post-story progression. Understand endgame phases and how to approach challenging late-game content.",
+      "Where Winds Meet endgame guide covering boss and resource farming, open-world exploration, mystic arts, stat optimization, and post-story progression so you can approach challenging late-game content with a clear plan.",
+  },
+  {
+    title: "Understand the major Where Winds Meet sects",
+    slug: "/guides/sects",
+    label: "Sects & Factions",
+    description:
+      "Overview of the main Where Winds Meet sects—their philosophies, typical roles, and which kinds of players they tend to suit—paired with in-game sect artwork to help you pick a home in Jianghu.",
   },
   {
     title: "Track balance changes and patch updates",

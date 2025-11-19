@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Tier List for PVE & PVP",
+  title: "Where Winds Meet Tier List (PVE & PVP) – Best Classes, Weapons & Builds",
   description:
-    "Where Winds Meet tier list ranking weapons, paths and playstyles for PVE and PVP with clear explanations, sample builds and tips for adapting to patches.",
+    "Practical Where Winds Meet tier list for PVE and PVP with S–C rankings, best class-style builds, weapon recommendations, and pointers that stay useful across patches.",
   alternates: {
     canonical: "https://wherewindsmeet.org/guides/tier-list",
   },
@@ -34,6 +34,37 @@ const tiers = [
   },
 ];
 
+const quickTierRows = [
+  {
+    tier: "S",
+    pve: "Nameless Sword, Spear, Mo Blade, Umbrella",
+    pvp: "Umbrella counter builds, Dual Blades, Rope Dart",
+    notes:
+      "Comfortably strong in most content with clear game plans. Recommended if you want to invest long term and keep options open.",
+  },
+  {
+    tier: "A",
+    pve: "Fan, hybrid Sword + Spear, supportive Umbrella/Fan",
+    pvp: "Spear bruisers, Fan / Umbrella control setups",
+    notes:
+      "Very strong when played to their strengths and paired with the right builds. Often more fun or thematic than pure meta picks.",
+  },
+  {
+    tier: "B",
+    pve: "Greedy glass-cannon builds, off-meta hybrids",
+    pvp: "Experimental mix-ups and niche counters",
+    notes:
+      "Viable for experienced players who enjoy practicing specific matchups or leaning hard into style over consistency.",
+  },
+  {
+    tier: "C",
+    pve: "Unfinished or overly narrow setups",
+    pvp: "Gimmick-only routes",
+    notes:
+      "Usually worth treating as side projects rather than your very first main, unless the fantasy is exactly what you want.",
+  },
+];
+
 export default function TierListPage() {
   return (
     <article className="space-y-10">
@@ -52,6 +83,11 @@ export default function TierListPage() {
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
             Where Winds Meet tier list for practical PVE and respectful PVP.
           </h1>
+          <p className="mt-2 text-xs font-medium uppercase tracking-wide text-emerald-300">
+            Updated for the Where Winds Meet global launch (1.0) – early live
+            snapshot based on official material and Traditional Chinese
+            community guides.
+          </p>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
             This Where Winds Meet tier list is built for real players, not only
             lab-perfect spreadsheets. Instead of ranking every weapon and path
@@ -79,6 +115,208 @@ export default function TierListPage() {
             lower ranked path, use the tips here to shore up its weaknesses and
             keep it viable in the content you care about most.
           </p>
+        </div>
+      </section>
+
+      <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+          Quick Where Winds Meet tier list snapshot.
+        </h2>
+        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+          If you just searched for a{" "}
+          <span className="font-semibold">Where Winds Meet tier list</span> and
+          want fast answers, start here. This table gives a launch-window view
+          of which weapons and playstyles tend to feel strongest in PVE and PVP
+          before you dive into detailed explanations and build links.
+        </p>
+        <div className="overflow-x-auto">
+          <table className="min-w-full border-separate border-spacing-y-2 text-left text-xs text-slate-200">
+            <thead>
+              <tr>
+                <th className="rounded-l-xl border border-slate-800 bg-slate-900/70 px-3 py-2 font-semibold text-slate-50">
+                  Tier
+                </th>
+                <th className="border border-slate-800 bg-slate-900/70 px-3 py-2 font-semibold text-slate-50">
+                  PVE highlights
+                </th>
+                <th className="border border-slate-800 bg-slate-900/70 px-3 py-2 font-semibold text-slate-50">
+                  PVP highlights
+                </th>
+                <th className="rounded-r-xl border border-slate-800 bg-slate-900/70 px-3 py-2 font-semibold text-slate-50">
+                  Notes
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {quickTierRows.map((row) => (
+                <tr key={row.tier}>
+                  <td className="rounded-l-xl border border-slate-800 bg-slate-950/80 px-3 py-2 font-semibold text-emerald-300">
+                    {row.tier}
+                  </td>
+                  <td className="border border-slate-800 bg-slate-950/80 px-3 py-2">
+                    {row.pve}
+                  </td>
+                  <td className="border border-slate-800 bg-slate-950/80 px-3 py-2">
+                    {row.pvp}
+                  </td>
+                  <td className="rounded-r-xl border border-slate-800 bg-slate-950/80 px-3 py-2 text-slate-300">
+                    {row.notes}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs leading-relaxed text-slate-400 sm:text-sm">
+          These rankings reflect early global launch conditions and Traditional
+          Chinese community consensus. Exact positions will shift with patches,
+          but the{" "}
+          <span className="font-semibold">
+            relative comfort and flexibility of each tier
+          </span>{" "}
+          tends to stay recognizable over time.
+        </p>
+      </section>
+
+      <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+          Best Where Winds Meet builds and class-style picks right now.
+        </h2>
+        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+          In practice, most players do not think in pure weapon names—they think
+          in “classes” or build fantasies. The setups below translate S and A
+          tier tools into concrete builds you can aim for, with links to deeper
+          guides where available.
+        </p>
+        <div className="grid gap-4 md:grid-cols-2">
+          <article className="space-y-2 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 text-sm shadow-sm shadow-slate-950/60">
+            <h3 className="text-sm font-semibold text-slate-50">
+             裂石·威 – Mo Blade frontline bruiser
+            </h3>
+            <p className="text-xs uppercase tracking-wide text-emerald-300">
+              S tier · PVE tank / bruiser
+            </p>
+            <p className="text-xs leading-relaxed text-slate-200">
+              Combines Mo Blade&apos;s heavy hits with strong shields and
+              survivability, often paired with supportive arts or umbrella tools
+              for constant uptime. Ideal if you want to anchor groups, face
+              bosses head-on, and still deal meaningful damage.
+            </p>
+            <p className="text-[11px] text-slate-300">
+              Start with the{" "}
+              <Link
+                href="/guides/weapons/mo-blade"
+                className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+              >
+                Mo Blade weapon guide
+              </Link>{" "}
+              and the heavy builds section on the{" "}
+              <Link
+                href="/guides/builds"
+                className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+              >
+                builds page
+              </Link>
+              .
+            </p>
+          </article>
+
+          <article className="space-y-2 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 text-sm shadow-sm shadow-slate-950/60">
+            <h3 className="text-sm font-semibold text-slate-50">
+             鳴金·影 / 鳴金·虹 – Sword + Spear bleed routes
+            </h3>
+            <p className="text-xs uppercase tracking-wide text-emerald-300">
+              S–A tier · PVE bleed DPS
+            </p>
+            <p className="text-xs leading-relaxed text-slate-200">
+              These builds use spear skills to stack bleed and other debuffs,
+              then swap to sword to detonate them. Simpler Nameless Sword +
+              Nameless Spear routes work great for beginners; advanced Nine
+              Swords Nine Spears variants push damage much higher at the cost of
+              APM.
+            </p>
+            <p className="text-[11px] text-slate-300">
+              See the{" "}
+              <Link
+                href="/guides/weapons/spear"
+                className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+              >
+                spear overview
+              </Link>{" "}
+              and related hybrid notes in the general{" "}
+              <Link
+                href="/guides/builds"
+                className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+              >
+                builds guide
+              </Link>
+              .
+            </p>
+          </article>
+
+          <article className="space-y-2 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 text-sm shadow-sm shadow-slate-950/60">
+            <h3 className="text-sm font-semibold text-slate-50">
+             牽絲·霖 – Umbrella / Fan pure healer
+            </h3>
+            <p className="text-xs uppercase tracking-wide text-emerald-300">
+              A tier · PVE support / healer
+            </p>
+            <p className="text-xs leading-relaxed text-slate-200">
+              Built around medicine-style umbrella arts and wide-area healing
+              tools, this “doctor” archetype trades personal damage for
+              incredible party stability. Traditional Chinese guides highlight
+              it as one of the safest ways to clear hard group content.
+            </p>
+            <p className="text-[11px] text-slate-300">
+              Learn the feel in the{" "}
+              <Link
+                href="/guides/weapons/umbrella"
+                className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+              >
+                umbrella weapon guide
+              </Link>{" "}
+              and pair it with support-focused tips from{" "}
+              <Link
+                href="/guides/builds"
+                className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+              >
+                builds
+              </Link>
+              .
+            </p>
+          </article>
+
+          <article className="space-y-2 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 text-sm shadow-sm shadow-slate-950/60">
+            <h3 className="text-sm font-semibold text-slate-50">
+             破竹·風 – Dual Blades + Rope Dart hunter
+            </h3>
+            <p className="text-xs uppercase tracking-wide text-emerald-300">
+              S–A tier · PVP / high-skill assassin
+            </p>
+            <p className="text-xs leading-relaxed text-slate-200">
+              Rope Dart drags targets out of position, then Dual Blades dive in
+              to finish the job. It is mechanically demanding but extremely
+              satisfying if you enjoy reads, feints, and turning enemy mistakes
+              into instant deletes.
+            </p>
+            <p className="text-[11px] text-slate-300">
+              Start by getting comfortable with{" "}
+              <Link
+                href="/guides/weapons/dual-blades"
+                className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+              >
+                Dual Blades
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/guides/weapons/rope-dart"
+                className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+              >
+                Rope Dart
+              </Link>
+              , then consult the PVP tier list for matchup nuances.
+            </p>
+          </article>
         </div>
       </section>
 

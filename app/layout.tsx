@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "./analytics";
@@ -23,6 +24,9 @@ export const metadata: Metadata = {
   },
   description:
     "Where Winds Meet guides hub with tier lists, builds, codes, and news to help players master the open world wuxia RPG across platforms.",
+  other: {
+    "google-adsense-account": "ca-pub-1548791648803369",
+  },
 };
 
 export default function RootLayout({
@@ -33,16 +37,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-950 text-slate-50`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased text-slate-50 bg-slate-950`}
       >
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1548791648803369"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <Analytics />
         <BackgroundWrapper />
 
         <div className="relative min-h-screen z-10">
-          <header className="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur">
+          <header className="border-b border-slate-800/80 bg-slate-950/85 backdrop-blur">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
               <Link href="/" className="flex items-center gap-2">
-                <div className="h-8 w-8 rounded-full bg-gradient-to-br from-emerald-400 to-cyan-500 shadow-lg shadow-emerald-500/40" />
+                <div className="h-8 w-8 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 shadow-lg shadow-emerald-500/40" />
                 <div className="flex flex-col leading-tight">
                   <span className="text-sm font-semibold tracking-wide text-slate-50">
                     Where Winds Meet
@@ -109,7 +119,7 @@ export default function RootLayout({
             {children}
           </main>
 
-          <footer className="border-t border-slate-800/80 bg-slate-950/80 py-6 text-xs text-slate-400">
+          <footer className="border-t border-slate-800/80 bg-slate-950/90 py-6 text-xs text-slate-400">
             <div className="mx-auto flex max-w-7xl flex-col justify-between gap-3 px-4 sm:flex-row sm:px-6 lg:px-8">
               <p>
                 Unofficial Where Winds Meet fan hub. All trademarks are the

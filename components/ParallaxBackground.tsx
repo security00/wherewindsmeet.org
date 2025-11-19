@@ -35,7 +35,7 @@ export default function ParallaxBackground({
         }}
       />
 
-      {/* 渐变遮罩层 - 减弱遮盖，只在边缘添加渐变 */}
+      {/* 渐变遮罩层 - 使用中性墨蓝托底，保留原图色彩 */}
       <div
         className="absolute inset-0 bg-gradient-to-r from-slate-950/40 via-transparent to-slate-950/20"
         style={{ pointerEvents: 'none' }}

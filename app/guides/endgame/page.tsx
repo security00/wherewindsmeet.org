@@ -242,6 +242,103 @@ export default function EndgamePage() {
         </div>
       </section>
 
+      <section className="grid gap-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+        <div className="space-y-4">
+          <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+            Exploration, mystic arts, and Jianghu life in the endgame.
+          </h2>
+          <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+            Long-form Traditional Chinese guides treat open-world exploration as
+            a core part of Where Winds Meet endgame, not an optional side dish.
+            Qinghe and later regions hide completion ranks, serendipity chains,
+            and movement rewards that fundamentally change how it feels to move
+            through Jianghu. Once your basic build is online, it is worth
+            dedicating some endgame sessions purely to exploration and mystic
+            arts.
+          </p>
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-300">
+            Qinghe exploration and lightness skills.
+          </h3>
+          <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+            Traditional Chinese route maps recommend pushing Qinghe&apos;s
+            exploration rank to around <span className="font-semibold">5–6</span>{" "}
+            early in endgame. Those thresholds unlock major lightness skills
+            such as Jade Fan Roaming the Mountains (玉扇遊山) and Riding the
+            Wind (馮虛禦風), which make every later region dramatically easier to
+            traverse. Many shrine and ruin puzzles in those guides are written
+            assuming you already have movement tools like Lingyun Step (淩雲踏)
+            and these big dashes unlocked.
+          </p>
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-300">
+            Must-have mystic arts.
+          </h3>
+          <ul className="list-disc space-y-2 pl-5 text-sm text-slate-200">
+            <li>
+              <span className="font-semibold">Golden Jade Hand (金玉手):</span>{" "}
+              a ranged &quot;pressure point&quot; strike used constantly in
+              both combat and puzzle solving.
+            </li>
+            <li>
+              <span className="font-semibold">
+                Plucking Stars, Catching the Moon (攝星拿月):
+              </span>{" "}
+              telekinetically steals items or weapons and even lets you swipe a
+              powerful shield art from a monk in Kaifeng&apos;s Xiangguo
+              Temple.
+            </li>
+            <li>
+              <span className="font-semibold">Hidden Step (杳無形) &amp; Worldly Disguise (紅塵障目):</span>{" "}
+              stealth and disguise tools repeatedly called out in side-quest
+              walkthroughs as requirements for infiltration and &quot;stealing
+              teacher&quot; style missions.
+            </li>
+            <li>
+              <span className="font-semibold">Formless Golden Body (無相金身):</span>{" "}
+              a defensive mystic art with strong damage reduction and stagger
+              resistance, prized in high-pressure fights.
+            </li>
+          </ul>
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-300">
+            Leisure games and music between grinds.
+          </h3>
+          <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+            The same Traditional Chinese guides devote many pages to instruments
+            and mini-games: collecting Guqin, Pipa, and Erhu scores across
+            scenic spots; mastering Pitch Pot, Leaf Card Game, Shefu riddles,
+            and Sumo duels; even placing hand-crafted signposts along routes you
+            love. These activities feed Co-Play points and achievements, but
+            more importantly they give you a way to{" "}
+            <span className="font-semibold">
+              rest your hands without leaving Jianghu
+            </span>
+            .
+          </p>
+          <p className="text-xs leading-relaxed text-slate-400 sm:text-sm">
+            If you feel burnt out chasing numbers, copy the pattern from those
+            guides: spend some endgame nights finishing a shrine chain, hunting
+            down a new lightness skill, or just playing music on a rooftop.
+            Your account will still grow through exploration ranks and mystic
+            arts, but your relationship with the world will grow even more.
+          </p>
+        </div>
+        <div className="space-y-3">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
+            <Image
+              src="/background/bg3.png"
+              alt="Where Winds Meet character playing music in a scenic field"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1280px) 28rem, (min-width: 768px) 45vw, 100vw"
+            />
+          </div>
+          <p className="text-xs leading-relaxed text-slate-400 sm:text-sm">
+            Image inspired by Traditional Chinese leisure guides that map out
+            music score locations, mini-games, and quiet vantage points for
+            screenshots and roleplay.
+          </p>
+        </div>
+      </section>
+
       <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
           Planning your Where Winds Meet endgame journey.
