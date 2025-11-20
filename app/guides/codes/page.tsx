@@ -66,7 +66,7 @@ const liveCodes = [
 
 export default function CodesPage() {
   return (
-    <article className="space-y-10">
+    <article className="space-y-10 bg-ink-wash min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-8 shadow-2xl shadow-black/50">
         <div className="pointer-events-none absolute inset-0">
@@ -107,25 +107,25 @@ export default function CodesPage() {
           {liveCodes.map((entry) => (
             <div
               key={entry.code}
-              className="card-wuxia group relative flex flex-col justify-between rounded-2xl p-6 transition-all hover:-translate-y-1 hover:border-emerald-500/30"
+              className="card-jade-token group relative flex flex-col justify-between rounded-2xl p-6 transition-all"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950/50 px-2 py-1 rounded border border-emerald-900">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-100 bg-emerald-900/60 px-2 py-1 rounded border border-emerald-700/50 shadow-sm shadow-emerald-900/50">
                     Active
                   </span>
-                  <span className="text-lg">🎁</span>
+                  <span className="text-lg filter drop-shadow-md">🎁</span>
                 </div>
                 <div>
-                  <code className="block text-xl font-mono font-bold text-slate-100 bg-black/30 p-2 rounded text-center border border-slate-800 group-hover:border-emerald-500/50 transition-colors select-all">
+                  <code className="block text-xl font-mono font-bold text-emerald-50 bg-black/40 p-2 rounded text-center border border-emerald-900/50 group-hover:border-emerald-500/50 transition-colors select-all shadow-inner">
                     {entry.code}
                   </code>
-                  <p className="mt-2 text-sm font-medium text-ink-gold">
+                  <p className="mt-2 text-sm font-medium text-emerald-200/80">
                     {entry.label}
                   </p>
                 </div>
               </div>
-              <p className="mt-4 text-xs leading-relaxed text-slate-400 border-t border-slate-800/50 pt-3">
+              <p className="mt-4 text-xs leading-relaxed text-emerald-100/60 border-t border-emerald-900/30 pt-3">
                 {entry.notes}
               </p>
             </div>
@@ -143,19 +143,19 @@ export default function CodesPage() {
         </h2>
         <div className="grid gap-8 md:grid-cols-3">
           <div className="space-y-3">
-            <h3 className="text-lg font-semibold text-slate-100">📢 Official Events</h3>
+            <h3 className="text-lg font-semibold text-ink-gold">📢 Official Events</h3>
             <p className="text-sm text-slate-300 leading-relaxed">
               Teased in trailers and live streams. Usually time-limited to the event window (e.g., Launch Week).
             </p>
           </div>
           <div className="space-y-3">
-            <h3 className="text-lg font-semibold text-slate-100">🔧 Compensation</h3>
+            <h3 className="text-lg font-semibold text-ink-gold">🔧 Compensation</h3>
             <p className="text-sm text-slate-300 leading-relaxed">
               Issued after maintenance or bugs. These have generous expiry windows but are one-time use.
             </p>
           </div>
           <div className="space-y-3">
-            <h3 className="text-lg font-semibold text-slate-100">🤝 Creator Partners</h3>
+            <h3 className="text-lg font-semibold text-ink-gold">🤝 Creator Partners</h3>
             <p className="text-sm text-slate-300 leading-relaxed">
               Unique codes shared by streamers. Often grant exclusive cosmetics or fun social items.
             </p>
@@ -172,15 +172,15 @@ export default function CodesPage() {
           {exampleCodes.map((code) => (
             <div
               key={code.label}
-              className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5 transition-colors hover:bg-slate-900/60"
+              className="card-inactive rounded-2xl p-5"
             >
-              <h3 className="text-sm font-bold text-slate-100 mb-1">
+              <h3 className="text-sm font-bold text-slate-300 mb-1">
                 {code.label}
               </h3>
-              <p className="text-[10px] uppercase tracking-wide text-emerald-400 mb-2">
+              <p className="text-[10px] uppercase tracking-wide text-slate-500 mb-2">
                 {code.status}
               </p>
-              <p className="text-xs leading-relaxed text-slate-300">
+              <p className="text-xs leading-relaxed text-slate-400">
                 {code.notes}
               </p>
             </div>
@@ -195,16 +195,16 @@ export default function CodesPage() {
         </h2>
         <div className="grid gap-8 md:grid-cols-2">
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-ink-gold">PC & Mobile</h3>
-            <ol className="list-decimal list-inside space-y-2 text-sm text-slate-300 marker:text-emerald-500">
-              <li>Open the <span className="text-slate-100 font-medium">Paimon Menu</span> (Esc).</li>
-              <li>Navigate to <span className="text-slate-100 font-medium">Settings {'>'} Account</span>.</li>
-              <li>Select <span className="text-slate-100 font-medium">Redeem Code</span>.</li>
-              <li>Paste the code and check your in-game mail.</li>
+            <h3 className="text-lg font-semibold text-ink-spirit">PC & Mobile</h3>
+            <ol className="space-y-3 text-sm text-slate-300">
+              <li className="step-manual">Open the <span className="text-slate-100 font-medium">Paimon Menu</span> (Esc).</li>
+              <li className="step-manual">Navigate to <span className="text-slate-100 font-medium">Settings {'>'} Account</span>.</li>
+              <li className="step-manual">Select <span className="text-slate-100 font-medium">Redeem Code</span>.</li>
+              <li className="step-manual">Paste the code and check your in-game mail.</li>
             </ol>
           </div>
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-ink-gold">PlayStation 5</h3>
+            <h3 className="text-lg font-semibold text-ink-spirit">PlayStation 5</h3>
             <p className="text-sm text-slate-300 leading-relaxed">
               Most codes can be redeemed in-game via the same menu. However, some platform-exclusive packs must be claimed via the <span className="text-slate-100 font-medium">PlayStation Store</span> interface.
             </p>

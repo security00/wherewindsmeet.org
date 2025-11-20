@@ -11,24 +11,8 @@
   --mist-gray: #1f2937;
   --glow-cyan: #22c55e;
   --glow-purple: #38bdf8;
-  --emerald: #16a34a;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
-}
-
-/* 增强卡片悬浮效果（墨绿作为光晕点缀） */
-.guide-card,
 a[class*="rounded-3xl"][class*="border"] {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -60,11 +44,6 @@ a[class*="rounded-3xl"][class*="border"]:hover {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #475569;
-}
-
-/* 平滑滚动 */
-html {
-  scroll-behavior: smooth;
 }
 
 /* 性能优化 */
@@ -105,101 +84,86 @@ html {
     transform: translateX(0) translateY(0);
   }
 
-  50% {
-    transform: translateX(20px) translateY(-10px);
-  }
-
   100% {
-    transform: translateX(0) translateY(0);
+    transform: translateX(-5%) translateY(-5%);
   }
 }
 
-/* 应用动画 */
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-.animate-drift {
-  animation: drift 8s ease-in-out infinite;
-}
-
-/* --- Wuxia Theme Utilities --- */
-
-/* Ink Brush Text Effect */
-.text-ink {
-  background: linear-gradient(to bottom right, #f8fafc 30%, #94a3b8 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.text-ink-gold {
-  background: linear-gradient(to bottom right, #fcd34d 30%, #d97706 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
-}
-
-.text-ink-red {
-  background: linear-gradient(to bottom right, #f87171 30%, #991b1b 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 2px 10px rgba(220, 38, 38, 0.3);
-}
-
-/* Brush Stroke Border Simulation */
-.border-brush {
+.card-tablet {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 2px 4px -1px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
   position: relative;
+  overflow: hidden;
 }
 
-.border-brush::after {
+.card-tablet::before {
   content: "";
   position: absolute;
-  bottom: -2px;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--emerald), transparent);
-  opacity: 0.6;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.3), transparent);
 }
 
-/* Card Variants */
-.card-wuxia {
-  background: linear-gradient(145deg, rgba(2, 6, 23, 0.9), rgba(15, 23, 42, 0.8));
-  border: 1px solid rgba(30, 41, 59, 0.6);
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(12px);
+.card-tablet:hover {
+  border-color: rgba(148, 163, 184, 0.4);
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.4),
+    0 4px 6px -2px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-.card-tier-s {
-  border-color: rgba(245, 158, 11, 0.3);
+/* Active Jade Token Card */
+.card-jade-token {
+  background: linear-gradient(145deg, rgba(6, 78, 59, 0.2), rgba(2, 6, 23, 0.9));
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.1);
+}
+
+.card-jade-token:hover {
+  border-color: rgba(52, 211, 153, 0.5);
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Expired/Inactive Card */
+.card-inactive {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(30, 41, 59, 0.3);
+  opacity: 0.7;
+  filter: grayscale(0.8);
+  transition: all 0.3s ease;
+}
+
+.card-inactive:hover {
+  opacity: 0.9;
+  filter: grayscale(0.4);
+}
+
+/* Martial Arts Manual Step */
+.step-manual {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 2px solid rgba(51, 65, 85, 0.3);
+}
+
+.step-manual::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 0.5rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #475569;
+  border: 2px solid #0f172a;
+  transition: all 0.3s ease;
+}
+
+.step-manual:hover::before {
+  background: #f59e0b;
   /* Gold */
-  background: linear-gradient(145deg, rgba(2, 6, 23, 0.95), rgba(69, 26, 3, 0.2));
-  box-shadow: 0 10px 30px -5px rgba(245, 158, 11, 0.15);
-}
-
-.card-tier-a {
-  border-color: rgba(220, 38, 38, 0.3);
-  /* Red */
-  background: linear-gradient(145deg, rgba(2, 6, 23, 0.95), rgba(69, 10, 10, 0.2));
-  box-shadow: 0 10px 30px -5px rgba(220, 38, 38, 0.15);
-}
-
-.card-tier-b {
-  border-color: rgba(16, 185, 129, 0.3);
-  /* Emerald */
-  background: linear-gradient(145deg, rgba(2, 6, 23, 0.95), rgba(6, 78, 59, 0.2));
-  box-shadow: 0 10px 30px -5px rgba(16, 185, 129, 0.15);
-}
-
-.card-tier-c {
-  border-color: rgba(148, 163, 184, 0.2);
-  /* Slate */
-  background: linear-gradient(145deg, rgba(2, 6, 23, 0.95), rgba(30, 41, 59, 0.2));
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.5);
 }

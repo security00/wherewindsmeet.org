@@ -36,71 +36,80 @@ export default function NewsPage() {
   );
 
   return (
-    <article className="space-y-10">
-      <section className="relative overflow-hidden rounded-3xl border border-slate-700/70 bg-slate-950/40 p-6 shadow-lg shadow-slate-950/40 sm:p-8 backdrop-blur-sm">
+    <article className="space-y-12 bg-ink-wash min-h-screen pb-20">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden rounded-3xl border border-slate-800/60 bg-slate-950/40 p-8 shadow-2xl backdrop-blur-md bg-texture-noise">
         <div className="pointer-events-none absolute inset-0">
           <Image
             src="/background/bg6.png"
             alt="Where Winds Meet news background art"
             fill
-            className="object-cover opacity-55"
+            className="object-cover opacity-40"
             priority={false}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/40 to-slate-950/5" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/60 to-slate-950/20" />
         </div>
 
-        <div className="relative space-y-4">
-          <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Latest Where Winds Meet news and official articles.
+        {/* Vertical Text Accent */}
+        <div className="absolute right-8 top-8 hidden text-vertical text-3xl font-bold text-slate-50/10 lg:block font-serif select-none">
+          江湖风云
+        </div>
+
+        <div className="relative space-y-6 z-10 max-w-3xl">
+          <h1 className="text-balance text-4xl font-bold tracking-tight text-slate-50 sm:text-5xl font-serif">
+            Latest <span className="text-ink-gold">Where Winds Meet</span> news and official articles.
           </h1>
-        <p className="mt-2 text-sm leading-relaxed text-slate-200 sm:text-base">
-          These entries summarize recent official Where Winds Meet
-          announcements, launch guides, system instructions, and beta notices.
-          Each card links back to the original news source so you can
-          double-check details and read the full context when needed.
-        </p>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          When you simply want to skim{" "}
-          <span className="font-semibold">Where Winds Meet patch notes</span>{" "}
-          without reading every bullet, start here.
-        </p>
-          <div className="mt-4 space-y-3">
+          <div className="space-y-4 text-slate-200/90 font-sans text-lg leading-relaxed">
+            <p>
+              These entries summarize recent official Where Winds Meet
+              announcements, launch guides, system instructions, and beta notices.
+              Each card links back to the original news source so you can
+              double-check details and read the full context when needed.
+            </p>
+            <p>
+              When you simply want to skim{" "}
+              <span className="font-semibold text-emerald-400">Where Winds Meet patch notes</span>{" "}
+              without reading every bullet, start here.
+            </p>
+          </div>
+
+          <div className="mt-8 space-y-4">
             {sortedNews.map((item) => (
               <div
                 key={item.id}
-                className="flex flex-col gap-2 rounded-2xl border border-slate-700/70 bg-slate-950/75 p-4 text-sm shadow-sm shadow-slate-950/40 sm:flex-row sm:items-start sm:justify-between backdrop-blur-sm"
+                className="card-tablet group flex flex-col gap-4 rounded-xl p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-900/10 sm:flex-row sm:items-start sm:justify-between"
               >
-                <div className="space-y-1">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <h2 className="text-sm font-semibold text-slate-50">
+                <div className="space-y-2">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <h2 className="text-lg font-bold text-slate-50 group-hover:text-ink-jade transition-colors font-serif">
                       {item.title}
                     </h2>
-                    <span className="rounded-full bg-slate-900/80 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-emerald-300">
+                    <span className="rounded-full border border-emerald-500/30 bg-emerald-950/30 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.1)]">
                       {item.type}
                     </span>
                   </div>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-xs font-medium text-slate-500 font-mono">
                     {item.date}
                     {item.tags && item.tags.length > 0 && (
                       <>
-                        {" "}
-                        · {item.tags.join(" · ")}
+                        <span className="mx-2 text-slate-700">|</span>
+                        {item.tags.join(" · ")}
                       </>
                     )}
                   </p>
-                  <p className="text-xs leading-relaxed text-slate-200 sm:text-[13px]">
+                  <p className="text-sm leading-relaxed text-slate-300/90 font-sans max-w-2xl">
                     {item.summary}
                   </p>
                 </div>
                 {item.officialUrl && (
-                  <div className="mt-2 flex shrink-0 justify-end sm:mt-0 sm:pl-4">
+                  <div className="mt-2 flex shrink-0 sm:mt-0 sm:pl-4 self-start">
                     <Link
                       href={item.officialUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center justify-center rounded-full bg-slate-900/80 px-3 py-1 text-xs font-medium text-emerald-300 ring-1 ring-emerald-400/60 hover:bg-emerald-500/10"
+                      className="btn-seal text-[10px] py-1 px-3"
                     >
-                      Read on official site
+                      Read Official
                     </Link>
                   </div>
                 )}
@@ -110,174 +119,130 @@ export default function NewsPage() {
         </div>
       </section>
 
-      <section className="rounded-3xl border border-slate-700/70 bg-slate-950/55 p-6 shadow-lg shadow-slate-950/40 sm:p-8 backdrop-blur-sm">
-        <h2 className="text-balance text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl">
+      <section className="rounded-3xl border border-slate-800/60 bg-slate-950/40 p-8 shadow-lg backdrop-blur-sm bg-texture-noise">
+        <h2 className="text-balance text-2xl font-bold tracking-tight text-slate-50 sm:text-3xl font-serif border-brush inline-block pb-2 mb-4">
           How this page fits into the rest of the hub.
         </h2>
-        <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-          This section gathers the most important Where Winds Meet news in one
-          calm, readable stream. Instead of racing through raw patch notes or
-          scrolling endless social feeds, you can scan concise summaries that
-          explain what changed, why it matters, and which players are affected
-          most. Whether a surprise balance pass shifts the tier list, a new
-          Jianghu region opens, or a collaboration event drops fresh rewards,
-          you will find the key details collected here.
-        </p>
-        <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-          The goal is not to cover every minor line item, but to focus on the
-          Where Winds Meet news that shapes your daily experience. If a patch
-          tweaks camera options, controller aim assist, or UI readability, that
-          is highlighted because it changes how comfortable the game feels. If a
-          seasonal story arc introduces a new activity that will vanish in a few
-          weeks, that appears prominently with plain language scheduling
-          reminders. You should be able to glance at this page and know
-          instantly whether tonight&apos;s Where Winds Meet session will feel
-          different from last week.
-        </p>
-        <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-          Each batch of Where Winds Meet news is also woven into the rest of the
-          site. When combat changes alter the effectiveness of certain weapons,
-          those insights are reflected in updated builds and the Where Winds
-          Meet tier list. When events offer codes or long-term account
-          advantages, they are flagged and cross-linked to the rewards guide.
-          This integrated approach helps you see the full picture instead of
-          treating news, guides, and tools as separate islands.
-        </p>
+        <div className="space-y-4 text-slate-300 font-sans leading-relaxed">
+          <p>
+            This section gathers the most important Where Winds Meet news in one
+            calm, readable stream. Instead of racing through raw patch notes or
+            scrolling endless social feeds, you can scan concise summaries that
+            explain what changed, why it matters, and which players are affected
+            most. Whether a surprise balance pass shifts the tier list, a new
+            Jianghu region opens, or a collaboration event drops fresh rewards,
+            you will find the key details collected here.
+          </p>
+          <p>
+            The goal is not to cover every minor line item, but to focus on the
+            Where Winds Meet news that shapes your daily experience. If a patch
+            tweaks camera options, controller aim assist, or UI readability, that
+            is highlighted because it changes how comfortable the game feels. If a
+            seasonal story arc introduces a new activity that will vanish in a few
+            weeks, that appears prominently with plain language scheduling
+            reminders. You should be able to glance at this page and know
+            instantly whether tonight&apos;s Where Winds Meet session will feel
+            different from last week.
+          </p>
+          <p>
+            Each batch of Where Winds Meet news is also woven into the rest of the
+            site. When combat changes alter the effectiveness of certain weapons,
+            those insights are reflected in updated builds and the Where Winds
+            Meet tier list. When events offer codes or long-term account
+            advantages, they are flagged and cross-linked to the rewards guide.
+            This integrated approach helps you see the full picture instead of
+            treating news, guides, and tools as separate islands.
+          </p>
+        </div>
       </section>
 
-      <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
-        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          The three pillars of Where Winds Meet news coverage.
+      <section className="space-y-8 rounded-3xl border border-slate-800 bg-slate-950/60 p-8 shadow-xl">
+        <h2 className="text-2xl font-bold tracking-tight text-slate-50 sm:text-3xl font-serif text-center">
+          The three pillars of <span className="text-ink-spirit">Where Winds Meet</span> news coverage.
         </h2>
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-3">
           {newsBlocks.map((block) => (
             <div
               key={block.title}
-              className="rounded-3xl border border-slate-800 bg-slate-950/80 p-4 text-sm shadow-sm shadow-slate-950/60"
+              className="card-wuxia rounded-2xl p-6 transition-transform hover:-translate-y-1"
             >
-              <h3 className="text-sm font-semibold text-slate-50">
+              <h3 className="text-lg font-bold text-ink-gold font-serif mb-3">
                 {block.title}
               </h3>
-              <p className="mt-2 text-xs leading-relaxed text-slate-200">
+              <p className="text-sm leading-relaxed text-slate-300 font-sans">
                 {block.summary}
               </p>
             </div>
           ))}
         </div>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+        <p className="text-center text-slate-400 font-sans max-w-2xl mx-auto">
           By sorting updates into these three pillars, the site makes it easier
           for you to focus on the Where Winds Meet news that actually affects
-          your playstyle. Competitive players might care primarily about balance
-          tweaks and PVP adjustments. Explorers may focus on seasonal festivals,
-          world events, and new storytelling hooks. Performance-minded players
-          can jump straight to technical improvements that make Where Winds Meet
-          feel smoother on their specific hardware.
+          your playstyle.
         </p>
       </section>
 
-      <section className="space-y-5 rounded-3xl border border-slate-700/70 bg-slate-950/55 p-6 shadow-lg shadow-slate-950/40 backdrop-blur-sm">
-        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          Making sense of Where Winds Meet patch notes.
-        </h2>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Official patch notes can be long and dense, especially when a major
-          update touches multiple systems at once. Here, each wave of Where
-          Winds Meet news is distilled into a handful of practical takeaways.
-          You will see clear labels such as &quot;buff&quot;, &quot;nerf&quot;,
-          and &quot;rework&quot;, along with a short explanation of what the
-          change feels like in play. If a favorite build becomes slightly more
-          demanding, or a struggling archetype finally receives love, that
-          context appears up front instead of being buried in a paragraph of
-          numbers.
-        </p>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          When Where Winds Meet patch notes introduce entirely new features,
-          such as a fresh zone, activity type, or social system, this page
-          links to deeper guides created specifically for those mechanics. That
-          way, you can decide whether to dive into a detailed article or simply
-          note the headline and continue with your current goals. The aim is to
-          keep you informed without demanding that you memorize every bullet
-          point in every Where Winds Meet news post.
-        </p>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Where relevant, patch explanations also describe how long changes are
-          likely to last. Some Where Winds Meet updates function as short-term
-          experiments that may be reversed quickly if feedback is poor. Others
-          signal a new design direction. Highlighting that distinction helps you
-          decide whether to restructure your long term plans or simply adapt for
-          a single event or season.
-        </p>
-      </section>
+      <div className="grid gap-8 md:grid-cols-2">
+        <section className="space-y-5 rounded-3xl border border-slate-800/60 bg-slate-950/40 p-8 shadow-lg backdrop-blur-sm bg-texture-noise">
+          <h2 className="text-xl font-bold tracking-tight text-slate-50 sm:text-2xl font-serif border-brush inline-block pb-2">
+            Making sense of patch notes.
+          </h2>
+          <div className="space-y-4 text-sm leading-relaxed text-slate-300 font-sans">
+            <p>
+              Official patch notes can be long and dense, especially when a major
+              update touches multiple systems at once. Here, each wave of Where
+              Winds Meet news is distilled into a handful of practical takeaways.
+              You will see clear labels such as &quot;buff&quot;, &quot;nerf&quot;,
+              and &quot;rework&quot;, along with a short explanation of what the
+              change feels like in play.
+            </p>
+            <p>
+              When Where Winds Meet patch notes introduce entirely new features,
+              such as a fresh zone, activity type, or social system, this page
+              links to deeper guides created specifically for those mechanics.
+            </p>
+          </div>
+        </section>
 
-      <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
-        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          Where Winds Meet news that celebrates community stories.
-        </h2>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Not every important update comes from official channels. Some of the
-          most delightful Where Winds Meet news emerges from the community
-          itself: creative photo mode showcases, clever speedrun routes, funny
-          co-op mishaps, or heartfelt duel rivalries. This page occasionally
-          highlights those stories when they help other players see new
-          possibilities in Jianghu or offer a fresh perspective on how flexible
-          the game&apos;s systems can be.
-        </p>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          These highlights are always framed with respect for player privacy and
-          attribution. When a community discovery leads to a new Where Winds
-          Meet build, route, or photo mode trick, you will see a clear link to
-          the original creator whenever possible. The goal is to celebrate the
-          creativity that keeps Where Winds Meet feeling alive between official
-          content drops, not to claim credit for work done by dedicated fans.
-        </p>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          For players who mostly enjoy reading, this blend of official Where
-          Winds Meet news and curated community moments can make the world feel
-          more vibrant. Even on nights when you cannot log in, skimming this
-          page keeps you connected to the broader story unfolding across
-          servers, livestreams, and social threads.
-        </p>
-      </section>
+        <section className="space-y-5 rounded-3xl border border-slate-800/60 bg-slate-950/40 p-8 shadow-lg backdrop-blur-sm bg-texture-noise">
+          <h2 className="text-xl font-bold tracking-tight text-slate-50 sm:text-2xl font-serif border-brush inline-block pb-2">
+            Community stories & highlights.
+          </h2>
+          <div className="space-y-4 text-sm leading-relaxed text-slate-300 font-sans">
+            <p>
+              Not every important update comes from official channels. Some of the
+              most delightful Where Winds Meet news emerges from the community
+              itself: creative photo mode showcases, clever speedrun routes, funny
+              co-op mishaps, or heartfelt duel rivalries.
+            </p>
+            <p>
+              These highlights are always framed with respect for player privacy and
+              attribution. The goal is to celebrate the creativity that keeps Where
+              Winds Meet feeling alive between official content drops.
+            </p>
+          </div>
+        </section>
+      </div>
 
-      <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
-        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          Staying informed without burning out on Where Winds Meet news.
+      <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-8 shadow-lg text-center">
+        <h2 className="text-2xl font-bold tracking-tight text-slate-50 sm:text-3xl font-serif">
+          Staying informed without burning out.
         </h2>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+        <p className="text-slate-300 font-sans max-w-3xl mx-auto leading-relaxed">
           Live service games thrive on constant updates, but that same cadence
           can be exhausting. Instead of encouraging you to track every single
           announcement, this site suggests a calmer rhythm. Check the Where
           Winds Meet news page when a patch lands, before a big event, or when
-          you are returning after a break. Skim the summaries, note which areas
-          touch your favorite activities, and then step back into Jianghu with a
-          clear idea of what deserves attention right now.
+          you are returning after a break.
         </p>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          If you ever feel overwhelmed by constant headlines, remember that the
-          core of Where Winds Meet remains a beautifully crafted open world
-          where you can lose yourself in exploration, duels, and quiet moments
-          between storms. Let this page filter the noise, keeping only the most
-          meaningful Where Winds Meet news front and center so your time and
-          energy go toward experiences that truly matter to you.
-        </p>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Combined with the guides, builds, codes, and tier list sections, this
-          page completes a holistic view of the game. Whenever new Where Winds
-          Meet news arrives, you know exactly where to find it, how to interpret
-          it, and which follow-up articles will help you turn information into
-          confident action inside the game world.
-        </p>
-        <p className="text-xs text-slate-300">
-          When you are ready to act on what you have read here, head back to the{" "}
+        <div className="pt-4">
           <Link
             href="/guides"
-            className="text-emerald-300 hover:text-emerald-200"
+            className="btn-seal inline-flex text-sm"
           >
-            guides hub
-          </Link>{" "}
-          to update your plans, tweak your builds, or discover new ways to enjoy
-          Where Winds Meet.
-        </p>
+            Return to Guides Hub
+          </Link>
+        </div>
       </section>
     </article>
   );

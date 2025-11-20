@@ -45,7 +45,7 @@ const pvpTiers = [
 
 export default function PVPTierListPage() {
   return (
-    <article className="space-y-10">
+    <article className="space-y-10 bg-ink-wash min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-8 shadow-2xl shadow-black/50">
         <div className="pointer-events-none absolute inset-0">
@@ -87,20 +87,20 @@ export default function PVPTierListPage() {
           In PVE, bosses follow scripts. In PVP, opponents improvise. This tier list emphasizes <span className="text-ink-red font-medium">burst potential</span>, <span className="text-ink-red font-medium">mix-ups</span>, and <span className="text-ink-red font-medium">defensive utility</span>.
         </p>
         <div className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-xl border border-slate-800 bg-slate-950/40 p-5">
-            <h3 className="text-lg font-semibold text-slate-100 mb-2">Commitment Kills</h3>
+          <div className="card-tablet rounded-xl p-5">
+            <h3 className="text-lg font-semibold text-ink-gold mb-2">Commitment Kills</h3>
             <p className="text-sm text-slate-400">
               Long animations get punished. PVP favors weapons that can cancel animations or strike quickly.
             </p>
           </div>
-          <div className="rounded-xl border border-slate-800 bg-slate-950/40 p-5">
-            <h3 className="text-lg font-semibold text-slate-100 mb-2">Utility is King</h3>
+          <div className="card-tablet rounded-xl p-5">
+            <h3 className="text-lg font-semibold text-ink-gold mb-2">Utility is King</h3>
             <p className="text-sm text-slate-400">
               Gap closers, interrupts, and anti-heal tools are often more valuable than raw DPS numbers.
             </p>
           </div>
-          <div className="rounded-xl border border-slate-800 bg-slate-950/40 p-5">
-            <h3 className="text-lg font-semibold text-slate-100 mb-2">Matchups Matter</h3>
+          <div className="card-tablet rounded-xl p-5">
+            <h3 className="text-lg font-semibold text-ink-gold mb-2">Matchups Matter</h3>
             <p className="text-sm text-slate-400">
               Some weapons hard-counter others. Flexibility and side-decking skills are essential.
             </p>
@@ -144,19 +144,19 @@ export default function PVPTierListPage() {
           Weapon Archetypes
         </h2>
         <div className="space-y-4">
-          <div className="group rounded-xl border border-slate-800 bg-slate-950/40 p-5 transition-colors hover:border-red-500/30 hover:bg-slate-900/60">
+          <div className="group card-tablet rounded-xl p-5 transition-colors hover:border-red-500/30">
             <h3 className="text-lg font-semibold text-red-400 mb-2">Burst Assassins</h3>
             <p className="text-sm text-slate-300">
               Designed to delete opponents quickly. Excel at catching enemies out of position but vulnerable between cooldowns.
             </p>
           </div>
-          <div className="group rounded-xl border border-slate-800 bg-slate-950/40 p-5 transition-colors hover:border-emerald-500/30 hover:bg-slate-900/60">
+          <div className="group card-tablet rounded-xl p-5 transition-colors hover:border-emerald-500/30">
             <h3 className="text-lg font-semibold text-emerald-400 mb-2">Control Specialists</h3>
             <p className="text-sm text-slate-300">
               Dominate through spacing and denial. They win by making opponents uncomfortable and forcing mistakes.
             </p>
           </div>
-          <div className="group rounded-xl border border-slate-800 bg-slate-950/40 p-5 transition-colors hover:border-yellow-500/30 hover:bg-slate-900/60">
+          <div className="group card-tablet rounded-xl p-5 transition-colors hover:border-yellow-500/30">
             <h3 className="text-lg font-semibold text-yellow-400 mb-2">Balanced Duelists</h3>
             <p className="text-sm text-slate-300">
               Strong neutral game and reliable damage. They win through solid fundamentals rather than gimmicks.

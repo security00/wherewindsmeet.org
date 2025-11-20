@@ -89,11 +89,18 @@ const guideSections = [
     description:
       "Where Winds Meet boss guides for key bosses and named encounters with backstories and encounter tone notes to decide which legends of Jianghu to face first.",
   },
+  {
+    title: "Videos & Media",
+    slug: "/videos",
+    label: "Video Gallery",
+    description:
+      "Watch the latest trailers, gameplay showcases, and community highlights for Where Winds Meet.",
+  },
 ];
 
 export default function GuidesPage() {
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 bg-ink-wash min-h-screen">
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
         <div className="pointer-events-none absolute inset-0">
           <Image
@@ -108,7 +115,7 @@ export default function GuidesPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet guides that grow with your journey.
+            Where Winds Meet guides that <span className="text-ink-jade">grow with your journey</span>.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
             This page collects every major Where Winds Meet guide in one place
@@ -146,7 +153,7 @@ export default function GuidesPage() {
 
       <section className="grid gap-8 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1.3fr)]">
         <div className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
-          <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+          <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl border-brush inline-block pb-2">
             Recommended reading order for Where Winds Meet guides.
           </h2>
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
@@ -227,7 +234,7 @@ export default function GuidesPage() {
       </section>
 
       <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
-        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl border-brush inline-block pb-2">
           Explore the main Where Winds Meet guide pillars.
         </h2>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -235,15 +242,15 @@ export default function GuidesPage() {
             <Link
               key={section.slug}
               href={section.slug}
-              className="group flex flex-col justify-between rounded-3xl border border-slate-800 bg-slate-950/80 p-4 text-sm shadow-sm shadow-slate-950/60 transition hover:border-emerald-400/80 hover:shadow-emerald-500/30"
+              className="card-tablet group flex flex-col justify-between rounded-xl p-5 transition-all hover:-translate-y-1"
             >
               <div className="space-y-2">
-                <h3 className="text-sm font-semibold text-slate-50">
+                <h3 className="text-sm font-semibold text-slate-50 group-hover:text-ink-jade transition-colors">
                   {section.title}
                 </h3>
                 <p className="text-xs text-slate-300">{section.description}</p>
               </div>
-              <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-emerald-300 group-hover:text-emerald-200">
+              <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-emerald-400/80 group-hover:text-emerald-300">
                 Open {section.label}
                 <span aria-hidden>↗</span>
               </span>
