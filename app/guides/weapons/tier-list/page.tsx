@@ -11,6 +11,98 @@ export const metadata: Metadata = {
   },
 };
 
+const tierSummaries = [
+  {
+    tier: "S Tier",
+    summary:
+      "Best-in-slot weapons that comfortably handle endgame PVE and high-pressure encounters when played with solid fundamentals.",
+    bestFor:
+      "Players who want reliable power with room to grow into advanced tech over time.",
+  },
+  {
+    tier: "A Tier",
+    summary:
+      "Strong, flexible weapons that shine when you lean into their strengths and pair them with the right builds.",
+    bestFor:
+      "Players who enjoy experimenting with paths and builds without giving up too much consistency.",
+  },
+  {
+    tier: "B Tier",
+    summary:
+      "More specialized or execution-heavy picks that can perform very well in the right hands or specific matchups.",
+    bestFor:
+      "Players who like off-meta choices, high skill expression, and counter-picking certain fights.",
+  },
+];
+
+const tierWeaponExamples = [
+  {
+    label: "S Tier Weapons",
+    description:
+      "Top-end options that feel strong almost everywhere, especially in late-game PVE and demanding group content.",
+    weapons: [
+      {
+        name: "Nameless Sword",
+        note: "Highly flexible main weapon with strong routes for story, PVE, and early PVP.",
+      },
+      {
+        name: "Spear",
+        note: "Excellent range and safe tools for learning bosses while keeping solid DPS.",
+      },
+      {
+        name: "Mo Blade",
+        note: "Heavy-hitting bruiser choice that rewards good positioning and timing.",
+      },
+      {
+        name: "Umbrella",
+        note: "Defensive utility and counter tools that bridge PVE survivability and PVP playmaking.",
+      },
+      {
+        name: "Dual Blades",
+        note: "High-tempo weapon with explosive burst windows for confident players.",
+      },
+    ],
+  },
+  {
+    label: "A Tier Weapons",
+    description:
+      "Weapons that can absolutely clear all content, but either ask for more setup, specific paths, or practiced execution.",
+    weapons: [
+      {
+        name: "Fan",
+        note: "Control-focused option that rewards spacing, zoning, and smart cooldown use.",
+      },
+      {
+        name: "Hybrid Sword + Spear",
+        note: "Combines safe poke with solid finishers once you learn the routes.",
+      },
+      {
+        name: "Supportive Umbrella / Fan",
+        note: "Shines in groups where you value shielding, buffs, and crowd control.",
+      },
+    ],
+  },
+  {
+    label: "B Tier Weapons",
+    description:
+      "Picks that are more niche, greedy, or matchup-dependent, but can be very rewarding when mastered.",
+    weapons: [
+      {
+        name: "Glass-cannon routes",
+        note: "High damage if you rarely get hit, but punishing when mistakes happen.",
+      },
+      {
+        name: "Off-meta hybrids",
+        note: "Unusual combinations that trade reliability for style and surprise value.",
+      },
+      {
+        name: "Experimental PVP setups",
+        note: "Specialist builds aimed at countering specific opponents or comps.",
+      },
+    ],
+  },
+];
+
 const weaponCategories = [
   {
     name: "Melee Weapons",
@@ -70,8 +162,43 @@ export default function WeaponTierListPage() {
             applications. You will find weapons suitable for story progression, PVE
             endgame bosses, cooperative play, PVP dueling, and speedrunning. Use this
             Where Winds Meet weapon tier list as a reference when you are unsure which
-            piece of equipment to invest in next.
+            piece of equipment to invest in next. Start with the main Where Winds Meet
+            tier list if you want a broad overview, then use this page to zoom in on
+            specific weapons and finally jump into the builds guide to finish your
+            setup.
           </p>
+        </div>
+      </section>
+
+      <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+          How Where Winds Meet weapon tiers work.
+        </h2>
+        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+          We group weapons into broad power bands instead of arguing about tiny
+          numerical differences. Each tier reflects how a weapon feels to play in real
+          PVE and PVP: its comfort, consistency, and how much effort it takes to make
+          it shine. Use these tiers as guidelines, then adjust based on your own
+          experience and goals.
+        </p>
+        <div className="grid gap-4 md:grid-cols-3">
+          {tierSummaries.map((tier) => (
+            <div
+              key={tier.tier}
+              className="rounded-3xl border border-slate-800 bg-slate-950/80 p-4 text-sm shadow-sm shadow-slate-950/60"
+            >
+              <h3 className="text-sm font-semibold text-slate-50">
+                {tier.tier}
+              </h3>
+              <p className="mt-2 text-xs leading-relaxed text-slate-300">
+                {tier.summary}
+              </p>
+              <p className="mt-3 text-[11px] leading-relaxed text-slate-400">
+                Best for:{" "}
+                <span className="text-slate-200">{tier.bestFor}</span>
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -85,7 +212,9 @@ export default function WeaponTierListPage() {
           preferred category makes this Where Winds Meet weapon tier list more
           actionable. You do not need to learn every weapon; instead, find the
           category that resonates with you, then explore the highest-ranked Where
-          Winds Meet weapons within that category.
+          Winds Meet weapons within that category. If you are unsure where to start,
+          pick a weapon in the middle of the tier list that matches your favorite
+          fantasy and learn its basics before chasing pure meta picks.
         </p>
         <div className="grid gap-4 md:grid-cols-3">
           {weaponCategories.map((cat) => (
@@ -184,6 +313,41 @@ export default function WeaponTierListPage() {
           reach endgame. At that point, you have enough experience to evaluate whether
           switching to a stronger weapon is worth the relearning curve.
         </p>
+      </section>
+
+      <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+          Example Where Winds Meet weapons by tier.
+        </h2>
+        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+          These examples highlight how different weapons fit into the tier bands. They
+          are not exhaustive lists, and placements may shift with future patches, but
+          they give you a grounded starting point when planning what to level and
+          practice.
+        </p>
+        <div className="grid gap-4 md:grid-cols-3">
+          {tierWeaponExamples.map((tier) => (
+            <div
+              key={tier.label}
+              className="rounded-3xl border border-slate-800 bg-slate-950/80 p-4 text-sm shadow-sm shadow-slate-950/60"
+            >
+              <h3 className="text-sm font-semibold text-slate-50">
+                {tier.label}
+              </h3>
+              <p className="mt-2 text-xs leading-relaxed text-slate-300">
+                {tier.description}
+              </p>
+              <ul className="mt-3 space-y-2 text-xs leading-relaxed text-slate-200">
+                {tier.weapons.map((weapon) => (
+                  <li key={weapon.name}>
+                    <span className="font-semibold">{weapon.name}</span>
+                    <span className="text-slate-400"> – {weapon.note}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
