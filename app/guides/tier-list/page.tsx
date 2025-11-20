@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,7 +11,7 @@ const quickTierRows = [
     pve: "Nameless Sword, Spear, Mo Blade, Umbrella",
     pvp: "Umbrella counter builds, Dual Blades, Rope Dart",
     notes:
-      "Comfortably strong in most content with clear game plans. Recommended if you want to invest long term and keep options open.",
+      "Best-in-slot options for most players. These weapons feel strong in nearly all content once you learn basic routes and reward long-term investment.",
     style: "card-tier-s",
     icon: "🐉",
   },
@@ -19,7 +20,7 @@ const quickTierRows = [
     pve: "Fan, hybrid Sword + Spear, supportive Umbrella/Fan",
     pvp: "Spear bruisers, Fan / Umbrella control setups",
     notes:
-      "Very strong when played to their strengths and paired with the right builds. Often more fun or thematic than pure meta picks.",
+      "Very strong when played to their strengths and paired with the right builds. Great if you like experimenting without giving up too much consistency.",
     style: "card-tier-a",
     icon: "🐅",
   },
@@ -28,7 +29,7 @@ const quickTierRows = [
     pve: "Greedy glass-cannon builds, off-meta hybrids",
     pvp: "Experimental mix-ups and niche counters",
     notes:
-      "Viable for experienced players who enjoy practicing specific matchups or leaning hard into style over consistency.",
+      "Viable but more demanding or narrow in focus. Ideal for experienced players who enjoy matchup practice, off-meta styles, and high risk–high reward setups.",
     style: "card-tier-b",
     icon: "🐆",
   },
@@ -37,13 +38,34 @@ const quickTierRows = [
     pve: "Unfinished or overly narrow setups",
     pvp: "Gimmick-only routes",
     notes:
-      "Usually worth treating as side projects rather than your very first main, unless the fantasy is exactly what you want.",
+      "Mostly for dedicated enthusiasts or side projects. Best picked when you love the fantasy and already understand core systems from a stronger main weapon.",
     style: "card-tier-c",
     icon: "🐇",
   },
 ];
 
 export default function TierListPage() {
+  const sheetContainerRef = useRef<HTMLDivElement | null>(null);
+  const [isSheetFullscreen, setIsSheetFullscreen] = useState(false);
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsSheetFullscreen(Boolean(document.fullscreenElement));
+    };
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    return () => document.removeEventListener("fullscreenchange", handleFullscreenChange);
+  }, []);
+
+  const toggleSheetFullscreen = () => {
+    const container = sheetContainerRef.current;
+    if (!container) return;
+    if (document.fullscreenElement) {
+      document.exitFullscreen?.();
+    } else {
+      container.requestFullscreen?.();
+    }
+  };
+
   return (
     <article className="space-y-10">
       {/* Hero Section */}
@@ -132,7 +154,7 @@ export default function TierListPage() {
       </section>
 
       {/* Detailed Sections */}
-      <section className="grid gap-8 lg:grid-cols-3">
+      <section className="grid gap-8 lg:grid-cols-3 pb-6 lg:pb-10">
         <div className="lg:col-span-2 space-y-8">
           {/* Best Builds Section */}
           <div className="card-wuxia rounded-3xl p-8">
@@ -245,6 +267,91 @@ export default function TierListPage() {
               <Link href="/guides/codes" className="block rounded-lg bg-slate-800/50 px-4 py-3 text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors border border-transparent hover:border-slate-700">
                 💎 Latest Codes
               </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Community Video and Spreadsheet Reference */}
+        <div className="lg:col-span-3">
+          <div className="card-wuxia rounded-3xl p-6 md:p-8 space-y-4">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h3 className="text-lg font-bold text-slate-100 border-b border-slate-800 pb-2">
+                  Community Video & Sheet
+                </h3>
+                <div className="mt-2 space-y-1 text-sm text-slate-400 leading-relaxed">
+                  <p>The video and sheet sit side by side so you can absorb context without jumping away.</p>
+                  <p className="text-slate-300">Sheet is community-maintained and read-only here; open it in Google Sheets if you need more room.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid gap-5 md:grid-cols-[1.2fr,1fr] lg:grid-cols-[1.4fr,1fr]">
+              <div className="space-y-2.5">
+                <p className="text-xs text-slate-500 uppercase tracking-wide">
+                  Video overview (YouTube, no cookies)
+                </p>
+                <motion.div
+                  className="relative aspect-video w-full overflow-hidden rounded-2xl border border-slate-800/60 bg-slate-900/70 shadow-lg shadow-slate-950/40"
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true, margin: "-20%" }}
+                >
+                  <iframe
+                    title="Where Winds Meet weapons overview (YouTube ID: YPNX4GaUzr8)"
+                    src="https://www.youtube-nocookie.com/embed/YPNX4GaUzr8"
+                    className="h-full w-full border-0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                  />
+                </motion.div>
+              </div>
+              <div className="space-y-2.5">
+                <p className="text-xs text-slate-500 uppercase tracking-wide">
+                  Community-maintained weapon sheet
+                </p>
+                <motion.div
+                  className="relative h-[640px] sm:h-[700px] md:h-[760px] lg:h-[840px] w-full overflow-hidden rounded-2xl border border-slate-800/60 bg-slate-900/70 shadow-lg shadow-slate-950/40"
+                  ref={sheetContainerRef}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.05 }}
+                  viewport={{ once: true, margin: "-20%" }}
+                >
+                  <iframe
+                    title="Where Winds Meet weapons spreadsheet"
+                    src="https://docs.google.com/spreadsheets/d/1Ke0X96XtUmqrzVriYfByz7FeM2wTFYjzDMIPtNUF0bo/preview?gid=991882874"
+                    className="h-full w-full border-0"
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-slate-900/80 to-transparent" />
+                  <button
+                    type="button"
+                    onClick={toggleSheetFullscreen}
+                    className="absolute bottom-3 right-3 z-10 rounded-full border border-emerald-500/40 bg-slate-950/80 px-3 py-1.5 text-xs font-semibold text-emerald-200 shadow-lg shadow-emerald-900/30 backdrop-blur hover:-translate-y-[1px] hover:border-emerald-400/70 hover:text-emerald-100 transition"
+                    aria-label={isSheetFullscreen ? "Exit full screen" : "View sheet in full screen"}
+                  >
+                    {isSheetFullscreen ? "Exit Fullscreen" : "Fullscreen"}
+                  </button>
+                </motion.div>
+                <div className="text-xs text-slate-500">
+                  Scroll to view fields. Want a wider view?{" "}
+                  <a
+                    className="text-emerald-300 hover:text-emerald-200 underline decoration-dashed decoration-emerald-500/70"
+                    href="https://docs.google.com/spreadsheets/d/1Ke0X96XtUmqrzVriYfByz7FeM2wTFYjzDMIPtNUF0bo/edit?gid=991882874"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View full sheet
+                  </a>
+                  .
+                </div>
+              </div>
             </div>
           </div>
         </div>
