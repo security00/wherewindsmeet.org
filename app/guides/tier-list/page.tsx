@@ -72,7 +72,7 @@ export default function TierListPage() {
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-8 shadow-2xl shadow-slate-950/60">
         <div className="pointer-events-none absolute inset-0">
           <Image
-            src="/design/bg.jpg"
+            src="/background/bg.jpg"
             alt="Where Winds Meet tier list background art"
             fill
             className="object-cover opacity-20"

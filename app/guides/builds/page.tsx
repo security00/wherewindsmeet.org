@@ -51,10 +51,10 @@ export default function BuildsPage() {
 
         {/* Vertical Text Accents */}
         <div className="absolute right-8 top-1/4 hidden text-vertical text-4xl font-bold text-slate-50/10 lg:block font-serif select-none">
-          武侠攻略
+          Martial Arts Guides
         </div>
         <div className="absolute left-8 top-1/3 hidden text-vertical text-3xl font-bold text-slate-50/10 lg:block font-serif select-none">
-          千变万化
+          Endlessly Adaptive
         </div>
 
         <div className="relative z-10 flex h-full flex-col justify-end px-6 pb-16 sm:px-12 lg:w-2/3">
@@ -240,10 +240,10 @@ export default function BuildsPage() {
 
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {/* Card 1 */}
-            <article className="card-wuxia group space-y-3 rounded-2xl p-5 transition-colors hover:border-slate-600/50">
+            <article id="mo-blade" className="card-wuxia group space-y-3 rounded-2xl p-5 transition-colors hover:border-slate-600/50 scroll-mt-24">
               <div className="flex items-baseline justify-between">
                 <h3 className="text-base font-bold text-slate-50 font-serif">
-                  <span className="text-ink-gold text-lg mr-2">裂石·威</span>
+                  <span className="text-ink-gold text-lg mr-2">Stonebreaker Might</span>
                 </h3>
                 <span className="text-[10px] uppercase tracking-wider text-slate-500 border border-slate-700 px-2 py-0.5 rounded-full font-sans">Tank</span>
               </div>
@@ -256,10 +256,10 @@ export default function BuildsPage() {
             </article>
 
             {/* Card 2 */}
-            <article className="card-wuxia group space-y-3 rounded-2xl p-5 transition-colors hover:border-slate-600/50">
+            <article id="sword-spear-bleed" className="card-wuxia group space-y-3 rounded-2xl p-5 transition-colors hover:border-slate-600/50 scroll-mt-24">
               <div className="flex items-baseline justify-between">
                 <h3 className="text-base font-bold text-slate-50 font-serif">
-                  <span className="text-ink-gold text-lg mr-2">鳴金·影</span>
+                  <span className="text-ink-gold text-lg mr-2">Resonant Steel Shadow</span>
                 </h3>
                 <span className="text-[10px] uppercase tracking-wider text-slate-500 border border-slate-700 px-2 py-0.5 rounded-full font-sans">DPS</span>
               </div>
@@ -272,10 +272,10 @@ export default function BuildsPage() {
             </article>
 
             {/* Card 3 */}
-            <article className="card-wuxia group space-y-3 rounded-2xl p-5 transition-colors hover:border-slate-600/50">
+            <article id="sword-starter" className="card-wuxia group space-y-3 rounded-2xl p-5 transition-colors hover:border-slate-600/50 scroll-mt-24">
               <div className="flex items-baseline justify-between">
                 <h3 className="text-base font-bold text-slate-50 font-serif">
-                  <span className="text-ink-gold text-lg mr-2">鳴金·虹</span>
+                  <span className="text-ink-gold text-lg mr-2">Resonant Steel Arc</span>
                 </h3>
                 <span className="text-[10px] uppercase tracking-wider text-slate-500 border border-slate-700 px-2 py-0.5 rounded-full font-sans">Hybrid</span>
               </div>
@@ -288,10 +288,10 @@ export default function BuildsPage() {
             </article>
 
             {/* Card 4 */}
-            <article className="card-wuxia group space-y-3 rounded-2xl p-5 transition-colors hover:border-slate-600/50">
+            <article id="umbrella-control" className="card-wuxia group space-y-3 rounded-2xl p-5 transition-colors hover:border-slate-600/50 scroll-mt-24">
               <div className="flex items-baseline justify-between">
                 <h3 className="text-base font-bold text-slate-50 font-serif">
-                  <span className="text-ink-gold text-lg mr-2">牽絲·玉</span>
+                  <span className="text-ink-gold text-lg mr-2">Silkbound Jade</span>
                 </h3>
                 <span className="text-[10px] uppercase tracking-wider text-slate-500 border border-slate-700 px-2 py-0.5 rounded-full font-sans">Control</span>
               </div>
@@ -304,10 +304,10 @@ export default function BuildsPage() {
             </article>
 
             {/* Card 5 */}
-            <article className="card-wuxia group space-y-3 rounded-2xl p-5 transition-colors hover:border-slate-600/50">
+            <article id="umbrella-healer" className="card-wuxia group space-y-3 rounded-2xl p-5 transition-colors hover:border-slate-600/50 scroll-mt-24">
               <div className="flex items-baseline justify-between">
                 <h3 className="text-base font-bold text-slate-50 font-serif">
-                  <span className="text-ink-gold text-lg mr-2">牽絲·霖</span>
+                  <span className="text-ink-gold text-lg mr-2">Silkbound Rain</span>
                 </h3>
                 <span className="text-[10px] uppercase tracking-wider text-slate-500 border border-slate-700 px-2 py-0.5 rounded-full font-sans">Support</span>
               </div>
@@ -320,10 +320,10 @@ export default function BuildsPage() {
             </article>
 
             {/* Card 6 */}
-            <article className="card-wuxia group space-y-3 rounded-2xl p-5 transition-colors hover:border-slate-600/50">
+            <article id="dual-blades" className="card-wuxia group space-y-3 rounded-2xl p-5 transition-colors hover:border-slate-600/50 scroll-mt-24">
               <div className="flex items-baseline justify-between">
                 <h3 className="text-base font-bold text-slate-50 font-serif">
-                  <span className="text-ink-gold text-lg mr-2">破竹·風</span>
+                  <span className="text-ink-gold text-lg mr-2">Bamboo-Split Gale</span>
                 </h3>
                 <span className="text-[10px] uppercase tracking-wider text-slate-500 border border-slate-700 px-2 py-0.5 rounded-full font-sans">Assassin</span>
               </div>

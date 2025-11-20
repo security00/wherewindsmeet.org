@@ -53,6 +53,8 @@ export const backgroundLibrary: Record<string, BackgroundInfo> = {
   'bg27': { path: '/background/27.png', category: 'city', description: '市井烟火', mood: 'calm' },
   'bg28': { path: '/background/28.png', category: 'water', description: '碧波荡漾', mood: 'calm' },
   'bg29': { path: '/background/29.png', category: 'temple', description: '皇城根下', mood: 'majestic' },
+  'bg30': { path: '/background/30.png', category: 'city', description: '新手指南背景', mood: 'calm' },
+  'bg_home': { path: '/background/bg.jpg', category: 'mountain', description: '首页背景', mood: 'majestic' },
 };
 
 /**
@@ -61,11 +63,11 @@ export const backgroundLibrary: Record<string, BackgroundInfo> = {
  */
 export const routeBackgroundMap: Record<string, string> = {
   // 首页 - 使用壮丽的山景作为江湖入口
-  '/': 'bg5',
+  '/': 'bg_home',
 
   // 指南页面
-  '/guides': 'bg12',
-  '/guides/new-players': 'bg11',        // 新手村 - 城镇场景
+  '/guides': 'bg24',
+  '/guides/new-players': 'bg30',        // 新手村 - 城镇场景
   '/guides/tier-list': 'bg5',           // 华山论剑 - 山峰场景
   '/guides/builds': 'bg18',             // 武学殿堂 - 云海仙境
   '/guides/codes': 'bg4',               // 兑换码 - 神秘夜色

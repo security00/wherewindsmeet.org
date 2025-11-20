@@ -93,9 +93,17 @@ export default function WeaponsPage() {
                   <h3 className="text-sm font-semibold text-slate-50">
                     {weapon.name}
                   </h3>
-                  <span className="rounded-full bg-slate-900/80 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-emerald-300">
-                    {weapon.role}
-                  </span>
+                  <div className="flex gap-2">
+                    <span className={`rounded px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide ${weapon.tier === "S" ? "bg-red-500/20 text-red-400 border border-red-500/30" :
+                        weapon.tier === "A" ? "bg-orange-500/20 text-orange-400 border border-orange-500/30" :
+                          "bg-blue-500/20 text-blue-400 border border-blue-500/30"
+                      }`}>
+                      {weapon.tier} Tier
+                    </span>
+                    <span className="rounded-full bg-slate-900/80 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-emerald-300">
+                      {weapon.role}
+                    </span>
+                  </div>
                 </div>
                 <p className="text-xs text-slate-300">{weapon.description}</p>
                 <div className="mt-3 flex flex-wrap gap-2 text-[11px]">
