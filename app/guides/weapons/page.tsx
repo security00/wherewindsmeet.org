@@ -66,6 +66,17 @@ export default function WeaponsPage() {
             can use this gallery plus the tier list together to judge where each
             choice sits in the overall power curve.
           </p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
+            If you want the unlock steps and skill names for every martial art
+            weapon, open the new{" "}
+            <Link
+              href="/guides/martial-arts-weapons"
+              className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+            >
+              martial arts weapons table
+            </Link>{" "}
+            which mirrors the illustrated wiki layout.
+          </p>
         </div>
       </section>
 

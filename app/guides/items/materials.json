@@ -1,0 +1,536 @@
+[
+  {
+    "name": "Antique Pine Wood",
+    "image": "/items/materials/antique-pine-wood-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Badger Fat",
+    "image": "/items/materials/badger-fat-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Bai Zhu",
+    "image": "/items/materials/bai-zhu-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Bamboo",
+    "image": "/items/materials/bamboo-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Bamboo Paper",
+    "image": "/items/materials/bamboo-paper-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Bark Paper",
+    "image": "/items/materials/bark-paper-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Bark Paper",
+    "image": "/items/materials/bark-paper-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Bear Pelt",
+    "image": "/items/materials/bear-pelt-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Beauty's Garment",
+    "image": "/items/materials/beauty's-garment-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Beef Tendon",
+    "image": "/items/materials/beef-tendon-develop-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Bighead Carp",
+    "image": "/items/materials/bighead-carp-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Birch Wood",
+    "image": "/items/materials/birch-wood-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Black Bream",
+    "image": "/items/materials/black-bream-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Buddha's Tear",
+    "image": "/items/materials/buddha's-tear-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Blue Jade",
+    "image": "/items/materials/blue-jade-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Carapaces",
+    "image": "/items/materials/carapaces-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Carp",
+    "image": "/items/materials/carp-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Catfish",
+    "image": "/items/materials/catfish-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Chlorite Schist",
+    "image": "/items/materials/chlorite-schist-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Coarse Fur",
+    "image": "/items/materials/coarse-fur-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Cold Iron",
+    "image": "/items/materials/cold-iron-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Copper",
+    "image": "/items/materials/copper-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Crabapple Wood",
+    "image": "/items/materials/crabapple-wood-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Crucian Carp",
+    "image": "/items/materials/crucian-carp-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Deranged Goose Egg",
+    "image": "/items/materials/deranged-goose-egg-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Dongling Melon",
+    "image": "/items/materials/dongling-melon-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Dragon Bones",
+    "image": "/items/materials/dragon-bones-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Dried Dogwood Berry",
+    "image": "/items/materials/dried-dogwood-berry-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Dried Dogwood Berry",
+    "image": "/items/materials/dried-dogwood-berry-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Eagle Feathers",
+    "image": "/items/materials/eagle-feathers-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Eggs",
+    "image": "/items/materials/eggs-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Elm Wood",
+    "image": "/items/materials/elm-wood-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Enchanting Lotus",
+    "image": "/items/materials/enchanting-lotus-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Fat Tail Sheepskin",
+    "image": "/items/materials/fat-tail-sheepskin-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Frost Mushroom",
+    "image": "/items/materials/frost-mushroom-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Ginkgo Wood",
+    "image": "/items/materials/ginkgo-wood-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Golden Carp",
+    "image": "/items/materials/golden-carp-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Grass Bream",
+    "image": "/items/materials/grass-bream-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Grass Carp",
+    "image": "/items/materials/grass-carp-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Great Bustard Meat",
+    "image": "/items/materials/great-bustard-meat-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Herbs",
+    "image": "/items/materials/herbs-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Herbs",
+    "image": "/items/materials/herbs-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Hollyhock",
+    "image": "/items/materials/hollyhock-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Hollyhock",
+    "image": "/items/materials/hollyhock-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Holly Wood",
+    "image": "/items/materials/holly-wood-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Insects",
+    "image": "/items/materials/insects-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Jade Tower Peony",
+    "image": "/items/materials/jade-tower-peony-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Jasmine",
+    "image": "/items/materials/jasmine-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Jute Paper",
+    "image": "/items/materials/jute-paper-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Jute Paper",
+    "image": "/items/materials/jute-paper-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Lethal Crystal",
+    "image": "/items/materials/lethal-crystal-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Lethal Frog Meat",
+    "image": "/items/materials/lethal-frog-meat-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Magnolia Wood",
+    "image": "/items/materials/magnolia-wood-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Mandarin Fish",
+    "image": "/items/materials/mandarin-fish-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Maple Wood",
+    "image": "/items/materials/maple-wood-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Meat Scraps",
+    "image": "/items/materials/meat-scraps-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Milu Deer Meat",
+    "image": "/items/materials/milu-deer-meat-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Milu Deer Meat",
+    "image": "/items/materials/milu-deer-meat-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Mushrooms",
+    "image": "/items/materials/mushrooms-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Peach Wood",
+    "image": "/items/materials/peach-wood-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Pear Wood",
+    "image": "/items/materials/pear-wood-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Pheasant Feather",
+    "image": "/items/materials/pheasant-feather-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Plum Wood",
+    "image": "/items/materials/plum-wood-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Poplar Wood",
+    "image": "/items/materials/poplar-wood-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Porcupine Quills",
+    "image": "/items/materials/porcupine-quills-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Prime Meat Cut",
+    "image": "/items/materials/prime-meat-cut-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Pufferfish",
+    "image": "/items/materials/pufferfish-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Raw Ore",
+    "image": "/items/materials/raw-ore-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "River Fish",
+    "image": "/items/materials/river-fish-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "River Perch",
+    "image": "/items/materials/river-perch-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Sickly Goose Egg",
+    "image": "/items/materials/sickly-goose-egg-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Short Feather",
+    "image": "/items/materials/short-feather-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Snakehead",
+    "image": "/items/materials/snakehead-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Sturdy Goose Egg",
+    "image": "/items/materials/sturdy-goose-egg-consumables-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Timber",
+    "image": "/items/materials/timber-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Vicious Flower",
+    "image": "/items/materials/vicious-flower-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Vicious Flower",
+    "image": "/items/materials/vicious-flower-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Venison",
+    "image": "/items/materials/venison-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Wei's Purple Peony",
+    "image": "/items/materials/wei's-purple-peony-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "White Ash",
+    "image": "/items/materials/white-ash-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Wild Fruits",
+    "image": "/items/materials/wild-fruits-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Wild Ginseng",
+    "image": "/items/materials/wild-ginseng-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Wild Ginseng",
+    "image": "/items/materials/wild-ginseng-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Willow Feather",
+    "image": "/items/materials/willow-feather-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Willow Wood",
+    "image": "/items/materials/willow-wood-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Aromatic Jade",
+    "image": "/items/materials/aromatic-jade-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Wisteria Wood",
+    "image": "/items/materials/wisteria-wood-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Whisper Hive",
+    "image": "/items/materials/whisper-hive-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  },
+  {
+    "name": "Zelkova Wood",
+    "image": "/items/materials/zelkova-wood-rawmaterial-wherewindsmeet-wiki-guide.png",
+    "use": "Crafting/Breakthrough material (details pending)",
+    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
+  }
+]

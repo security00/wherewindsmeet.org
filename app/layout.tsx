@@ -83,6 +83,12 @@ export default function RootLayout({
                   Weapons
                 </Link>
                 <Link
+                  href="/guides/martial-arts-weapons"
+                  className="transition-colors hover:text-emerald-400"
+                >
+                  Martial Arts
+                </Link>
+                <Link
                   href="/guides/tier-list"
                   className="transition-colors hover:text-emerald-400"
                 >
@@ -99,6 +105,12 @@ export default function RootLayout({
                   className="transition-colors hover:text-emerald-400"
                 >
                   Codes
+                </Link>
+                <Link
+                  href="/guides/items"
+                  className="transition-colors hover:text-emerald-400"
+                >
+                  Items
                 </Link>
                 <Link
                   href="/news"

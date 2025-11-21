@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="240" viewBox="0 0 320 240" role="img" aria-label="常用物品占位图">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0b1220" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <radialGradient id="sun" cx="30%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity=".35" />
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="320" height="240" fill="url(#bg)" />
+  <rect x="10" y="10" width="300" height="220" fill="none" stroke="#22c55e" stroke-opacity=".3" stroke-width="2" />
+  <circle cx="68" cy="68" r="70" fill="url(#sun)" />
+  <path d="M36 184c22-18 52-26 76-14 19 9 43 9 68-9 18-14 34-25 60-25 25 0 45 9 75 29" fill="none" stroke="#22c55e" stroke-opacity=".45" stroke-width="4" stroke-linecap="round" />
+  <path d="M28 168c30-14 64-14 96 6 26 16 52 18 82-3 22-15 46-20 82-9" fill="none" stroke="#eab308" stroke-opacity=".45" stroke-width="2" stroke-dasharray="6 10" stroke-linecap="round" />
+  <text x="50%" y="52%" text-anchor="middle" fill="#e5e7eb" font-size="22" font-family="'Noto Serif','Times New Roman',serif" letter-spacing="1.5">江湖常用</text>
+  <text x="50%" y="65%" text-anchor="middle" fill="#cbd5e1" font-size="12" font-family="'Noto Sans','Segoe UI',sans-serif" letter-spacing="2">图像待补</text>
+</svg>

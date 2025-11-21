@@ -15,6 +15,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "www.ludens.com.tw",
       },
+      {
+        protocol: "https",
+        hostname: "wherewindsmeet.wiki.fextralife.com",
+      },
     ],
   },
   async rewrites() {

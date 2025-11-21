@@ -30,6 +30,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${baseUrl}/guides/martial-arts-weapons`,
+      changeFrequency: "daily",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/guides/skill-theft`,
+      changeFrequency: "daily",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/guides/items`,
+      changeFrequency: "daily",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/guides/builds`,
       changeFrequency: "daily",
       priority: 0.8,
@@ -56,4 +71,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 }
-

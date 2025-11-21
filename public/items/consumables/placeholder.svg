@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="240" viewBox="0 0 320 240" role="img" aria-label="消费品占位图">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#0b1c26" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity=".65" />
+      <stop offset="100%" stop-color="#22c55e" stop-opacity=".55" />
+    </linearGradient>
+  </defs>
+  <rect width="320" height="240" fill="url(#bg)" />
+  <rect x="12" y="12" width="296" height="216" fill="none" stroke="#22c55e" stroke-opacity=".35" stroke-width="2" />
+  <path d="M24 174c28-22 62-32 98-22 34 10 62-4 87-26 20-18 43-34 82-28" fill="none" stroke="url(#glow)" stroke-width="5" stroke-linecap="round" stroke-opacity=".5" />
+  <path d="M36 154c22-18 52-26 76-14 19 9 43 9 68-9 20-15 38-27 70-24" fill="none" stroke="#10b981" stroke-opacity=".55" stroke-width="2" stroke-dasharray="6 10" stroke-linecap="round" />
+  <text x="50%" y="52%" text-anchor="middle" fill="#f8fafc" font-size="22" font-family="'Noto Serif','Times New Roman',serif" letter-spacing="2">江湖珍馐</text>
+  <text x="50%" y="65%" text-anchor="middle" fill="#c5d6e9" font-size="12" font-family="'Noto Sans','Segoe UI',sans-serif" letter-spacing="2">图像待补</text>
+</svg>
