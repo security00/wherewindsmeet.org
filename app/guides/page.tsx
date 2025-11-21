@@ -79,6 +79,15 @@ const guideSections = [
     description: "Tabbed categories of key materials, consumables, and curios.",
   },
   {
+    title: "Cosmetics & Appearance",
+    slug: "/guides/cosmetics",
+    label: "Customization",
+    icon: "✨",
+    color: "text-rose-300",
+    size: "small",
+    description: "Appearance sets, hairstyles, and cosmetics inspired by Mohist legends.",
+  },
+  {
     title: "Active Codes",
     slug: "/guides/codes",
     label: "Free Rewards",
@@ -115,7 +124,7 @@ export default function GuidesPage() {
       <section className="relative h-[40vh] min-h-[400px] w-full overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/background/bg2.png"
+            src="/background/bg2.webp"
             alt="Where Winds Meet guides background art"
             fill
             className="object-cover object-center opacity-50"

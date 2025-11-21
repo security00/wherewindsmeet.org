@@ -71,7 +71,7 @@ export default function CodesPage() {
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-8 shadow-2xl shadow-black/50">
         <div className="pointer-events-none absolute inset-0">
           <Image
-            src="/background/bg5.png"
+            src="/background/bg5.webp"
             alt="Where Winds Meet codes background art"
             fill
             className="object-cover opacity-30 mix-blend-overlay"

@@ -18,7 +18,7 @@ export default function BossesPage() {
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
         <div className="pointer-events-none absolute inset-0">
           <Image
-            src="/background/bg4.png"
+            src="/background/bg4.webp"
             alt="Where Winds Meet bosses background art"
             fill
             className="object-cover opacity-40"
@@ -79,20 +79,14 @@ export default function BossesPage() {
                 <video
                   src={boss.backgroundVideo}
                   muted
+                  autoPlay
+                  loop
                   playsInline
                   preload="metadata"
-                  className="h-full w-full object-cover opacity-70 transition-opacity duration-300 group-hover:opacity-90"
+                  poster="/background/bg4.webp"
+                  className="h-full w-full object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-95"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
-                <div className="pointer-events-none absolute bottom-2 left-2 h-8 w-32 sm:h-9 sm:w-40">
-                  <Image
-                    src={boss.titleImage}
-                    alt={boss.name}
-                    fill
-                    sizes="160px"
-                    className="object-contain object-left"
-                  />
-                </div>
               </div>
               <div className="flex flex-1 flex-col gap-2 p-4">
                 <div className="flex items-center justify-between gap-2">

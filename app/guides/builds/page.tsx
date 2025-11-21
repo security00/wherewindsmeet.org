@@ -38,7 +38,7 @@ export default function BuildsPage() {
       <section className="relative h-[60vh] min-h-[500px] w-full overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/background/bg4.png"
+            src="/background/bg4.webp"
             alt="Where Winds Meet builds background art"
             fill
             className="object-cover object-top opacity-60"
@@ -222,7 +222,7 @@ export default function BuildsPage() {
 
           <div className="relative h-48 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80 sm:h-64 shadow-inner">
             <Image
-              src="/background/builds.png"
+              src="/background/builds.webp"
               alt="Where Winds Meet builds overview art"
               fill
               className="object-cover object-center opacity-60 hover:scale-105 transition-transform duration-700"

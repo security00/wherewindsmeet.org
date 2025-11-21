@@ -1,6 +1,17 @@
 'use client';
 
-import JianghuMap from "../components/JianghuMap";
+import dynamic from "next/dynamic";
+
+const JianghuMap = dynamic(() => import("../components/JianghuMap"), {
+  ssr: false,
+  loading: () => (
+    <div className="relative h-[480px] w-full overflow-hidden rounded-3xl border border-slate-800/80 bg-slate-900/60 p-6 shadow-inner shadow-slate-950/40 sm:h-[560px]">
+      <div className="flex h-full items-center justify-center text-sm text-slate-400">
+        Loading map...
+      </div>
+    </div>
+  ),
+});
 
 export default function Home() {
   return (
@@ -32,11 +43,13 @@ export default function Home() {
           <div className="relative aspect-video w-full overflow-hidden rounded-2xl border-2 border-slate-800/50 shadow-2xl shadow-black/50 group">
             <div className="absolute inset-0 border-brush opacity-50 z-10 pointer-events-none"></div>
             <iframe
-              src="https://www.youtube-nocookie.com/embed/2cxhuAwDFl4?start=5"
+              src="https://www.youtube-nocookie.com/embed/2cxhuAwDFl4?start=5&rel=0&modestbranding=1&playsinline=1"
               title="Where Winds Meet - Global Launch Preview Stream"
-              className="h-full w-full"
+              className="h-full w-full border-0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
             />
           </div>
         </div>

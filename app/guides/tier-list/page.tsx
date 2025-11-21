@@ -1,9 +1,116 @@
 'use client';
 
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import tierListData from "@/ref-page/tier_list/tier-list.json";
+
+type WeaponRanking = {
+  name: string;
+  weapon: string;
+  range: string;
+  type: string;
+  pathGuide: string;
+  sectBoost?: string;
+  vetRank?: string;
+  pveRank?: string;
+  pvpRank?: string;
+  icon?: string;
+};
+
+type PathGuide = {
+  pathGuide: string;
+  type: string;
+  range: string;
+  primaryStyle?: string;
+  secondaryStyle?: string;
+  description?: string;
+  dps?: number;
+  difficulty?: number;
+  survivability?: number;
+  mobility?: number;
+  support?: number;
+  control?: number;
+  avg?: number;
+  total?: number;
+  rankOnStat?: string;
+  internalArts?: string[];
+  weaponSet?: string;
+  gearSet?: string;
+  icon?: string;
+};
+
+type WeaponCombination = {
+  weapon1: string;
+  weapon2?: string;
+  type?: string;
+  range?: string;
+  path?: string;
+  pathRank?: string;
+  totalPve?: string;
+  totalPvp?: string;
+  note?: string;
+};
+
+type TierListData = {
+  weaponRankings: WeaponRanking[];
+  pathGuides: PathGuide[];
+  combinations: WeaponCombination[];
+  internalArts?: InternalArt[];
+};
+
+type InternalArt = {
+  name: string;
+  type1?: string;
+  type2?: string;
+  type3?: string;
+  description?: string;
+};
+
+const tierTabs = [
+  { id: "weaponRankings", label: "Weapon ranking", helper: "Vet · PVE · PVP grades" },
+  { id: "pathGuides", label: "Path guides", helper: "Playstyles and stats" },
+  { id: "combinations", label: "Dual builds", helper: "Weapon pair notes" },
+  { id: "internalArts", label: "Internal arts", helper: "Passive list from sheet 3" },
+] as const;
+
+const rankOrder = ["S", "A", "B", "C", "D"];
+
+const rankWeight = (value?: string) => {
+  if (!value) return Number.POSITIVE_INFINITY;
+  const normalized = value.trim().toUpperCase();
+  const base = rankOrder.indexOf(normalized[0]);
+  const modifier = normalized.includes("+") ? -0.05 : normalized.includes("-") ? 0.05 : 0;
+  return (base === -1 ? rankOrder.length : base) + modifier;
+};
+
+const rankBadgeStyle = (value?: string) => {
+  const grade = value?.trim().toUpperCase()[0] ?? "";
+  switch (grade) {
+    case "S":
+      return "border-emerald-400/40 bg-emerald-500/10 text-emerald-200";
+    case "A":
+      return "border-cyan-400/30 bg-cyan-500/10 text-cyan-100";
+    case "B":
+      return "border-amber-400/30 bg-amber-500/10 text-amber-100";
+    case "C":
+      return "border-orange-400/30 bg-orange-500/10 text-orange-100";
+    default:
+      return "border-slate-700 bg-slate-800/60 text-slate-200";
+  }
+};
+
+const statFields: Array<{ key: keyof PathGuide; label: string }> = [
+  { key: "dps", label: "DPS" },
+  { key: "difficulty", label: "Difficulty" },
+  { key: "survivability", label: "Survivability" },
+  { key: "mobility", label: "Mobility" },
+  { key: "support", label: "Support" },
+  { key: "control", label: "Control" },
+];
+
+const tierList = tierListData as TierListData;
 
 const quickTierRows = [
   {
@@ -45,34 +152,21 @@ const quickTierRows = [
 ];
 
 export default function TierListPage() {
-  const sheetContainerRef = useRef<HTMLDivElement | null>(null);
-  const [isSheetFullscreen, setIsSheetFullscreen] = useState(false);
-
-  useEffect(() => {
-    const handleFullscreenChange = () => {
-      setIsSheetFullscreen(Boolean(document.fullscreenElement));
-    };
-    document.addEventListener("fullscreenchange", handleFullscreenChange);
-    return () => document.removeEventListener("fullscreenchange", handleFullscreenChange);
-  }, []);
-
-  const toggleSheetFullscreen = () => {
-    const container = sheetContainerRef.current;
-    if (!container) return;
-    if (document.fullscreenElement) {
-      document.exitFullscreen?.();
-    } else {
-      container.requestFullscreen?.();
-    }
-  };
+  const [activeTab, setActiveTab] = useState<(typeof tierTabs)[number]["id"]>("weaponRankings");
+  const sortedWeapons = [...tierList.weaponRankings].sort(
+    (a, b) => rankWeight(a.vetRank) - rankWeight(b.vetRank)
+  );
+  const pathGuides = tierList.pathGuides;
+  const combinations = tierList.combinations;
+  const internalArts = tierList.internalArts ?? [];
 
   return (
     <article className="space-y-10">
       {/* Hero Section */}
-      <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-8 shadow-2xl shadow-slate-950/60">
+      <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-2xl shadow-slate-950/60 sm:p-8">
         <div className="pointer-events-none absolute inset-0">
           <Image
-            src="/background/bg.jpg"
+            src="/background/bg.webp"
             alt="Where Winds Meet tier list background art"
             fill
             className="object-cover opacity-20"
@@ -157,7 +251,7 @@ export default function TierListPage() {
       <section className="grid gap-8 lg:grid-cols-3 pb-6 lg:pb-10">
         <div className="lg:col-span-2 space-y-8">
           {/* Best Builds Section */}
-          <div className="card-wuxia rounded-3xl p-8">
+          <div className="card-wuxia rounded-3xl p-6 sm:p-8">
             <h2 className="text-2xl font-bold text-ink-gold mb-6 border-brush inline-block pb-2">Best Builds & Class Styles</h2>
             <p className="mb-6 text-slate-300 leading-relaxed">
               In practice, most players do not think in pure weapon names—they think in “classes” or build fantasies. The setups below translate S and A tier tools into concrete builds you can aim for.
@@ -214,7 +308,7 @@ export default function TierListPage() {
           </div>
 
           {/* How to Read Section */}
-          <div className="card-wuxia rounded-3xl p-8 space-y-4">
+          <div className="card-wuxia rounded-3xl p-6 sm:p-8 space-y-4">
             <h2 className="text-2xl font-bold text-slate-100 border-brush inline-block pb-2">How to Read This Tier List</h2>
             <p className="text-slate-300 leading-relaxed">
               Each tier reflects an overall impression that blends damage, survivability, ease of use, and flexibility. Instead of obsessing over micro differences, we group weapons into bands of power.
@@ -271,17 +365,17 @@ export default function TierListPage() {
           </div>
         </div>
 
-        {/* Community Video and Spreadsheet Reference */}
+        {/* Community Video and Local Tier Data */}
         <div className="lg:col-span-3">
-          <div className="card-wuxia rounded-3xl p-6 md:p-8 space-y-4">
+          <div className="card-wuxia rounded-3xl p-5 md:p-8 space-y-4">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h3 className="text-lg font-bold text-slate-100 border-b border-slate-800 pb-2">
-                  Community Video & Sheet
+                  Community Video & Tier Data
                 </h3>
                 <div className="mt-2 space-y-1 text-sm text-slate-400 leading-relaxed">
-                  <p>The video and sheet sit side by side so you can absorb context without jumping away.</p>
-                  <p className="text-slate-300">Sheet is community-maintained and read-only here; open it in Google Sheets if you need more room.</p>
+                  <p>Video context on the left, and the Excel-driven tier data on the right—no more tiny Google Sheet iframe.</p>
+                  <p className="text-slate-300">Source is <span className="font-mono text-[11px] text-emerald-200">ref-page/tier_list/tier_list.xlsx</span>; tap through tabs to explore the rankings.</p>
                 </div>
               </div>
             </div>
@@ -300,10 +394,11 @@ export default function TierListPage() {
                 >
                   <iframe
                     title="Where Winds Meet weapons overview (YouTube ID: YPNX4GaUzr8)"
-                    src="https://www.youtube-nocookie.com/embed/YPNX4GaUzr8"
+                    src="https://www.youtube-nocookie.com/embed/YPNX4GaUzr8?rel=0&modestbranding=1&playsinline=1"
                     className="h-full w-full border-0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
+                    sandbox="allow-scripts allow-same-origin allow-presentation"
                     loading="lazy"
                     referrerPolicy="strict-origin-when-cross-origin"
                   />
@@ -311,45 +406,271 @@ export default function TierListPage() {
               </div>
               <div className="space-y-2.5">
                 <p className="text-xs text-slate-500 uppercase tracking-wide">
-                  Community-maintained weapon sheet
+                  Excel-synced tier overview
                 </p>
                 <motion.div
-                  className="relative h-[640px] sm:h-[700px] md:h-[760px] lg:h-[840px] w-full overflow-hidden rounded-2xl border border-slate-800/60 bg-slate-900/70 shadow-lg shadow-slate-950/40"
-                  ref={sheetContainerRef}
+                  className="relative h-[520px] sm:h-[640px] md:h-[760px] lg:h-[840px] w-full overflow-hidden rounded-2xl border border-slate-800/60 bg-slate-900/70 shadow-lg shadow-slate-950/40"
                   initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.05 }}
                   viewport={{ once: true, margin: "-20%" }}
                 >
-                  <iframe
-                    title="Where Winds Meet weapons spreadsheet"
-                    src="https://docs.google.com/spreadsheets/d/1Ke0X96XtUmqrzVriYfByz7FeM2wTFYjzDMIPtNUF0bo/preview?gid=991882874"
-                    className="h-full w-full border-0"
-                    loading="lazy"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  />
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-slate-900/80 to-transparent" />
-                  <button
-                    type="button"
-                    onClick={toggleSheetFullscreen}
-                    className="absolute bottom-3 right-3 z-10 rounded-full border border-emerald-500/40 bg-slate-950/80 px-3 py-1.5 text-xs font-semibold text-emerald-200 shadow-lg shadow-emerald-900/30 backdrop-blur hover:-translate-y-[1px] hover:border-emerald-400/70 hover:text-emerald-100 transition"
-                    aria-label={isSheetFullscreen ? "Exit full screen" : "View sheet in full screen"}
-                  >
-                    {isSheetFullscreen ? "Exit Fullscreen" : "Fullscreen"}
-                  </button>
+                  <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-slate-900/50 to-slate-950/80" />
+                  <div className="relative flex h-full flex-col">
+                    <div className="flex items-start justify-between gap-3 px-4 pt-4 sm:px-5">
+                      <div>
+                        <p className="text-[11px] uppercase tracking-wide text-emerald-400/80">Local tier list</p>
+                        <p className="text-xs text-slate-400">Fast to scan, synced from the Excel in this repo.</p>
+                      </div>
+                    </div>
+                    <div className="flex-1 overflow-y-auto px-4 pb-5 pt-3 sm:px-5">
+                      <div className="sticky top-0 z-10 -mx-4 -mt-3 mb-3 bg-slate-900/95 px-4 py-3 backdrop-blur sm:-mx-5 sm:px-5">
+                        <div className="flex flex-wrap gap-2">
+                          {tierTabs.map((tab) => (
+                            <button
+                              key={tab.id}
+                              type="button"
+                              onClick={() => setActiveTab(tab.id)}
+                              className={`group rounded-full border px-3 py-1.5 text-xs font-semibold transition ${
+                                activeTab === tab.id
+                                  ? "border-emerald-400/60 bg-emerald-600/15 text-emerald-200 shadow-inner shadow-emerald-900/40"
+                                  : "border-slate-700/80 bg-slate-800/50 text-slate-300 hover:border-slate-500 hover:text-white"
+                              }`}
+                            >
+                              <span className="block text-left leading-tight">
+                                {tab.label}
+                                <span className="block text-[10px] font-normal text-slate-400 group-hover:text-slate-300">
+                                  {tab.helper}
+                                </span>
+                              </span>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      {activeTab === "weaponRankings" && (
+                        <div className="space-y-3">
+                          {sortedWeapons.map((weapon) => (
+                            <div
+                              key={weapon.name}
+                              className="rounded-xl border border-slate-800/60 bg-slate-900/60 p-4 shadow-inner shadow-slate-950/30"
+                            >
+                              <div className="flex items-start justify-between gap-3">
+                                <div className="flex items-start gap-3">
+                                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-950/50 ring-1 ring-slate-800/80 shadow-inner">
+                                    {weapon.icon ? (
+                                      <Image
+                                        src={weapon.icon}
+                                        alt={`${weapon.name} icon`}
+                                        width={48}
+                                        height={48}
+                                        className="h-12 w-12 object-contain"
+                                      />
+                                    ) : (
+                                      <span className="text-lg font-semibold text-emerald-200">
+                                        {weapon.name[0]}
+                                      </span>
+                                    )}
+                                  </div>
+                                  <div className="space-y-1">
+                                    <p className="text-[11px] uppercase tracking-wide text-slate-500">
+                                      {weapon.weapon} · {weapon.range} · {weapon.type}
+                                    </p>
+                                    <h4 className="text-base font-semibold text-slate-100">{weapon.name}</h4>
+                                    <p className="text-xs text-slate-300">
+                                      Path: <span className="text-emerald-200">{weapon.pathGuide}</span>
+                                      {weapon.sectBoost ? (
+                                        <span className="text-slate-400"> · Sect: {weapon.sectBoost}</span>
+                                      ) : null}
+                                    </p>
+                                  </div>
+                                </div>
+                                <div className="flex flex-col items-end gap-1 text-[11px]">
+                                  {weapon.vetRank ? (
+                                    <span className={`rounded-full border px-3 py-1 font-semibold ${rankBadgeStyle(weapon.vetRank)}`}>
+                                      Vet {weapon.vetRank}
+                                    </span>
+                                  ) : null}
+                                  <div className="flex gap-1">
+                                    {weapon.pveRank ? (
+                                      <span className={`rounded-full border px-2 py-1 font-semibold ${rankBadgeStyle(weapon.pveRank)}`}>
+                                        PVE {weapon.pveRank}
+                                      </span>
+                                    ) : null}
+                                    {weapon.pvpRank ? (
+                                      <span className={`rounded-full border px-2 py-1 font-semibold ${rankBadgeStyle(weapon.pvpRank)}`}>
+                                        PVP {weapon.pvpRank}
+                                      </span>
+                                    ) : null}
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      {activeTab === "pathGuides" && (
+                        <div className="space-y-3">
+                          {pathGuides.map((path) => (
+                            <div
+                              key={path.pathGuide}
+                              className="rounded-xl border border-slate-800/60 bg-slate-900/60 p-4 shadow-inner shadow-slate-950/30"
+                            >
+                              <div className="flex items-start justify-between gap-3">
+                                <div className="flex items-start gap-3">
+                                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-950/50 ring-1 ring-slate-800/80 shadow-inner">
+                                    {path.icon ? (
+                                      <Image
+                                        src={path.icon}
+                                        alt={`${path.pathGuide} icon`}
+                                        width={48}
+                                        height={48}
+                                        className="h-12 w-12 object-contain"
+                                      />
+                                    ) : (
+                                      <span className="text-lg font-semibold text-emerald-200">
+                                        {path.pathGuide[0]}
+                                      </span>
+                                    )}
+                                  </div>
+                                  <div className="space-y-1">
+                                    <p className="text-[11px] uppercase tracking-wide text-slate-500">
+                                      {path.type} · {path.range}
+                                    </p>
+                                    <h4 className="text-base font-semibold text-slate-100">{path.pathGuide}</h4>
+                                    {(path.primaryStyle || path.secondaryStyle) && (
+                                      <p className="text-xs text-slate-300">
+                                        Styles:{" "}
+                                        {[path.primaryStyle, path.secondaryStyle].filter(Boolean).join(" + ")}
+                                      </p>
+                                    )}
+                                    {path.description ? (
+                                      <p className="text-sm text-slate-300 leading-relaxed">{path.description}</p>
+                                    ) : null}
+                                  </div>
+                                </div>
+                                {path.rankOnStat ? (
+                                  <span className={`rounded-full border px-3 py-1 text-xs font-semibold ${rankBadgeStyle(path.rankOnStat)}`}>
+                                    Rank {path.rankOnStat}
+                                  </span>
+                                ) : null}
+                              </div>
+                              <div className="mt-3 grid grid-cols-2 gap-3 text-[11px] sm:grid-cols-3">
+                                {statFields.map(({ key, label }) => {
+                                  const value = path[key];
+                                  if (typeof value !== "number") return null;
+                                  const percent = Math.min(Math.max(value, 0), 5) / 5 * 100;
+                                  return (
+                                    <div key={key} className="space-y-1">
+                                      <div className="flex items-center justify-between text-slate-400">
+                                        <span>{label}</span>
+                                        <span className="text-slate-200">{value.toFixed(1)}</span>
+                                      </div>
+                                      <div className="h-1.5 w-full rounded-full bg-slate-800/70">
+                                        <div
+                                          className="h-full rounded-full bg-gradient-to-r from-emerald-400/70 to-emerald-300/90"
+                                          style={{ width: `${percent}%` }}
+                                        />
+                                      </div>
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                              {(path.internalArts?.length || path.weaponSet || path.gearSet) && (
+                                <div className="mt-3 flex flex-wrap gap-2 text-[11px] text-slate-400">
+                                  {path.internalArts?.length ? (
+                                    <span className="rounded-full border border-slate-700 bg-slate-800/60 px-3 py-1 text-slate-200">
+                                      IA: {path.internalArts.join(", ")}
+                                    </span>
+                                  ) : null}
+                                  {path.weaponSet ? (
+                                    <span className="rounded-full border border-slate-700 bg-slate-800/60 px-3 py-1">
+                                      Weapon set: {path.weaponSet}
+                                    </span>
+                                  ) : null}
+                                  {path.gearSet ? (
+                                    <span className="rounded-full border border-slate-700 bg-slate-800/60 px-3 py-1">
+                                      Gear set: {path.gearSet}
+                                    </span>
+                                  ) : null}
+                                </div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      {activeTab === "combinations" && (
+                        <div className="space-y-3">
+                          {combinations.map((combo, idx) => (
+                            <div
+                              key={`${combo.weapon1}-${combo.weapon2 ?? "solo"}-${idx}`}
+                              className="rounded-xl border border-slate-800/60 bg-slate-900/60 p-4 shadow-inner shadow-slate-950/30"
+                            >
+                              <div className="flex items-start justify-between gap-3">
+                                <div className="space-y-1">
+                                  <p className="text-[11px] uppercase tracking-wide text-slate-500">
+                                    {combo.type || "Build"} · {combo.range || "Flex"}
+                                  </p>
+                                  <h4 className="text-base font-semibold text-slate-100">
+                                    {combo.weapon1}
+                                    {combo.weapon2 ? ` + ${combo.weapon2}` : ""}
+                                  </h4>
+                                  <p className="text-xs text-slate-300">
+                                    Path: <span className="text-emerald-200">{combo.path || "—"}</span>
+                                    {combo.pathRank ? <span className="text-slate-400"> ({combo.pathRank})</span> : null}
+                                  </p>
+                                </div>
+                                <div className="flex gap-1 text-[11px]">
+                                  {combo.totalPve ? (
+                                    <span className={`rounded-full border px-2 py-1 font-semibold ${rankBadgeStyle(combo.totalPve)}`}>
+                                      PVE {combo.totalPve}
+                                    </span>
+                                  ) : null}
+                                  {combo.totalPvp ? (
+                                    <span className={`rounded-full border px-2 py-1 font-semibold ${rankBadgeStyle(combo.totalPvp)}`}>
+                                      PVP {combo.totalPvp}
+                                    </span>
+                                  ) : null}
+                                </div>
+                              </div>
+                              {combo.note ? (
+                                <p className="mt-2 text-sm text-slate-300 leading-relaxed">{combo.note}</p>
+                              ) : null}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      {activeTab === "internalArts" && (
+                        <div className="space-y-3">
+                          {internalArts.map((art) => (
+                            <div
+                              key={art.name}
+                              className="rounded-xl border border-slate-800/60 bg-slate-900/60 p-4 shadow-inner shadow-slate-950/30"
+                            >
+                              <div className="flex items-start justify-between gap-3">
+                                <div className="space-y-1">
+                                  <p className="text-[11px] uppercase tracking-wide text-slate-500">
+                                    {[art.type1, art.type2, art.type3].filter(Boolean).join(" · ") || "Passive"}
+                                  </p>
+                                  <h4 className="text-base font-semibold text-slate-100">{art.name}</h4>
+                                </div>
+                              </div>
+                              {art.description ? (
+                                <p className="mt-2 text-sm text-slate-300 leading-relaxed">{art.description}</p>
+                              ) : null}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </motion.div>
                 <div className="text-xs text-slate-500">
-                  Scroll to view fields. Want a wider view?{" "}
-                  <a
-                    className="text-emerald-300 hover:text-emerald-200 underline decoration-dashed decoration-emerald-500/70"
-                    href="https://docs.google.com/spreadsheets/d/1Ke0X96XtUmqrzVriYfByz7FeM2wTFYjzDMIPtNUF0bo/edit?gid=991882874"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    View full sheet
-                  </a>
-                  .
+                  Data flow: <span className="font-mono text-[11px] text-slate-300">ref-page/tier_list/tier_list.xlsx</span> →{" "}
+                  <span className="font-mono text-[11px] text-slate-300">ref-page/tier_list/tier-list.json</span>. Update the Excel, run the extractor, and redeploy.
                 </div>
               </div>
             </div>

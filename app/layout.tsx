@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Script from "next/script";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "./analytics";
 import BackgroundWrapper from "../components/BackgroundWrapper";
+import { SiteHeader } from "../components/SiteHeader";
+import Link from "next/link";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -31,6 +32,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+      </head>
       <body
         className={`${inter.variable} antialiased text-slate-50 bg-slate-950`}
       >
@@ -44,83 +50,7 @@ export default function RootLayout({
         <BackgroundWrapper />
 
         <div className="relative min-h-screen z-10">
-          <header className="border-b border-slate-800/80 bg-slate-950/85 backdrop-blur">
-            <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-              <Link href="/" className="flex items-center gap-2">
-                <div className="h-8 w-8 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 shadow-lg shadow-emerald-500/40" />
-                <div className="flex flex-col leading-tight">
-                  <span className="text-sm font-semibold tracking-wide text-slate-50">
-                    Where Winds Meet
-                  </span>
-                  <span className="text-xs text-slate-400">
-                    Guides · Tier List · Codes
-                  </span>
-                </div>
-              </Link>
-              <nav className="hidden gap-6 text-sm font-medium text-slate-200 sm:flex">
-                <Link
-                  href="/"
-                  className="transition-colors hover:text-emerald-400"
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/guides"
-                  className="transition-colors hover:text-emerald-400"
-                >
-                  Guides
-                </Link>
-                <Link
-                  href="/guides/bosses"
-                  className="transition-colors hover:text-emerald-400"
-                >
-                  Bosses
-                </Link>
-                <Link
-                  href="/guides/weapons"
-                  className="transition-colors hover:text-emerald-400"
-                >
-                  Weapons
-                </Link>
-                <Link
-                  href="/guides/martial-arts-weapons"
-                  className="transition-colors hover:text-emerald-400"
-                >
-                  Martial Arts
-                </Link>
-                <Link
-                  href="/guides/tier-list"
-                  className="transition-colors hover:text-emerald-400"
-                >
-                  Tier List
-                </Link>
-                <Link
-                  href="/guides/builds"
-                  className="transition-colors hover:text-emerald-400"
-                >
-                  Builds
-                </Link>
-                <Link
-                  href="/guides/codes"
-                  className="transition-colors hover:text-emerald-400"
-                >
-                  Codes
-                </Link>
-                <Link
-                  href="/guides/items"
-                  className="transition-colors hover:text-emerald-400"
-                >
-                  Items
-                </Link>
-                <Link
-                  href="/news"
-                  className="transition-colors hover:text-emerald-400"
-                >
-                  News
-                </Link>
-              </nav>
-            </div>
-          </header>
+          <SiteHeader />
 
           <main className="mx-auto max-w-7xl px-4 pb-16 pt-8 sm:px-6 lg:px-8">
             {children}

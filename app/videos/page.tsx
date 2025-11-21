@@ -17,7 +17,7 @@ export default function VideosPage() {
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
         <div className="pointer-events-none absolute inset-0">
           <Image
-            src="/background/bg4.png"
+            src="/background/bg4.webp"
             alt="Where Winds Meet gameplay background art"
             fill
             className="object-cover opacity-35"
@@ -67,10 +67,12 @@ export default function VideosPage() {
                 <div className="aspect-video bg-slate-950/80">
                   <iframe
                     title={video.title}
-                    src={`https://www.youtube-nocookie.com/embed/${video.id}`}
+                    src={`https://www.youtube-nocookie.com/embed/${video.id}?rel=0&modestbranding=1&playsinline=1`}
                     className="h-full w-full border-0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
                   />
                 </div>
               </div>

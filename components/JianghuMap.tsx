@@ -132,8 +132,27 @@ export default function JianghuMap() {
         </motion.p>
       </div>
 
+      {/* 移动端：改为网格，避免图标重叠 */}
+      <div className="mb-6 grid grid-cols-2 gap-3 sm:hidden">
+        {landmarks.map((landmark) => (
+          <Link
+            key={landmark.id}
+            href={landmark.slug}
+            className="group flex items-center gap-3 rounded-2xl border border-slate-800/70 bg-slate-900/70 p-3 shadow-inner shadow-slate-950/40 transition hover:border-emerald-500/40 hover:shadow-emerald-900/30"
+          >
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-slate-700 bg-slate-950 text-2xl shadow-inner shadow-slate-900">
+              {landmark.icon}
+            </div>
+            <div className="flex flex-col leading-tight">
+              <span className="text-sm font-semibold text-slate-100">{landmark.chineseName || landmark.label}</span>
+              <span className="text-xs text-slate-400">{landmark.category}</span>
+            </div>
+          </Link>
+        ))}
+      </div>
+
       {/* 地图区域 */}
-      <div className="relative z-10 mx-auto max-w-5xl">
+      <div className="relative z-10 mx-auto hidden max-w-5xl sm:block">
         <div className="relative aspect-[16/10] w-full">
           {/* 地标点 */}
           {landmarks.map((landmark, index) => {

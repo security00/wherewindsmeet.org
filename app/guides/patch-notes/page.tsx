@@ -40,7 +40,7 @@ export default function PatchNotesPage() {
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
         <div className="pointer-events-none absolute inset-0">
           <Image
-            src="/background/bg1.png"
+            src="/background/bg1.webp"
             alt="Where Winds Meet patch notes background"
             fill
             className="object-cover opacity-40"

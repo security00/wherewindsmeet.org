@@ -33,8 +33,7 @@ export const bosses: Boss[] = [
     theme: "contracts, information, hidden power in the dark",
     backgroundVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e440aa64b1cb56a20c39SXz41N4r03",
-    titleImage:
-      "https://www.wherewindsmeetgame.com/pc/gw/20251024112521/img/6_tit_0a00d079.png",
+    titleImage: "/bosses/6_tit_0a00d079.png",
   },
   {
     id: "god-of-avaric",
@@ -46,8 +45,7 @@ export const bosses: Boss[] = [
     theme: "wealth, ambition, the cost of serving the wrong cause",
     backgroundVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e5cc6cd30209c0511f69xZfM5GC503",
-    titleImage:
-      "https://www.wherewindsmeetgame.com/pc/gw/20251024112521/img/10_tit_22cc1602.png",
+    titleImage: "/bosses/10_tit_22cc1602.png",
   },
   {
     id: "heartseeker",
@@ -59,8 +57,7 @@ export const bosses: Boss[] = [
     theme: "inner demons, memory, distorted reflections of the self",
     backgroundVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e66d629ae6e2c037d5a6XMt2Twli03",
-    titleImage:
-      "https://www.wherewindsmeetgame.com/pc/gw/20251024112521/img/3_tit_f504b30e.png",
+    titleImage: "/bosses/3_tit_f504b30e.png",
   },
   {
     id: "lucky-seventeen",
@@ -72,8 +69,7 @@ export const bosses: Boss[] = [
     theme: "duty, craftsmanship, guardianship of knowledge",
     backgroundVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e657629ae6e2c037d428oNjEcOO703",
-    titleImage:
-      "https://www.wherewindsmeetgame.com/pc/gw/20251024112521/img/1_tit_85fcd171.png",
+    titleImage: "/bosses/1_tit_85fcd171.png",
   },
   {
     id: "murong-yuan",
@@ -85,8 +81,7 @@ export const bosses: Boss[] = [
     theme: "technology, betrayal, turning ideals into war machines",
     backgroundVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e5f9ec073ee12006cc49NBwJjrMe03",
-    titleImage:
-      "https://www.wherewindsmeetgame.com/pc/gw/20251024112521/img/7_tit_79faa323.png",
+    titleImage: "/bosses/7_tit_79faa323.png",
   },
   {
     id: "qianye",
@@ -98,8 +93,7 @@ export const bosses: Boss[] = [
     theme: "disguise, manipulation, reading what lies beneath the mask",
     backgroundVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e5eb5e38916dd27deaf2bqROEQRE03",
-    titleImage:
-      "https://www.wherewindsmeetgame.com/pc/gw/20251024112521/img/8_tit_8ae9cdaf.png",
+    titleImage: "/bosses/8_tit_8ae9cdaf.png",
   },
   {
     id: "the-void-king",
@@ -111,8 +105,7 @@ export const bosses: Boss[] = [
     theme: "limits, discipline, overwhelming physical force",
     backgroundVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e61aa78083738d6d492c26GNDq8t03",
-    titleImage:
-      "https://www.wherewindsmeetgame.com/pc/gw/20251024112521/img/4_tit_8b3e8cfc.png",
+    titleImage: "/bosses/4_tit_8b3e8cfc.png",
   },
   {
     id: "tian-ying",
@@ -124,8 +117,7 @@ export const bosses: Boss[] = [
     theme: "assassination, anonymity, life lived between missions",
     backgroundVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e60972bc64d11682a8dakS0hHk2g03",
-    titleImage:
-      "https://www.wherewindsmeetgame.com/pc/gw/20251024112521/img/5_tit_f82610c3.png",
+    titleImage: "/bosses/5_tit_f82610c3.png",
   },
   {
     id: "ye-wanshan",
@@ -138,8 +130,7 @@ export const bosses: Boss[] = [
     theme: "war, betrayal, the fall of once‑honorable heroes",
     backgroundVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e68c41a5c8a28ad3c2c07BGR5fzX03",
-    titleImage:
-      "https://www.wherewindsmeetgame.com/pc/gw/20251024112521/img/2_tit_6ec8679b.png",
+    titleImage: "/bosses/2_tit_6ec8679b.png",
   },
   {
     id: "zheng-e",
@@ -151,8 +142,6 @@ export const bosses: Boss[] = [
     theme: "idealism, disillusionment, walking forward alone",
     backgroundVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e69aeb28216c8722c417KSsSJULb03",
-    titleImage:
-      "https://www.wherewindsmeetgame.com/pc/gw/20251024112521/img/9_tit_33d334bf.png",
+    titleImage: "/bosses/9_tit_33d334bf.png",
   },
 ];
-

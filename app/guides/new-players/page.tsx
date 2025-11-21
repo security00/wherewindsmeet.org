@@ -193,10 +193,12 @@ export default function NewPlayersGuidePage() {
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] w-full overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="/background/30.png"
+          <Image
+            src="/background/30.webp"
             alt="Where Winds Meet beginner guide background art"
-            className="absolute inset-0 w-full h-full object-cover object-center opacity-60"
+            fill
+            className="object-cover object-center opacity-60"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/30 via-slate-950/60 to-slate-950" />
         </div>
