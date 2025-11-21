@@ -1,0 +1,182 @@
+[
+  {
+    "id": "bluster-1",
+    "name": "Bold Assertion",
+    "style": "Bluster",
+    "cost": 2,
+    "effect": "Deal moderate damage to opponent's Mental Focus",
+    "description": "Make a confident statement that shakes the opponent's resolve",
+    "rarity": "common"
+  },
+  {
+    "id": "bluster-2",
+    "name": "Overwhelming Confidence",
+    "style": "Bluster",
+    "cost": 4,
+    "effect": "Deal high damage and slightly reduce opponent's inspiration regeneration",
+    "description": "Exude such confidence that the opponent doubts their own arguments",
+    "rarity": "rare"
+  },
+  {
+    "id": "bluster-3",
+    "name": "Dismissive Wave",
+    "style": "Bluster",
+    "cost": 1,
+    "effect": "Deal low damage, costs minimal inspiration",
+    "description": "Wave away the opponent's argument without proper consideration",
+    "rarity": "common"
+  },
+  {
+    "id": "bluster-4",
+    "name": "Unwavering Stance",
+    "style": "Bluster",
+    "cost": 3,
+    "effect": "Reduce incoming damage by 30% for next 2 turns",
+    "description": "Stand firm against all counterarguments",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "provocation-1",
+    "name": "Cutting Remark",
+    "style": "Provocation",
+    "cost": 2,
+    "effect": "Deal moderate damage and provoke emotional response",
+    "description": "Make a personal jab that frustrates the opponent",
+    "rarity": "common"
+  },
+  {
+    "id": "provocation-2",
+    "name": "Emotional Explosion",
+    "style": "Provocation",
+    "cost": 5,
+    "effect": "Deal very high damage but reduce your own inspiration regeneration next turn",
+    "description": "Trigger such a strong reaction that the opponent loses focus entirely",
+    "rarity": "rare"
+  },
+  {
+    "id": "provocation-3",
+    "name": "Mocking Laugh",
+    "style": "Provocation",
+    "cost": 1,
+    "effect": "Deal minimal damage, silences opponent for 1 turn",
+    "description": "Laugh at the opponent's argument, leaving them speechless",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "provocation-4",
+    "name": "Personal Attack",
+    "style": "Provocation",
+    "cost": 3,
+    "effect": "Deal damage proportional to opponent's current Mental Focus deficit",
+    "description": "Attack the opponent's credibility rather than their arguments",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "rebuttal-1",
+    "name": "Logical Counter",
+    "style": "Rebuttal",
+    "cost": 2,
+    "effect": "Deal moderate damage and expose opponent's logical fallacy",
+    "description": "Systematically dismantle the opponent's argument with facts",
+    "rarity": "common"
+  },
+  {
+    "id": "rebuttal-2",
+    "name": "Irrefutable Evidence",
+    "style": "Rebuttal",
+    "cost": 4,
+    "effect": "Deal high damage and reduce opponent's next card cost by 50%",
+    "description": "Present overwhelming evidence that cannot be disputed",
+    "rarity": "rare"
+  },
+  {
+    "id": "rebuttal-3",
+    "name": "Point of Order",
+    "style": "Rebuttal",
+    "cost": 2,
+    "effect": "Negate opponent's previous attack and reflect 50% as damage",
+    "description": "Use parliamentary procedure to invalidate the opponent's argument",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "rebuttal-4",
+    "name": "Perfect Defense",
+    "style": "Rebuttal",
+    "cost": 3,
+    "effect": "Block next opponent attack and gain 1 temporary defense",
+    "description": "Construct an airtight logical defense against all counter-arguments",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "filibuster-1",
+    "name": "Endless Monologue",
+    "style": "Filibuster",
+    "cost": 3,
+    "effect": "Deal moderate damage per second for 3 seconds, opponent cannot respond",
+    "description": "Talk continuously without letting the opponent speak",
+    "rarity": "common"
+  },
+  {
+    "id": "filibuster-2",
+    "name": "Wall of Words",
+    "style": "Filibuster",
+    "cost": 5,
+    "effect": "Deal high cumulative damage, reduce opponent's damage output by 40% next turn",
+    "description": "Create such a deluge of words that the opponent cannot find an opening",
+    "rarity": "rare"
+  },
+  {
+    "id": "filibuster-3",
+    "name": "Rambling Tangent",
+    "style": "Filibuster",
+    "cost": 2,
+    "effect": "Deal damage and gain additional card draw next turn",
+    "description": "Go off on a tangent that confuses the opponent's strategy",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "filibuster-4",
+    "name": "Verbose Shield",
+    "style": "Filibuster",
+    "cost": 3,
+    "effect": "Increase your Mental Focus recovery by 15% and gain 20% damage reduction",
+    "description": "Use flowery language to delay the opponent's attacks",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "universal-1",
+    "name": "Composed Response",
+    "style": "Universal",
+    "cost": 1,
+    "effect": "Restore 10% of your Mental Focus",
+    "description": "Take a moment to regain your composure",
+    "rarity": "common"
+  },
+  {
+    "id": "universal-2",
+    "name": "Inspiration Surge",
+    "style": "Universal",
+    "cost": 0,
+    "effect": "Recover 5 inspiration points immediately",
+    "description": "A moment of clarity restores your mental energy",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "universal-3",
+    "name": "Brilliant Riposte",
+    "style": "Universal",
+    "cost": 2,
+    "effect": "Deal damage equal to opponent's last attack damage × 1.5",
+    "description": "Turn the opponent's own argument against them",
+    "rarity": "rare"
+  },
+  {
+    "id": "universal-4",
+    "name": "Silence",
+    "style": "Universal",
+    "cost": 3,
+    "effect": "Completely silence opponent for 2 turns, prevent card use",
+    "description": "Literally leave the opponent speechless",
+    "rarity": "rare"
+  }
+]

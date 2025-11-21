@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import DialogueCardsComponent from "./DialogueCardsComponent";
+import StyleComparisonTable from "./StyleComparisonTable";
+import VideoGallery from "./VideoGallery";
 
 export const metadata: Metadata = {
   title: "Gift of Gab Guide – Where Winds Meet Dialogue Minigame",
@@ -167,6 +170,15 @@ export default function GiftOfGabPage() {
           </p>
         </div>
       </section>
+
+      {/* Style Comparison Table */}
+      <StyleComparisonTable />
+
+      {/* Dialogue Cards */}
+      <DialogueCardsComponent />
+
+      {/* Video Gallery */}
+      <VideoGallery />
 
       {/* Core Mechanics */}
       <section id="core-mechanics" className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 space-y-6">
