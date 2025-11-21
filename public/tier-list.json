@@ -1,0 +1,775 @@
+{
+  "weaponRankings": [
+    {
+      "name": "Strategic Sword",
+      "weapon": "Sword",
+      "range": "Melee",
+      "type": "DPS",
+      "pathGuide": "Bellstrike - Umbra",
+      "vetRank": "A",
+      "pveRank": "A",
+      "pvpRank": "A",
+      "icon": "/tier-list/icons/weapon-strategic-sword.png"
+    },
+    {
+      "name": "Thundercry Blade",
+      "weapon": "Mo Blade",
+      "range": "Melee",
+      "type": "Tank",
+      "pathGuide": "Stonesplit - Might",
+      "sectBoost": "Well of Heaven",
+      "vetRank": "A",
+      "pveRank": "S",
+      "pvpRank": "S",
+      "icon": "/tier-list/icons/weapon-thundercry-blade.png"
+    },
+    {
+      "name": "Stormbreaker Spear",
+      "weapon": "Spear",
+      "range": "Melee",
+      "type": "Tank",
+      "pathGuide": "Stonesplit - Might",
+      "vetRank": "S",
+      "pveRank": "A",
+      "pvpRank": "S",
+      "icon": "/tier-list/icons/weapon-stormbreaker-spear.png"
+    },
+    {
+      "name": "Infernal Twin Blades",
+      "weapon": "Twin Blades",
+      "range": "Melee",
+      "type": "DPS",
+      "pathGuide": "Bamboocut - Wind",
+      "sectBoost": "Midnight Blades",
+      "vetRank": "A",
+      "pveRank": "A",
+      "pvpRank": "S",
+      "icon": "/tier-list/icons/weapon-infernal-twin-blades.png"
+    },
+    {
+      "name": "Vernal Umbrella",
+      "weapon": "Umbrella",
+      "range": "Ranged",
+      "type": "DPS",
+      "pathGuide": "Silkbind - Jade",
+      "vetRank": "C",
+      "pveRank": "B",
+      "pvpRank": "C",
+      "icon": "/tier-list/icons/weapon-vernal-umbrella.png"
+    },
+    {
+      "name": "Soulshade Umbrella",
+      "weapon": "Umbrella",
+      "range": "Ranged",
+      "type": "Heal",
+      "pathGuide": "Silkbind - Deluge",
+      "sectBoost": "Hollow Vale",
+      "vetRank": "B",
+      "pveRank": "A",
+      "pvpRank": "C",
+      "icon": "/tier-list/icons/weapon-soulshade-umbrella.png"
+    },
+    {
+      "name": "Inkwell fan",
+      "weapon": "Fan",
+      "range": "Ranged",
+      "type": "DPS",
+      "pathGuide": "Silkbind - Jade",
+      "sectBoost": "Silver Needle",
+      "vetRank": "B",
+      "pveRank": "B",
+      "pvpRank": "A",
+      "icon": "/tier-list/icons/weapon-inkwell-fan.png"
+    },
+    {
+      "name": "Nameless Spear",
+      "weapon": "Spear",
+      "range": "Melee",
+      "type": "DPS",
+      "pathGuide": "Bellstrike - Splendor",
+      "vetRank": "S",
+      "pveRank": "A",
+      "pvpRank": "A",
+      "icon": "/tier-list/icons/weapon-nameless-spear.png"
+    },
+    {
+      "name": "Panacea Fan",
+      "weapon": "Fan",
+      "range": "Ranged",
+      "type": "Heal",
+      "pathGuide": "Silkbind - Deluge",
+      "sectBoost": "Silver Needle",
+      "vetRank": "S",
+      "pveRank": "S",
+      "pvpRank": "B",
+      "icon": "/tier-list/icons/weapon-panacea-fan.png"
+    },
+    {
+      "name": "Nameless Sword",
+      "weapon": "Sword",
+      "range": "Melee",
+      "type": "DPS",
+      "pathGuide": "Bellstrike - Splendor",
+      "vetRank": "S",
+      "pveRank": "S",
+      "pvpRank": "S",
+      "icon": "/tier-list/icons/weapon-nameless-sword.png"
+    },
+    {
+      "name": "Heavenquaker Spear",
+      "weapon": "Spear",
+      "range": "Melee",
+      "type": "DPS",
+      "pathGuide": "Bellstrike - Umbra",
+      "vetRank": "A",
+      "pveRank": "A",
+      "pvpRank": "B",
+      "icon": "/tier-list/icons/weapon-heavenquaker-spear.png"
+    },
+    {
+      "name": "Mortal Rope Dart",
+      "weapon": "Rope Dart",
+      "range": "Melee",
+      "type": "DPS",
+      "pathGuide": "Bamboocut - Wind",
+      "sectBoost": "Nine Mortal Ways",
+      "vetRank": "A",
+      "pveRank": "A",
+      "pvpRank": "S",
+      "icon": "/tier-list/icons/weapon-mortal-rope-dart.png"
+    }
+  ],
+  "pathGuides": [
+    {
+      "pathGuide": "Bellstrike - Umbra",
+      "type": "DPS",
+      "range": "Melee",
+      "primaryStyle": "Strategic Sword",
+      "secondaryStyle": "Heavenquaker Spear",
+      "description": "By applying bleed Status effects, it triggers frequent and sustained damage ticks. Additionally, by increasing its own damage multiplier, it can focus and eliminate targets faster. it also retains decent mobility.",
+      "dps": 4.0,
+      "difficulty": 3.0,
+      "survivability": 2.0,
+      "mobility": 4.5,
+      "support": 1.0,
+      "control": 1.5,
+      "avg": 2.666666667,
+      "total": 16.0,
+      "rankOnStat": "C",
+      "weaponSet": "Hawkwing Set",
+      "gearSet": "Eaglerise Set",
+      "internalArts": [
+        "Sword Horizon",
+        "Wolfchaser's Art",
+        "Adaptive Steel",
+        "Insightful Strike"
+      ],
+      "icon": "/tier-list/icons/path-bellstrike-umbra.png"
+    },
+    {
+      "pathGuide": "Bellstrike - Splendor",
+      "type": "DPS",
+      "range": "Melee",
+      "primaryStyle": "Nameless Sword",
+      "secondaryStyle": "Nameless Spear",
+      "description": "High mobility and single-target control; excels at kiting enemies. Combine strong endurance with charged skills to unleash Burst Damage.",
+      "dps": 3.5,
+      "difficulty": 3.0,
+      "survivability": 3.0,
+      "mobility": 5.0,
+      "support": 1.0,
+      "control": 2.0,
+      "avg": 2.916666667,
+      "total": 17.5,
+      "rankOnStat": "A",
+      "weaponSet": "Jadeware Set",
+      "gearSet": "Formbend Set",
+      "internalArts": [
+        "Sword Morph",
+        "Mountains Might",
+        "Wildfire Spark",
+        "Battle Anthem"
+      ],
+      "icon": "/tier-list/icons/path-bellstrike-splendor.png"
+    },
+    {
+      "pathGuide": "Bamboocut - Wind",
+      "type": "DPS",
+      "range": "Melee",
+      "primaryStyle": "Infernal Twinblades",
+      "secondaryStyle": "Mortal Rope Dart",
+      "description": "Boasts extreme mobility and rapid, consecutive attacks, with multiple ways to close the gap quickly. Has some control tools to maintain a safe damage-dealing environment.",
+      "dps": 4.0,
+      "difficulty": 3.5,
+      "survivability": 2.0,
+      "mobility": 4.5,
+      "support": 1.0,
+      "control": 3.0,
+      "avg": 3.0,
+      "total": 18.0,
+      "rankOnStat": "S",
+      "weaponSet": "Swallowcall Set",
+      "gearSet": "Calmwaters Set",
+      "internalArts": [
+        "Echoes of Oblivion",
+        "Vendetta",
+        "Breaking Point",
+        "Riptide Reflex"
+      ],
+      "icon": "/tier-list/icons/path-bamboocut-wind.png"
+    },
+    {
+      "pathGuide": "Silkbind - Jade",
+      "type": "DPS",
+      "range": "Ranged",
+      "primaryStyle": "Inkwell Fan",
+      "secondaryStyle": "Vernal Umbrella",
+      "description": "A ranged playstyle, capable of sustained ranged DPS. Also has some control, allowing for burst combos with airborne attacks.",
+      "dps": 3.5,
+      "difficulty": 4.0,
+      "survivability": 2.0,
+      "mobility": 4.0,
+      "support": 1.0,
+      "control": 4.0,
+      "avg": 3.083333333,
+      "total": 18.5,
+      "rankOnStat": "S",
+      "weaponSet": "Veil of the Willow Set",
+      "gearSet": "Beyond the Chill Set",
+      "internalArts": [
+        "Blossom Barrage",
+        "Flying Gourds",
+        "Thunderous Bloom",
+        "Star Reacher"
+      ],
+      "icon": "/tier-list/icons/path-silkbind-jade.png"
+    },
+    {
+      "pathGuide": "Stonesplit - Might",
+      "type": "Tank",
+      "range": "Melee",
+      "primaryStyle": "Thundercry Blade",
+      "secondaryStyle": "Stormbreaker Spear",
+      "description": "Equipped with shields, DMG Reduction and interruption resistance, it has strong survivability. It can also serve as the team's damage sponge via taunt abilities. Can group enemies and then use wide-range charged skills for AoE damage.",
+      "dps": 3.0,
+      "difficulty": 2.0,
+      "survivability": 4.5,
+      "mobility": 2.0,
+      "support": 2.0,
+      "control": 3.0,
+      "avg": 2.75,
+      "total": 16.5,
+      "rankOnStat": "B",
+      "weaponSet": "Rainwhisper Set",
+      "gearSet": "Moonflare Set",
+      "internalArts": [
+        "Exquisite Scenery",
+        "Trapped Beast",
+        "Art of Resistance",
+        "Rock Solid"
+      ],
+      "icon": "/tier-list/icons/path-stonesplit-might.png"
+    },
+    {
+      "pathGuide": "Silkbind - Deluge",
+      "type": "Heal",
+      "range": "Ranged",
+      "primaryStyle": "Panacea Fan",
+      "secondaryStyle": "Soulshade Umbrella",
+      "description": "Features both burst and sustained healing, covering single-target and group recovery. Revive abilities allow defeated allies to rejoin the fight, while also providing team-wide damage buffs for support.",
+      "dps": 1.5,
+      "difficulty": 2.5,
+      "survivability": 3.5,
+      "mobility": 2.5,
+      "support": 5.0,
+      "control": 2.5,
+      "avg": 2.916666667,
+      "total": 17.5,
+      "rankOnStat": "A",
+      "weaponSet": "Ivorybloom Set",
+      "gearSet": "Whirlsnow Set",
+      "internalArts": [
+        "Royal Remedy",
+        "Restoring Blossom",
+        "Esoteric Revival",
+        "Mending Loom"
+      ],
+      "icon": "/tier-list/icons/path-silkbind-deluge.png"
+    }
+  ],
+  "combinations": [
+    {
+      "weapon1": "Strategic Sword",
+      "weapon2": "Heavenquaker Spear",
+      "type": "DPS",
+      "range": "Close",
+      "path": "Bellstrike - Umbra",
+      "pathRank": "C",
+      "totalPve": "A",
+      "totalPvp": "S",
+      "note": "High skill ceiling (including animation canceling), Bleed is strong, High risk high reward"
+    },
+    {
+      "weapon1": "Nameless Sword",
+      "weapon2": "Nameless Spear",
+      "type": "DPS",
+      "range": "Close",
+      "path": "Bellstrike - Splendor",
+      "pathRank": "A",
+      "totalPve": "A",
+      "totalPvp": "A",
+      "note": "Very balanced, good Engage and Disengage, AOE and Control effects. Most balanced set, it is also the very first you get at the start. Viable throughout the game"
+    },
+    {
+      "weapon1": "Infernal Twinblades",
+      "weapon2": "Mortal Rope Dart",
+      "type": "DPS",
+      "range": "Close",
+      "path": "Bamboocut - Wind",
+      "pathRank": "S",
+      "totalPve": "S",
+      "totalPvp": "S",
+      "note": "High burst, high mobility, melting enemies but needs to hit the combos well"
+    },
+    {
+      "weapon1": "Thundercry Blade",
+      "weapon2": "Stormbreaker Spear",
+      "type": "Tank",
+      "range": "Close",
+      "path": "Stonesplit - Might",
+      "pathRank": "B",
+      "totalPve": "S",
+      "totalPvp": "A+",
+      "note": "Tanks are needed, always. Consistent high dmg output with shields and CC immunity, no sweat build but hitting hard and surviving long"
+    },
+    {
+      "weapon1": "Panacea Fan",
+      "weapon2": "Soulshade Umbrella",
+      "type": "Heal",
+      "range": "Ranged",
+      "path": "Silkbind - Deluge",
+      "pathRank": "A",
+      "totalPve": "S",
+      "totalPvp": "S",
+      "note": "Only full heal build, lacks solo Damage but extremely important for any Multiplayer content. Parties will always look for full healers."
+    },
+    {
+      "weapon1": "Inkwell Fan",
+      "weapon2": "Vernal Umbrella",
+      "type": "DPS",
+      "range": "Ranged",
+      "path": "Silkbind - Jade",
+      "pathRank": "S",
+      "totalPve": "B",
+      "totalPvp": "C",
+      "note": "a lot of safety because you can always stay ranged and go in for a quick combo with Fan just to disengage again. Lacks damage, easy to parry in PvP"
+    },
+    {
+      "weapon1": "My Fav. Offmeta Builds (2nd Weapon with Heal for Solo Content)"
+    },
+    {
+      "weapon1": "Strategic Sword",
+      "weapon2": "Inkwell Fan",
+      "type": "DPS",
+      "range": "Medium",
+      "path": "-",
+      "pathRank": "-",
+      "totalPve": "B",
+      "totalPvp": "A",
+      "note": "Stylish and a lot of Fun to play"
+    },
+    {
+      "weapon1": "Strategic Sword",
+      "weapon2": "Vernal Umbrella",
+      "type": "DPS",
+      "range": "Medium",
+      "path": "-",
+      "pathRank": "-",
+      "totalPve": "B+",
+      "totalPvp": "B",
+      "note": "Umbrella Ranged Stun into Engage"
+    },
+    {
+      "weapon1": "Nameless Sword",
+      "weapon2": "Vernal Umbrella",
+      "type": "DPS",
+      "range": "Medium",
+      "path": "-",
+      "pathRank": "-",
+      "totalPve": "B+",
+      "totalPvp": "B",
+      "note": "Umbrella Ranged Stun into Engage"
+    },
+    {
+      "weapon1": "Infernal Twinblades",
+      "weapon2": "Vernal Umbrella",
+      "type": "DPS",
+      "range": "Medium",
+      "path": "-",
+      "pathRank": "-",
+      "totalPve": "B+",
+      "totalPvp": "A-",
+      "note": "Umbrella Ranged Stun into Engage"
+    },
+    {
+      "weapon1": "Nameless Spear",
+      "weapon2": "Mortal Rope Dart",
+      "type": "DPS",
+      "range": "Close",
+      "path": "-",
+      "pathRank": "-",
+      "totalPve": "A-",
+      "totalPvp": "A-",
+      "note": "Stun with Nameless Spear, DPS with Mortal Rope Dart"
+    },
+    {
+      "weapon1": "Nameless Spear",
+      "weapon2": "Infernal Twinblades",
+      "type": "DPS",
+      "range": "Close",
+      "path": "-",
+      "pathRank": "-",
+      "totalPve": "A",
+      "totalPvp": "A+",
+      "note": "Stun with Nameless Spear, DPS with Twin Blades"
+    },
+    {
+      "weapon1": "any DPS / Tank",
+      "weapon2": "Soulshade Umbrella",
+      "type": "Hybrid",
+      "range": "Medium",
+      "path": "-",
+      "pathRank": "-",
+      "totalPve": "A-",
+      "totalPvp": "B-",
+      "note": "Helps you to Sustain through Solo Content, because Heal Pots are limited per Run, it will help you to stay alive p.e. in World Bosses. / Focused on Heal over Time"
+    },
+    {
+      "weapon1": "any DPS / Tank",
+      "weapon2": "Panacea Fan",
+      "type": "Hybrid",
+      "range": "Medium",
+      "path": "-",
+      "pathRank": "-",
+      "totalPve": "A-",
+      "totalPvp": "B-",
+      "note": "Helps you to Sustain through Solo Content, because Heal Pots are limited per Run, it will help you to stay alive p.e. in World Bosses. / Focused on Burst Heal"
+    },
+    {
+      "weapon1": "Nameless Sword",
+      "weapon2": "Stormbreaker Spear",
+      "type": "Hybrid",
+      "range": "Close",
+      "path": "-",
+      "pathRank": "-",
+      "totalPve": "S-",
+      "totalPvp": "S-",
+      "note": "Insanely usefull combination, Nameless Sword has CC immunity + can interrupt, Spear to shock enemies, boost Defense and Knock them Over. in PVE, triple interrupt"
+    },
+    {
+      "weapon1": "Nameless Sword",
+      "weapon2": "Thundercry Blade",
+      "type": "Hybrid",
+      "range": "Close",
+      "path": "-",
+      "pathRank": "-",
+      "totalPve": "S-",
+      "totalPvp": "S-",
+      "note": "Interrupt from the Nameless sword, insane Shield and CC from the Mo Blade, a disgustingly strong combination"
+    },
+    {
+      "weapon1": "Strategic Sword",
+      "weapon2": "Stormbreaker Spear",
+      "type": "Hybrid",
+      "range": "Close",
+      "path": "-",
+      "pathRank": "-",
+      "totalPve": "A",
+      "totalPvp": "A+",
+      "note": "Shock Enemies and boost your Defense with Spear and Knock them over > Strategic Sword for Burst DPS & Bleed"
+    },
+    {
+      "weapon1": "Strategic Sword",
+      "weapon2": "Thundercry Blade",
+      "type": "Hybrid",
+      "range": "Close",
+      "path": "-",
+      "pathRank": "-",
+      "totalPve": "A",
+      "totalPvp": "A+",
+      "note": "Consistent DPS with burst and Bleed combined with Shields and AOE CC"
+    },
+    {
+      "weapon1": "Infernal Twinblades",
+      "weapon2": "Stormbreaker Spear",
+      "type": "Hybrid",
+      "range": "Close",
+      "path": "-",
+      "pathRank": "-",
+      "totalPve": "A+",
+      "totalPvp": "S",
+      "note": "Shock Enemies and boost your Defense with Spear and Knock them over > Dual Blades into full DPS combo rotation"
+    },
+    {
+      "weapon1": "Infernal Twinblades",
+      "weapon2": "Thundercry Blade",
+      "type": "Hybrid",
+      "range": "Close",
+      "path": "-",
+      "pathRank": "-",
+      "totalPve": "A+",
+      "totalPvp": "S-",
+      "note": "Insane Shield into full DPS rotation for insane Tankyness and still high DPS"
+    }
+  ],
+  "internalArts": [
+    {
+      "name": "Morale Chant",
+      "type1": "Attack",
+      "type2": "Buff",
+      "type3": "Stacking",
+      "description": "80% chance to gain one stack of Yi River when attacking or healing: Increases Physical Damage and healing by 1% for 8 seconds, stacking up to 5 times. The chance to gain Yi River is only calculated once every 2 seconds."
+    },
+    {
+      "name": "Sword Morph",
+      "type1": "Attack",
+      "type2": "Martial Arts",
+      "type3": "Damage Boost",
+      "description": "When Nameless Sword's Charged Skill, Vagrant Sword is charged while the Qi shield is present, it unleashes multiple additional sword energy attacks at the 2nd charging stage. You can consume bonus Endurance to increase the sword energy's damage; each Endurance increases damage by 1%, up to 20%."
+    },
+    {
+      "name": "Mountain's Might",
+      "type1": "Support",
+      "type2": "Martial Arts",
+      "type3": "Cost Reduction",
+      "description": "Nameless Spear Martial Arts Skill Qiankun's Lock grants Endless Gale effect, increasing the Endurance cost reduction to 20% for 5 seconds."
+    },
+    {
+      "name": "Battle Anthem",
+      "type1": "Attack",
+      "type3": "Damage Boost",
+      "description": "Increases Charged Skills damage against all bosses by 10%"
+    },
+    {
+      "name": "Seasonal Edge",
+      "type1": "Attack",
+      "type2": "Buff",
+      "type3": "Damage Boost",
+      "description": "After casting a Dual-Weapon Skill, gain one of the following effects: Heart of Four Season: Critical Rate +8% , Will of Four Seasons: Affinity Rate +4%, wound of Four Seasons: Physical DMG Bonus +8%, Sound of Four Seasons: All Attribute Attack Bonuses +8%"
+    },
+    {
+      "name": "Sword Horizon",
+      "type1": "Attack",
+      "type2": "Martial Arts",
+      "type3": "Pursuit",
+      "description": "After casting Strategic Sword’s Martial Arts Skill, Special Skill, or Charged Skill, press the skill button at the perfect timing during the ending phase to cast Crisscrossing Swords and unleash follow-up attacks. If the target has 5 stacks of Bleed, remove all Bleed stacks and deal high Bleed damage once."
+    },
+    {
+      "name": "Blossom Barrage",
+      "type1": "Attack",
+      "type2": "Martial Arts",
+      "type3": "Damage Boost",
+      "description": "Vernal Umbrella's Martial Arts Skill Spring Sorrow can hold up to 2 stacks. Hitting a target applies the Combo effect: increases Damage taken from the caster's Ballistic Skills by 10% for 8s.\nAffected Ballistic Skills include: Martial Arts Skill Let Spring Go, Special Skill Everbloom,"
+    },
+    {
+      "name": "Royal Remedy",
+      "type1": "Support",
+      "type2": "Martial Arts",
+      "type3": "Recover",
+      "description": "Increases the healing effect of the water clone created by Panacea Fan’s Martial Arts Skill, Cloudburst Healing by 10%. If you are within its range, gain 1 Dewdrop each time when receive healing over time."
+    },
+    {
+      "name": "Exquisite Scenery",
+      "type1": "Defense",
+      "type2": "Martial Arts",
+      "type3": "Counter",
+      "description": "Successfully defending with Thundercry Blade activates its special counterattack. Press Perception Skill or Heavy Attack to unleash a first stage Charged Heavy Attack without charging. This effect can only trigger once every 10 seconds. Hitting a target with a Varied Combo restores 1 bar of Battle Will (no more than 1 bar restored per cast)."
+    },
+    {
+      "name": "Echoes of Oblivion",
+      "type1": "Debuff",
+      "type2": "Martial Arts",
+      "type3": "Pursuit",
+      "description": "Infernal Twinblades’ normal Light Attacks apply Sin to enemies, while Light Attacks under Flamelash apply Karma. When attacking targets affected by Sin and Karma with Infernal Twinblades’ Light Attacks, ignore their 10% Physical Defense and 10% Bamboocut Resistance respectively."
+    },
+    {
+      "name": "Envigorated Warrior",
+      "type1": "Attack",
+      "type2": "Buff",
+      "type3": "Damage Boost",
+      "description": "Increases all damage and healing done by 5%. This effect is disabled for 5 seconds after being hit. Taking a hit also grants a Cage effect, increasing all damage taken by 5%."
+    },
+    {
+      "name": "Bitter Seasons",
+      "type1": "Attack",
+      "type2": "Debuff",
+      "type3": "Stacking",
+      "description": "When dealing damage, there is a 10% chance to apply a Poison effect for 5 seconds, dealing damage once per second. The Poison reduces target’s Physical Defense by 0.6% for 10 seconds, stacking up to 5 times (duration refreshed upon stacking)."
+    },
+    {
+      "name": "Vital Leech",
+      "type2": "Recover",
+      "type3": "Pursuit",
+      "description": "Casting an Exhaustion Execution Skill resotres HP equal to 8% of the damage delt."
+    },
+    {
+      "name": "Fury Harvest",
+      "type1": "Support",
+      "type2": "Mystic Arts",
+      "type3": "Recover",
+      "description": "Vitality is required to cast Mystic Arts. Certain recovery actions have a 50% chance to grant 1 bonus Vitality. No bonus Vitality is rewarded when you gain Vitality by attacking, taking a hit, or successfully deflecting an attack."
+    },
+    {
+      "name": "Divine Roulette",
+      "type1": "Counter",
+      "type2": "Buff",
+      "type3": "Damage Boost",
+      "description": "Upon a successful deflection, gain one of the following effects:\n Immortal Guidance: Increases the next skill’s damage by 10%.\n Immortal Heart: The next skill is guaranteed to be Critical.\n Immortal Spirit: The next skill is guaranteed to be an Affinity hit.\nThe effect lasts 10 seconds and can only trigger once every 30 seconds.\nIt applies to Martial Art Skills, Perception Skills, Special Skills, Charged Skills, and Varied Combos."
+    },
+    {
+      "name": "Evasive Charge",
+      "type2": "Cost Reduction",
+      "type3": "Recover",
+      "description": "After a Perfect Dodge, there is a 50% chance to refund 100% of Endurance consumed."
+    },
+    {
+      "name": "Wildfire Spark",
+      "type2": "Support",
+      "type3": "Recover",
+      "description": "Refunds 3,5% of the Endurance consumed."
+    },
+    {
+      "name": "Wolfchaser's Art",
+      "type2": "Martial Arts",
+      "type3": "Buff",
+      "description": "Reduces the required combo number to gain Heavenquaker Spear’s Martial Arts Skill, Sorrow Without Wine buff from 5/10 to 4/8. Each time Sorrow Without Wine hits a boss with Bleed effect from you, there is a 20%/40%/60%/80%/100% chance to increase the combo count by 1 based on the number of Bleed stacks."
+    },
+    {
+      "name": "Adaptive Steel",
+      "type1": "Attack",
+      "type2": "Support",
+      "type3": "Buff",
+      "description": "Gain a Martial Skill effect based on the blade weapon you are using:\n Sword: 10% chance to apply one stack of Bleed to the target when dealing Affinity DMG.\n Spear: Attacks ignore 12.5% of target’s Physical Defense.\n Dual Blades: After a Perfect Dodge, increases the next Martial Arts Skill damage within 8 seconds by 25%.\n Mo Blade: Increases the Critical DMG of Charged Skills and Parry Counter Skills by 20%.\nThe Martial Skill of Sword has a 10-second cooldown, while Dual Blades’ Martial Skill has a cooldown of 25 seconds."
+    },
+    {
+      "name": "Insightful Strike",
+      "type1": "Attack",
+      "type2": "Damage Poost",
+      "type3": "DMG Reduction",
+      "description": "Dealing Affinity DMG generates Focus. When Focus is full, enter the Concentration state for 10 seconds.\nConcentration: Increases Affinity DMG by 10%. Upon hit, there is a 5% chance to reduce damage taken by 40%."
+    },
+    {
+      "name": "Flying Gourds",
+      "type2": "Martial Arts",
+      "type3": "Support",
+      "description": "Grants 2 charges to Inkwell Fan's Peak's Springless Silence, but increases its cooldown by 3 seconds."
+    },
+    {
+      "name": "Thunderous Bloom",
+      "type2": "Damage Boost",
+      "type3": "Buff",
+      "description": "When you move more than 15m within 3 seconds, gain Spring Thunder: The next 3 Heavy Attacks or Airborne Heavy Attacks within 12 seconds gain 15% DMG Bonus. This effect may trigger once per 15 seconds."
+    },
+    {
+      "name": "Star Reacher",
+      "type1": "Attack",
+      "type2": "Buff",
+      "type3": "Pursuit",
+      "description": "Gain 10% Physical Attack bonus for 8 seconds after knocking an enemy airborne."
+    },
+    {
+      "name": "Restoring Blossom",
+      "type1": "Support",
+      "type2": "Buff",
+      "type3": "Stacking",
+      "description": "Dealing Critical Healing applies one stack of Nurturing for 3 seconds, increasing healing received by 2%, stacking up to 3 times."
+    },
+    {
+      "name": "Esoteric Revival",
+      "type1": "Support",
+      "type2": "Buff",
+      "type3": "Recover",
+      "description": "Increases the healing of Panacea Fan's Perception Skill, Resurrection, by 50% on revived target."
+    },
+    {
+      "name": "Mending Loom",
+      "type1": "Support",
+      "type2": "Buff",
+      "type3": "Recover",
+      "description": "Casting Soulshade Umbrella’s Special Skill, Echoing Grow restores 5 Dewdrops and additionally heals 10% of your Max HP for every 100 Dewdrops consumed."
+    },
+    {
+      "name": "Trapped Beast",
+      "type1": "Defense",
+      "type2": "Buff",
+      "type3": "Recover",
+      "description": "Taking damage while HP is below 30% triggers Cornered Beast, generating a shield that absorbs up to 30% of Max HP. This effect lasts 4 seconds and can trigger once every 300 seconds."
+    },
+    {
+      "name": "Art of Resistance",
+      "type1": "Defense",
+      "type2": "Buff",
+      "description": "Increases the duration of your own HP shield and the bonus effects of its source skill by 4 seconds."
+    },
+    {
+      "name": "Rock Solid",
+      "type1": "Defense",
+      "type2": "Martial Arts",
+      "type3": "DMG Reduction",
+      "description": "Increases the DMG Reduction of Stormbreaker Spear’s Roar of Storm by 20% after taunting a boss unit, and by 5% after taunting a non-boss unit, up to 20% in total. While the DMG Reduction is active, reduces all damage dealt by 10%."
+    },
+    {
+      "name": "Vendetta",
+      "type1": "Buff",
+      "type2": "Martial Arts",
+      "type3": "Recover",
+      "description": "Guided Blade's Vendetta Token lasts 5 seconds longer and restores 20 Token of Gratitudes."
+    },
+    {
+      "name": "Breaking Point",
+      "type1": "Pursuit",
+      "type2": "Buff",
+      "type3": "Stacking",
+      "description": "Hitting Exhausted enemies with a Critical Hit applies a stack of Disintegration for 3 seconds, stacking up to 3 times. Each stack grants 10 Physical Penetration and increases Critical DMG Bonus by 5%"
+    },
+    {
+      "name": "Riptide Reflex",
+      "type1": "Control",
+      "type2": "Buff",
+      "description": "Hitting an Enemy with a Control Skill reduces the Cooldown of the current Martial Arts Skill by 1s. This effect can only trigger once every 10s.\nAffected Control Skills include: Bladebound Thread, Coiled Dragon, Qiankun's Lock, Spring Sorrow, Moon Shatter Spring, Wayfarer's Drift, Peak's Springless Silence."
+    },
+    {
+      "name": "Wind Beneath Wings",
+      "type1": "Support",
+      "type2": "Mystic Arts",
+      "type3": "Recover",
+      "description": "Reduces the Endurance cost of Movement Mystic Arts [Skywalk Dash]’s dash while jumping by 10%. After landing, increases Movement Speed by 30% for 3 seconds. Restores bonus HP (1% Max HP +1,000) after defeating any enemy."
+    },
+    {
+      "name": "Evening Snow",
+      "type1": "Support",
+      "type2": "Recover",
+      "description": "Within 12 seconds upon entering combat, if HP falls below 60%, gain Snow Vision for 4 seconds, restoring 2% HP +600 HP per second. This effect can trigger once every 300 seconds."
+    },
+    {
+      "name": "Steadfast Stance",
+      "type1": "Defense",
+      "type2": "Control Resistance",
+      "description": "Less ligely to suffer stagger effect when attacked. Invalid when the attack comes from a boss or player."
+    },
+    {
+      "name": "Shadow Assault",
+      "type1": "Attack",
+      "type2": "Mystic Arts",
+      "type3": "Damage Boost",
+      "description": "Increases the max range of Assassin Mystic Art [Touch of Death]'s ambush by 1.5m and the damage dealt by 10%. After a successful ambush, restores HP equal to 5% of the damage dealt."
+    },
+    {
+      "name": "Fivefold Bleed",
+      "type1": "Attack",
+      "type2": "Damage",
+      "type3": "Stacking",
+      "description": "Dealing damage has a 10% chance to apply one stack of Weeping Blood for 5 seconds, damaging the target once per second (up to 5 stacks, duration refreshed upon stacking). At 5 stacks, Weeping Blood will be removed from the target and deal piercing damage once."
+    }
+  ]
+}

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import tierListData from "@/ref-page/tier_list/tier-list.json";
+import tierListData from "@/public/tier-list.json";
 
 type WeaponRanking = {
   name: string;
