@@ -4,11 +4,12 @@ import Link from "next/link";
 import DialogueCardsComponent from "./DialogueCardsComponent";
 import StyleComparisonTable from "./StyleComparisonTable";
 import VideoGallery from "./VideoGallery";
+import GiftOfGabImages from "./GiftOfGabImages";
 
 export const metadata: Metadata = {
   title: "Gift of Gab Guide – Where Winds Meet Dialogue Minigame",
   description:
-    "Complete Gift of Gab dialogue card minigame guide for Where Winds Meet. Learn debate styles, card strategies, dialogue cards effects, and tips to win every persuasion battle.",
+    "Complete Gift of Gab guide. Learn how to play, master debate styles, use dialogue cards, and defeat opponents in Where Winds Meet's persuasion minigame.",
   alternates: {
     canonical: "https://wherewindsmeet.org/guides/gift-of-gab",
   },
@@ -16,13 +17,13 @@ export const metadata: Metadata = {
 
 export default function GiftOfGabPage() {
   return (
-    <article className="space-y-10">
+    <article className="space-y-12">
       {/* Hero Section */}
-      <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
+      <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-8 shadow-lg shadow-slate-950/60">
         <div className="pointer-events-none absolute inset-0">
           <Image
             src="/background/bg2.webp"
-            alt="Gift of Gab dialogue minigame background"
+            alt="Gift of Gab background"
             fill
             className="object-cover opacity-40"
             priority
@@ -31,448 +32,210 @@ export default function GiftOfGabPage() {
         </div>
 
         <div className="relative space-y-3">
-          <p className="text-xs uppercase tracking-wide text-amber-300">
-            Dialogue Minigame
-          </p>
-          <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Gift of Gab: Master the Art of Rhetoric
-          </h1>
-          <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-            Win debates with NPC characters through strategic card selection. Choose the right rhetoric style, manage your inspiration, and dominate dialogue duels to level up your Gifted Talker ability.
+          <p className="text-xs uppercase tracking-wide text-amber-300">Dialogue Minigame</p>
+          <h1 className="text-3xl sm:text-4xl font-bold text-slate-50">Gift of Gab Guide</h1>
+          <p className="text-sm sm:text-base text-slate-300 max-w-2xl">
+            Master the persuasion minigame. Choose the right debate style, manage your Inspiration, and win dialogue duels against NPCs.
           </p>
         </div>
       </section>
 
-      {/* Quick Navigation */}
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <a href="#game-overview" className="rounded-2xl border border-slate-800 bg-slate-950/50 p-4 text-sm font-medium text-emerald-300 hover:border-emerald-400 hover:bg-slate-900 transition-all">
-          Game Overview
-        </a>
-        <a href="#debate-styles" className="rounded-2xl border border-slate-800 bg-slate-950/50 p-4 text-sm font-medium text-emerald-300 hover:border-emerald-400 hover:bg-slate-900 transition-all">
-          Debate Styles
-        </a>
-        <a href="#core-mechanics" className="rounded-2xl border border-slate-800 bg-slate-950/50 p-4 text-sm font-medium text-emerald-300 hover:border-emerald-400 hover:bg-slate-900 transition-all">
-          Core Mechanics
-        </a>
-        <a href="#winning-strategy" className="rounded-2xl border border-slate-800 bg-slate-950/50 p-4 text-sm font-medium text-emerald-300 hover:border-emerald-400 hover:bg-slate-900 transition-all">
-          Winning Strategy
-        </a>
-      </div>
-
-      {/* Game Overview */}
-      <section id="game-overview" className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 space-y-6">
-        <h2 className="text-2xl font-bold text-slate-50">What is Gift of Gab?</h2>
-        <div className="space-y-4 text-slate-200">
-          <p>
-            Gift of Gab is a <strong>persuasion minigame</strong> where you engage in rhetoric duels with NPCs throughout the game world. Instead of combat, you win by using dialogue cards strategically to reduce your opponent's <strong>Mental Focus</strong> to zero.
-          </p>
-          <p>
-            This minigame is key to the <strong>Scholar Legacy</strong> career path. Victory rewards exploration inspiration and unlocks special interactions with NPCs, making it essential for story progression and character development.
-          </p>
-        </div>
+      {/* 1. What Is Gift of Gab? */}
+      <section className="space-y-6">
+        <h2 className="text-3xl font-bold text-slate-50">What Is The Gift Of Gab?</h2>
 
         <div className="grid gap-4 md:grid-cols-3">
-          <div className="rounded-2xl border border-emerald-700/30 bg-emerald-950/20 p-4 space-y-2">
-            <h3 className="text-sm font-bold text-emerald-300">Free Persuasion Mode</h3>
-            <p className="text-xs text-slate-300">Chat with AI bots directly and debate using your own arguments</p>
+          <div className="rounded-2xl border border-slate-700 bg-slate-800/40 p-4 space-y-2">
+            <p className="text-sm font-semibold text-emerald-300">Card-Based Debate</p>
+            <p className="text-xs text-slate-300">Use dialogue cards to reduce opponent's Mental Focus to zero</p>
           </div>
-          <div className="rounded-2xl border border-blue-700/30 bg-blue-950/20 p-4 space-y-2">
-            <h3 className="text-sm font-bold text-blue-300">Rhetoric Duel Mode</h3>
-            <p className="text-xs text-slate-300">Main mode using card system. Time-limited rounds where you select cards strategically</p>
+          <div className="rounded-2xl border border-slate-700 bg-slate-800/40 p-4 space-y-2">
+            <p className="text-sm font-semibold text-blue-300">Inspiration Resource</p>
+            <p className="text-xs text-slate-300">Spend Inspiration to activate cards; regenerates automatically over time</p>
           </div>
-          <div className="rounded-2xl border border-orange-700/30 bg-orange-950/20 p-4 space-y-2">
-            <h3 className="text-sm font-bold text-orange-300">Stat-Based</h3>
-            <p className="text-xs text-slate-300">Scholar career and attribute upgrades enhance your card effects and inspiration recovery</p>
+          <div className="rounded-2xl border border-slate-700 bg-slate-800/40 p-4 space-y-2">
+            <p className="text-sm font-semibold text-purple-300">Timed Rounds</p>
+            <p className="text-xs text-slate-300">No time pressure—play at your pace while managing resources</p>
           </div>
         </div>
-      </section>
 
-      {/* Debate Styles */}
-      <section id="debate-styles" className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 space-y-6">
-        <h2 className="text-2xl font-bold text-slate-50">The Four Debate Styles</h2>
-        <p className="text-slate-200">
-          Before each rhetoric duel, choose ONE debate style. This choice is permanent for that debate and determines which cards you'll use and what counters your opponent will employ.
+        <p className="text-slate-300 text-sm leading-relaxed">
+          Gift of Gab is a persuasion minigame where you engage in dialogue duels with NPCs. Instead of traditional combat, you win by strategically using dialogue cards to wear down your opponent's Mental Focus. Each debate requires you to manage your Inspiration (the resource that powers your cards) and make tactical choices about which cards to play and when.
         </p>
-
-        <div className="grid gap-4">
-          {/* Bluster */}
-          <div className="rounded-2xl border border-slate-700 bg-slate-800/40 p-5 space-y-3">
-            <div className="flex items-start justify-between">
-              <div>
-                <h3 className="text-lg font-bold text-slate-50">🎭 Bluster</h3>
-                <p className="text-xs text-slate-400 mt-1">Overwhelming confidence and swagger</p>
-              </div>
-              <span className="text-2xl">VS Provocation</span>
-            </div>
-            <p className="text-sm text-slate-300">
-              Use bombastic rhetoric and confident assertions to overwhelm your opponent. This style features aggressive statements and confident dismissals.
-            </p>
-            <p className="text-xs text-amber-300/80">
-              <strong>Countered by:</strong> Provocation – opponents can provoke you into making weaker arguments
-            </p>
-          </div>
-
-          {/* Provocation */}
-          <div className="rounded-2xl border border-slate-700 bg-slate-800/40 p-5 space-y-3">
-            <div className="flex items-start justify-between">
-              <div>
-                <h3 className="text-lg font-bold text-slate-50">⚡ Provocation</h3>
-                <p className="text-xs text-slate-400 mt-1">Inciting emotional reactions</p>
-              </div>
-              <span className="text-2xl">VS Rebuttal</span>
-            </div>
-            <p className="text-sm text-slate-300">
-              Trigger emotional responses from your opponent, making them lose focus and commit logical fallacies.
-            </p>
-            <p className="text-xs text-amber-300/80">
-              <strong>Countered by:</strong> Rebuttal – logical counters neutralize your emotional attacks
-            </p>
-          </div>
-
-          {/* Rebuttal */}
-          <div className="rounded-2xl border border-slate-700 bg-slate-800/40 p-5 space-y-3">
-            <div className="flex items-start justify-between">
-              <div>
-                <h3 className="text-lg font-bold text-slate-50">🎯 Rebuttal</h3>
-                <p className="text-xs text-slate-400 mt-1">Logical counter-arguments</p>
-              </div>
-              <span className="text-2xl">VS Filibuster</span>
-            </div>
-            <p className="text-sm text-slate-300">
-              Systematically dismantle your opponent's arguments with logic and evidence. Strong against emotional appeals.
-            </p>
-            <p className="text-xs text-amber-300/80">
-              <strong>Countered by:</strong> Filibuster – overwhelming verbosity can sidestep your logical points
-            </p>
-          </div>
-
-          {/* Filibuster */}
-          <div className="rounded-2xl border border-slate-700 bg-slate-800/40 p-5 space-y-3">
-            <div className="flex items-start justify-between">
-              <div>
-                <h3 className="text-lg font-bold text-slate-50">📢 Filibuster</h3>
-                <p className="text-xs text-slate-400 mt-1">Endless streams of words</p>
-              </div>
-              <span className="text-2xl">VS Bluster</span>
-            </div>
-            <p className="text-sm text-slate-300">
-              Bury your opponent under sheer volume of words and lengthy explanations, drowning out their counterarguments.
-            </p>
-            <p className="text-xs text-amber-300/80">
-              <strong>Countered by:</strong> Bluster – overwhelming confidence cuts through your verbosity
-            </p>
-          </div>
-        </div>
-
-        <div className="bg-slate-900/40 border border-slate-800 rounded-2xl p-4 mt-4">
-          <p className="text-sm text-slate-300">
-            <strong>Tip:</strong> The game will recommend the most effective style for each debate. Pay attention to the recommendation—it's usually the winning choice. You cannot change styles mid-debate.
-          </p>
-        </div>
       </section>
 
-      {/* Style Comparison Table */}
-      <StyleComparisonTable />
-
-      {/* Dialogue Cards */}
-      <DialogueCardsComponent />
-
-      {/* Video Gallery */}
-      <VideoGallery />
-
-      {/* Core Mechanics */}
-      <section id="core-mechanics" className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 space-y-6">
-        <h2 className="text-2xl font-bold text-slate-50">Core Mechanics & Systems</h2>
-
-        <div className="space-y-6">
-          {/* Mental Focus */}
-          <div className="rounded-2xl border border-red-700/30 bg-red-950/20 p-5 space-y-3">
-            <h3 className="text-lg font-bold text-red-300">Mental Focus</h3>
-            <p className="text-sm text-slate-300">
-              Your Mental Focus bar is located in the <strong>lower left</strong> of the screen. Your opponent's is in the <strong>upper center</strong>. Reduce your opponent's Mental Focus to zero to win the debate.
-            </p>
-            <p className="text-sm text-slate-300">
-              <strong>Critical:</strong> Unlike health in combat, <strong>once your Mental Focus is lost, you cannot recover it</strong>. This means you must play defensively and carefully manage your resources.
-            </p>
-          </div>
-
-          {/* Inspiration Points */}
-          <div className="rounded-2xl border border-blue-700/30 bg-blue-950/20 p-5 space-y-3">
-            <h3 className="text-lg font-bold text-blue-300">Inspiration Points</h3>
-            <p className="text-sm text-slate-300">
-              You spend Inspiration to activate dialogue cards. Inspiration <strong>regenerates automatically</strong> over time during the debate.
-            </p>
-            <ul className="list-disc list-inside text-sm text-slate-300 space-y-2">
-              <li><strong>Weak cards</strong> cost less inspiration and regenerate faster</li>
-              <li><strong>Powerful cards</strong> cost more inspiration and have longer cooldown periods</li>
-              <li><strong>Increase maximum Inspiration</strong> by leveling Scholar career or upgrading attributes</li>
-            </ul>
-          </div>
-
-          {/* Dialogue Cards */}
-          <div className="rounded-2xl border border-emerald-700/30 bg-emerald-950/20 p-5 space-y-3">
-            <h3 className="text-lg font-bold text-emerald-300">Dialogue Cards</h3>
-            <p className="text-sm text-slate-300">
-              Each card has a specific effect when activated. Cards serve multiple purposes:
-            </p>
-            <ul className="list-disc list-inside text-sm text-slate-300 space-y-2">
-              <li><strong>Damage:</strong> Directly reduce opponent's Mental Focus</li>
-              <li><strong>Defense:</strong> Reduce incoming damage from opponent's attacks</li>
-              <li><strong>Debuff:</strong> Lower opponent's defense or silence their abilities</li>
-              <li><strong>Support:</strong> Restore your focus, accelerate inspiration recovery</li>
-            </ul>
-            <p className="text-xs text-slate-400 mt-3">
-              New dialogue cards are added to your deck throughout the game as you progress and unlock new styles of rhetoric.
-            </p>
-          </div>
-
-          {/* Trash Talk System */}
-          <div className="rounded-2xl border border-amber-700/30 bg-amber-950/20 p-5 space-y-3">
-            <h3 className="text-lg font-bold text-amber-300">Trash Talk QTE Events</h3>
-            <p className="text-sm text-slate-300">
-              During debates, <strong>Trash Talk prompts appear on both sides of the screen</strong>. When activated, you can choose from THREE different effects:
-            </p>
-            <ul className="list-disc list-inside text-sm text-slate-300 space-y-2">
-              <li>These are <strong>completely free</strong> to activate</li>
-              <li>Tap the button when the prompt appears to activate your chosen effect</li>
-              <li>Effects vary—some deal damage, others provide defense or utility</li>
-              <li>Don't spend time reading; prioritize pressing the button quickly</li>
-            </ul>
-          </div>
-
-          {/* Timing & Resource Management */}
-          <div className="rounded-2xl border border-purple-700/30 bg-purple-950/20 p-5 space-y-3">
-            <h3 className="text-lg font-bold text-purple-300">Timing & Resource Management</h3>
-            <p className="text-sm text-slate-300">
-              Each debate round has a <strong>countdown timer</strong>. Strategic timing is crucial:
-            </p>
-            <ul className="list-disc list-inside text-sm text-slate-300 space-y-2">
-              <li><strong>Early rounds:</strong> Build up resources, use low-cost cards to manage tempo</li>
-              <li><strong>Mid-game:</strong> Balance offense and defense as both sides damage each other</li>
-              <li><strong>Late rounds:</strong> As timer runs out, prioritize pure damage cards to finish the opponent</li>
-              <li><strong>Don't over-read:</strong> Avoid spending precious seconds reading card descriptions</li>
-            </ul>
-          </div>
-        </div>
+      {/* Images Section */}
+      <section className="space-y-4">
+        <h3 className="text-2xl font-bold text-slate-50">In-Game Interface</h3>
+        <GiftOfGabImages />
       </section>
 
-      {/* Winning Strategy */}
-      <section id="winning-strategy" className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 space-y-6">
-        <h2 className="text-2xl font-bold text-slate-50">Winning Strategy & Tips</h2>
-
-        <div className="space-y-4">
-          <div className="bg-emerald-950/30 border border-emerald-700/50 rounded-2xl p-5">
-            <h3 className="font-bold text-emerald-300 mb-3">🎯 Core Strategy</h3>
-            <ol className="list-decimal list-inside space-y-2 text-sm text-slate-300">
-              <li><strong>Pick the recommended style.</strong> The game's suggestion is usually optimal. Trust it.</li>
-              <li><strong>Play defensively early.</strong> Don't let your Mental Focus drop too fast. Recovery is impossible.</li>
-              <li><strong>Balance offense and defense.</strong> Mix damage cards with defensive cards.</li>
-              <li><strong>Leverage inspiration regeneration.</strong> Use low-cost cards while inspiration regenerates, then unleash high-cost damage cards when ready.</li>
-              <li><strong>Grab free damage from Trash Talk.</strong> Always activate Trash Talk QTEs—they're free damage with no cooldown.</li>
-              <li><strong>Finish with burst damage.</strong> As the timer runs low, switch to pure damage cards to close out the debate.</li>
-            </ol>
-          </div>
-
-          <div className="bg-blue-950/30 border border-blue-700/50 rounded-2xl p-5">
-            <h3 className="font-bold text-blue-300 mb-3">⚡ Advanced Tactics</h3>
-            <ul className="list-disc list-inside space-y-2 text-sm text-slate-300">
-              <li><strong>Card combos:</strong> Some cards work well together. Debuffs that lower defense pair well with high-damage cards.</li>
-              <li><strong>Silencing:</strong> If your opponent has dangerous cards, use cards that silence or disable their abilities.</li>
-              <li><strong>Inspiration timing:</strong> Wait for inspiration to regenerate before using expensive cards. Rushing leads to weak plays.</li>
-              <li><strong>Opponent patterns:</strong> Notice which cards your opponent favors and counter with defensive cards or silences.</li>
-              <li><strong>Focus generation:</strong> Some cards heal your Mental Focus slightly or accelerate inspiration recovery. Prioritize these in tight matches.</li>
-            </ul>
-          </div>
-
-          <div className="bg-amber-950/30 border border-amber-700/50 rounded-2xl p-5">
-            <h3 className="font-bold text-amber-300 mb-3">💡 Common Mistakes to Avoid</h3>
-            <ul className="list-disc list-inside space-y-2 text-sm text-slate-300">
-              <li><strong>Don't panic.</strong> If your Mental Focus drops, stay calm and focus on defense, not recovery.</li>
-              <li><strong>Don't waste inspiration.</strong> Hold high-cost cards until you have enough inspiration to use them immediately.</li>
-              <li><strong>Don't ignore Trash Talk.</strong> Free damage is too valuable to miss.</li>
-              <li><strong>Don't fight the recommended style.</strong> Choosing the "wrong" style makes every debate harder.</li>
-              <li><strong>Don't neglect Scholar leveling.</strong> Higher Scholar levels unlock more powerful cards and boost card effects.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Leveling & Progression */}
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 space-y-6">
-        <h2 className="text-2xl font-bold text-slate-50">Gift of Gab Progression & Leveling</h2>
-
-        <div className="space-y-4">
-          <div className="bg-slate-900/40 border border-slate-800 rounded-2xl p-5">
-            <h3 className="font-bold text-slate-50 mb-3">Unlocking Scholar Career</h3>
-            <p className="text-sm text-slate-300 mb-2">
-              To access Gift of Gab leveling, you must first unlock the <strong>Scholar Career</strong>:
-            </p>
-            <ol className="list-decimal list-inside space-y-1 text-sm text-slate-300 ml-2">
-              <li>Reach <strong>Level 13+</strong> in the main story</li>
-              <li>Complete the <strong>"Legacy: Scholar's Path"</strong> quest</li>
-              <li>Access the <strong>Career Menu</strong> to view and upgrade your Scholar rank</li>
-            </ol>
-          </div>
-
-          <div className="bg-slate-900/40 border border-slate-800 rounded-2xl p-5">
-            <h3 className="font-bold text-slate-50 mb-3">Scholar Leveling</h3>
-            <p className="text-sm text-slate-300 mb-3">
-              There are <strong>5 Scholar levels</strong>, each with <strong>5 stages</strong> (25 total stages).
-            </p>
-            <div className="space-y-2 text-sm text-slate-300">
-              <p><strong>How to level:</strong></p>
-              <ul className="list-disc list-inside space-y-1 ml-2">
-                <li>Acquire <strong>Scholar Notebook pages</strong> to upgrade your Scholar level</li>
-                <li>Win Gift of Gab debates to earn dialogue cards and materials</li>
-                <li>Purchase <strong>Scholar Gift Boxes</strong> from the seasonal shop (4 Jade points each)</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="bg-slate-900/40 border border-slate-800 rounded-2xl p-5">
-            <h3 className="font-bold text-slate-50 mb-3">Upgrading Gift of Gab Cards</h3>
-            <p className="text-sm text-slate-300 mb-2">
-              Each dialogue card can be upgraded to increase its effectiveness:
-            </p>
-            <div className="space-y-2 text-sm text-slate-300">
-              <ul className="list-disc list-inside space-y-1">
-                <li>Upgrade materials vary by card and style</li>
-                <li>Materials drop from winning debates and seasonal shop boxes</li>
-                <li>Purchase materials from <strong>Scholar Gift Boxes</strong> or <strong>Custom Career Gift Boxes</strong></li>
-                <li>Prioritize upgrading cards you use frequently</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Attribute Synergy */}
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 space-y-6">
-        <h2 className="text-2xl font-bold text-slate-50">Attribute Synergies & Talent System</h2>
-
-        <p className="text-slate-200">
-          The Scholar Legacy career works best when you upgrade your character's five main attributes. As each attribute reaches specific thresholds, you unlock related talents that boost Gift of Gab performance.
-        </p>
-
-        <div className="grid gap-4">
-          <div className="rounded-2xl border border-slate-700 bg-slate-800/40 p-4">
-            <h3 className="font-bold text-slate-50 mb-2">Five Main Attributes</h3>
-            <ul className="text-sm text-slate-300 space-y-2">
-              <li>Upgrading <strong>all five attributes</strong> unlocks powerful related talents</li>
-              <li>These talents significantly enhance your Gift of Gab card effects</li>
-              <li>Plan your attribute distribution to unlock key talents early</li>
-              <li>Scholar talents focus on inspiration recovery and card damage</li>
-            </ul>
-          </div>
-
-          <div className="rounded-2xl border border-slate-700 bg-slate-800/40 p-4">
-            <h3 className="font-bold text-slate-50 mb-2">Talent Priorities</h3>
-            <ul className="text-sm text-slate-300 space-y-2">
-              <li>Prioritize talents that <strong>increase inspiration maximum</strong></li>
-              <li>Unlock talents that <strong>boost card damage output</strong></li>
-              <li>Talents that <strong>accelerate inspiration regeneration</strong> are extremely valuable</li>
-              <li>Defense-boosting talents help you survive late-game pressure</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Tips & Guides */}
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 space-y-6">
-        <h2 className="text-2xl font-bold text-slate-50">Final Tips & Resources</h2>
+      {/* 2. Game Types */}
+      <section className="space-y-6">
+        <h2 className="text-3xl font-bold text-slate-50">Two Types Of Gift Of Gab</h2>
 
         <div className="grid gap-4 md:grid-cols-2">
-          <div className="space-y-4">
-            <div className="rounded-2xl border border-slate-700 bg-slate-800/40 p-5">
-              <h3 className="font-bold text-slate-50 mb-3">For Beginners</h3>
-              <ul className="list-disc list-inside text-sm text-slate-300 space-y-2">
-                <li>Try both Free Persuasion and Rhetoric Duel modes</li>
-                <li>Always take the game's recommended debate style</li>
-                <li>Focus on survival over damage in early debates</li>
-                <li>Collect dialogue cards by winning debates</li>
-              </ul>
-            </div>
-
-            <div className="rounded-2xl border border-slate-700 bg-slate-800/40 p-5">
-              <h3 className="font-bold text-slate-50 mb-3">For Veterans</h3>
-              <ul className="list-disc list-inside text-sm text-slate-300 space-y-2">
-                <li>Master card combo chains for burst damage</li>
-                <li>Level Scholar to maximum for powerful cards</li>
-                <li>Farm debate victories for upgrade materials</li>
-                <li>Optimize attribute builds around Gift of Gab talents</li>
-              </ul>
-            </div>
+          <div className="rounded-2xl border border-emerald-700/30 bg-emerald-950/20 p-6 space-y-3">
+            <h3 className="text-lg font-bold text-emerald-300">Free Persuasion</h3>
+            <p className="text-sm text-slate-300">
+              Chat directly with an AI chatbot. Make your own arguments in real-time. Useful for practicing rhetoric but inconsistent results.
+            </p>
           </div>
 
-          <div className="rounded-2xl border border-slate-700 bg-slate-800/40 p-5">
-            <h3 className="font-bold text-slate-50 mb-3">Quick Reference</h3>
-            <div className="space-y-3 text-sm text-slate-300">
-              <p><strong>Win Condition:</strong> Reduce opponent's Mental Focus to 0</p>
-              <p><strong>Resource:</strong> Inspiration (regenerates automatically)</p>
-              <p><strong>Weakness:</strong> No recovery for lost Mental Focus</p>
-              <p><strong>Free Rewards:</strong> Trash Talk QTE events (both sides)</p>
-              <p><strong>Best Path:</strong> Scholar Career → Level → Unlock Talents</p>
+          <div className="rounded-2xl border border-blue-700/30 bg-blue-950/20 p-6 space-y-3">
+            <h3 className="text-lg font-bold text-blue-300">Rhetoric Duel (Main Mode)</h3>
+            <p className="text-sm text-slate-300">
+              The standard mode. Use dialogue cards and manage Inspiration. Choose your debate style (Bluster, Provocation, Rebuttal, or Filibuster) at the start.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. How To Play */}
+      <section className="space-y-6">
+        <h2 className="text-3xl font-bold text-slate-50">How To Play Gift Of Gab</h2>
+
+        {/* Debate Styles */}
+        <div className="space-y-4">
+          <h3 className="text-xl font-semibold text-slate-50">Choose Your Debate Style</h3>
+          <p className="text-sm text-slate-300 mb-4">Pick one style at the start. You cannot change mid-debate. Each style counters one other style in a rock-paper-scissors pattern.</p>
+
+          <div className="grid gap-3">
+            {[
+              { name: "Bluster", emoji: "🎭", power: "High-damage aggressive rhetoric", counters: "Filibuster", weakness: "Provocation" },
+              { name: "Provocation", emoji: "⚡", power: "Emotional attacks & silence", counters: "Bluster", weakness: "Rebuttal" },
+              { name: "Rebuttal", emoji: "🎯", power: "Logical defense & blocking", counters: "Provocation", weakness: "Filibuster" },
+              { name: "Filibuster", emoji: "📢", power: "Sustained damage & durability", counters: "Rebuttal", weakness: "Bluster" },
+            ].map((style) => (
+              <div key={style.name} className="rounded-xl border border-slate-700 bg-slate-800/30 p-4 flex gap-4 items-start">
+                <div className="text-3xl flex-shrink-0">{style.emoji}</div>
+                <div className="space-y-1 flex-grow min-w-0">
+                  <p className="font-semibold text-slate-50">{style.name}</p>
+                  <p className="text-xs text-slate-400">{style.power}</p>
+                  <p className="text-xs text-emerald-300">Beats: {style.counters}</p>
+                  <p className="text-xs text-red-300">Weak to: {style.weakness}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Core Mechanics */}
+        <div className="space-y-4 mt-8">
+          <h3 className="text-xl font-semibold text-slate-50">Core Mechanics</h3>
+
+          <div className="space-y-3">
+            <div className="rounded-xl border border-slate-700 bg-slate-800/30 p-4">
+              <p className="text-sm font-semibold text-slate-50 mb-2">📊 Mental Focus (Health Bar)</p>
+              <p className="text-xs text-slate-300">You have a Mental Focus bar (lower left). Opponent has one (upper center). First to zero loses. <strong>You cannot recover lost Mental Focus</strong>—play defensively.</p>
+            </div>
+
+            <div className="rounded-xl border border-slate-700 bg-slate-800/30 p-4">
+              <p className="text-sm font-semibold text-slate-50 mb-2">✨ Inspiration (Resource)</p>
+              <p className="text-xs text-slate-300">Use Inspiration to activate dialogue cards. Regenerates automatically over time. Weak cards cost less; powerful cards cost more and take longer to recharge.</p>
+            </div>
+
+            <div className="rounded-xl border border-slate-700 bg-slate-800/30 p-4">
+              <p className="text-sm font-semibold text-slate-50 mb-2">🃏 Dialogue Cards</p>
+              <p className="text-xs text-slate-300">Cards deal damage, provide defense, lower opponent's defense, or heal Inspiration. Different styles have different card effects. You'll acquire more cards as you level up Scholar.</p>
+            </div>
+
+            <div className="rounded-xl border border-slate-700 bg-slate-800/30 p-4">
+              <p className="text-sm font-semibold text-slate-50 mb-2">💬 Trash Talk (Free QTE)</p>
+              <p className="text-xs text-slate-300">Timed button prompts appear during debates. Press the button for free bonus effects—damage, defense, or utility. No cost, no cooldown. Never ignore these.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Dialogue Cards Reference */}
+      <section className="space-y-4">
+        <h2 className="text-2xl font-bold text-slate-50">Dialogue Cards Reference</h2>
+        <p className="text-sm text-slate-300 mb-4">Browse all 20 dialogue cards across 5 styles. Cards show their cost, effect, and rarity.</p>
+        <DialogueCardsComponent />
+      </section>
+
+      {/* Style Comparison */}
+      <section className="space-y-4">
+        <h2 className="text-2xl font-bold text-slate-50">Debate Styles Deep Dive</h2>
+        <StyleComparisonTable />
+      </section>
+
+      {/* 4. How To Improve */}
+      <section className="space-y-6">
+        <h2 className="text-3xl font-bold text-slate-50">How To Improve Your Performance</h2>
+
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold text-slate-50">Scholar Legacy Career</h3>
+          <p className="text-sm text-slate-300 mb-4">Unlock and level the Scholar career to unlock powerful Gift of Gab talents and stronger cards.</p>
+
+          <ol className="space-y-3 list-decimal list-inside text-sm text-slate-300">
+            <li><strong>Unlock:</strong> Reach Level 13+ and complete "Legacy: Scholar's Path" quest</li>
+            <li><strong>Level Up:</strong> Earn Scholar Notebook pages from dialogue wins or seasonal shops</li>
+            <li><strong>Unlock Talents:</strong> Upgrade attributes to unlock Scholar talents that boost card effects</li>
+            <li><strong>Upgrade Cards:</strong> Improve individual card damage and effects with upgrade materials</li>
+          </ol>
+
+          <div className="rounded-2xl border border-slate-700 bg-slate-800/30 p-4 mt-4">
+            <p className="text-sm text-slate-300">
+              <strong>Pro Tip:</strong> Prioritize talents that increase Inspiration maximum and regeneration speed. These directly improve your ability to chain powerful cards together.
+            </p>
+          </div>
+        </div>
+
+        <div className="space-y-4 mt-8">
+          <h3 className="text-lg font-semibold text-slate-50">Key Strategy Tips</h3>
+          <ul className="space-y-2 text-sm text-slate-300">
+            <li>✓ <strong>Pick the recommended style.</strong> The game suggests the optimal choice for each opponent.</li>
+            <li>✓ <strong>Play defensively early.</strong> Don't lose Mental Focus too fast—you can't recover it.</li>
+            <li>✓ <strong>Wait for Inspiration.</strong> Don't waste it. Hold expensive cards until you have enough Inspiration.</li>
+            <li>✓ <strong>Grab free damage.</strong> Always activate Trash Talk QTE prompts.</li>
+            <li>✓ <strong>Finish with burst.</strong> As the timer runs low, use your strongest damage cards.</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Video Guides */}
+      <section className="space-y-4">
+        <h2 className="text-2xl font-bold text-slate-50">Video Tutorials</h2>
+        <p className="text-sm text-slate-300 mb-4">Watch gameplay and strategy guides from other players.</p>
+        <VideoGallery />
+      </section>
+
+      {/* Quick Reference */}
+      <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 space-y-4">
+        <h2 className="text-2xl font-bold text-slate-50">Quick Reference</h2>
+        <div className="grid gap-3 md:grid-cols-2">
+          <div className="text-sm"><strong className="text-emerald-300">Win Condition:</strong> <span className="text-slate-300">Reduce opponent's Mental Focus to 0</span></div>
+          <div className="text-sm"><strong className="text-blue-300">Resource:</strong> <span className="text-slate-300">Inspiration (regenerates automatically)</span></div>
+          <div className="text-sm"><strong className="text-red-300">Critical Rule:</strong> <span className="text-slate-300">No Mental Focus recovery—play defensively</span></div>
+          <div className="text-sm"><strong className="text-amber-300">Free Damage:</strong> <span className="text-slate-300">Trash Talk QTE buttons appear during debates</span></div>
         </div>
       </section>
 
       {/* Related Guides */}
-      <section className="grid gap-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 md:grid-cols-2">
-        <div className="space-y-2">
-          <h3 className="text-lg font-semibold text-slate-50">Explore More Minigames</h3>
+      <section className="grid gap-4 md:grid-cols-2">
+        <div className="rounded-2xl border border-slate-700 bg-slate-800/30 p-5 space-y-3">
+          <h3 className="font-semibold text-slate-50">Related Minigames</h3>
           <ul className="space-y-2 text-sm text-emerald-200">
             <li>
-              <Link
-                href="/guides/skill-theft"
-                className="underline underline-offset-4 hover:text-emerald-100"
-              >
-                Skill Theft Guide: Observation Minigame
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/guides/builds"
-                className="underline underline-offset-4 hover:text-emerald-100"
-              >
-                Best Builds: Strategies for Every Playstyle
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/guides/new-players"
-                className="underline underline-offset-4 hover:text-emerald-100"
-              >
-                New Player Route: Essential First Steps
+              <Link href="/guides/skill-theft" className="underline underline-offset-2 hover:text-emerald-100">
+                Skill Theft: Observation Minigame
               </Link>
             </li>
           </ul>
         </div>
-        <div className="space-y-2">
-          <h3 className="text-lg font-semibold text-slate-50">Core Progression</h3>
+        <div className="rounded-2xl border border-slate-700 bg-slate-800/30 p-5 space-y-3">
+          <h3 className="font-semibold text-slate-50">Core Guides</h3>
           <ul className="space-y-2 text-sm text-emerald-200">
             <li>
-              <Link
-                href="/guides/endgame"
-                className="underline underline-offset-4 hover:text-emerald-100"
-              >
-                Endgame Guide: Post-Story Progression
+              <Link href="/guides/builds" className="underline underline-offset-2 hover:text-emerald-100">
+                Best Builds & Character Optimization
               </Link>
             </li>
             <li>
-              <Link
-                href="/guides/bosses"
-                className="underline underline-offset-4 hover:text-emerald-100"
-              >
-                Boss Guide: Pre-Battle Preparation
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/guides/items"
-                className="underline underline-offset-4 hover:text-emerald-100"
-              >
-                Items Index: Materials & Consumables
+              <Link href="/guides/new-players" className="underline underline-offset-2 hover:text-emerald-100">
+                New Player Route
               </Link>
             </li>
           </ul>
