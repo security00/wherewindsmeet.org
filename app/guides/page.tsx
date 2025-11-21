@@ -70,6 +70,15 @@ const guideSections = [
     description: "Unlock the observation mini-game and steal styles cleanly.",
   },
   {
+    title: "Gift of Gab",
+    slug: "/guides/gift-of-gab",
+    label: "Dialogue",
+    icon: "💬",
+    color: "text-amber-300",
+    size: "medium",
+    description: "Master rhetoric duels and persuasion tactics using dialogue cards.",
+  },
+  {
     title: "Items Index",
     slug: "/guides/items",
     label: "Supplies",
