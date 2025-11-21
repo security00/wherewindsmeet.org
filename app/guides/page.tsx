@@ -201,7 +201,7 @@ export default function GuidesPage() {
       <div className="mx-auto max-w-3xl text-center mt-20 px-6">
         <div className="divider-ink mb-8" />
         <p className="text-slate-400 font-serif italic">
-          "The journey of a thousand miles begins with a single step."
+          &ldquo;The journey of a thousand miles begins with a single step.&rdquo;
         </p>
       </div>
     </div>

@@ -1,0 +1,93 @@
+[
+  {
+    "id": "peng-shan",
+    "name": "Peng Shan Ten-Thousand Layers",
+    "chineseName": "蓬山万重",
+    "tagline": "\"Boundless peaks, fear not the height\"",
+    "inspiration": "The story of Qing, former Mohist leader of legends",
+    "character": "Qing",
+    "characterDescription": "The previous generation Mohist chief, known for being dashing, passionate, and resolute",
+    "theme": "Bronze bird mechanism theme",
+    "image": "/guides/cosmetics/cosmetics-04.webp",
+    "galleryImages": [
+      "/guides/cosmetics/cosmetics-05.webp",
+      "/guides/cosmetics/cosmetics-06.webp",
+      "/guides/cosmetics/cosmetics-07.webp",
+      "/guides/cosmetics/cosmetics-08.webp",
+      "/guides/cosmetics/cosmetics-09.webp",
+      "/guides/cosmetics/cosmetics-10.webp",
+      "/guides/cosmetics/cosmetics-11.webp",
+      "/guides/cosmetics/cosmetics-12.webp",
+      "/guides/cosmetics/cosmetics-15.webp"
+    ],
+    "designHighlights": [
+      "Entire left arm features bronze mechanisms",
+      "Large-scale bronze textures and archaeological artifact elements",
+      "Gold threading and leather accents"
+    ],
+    "contents": [
+      "Dynamic avatar",
+      "Settlement performance",
+      "Earrings",
+      "Face decoration",
+      "Small accessory",
+      "Large accessory",
+      "Drape/Cape"
+    ],
+    "features": [
+      "Top and bottom separable",
+      "Dyeable",
+      "Dynamic effects"
+    ],
+    "acquisition": {
+      "method": "Harmony Store Exchange",
+      "cost": "2x Octave Aperture (八音窍)",
+      "availableDate": "November 21"
+    },
+    "rarity": "Featured",
+    "theme_category": "Mohist Legend"
+  },
+  {
+    "id": "zui-yun",
+    "name": "Intoxicated Cloud, Awakened Rain",
+    "chineseName": "醉云醒雨",
+    "tagline": "Embodying calm composure and tranquil spirit",
+    "inspiration": "Rainy night scenes in the jianghu, reflecting composed elegance",
+    "theme": "Jianghu rainy night theme",
+    "image": "/guides/cosmetics/cosmetics-23.webp",
+    "galleryImages": [
+      "/guides/cosmetics/cosmetics-24.webp",
+      "/guides/cosmetics/cosmetics-17.webp",
+      "/guides/cosmetics/cosmetics-25.webp",
+      "/guides/cosmetics/cosmetics-26.webp",
+      "/guides/cosmetics/cosmetics-14.webp",
+      "/guides/cosmetics/cosmetics-19.webp",
+      "/guides/cosmetics/cosmetics-22.webp",
+      "/guides/cosmetics/cosmetics-27.webp",
+      "/guides/cosmetics/cosmetics-28.webp"
+    ],
+    "designHighlights": [
+      "Rain and cloud motifs",
+      "Elegant flowing fabrics",
+      "Composed aesthetic"
+    ],
+    "contents": [
+      "Earrings",
+      "Face decoration",
+      "Makeup",
+      "Accessories (separable)",
+      "Avatar bonus"
+    ],
+    "features": [
+      "Separable parts",
+      "Dyeable"
+    ],
+    "acquisition": {
+      "method": "Shop Purchase",
+      "cost": "2580x Resonant Pearl (长鸣珠)",
+      "availableDate": "November 21"
+    },
+    "rarity": "Standard",
+    "theme_category": "Rainy Night"
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "fu-lan-hairstyle",
+    "name": "Floating Mist Hairstyle",
+    "chineseName": "浮岚",
+    "category": "Hairstyle",
+    "image": "/guides/cosmetics/cosmetics-29.webp",
+    "acquisition": {
+      "method": "Harmony Store Exchange",
+      "cost": "1x Octave Aperture (八音窍)",
+      "duration": "Limited time - 90 days"
+    },
+    "rarity": "Limited"
+  },
+  {
+    "id": "miao-cactus-handguards",
+    "name": "Meow Cactus Hand Guards",
+    "chineseName": "喵仙人掌",
+    "category": "Hand Armor Appearance",
+    "image": "/guides/cosmetics/cosmetics-18.webp",
+    "galleryImages": [
+      "/guides/cosmetics/cosmetics-18.webp",
+      "/guides/cosmetics/cosmetics-21.webp"
+    ],
+    "acquisition": {
+      "method": "Shop Purchase",
+      "cost": "60x Resonant Pearl (长鸣珠)"
+    },
+    "rarity": "Special"
+  },
+  {
+    "id": "cold-crow-mystic",
+    "name": "Cold Crow Shadow Crossing",
+    "chineseName": "寒鸦渡影",
+    "category": "Mystic Art Effect",
+    "image": "/guides/cosmetics/cosmetics-17.gif",
+    "acquisition": {
+      "method": "Shop Purchase - Limited Time Discount",
+      "regularCost": "300x Resonant Pearl (长鸣珠)",
+      "discountedCost": "60x Resonant Pearl (长鸣珠)",
+      "discountAvailable": true
+    },
+    "rarity": "Featured",
+    "note": "Limited time promotion - 80% off"
+  }
+]

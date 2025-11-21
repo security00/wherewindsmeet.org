@@ -11,28 +11,7 @@ export const metadata: Metadata = {
   },
 };
 
-const recentPatches = [
-  {
-    version: "Latest Patch",
-    date: "Current",
-    highlights: [
-      "Monitor official channels for the latest Where Winds Meet patch notes",
-      "Balance adjustments to weapons and paths",
-      "New events and seasonal content",
-      "Bug fixes and quality of life improvements",
-    ],
-  },
-  {
-    version: "Major Updates",
-    date: "Seasonal",
-    highlights: [
-      "New regions and boss encounters",
-      "Weapon and ability rebalancing",
-      "New progression systems",
-      "Story and world expansions",
-    ],
-  },
-];
+
 
 export default function PatchNotesPage() {
   return (
@@ -70,7 +49,7 @@ export default function PatchNotesPage() {
             patch.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-            The official Where Winds Meet patch notes are released on the game's
+            The official Where Winds Meet patch notes are released on the game&apos;s
             website and social media channels. Below, you will find guidance on how
             to interpret those updates and what adjustments might affect your
             favorite builds, weapons, and strategies across PVE, co-op, and PVP
@@ -204,7 +183,7 @@ export default function PatchNotesPage() {
           current state of Where Winds Meet patch balance. After each major Where
           Winds Meet patch, both guides are reviewed and updated to account for
           changes. However, patch notes move quickly, so if you notice a discrepancy
-          between the official Where Winds Meet patch notes and this site's
+          between the official Where Winds Meet patch notes and this site&apos;s
           recommendations, trust the official source first and check back soon for
           updated guidance.
         </p>

@@ -36,7 +36,7 @@ export default function ItemsPage() {
             Where Winds Meet item index with quick-use tabs.
           </h1>
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-            Following the wiki layout you provided, we've organized items into clickable category tabs.
+            Following the wiki layout you provided, we&apos;ve organized items into clickable category tabs.
             Each category displays representative items, their uses, and acquisition methods for quick player lookup. Pair with{" "}
             <Link
               href="/guides/martial-arts-weapons"

@@ -221,7 +221,7 @@ export default function CodesPage() {
           Redemption Strategy
         </h2>
         <p className="text-sm text-slate-300 leading-relaxed mb-4">
-          New players often see a flood of codes. Don't panic. Sort them into <span className="text-slate-100">Progression</span> (claim now) and <span className="text-slate-100">Cosmetics</span> (claim later).
+          New players often see a flood of codes. Don&apos;t panic. Sort them into <span className="text-slate-100">Progression</span> (claim now) and <span className="text-slate-100">Cosmetics</span> (claim later).
         </p>
         <p className="text-sm text-slate-300 leading-relaxed">
           By approaching rewards with intention, you turn codes into a gentle tailwind rather than a source of FOMO pressure.

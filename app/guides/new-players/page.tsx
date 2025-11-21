@@ -79,7 +79,7 @@ const chapters = [
         title: "Character Creation",
         content: (
           <p className="text-slate-300">
-            Pick an <span className="text-ink-gold font-serif">Aspiration Talent</span> that matches your curiosity (e.g., Drunken Precision for mini-games). Don't stress about min-maxing here.
+            Pick an <span className="text-ink-gold font-serif">Aspiration Talent</span> that matches your curiosity (e.g., Drunken Precision for mini-games). Don&apos;t stress about min-maxing here.
           </p>
         ),
       },
@@ -88,7 +88,7 @@ const chapters = [
         title: "Reading the HUD",
         content: (
           <ul className="space-y-2 text-sm text-slate-300 list-disc pl-4 marker:text-emerald-500">
-            <li><strong className="text-slate-100">Qi Bar:</strong> If it breaks, you can't block. Back off.</li>
+            <li><strong className="text-slate-100">Qi Bar:</strong> If it breaks, you can&apos;t block. Back off.</li>
             <li><strong className="text-slate-100">Enemy Qi:</strong> Break this to trigger an Execution.</li>
             <li><strong className="text-slate-100">Mystic Arts:</strong> Flexible abilities for CC or puzzles.</li>
           </ul>
@@ -177,7 +177,7 @@ const chapters = [
               <p className="text-xs text-slate-400">Dismantling unused gear gives permanent account power.</p>
             </div>
             <div className="p-3 rounded bg-slate-900/30 border border-slate-800">
-              <div className="text-emerald-400 font-serif font-bold mb-1">Don't Hoard</div>
+              <div className="text-emerald-400 font-serif font-bold mb-1">Don&apos;t Hoard</div>
               <p className="text-xs text-slate-400">Use materials to upgrade. Power now = faster farming later.</p>
             </div>
           </div>
@@ -209,7 +209,7 @@ export default function NewPlayersGuidePage() {
               Updated for Launch
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-50 font-serif mb-6 text-shadow-lg">
-              The Wanderer's <span className="text-ink-gold">First Steps</span>
+              The Wanderer&apos;s <span className="text-ink-gold">First Steps</span>
             </h1>
             <p className="text-lg text-slate-200/90 leading-relaxed max-w-xl">
               From your first login to your first weekly reset. A practical roadmap to surviving Jianghu without the confusion.
@@ -243,7 +243,7 @@ export default function NewPlayersGuidePage() {
 
               <div className="p-4 rounded-xl bg-gradient-to-br from-emerald-900/20 to-slate-900/50 border border-emerald-500/20">
                 <p className="text-xs text-emerald-200/80 italic">
-                  "A journey of a thousand miles begins with a single step."
+                  &ldquo;A journey of a thousand miles begins with a single step.&rdquo;
                 </p>
               </div>
             </div>
@@ -299,7 +299,7 @@ export default function NewPlayersGuidePage() {
               <div className="absolute inset-0 bg-[url('/background/noise.png')] opacity-5 mix-blend-overlay"></div>
               <h2 className="text-2xl font-serif text-slate-50 mb-4 relative z-10">Ready for the next step?</h2>
               <p className="text-slate-300 mb-8 max-w-lg mx-auto relative z-10">
-                Once you've mastered the basics, check out the Tier List to plan your endgame build.
+                Once you&apos;ve mastered the basics, check out the Tier List to plan your endgame build.
               </p>
               <div className="flex flex-wrap justify-center gap-4 relative z-10">
                 <Link

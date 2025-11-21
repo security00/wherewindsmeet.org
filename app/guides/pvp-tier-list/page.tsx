@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
 };
 
-import { weapons, type Weapon } from "@/lib/weapons";
+import { weapons } from "@/lib/weapons";
 
 const pvpTiers = [
   {

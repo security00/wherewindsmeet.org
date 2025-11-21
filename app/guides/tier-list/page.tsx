@@ -265,7 +265,7 @@ export default function TierListPage() {
                   <span className="text-xs font-medium px-2 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">S Tier Tank</span>
                 </div>
                 <p className="text-sm text-slate-300 leading-relaxed mb-3">
-                  Combines Mo Blade's heavy hits with strong shields and survivability. Ideal if you want to anchor groups, face bosses head-on, and still deal meaningful damage.
+                  Combines Mo Blade&apos;s heavy hits with strong shields and survivability. Ideal if you want to anchor groups, face bosses head-on, and still deal meaningful damage.
                 </p>
                 <p className="text-xs text-slate-500">
                   Key Synergy: <span className="text-slate-400">Supportive arts or Umbrella tools for constant uptime.</span>
@@ -315,7 +315,7 @@ export default function TierListPage() {
             </p>
             <ul className="list-disc list-inside space-y-2 text-slate-300 marker:text-emerald-500">
               <li><span className="text-slate-100 font-medium">PVE vs PVP:</span> Weapons are grouped by real endgame performance. PVE favors consistency and control; PVP favors burst and mobility.</li>
-              <li><span className="text-slate-100 font-medium">Tiers are not destiny:</span> A dedicated player with a C-tier favorite can often outperform a meta-chaser who doesn't know their rotation.</li>
+              <li><span className="text-slate-100 font-medium">Tiers are not destiny:</span> A dedicated player with a C-tier favorite can often outperform a meta-chaser who doesn&apos;t know their rotation.</li>
             </ul>
           </div>
         </div>
@@ -332,7 +332,7 @@ export default function TierListPage() {
                 We prioritize options that perform well in <span className="text-slate-200">lag, chaos, and uncoordinated groups</span>.
               </p>
               <p>
-                Updates will happen after large patches or seasonal events. We won't shift rankings just for novelty.
+                Updates will happen after large patches or seasonal events. We won&apos;t shift rankings just for novelty.
               </p>
             </div>
           </div>
@@ -344,7 +344,7 @@ export default function TierListPage() {
               Look for synergies. A strong crowd control weapon might pair best with a sustain-focused build.
             </p>
             <div className="rounded bg-slate-950/50 p-3 text-xs text-slate-500 italic border border-slate-800">
-              "The most important question is not 'what is S tier', but 'what feels powerful in my hands'."
+              &ldquo;The most important question is not &quot;what is S tier&quot;, but &quot;what feels powerful in my hands&quot;.&rdquo;
             </div>
           </div>
 
