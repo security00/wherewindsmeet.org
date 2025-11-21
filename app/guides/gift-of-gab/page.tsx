@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import DialogueCardsComponent from "./DialogueCardsComponent";
 import StyleComparisonTable from "./StyleComparisonTable";
-import VideoGallery from "./VideoGallery";
+import EmbeddedVideoGallery from "./EmbeddedVideoGallery";
 import GiftOfGabImages from "./GiftOfGabImages";
 
 export const metadata: Metadata = {
@@ -196,10 +196,8 @@ export default function GiftOfGabPage() {
       </section>
 
       {/* Video Guides */}
-      <section className="space-y-4">
-        <h2 className="text-2xl font-bold text-slate-50">Video Tutorials</h2>
-        <p className="text-sm text-slate-300 mb-4">Watch gameplay and strategy guides from other players.</p>
-        <VideoGallery />
+      <section className="space-y-6">
+        <EmbeddedVideoGallery />
       </section>
 
       {/* Quick Reference */}
