@@ -70,6 +70,15 @@ const guideSections = [
     description: "Unlock the observation mini-game and steal styles cleanly.",
   },
   {
+    title: "Wall Puzzle Solution",
+    slug: "/guides/wall-puzzle",
+    label: "Puzzle",
+    icon: "🧱",
+    color: "text-cyan-300",
+    size: "small",
+    description: "Exact wall tile presses and fire contraptions for Echoes of Old Battles.",
+  },
+  {
     title: "Gift of Gab",
     slug: "/guides/gift-of-gab",
     label: "Dialogue",
@@ -77,6 +86,15 @@ const guideSections = [
     color: "text-amber-300",
     size: "medium",
     description: "Master rhetoric duels and persuasion tactics using dialogue cards.",
+  },
+  {
+    title: "Free Morph Mystic",
+    slug: "/guides/free-morph",
+    label: "Mystic",
+    icon: "🌀",
+    color: "text-cyan-300",
+    size: "small",
+    description: "Unlock and upgrade Free Morph juggle skill; costs, cooldown, tier bonuses.",
   },
   {
     title: "Items Index",

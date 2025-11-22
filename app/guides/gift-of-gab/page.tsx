@@ -7,11 +7,35 @@ import EmbeddedVideoGallery from "./EmbeddedVideoGallery";
 import GiftOfGabImages from "./GiftOfGabImages";
 
 export const metadata: Metadata = {
-  title: "Gift of Gab Guide – Where Winds Meet Dialogue Minigame",
+  title: "Where Winds Meet Gift of Gab Guide",
   description:
-    "Complete Gift of Gab guide. Learn how to play, master debate styles, use dialogue cards, and defeat opponents in Where Winds Meet's persuasion minigame.",
+    "Win Gift of Gab fast: pick the right style, manage Inspiration, upgrade Scholar mastery, and use cards plus Trash Talk to drop enemy Mental Focus to zero.",
   alternates: {
     canonical: "https://wherewindsmeet.org/guides/gift-of-gab",
+  },
+  openGraph: {
+    title: "Where Winds Meet Gift of Gab Guide",
+    description:
+      "Win Gift of Gab fast: pick the right style, manage Inspiration, upgrade Scholar mastery, and use cards plus Trash Talk to drop enemy Mental Focus to zero.",
+    url: "https://wherewindsmeet.org/guides/gift-of-gab",
+    siteName: "Where Winds Meet Hub",
+    images: [
+      {
+        url: "https://wherewindsmeet.org/guides/gift-of-gab/gameplay.jpg",
+        width: 1600,
+        height: 900,
+        alt: "Gift of Gab gameplay interface in Where Winds Meet",
+      },
+    ],
+    locale: "en_US",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Where Winds Meet Gift of Gab Guide",
+    description:
+      "Win Gift of Gab fast: pick the right style, manage Inspiration, upgrade Scholar mastery, and use cards plus Trash Talk to drop enemy Mental Focus to zero.",
+    images: ["https://wherewindsmeet.org/guides/gift-of-gab/gameplay.jpg"],
   },
 };
 
@@ -68,6 +92,18 @@ export default function GiftOfGabPage() {
       <section className="space-y-4">
         <h3 className="text-2xl font-bold text-slate-50">In-Game Interface</h3>
         <GiftOfGabImages />
+      </section>
+
+      {/* Fast Win Checklist */}
+      <section className="rounded-3xl border border-emerald-800/40 bg-emerald-950/30 p-6 shadow-lg space-y-4">
+        <h2 className="text-2xl font-bold text-slate-50">Fast Win Checklist (Gift of Gab Where Winds Meet)</h2>
+        <ul className="space-y-2 text-sm text-slate-200">
+          <li>✓ Let the game suggest the optimal style; it counters the NPC.</li>
+          <li>✓ Open with cheap cards to conserve Inspiration; burst when their Mental Focus is low.</li>
+          <li>✓ Hit every Trash Talk QTE for free damage/utility.</li>
+          <li>✓ Focus defensive cards early—lost Mental Focus cannot be recovered.</li>
+          <li>✓ Upgrade Scholar mastery to raise Inspiration cap and card effectiveness.</li>
+        </ul>
       </section>
 
       {/* 2. Game Types */}
@@ -167,18 +203,23 @@ export default function GiftOfGabPage() {
 
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-slate-50">Scholar Legacy Career</h3>
-          <p className="text-sm text-slate-300 mb-4">Unlock and level the Scholar career to unlock powerful Gift of Gab talents and stronger cards.</p>
+          <p className="text-sm text-slate-300 mb-4">
+            Unlock and level the Scholar career to unlock powerful Gift of Gab talents and stronger cards. Scholar mastery directly
+            raises Inspiration cap/regen and card damage, so leveling it is the fastest power spike.
+          </p>
 
           <ol className="space-y-3 list-decimal list-inside text-sm text-slate-300">
             <li><strong>Unlock:</strong> Reach Level 13+ and complete "Legacy: Scholar's Path" quest</li>
             <li><strong>Level Up:</strong> Earn Scholar Notebook pages from dialogue wins or seasonal shops</li>
             <li><strong>Unlock Talents:</strong> Upgrade attributes to unlock Scholar talents that boost card effects</li>
             <li><strong>Upgrade Cards:</strong> Improve individual card damage and effects with upgrade materials</li>
+            <li><strong>Gift of Gab Mastery:</strong> Spend points to increase Inspiration maximum and reduce card cooldowns</li>
           </ol>
 
           <div className="rounded-2xl border border-slate-700 bg-slate-800/30 p-4 mt-4">
             <p className="text-sm text-slate-300">
-              <strong>Pro Tip:</strong> Prioritize talents that increase Inspiration maximum and regeneration speed. These directly improve your ability to chain powerful cards together.
+              <strong>Pro Tip:</strong> Prioritize talents that increase Inspiration maximum and regeneration speed. These directly improve your
+              ability to chain powerful cards together and mirror the advice from top guides like GameRant/TheGamer.
             </p>
           </div>
         </div>
@@ -208,6 +249,29 @@ export default function GiftOfGabPage() {
           <div className="text-sm"><strong className="text-blue-300">Resource:</strong> <span className="text-slate-300">Inspiration (regenerates automatically)</span></div>
           <div className="text-sm"><strong className="text-red-300">Critical Rule:</strong> <span className="text-slate-300">No Mental Focus recovery—play defensively</span></div>
           <div className="text-sm"><strong className="text-amber-300">Free Damage:</strong> <span className="text-slate-300">Trash Talk QTE buttons appear during debates</span></div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
+        <h2 className="text-2xl font-bold text-slate-50">Gift of Gab FAQ</h2>
+        <div className="space-y-3 text-sm text-slate-300">
+          <div>
+            <p className="font-semibold text-slate-50">How do I increase Inspiration?</p>
+            <p>Level Scholar mastery and spend points in the Profession menu; both the cap and regen speed scale with Scholar upgrades.</p>
+          </div>
+          <div>
+            <p className="font-semibold text-slate-50">Which style should I pick?</p>
+            <p>Use the game’s recommended style—it is tailored to each opponent. Bluster beats Filibuster, Provocation beats Bluster, Rebuttal beats Provocation, Filibuster beats Rebuttal.</p>
+          </div>
+          <div>
+            <p className="font-semibold text-slate-50">Can I heal Mental Focus?</p>
+            <p>No. Mental Focus can’t be restored, so open defensively, then burst with high-cost cards when you have Inspiration.</p>
+          </div>
+          <div>
+            <p className="font-semibold text-slate-50">Why are my cards weak?</p>
+            <p>Card damage scales with Scholar mastery and card upgrades. Farm dialogue wins for Notebook pages and upgrade materials.</p>
+          </div>
         </div>
       </section>
 
