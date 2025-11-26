@@ -2,18 +2,73 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { featuredVideos } from "../../lib/featuredVideos";
 
+const baseUrl = "https://wherewindsmeet.org";
+
 export const metadata: Metadata = {
   title: "Where Winds Meet Gameplay Videos & Highlights",
   description:
     "Watch curated Where Winds Meet gameplay videos, combat highlights, exploration moments, and community style clips in one place without leaving the guides hub.",
   alternates: {
-    canonical: "https://wherewindsmeet.org/videos",
+    canonical: `${baseUrl}/videos`,
+  },
+  openGraph: {
+    title: "Where Winds Meet Gameplay Videos & Highlights",
+    description:
+      "Watch curated Where Winds Meet gameplay videos, combat highlights, exploration moments, and community style clips in one place without leaving the guides hub.",
+    url: `${baseUrl}/videos`,
+  },
+  twitter: {
+    title: "Where Winds Meet Gameplay Videos & Highlights",
+    description:
+      "Watch curated Where Winds Meet gameplay videos, combat highlights, exploration moments, and community style clips in one place without leaving the guides hub.",
   },
 };
 
 export default function VideosPage() {
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: metadata.title,
+      description: metadata.description,
+      url: `${baseUrl}/videos`,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: baseUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Videos",
+          item: `${baseUrl}/videos`,
+        },
+      ],
+    },
+    ...featuredVideos.map((video) => ({
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      name: video.title,
+      description: video.description,
+      thumbnailUrl: `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`,
+      uploadDate: "2024-01-01",
+      embedUrl: `https://www.youtube-nocookie.com/embed/${video.id}`,
+      contentUrl: `https://www.youtube.com/watch?v=${video.id}`,
+    })),
+  ];
+
   return (
     <div className="space-y-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
         <div className="pointer-events-none absolute inset-0">
           <Image

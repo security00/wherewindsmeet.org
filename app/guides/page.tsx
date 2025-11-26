@@ -124,6 +124,16 @@ const guideSections = [
     description: "Don't miss out on limited-time loot.",
   },
   {
+    title: "Free Outfits",
+    slug: "/guides/free-outfits",
+    label: "Cosmetics",
+    icon: "🪡",
+    color: "text-amber-400",
+    size: "small",
+    description:
+      "Zero-cost routes to unlock free outfits, accessories, and hairstyles via events, quests, and codes.",
+  },
+  {
     title: "Boss Guides",
     slug: "/guides/bosses",
     label: "Encounters",

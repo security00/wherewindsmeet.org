@@ -2,20 +2,71 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+const baseUrl = "https://wherewindsmeet.org";
+
 export const metadata: Metadata = {
-  title: "Where Winds Meet Patch Notes & Balance Updates",
+  title: "Where Winds Meet Patch Notes, Roadmap & Balance Updates",
   description:
-    "Latest Where Winds Meet patch notes, balance changes, weapon adjustments, and new content updates. Track changes to your favorite builds and strategies.",
+    "Latest Where Winds Meet patch notes, roadmap checkpoints, balance changes, weapon adjustments, and new content updates. Track changes to your favorite builds and strategies.",
   alternates: {
-    canonical: "https://wherewindsmeet.org/guides/patch-notes",
+    canonical: `${baseUrl}/guides/patch-notes`,
+  },
+  openGraph: {
+    title: "Where Winds Meet Patch Notes, Roadmap & Balance Updates",
+    description:
+      "Latest Where Winds Meet patch notes, roadmap checkpoints, balance changes, weapon adjustments, and new content updates.",
+    url: `${baseUrl}/guides/patch-notes`,
+  },
+  twitter: {
+    title: "Where Winds Meet Patch Notes, Roadmap & Balance Updates",
+    description:
+      "Latest Where Winds Meet patch notes, roadmap checkpoints, balance changes, weapon adjustments, and new content updates.",
   },
 };
 
 
 
 export default function PatchNotesPage() {
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: metadata.title,
+      description: metadata.description,
+      url: `${baseUrl}/guides/patch-notes`,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: baseUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Guides",
+          item: `${baseUrl}/guides`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Patch Notes",
+          item: `${baseUrl}/guides/patch-notes`,
+        },
+      ],
+    },
+  ];
+
   return (
     <article className="space-y-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
         <div className="pointer-events-none absolute inset-0">
           <Image
@@ -38,6 +89,11 @@ export default function PatchNotesPage() {
             Where Winds Meet patch updates reshapes how you approach combat,
             character progression, and endgame content. This guide helps you decode
             what each Where Winds Meet patch means for your favorite strategies.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
+            We also flag roadmap checkpoints and upcoming update windows so you
+            know when major Where Winds Meet changes are likely to land and can
+            plan respecs or new builds accordingly.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Rather than panic when you see a weapon adjusted or a new feature added,

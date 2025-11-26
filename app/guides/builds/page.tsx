@@ -1,12 +1,25 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 
+const baseUrl = "https://wherewindsmeet.org";
+
 export const metadata: Metadata = {
-  title: "Where Winds Meet Best Builds & Combat Tips",
+  title: "Where Winds Meet Best Builds – PVE & PVP Loadouts",
   description:
-    "Flexible Where Winds Meet builds for solo story, co-op and PVP with smart stat spreads, weapon pairings and rotation tips tuned to real players.",
+    "Flexible Where Winds Meet builds for PVE and PVP with smart stat spreads, weapon pairings, and rotation tips tuned to real players.",
   alternates: {
-    canonical: "https://wherewindsmeet.org/guides/builds",
+    canonical: `${baseUrl}/guides/builds`,
+  },
+  openGraph: {
+    title: "Where Winds Meet Best Builds – PVE & PVP Loadouts",
+    description:
+      "Flexible Where Winds Meet builds for PVE and PVP with smart stat spreads, weapon pairings, and rotation tips tuned to real players.",
+    url: `${baseUrl}/guides/builds`,
+  },
+  twitter: {
+    title: "Where Winds Meet Best Builds – PVE & PVP Loadouts",
+    description:
+      "Flexible Where Winds Meet builds for PVE and PVP with smart stat spreads, weapon pairings, and rotation tips tuned to real players.",
   },
 };
 
@@ -32,8 +45,46 @@ const archetypes = [
 ];
 
 export default function BuildsPage() {
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: metadata.title,
+      description: metadata.description,
+      url: `${baseUrl}/guides/builds`,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: baseUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Guides",
+          item: `${baseUrl}/guides`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Builds",
+          item: `${baseUrl}/guides/builds`,
+        },
+      ],
+    },
+  ];
+
   return (
     <article className="min-h-screen space-y-12 bg-ink-wash pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* Hero Section with Vignette */}
       <section className="relative h-[60vh] min-h-[500px] w-full overflow-hidden">
         <div className="absolute inset-0">
@@ -66,6 +117,10 @@ export default function BuildsPage() {
             The best Where Winds Meet builds do more than chase numbers. They
             translate your favorite wuxia fantasy into a reliable combat loop
             that fits your schedule, reflexes, and patience for experimentation.
+          </p>
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-slate-200/90 text-shadow-sm font-sans">
+            Use this as a quick PVE build and PVP build companion before diving
+            into weapon guides, path choices, and rotation notes.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <div className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-slate-300 backdrop-blur-sm">

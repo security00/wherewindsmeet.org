@@ -3,18 +3,69 @@ import Image from "next/image";
 import Link from "next/link";
 import { weapons } from "@/lib/weapons";
 
+const baseUrl = "https://wherewindsmeet.org";
+
 export const metadata: Metadata = {
-  title: "Where Winds Meet Weapons Overview & Roles",
+  title: "Where Winds Meet Weapons Guide – Overview & Roles",
   description:
-    "Overview of every current Where Winds Meet weapon with roles, official showcase art, and notes on how they connect to tier lists and builds.",
+    "Where Winds Meet weapons guide covering every weapon with roles, official showcase art, and notes on how they connect to tier lists and builds.",
   alternates: {
-    canonical: "https://wherewindsmeet.org/guides/weapons",
+    canonical: `${baseUrl}/guides/weapons`,
+  },
+  openGraph: {
+    title: "Where Winds Meet Weapons Guide – Overview & Roles",
+    description:
+      "Where Winds Meet weapons guide covering every weapon with roles, official showcase art, and notes on how they connect to tier lists and builds.",
+    url: `${baseUrl}/guides/weapons`,
+  },
+  twitter: {
+    title: "Where Winds Meet Weapons Guide – Overview & Roles",
+    description:
+      "Where Winds Meet weapons guide covering every weapon with roles, official showcase art, and notes on how they connect to tier lists and builds.",
   },
 };
 
 export default function WeaponsPage() {
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: metadata.title,
+      description: metadata.description,
+      url: `${baseUrl}/guides/weapons`,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: baseUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Guides",
+          item: `${baseUrl}/guides`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Weapons",
+          item: `${baseUrl}/guides/weapons`,
+        },
+      ],
+    },
+  ];
+
   return (
     <article className="space-y-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
         <div className="pointer-events-none absolute inset-0">
           <Image
@@ -35,6 +86,16 @@ export default function WeaponsPage() {
             place. Instead of only listing raw damage or patch notes, it focuses
             on how each weapon actually feels to play—its reach, rhythm, and
             ideal matchups.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
+            If you need a quick ranking snapshot, open the dedicated{" "}
+            <Link
+              href="/guides/weapons/tier-list"
+              className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+            >
+              Where Winds Meet weapons tier list
+            </Link>{" "}
+            for tier placements, then jump back here for full context and roles.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Use this overview alongside the{" "}

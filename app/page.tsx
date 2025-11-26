@@ -1,23 +1,20 @@
-'use client';
-
-import dynamic from "next/dynamic";
+import type { Metadata } from "next";
 import Link from "next/link";
+import JianghuMapClient from "../components/JianghuMapClient";
 
-const JianghuMap = dynamic(() => import("../components/JianghuMap"), {
-  ssr: false,
-  loading: () => (
-    <div className="relative h-[480px] w-full overflow-hidden rounded-3xl border border-slate-800/80 bg-slate-900/60 p-6 shadow-inner shadow-slate-950/40 sm:h-[560px]">
-      <div className="flex h-full items-center justify-center text-sm text-slate-400">
-        Loading map...
-      </div>
-    </div>
-  ),
-});
+export const metadata: Metadata = {
+  title: "Where Winds Meet Global Launch Guides Hub",
+  description:
+    "Global launch hub with the preview stream plus trending Where Winds Meet guides, codes, tier lists, and updates for players on PC, console, and mobile.",
+  alternates: {
+    canonical: "https://wherewindsmeet.org/",
+  },
+};
 
 export default function Home() {
   return (
     <div className="space-y-10">
-      <JianghuMap />
+      <JianghuMapClient />
 
       <section className="card-wuxia rounded-3xl p-6 sm:p-8">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1.4fr)] lg:items-start">
@@ -152,7 +149,80 @@ export default function Home() {
             >
               <h3 className="text-lg font-bold text-slate-50 group-hover:text-blue-200 transition">{item.title}</h3>
               <p className="mt-3 text-sm text-slate-300 leading-relaxed">{item.desc}</p>
-              <span className="mt-4 text-xs text-blue-300 group-hover:text-blue-200">Open →</span>
+            <span className="mt-4 text-xs text-blue-300 group-hover:text-blue-200">Open →</span>
+          </Link>
+        ))}
+        </div>
+      </section>
+
+      <section className="grid gap-6 rounded-3xl border border-slate-800/80 bg-slate-950/80 p-6 shadow-2xl shadow-slate-950/40 md:grid-cols-2">
+        <div className="space-y-3">
+          <p className="text-xs uppercase tracking-wide text-emerald-300">Fast freebies</p>
+          <h2 className="text-2xl font-bold text-slate-50">Grab the latest free outfits and codes.</h2>
+          <p className="text-sm leading-relaxed text-slate-200">
+            Track zero-cost routes for Where Winds Meet free outfits, cosmetics, and hairstyles, then pair them with the newest redeem codes to fill your wardrobe without spending premium currency.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/guides/free-outfits"
+              className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-200 hover:border-emerald-400 hover:text-emerald-50"
+            >
+              Free outfits guide
+            </Link>
+            <Link
+              href="/guides/cosmetics"
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-4 py-2 text-sm font-semibold text-slate-200 hover:border-emerald-400 hover:text-emerald-50"
+            >
+              Cosmetics gallery
+            </Link>
+            <Link
+              href="/news"
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-4 py-2 text-sm font-semibold text-slate-200 hover:border-emerald-400 hover:text-emerald-50"
+            >
+              News & roadmap
+            </Link>
+          </div>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {[
+            {
+              title: "Free outfits & sets",
+              desc: "Event shop freebies, quest drops, and social shop picks collected in one guide.",
+              href: "/guides/free-outfits",
+              badge: "0-cost routes",
+            },
+            {
+              title: "Roadmap & updates",
+              desc: "Follow news, events, and roadmap beats to time your free cosmetic claims.",
+              href: "/news",
+              badge: "What’s next",
+            },
+            {
+              title: "Patch notes impact",
+              desc: "Check if new updates add free cosmetics or change event drop rates.",
+              href: "/guides/patch-notes",
+              badge: "Meta shifts",
+            },
+            {
+              title: "Appearance sets",
+              desc: "Browse outfits, dyes, and accessories to pair with your freebies.",
+              href: "/guides/cosmetics",
+              badge: "Style picks",
+            },
+          ].map((item) => (
+            <Link
+              key={item.title}
+              href={item.href}
+              className="group flex h-full flex-col justify-between rounded-2xl border border-slate-800/80 bg-slate-900/70 p-4 shadow-lg transition hover:-translate-y-1 hover:border-emerald-400/50 hover:shadow-emerald-900/20"
+            >
+              <div className="flex items-start justify-between gap-2">
+                <h3 className="text-base font-semibold text-slate-50 group-hover:text-emerald-200">{item.title}</h3>
+                <span className="rounded-full border border-emerald-500/30 bg-emerald-950/30 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-emerald-300">
+                  {item.badge}
+                </span>
+              </div>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">{item.desc}</p>
+              <span className="mt-3 text-xs text-emerald-300 group-hover:text-emerald-200">View →</span>
             </Link>
           ))}
         </div>

@@ -20,6 +20,30 @@ export const metadata: Metadata = {
   },
   description:
     "Where Winds Meet guides hub with tier lists, builds, codes, and news to help players master the open world wuxia RPG across platforms.",
+  openGraph: {
+    title: "Where Winds Meet Guides, News & Codes Hub",
+    description:
+      "Where Winds Meet guides hub with tier lists, builds, codes, and news to help players master the open world wuxia RPG across platforms.",
+    url: "https://wherewindsmeet.org",
+    siteName: "Where Winds Meet Hub",
+    images: [
+      {
+        url: "https://wherewindsmeet.org/background/bg.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Where Winds Meet fan hub cover",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Where Winds Meet Guides, News & Codes Hub",
+    description:
+      "Where Winds Meet guides hub with tier lists, builds, codes, and news to help players master the open world wuxia RPG across platforms.",
+    images: ["https://wherewindsmeet.org/background/bg.jpg"],
+  },
   other: {
     "google-adsense-account": "ca-pub-1548791648803369",
   },

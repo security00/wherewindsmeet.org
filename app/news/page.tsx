@@ -3,12 +3,25 @@ import Image from "next/image";
 import Link from "next/link";
 import { newsItems } from "@/lib/news";
 
+const baseUrl = "https://wherewindsmeet.org";
+
 export const metadata: Metadata = {
-  title: "Where Winds Meet News, Updates & Patch Notes",
+  title: "Where Winds Meet News, Roadmap Updates & Patch Notes",
   description:
-    "Curated Where Winds Meet news with patch notes, balance changes, events and server updates so you quickly understand what changed and why it matters.",
+    "Curated Where Winds Meet news with roadmap notes, balance updates, and patch notes so you quickly see what changed and why it matters.",
   alternates: {
-    canonical: "https://wherewindsmeet.org/news",
+    canonical: `${baseUrl}/news`,
+  },
+  openGraph: {
+    title: "Where Winds Meet News, Roadmap Updates & Patch Notes",
+    description:
+      "Curated Where Winds Meet news with roadmap notes, balance updates, and patch notes so you quickly see what changed and why it matters.",
+    url: `${baseUrl}/news`,
+  },
+  twitter: {
+    title: "Where Winds Meet News, Roadmap Updates & Patch Notes",
+    description:
+      "Curated Where Winds Meet news with roadmap notes, balance updates, and patch notes so you quickly see what changed and why it matters.",
   },
 };
 
@@ -35,8 +48,40 @@ export default function NewsPage() {
     a.date < b.date ? 1 : a.date > b.date ? -1 : 0,
   );
 
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: metadata.title,
+      description: metadata.description,
+      url: `${baseUrl}/news`,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: baseUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "News",
+          item: `${baseUrl}/news`,
+        },
+      ],
+    },
+  ];
+
   return (
     <article className="space-y-12 bg-ink-wash min-h-screen pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* Hero Section */}
       <section className="relative overflow-hidden rounded-3xl border border-slate-800/60 bg-slate-950/40 p-8 shadow-2xl backdrop-blur-md bg-texture-noise">
         <div className="pointer-events-none absolute inset-0">
@@ -62,14 +107,17 @@ export default function NewsPage() {
           <div className="space-y-4 text-slate-200/90 font-sans text-lg leading-relaxed">
             <p>
               These entries summarize recent official Where Winds Meet
-              announcements, launch guides, system instructions, and beta notices.
+              announcements, roadmap beats, launch guides, system instructions, and
+              beta notices.
               Each card links back to the original news source so you can
               double-check details and read the full context when needed.
             </p>
             <p>
               When you simply want to skim{" "}
               <span className="font-semibold text-emerald-400">Where Winds Meet patch notes</span>{" "}
-              without reading every bullet, start here.
+              or track the latest{" "}
+              <span className="font-semibold text-emerald-400">Where Winds Meet roadmap</span>{" "}
+              updates without reading every bullet, start here.
             </p>
           </div>
 
