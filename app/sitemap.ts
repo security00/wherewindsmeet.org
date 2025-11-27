@@ -25,6 +25,7 @@ const staticEntries: Entry[] = [
   { path: "/guides/free-morph", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/endgame", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/wall-puzzle", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/guides/woven-with-malice", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/patch-notes", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/codes", changeFrequency: "daily", priority: 0.8 },
   { path: "/guides/free-outfits", changeFrequency: "weekly", priority: 0.8 },

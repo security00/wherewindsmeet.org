@@ -79,6 +79,15 @@ const guideSections = [
     description: "Exact wall tile presses and fire contraptions for Echoes of Old Battles.",
   },
   {
+    title: "Woven with Malice",
+    slug: "/guides/woven-with-malice",
+    label: "Encounter",
+    icon: "🧶",
+    color: "text-emerald-300",
+    size: "small",
+    description: "Lost Chapter route with time gates, trap setup, bamboo trail, and bug fixes.",
+  },
+  {
     title: "Gift of Gab",
     slug: "/guides/gift-of-gab",
     label: "Dialogue",
@@ -178,6 +187,12 @@ export default function GuidesPage() {
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-200/90 text-shadow-sm font-sans border-l-2 border-emerald-500/50 pl-4">
             Your companion for the journey through Jianghu. From basic movements to grandmaster techniques, find your path here.
           </p>
+          <Link
+            href="/guides/woven-with-malice"
+            className="mt-4 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-400/60 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-200 transition hover:border-emerald-300/80 hover:text-emerald-100"
+          >
+            🧶 Latest Encounter: Woven with Malice quest guide
+          </Link>
         </div>
 
         {/* Decorative Vertical Text */}

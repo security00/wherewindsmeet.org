@@ -23,19 +23,33 @@ export default function Home() {
               Global Launch <span className="text-ink-gold">Preview Stream</span>
             </h2>
             <div className="space-y-4 text-slate-300 leading-relaxed">
-              <p>
-                Where Winds Meet is an open-world wuxia action RPG set in a turbulent
-                era of ancient China. You roam a living Jianghu, mastering graceful
-                martial arts, light-foot movement, and powerful inner cultivation
-                while choosing your own path between wandering hero, court intrigue,
-                and free exploration.
-              </p>
-              <p>
-                This global launch hub collects guides, builds,
-                and codes to help players on PC, console, and mobile get the most out
-                of every journey.
-              </p>
+            <p>
+              Where Winds Meet is an open-world wuxia action RPG set in a turbulent
+              era of ancient China. You roam a living Jianghu, mastering graceful
+              martial arts, light-foot movement, and powerful inner cultivation
+              while choosing your own path between wandering hero, court intrigue,
+              and free exploration.
+            </p>
+            <p>
+              This global launch hub collects guides, builds,
+              and codes to help players on PC, console, and mobile get the most out
+              of every journey.
+            </p>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <Link
+                href="/guides/woven-with-malice"
+                className="inline-flex items-center gap-2 rounded-full border border-emerald-400/60 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-200 transition hover:border-emerald-300/80 hover:text-emerald-100"
+              >
+                🧶 Woven with Malice quest (trending)
+              </Link>
+              <Link
+                href="/guides/wall-puzzle"
+                className="inline-flex items-center gap-2 rounded-full border border-sky-400/60 bg-sky-500/10 px-4 py-2 text-sm font-semibold text-sky-200 transition hover:border-sky-300/80 hover:text-sky-100"
+              >
+                🧩 Wall Puzzle solution
+              </Link>
             </div>
+          </div>
           </div>
 
           <div className="relative aspect-video w-full overflow-hidden rounded-2xl border-2 border-slate-800/50 shadow-2xl shadow-black/50 group">
@@ -81,6 +95,12 @@ export default function Home() {
               href: "/guides/wall-puzzle",
               desc: "Echoes of Old Battles solution: braziers, Yanyun Oath, 移/百/漂 wall presses.",
               tag: "Puzzle",
+            },
+            {
+              title: "Woven with Malice",
+              href: "/guides/woven-with-malice",
+              desc: "31-step Lost Chapter walkthrough, time gates, trap, bamboo tail, and bug fixes.",
+              tag: "Encounter",
             },
             {
               title: "Active Codes",

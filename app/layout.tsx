@@ -15,13 +15,13 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://wherewindsmeet.org"),
   title: {
-    default: "Where Winds Meet Guides, News & Codes Hub",
-    template: "%s | Where Winds Meet Hub",
+    default: "Where Winds Meet Guides Hub",
+    template: "%s | WWM Hub",
   },
   description:
     "Where Winds Meet guides hub with tier lists, builds, codes, and news to help players master the open world wuxia RPG across platforms.",
   openGraph: {
-    title: "Where Winds Meet Guides, News & Codes Hub",
+    title: "Where Winds Meet Guides Hub",
     description:
       "Where Winds Meet guides hub with tier lists, builds, codes, and news to help players master the open world wuxia RPG across platforms.",
     url: "https://wherewindsmeet.org",

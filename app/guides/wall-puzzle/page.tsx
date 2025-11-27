@@ -259,6 +259,13 @@ export default function WallPuzzleGuidePage() {
             <p className="max-w-3xl text-sm sm:text-base text-slate-300 leading-relaxed">
               This guide shows the fastest way to clear the Echoes of Old Battles side story in Qinghe—lighting every fire contraption, solving the wall puzzle (移 / 百 / 漂), and grabbing the Touch of Death Mystic Skill without wandering in circles.
             </p>
+            <p className="max-w-3xl text-sm sm:text-base text-slate-300 leading-relaxed">
+              Stuck on another Encounter? Try the new{" "}
+              <Link href="/guides/woven-with-malice" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
+                Woven with Malice quest guide
+              </Link>{" "}
+              (time gates, dyes, monk duel, trap, bamboo tail, and bug fixes).
+            </p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
