@@ -13,6 +13,17 @@ export type NewsItem = {
 // News items based on official Where Winds Meet articles mirrored under ref-page/news.
 export const newsItems: NewsItem[] = [
   {
+    id: "hearts-unite-post-launch-letter",
+    title: "Hearts Unite as the Winds Meet — Post-Launch Letter",
+    date: "2025-11-23",
+    type: "announcement",
+    summary:
+      "Post-launch dev letter outlining fixes to routing and online latency, near-term improvements to localization, voiceover, tutorials, and puzzle clues, plus mid-December solo latency fixes. The team also details PS5 performance work, multi-character solutions, and upcoming updates such as Steam Deck support, multi-timezone display, split outfits, PS5 Pro PSSR, and audio upgrades.",
+    officialUrl:
+      "https://www.wherewindsmeetgame.com/news/official/official/251123.html",
+    tags: ["Stability", "Localization", "PS5", "Steam Deck"],
+  },
+  {
     id: "global-launch-event-rewards",
     title: "Wind's Welcome Gifts — Global Launch Events & Rewards",
     date: "2025-11-14",
