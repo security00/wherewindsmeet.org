@@ -8,16 +8,16 @@ const cdnBase = "https://static.wherewindsmeet.org";
 const cdn = (path: string) => `${cdnBase}${path}`;
 
 export const metadata: Metadata = {
-  title: "Woven with Malice Guide (Where Winds Meet)",
+  title: "Woven with Malice Quest Guide (Where Winds Meet)",
   description:
-    "31-step Woven with Malice quest guide for Where Winds Meet: Zi/Chou times, dyes, monk duel, trap and bamboo tail, plus bug fixes and zoomable screenshots.",
+    "31-step Woven with Malice quest guide for Where Winds Meet: Zi/Chou times, dyes, monk duel, trap and bamboo tail, plus bug fixes and zoomable screenshots to finish the Woven with Malice quest even if it stalls.",
   alternates: {
     canonical: `${baseUrl}/guides/woven-with-malice`,
   },
   openGraph: {
-    title: "Woven with Malice – Where Winds Meet Guide",
+    title: "Woven with Malice Quest – Where Winds Meet Guide",
     description:
-      "Trigger Zi hour, collect dyes, confront the monk, set the trap, and finish Woven with Malice fast. Includes bug fixes and zoomable screenshots.",
+      "Trigger Zi hour, collect dyes, confront the monk, set the trap, and finish the Woven with Malice quest fast. Includes bug fixes and zoomable screenshots for anyone stuck in Woven with Malice.",
     url: `${baseUrl}/guides/woven-with-malice`,
     siteName: "Where Winds Meet Hub",
     images: [
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Woven with Malice – Where Winds Meet Guide",
+    title: "Woven with Malice Quest – Where Winds Meet Guide",
     description:
-      "Step-by-step route, time gates, trap setup, and fixes for Woven with Malice in Where Winds Meet.",
+      "Step-by-step route, time gates, trap setup, and fixes for the Woven with Malice quest in Where Winds Meet.",
     images: [cdn("/guides/woven-with-malice/header-01.png")],
   },
 };
@@ -324,33 +324,37 @@ const walkthrough: WalkthroughStep[] = [
 ];
 
 const stuckFixes = [
-  "Quest won’t start: set time to Zi hour, talk to the bell scholar, then relog or change channel if it still doesn’t trigger.",
-  "Vines don’t burn: only fire arrows or fire-element skills work; other damage types won’t clear them.",
-  "Tail breaks: stay grounded and within the marker radius; avoid long glides or mounts during the chase.",
-  "Wind Sense shows nothing: walk the bamboo grove slowly and re-cast Wind Sense until anomalies pop on the mini-map.",
-  "Dialogue loops: re-initiate conversation after sparring the monk; if stuck, relog and repeat the previous node.",
+  "Woven with Malice quest won’t start: set time to Zi hour, talk to the bell scholar, then relog or change channel if it still doesn’t trigger.",
+  "Vines don’t burn: only fire arrows or fire-element skills work; other damage types won’t clear the Woven with Malice quest trap.",
+  "Tail breaks: stay grounded and within the marker radius; avoid long glides or mounts during the chase to keep the Woven with Malice quest tail alive.",
+  "Wind Sense shows nothing: walk the bamboo grove slowly and re-cast Wind Sense until anomalies pop on the mini-map while flagged for the Woven with Malice quest.",
+  "Dialogue loops: re-initiate conversation after sparring the monk; if stuck in the Woven with Malice quest, relog and repeat the previous node.",
 ];
 
 const faq = [
   {
-    q: "What time do I need for Woven with Malice in Where Winds Meet?",
-    a: "Zi hour to start with the bell scholar, and Chou hour to pick up the Celestial Silk Garment. If nothing triggers, re-set the time, relog, or change channel.",
+    q: "What time do I need for the Woven with Malice quest in Where Winds Meet?",
+    a: "Zi hour to start with the bell scholar, and Chou hour to pick up the Celestial Silk Garment. If nothing triggers, re-set the time, relog, or change channel to push the Woven with Malice quest forward.",
   },
   {
-    q: "How do I burn the dead vines at the trap?",
-    a: "Use fire arrows or any fire-element skill. Other damage sources won’t clear the vines.",
+    q: "How do I burn the dead vines at the Woven with Malice quest trap?",
+    a: "Use fire arrows or any fire-element skill. Other damage sources won’t clear the vines, so the Woven with Malice quest won’t advance.",
   },
   {
-    q: "The silkworm lady disappears or the tail breaks—what do I do?",
-    a: "Stay close to the route, avoid flying too far, and retry from the step before the tail. Changing channel can also help.",
+    q: "The silkworm lady disappears or the Woven with Malice quest tail breaks—what do I do?",
+    a: "Stay close to the route, avoid flying too far, and retry from the step before the tail to keep the Woven with Malice quest chase alive. Changing channel can also help.",
   },
   {
-    q: "Wind Sense isn’t highlighting anything.",
-    a: "Recast Wind Sense while moving slowly through the bamboo grove until anomalies appear on the mini-map, then approach to trigger the eavesdrop.",
+    q: "Wind Sense isn’t highlighting anything during the Woven with Malice quest.",
+    a: "Recast Wind Sense while moving slowly through the bamboo grove until anomalies appear on the mini-map, then approach to trigger the eavesdrop and proceed with the Woven with Malice quest.",
   },
   {
-    q: "Does sparring the monk matter?",
-    a: "Yes. You must spar to force him to reveal the second handkerchief clue and advance the quest.",
+    q: "Does sparring the monk matter in the Woven with Malice quest?",
+    a: "Yes. You must spar to force him to reveal the second handkerchief clue and advance the Woven with Malice quest.",
+  },
+  {
+    q: "How long is the Woven with Malice quest?",
+    a: "Expect about 15–20 minutes if you set Zi and Chou hour correctly; redoing steps adds time, so follow the Woven with Malice quest checklist above to stay on track.",
   },
 ];
 
@@ -427,8 +431,9 @@ export default function WovenWithMalicePage() {
             <p className="text-lg leading-relaxed text-slate-200">
               31-step Woven with Malice quest guide for Where Winds Meet: trigger Zi hour, collect dyes, confront the monk,
               set the trap, tail through the bamboo forest, and apply fixes if Woven with Malice is bugged. For anyone
-              searching “where winds meet woven with malice quest” or “woven with malice where winds meet,” this page keeps
-              everything in one place with zoomable screenshots so you can spot details without guesswork.
+              searching “where winds meet woven with malice quest” or “woven with malice where winds meet,” this Woven with
+              Malice quest page keeps everything in one place with zoomable screenshots so you can spot details without
+              guesswork.
             </p>
             <div className="flex flex-wrap gap-3 text-sm text-slate-200">
               <span className="rounded-full bg-slate-900/70 px-3 py-1 ring-1 ring-emerald-400/40">
@@ -463,6 +468,44 @@ export default function WovenWithMalicePage() {
         </div>
       </section>
 
+      <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-900/50">
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+          What this Woven with Malice quest guide covers
+        </h2>
+        <div className="grid gap-5 lg:grid-cols-[1.2fr,0.8fr]">
+          <p className="text-base leading-relaxed text-slate-200">
+            The Woven with Malice quest in Where Winds Meet mixes timed objectives, a duel, a tail, and a rescue; this guide
+            strings them together so you can clear the Woven with Malice quest without replaying nodes or waiting for server
+            resets.
+          </p>
+          <p className="text-base leading-relaxed text-slate-200">
+            If your Woven with Malice quest bugs out—common causes are not setting Zi or Chou hour, skipping the fire vines,
+            or losing the bamboo tail—use the fixes below plus the screenshots to verify each checkpoint before moving on.
+          </p>
+        </div>
+        <div className="grid gap-3 md:grid-cols-3">
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+            <div className="text-sm font-semibold text-emerald-200">Time gates</div>
+            <p className="mt-1 text-sm leading-relaxed text-slate-200">
+              Zi hour starts the Woven with Malice quest, Chou hour hands over the garment—skip either and the quest stalls.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+            <div className="text-sm font-semibold text-emerald-200">Trap setup</div>
+            <p className="mt-1 text-sm leading-relaxed text-slate-200">
+              Fire damage is required to burn vines so the Woven with Malice quest trap advances and the Silkworm Lady spawns.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+            <div className="text-sm font-semibold text-emerald-200">Tail &amp; rescue</div>
+            <p className="mt-1 text-sm leading-relaxed text-slate-200">
+              Stay close during the bamboo tail and let the gas cutscene play; that’s what finishes the Woven with Malice
+              quest without loops.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-900/50">
         <div className="flex items-center justify-between gap-4">
           <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
@@ -487,7 +530,8 @@ export default function WovenWithMalicePage() {
         </ol>
         <p className="text-xs text-slate-400">
           This walkthrough exists because “where winds meet woven with malice quest” and “woven with malice where winds meet”
-          are the exact problems players search when the quest softlocks or stalls.
+          are the exact problems players search when the quest softlocks or stalls. Bookmark this Woven with Malice quest
+          TL;DR if you need to rerun steps after a crash.
         </p>
       </section>
 
