@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
+    // Avoid Next.js image proxy to prevent CDN fetch issues; serve images directly.
+    unoptimized: true,
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {

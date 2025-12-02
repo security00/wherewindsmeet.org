@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 
 type Props = {
@@ -56,12 +55,10 @@ export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32" 
           setOpen(true);
         }}
       >
-        <Image
+        <img
           src={resolvedSrc}
           alt={alt}
-          fill
-          className="object-cover object-center"
-          sizes="320px"
+          className="absolute inset-0 h-full w-full object-cover object-center"
           onError={() => setUseLocal(true)}
         />
       </div>

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useMemo, useState } from "react";
 import NpcImagePreview from "./NpcImagePreview";
 
@@ -132,12 +131,10 @@ export default function NpcMapClient({ pins, mapSrc = "/guides/npc-list/map.gif"
           className="absolute inset-0 origin-center"
           style={{ transform: `scale(${zoom})` }}
         >
-          <Image
+          <img
             src={!cdn || useLocalMap ? mapSrc : `${cdn}${mapSrc.startsWith("/") ? mapSrc : `/${mapSrc}`}`}
             alt="Where Winds Meet Old Friends map"
-            fill
-            className="object-cover"
-            priority
+            className="absolute inset-0 h-full w-full object-cover"
             onError={() => setUseLocalMap(true)}
           />
 
