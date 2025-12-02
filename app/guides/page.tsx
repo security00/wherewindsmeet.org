@@ -97,6 +97,15 @@ const guideSections = [
     description: "Master rhetoric duels and persuasion tactics using dialogue cards.",
   },
   {
+    title: "Qin Caiwei Friendship",
+    slug: "/guides/qin-caiwei",
+    label: "AI Chat",
+    icon: "🤝",
+    color: "text-emerald-300",
+    size: "small",
+    description: "Stop her dialogue loop with bracketed actions and clear farewells.",
+  },
+  {
     title: "Free Morph Mystic",
     slug: "/guides/free-morph",
     label: "Mystic",
@@ -141,6 +150,15 @@ const guideSections = [
     size: "small",
     description:
       "Zero-cost routes to unlock free outfits, accessories, and hairstyles via events, quests, and codes.",
+  },
+  {
+    title: "NPC List (Old Friends)",
+    slug: "/guides/npc-list",
+    label: "AI Chat",
+    icon: "📜",
+    color: "text-emerald-300",
+    size: "small",
+    description: "NPC locations, rewards, and AI Chat tips with a map preview.",
   },
   {
     title: "Boss Guides",

@@ -79,6 +79,12 @@ export default function Home() {
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {[
             {
+              title: "Qin Caiwei Friendship",
+              href: "/guides/qin-caiwei",
+              desc: "Stop the AI Chat loop with sample lines and a five-step playbook to befriend her fast.",
+              tag: "AI Chat",
+            },
+            {
               title: "Gift of Gab",
               href: "/guides/gift-of-gab",
               desc: "Win the dialogue minigame: style picks, Inspiration, card combos, Scholar mastery.",
@@ -144,8 +150,23 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {[
+            {
+              title: "NPC List & Old Friends Map",
+              href: "/guides/npc-list",
+              desc: "Updated NPC portraits, interactive map pins, and click-to-zoom galleries for every Old Friend.",
+            },
+            {
+              title: "Non-interactable NPC Services",
+              href: "/guides/npc-list#non-interactable-npcs-no-ai-chat",
+              desc: "Qi Sheng, Yao Yaoyao, and other service NPCs without AI Chat—locations and what they offer.",
+            },
+            {
+              title: "Qin Caiwei Chat Guide",
+              href: "/guides/qin-caiwei",
+              desc: "New AI Chat scripts, loop fixes, and quick combos to befriend Qin Caiwei fast.",
+            },
             {
               title: "Builds & Talent Paths",
               href: "/guides/builds",

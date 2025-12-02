@@ -30,6 +30,8 @@ const staticEntries: Entry[] = [
   { path: "/guides/codes", changeFrequency: "daily", priority: 0.8 },
   { path: "/guides/free-outfits", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/cosmetics", changeFrequency: "weekly", priority: 0.75 },
+  { path: "/guides/qin-caiwei", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/guides/npc-list", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/gift-of-gab", changeFrequency: "weekly", priority: 0.75 },
   { path: "/guides/new-players", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/sects", changeFrequency: "weekly", priority: 0.75 },
