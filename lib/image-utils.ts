@@ -3,7 +3,7 @@
  * 根据环境变量自动切换本地路径和 CDN 路径
  */
 
-const CDN_URL = process.env.NEXT_PUBLIC_CDN_URL || "https://static.wherewindsmeet.org";
+const CDN_URL = process.env.NEXT_PUBLIC_CDN_URL;
 
 /**
  * 获取图片的完整 URL

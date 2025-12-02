@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type Props = {
   src: string;
@@ -12,6 +12,14 @@ type Props = {
 export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32" }: Props) {
   const [open, setOpen] = useState(false);
   const [zoom, setZoom] = useState(1);
+  const [useLocal, setUseLocal] = useState(false);
+  const cdn = process.env.NEXT_PUBLIC_CDN_URL;
+
+  const resolvedSrc = useMemo(() => {
+    const normalized = src.startsWith("/") ? src : `/${src}`;
+    if (!cdn || useLocal) return normalized;
+    return `${cdn}${normalized}`;
+  }, [cdn, src, useLocal]);
 
   const adjustZoom = (delta: number) => {
     setZoom((z) => {
@@ -48,7 +56,14 @@ export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32" 
           setOpen(true);
         }}
       >
-        <Image src={src} alt={alt} fill className="object-cover object-center" sizes="320px" />
+        <Image
+          src={resolvedSrc}
+          alt={alt}
+          fill
+          className="object-cover object-center"
+          sizes="320px"
+          onError={() => setUseLocal(true)}
+        />
       </div>
 
       {open ? (
@@ -106,10 +121,11 @@ export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32" 
             <div className="max-h-[80vh] overflow-auto p-3 sm:p-4" onWheel={handleWheel}>
               <div className="mx-auto w-full overflow-auto">
                 <img
-                  src={src}
+                  src={resolvedSrc}
                   alt={alt}
                   className="block max-w-full"
                   style={{ transform: `scale(${zoom})`, transformOrigin: "top left" }}
+                  onError={() => setUseLocal(true)}
                 />
               </div>
             </div>

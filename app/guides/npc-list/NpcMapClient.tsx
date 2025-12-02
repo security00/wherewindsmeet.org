@@ -24,6 +24,8 @@ export default function NpcMapClient({ pins, mapSrc = "/guides/npc-list/map.gif"
   const [region, setRegion] = useState<string | "all">("all");
   const [selected, setSelected] = useState<MapPin | null>(null);
   const [zoom, setZoom] = useState(1);
+  const [useLocalMap, setUseLocalMap] = useState(false);
+  const cdn = process.env.NEXT_PUBLIC_CDN_URL;
 
   const { filteredPins, regions, minX, minY, spanX, spanY } = useMemo(() => {
     const uniqueRegions = Array.from(new Set(pins.map((p) => p.region).filter(Boolean))) as string[];
@@ -130,7 +132,14 @@ export default function NpcMapClient({ pins, mapSrc = "/guides/npc-list/map.gif"
           className="absolute inset-0 origin-center"
           style={{ transform: `scale(${zoom})` }}
         >
-          <Image src={mapSrc} alt="Where Winds Meet Old Friends map" fill className="object-cover" priority />
+          <Image
+            src={!cdn || useLocalMap ? mapSrc : `${cdn}${mapSrc.startsWith("/") ? mapSrc : `/${mapSrc}`}`}
+            alt="Where Winds Meet Old Friends map"
+            fill
+            className="object-cover"
+            priority
+            onError={() => setUseLocalMap(true)}
+          />
 
           {filteredPins.map((pin) => {
             const { left, top } = getPosition(pin);

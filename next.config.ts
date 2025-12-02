@@ -1,7 +1,5 @@
 import type { NextConfig } from "next";
 
-const CDN_DEFAULT = process.env.NEXT_PUBLIC_CDN_URL || "https://static.wherewindsmeet.org";
-
 const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
@@ -33,50 +31,61 @@ const nextConfig: NextConfig = {
     ],
   },
   async rewrites() {
+    const cdnUrl = process.env.NEXT_PUBLIC_CDN_URL;
+
+    if (cdnUrl) {
+      return [
+        {
+          source: '/design/:path*',
+          destination: '/design/:path*',
+        },
+        {
+          source: '/background/:path*',
+          destination: `${cdnUrl}/background/:path*`,
+        },
+        {
+          source: '/sect/:path*',
+          destination: `${cdnUrl}/sect/:path*`,
+        },
+        {
+          source: '/bosses/:path*',
+          destination: `${cdnUrl}/bosses/:path*`,
+        },
+        {
+          source: '/guides/:path*',
+          destination: `${cdnUrl}/guides/:path*`,
+        },
+        {
+          source: '/items/:path*',
+          destination: `${cdnUrl}/items/:path*`,
+        },
+        {
+          source: '/martial-arts/:path*',
+          destination: `${cdnUrl}/martial-arts/:path*`,
+        },
+        {
+          source: '/tier-list/:path*',
+          destination: `${cdnUrl}/tier-list/:path*`,
+        },
+        {
+          source: '/weapons/:path*',
+          destination: `${cdnUrl}/weapons/:path*`,
+        },
+        {
+          source: '/free-outfits/:path*',
+          destination: `${cdnUrl}/free-outfits/:path*`,
+        },
+        {
+          source: '/illustrations/:path*',
+          destination: `${cdnUrl}/illustrations/:path*`,
+        },
+      ];
+    }
+
     return [
       {
         source: '/design/:path*',
         destination: '/design/:path*',
-      },
-      {
-        source: '/background/:path*',
-        destination: `${CDN_DEFAULT}/background/:path*`,
-      },
-      {
-        source: '/sect/:path*',
-        destination: `${CDN_DEFAULT}/sect/:path*`,
-      },
-      {
-        source: '/bosses/:path*',
-        destination: `${CDN_DEFAULT}/bosses/:path*`,
-      },
-      {
-        source: '/guides/:path*',
-        destination: `${CDN_DEFAULT}/guides/:path*`,
-      },
-      {
-        source: '/items/:path*',
-        destination: `${CDN_DEFAULT}/items/:path*`,
-      },
-      {
-        source: '/martial-arts/:path*',
-        destination: `${CDN_DEFAULT}/martial-arts/:path*`,
-      },
-      {
-        source: '/tier-list/:path*',
-        destination: `${CDN_DEFAULT}/tier-list/:path*`,
-      },
-      {
-        source: '/weapons/:path*',
-        destination: `${CDN_DEFAULT}/weapons/:path*`,
-      },
-      {
-        source: '/free-outfits/:path*',
-        destination: `${CDN_DEFAULT}/free-outfits/:path*`,
-      },
-      {
-        source: '/illustrations/:path*',
-        destination: `${CDN_DEFAULT}/illustrations/:path*`,
       },
     ];
   },
