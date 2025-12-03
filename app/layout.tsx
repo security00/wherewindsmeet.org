@@ -5,7 +5,8 @@ import "./globals.css";
 import { Analytics } from "./analytics";
 import BackgroundWrapper from "../components/BackgroundWrapper";
 import { SiteHeader } from "../components/SiteHeader";
-import Link from "next/link";
+import { LanguageSwitchPrompt } from "../components/LanguageSwitchPrompt";
+import { SiteFooter } from "../components/SiteFooter";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -20,6 +21,13 @@ export const metadata: Metadata = {
   },
   description:
     "Where Winds Meet guides hub with tier lists, builds, codes, and news to help players master the open world wuxia RPG across platforms.",
+  alternates: {
+    canonical: "https://wherewindsmeet.org/",
+    languages: {
+      "en-US": "https://wherewindsmeet.org/",
+      "vi-VN": "https://wherewindsmeet.org/vn",
+    },
+  },
   openGraph: {
     title: "Where Winds Meet Guides Hub",
     description:
@@ -75,63 +83,15 @@ export default function RootLayout({
 
         <div className="relative min-h-screen z-10">
           <SiteHeader />
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <LanguageSwitchPrompt />
+          </div>
 
           <main className="mx-auto max-w-7xl px-4 pb-16 pt-8 sm:px-6 lg:px-8">
             {children}
           </main>
 
-          <footer className="border-t border-slate-800/80 bg-slate-950/90 py-6 text-xs text-slate-400">
-            <div className="mx-auto flex max-w-7xl flex-col justify-between gap-3 px-4 sm:flex-row sm:px-6 lg:px-8">
-              <p>
-                Unofficial Where Winds Meet fan hub. All trademarks are the
-                property of their respective owners.
-              </p>
-              <div className="flex flex-wrap items-center gap-4">
-                <Link
-                  href="/guides"
-                  className="transition-colors hover:text-emerald-400"
-                >
-                  Guides
-                </Link>
-                <Link
-                  href="/guides/bosses"
-                  className="transition-colors hover:text-emerald-400"
-                >
-                  Bosses
-                </Link>
-                <Link
-                  href="/guides/weapons"
-                  className="transition-colors hover:text-emerald-400"
-                >
-                  Weapons
-                </Link>
-                <Link
-                  href="/news"
-                  className="transition-colors hover:text-emerald-400"
-                >
-                  News
-                </Link>
-                <Link
-                  href="/privacy"
-                  className="transition-colors hover:text-emerald-400"
-                >
-                  Privacy
-                </Link>
-                <Link
-                  href="/terms"
-                  className="transition-colors hover:text-emerald-400"
-                >
-                  Terms
-                </Link>
-                <a
-                  href="mailto:support@wherewindsmeet.org"
-                  className="transition-colors hover:text-emerald-400"
-                >
-                  Contact: support@wherewindsmeet.org
-                </a>
-              </div>
-            </div>
-          </footer>
+          <SiteFooter />
         </div>
       </body>
     </html>

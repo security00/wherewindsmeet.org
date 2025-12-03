@@ -1,0 +1,414 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+
+const baseUrl = "https://wherewindsmeet.org";
+
+export const metadata: Metadata = {
+  title: "Trang phục miễn phí Where Winds Meet",
+  description:
+    "Trang phục/set/cosmetics/kiểu tóc miễn phí trong Where Winds Meet từ sự kiện, nhiệm vụ, code, shop và thưởng xã giao—ưu tiên các lựa chọn 0-cost để tiết kiệm tiền tệ.",
+  alternates: {
+    canonical: `${baseUrl}/vn/guides/free-outfits`,
+  },
+  openGraph: {
+    title: "Trang phục miễn phí Where Winds Meet",
+    description:
+      "Trang phục/set/cosmetics/kiểu tóc miễn phí từ sự kiện, nhiệm vụ, code, shop và xã giao—ưu tiên 0-cost để tiết kiệm tiền tệ.",
+    url: `${baseUrl}/vn/guides/free-outfits`,
+    locale: "vi_VN",
+  },
+  twitter: {
+    title: "Trang phục miễn phí Where Winds Meet",
+    description:
+      "Trang phục/set/cosmetics/kiểu tóc miễn phí từ sự kiện, nhiệm vụ, code, shop và xã giao—ưu tiên 0-cost để tiết kiệm tiền tệ.",
+  },
+};
+
+const highlightCards = [
+  {
+    title: "Sự kiện & lễ hội",
+    points: [
+      "Chuỗi đăng nhập/nhiệm vụ lễ hội thường tặng trọn set hoặc phụ kiện miễn phí; nhận trước khi sự kiện kết thúc.",
+      "Tiền sự kiện thường có bậc 0-cost—lấy miễn phí trước rồi cân nhắc mua thêm.",
+      "Mốc ngày/tuần có thể rơi thuốc nhuộm hoặc box phụ kiện; hoàn thành checklist trước reset.",
+    ],
+    image: "/free-outfits/all-free-outfits.webp",
+  },
+  {
+    title: "Nhiệm vụ & thành tựu",
+    points: [
+      "Nhiệm vụ chính/phụ lần đầu có thể thưởng mảnh trang phục hoặc voucher kiểu tóc—đừng bỏ qua chuỗi hội thoại.",
+      "Thành tựu Khám phá/Chiến đấu/Xã giao ẩn nhiều thưởng cosmetic; nhớ nhận định kỳ.",
+      "NPC thị trấn, bảng rượu, trưởng lão môn phái có thể mở chuỗi ẩn kết thúc bằng cosmetics miễn phí.",
+    ],
+    image: "/free-outfits/free-outfits-grid.webp",
+  },
+  {
+    title: "Code & ô shop 0-cost",
+    points: [
+      "Code đang hoạt động thường có voucher cosmetics—nhập sớm tránh hết hạn.",
+      "Shop sự kiện đôi khi có ô 0 tiền “dùng thử”; nhận trước rồi hãy mua.",
+      "Lưu ý bậc 0→discount: lấy miễn phí xong mới cân nhắc bậc trả phí.",
+    ],
+    image: "/free-outfits/free-sets.webp",
+  },
+  {
+    title: "Hệ thống xã hội & co-op",
+    points: [
+      "Cống hiến bang, mốc thiện cảm và điểm xã giao đổi được phụ kiện/emote—đừng để tràn điểm.",
+      "Co-op daily và clear lần đầu nội dung nhóm có thể rơi box cosmetic hoặc thuốc nhuộm.",
+      "Cuộc thi ảnh/UGC thường thưởng cosmetic theo chủ đề; xem thông báo chính thức dịp lễ.",
+    ],
+    image: "/free-outfits/free-hairstyles.webp",
+  },
+];
+
+const checklist = [
+  "Hàng ngày: nhận đăng nhập, làm daily sự kiện, kiểm tra ô shop 0-cost trước khi chi tiền.",
+  "Hàng tuần: làm nhiệm vụ bang/co-op, đạt trần tiền sự kiện, đổi box cosmetic ngẫu nhiên.",
+  "Liên tục: nhận thành tựu còn sót ở Khám phá/Chiến đấu/Xã giao để gom cosmetic ẩn.",
+  "Mùa/lễ: chuẩn bị nhiệm vụ yêu cầu trước lễ hội để không lỡ đổi trang phục giới hạn.",
+  "Code: nhập code (xem trang Codes) sớm tránh hết hạn và cộng dồn với sự kiện.",
+];
+
+const freeSets = [
+  { name: "Master Deceiver", source: "Open Beta pre-registration mail reward." },
+  { name: "Mountain Pine", source: "Beta test reward." },
+  { name: "Swaying Lotus", source: "Pre-registration milestone mail." },
+  { name: "First Step", source: "Complete “Another New Wing” in Heaven Has No Pier." },
+  { name: "Elegy of Petals", source: "Solemn Echo permanent banner (Echo Jade pulls are farmable)." },
+  { name: "Return of Spring", source: "Solemn Echo permanent banner." },
+  { name: "Crimson Curtain", source: "Solemn Echo permanent banner." },
+  { name: "Blazing Passes", source: "Solemn Echo permanent banner." },
+  { name: "Peaceful Life", source: "Finish 7 chapters of A Warrior's Journey." },
+  { name: "Humble Hero", source: "Reach Lv61 in Path of the Strong event." },
+  { name: "Blazing Midnight", source: "Join Midnight Blades sect, buy in sect shop." },
+  { name: "Heavenly Frost", source: "Join Well of Heaven sect, buy in sect shop." },
+  { name: "Silent Current", source: "Join Silver Needle sect, buy in sect shop." },
+  { name: "Ninefold Freedom", source: "Join Nine Mortal Ways sect, buy in sect shop." },
+  { name: "Enlightened Mind", source: "Season Shop for 520 Cosmetic Chests." },
+  { name: "Chasing Red", source: "Still Shore campaign: 520 Cosmetic Chests or random from campaign chests." },
+  { name: "Bounty Hunter", source: "Purchase in Bounty Shop." },
+  { name: "Sound of Valor", source: "Reach exploration Lv5 in Qinghe." },
+  { name: "Opulent Grace", source: "Reach exploration Lv5 in Kaifeng." },
+  { name: "Penstroke Posy", source: "Advance in Scholar profession." },
+  { name: "Art of Healing", source: "Advance in Healer profession." },
+  { name: "Gray Wolf", source: "Buy with Adventure Slip (Social Shop: Wandering Paths)." },
+  { name: "Purple Dew", source: "Buy with Adventure Slip (Social Shop: Wandering Paths)." },
+  { name: "Loyal Heart", source: "Buy with Harmony Charm (Social Shop: Partnership)." },
+  { name: "Twin Swallows", source: "Buy with Harmony Charm (Social Shop: Discipleship)." },
+  { name: "Still Moonlight", source: "Buy with Harmony Charm (Social Shop: Sworn Cohort)." },
+  { name: "Flawed Harmony", source: "Reach Partnership Lv3." },
+  { name: "Yaksha", source: "Gather Sin Leaf in Perception Forest, buy in Sin Leaf Exchange." },
+  { name: "Orchid Dew", source: "Guide Red Gold Boutique." },
+  { name: "Alms Pilgrim", source: "Encounter “Hero & Beauty” near Bloomveil Monastery Outpost (Qinghe)." },
+  { name: "Forgotten", source: "Complete Lifetime Lockup + Behind Bard Blues (≈200h jail sentence)." },
+];
+
+const freeOutfits = [
+  { name: "Novice Wanderer", source: "Starter outfit." },
+  { name: "Taming Storms", source: "Complete “A Horse Neighs in the Forest” (Heaven Has No Pier chapter)." },
+  { name: "Jianghu: Wanderer", source: "Solemn Echo permanent banner (Echo Jade pulls are farmable)." },
+  { name: "Blue Clouds", source: "Season Shop for 360 Cosmetic Chests." },
+  { name: "Autumn Orchid", source: "Season Shop for 360 Cosmetic Chests." },
+  { name: "Bathrobe: Golden Threads", source: "Finish “Golden Guest” achievement." },
+];
+
+const freeHairstyles = [
+  {
+    name: "Starter Hairstyles (1–12)",
+    source:
+      "Brush hair with the bronze mirror in Blissful Retreat twice per day until all starter styles are unlocked.",
+  },
+  { name: "Unbound: Hair", source: "Solemn Echo permanent banner." },
+  {
+    name: "Daily combing tip",
+    source:
+      "Visit the house south of Blissful Retreat waypoint; interact twice daily to collect missed starter styles.",
+  },
+];
+
+export default function FreeOutfitsPage() {
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: metadata.title,
+      description: metadata.description,
+      url: `${baseUrl}/vn/guides/free-outfits`,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Trang chủ",
+          item: baseUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Hướng dẫn",
+          item: `${baseUrl}/vn/guides`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Trang phục miễn phí",
+          item: `${baseUrl}/vn/guides/free-outfits`,
+        },
+      ],
+    },
+  ];
+
+  return (
+    <article className="space-y-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
+      <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
+        <div className="pointer-events-none absolute inset-0">
+          <Image
+            src="/background/bg5.webp"
+            alt="Nền trang phục miễn phí Where Winds Meet"
+            fill
+            className="object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/30" />
+        </div>
+
+        <div className="relative space-y-4">
+          <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
+            Trang phục, cosmetics, kiểu tóc miễn phí.
+          </h1>
+          <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+            Hub gọn cho trang phục/phụ kiện/kiểu tóc/thuốc nhuộm miễn phí hoặc giá thấp—ưu tiên sự kiện, code, nhiệm vụ, thành tựu và thưởng xã hội để không tốn tiền tệ cao cấp.
+          </p>
+          <p className="text-xs text-slate-400">
+            Lưu ý: phần thưởng thay đổi theo patch. Luôn nhận bậc 0-cost trước rồi mới cân nhắc bậc trả phí.
+          </p>
+          <div className="flex flex-wrap gap-3 text-xs text-emerald-200">
+            <Link
+              href="/vn/guides/codes"
+              className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 hover:border-emerald-400 hover:text-emerald-100"
+            >
+              Xem code mới nhất
+            </Link>
+            <Link
+              href="/vn/guides/cosmetics"
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 hover:border-emerald-400 hover:text-emerald-100"
+            >
+              Thư viện cosmetics
+            </Link>
+            <Link
+              href="#free-sets"
+              className="rounded-full border border-blue-500/40 bg-blue-500/10 px-3 py-1 text-blue-200 hover:border-blue-400 hover:text-blue-50"
+            >
+              Tới danh sách set
+            </Link>
+          </div>
+          <div className="grid gap-3 rounded-2xl border border-slate-800/70 bg-slate-900/60 p-4 text-sm text-slate-200 sm:grid-cols-2">
+            <p className="text-sm text-slate-100">
+              Dưới đây là set, outfit lẻ và kiểu tóc miễn phí—sắp xếp theo độ nhanh/quan trọng.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="free-sets"
+        className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60"
+      >
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+            Set miễn phí và cách lấy
+          </h2>
+          <span className="text-xs text-slate-400">
+            Nguồn vĩnh viễn + giới hạn; ưu tiên bậc free/gacha Echo Jade khi có.
+          </span>
+        </div>
+        <div className="grid gap-3 md:grid-cols-2">
+          <h3 className="sr-only">Danh sách set miễn phí</h3>
+          {freeSets.map((item) => (
+            <div
+              key={item.name}
+              className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4 shadow-sm shadow-slate-950/50"
+            >
+              <p className="text-sm font-semibold text-slate-50">{item.name}</p>
+              <p className="mt-1 text-sm text-slate-300">{item.source}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section
+        id="free-outfits"
+        className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60"
+      >
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+          Outfit lẻ miễn phí và vị trí
+        </h2>
+        <div className="grid gap-3 md:grid-cols-2">
+          <h3 className="sr-only">Danh sách outfit</h3>
+          {freeOutfits.map((item) => (
+            <div
+              key={item.name}
+              className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4 shadow-sm shadow-slate-950/50"
+            >
+              <p className="text-sm font-semibold text-slate-50">{item.name}</p>
+              <p className="mt-1 text-sm text-slate-300">{item.source}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section
+        id="free-hairstyles"
+        className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60"
+      >
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+          Kiểu tóc miễn phí và cách nhận
+        </h2>
+        <div className="grid gap-3 md:grid-cols-2">
+          <h3 className="sr-only">Danh sách kiểu tóc</h3>
+          {freeHairstyles.map((item) => (
+            <div
+              key={item.name}
+              className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4 shadow-sm shadow-slate-950/50"
+            >
+              <p className="text-sm font-semibold text-slate-50">{item.name}</p>
+              <p className="mt-1 text-sm text-slate-300">{item.source}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="grid gap-6 md:grid-cols-2">
+        {highlightCards.map((card) => (
+          <article
+            key={card.title}
+            className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-5 shadow-sm shadow-slate-950/60"
+          >
+            <div className="pointer-events-none absolute inset-0">
+              <Image
+                src={card.image}
+                alt={card.title}
+                fill
+                className="object-cover opacity-15"
+              />
+              <div className="absolute inset-0 bg-slate-950/80" />
+            </div>
+            <div className="relative space-y-3">
+              <h2 className="text-lg font-semibold text-slate-50">{card.title}</h2>
+              <ul className="space-y-2 text-sm leading-relaxed text-slate-200">
+                {card.points.map((point) => (
+                  <li key={point} className="flex gap-2">
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+            Ví dụ trang phục miễn phí (drop sự kiện gần đây)
+          </h2>
+          <span className="text-xs text-slate-400">
+            Ảnh lấy từ highlight cộng đồng; thời gian có thể xoay vòng.
+          </span>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {[
+            {
+              src: "/free-outfits/all-free-outfits.webp",
+              alt: "Tổng hợp trang phục miễn phí Where Winds Meet",
+              caption: "Shop sự kiện: nhận bậc 0-cost trước.",
+            },
+            {
+              src: "/free-outfits/free-outfits-grid.webp",
+              alt: "Trang phục thưởng nhiệm vụ",
+              caption: "Nhiệm vụ/thành tựu thường tặng full set.",
+            },
+            {
+              src: "/free-outfits/free-hairstyles.webp",
+              alt: "Lưới kiểu tóc miễn phí",
+              caption: "Voucher tóc rơi từ code, sự kiện, mốc xã giao.",
+            },
+          ].map((item) => (
+            <article
+              key={item.src}
+              className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/80 shadow-sm shadow-slate-950/60"
+            >
+              <div className="relative aspect-[16/9] w-full">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  priority={false}
+                />
+              </div>
+              <p className="px-4 py-3 text-sm text-slate-200">{item.caption}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+          Checklist nhanh cho cosmetics miễn phí
+        </h2>
+        <ul className="space-y-3 text-sm leading-relaxed text-slate-200 sm:text-base">
+          {checklist.map((item) => (
+            <li key={item} className="flex gap-3">
+              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="space-y-3 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+          Lộ trình và ưu tiên
+        </h2>
+        <div className="space-y-3 text-sm leading-relaxed text-slate-200 sm:text-base">
+          <p>
+            Ưu tiên code: nhiều trang phục/kiểu tóc miễn phí đến từ code giới hạn. Nhập ở{" "}
+            <Link
+              href="/vn/guides/codes"
+              className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+            >
+              trang Codes
+            </Link>{" "}
+            trước khi làm daily để tránh hết hạn.
+          </p>
+          <p>
+            Tiền sự kiện: lấy bậc free trong shop, rồi dùng tiền dư cho outfit/thuốc nhuộm giới hạn trước khi đụng tiền hiếm.
+          </p>
+          <p>
+            Thành tựu/nhiệm vụ ẩn: mốc khám phá, chuỗi NPC thị trấn, thử thách môn phái thường cho phụ kiện/voucher tóc—xem bảng thành tựu hàng tuần.
+          </p>
+          <p>
+            Hệ thống xã hội: cống hiến bang, điểm thiện cảm, hoạt động co-op đổi được box cosmetic—tiêu điểm trước reset tuần để tránh tràn.
+          </p>
+          <p>
+            Nhịp patch: bản lớn và dịp lễ hay xoay/ rerun set. Chuẩn bị điều kiện trước để sẵn sàng khi shop mở.
+          </p>
+        </div>
+      </section>
+    </article>
+  );
+}
+

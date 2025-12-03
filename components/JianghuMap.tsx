@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 interface MapLandmark {
   id: string;
@@ -97,6 +98,27 @@ const categoryColors = {
 
 export default function JianghuMap() {
   const [hoveredLandmark, setHoveredLandmark] = useState<string | null>(null);
+  const pathname = usePathname();
+  const isVietnamese = pathname?.startsWith('/vn');
+
+  const withLangPrefix = (slug: string) => {
+    if (!isVietnamese) return slug;
+    return slug.startsWith('/vn') ? slug : `/vn${slug}`;
+  };
+
+  const localizedLandmarks = useMemo(
+    () => landmarks.map((landmark) => ({ ...landmark, slug: withLangPrefix(landmark.slug) })),
+    [isVietnamese]
+  );
+
+  const quickLinks = useMemo(
+    () => [
+      { label: 'View All Guides', href: withLangPrefix('/guides'), color: 'emerald' },
+      { label: 'Latest News', href: withLangPrefix('/news'), color: 'cyan' },
+      { label: 'Watch Videos', href: withLangPrefix('/videos'), color: 'purple' },
+    ],
+    [isVietnamese]
+  );
 
   return (
     <div className="relative min-h-[600px] overflow-hidden rounded-3xl border border-slate-800/80 bg-slate-950/70 p-6 shadow-2xl shadow-emerald-500/15 sm:min-h-[700px] sm:p-10">
@@ -133,7 +155,7 @@ export default function JianghuMap() {
 
       {/* 移动端：改为网格，避免图标重叠 */}
       <div className="mb-6 grid grid-cols-2 gap-3 sm:hidden">
-        {landmarks.map((landmark) => (
+        {localizedLandmarks.map((landmark) => (
           <Link
             key={landmark.id}
             href={landmark.slug}
@@ -154,7 +176,7 @@ export default function JianghuMap() {
       <div className="relative z-10 mx-auto hidden max-w-5xl sm:block">
         <div className="relative aspect-[16/10] w-full">
           {/* 地标点 */}
-          {landmarks.map((landmark, index) => {
+          {localizedLandmarks.map((landmark, index) => {
             const isHovered = hoveredLandmark === landmark.id;
             const color = categoryColors[landmark.category];
             const tooltipSide = landmark.tooltipSide ?? 'bottom';
@@ -268,7 +290,7 @@ export default function JianghuMap() {
             </defs>
             {/* 新手村 -> 藏宝阁 */}
             <path
-              d={`M ${landmarks[0].position.x}% ${landmarks[0].position.y}% Q ${(landmarks[0].position.x + landmarks[3].position.x) / 2}% ${landmarks[0].position.y - 10}% ${landmarks[3].position.x}% ${landmarks[3].position.y}%`}
+              d={`M ${localizedLandmarks[0].position.x}% ${localizedLandmarks[0].position.y}% Q ${(localizedLandmarks[0].position.x + localizedLandmarks[3].position.x) / 2}% ${localizedLandmarks[0].position.y - 10}% ${localizedLandmarks[3].position.x}% ${localizedLandmarks[3].position.y}%`}
               stroke="url(#pathGradient)"
               strokeWidth="2"
               fill="none"
@@ -276,7 +298,7 @@ export default function JianghuMap() {
             />
             {/* 藏宝阁 -> 华山论剑 */}
             <path
-              d={`M ${landmarks[3].position.x}% ${landmarks[3].position.y}% Q ${(landmarks[3].position.x + landmarks[1].position.x) / 2}% ${(landmarks[3].position.y + landmarks[1].position.y) / 2}% ${landmarks[1].position.x}% ${landmarks[1].position.y}%`}
+              d={`M ${localizedLandmarks[3].position.x}% ${localizedLandmarks[3].position.y}% Q ${(localizedLandmarks[3].position.x + localizedLandmarks[1].position.x) / 2}% ${(localizedLandmarks[3].position.y + localizedLandmarks[1].position.y) / 2}% ${localizedLandmarks[1].position.x}% ${localizedLandmarks[1].position.y}%`}
               stroke="url(#pathGradient)"
               strokeWidth="2"
               fill="none"
@@ -293,24 +315,15 @@ export default function JianghuMap() {
         transition={{ duration: 0.6, delay: 0.8 }}
         className="relative z-10 mt-8 flex flex-wrap justify-center gap-3 text-sm"
       >
-        <Link
-          href="/guides"
-          className="inline-flex items-center justify-center rounded-full border border-slate-500/60 bg-slate-950/60 px-5 py-2.5 text-slate-100 transition hover:border-emerald-400/80 hover:text-emerald-200"
-        >
-          View All Guides
-        </Link>
-        <Link
-          href="/news"
-          className="inline-flex items-center justify-center rounded-full border border-slate-500/60 bg-slate-950/60 px-5 py-2.5 text-slate-100 transition hover:border-cyan-400/80 hover:text-cyan-200"
-        >
-          Latest News
-        </Link>
-        <Link
-          href="/videos"
-          className="inline-flex items-center justify-center rounded-full border border-slate-500/60 bg-slate-950/60 px-5 py-2.5 text-slate-100 transition hover:border-purple-400/80 hover:text-purple-200"
-        >
-          Watch Videos
-        </Link>
+        {quickLinks.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={`inline-flex items-center justify-center rounded-full border border-slate-500/60 bg-slate-950/60 px-5 py-2.5 text-slate-100 transition hover:border-${link.color}-400/80 hover:text-${link.color}-200`}
+          >
+            {link.label}
+          </Link>
+        ))}
       </motion.div>
     </div>
   );
