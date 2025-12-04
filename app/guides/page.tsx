@@ -88,6 +88,15 @@ const guideSections = [
     description: "Lost Chapter route with time gates, trap setup, bamboo trail, and bug fixes.",
   },
   {
+    title: "One Leaf, One Life",
+    slug: "/guides/one-leaf-one-life",
+    label: "Lost Chapter",
+    icon: "🍂",
+    color: "text-amber-300",
+    size: "medium",
+    description: "Kaifeng questline with white-leaf side stories, puzzle answers, and Gold Leaf epilogue rewards.",
+  },
+  {
     title: "Gift of Gab",
     slug: "/guides/gift-of-gab",
     label: "Dialogue",
@@ -206,10 +215,10 @@ export default function GuidesPage() {
             Your companion for the journey through Jianghu. From basic movements to grandmaster techniques, find your path here.
           </p>
           <Link
-            href="/guides/woven-with-malice"
+            href="/guides/one-leaf-one-life"
             className="mt-4 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-400/60 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-200 transition hover:border-emerald-300/80 hover:text-emerald-100"
           >
-            🧶 Latest Encounter: Woven with Malice quest guide
+            🍂 Latest Lost Chapter: One Leaf, One Life quest guide
           </Link>
         </div>
 

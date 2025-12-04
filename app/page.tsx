@@ -37,10 +37,10 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
               <Link
-                href="/guides/woven-with-malice"
+                href="/guides/one-leaf-one-life"
                 className="inline-flex items-center gap-2 rounded-full border border-emerald-400/60 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-200 transition hover:border-emerald-300/80 hover:text-emerald-100"
               >
-                🧶 Woven with Malice quest (trending)
+                🍂 One Leaf, One Life quest — hottest search, full walkthrough
               </Link>
               <Link
                 href="/guides/wall-puzzle"
@@ -78,6 +78,12 @@ export default function Home() {
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {[
+            {
+              title: "One Leaf, One Life",
+              href: "/guides/one-leaf-one-life",
+              desc: "Most-searched Lost Chapter: start trigger, white-leaf side quests, puzzles, and Gold Leaf epilogue.",
+              tag: "Trending",
+            },
             {
               title: "Qin Caiwei Friendship",
               href: "/guides/qin-caiwei",
