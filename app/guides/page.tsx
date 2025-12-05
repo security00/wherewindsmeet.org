@@ -79,6 +79,15 @@ const guideSections = [
     description: "Exact wall tile presses and fire contraptions for Echoes of Old Battles.",
   },
   {
+    title: "An Unholy Prophecy",
+    slug: "/guides/unholy-prophecy",
+    label: "Jianghu Legacy",
+    icon: "🔮",
+    color: "text-purple-300",
+    size: "small",
+    description: "Jianghu Legacy 07 at Martial Temple: rooftop fire arrows, Meridian Touch puzzles, spike traps, and Shi Zhen boss fight.",
+  },
+  {
     title: "Woven with Malice",
     slug: "/guides/woven-with-malice",
     label: "Encounter",

@@ -77,6 +77,15 @@ const guideSections = [
     description: "Thứ tự nhấn ô và đốt lửa trong Echoes of Old Battles.",
   },
   {
+    title: "Tà Khúc",
+    slug: "/vn/guides/unholy-prophecy",
+    label: "Jianghu Legacy",
+    icon: "🔮",
+    color: "text-purple-300",
+    size: "small",
+    description: "Jianghu Legacy 07 tại Chùa Côn Đôn: mũi tên lửa trên mái nhà, câu đố Meridian Touch, bẫy gai, và đấu Thế Trấn.",
+  },
+  {
     title: "Sợi Định Mệnh",
     slug: "/vn/guides/woven-with-malice",
     label: "Nhiệm vụ",
