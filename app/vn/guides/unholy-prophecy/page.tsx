@@ -78,7 +78,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Mở khóa nhiệm vụ",
     text: "Du lịch đến Chùa Côn Đôn trong Ngàn Lá Chùa (Jade Forrest Court), khu vực Kaifeng. Nói chuyện với Họa Sĩ Bí Ẩn để mở khóa và kích hoạt nhiệm vụ Tà Khúc.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-01-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-01-game8.png"),
       alt: "Nói chuyện với Họa Sĩ Bí Ẩn để mở khóa nhiệm vụ",
     },
   },
@@ -86,7 +86,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Bắt đầu hành trình trên mái nhà",
     text: "Rời khỏi chùa và hướng tới các mái nhà theo chỉ dẫn của điểm đánh dấu nhiệm vụ. Bạn sẽ cần phải leo lên và vượt qua các tòa nhà ở Kaifeng.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-02-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-02-game8.png"),
       alt: "Leo mái nhà ở Kaifeng",
     },
   },
@@ -94,7 +94,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Tìm lư hương đầu tiên",
     text: "Điều hướng đến vị trí lư hương đầu tiên trên mái nhà. Trang bị mũi tên lửa và chuẩn bị bắn.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-03-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-03-game8.png"),
       alt: "Lư hương đầu tiên trên mái nhà",
     },
   },
@@ -102,7 +102,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Bắn lư hương đầu tiên",
     text: "Sử dụng mũi tên lửa để bắn lư hương đầu tiên. Điều này sẽ thắp sáng nó và kích hoạt hiệu ứng hình ảnh.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-04-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-04-game8.png"),
       alt: "Bắn lư hương đầu tiên bằng mũi tên lửa",
     },
   },
@@ -110,7 +110,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Tìm và bắn lư hương thứ hai",
     text: "Tiếp tục theo đường mái nhà để tìm lư hương thứ hai. Lặp lại cuộc tấn công bằng mũi tên lửa.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-05-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-05-game8.png"),
       alt: "Vị trí lư hương thứ hai",
     },
   },
@@ -118,7 +118,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Tìm và bắn lư hương thứ ba",
     text: "Điều hướng đến lư hương thứ ba và cuối cùng. Đảm bảo bạn có đủ mũi tên lửa trước khi bắn.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-06-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-06-game8.png"),
       alt: "Lư hương thứ ba sẵn sàng được thắp sáng",
     },
   },
@@ -126,7 +126,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Thực hiện biểu cảm",
     text: "Sau khi thắp sáng ba lư hương, hãy mở tab Puzzle (F2 theo mặc định) và chọn biểu cảm 'Tà Khúc' để biểu diễn nó.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-07-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-07-game8.png"),
       alt: "Thực hiện biểu cảm Tà Khúc",
     },
   },
@@ -134,7 +134,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Điều hướng qua hành lang có bảo vệ",
     text: "Bước vào nội thất chùa và di chuyển qua các hành lang. Bạn có thể gặp những kẻ bảo vệ - hãy tránh họ hoặc chiến đấu nếu cần thiết theo phong cách chơi của bạn.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-08-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-08-game8.png"),
       alt: "Di chuyển qua hành lang chùa",
     },
   },
@@ -142,7 +142,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Mở khóa cửa bằng Meridian Touch",
     text: "Tiếp cận những cánh cửa bị khóa và sử dụng kỹ năng bí pháp Meridian Touch để mở khóa chúng. Kỹ năng này rất cần thiết để tiến bộ qua chùa.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-09-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-09-game8.png"),
       alt: "Sử dụng Meridian Touch để mở khóa cửa",
     },
   },
@@ -150,7 +150,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Vượt qua hành lang bẫy gai",
     text: "Bước vào hành lang đầy bẫy gai. Thực hiện chuyển động của bạn cẩn thận - hãy theo dõi các mô hình và né tránh qua các khoảng trống. Hãy kiên nhẫn và đừng vội vàng.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-10-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-10-game8.png"),
       alt: "Vượt qua hành lang bẫy gai",
     },
   },
@@ -158,7 +158,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Thu lục vũ khí cánh trái",
     text: "Thoát khỏi hành lang bẫy gai và đi tới cánh trái. Thu lục vũ khí được lưu trữ ở đó vì nó sẽ hữu ích cho cuộc chiến sắp tới với bộ tê bao.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-11-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-11-game8.png"),
       alt: "Thu lục vũ khí từ cánh trái",
     },
   },
@@ -166,7 +166,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Thu lục vũ khí cánh phải",
     text: "Bây giờ điều hướng đến cánh phải và thu lục vũ khí còn lại. Có đầy đủ thiết bị sẽ cải thiện hiệu quả chiến đấu của bạn.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-12-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-12-game8.png"),
       alt: "Thu lục vũ khí từ cánh phải",
     },
   },
@@ -174,7 +174,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Đánh bại Thế Trấn và tay sai",
     text: "Tiến tới phòng chính nơi bạn sẽ đối mặt với Thế Trấn và những tay sai của hắn. Sử dụng vũ khí bạn đã thu lục và kỹ năng chiến đấu của bạn để đánh bại họ. Hãy tập trung vào kẻ thù cầm cờ trước tiên nếu có nhiều đối thủ.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-13-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-13-game8.png"),
       alt: "Chiến đấu với Thế Trấn và tay sai",
     },
   },

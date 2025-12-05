@@ -78,7 +78,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Unlock the Quest",
     text: "Travel to the Martial Temple in Jadewood Court, Kaifeng region. Speak with the Mysterious Painter to unlock An Unholy Prophecy and trigger the quest.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-01-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-01-game8.png"),
       alt: "Speaking to the Mysterious Painter to unlock the quest",
     },
   },
@@ -86,7 +86,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Begin the Rooftop Journey",
     text: "Exit the temple and head toward the rooftops as indicated by the quest marker. You'll need to climb and traverse the buildings of Kaifeng.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-02-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-02-game8.png"),
       alt: "Climbing rooftops in Kaifeng",
     },
   },
@@ -94,7 +94,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Find the First Brazier",
     text: "Navigate to the first brazier location on the rooftop. Equip fire arrows and prepare to shoot.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-03-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-03-game8.png"),
       alt: "First brazier on the rooftop",
     },
   },
@@ -102,7 +102,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Shoot the First Brazier",
     text: "Use your fire arrows to hit the first brazier. This will light it and trigger a visual effect.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-04-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-04-game8.png"),
       alt: "Shooting the first brazier with fire arrows",
     },
   },
@@ -110,7 +110,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Find and Shoot Second Brazier",
     text: "Continue along the rooftop path to locate the second brazier. Repeat the fire arrow attack.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-05-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-05-game8.png"),
       alt: "Second brazier location",
     },
   },
@@ -118,7 +118,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Find and Shoot Third Brazier",
     text: "Navigate to the third and final brazier. Make sure you're equipped with enough fire arrows before shooting.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-06-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-06-game8.png"),
       alt: "Third brazier ready to be lit",
     },
   },
@@ -126,7 +126,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Perform the Emote",
     text: "After lighting all three braziers, open your Puzzle tab (F2 by default) and select the 'An Unholy Prophecy' emote to perform it.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-07-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-07-game8.png"),
       alt: "Performing the An Unholy Prophecy emote",
     },
   },
@@ -134,7 +134,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Navigate Guarded Hallways",
     text: "Enter the temple interior and move through the hallways. You may encounter guards—avoid them or engage if necessary according to your preferred playstyle.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-08-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-08-game8.png"),
       alt: "Moving through the temple hallways",
     },
   },
@@ -142,7 +142,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Unlock Doors with Meridian Touch",
     text: "Approach locked doors and use the Meridian Touch mystic skill to unlock them. This skill is essential for progressing through the temple.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-09-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-09-game8.png"),
       alt: "Using Meridian Touch to unlock doors",
     },
   },
@@ -150,7 +150,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Navigate Spike Trap Corridor",
     text: "Enter the corridor filled with spike traps. Time your movement carefully—watch the patterns and dodge through the gaps. Be patient and don't rush.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-10-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-10-game8.png"),
       alt: "Navigating through spike trap corridor",
     },
   },
@@ -158,7 +158,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Retrieve Left Wing Weapons",
     text: "Exit the spike trap corridor and head to the left wing. Retrieve the weapons stored there as they'll be useful for the upcoming boss fight.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-11-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-11-game8.png"),
       alt: "Retrieving weapons from left wing",
     },
   },
@@ -166,7 +166,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Retrieve Right Wing Weapons",
     text: "Now navigate to the right wing and collect the remaining weapons. Having full equipment will improve your combat effectiveness.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-12-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-12-game8.png"),
       alt: "Collecting weapons from right wing",
     },
   },
@@ -174,7 +174,7 @@ const walkthrough: WalkthroughStep[] = [
     title: "Defeat Shi Zhen and Minions",
     text: "Proceed to the final chamber where you'll face Shi Zhen and his minions. Use the weapons you've collected and your combat skills to defeat them. Focus on the banner-bearer enemies first if multiple opponents are present.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-13-placeholder.png"),
+      src: cdn("/guides/unholy-prophecy/step-13-game8.png"),
       alt: "Battle with Shi Zhen and minions",
     },
   },
