@@ -48,6 +48,12 @@ export default function Home() {
               >
                 🧩 Wall Puzzle solution
               </Link>
+              <Link
+                href="/guides/unholy-prophecy"
+                className="inline-flex items-center gap-2 rounded-full border border-purple-400/60 bg-purple-500/10 px-4 py-2 text-sm font-semibold text-purple-200 transition hover:border-purple-300/80 hover:text-purple-100"
+              >
+                🔮 An Unholy Prophecy quest — fire braziers, Meridian Touch, spike hall
+              </Link>
             </div>
           </div>
           </div>
@@ -101,6 +107,12 @@ export default function Home() {
               href: "/guides/free-morph",
               desc: "Unlock the juggle Mystic by deflecting Tian Ying spins; cost, cooldown, tier bonuses.",
               tag: "Mystic",
+            },
+            {
+              title: "An Unholy Prophecy",
+              href: "/guides/unholy-prophecy",
+              desc: "Jianghu Legacy 07: rooftop fire arrow braziers, Meridian Touch doors, spike traps, Shi Zhen fight.",
+              tag: "Jianghu",
             },
             {
               title: "Wall Puzzle",

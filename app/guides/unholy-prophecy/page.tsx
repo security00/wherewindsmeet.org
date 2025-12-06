@@ -3,20 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 
 const baseUrl = "https://wherewindsmeet.org";
-const cdnBase = "https://static.wherewindsmeet.org";
+const cdnBase = process.env.NEXT_PUBLIC_CDN_URL || "https://static.wherewindsmeet.org";
 const cdn = (path: string) => `${cdnBase}${path}`;
 
 export const metadata: Metadata = {
   title: "An Unholy Prophecy Quest Guide (Where Winds Meet)",
   description:
-    "Complete An Unholy Prophecy (Jianghu Legacy 07) walkthrough for Where Winds Meet: unlock at Jadewood Court, climb rooftops, solve bell-knocker puzzles, dodge spikes, and defeat Shi Zhen. Includes all 13 steps with detailed instructions.",
+    "13-step An Unholy Prophecy (Jianghu Legacy 07) guide: start at Jadewood Court, light rooftop braziers, use Meridian Touch, clear spike traps, defeat Shi Zhen.",
   alternates: {
     canonical: `${baseUrl}/guides/unholy-prophecy`,
   },
   openGraph: {
     title: "An Unholy Prophecy Quest – Where Winds Meet Guide",
     description:
-      "13-step An Unholy Prophecy Jianghu Legacy 07 guide: Fire arrows, Meridian Touch, spike traps, combat tips, and full walkthrough for Where Winds Meet.",
+      "13-step An Unholy Prophecy (Jianghu Legacy 07) guide: start at Jadewood Court, light rooftop braziers, use Meridian Touch, clear spike traps, defeat Shi Zhen.",
     url: `${baseUrl}/guides/unholy-prophecy`,
     siteName: "Where Winds Meet Hub",
     images: [
@@ -34,34 +34,35 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "An Unholy Prophecy Quest – Where Winds Meet Guide",
     description:
-      "Complete walkthrough for An Unholy Prophecy Jianghu Legacy 07 in Where Winds Meet with all quest steps and rewards.",
+      "13-step An Unholy Prophecy (Jianghu Legacy 07) guide: start at Jadewood Court, light rooftop braziers, use Meridian Touch, clear spike traps, defeat Shi Zhen.",
     images: [cdn("/guides/unholy-prophecy/header.png")],
   },
 };
 
 const quickFacts = [
-  { label: "Region", value: "Kaifeng – Jadewood Court", icon: "🧭" },
-  { label: "Quest Type", value: "Jianghu Legacy 07", icon: "📜" },
-  { label: "Unlock Method", value: "Talk to Mysterious Painter at Martial Temple", icon: "🗣️" },
-  { label: "Core Actions", value: "Rooftop climbing → Fire arrows → Puzzles → Combat", icon: "⚔️" },
-  { label: "Key Skills", value: "Fire arrows required for braziers", icon: "🔥" },
-  { label: "Quest Duration", value: "Approximately 15-20 minutes", icon: "⏱️" },
+  { label: "Region", value: "Kaifeng — Martial Temple (Jadewood Court)", icon: "🧭" },
+  { label: "Quest type", value: "Jianghu Legacy 07 side story", icon: "📜" },
+  { label: "Unlock trigger", value: "Speak to the Mysterious Painter inside the temple", icon: "🗣️" },
+  { label: "Core beats", value: "Rooftop climb → fire arrow braziers → emote → spike hall → boss", icon: "⚔️" },
+  { label: "Required tools", value: "Fire arrows + Meridian Touch to open sealed doors", icon: "🔥" },
+  { label: "Run time", value: "About 15–20 minutes if you know the route", icon: "⏱️" },
 ];
 
 const fastRoute = [
-  "Speak with the Mysterious Painter at Martial Temple in Jadewood Court, Kaifeng region to unlock the quest.",
-  "Climb the rooftops as indicated by the quest markers.",
-  "Use fire arrows to shoot three braziers on the rooftops.",
-  "Perform the 'An Unholy Prophecy' emote from the Puzzle tab (press F2).",
-  "Navigate through the hallways while avoiding or evading guards.",
-  "Use Meridian Touch to unlock the doors blocking your path.",
-  "Traverse the corridor filled with spike traps by carefully timing your dodges.",
-  "Retrieve weapons from the left wing.",
-  "Retrieve weapons from the right wing.",
-  "Defeat Shi Zhen and his minions in combat.",
-  "Complete the post-combat dialogue sequence.",
-  "Collect your quest rewards including Fame and Fortune Hanging Scroll.",
-  "Quest complete!",
+  "Speak with the Mysterious Painter at the Martial Temple in Jadewood Court to flag the quest.",
+  "Find the entrance on the temple's western eaves and climb up.",
+  "Shoot the hanging braziers with fire arrows along the rooftops.",
+  "Perform the 'An Unholy Prophecy' emote on the rooftop platform.",
+  "Enter the hallway opposite the barred area; slip past or clear guards.",
+  "Strike the bell and use Meridian Touch on the knocker to open the way.",
+  "Fight the guards in the arsenal hall and choose a wing.",
+  "Head to either left or right wing of the hall.",
+  "Retrieve the long weapon from the left wing.",
+  "Retrieve the short weapon from the right wing.",
+  "Enter the revealed door and venture deeper.",
+  "Enter the boss arena and prep for the fight.",
+  "Defeat Shi Zhen and his minions, focusing adds/banners first.",
+  "Meet the Mysterious Painter again to conclude the quest.",
 ];
 
 export type WalkthroughStep = {
@@ -71,156 +72,259 @@ export type WalkthroughStep = {
     src: string;
     alt: string;
   };
+  extraImages?: {
+    src: string;
+    alt: string;
+  }[];
+  video?: {
+    src: string;
+    poster?: string;
+    label?: string;
+  };
+  videos?: {
+    src: string;
+    poster?: string;
+    label?: string;
+  }[];
+  // When set, place extraImages after the first N videos instead of directly after the primary image.
+  extraImagesAfterVideos?: number;
+  // When true, render videos before images for this step.
+  videosFirst?: boolean;
+  // Images to append after all other media for this step.
+  extraImagesAfterMedia?: {
+    src: string;
+    alt: string;
+  }[];
 };
 
 const walkthrough: WalkthroughStep[] = [
   {
-    title: "Unlock the Quest",
-    text: "Travel to the Martial Temple in Jadewood Court, Kaifeng region. Speak with the Mysterious Painter to unlock An Unholy Prophecy and trigger the quest.",
+    title: "Speak with the Mysterious Painter",
+    text: "Travel to the Martial Temple in Jadewood Court (Kaifeng) and talk to the Mysterious Painter to start An Unholy Prophecy, marked as Jianghu Legacy 07.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-01-game8.png"),
-      alt: "Speaking to the Mysterious Painter to unlock the quest",
+      src: cdn("/guides/unholy-prophecy/game8/09e38cc673e78b1672132d3572098067.png"),
+      alt: "Where Winds Meet - Speak with Mysterious Painter",
     },
   },
   {
-    title: "Begin the Rooftop Journey",
-    text: "Exit the temple and head toward the rooftops as indicated by the quest marker. You'll need to climb and traverse the buildings of Kaifeng.",
+    title: "Find the western eaves entrance",
+    text: "Follow the quest markers up the Martial Temple's western eaves and onto the rooftops to reach the quest path.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-02-game8.png"),
-      alt: "Climbing rooftops in Kaifeng",
+      src: cdn("/guides/unholy-prophecy/game8/f96b6f737b455cf08d82d02e120f0205.png"),
+      alt: "Where Winds Meet - Climb the Rooftop",
     },
   },
   {
-    title: "Find the First Brazier",
-    text: "Navigate to the first brazier location on the rooftop. Equip fire arrows and prepare to shoot.",
-    image: {
-      src: cdn("/guides/unholy-prophecy/step-03-game8.png"),
-      alt: "First brazier on the rooftop",
+    title: "Shoot the hanging braziers",
+    text: "Equip fire arrows and light all three hanging braziers on the rooftop route. Regular arrows won't count here.",
+    video: {
+      src: cdn("/guides/unholy-prophecy/game8/3662de73207315d3e2b3483081826783.mp4"),
+      poster: cdn("/guides/unholy-prophecy/game8/3662de73207315d3e2b3483081826783.jpg"),
+      label: "Follow the rooftop marker and light the braziers",
     },
   },
   {
-    title: "Shoot the First Brazier",
-    text: "Use your fire arrows to hit the first brazier. This will light it and trigger a visual effect.",
-    image: {
-      src: cdn("/guides/unholy-prophecy/step-04-game8.png"),
-      alt: "Shooting the first brazier with fire arrows",
+    title: "Perform the quest emote",
+    text: "After lighting the braziers, open the Puzzle tab (F2) and perform the 'An Unholy Prophecy' emote on the rooftop platform.",
+    video: {
+      src: cdn("/guides/unholy-prophecy/game8/27e4c791d5143760bdb150b7758187d7.mp4"),
+      poster: cdn("/guides/unholy-prophecy/game8/27e4c791d5143760bdb150b7758187d7.jpg"),
+      label: "Platform approach and emote trigger",
     },
   },
   {
-    title: "Find and Shoot Second Brazier",
-    text: "Continue along the rooftop path to locate the second brazier. Repeat the fire arrow attack.",
+    title: "Enter the hallway opposite the barred area",
+    text: "Drop down inside and take the hallway opposite the barred section. Sneak or fight as you move forward.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-05-game8.png"),
-      alt: "Second brazier location",
+      src: cdn("/guides/unholy-prophecy/game8/37d7a9d5f22c4ffafeacb6bcd2697a44.png"),
+      alt: "Where Winds Meet - Enter the temple interior and guarded halls",
     },
   },
   {
-    title: "Find and Shoot Third Brazier",
-    text: "Navigate to the third and final brazier. Make sure you're equipped with enough fire arrows before shooting.",
-    image: {
-      src: cdn("/guides/unholy-prophecy/step-06-game8.png"),
-      alt: "Third brazier ready to be lit",
+    title: "Strike the bell and use Meridian Touch",
+    text: "Interact with the bell/knocker and use Meridian Touch to open the way forward.",
+    video: {
+      src: cdn("/guides/unholy-prophecy/game8/31c4cd8070b9e6f5c228f994d78d39cf.mp4"),
+      poster: cdn("/guides/unholy-prophecy/game8/31c4cd8070b9e6f5c228f994d78d39cf.jpg"),
+      label: "Jade bell and knocker puzzle with Meridian Touch",
     },
   },
   {
-    title: "Perform the Emote",
-    text: "After lighting all three braziers, open your Puzzle tab (F2 by default) and select the 'An Unholy Prophecy' emote to perform it.",
+    title: "Fight the guards in the arsenal hall",
+    text: "Push forward through the arsenal hall opposite the barred section, clearing or evading guards as you move toward the wings.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-07-game8.png"),
-      alt: "Performing the An Unholy Prophecy emote",
+      src: cdn("/guides/unholy-prophecy/game8/56962bba66e1353c445a3ce12029c611.png"),
+      alt: "Where Winds Meet - An Unholy Prophecy Grand Arsenal Hall",
     },
   },
   {
-    title: "Navigate Guarded Hallways",
-    text: "Enter the temple interior and move through the hallways. You may encounter guards—avoid them or engage if necessary according to your preferred playstyle.",
+    title: "Head to either wing",
+    text: "From the central hall, you can choose the left or right wing to gather weapons before the fight ahead.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-08-game8.png"),
-      alt: "Moving through the temple hallways",
+      src: cdn("/guides/unholy-prophecy/game8/0aeff7a108bf93d78abfbced080bc019.png"),
+      alt: "Where Winds Meet - Head to either wing from the arsenal hall",
     },
   },
   {
-    title: "Unlock Doors with Meridian Touch",
-    text: "Approach locked doors and use the Meridian Touch mystic skill to unlock them. This skill is essential for progressing through the temple.",
+    title: "Retrieve the long weapon (left wing)",
+    text: "Go left first and pick up the long weapon to satisfy the statue's requirement.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-09-game8.png"),
-      alt: "Using Meridian Touch to unlock doors",
+      src: cdn("/guides/unholy-prophecy/game8/be105baf134b6032d8f23f4b568795a9.png"),
+      alt: "Where Winds Meet - An Unholy Prophecy Stairs before the left wing",
+    },
+    extraImagesAfterVideos: 4,
+    videos: [
+      {
+        src: cdn("/guides/unholy-prophecy/game8/726a2844c6087d8f974afa1be19d5fbf.mp4"),
+        poster: cdn("/guides/unholy-prophecy/game8/726a2844c6087d8f974afa1be19d5fbf.jpg"),
+        label: "Enter hall with two doors (left wing path)",
+      },
+      {
+        src: cdn("/guides/unholy-prophecy/game8/f933aa2d44cc82981aa6ea2c1c97565b.mp4"),
+        poster: cdn("/guides/unholy-prophecy/game8/f933aa2d44cc82981aa6ea2c1c97565b.jpg"),
+        label: "Pull the lever and advance (left side)",
+      },
+      {
+        src: cdn("/guides/unholy-prophecy/game8/85f0ed1a35679cf702db0f8da7e869be.mp4"),
+        poster: cdn("/guides/unholy-prophecy/game8/85f0ed1a35679cf702db0f8da7e869be.jpg"),
+        label: "Interact with the jade node",
+      },
+      {
+        src: cdn("/guides/unholy-prophecy/game8/e84b11e5ee81ad54656b3aef06a414df.mp4"),
+        poster: cdn("/guides/unholy-prophecy/game8/e84b11e5ee81ad54656b3aef06a414df.jpg"),
+        label: "Retrieve the long weapon",
+      },
+    ],
+    extraImages: [
+      {
+        src: cdn("/guides/unholy-prophecy/game8/14633ac62c24cf256da429096922bd2b.png"),
+        alt: "Where Winds Meet - Obtain the spear/weapon",
+      },
+      {
+        src: cdn("/guides/unholy-prophecy/game8/a6fcfadddcc593de1afa69fef03facd1.png"),
+        alt: "Where Winds Meet - Unholy Prophecy spike pit section",
+      },
+      {
+        src: cdn("/guides/unholy-prophecy/game8/9063c1e4f9503467bec0866d8aa47678.png"),
+        alt: "Where Winds Meet - Additional left wing route detail",
+      },
+    ],
+  },
+  {
+    title: "Retrieve the short weapon (right wing)",
+    text: "Head to the right wing and collect the short weapon so both slots are filled.",
+    image: {
+      src: cdn("/guides/unholy-prophecy/game8/307d66a8d144cff4e0caa3772b10c0c7.png"),
+      alt: "Where Winds Meet - An Unholy Prophecy right wing chest",
+    },
+    extraImagesAfterVideos: 1,
+    videosFirst: true,
+    video: {
+      src: cdn("/guides/unholy-prophecy/game8/cf3efe428140415bb06cba02dc1ed0dc.mp4"),
+      poster: cdn("/guides/unholy-prophecy/game8/cf3efe428140415bb06cba02dc1ed0dc.jpg"),
+      label: "Right wing progression",
+    },
+    videos: [
+      {
+        src: cdn("/guides/unholy-prophecy/game8/27f2e32e3d1be0d6b75afec9c36307d4.mp4"),
+        poster: cdn("/guides/unholy-prophecy/game8/27f2e32e3d1be0d6b75afec9c36307d4.jpg"),
+        label: "Narrow corridor encounter",
+      },
+    ],
+    extraImages: [
+      {
+        src: cdn("/guides/unholy-prophecy/game8/f02bf4a4c3348c91a4d1a9ee2c7c10c9.png"),
+        alt: "Where Winds Meet - An Unholy Prophecy right wing passage detail",
+      },
+      {
+        src: cdn("/guides/unholy-prophecy/game8/a9ed74b69494bbe8f81bad489dd041d2.png"),
+        alt: "Where Winds Meet - An Unholy Prophecy final route",
+      },
+    ],
+    extraImagesAfterMedia: [
+      {
+        src: cdn("/guides/unholy-prophecy/game8/a387a2def1d9ba5a646840901bf91382.png"),
+        alt: "Where Winds Meet - An Unholy Prophecy Short Weapon Returned",
+      },
+    ],
+  },
+  {
+    title: "Enter the revealed door",
+    text: "With both weapons placed, proceed through the newly opened door and continue deeper.",
+    image: {
+      src: cdn("/guides/unholy-prophecy/game8/9f122b59da74824e9f288b723d9108f6.png"),
+      alt: "Where Winds Meet - An Unholy Prophecy unlocked path",
     },
   },
   {
-    title: "Navigate Spike Trap Corridor",
-    text: "Enter the corridor filled with spike traps. Time your movement carefully—watch the patterns and dodge through the gaps. Be patient and don't rush.",
-    image: {
-      src: cdn("/guides/unholy-prophecy/step-10-game8.png"),
-      alt: "Navigating through spike trap corridor",
+    title: "Enter the boss arena",
+    text: "Head into the final chamber and get ready for Shi Zhen. This is the approach video right before the boss fight.",
+    video: {
+      src: cdn("/guides/unholy-prophecy/game8/f73ac50bd768174d224cebcc24e0f2e8.mp4"),
+      poster: cdn("/guides/unholy-prophecy/game8/f73ac50bd768174d224cebcc24e0f2e8.jpg"),
+      label: "Boss arena approach",
     },
   },
   {
-    title: "Retrieve Left Wing Weapons",
-    text: "Exit the spike trap corridor and head to the left wing. Retrieve the weapons stored there as they'll be useful for the upcoming boss fight.",
+    title: "Defeat Shi Zhen and minions",
+    text: "Enter the final chamber and fight Shi Zhen with his helpers. Drop the banner carriers first to reduce pressure, then finish the boss.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-11-game8.png"),
-      alt: "Retrieving weapons from left wing",
+      src: cdn("/guides/unholy-prophecy/game8/3d7598fbc5a586d66d477e6807b5d655.png"),
+      alt: "Where Winds Meet - An Unholy Prophecy Boss Fight Shi Zhen",
     },
   },
   {
-    title: "Retrieve Right Wing Weapons",
-    text: "Now navigate to the right wing and collect the remaining weapons. Having full equipment will improve your combat effectiveness.",
+    title: "Meet the Mysterious Painter again",
+    text: "After the fight and dialogue, return to the Mysterious Painter to complete the quest and collect rewards.",
     image: {
-      src: cdn("/guides/unholy-prophecy/step-12-game8.png"),
-      alt: "Collecting weapons from right wing",
-    },
-  },
-  {
-    title: "Defeat Shi Zhen and Minions",
-    text: "Proceed to the final chamber where you'll face Shi Zhen and his minions. Use the weapons you've collected and your combat skills to defeat them. Focus on the banner-bearer enemies first if multiple opponents are present.",
-    image: {
-      src: cdn("/guides/unholy-prophecy/step-13-game8.png"),
-      alt: "Battle with Shi Zhen and minions",
+      src: cdn("/guides/unholy-prophecy/game8/fc5a46957dffe3e077df5d4219f6cf18.png"),
+      alt: "Where Winds Meet - Speak with the Painter Again",
     },
   },
 ];
 
 const stuckFixes = [
-  "Fire arrows not igniting braziers: Make sure you have fire arrows equipped. Regular arrows won't work. Check your inventory and equip fire arrows specifically.",
-  "Can't find Mysterious Painter: The Mysterious Painter appears at Martial Temple in Jadewood Court, Kaifeng. Try changing channels or advancing time if they don't appear.",
-  "Spike trap corridor is too difficult: Take your time and watch the spike patterns. You don't need to rush—many players die by moving too quickly. Wait for gaps and move methodically.",
-  "Locked doors won't open: Make sure you have Meridian Touch mystic skill learned and equipped. You must use this specific skill to unlock the special doors.",
-  "Guards are too strong: You can run past most guards by staying focused on the quest markers. Combat isn't required for progression unless necessary.",
-  "Forgot to perform the emote: Return to the brazier area and perform the 'An Unholy Prophecy' emote from your Puzzle tab if the progression stalls.",
+  "Fire arrows not lighting braziers: Equip fire arrows specifically—standard arrows do nothing. Craft or buy a few extras before climbing.",
+  "Can't find the Mysterious Painter: He's inside the Martial Temple at Jadewood Court. Swap channels or rest until he spawns.",
+  "Spike trap hallway is brutal: Observe the spike rhythm, move one segment at a time, and heal up first. There is no timer, so patience works.",
+  "Doors stay locked: The interaction only appears with Meridian Touch equipped. Other skills won't open the seals.",
+  "Missing weapon hand-in: Pick up weapons from both the left and right wings. If you dismantled them earlier, re-enter or change channel to try to respawn the racks before the statue prompt.",
+  "Guards hit too hard: Sprint past most patrols by following quest markers. You only need to fight in the final chamber.",
+  "Quest didn't advance after braziers: Return to the rooftop platform and play the 'An Unholy Prophecy' emote from the Puzzle tab (F2).",
 ];
 
 const faq = [
   {
-    q: "Where do I unlock An Unholy Prophecy quest in Where Winds Meet?",
-    a: "Travel to the Martial Temple in Jadewood Court, Kaifeng region and speak with the Mysterious Painter. This will unlock the An Unholy Prophecy Jianghu Legacy 07 quest.",
+    q: "Where do I start An Unholy Prophecy in Where Winds Meet?",
+    a: "Go to the Martial Temple in Jadewood Court (Kaifeng) and speak with the Mysterious Painter to unlock Jianghu Legacy 07.",
   },
   {
-    q: "What are the requirements for An Unholy Prophecy quest?",
-    a: "You need fire arrows to shoot the braziers and the Meridian Touch mystic skill to unlock doors. Having decent combat skills for the final boss fight is also recommended.",
+    q: "What do I need to bring for An Unholy Prophecy?",
+    a: "Fire arrows are mandatory for the braziers and Meridian Touch is required for the sealed doors. A solid combat setup helps for the Shi Zhen fight.",
   },
   {
     q: "How do I get fire arrows for this quest?",
-    a: "Fire arrows are craftable or purchasable in most towns. Make sure to have at least 3 fire arrows equipped before starting the rooftop section of the quest.",
+    a: "Buy or craft fire arrows in town. Carry at least three before stepping onto the rooftops, and a spare or two in case you miss.",
   },
   {
-    q: "What is the 'An Unholy Prophecy' emote and where do I find it?",
-    a: "The emote is found in your Puzzle tab (press F2). You must perform this emote after lighting all three braziers on the rooftop to progress the quest.",
+    q: "Where is the 'An Unholy Prophecy' emote?",
+    a: "Open the Puzzle tab (F2) and look for the emote with the same name. Use it on the rooftop platform after all three braziers are lit.",
   },
   {
     q: "Can I skip the spike trap corridor?",
-    a: "No, the spike trap corridor is mandatory to progress. However, you can take your time navigating it—there's no time limit, just patience and careful dodging.",
+    a: "No. You must pass through it, but there's no timer. Wait for the safe timing and move in short bursts.",
   },
   {
     q: "Is Meridian Touch required to complete the quest?",
-    a: "Yes, Meridian Touch is required to unlock the special doors in the temple. Make sure this skill is learned and equipped before attempting the quest.",
+    a: "Yes. The locked doors won't open without Meridian Touch equipped, so learn and slot it before entering.",
   },
   {
     q: "What rewards do I get for completing An Unholy Prophecy?",
-    a: "Rewards include Fame and Fortune Hanging Scroll, Custom Chest x5, Medicinal Tales, Lv. 3 Ebon Iron x4, Echo Jade x30, Kaifeng Exploration x50, Enlightenment Point x100, 20,000 Character EXP, and 20,000 Coins.",
+    a: "Reported rewards include the Fame and Fortune Hanging Scroll, Custom Chest x5, Medicinal Tales, Lv. 3 Ebon Iron x4, Echo Jade x30, Kaifeng Exploration x50, 100 Enlightenment Points, plus 20,000 Character EXP and 20,000 Coins.",
   },
   {
     q: "How long does the An Unholy Prophecy quest take to complete?",
-    a: "Most players complete it in 15-20 minutes once they understand the mechanics. First-time players may take 20-30 minutes due to the spike trap section.",
+    a: "About 15–20 minutes with the route memorized. First attempts can stretch to 20–30 minutes, mainly because of the spike hallway.",
   },
 ];
 
@@ -287,9 +391,9 @@ export default function UnholyProphecyPage() {
               An Unholy Prophecy quest walkthrough
             </h1>
             <p className="text-lg leading-relaxed text-slate-200">
-              Complete An Unholy Prophecy Jianghu Legacy 07 guide for Where Winds Meet: unlock with Mysterious Painter,
-              master rooftop fire arrow sections, solve puzzles with Meridian Touch, navigate spike trap corridor,
-              and defeat Shi Zhen. Includes all 13 steps with detailed instructions for completing the quest without getting stuck.
+              Rewritten An Unholy Prophecy guide for Where Winds Meet: start at the Martial Temple in Jadewood Court,
+              light all rooftop braziers with fire arrows, use Meridian Touch to get through sealed doors, cross the spike hallway,
+              and beat Shi Zhen. Every step is spelled out so players searching 'An Unholy Prophecy Where Winds Meet' can finish without stalls.
             </p>
             <div className="flex flex-wrap gap-3 text-sm text-slate-200">
               <span className="rounded-full bg-slate-900/70 px-3 py-1 ring-1 ring-purple-400/40">
@@ -320,6 +424,18 @@ export default function UnholyProphecyPage() {
                 </div>
               ))}
             </div>
+            <div className="mt-5 rounded-xl border border-slate-800 bg-slate-950/80 p-3">
+              <div className="text-xs uppercase tracking-wide text-slate-400">Start location map</div>
+              <div className="relative mt-2 aspect-video overflow-hidden rounded-lg bg-slate-950">
+                <Image
+                  src={cdn("/guides/unholy-prophecy/game8/b6847fd4b9fd993041db58e258ecd4c9.png")}
+                  alt="An Unholy Prophecy start location at Martial Temple, Jadewood Court"
+                  fill
+                  className="object-cover"
+                  unoptimized
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -330,33 +446,33 @@ export default function UnholyProphecyPage() {
         </h2>
         <div className="grid gap-5 lg:grid-cols-[1.2fr,0.8fr]">
           <p className="text-base leading-relaxed text-slate-200">
-            An Unholy Prophecy is a Jianghu Legacy questline that tests your combat skills, platforming abilities, and
-            puzzle-solving knowledge. This guide breaks down all 13 steps so you can complete the quest efficiently without
-            wasting time on trial-and-error or getting stuck on the notorious spike trap corridor.
+            An Unholy Prophecy layers traversal, puzzles, and a boss fight into one Jianghu Legacy. This guide walks all 13
+            objectives in order so you know when to use fire arrows, when to slot Meridian Touch, and how to clear the spike hall
+            without wasting tries.
           </p>
           <p className="text-base leading-relaxed text-slate-200">
-            If you're searching "An Unholy Prophecy where winds meet" or stuck at the spike traps, this guide has you covered.
-            We provide detailed instructions for each section including rooftop fire arrow mechanics, Meridian Touch door unlocking,
-            and the final Shi Zhen boss encounter.
+            If you searched 'An Unholy Prophecy where winds meet' after getting stuck at the traps or the door seals, follow the
+            breakdown below. Each section calls out the exact mechanic—braziers, emote timing, Meridian Touch, and the Shi Zhen
+            fight—so you don't miss a trigger.
           </p>
         </div>
         <div className="grid gap-3 md:grid-cols-3">
           <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
             <div className="text-sm font-semibold text-purple-200">Fire arrow mechanics</div>
             <p className="mt-1 text-sm leading-relaxed text-slate-200">
-              You must use fire arrows to light the three braziers on the rooftop section. Regular arrows won't work.
+              Only fire arrows count for the three rooftop braziers—normal arrows won't trigger them, so bring extras.
             </p>
           </div>
           <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
             <div className="text-sm font-semibold text-purple-200">Puzzle solving</div>
             <p className="mt-1 text-sm leading-relaxed text-slate-200">
-              Use Meridian Touch to unlock locked doors in the temple. The emote requirement also tests your knowledge of the Puzzle tab.
+              The sealed doors require Meridian Touch. The emote trigger lives in the Puzzle tab (F2) and must be used after the braziers.
             </p>
           </div>
           <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
             <div className="text-sm font-semibold text-purple-200">Combat & Traps</div>
             <p className="mt-1 text-sm leading-relaxed text-slate-200">
-              Navigate spike traps with careful timing, collect weapons, and defeat Shi Zhen in the final boss encounter.
+              Pace the spike hall instead of rushing, grab both weapon caches, then focus adds before finishing Shi Zhen.
             </p>
           </div>
         </div>
@@ -385,8 +501,7 @@ export default function UnholyProphecyPage() {
           ))}
         </ol>
         <p className="text-xs text-slate-400">
-          This walkthrough exists to help players searching "An Unholy Prophecy where winds meet" or stuck at specific sections.
-          Bookmark this TL;DR if you need to reference specific steps.
+          If you landed here from searches like 'An Unholy Prophecy where winds meet,' save this TL;DR to jump back to any step quickly.
         </p>
       </section>
 
@@ -394,33 +509,113 @@ export default function UnholyProphecyPage() {
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
           Full walkthrough with details
         </h2>
-        <div className="grid gap-6">
-          {walkthrough.map((step, idx) => (
-            <div key={idx} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
-              <div className="flex items-start gap-4">
-                <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-purple-500/20 text-sm font-bold text-purple-200 ring-1 ring-purple-400/40">
-                  {idx + 1}
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-slate-50">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-200">{step.text}</p>
-                </div>
-              </div>
-              {step.image && (
-                <div className="mt-4 rounded-xl border border-slate-700 bg-slate-950/60 p-3">
-                  <p className="text-xs text-slate-400 mb-2">{step.image.alt}</p>
-                  <div className="relative aspect-video overflow-hidden rounded-lg bg-slate-950">
-                    <Image
-                      src={step.image.src}
-                      alt={step.image.alt}
-                      fill
-                      className="object-cover"
-                      unoptimized
-                    />
-                  </div>
-                </div>
-              )}
-            </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {walkthrough.flatMap((step, idx) => {
+            const baseNum = idx + 1;
+            const primaryImage = step.image ? [{ ...step.image, type: "image" as const }] : [];
+            const extraImages = Array.isArray(step.extraImages)
+              ? step.extraImages.map((img) => ({ ...img, type: "image" as const }))
+              : [];
+            const combinedVideos = [
+              ...(step.video ? [{ ...step.video, type: "video" as const }] : []),
+              ...(Array.isArray(step.videos)
+                ? step.videos.map((vid) => ({ ...vid, type: "video" as const }))
+                : []),
+            ];
+
+            const splitIndex =
+              typeof step.extraImagesAfterVideos === "number" ? step.extraImagesAfterVideos : null;
+            const videosFirst = step.videosFirst === true;
+
+            const media =
+              splitIndex !== null
+                ? videosFirst
+                  ? [
+                      ...combinedVideos.slice(0, splitIndex),
+                      ...primaryImage,
+                      ...extraImages,
+                      ...combinedVideos.slice(splitIndex),
+                    ]
+                  : [
+                      ...primaryImage,
+                      ...combinedVideos.slice(0, splitIndex),
+                      ...extraImages,
+                      ...combinedVideos.slice(splitIndex),
+                    ]
+                : videosFirst
+                  ? [...combinedVideos, ...primaryImage, ...extraImages]
+                  : [...primaryImage, ...extraImages, ...combinedVideos];
+            const tailImages = Array.isArray(step.extraImagesAfterMedia)
+              ? step.extraImagesAfterMedia.map((img) => ({ ...img, type: "image" as const }))
+              : [];
+
+            const combinedMedia = [...media, ...tailImages];
+            const mediaCards = combinedMedia.length
+              ? combinedMedia.map((item, mIdx) => ({
+                  key: `${idx}-media-${mIdx}`,
+                  content: (
+                    <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+                      <div className="flex items-start gap-4">
+                        <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-purple-500/20 text-sm font-bold text-purple-200 ring-1 ring-purple-400/40">
+                          {combinedMedia.length > 1 ? `${baseNum}.${mIdx + 1}` : baseNum}
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-lg font-semibold text-slate-50">{step.title}</h3>
+                          <p className="mt-2 text-sm leading-relaxed text-slate-200">
+                            {step.text}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="mt-4 rounded-xl border border-slate-700 bg-slate-950/60 p-3 space-y-2">
+                        <span className="text-[11px] text-slate-400 block">
+                          {item.label ?? item.alt ?? step.title}
+                        </span>
+                        <div className="relative aspect-video overflow-hidden rounded-lg bg-slate-950">
+                          {item.type === "image" ? (
+                            <Image
+                              src={item.src}
+                              alt={item.alt ?? `${step.title} – step ${baseNum}`}
+                              fill
+                              className="object-cover"
+                              unoptimized
+                            />
+                          ) : (
+                            <video
+                              src={item.src}
+                              poster={item.poster}
+                              controls
+                              preload="metadata"
+                              className="h-full w-full"
+                            />
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  ),
+                }))
+              : [
+                  {
+                    key: `${idx}-nomedia`,
+                    content: (
+                      <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+                        <div className="flex items-start gap-4">
+                          <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-purple-500/20 text-sm font-bold text-purple-200 ring-1 ring-purple-400/40">
+                            {baseNum}
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-lg font-semibold text-slate-50">{step.title}</h3>
+                            <p className="mt-2 text-sm leading-relaxed text-slate-200">
+                              {step.text}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ),
+                  },
+                ];
+            return mediaCards;
+          }).map((card) => (
+            <div key={card.key}>{card.content}</div>
           ))}
         </div>
       </section>
@@ -461,7 +656,7 @@ export default function UnholyProphecyPage() {
         </h2>
         <div className="space-y-4">
           <p className="text-base leading-relaxed text-slate-200">
-            For a visual walkthrough of the An Unholy Prophecy quest, check out this comprehensive video guide:
+            Prefer to watch the route? This video shows the same braziers, emote trigger, spike hall timing, and boss finish:
           </p>
           <div className="relative aspect-video overflow-hidden rounded-2xl border border-slate-700 bg-slate-950">
             <iframe
@@ -475,7 +670,7 @@ export default function UnholyProphecyPage() {
             />
           </div>
           <p className="text-sm text-slate-400">
-            This video provides a visual walkthrough showing the exact paths, combat strategies, and timing for each section of the quest.
+            Use it alongside the written steps to match positions, spike timing, and the Shi Zhen fight pacing.
           </p>
         </div>
       </section>

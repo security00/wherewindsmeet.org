@@ -68,6 +68,20 @@ export default function AppearanceSetsDisplay({
     setPan({ x: 0, y: 0 });
   };
 
+  const activeLightboxSet = lightboxImage ? sets.find((s) => s.id === lightboxImage.setId) : null;
+  const activeLightboxIsMain = lightboxImage ? lightboxImage.imageIdx === -1 : true;
+  const activeLightboxSrc = lightboxImage
+    ? activeLightboxIsMain
+      ? activeLightboxSet?.image ?? ""
+      : activeLightboxSet?.galleryImages?.[lightboxImage.imageIdx] ?? activeLightboxSet?.image ?? ""
+    : "";
+  const activeLightboxAlt = lightboxImage
+    ? `${activeLightboxSet?.name ?? "Appearance set"} - ${
+        activeLightboxIsMain ? "Main image" : `Gallery image ${lightboxImage.imageIdx + 1}`
+      }`
+    : "Appearance set image";
+  const activeLightboxThumbAlt = `${activeLightboxSet?.name ?? "Appearance set"} main image thumbnail`;
+
   return (
     <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
       <div className="space-y-2 mb-6">
@@ -266,7 +280,7 @@ export default function AppearanceSetsDisplay({
       </div>
 
       {/* Lightbox Modal */}
-      {lightboxImage && (
+      {lightboxImage && activeLightboxSet && (
         <div
           className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
           onClick={() => {
@@ -337,13 +351,8 @@ export default function AppearanceSetsDisplay({
               onMouseLeave={handleMouseUp}
             >
               <Image
-                src={
-                  lightboxImage.imageIdx === -1
-                    ? sets.find((s) => s.id === lightboxImage.setId)!.image
-                    : sets.find((s) => s.id === lightboxImage.setId)!.galleryImages?.[lightboxImage.imageIdx] ||
-                      sets.find((s) => s.id === lightboxImage.setId)!.image
-                }
-                alt="Enlarged image"
+                src={activeLightboxSrc}
+                alt={activeLightboxAlt || `${activeLightboxSet.name} zoomed image`}
                 fill
                 className="select-none pointer-events-none object-contain"
                 style={{
@@ -418,8 +427,8 @@ export default function AppearanceSetsDisplay({
                   aria-label="Main image"
                 >
                   <Image
-                    src={sets.find((s) => s.id === lightboxImage.setId)!.image}
-                    alt="Main image thumbnail"
+                    src={activeLightboxSet?.image ?? activeLightboxSrc}
+                    alt={activeLightboxThumbAlt || `${activeLightboxSet.name} main image thumbnail`}
                     width={64}
                     height={64}
                     className="w-full h-full object-cover"

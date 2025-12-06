@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "./analytics";
 import BackgroundWrapper from "../components/BackgroundWrapper";
 import { SiteHeader } from "../components/SiteHeader";
 import { LanguageSwitchPrompt } from "../components/LanguageSwitchPrompt";
 import { SiteFooter } from "../components/SiteFooter";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://wherewindsmeet.org"),
@@ -68,9 +62,13 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        />
       </head>
       <body
-        className={`${inter.variable} antialiased text-slate-50 bg-slate-950`}
+        className="antialiased text-slate-50 bg-slate-950"
       >
         <Script
           async
