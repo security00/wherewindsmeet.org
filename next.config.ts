@@ -1,6 +1,18 @@
 import type { NextConfig } from "next";
 
+// Suppress baseline-browser-mapping stale-data warnings during build.
+if (!process.env.BASELINE_BROWSER_MAPPING_IGNORE_OLD_DATA) {
+  process.env.BASELINE_BROWSER_MAPPING_IGNORE_OLD_DATA = "true";
+}
+if (!process.env.BROWSERSLIST_IGNORE_OLD_DATA) {
+  process.env.BROWSERSLIST_IGNORE_OLD_DATA = "true";
+}
+
 const nextConfig: NextConfig = {
+  turbopack: {
+    // Force project root here to avoid Turbopack picking a parent lockfile.
+    root: __dirname,
+  },
   images: {
     // Avoid Next.js image proxy to prevent CDN fetch issues; serve images directly.
     unoptimized: true,
@@ -31,6 +43,10 @@ const nextConfig: NextConfig = {
         hostname: "static.wherewindsmeet.org",
       },
     ],
+  },
+  env: {
+    BASELINE_BROWSER_MAPPING_IGNORE_OLD_DATA: "true",
+    BROWSERSLIST_IGNORE_OLD_DATA: "true",
   },
   async rewrites() {
     const cdnUrl = process.env.NEXT_PUBLIC_CDN_URL;
