@@ -8,6 +8,16 @@ if (!process.env.BROWSERSLIST_IGNORE_OLD_DATA) {
   process.env.BROWSERSLIST_IGNORE_OLD_DATA = "true";
 }
 
+// Final guard: drop baseline-browser-mapping console warnings to avoid noisy builds.
+const originalWarn = console.warn;
+console.warn = (...args) => {
+  const first = args[0];
+  if (typeof first === "string" && first.includes("[baseline-browser-mapping]")) {
+    return;
+  }
+  originalWarn(...args);
+};
+
 const nextConfig: NextConfig = {
   turbopack: {
     // Force project root here to avoid Turbopack picking a parent lockfile.

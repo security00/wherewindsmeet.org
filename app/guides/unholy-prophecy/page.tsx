@@ -568,7 +568,9 @@ export default function UnholyProphecyPage() {
                       </div>
                       <div className="mt-4 rounded-xl border border-slate-700 bg-slate-950/60 p-3 space-y-2">
                         <span className="text-[11px] text-slate-400 block">
-                          {item.label ?? item.alt ?? step.title}
+                          {item.type === "image"
+                            ? item.alt ?? step.title
+                            : item.label ?? step.title}
                         </span>
                         <div className="relative aspect-video overflow-hidden rounded-lg bg-slate-950">
                           {item.type === "image" ? (
