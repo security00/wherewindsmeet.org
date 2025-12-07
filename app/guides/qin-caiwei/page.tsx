@@ -6,16 +6,16 @@ const baseUrl = "https://wherewindsmeet.org";
 const ogImage = `${baseUrl}/guides/qin-caiwei/hero.jpg`;
 
 export const metadata: Metadata = {
-  title: "Befriend Qin Caiwei Fast (2025) | Where Winds Meet AI Chat",
+  title: "WWM Qin Caiwei Friend Guide (2025) | Where Winds Meet AI Chat",
   description:
-    "How to befriend Qin Caiwei in Where Winds Meet: 3-line script, why she loops, bracketed AI Chat lines, resets, and farewells that trigger Old Friends rewards.",
+    "WWM Qin Caiwei friend task walkthrough: Where Winds Meet Qin Caiwei friend script, why her AI chat loops, the reset that fixes it, and the farewell that triggers Old Friends rewards.",
   alternates: {
     canonical: `${baseUrl}/guides/qin-caiwei`,
   },
   openGraph: {
-    title: "Befriend Qin Caiwei Fast (2025) | Where Winds Meet AI Chat",
+    title: "WWM Qin Caiwei Friend Guide (2025) | Where Winds Meet AI Chat",
     description:
-      "Stuck on the Qin Caiwei chat? Use this Jan 2025 update: quick script, bracketed lines, and reset steps to break the loop and reach Friend fast.",
+      "Stuck on the Where Winds Meet Qin Caiwei friend mission? Use this Jan 2025 update: quick WWM Qin Caiwei script, bracketed lines, and reset steps to break the loop and reach Friend fast.",
     url: `${baseUrl}/guides/qin-caiwei`,
     siteName: "Where Winds Meet Hub",
     images: [
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Befriend Qin Caiwei Fast (2025) | Where Winds Meet AI Chat",
+    title: "WWM Qin Caiwei Friend Guide (2025) | Where Winds Meet AI Chat",
     description:
-      "Copy-paste script to befriend Qin Caiwei, fix the AI Chat loop, and collect Old Friends rewards quickly.",
+      "Copy-paste script to finish the WWM Qin Caiwei friend task, fix the AI Chat loop, and collect Old Friends rewards quickly.",
     images: [
       {
         url: ogImage,
@@ -204,6 +204,10 @@ const rewards = [
 
 const faq = [
   {
+    q: "How do I finish the WWM Qin Caiwei friend task?",
+    a: "Use one empathy line, one bracketed resolution that mirrors her hint, then a clear farewell. Example: Go on, what is troubling you? -> (helps her face the past) -> (we become close friends) -> Farewell (bows and leaves). If it loops, reset and vary the bracket wording.",
+  },
+  {
     q: "Do I need Gift of Gab cards to befriend Qin Caiwei?",
     a: "No. She is an AI Chat NPC; bracketed narration and polite farewells are enough.",
   },
@@ -250,15 +254,15 @@ export default function QinCaiweiPage() {
               Updated Jan 2025 · 3-line script inside
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-50">
-              Qin Caiwei Friendship Guide (AI Chat)
+              WWM Qin Caiwei Friend Task Guide (AI Chat)
             </h1>
             <p className="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
-              Qin Caiwei is one of the toughest AI Chat NPCs to win over. If your Where Winds Meet Qin Caiwei chat is stuck or the befriend task will not progress, use this guide: she loops if you rush, rejects blunt "we are friends" lines, and only moves when you listen, summarize her story, and describe a specific resolution. Use this five-step playbook and the copy-paste lines below to push her to Friend status quickly.
+              Qin Caiwei is one of the toughest AI Chat NPCs to win over. If your Where Winds Meet / WWM Qin Caiwei friend mission is stuck or the befriend task will not progress, use this guide: she loops if you rush, rejects blunt "we are friends" lines, and only moves when you listen, summarize her story, and describe a specific resolution. Use this five-step playbook and the copy-paste lines below to push her to Friend status quickly.
             </p>
             <ul className="text-xs text-emerald-200 space-y-1">
               <li>• TL;DR script: “Go on” → (helps her accept the past) → (we become close friends) → Farewell (bows and leaves).</li>
               <li>• If she loops: reset thread, restate her hint once, then bracket a closure + farewell.</li>
-              <li>• Works for queries: “how to befriend qin caiwei”, “qin caiwei loop”, “old friends chat stuck”.</li>
+              <li>• Works for queries: “wwm qin caiwei”, “where winds meet qin caiwei friend”, “befriend qin caiwei chat loop”.</li>
             </ul>
             <div className="flex flex-wrap gap-3 pt-2">
               <Link
@@ -286,7 +290,7 @@ export default function QinCaiweiPage() {
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 shadow-xl shadow-black/40">
               <Image
                 src="/guides/qin-caiwei/hero.jpg"
-                alt="Qin Caiwei AI Chat dialogue portrait in Where Winds Meet"
+                alt="WWM Qin Caiwei AI Chat dialogue portrait for the Where Winds Meet friend mission"
                 fill
                 className="object-cover object-center"
                 priority
