@@ -7,16 +7,16 @@ const cdnBase = process.env.NEXT_PUBLIC_CDN_URL || "https://static.wherewindsmee
 const cdn = (path: string) => `${cdnBase}${path}`;
 
 export const metadata: Metadata = {
-  title: "An Unholy Prophecy Quest Guide (Where Winds Meet)",
+  title: "Where Winds Meet An Unholy Prophecy Guide (2025)",
   description:
-    "13-step An Unholy Prophecy (Jianghu Legacy 07) guide: start at Jadewood Court, light rooftop braziers, use Meridian Touch, clear spike traps, defeat Shi Zhen.",
+    "Jan 2025: An Unholy Prophecy walkthrough — rooftop braziers, Meridian Touch bell/door, spike hall, Shi Zhen fight, and fixes for stuck quests.",
   alternates: {
     canonical: `${baseUrl}/guides/unholy-prophecy`,
   },
   openGraph: {
-    title: "An Unholy Prophecy Quest – Where Winds Meet Guide",
+    title: "Where Winds Meet An Unholy Prophecy Guide (2025)",
     description:
-      "13-step An Unholy Prophecy (Jianghu Legacy 07) guide: start at Jadewood Court, light rooftop braziers, use Meridian Touch, clear spike traps, defeat Shi Zhen.",
+      "Full An Unholy Prophecy guide: start in Jadewood Court, light rooftop braziers, use Meridian Touch, clear spike traps, defeat Shi Zhen, and unstick bugged steps.",
     url: `${baseUrl}/guides/unholy-prophecy`,
     siteName: "Where Winds Meet Hub",
     images: [
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "An Unholy Prophecy Quest – Where Winds Meet Guide",
+    title: "Where Winds Meet An Unholy Prophecy Guide (2025)",
     description:
-      "13-step An Unholy Prophecy (Jianghu Legacy 07) guide: start at Jadewood Court, light rooftop braziers, use Meridian Touch, clear spike traps, defeat Shi Zhen.",
+      "TL;DR and bug fixes for An Unholy Prophecy: braziers, Meridian Touch, spike hall, Shi Zhen boss.",
     images: [cdn("/guides/unholy-prophecy/header.png")],
   },
 };
@@ -307,6 +307,14 @@ const faq = [
     a: "Buy or craft fire arrows in town. Carry at least three before stepping onto the rooftops, and a spare or two in case you miss.",
   },
   {
+    q: "Spike hall keeps killing me—any shortcut?",
+    a: "There's no shortcut. Watch the spike rhythm, move one segment at a time, and heal up first. If latency spikes, lower graphics and retry.",
+  },
+  {
+    q: "Quest stalled after vines/traps—what fixes it?",
+    a: "Use fire on the vines at the trap, ensure Meridian Touch is equipped on the knocker, then swap channel if prompts fail to appear.",
+  },
+  {
     q: "Where is the 'An Unholy Prophecy' emote?",
     a: "Open the Puzzle tab (F2) and look for the emote with the same name. Use it on the rooftop platform after all three braziers are lit.",
   },
@@ -325,6 +333,10 @@ const faq = [
   {
     q: "How long does the An Unholy Prophecy quest take to complete?",
     a: "About 15–20 minutes with the route memorized. First attempts can stretch to 20–30 minutes, mainly because of the spike hallway.",
+  },
+  {
+    q: "Related quests if I enjoyed this one?",
+    a: "Try Woven with Malice (Lost Chapter) and One Leaf One Life. For future changes, watch the roadmap on the news page.",
   },
 ];
 
@@ -387,14 +399,23 @@ export default function UnholyProphecyPage() {
             <p className="inline-flex items-center rounded-full border border-purple-500/40 bg-purple-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-purple-200">
               Jianghu Legacy 07
             </p>
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/50 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              Updated Jan 2025 · TL;DR below
+            </div>
             <h1 className="text-balance text-4xl font-bold tracking-tight text-slate-50 sm:text-5xl">
-              An Unholy Prophecy quest walkthrough
+              Where Winds Meet An Unholy Prophecy quest walkthrough
             </h1>
             <p className="text-lg leading-relaxed text-slate-200">
               Rewritten An Unholy Prophecy guide for Where Winds Meet: start at the Martial Temple in Jadewood Court,
               light all rooftop braziers with fire arrows, use Meridian Touch to get through sealed doors, cross the spike hallway,
-              and beat Shi Zhen. Every step is spelled out so players searching 'An Unholy Prophecy Where Winds Meet' can finish without stalls.
+              and beat Shi Zhen. Every step is spelled out so players searching “An Unholy Prophecy Where Winds Meet” can finish without stalls.
             </p>
+            <ul className="text-xs text-emerald-200 space-y-1">
+              <li>• TL;DR: Fire braziers → rooftop emote → Meridian Touch bell/door → spike hall → Shi Zhen (focus adds/banners).</li>
+              <li>• Common fixes: set time correctly, use Meridian Touch on the knocker, burn trap vines with fire; if stuck, swap channel.</li>
+              <li>• Related quests: One Leaf One Life · Woven with Malice · Roadmap/next update for future tweaks.</li>
+            </ul>
             <div className="flex flex-wrap gap-3 text-sm text-slate-200">
               <span className="rounded-full bg-slate-900/70 px-3 py-1 ring-1 ring-purple-400/40">
                 Fire arrows required
@@ -405,6 +426,32 @@ export default function UnholyProphecyPage() {
               <span className="rounded-full bg-slate-900/70 px-3 py-1 ring-1 ring-amber-400/30">
                 13 quest steps
               </span>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/guides"
+                className="inline-flex items-center gap-2 rounded-full border border-emerald-500/50 bg-emerald-500/10 px-4 py-2 text-xs font-semibold text-emerald-100 transition hover:border-emerald-300/80 hover:text-emerald-50"
+              >
+                ← Back to Guides
+              </Link>
+              <Link
+                href="/news#roadmap"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-2 text-xs font-semibold text-slate-100 transition hover:border-emerald-300/60"
+              >
+                📅 Roadmap / next update
+              </Link>
+              <Link
+                href="/guides/woven-with-malice"
+                className="inline-flex items-center gap-2 rounded-full border border-sky-400/50 bg-sky-500/10 px-4 py-2 text-xs font-semibold text-sky-100 transition hover:border-sky-300/80 hover:text-sky-50"
+              >
+                🧶 Woven with Malice
+              </Link>
+              <Link
+                href="/guides/one-leaf-one-life"
+                className="inline-flex items-center gap-2 rounded-full border border-amber-400/50 bg-amber-500/10 px-4 py-2 text-xs font-semibold text-amber-100 transition hover:border-amber-300/80 hover:text-amber-50"
+              >
+                🍂 One Leaf, One Life
+              </Link>
             </div>
           </div>
 

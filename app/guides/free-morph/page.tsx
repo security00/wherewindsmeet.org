@@ -3,16 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Free Morph Mystic Skill – Where Winds Meet",
+  title: "Free Morph (2025) – Where Winds Meet Mystic Skill",
   description:
-    "Unlock Free Morph in Where Winds Meet by deflecting Challenge Tian Ying's spinning kicks. See cost, cooldown, tier bonuses, and how to fit this single-target control Mystic into your build.",
+    "How to unlock Free Morph in Where Winds Meet by deflecting Challenge Tian Ying's spinning kicks. Updated Jan 2025: quick unlock steps, cost, cooldown, tier bonuses, and best builds.",
   alternates: {
     canonical: "https://wherewindsmeet.org/guides/free-morph",
   },
   openGraph: {
-    title: "Free Morph Mystic Skill – Where Winds Meet",
+    title: "Free Morph Mystic Skill (2025) – Where Winds Meet",
     description:
-      "Free Morph unlock guide: deflect Challenge Tian Ying spinning kicks, learn the juggle Mystic, see tier bonuses, cost/cooldown, and best use cases.",
+      "Free Morph unlock guide (Jan 2025): deflect Challenge Tian Ying spinning kicks, quick unlock TL;DR, tier bonuses, cost/cooldown, and best use cases.",
     url: "https://wherewindsmeet.org/guides/free-morph",
     siteName: "Where Winds Meet Hub",
     images: [
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Free Morph Mystic Skill – Where Winds Meet",
+    title: "Free Morph Mystic Skill (2025) – Where Winds Meet",
     description:
-      "How to unlock Free Morph, understand its tier bonuses, and slot it into PvE/PvP builds as a single-target juggle Mystic.",
+      "How to unlock Free Morph fast, with cost/cooldown, tier bonuses, and PvE/PvP uses.",
     images: ["https://wherewindsmeet.org/guides/free-morph/free-morph-icon.webp"],
   },
 };
@@ -97,11 +97,20 @@ export default function FreeMorphPage() {
         <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="space-y-3">
             <p className="text-xs uppercase tracking-wide text-emerald-300">Mystic Skill</p>
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              Updated Jan 2025 · Quick unlock TL;DR below
+            </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-50">Free Morph – How to Unlock & Use</h1>
             <p className="max-w-3xl text-sm sm:text-base text-slate-300 leading-relaxed">
               Learn Free Morph by deflecting Tian Ying’s spinning kicks in the Challenge encounter. Understand its juggle-focused
               effect, tier bonuses, and how to slot it into PvE/PvP builds.
             </p>
+            <ul className="text-xs text-emerald-200 space-y-1">
+              <li>• TL;DR: Challenge Tian Ying → parry spinning kicks in Phase 2 → claim Free Morph drop.</li>
+              <li>• Cast cost 35 Vitality (Tier 4: -5) · 3s CD · bonus damage vs HP Shield.</li>
+              <li>• Best for single-target control; weave between Mo Blade/Spear posture breaks or Dual Blades flurries.</li>
+            </ul>
           </div>
 
           <div className="flex items-center gap-4 rounded-2xl border border-slate-800 bg-slate-900/70 px-4 py-3 shadow-inner shadow-slate-950/40">
@@ -116,6 +125,20 @@ export default function FreeMorphPage() {
               <p className="font-semibold text-slate-50">Free Morph</p>
               <p className="text-xs text-slate-400">Offensive Mystic • Single-Target Control</p>
             </div>
+          </div>
+          <div className="flex flex-wrap gap-2 text-xs">
+            <Link
+              href="/guides/bosses"
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              Boss list & weak points
+            </Link>
+            <Link
+              href="/guides/tier-list"
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              China tier list (weapons)
+            </Link>
           </div>
         </div>
       </section>

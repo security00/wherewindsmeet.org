@@ -6,16 +6,16 @@ const baseUrl = "https://wherewindsmeet.org";
 const ogImage = `${baseUrl}/guides/qin-caiwei/hero.jpg`;
 
 export const metadata: Metadata = {
-  title: "Befriend Qin Caiwei | Where Winds Meet AI Chat",
+  title: "Befriend Qin Caiwei Fast (2025) | Where Winds Meet AI Chat",
   description:
-    "Stuck befriending Qin Caiwei in Where Winds Meet? Learn why she loops, see bracketed AI Chat scripts, resets, and farewells to raise affinity fast.",
+    "How to befriend Qin Caiwei in Where Winds Meet: 3-line script, why she loops, bracketed AI Chat lines, resets, and farewells that trigger Old Friends rewards.",
   alternates: {
     canonical: `${baseUrl}/guides/qin-caiwei`,
   },
   openGraph: {
-    title: "Befriend Qin Caiwei | Where Winds Meet AI Chat",
+    title: "Befriend Qin Caiwei Fast (2025) | Where Winds Meet AI Chat",
     description:
-      "Befriend Qin Caiwei in Where Winds Meet: why she loops, bracketed AI Chat lines, resets, and farewells that trigger the affinity jump and Old Friends rewards.",
+      "Stuck on the Qin Caiwei chat? Use this Jan 2025 update: quick script, bracketed lines, and reset steps to break the loop and reach Friend fast.",
     url: `${baseUrl}/guides/qin-caiwei`,
     siteName: "Where Winds Meet Hub",
     images: [
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Befriend Qin Caiwei | Where Winds Meet AI Chat",
+    title: "Befriend Qin Caiwei Fast (2025) | Where Winds Meet AI Chat",
     description:
-      "Stuck on the Qin Caiwei chat in Where Winds Meet? Use these bracketed AI Chat scripts, resets, and polite exits to break the loop and reach Friend fast.",
+      "Copy-paste script to befriend Qin Caiwei, fix the AI Chat loop, and collect Old Friends rewards quickly.",
     images: [
       {
         url: ogImage,
@@ -245,12 +245,21 @@ export default function QinCaiweiPage() {
 
         <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           <div className="space-y-5 relative z-10">
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/50 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              Updated Jan 2025 · 3-line script inside
+            </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-50">
               Qin Caiwei Friendship Guide (AI Chat)
             </h1>
             <p className="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
               Qin Caiwei is one of the toughest AI Chat NPCs to win over. If your Where Winds Meet Qin Caiwei chat is stuck or the befriend task will not progress, use this guide: she loops if you rush, rejects blunt "we are friends" lines, and only moves when you listen, summarize her story, and describe a specific resolution. Use this five-step playbook and the copy-paste lines below to push her to Friend status quickly.
             </p>
+            <ul className="text-xs text-emerald-200 space-y-1">
+              <li>• TL;DR script: “Go on” → (helps her accept the past) → (we become close friends) → Farewell (bows and leaves).</li>
+              <li>• If she loops: reset thread, restate her hint once, then bracket a closure + farewell.</li>
+              <li>• Works for queries: “how to befriend qin caiwei”, “qin caiwei loop”, “old friends chat stuck”.</li>
+            </ul>
             <div className="flex flex-wrap gap-3 pt-2">
               <Link
                 href="/guides/gift-of-gab"
@@ -263,6 +272,12 @@ export default function QinCaiweiPage() {
                 className="inline-flex items-center gap-2 rounded-full border border-amber-400/50 bg-amber-500/10 px-4 py-2 text-xs font-semibold text-amber-100 transition hover:border-amber-300/80 hover:text-amber-50"
               >
                 🧶 Narrative quest: Woven with Malice
+              </Link>
+              <Link
+                href="/guides/npc-list"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-2 text-xs font-semibold text-slate-100 transition hover:border-emerald-300/60"
+              >
+                🗺️ Old Friends map
               </Link>
             </div>
           </div>

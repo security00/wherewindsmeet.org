@@ -64,6 +64,10 @@ const nextConfig: NextConfig = {
     if (cdnUrl) {
       return [
         {
+          source: '/vn/:path*',
+          destination: '/:path*',
+        },
+        {
           source: '/design/:path*',
           destination: '/design/:path*',
         },
@@ -111,6 +115,10 @@ const nextConfig: NextConfig = {
     }
 
     return [
+      {
+        source: '/vn/:path*',
+        destination: '/:path*',
+      },
       {
         source: '/design/:path*',
         destination: '/design/:path*',

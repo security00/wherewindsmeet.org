@@ -13,6 +13,16 @@ export type NewsItem = {
 // News items based on official Where Winds Meet articles mirrored under ref-page/news.
 export const newsItems: NewsItem[] = [
   {
+    id: "account-suspension-dec-2025",
+    title: "Account Suspension for Violations (Ban Report)",
+    date: "2025-12-06",
+    type: "announcement",
+    summary:
+      "Anti-cheat update: Eastwind Pavilion reports ~5,000 accounts banned for cheating, speed hacks, macros, and other unfair tools between Nov 15–Dec 5. Penalties include leaderboard removal, mode restrictions, and temporary or permanent bans. Players are urged to report misconduct and contact customer support with questions.",
+    officialUrl: "https://www.wherewindsmeetgame.com/news/official/BanReport.html",
+    tags: ["Anti-cheat", "Ban report", "Fair play"],
+  },
+  {
     id: "hearts-unite-post-launch-letter",
     title: "Hearts Unite as the Winds Meet — Post-Launch Letter",
     date: "2025-11-23",

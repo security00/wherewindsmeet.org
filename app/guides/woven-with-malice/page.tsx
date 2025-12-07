@@ -8,16 +8,16 @@ const cdnBase = "https://static.wherewindsmeet.org";
 const cdn = (path: string) => `${cdnBase}${path}`;
 
 export const metadata: Metadata = {
-  title: "Woven with Malice Quest Guide (Where Winds Meet)",
+  title: "Where Winds Meet Woven with Malice Guide (2025)",
   description:
-    "31-step Woven with Malice quest guide for Where Winds Meet: Zi/Chou times, dyes, monk duel, trap and bamboo tail, plus bug fixes and zoomable screenshots to finish the Woven with Malice quest even if it stalls.",
+    "Jan 2025: Woven with Malice quest guide—Zi/Chou time gates, dyes, monk duel, trap+bamboo tail, and bug fixes for stalls.",
   alternates: {
     canonical: `${baseUrl}/guides/woven-with-malice`,
   },
   openGraph: {
-    title: "Woven with Malice Quest – Where Winds Meet Guide",
+    title: "Where Winds Meet Woven with Malice Guide (2025)",
     description:
-      "Trigger Zi hour, collect dyes, confront the monk, set the trap, and finish the Woven with Malice quest fast. Includes bug fixes and zoomable screenshots for anyone stuck in Woven with Malice.",
+      "Trigger Zi hour, collect dyes, duel the monk, set the trap, and finish Woven with Malice fast. Includes bug fixes (time set, vines/fire) for stuck quests.",
     url: `${baseUrl}/guides/woven-with-malice`,
     siteName: "Where Winds Meet Hub",
     images: [
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Woven with Malice Quest – Where Winds Meet Guide",
+    title: "Where Winds Meet Woven with Malice Guide (2025)",
     description:
-      "Step-by-step route, time gates, trap setup, and fixes for the Woven with Malice quest in Where Winds Meet.",
+      "Time gates, trap setup, and bug fixes for Woven with Malice; clear the quest even if it stalls.",
     images: [cdn("/guides/woven-with-malice/header-01.png")],
   },
 };

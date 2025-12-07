@@ -17,16 +17,16 @@ const images = {
 };
 
 export const metadata: Metadata = {
-  title: "One Leaf, One Life Walkthrough | Where Winds Meet",
+  title: "Where Winds Meet One Leaf One Life Guide (2025)",
   description:
-    "One Leaf, One Life walkthrough: start trigger, Feast/Tale of Gold Leaves, white leaf side stories, puzzle answers, and Huang Liang epilogue rewards.",
+    "Jan 2025: One Leaf One Life walkthrough—start trigger, white leaf farming, Feast/Tale of Gold Leaves steps, time gates, puzzle answers, and Huang Liang epilogue rewards.",
   alternates: {
     canonical: `${baseUrl}/guides/one-leaf-one-life`,
   },
   openGraph: {
-    title: "One Leaf, One Life Walkthrough | Where Winds Meet",
+    title: "Where Winds Meet One Leaf One Life Guide (2025)",
     description:
-      "Start One Leaf, One Life at Hopewell Academy, clear Feast/Tale of Gold Leaves volumes, finish white leaf side stories, and claim the Gold Leaf accessory + title.",
+      "Complete One Leaf One Life: Hopewell Academy trigger, white leaf requirements, time/leaf gates, all side stories, puzzles, and the Gold Leaf reward epilogue.",
     url: `${baseUrl}/guides/one-leaf-one-life`,
     siteName: "Where Winds Meet Hub",
     images: [
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "One Leaf, One Life Walkthrough | Where Winds Meet",
+    title: "Where Winds Meet One Leaf One Life Guide (2025)",
     description:
-      "Every phase, side story, and puzzle answer for One Leaf, One Life in Where Winds Meet.",
+      "All phases, time gates, white leaves, side stories, and puzzle answers for One Leaf One Life in Where Winds Meet.",
     images: [
       {
         url: heroImage,
@@ -169,6 +169,9 @@ export default function OneLeafOneLifeGuide() {
             <span className="rounded-full bg-slate-900/70 px-3 py-1 text-xs uppercase tracking-wide text-emerald-100 ring-1 ring-amber-400/40">
               Gold Leaf Reward
             </span>
+            <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-100 ring-1 ring-emerald-400/40">
+              Updated Jan 2025 · TL;DR below
+            </span>
           </div>
 
           <div className="mt-6 grid gap-8 lg:grid-cols-[1.3fr,0.9fr] lg:items-start">
@@ -186,6 +189,11 @@ export default function OneLeafOneLifeGuide() {
                 If you searched for the Where Winds Meet One Leaf One Life quest or its epilogue, this walkthrough keeps every
                 time gate, side quest, and puzzle answer in one place.
               </p>
+              <ul className="text-xs text-emerald-200 space-y-1">
+                <li>• TL;DR: Start at Hopewell Academy → follow Feast/Tale of Gold Leaves volumes → farm white leaves per phase → finish Huang Liang epilogue.</li>
+                <li>• Time gates: Wu/You/Zi/Chen hours; leaf requirements 6/5/7 by phase.</li>
+                <li>• Related quests: Woven with Malice · An Unholy Prophecy · check Roadmap for future tuning.</li>
+              </ul>
               <div className="flex flex-wrap gap-3 text-sm text-slate-200">
                 <span className="rounded-full bg-slate-900/70 px-3 py-1 ring-1 ring-emerald-400/40">White leaf farming</span>
                 <span className="rounded-full bg-slate-900/70 px-3 py-1 ring-1 ring-sky-400/30">Puzzle solutions</span>

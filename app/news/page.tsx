@@ -76,6 +76,19 @@ export default function NewsPage() {
     },
   ];
 
+  const roadmapBlock = {
+    title: "Roadmap / Next Updates (watchlist)",
+    summary:
+      "Tracking upcoming Where Winds Meet updates: balance patches, boss/Bloodbath tweaks, anti-cheat actions, events, and new quest fixes. Highlights will be refreshed with each official post.",
+    updated: "Updated Jan 2025",
+    links: [
+      { href: "/guides/tier-list", label: "China tier list & balance notes" },
+      { href: "/guides/bosses", label: "Boss list & changes" },
+      { href: "/guides/unholy-prophecy", label: "An Unholy Prophecy (quest fixes)" },
+      { href: "/guides/woven-with-malice", label: "Woven with Malice (time gates)" },
+    ],
+  };
+
   return (
     <article className="space-y-12 bg-ink-wash min-h-screen pb-20">
       <script
@@ -119,6 +132,63 @@ export default function NewsPage() {
               <span className="font-semibold text-emerald-400">Where Winds Meet roadmap</span>{" "}
               updates without reading every bullet, start here.
             </p>
+          </div>
+
+          <div
+            id="next-update"
+            className="rounded-2xl border border-emerald-500/40 bg-emerald-500/10 p-4 text-sm text-emerald-50 shadow-inner shadow-emerald-900/40"
+          >
+            <div className="flex items-center justify-between gap-2">
+              <p className="font-semibold">Next update tracker (refreshes as news drops)</p>
+              <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
+                Updated Jan 2025
+              </span>
+            </div>
+            <p className="mt-2 text-emerald-100/90">
+              Watching for official “next update” beats: balance notes, new bosses/Bloodbath variants, and event codes. Check back here or
+              the tier list after announcements; key highlights will be summarized in 2–3 bullets within an hour of posts.
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2 text-xs">
+              <Link href="/guides/tier-list" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
+                Tier list (China perspective)
+              </Link>
+              <Link href="/guides/bosses" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
+                Boss changes
+              </Link>
+              <Link href="/guides/codes" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
+                Latest codes
+              </Link>
+            </div>
+          </div>
+
+          <div
+            id="roadmap"
+            className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4 text-sm text-slate-100 shadow-inner shadow-slate-900/40"
+          >
+            <div className="flex items-center justify-between gap-2">
+              <p className="font-semibold">{roadmapBlock.title}</p>
+              <span className="rounded-full bg-slate-800/80 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-200">
+                {roadmapBlock.updated}
+              </span>
+            </div>
+            <p className="mt-2 text-slate-300">{roadmapBlock.summary}</p>
+            <div className="mt-3 flex flex-wrap gap-2 text-xs">
+              {roadmapBlock.links.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+            <div className="mt-3 rounded-xl border border-slate-800 bg-slate-900/80 p-3 text-xs text-slate-300">
+              New hot search to watch: Mist-Shrouded Prison (tomb) chests. See the dedicated guide for the sixth/last chest and spawn fixes:
+              <Link href="/guides/mist-shrouded-prison" className="ml-1 text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
+                Mist-Shrouded Prison guide
+              </Link>
+            </div>
           </div>
 
           <div className="mt-8 space-y-4">

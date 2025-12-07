@@ -97,6 +97,15 @@ const guideSections = [
     description: "Lost Chapter route with time gates, trap setup, bamboo trail, and bug fixes.",
   },
   {
+    title: "Mist-Shrouded Prison",
+    slug: "/guides/mist-shrouded-prison",
+    label: "Tomb",
+    icon: "🧭",
+    color: "text-cyan-300",
+    size: "small",
+    description: "Mistveil Forest tomb: three-loop route with six chests, final treasure, and spawn fixes.",
+  },
+  {
     title: "One Leaf, One Life",
     slug: "/guides/one-leaf-one-life",
     label: "Lost Chapter",

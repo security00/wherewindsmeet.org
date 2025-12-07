@@ -9,6 +9,23 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://wherewindsmeet.org/",
   },
+  openGraph: {
+    title: "Where Winds Meet Global Launch Guides Hub",
+    description:
+      "Watch the preview stream and dive into trending Where Winds Meet guides: tier lists, codes, bosses, roadmap, and quests like An Unholy Prophecy, One Leaf One Life, and Woven with Malice.",
+    url: "https://wherewindsmeet.org/",
+    images: [
+      {
+        url: "https://wherewindsmeet.org/background/bg.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Where Winds Meet global launch background art",
+      },
+    ],
+    siteName: "Where Winds Meet Hub",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function Home() {
@@ -73,17 +90,91 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="rounded-3xl border border-emerald-500/20 bg-emerald-500/5 p-5 shadow-lg shadow-emerald-900/30">
+        <div className="flex flex-wrap items-center gap-3">
+          <p className="text-sm font-semibold text-emerald-100">
+            Quick picks (high searches)
+          </p>
+          <div className="flex flex-wrap gap-2 text-xs">
+            <Link
+              href="/news#next-update"
+              className="rounded-full border border-emerald-500/50 bg-emerald-500/10 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/70"
+            >
+              Next update
+            </Link>
+            <Link
+              href="/guides/bosses"
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              Boss list & weaknesses
+            </Link>
+            <Link
+              href="/guides/qin-caiwei"
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              Befriend Qin Caiwei
+            </Link>
+            <Link
+              href="/guides/free-morph"
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              Free Morph unlock
+            </Link>
+            <Link
+              href="/guides/tier-list"
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              China tier list view
+            </Link>
+            <Link
+              href="/guides/unholy-prophecy"
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              An Unholy Prophecy
+            </Link>
+            <Link
+              href="/guides/one-leaf-one-life"
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              One Leaf One Life
+            </Link>
+            <Link
+              href="/guides/woven-with-malice"
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              Woven with Malice
+            </Link>
+            <Link
+              href="/guides/mist-shrouded-prison"
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              Mist-Shrouded Prison chests
+            </Link>
+          </div>
+          <p className="mt-3 w-full text-xs text-emerald-50/80">
+            Fast path for top queries: Where Winds Meet next update, Where Winds Meet bosses list, Where Winds Meet Qin Caiwei friendship guide, Where Winds Meet Free Morph unlock, and the China tier list perspective to compare weapons and builds.
+          </p>
+        </div>
+      </section>
+
       <section className="rounded-3xl border border-slate-800/80 bg-slate-950/80 p-6 sm:p-8 shadow-2xl shadow-slate-950/40 space-y-6">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <p className="text-xs uppercase tracking-wide text-emerald-300">Trending now</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-50">Where Winds Meet guides players search for</h2>
+            <p className="text-xs text-amber-200 mt-1">New: Mist-Shrouded Prison all chests (final spawn fixes included)</p>
           </div>
           <span className="text-xs text-slate-400">Updated with Google Trends keywords</span>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {[
+            {
+              title: "Mist-Shrouded Prison",
+              href: "/guides/mist-shrouded-prison",
+              desc: "New tomb guide: find the entrance, track loops via the red lady, and secure all six chests plus the final treasure (spawn fixes included).",
+              tag: "New",
+            },
             {
               title: "One Leaf, One Life",
               href: "/guides/one-leaf-one-life",

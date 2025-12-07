@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 
@@ -146,7 +147,14 @@ export function SiteHeader({
     <header className="relative z-50 border-b border-slate-800/80 bg-slate-950/85 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href={resolvedHomeHref} className="flex items-center gap-2" aria-label="Where Winds Meet home">
-          <div className="h-8 w-8 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 shadow-lg shadow-emerald-500/40" />
+          <Image
+            src="/design/logo.png"
+            alt="Where Winds Meet logo"
+            width={32}
+            height={32}
+            className="h-8 w-8 rounded-full shadow-lg shadow-emerald-500/40"
+            priority
+          />
           <div className="flex flex-col leading-tight">
             <span className="text-sm font-semibold tracking-wide text-slate-50">
               Where Winds Meet

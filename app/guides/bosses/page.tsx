@@ -4,9 +4,9 @@ import Link from "next/link";
 import { bosses } from "@/lib/bosses";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Bosses & Key Encounters Overview",
+  title: "Where Winds Meet Bosses 2025 – Weaknesses, Drops, Overviews",
   description:
-    "Overview of major Where Winds Meet bosses and key encounters with short backstories, themes, and links to encounter overviews so you can choose which legends of Jianghu to face next.",
+    "Updated Jan 2025: Where Winds Meet bosses list with themes, weaknesses, drops, Bloodbath notes, and links to encounter overviews so you can pick your next fight fast.",
   alternates: {
     canonical: "https://wherewindsmeet.org/guides/bosses",
   },
@@ -27,15 +27,17 @@ export default function BossesPage() {
         </div>
 
         <div className="relative">
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-200">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            Updated Jan 2025 · Weaknesses & drops at a glance
+          </div>
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
             Meet the bosses and legends of Jianghu.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            This page gathers the major Where Winds Meet bosses and named foes
-            in one place, focusing on who they are in the world and what their
-            fights feel like, not on precise damage numbers. It is meant as a
-            spoiler light overview that helps you decide which legendary
-            encounters you want to chase first.
+            This page gathers the major Where Winds Meet bosses and named foes in one place, focusing on how they fight, what they drop,
+            and which encounters suit your current build. It is a spoiler-light boss list with links to weaknesses and Bloodbath notes so
+            you can decide which legend to hunt next.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Use it alongside the{" "}
@@ -55,6 +57,26 @@ export default function BossesPage() {
             to pair each fight with a weapon and playstyle that matches its tone
             and your preferences.
           </p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Link
+              href="/guides/bosses#faq"
+              className="rounded-full border border-emerald-400/50 bg-emerald-500/10 px-4 py-2 text-xs font-semibold text-emerald-100 hover:border-emerald-300/70"
+            >
+              Boss weaknesses & drops (FAQ)
+            </Link>
+            <Link
+              href="/news"
+              className="rounded-full border border-slate-700 px-4 py-2 text-xs font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              Next update & boss changes
+            </Link>
+            <Link
+              href="/guides/tier-list"
+              className="rounded-full border border-slate-700 px-4 py-2 text-xs font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              China tier list perspective
+            </Link>
+          </div>
           <p className="mt-3 text-xs text-slate-400 sm:text-sm">
             All descriptions on this page are based on official Where Winds Meet
             material and general action RPG experience. They are written to set
@@ -199,6 +221,41 @@ export default function BossesPage() {
           to design setups tuned for your reflexes and preferred difficulty
           rather than a single “correct” meta.
         </p>
+      </section>
+
+      <section
+        id="faq"
+        className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-900/50"
+      >
+        <div className="flex items-center gap-2">
+          <span className="text-lg text-emerald-300">❓</span>
+          <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+            Boss quick answers
+          </h2>
+        </div>
+        <div className="space-y-3 text-sm leading-relaxed text-slate-200">
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+            <p className="font-semibold text-slate-50">Which Where Winds Meet bosses should I start with?</p>
+            <p className="mt-1 text-slate-300">
+              Begin with story bosses tied to your current region, then try Bloodbath variants once you have a comfort weapon pair. Use builds with
+              posture breaks (Mo Blade, Spear, Dual Blades) to shorten early fights.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+            <p className="font-semibold text-slate-50">Do bosses have notable weaknesses or drops?</p>
+            <p className="mt-1 text-slate-300">
+              Most bosses are weak to posture breaks and damage-over-time procs. Drops are primarily cosmetic lore items and upgrade materials; check
+              each encounter overview for specifics. Always open the chest after the cutscene to avoid missing the reward.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+            <p className="font-semibold text-slate-50">What is the difference between story, Bloodbath, and world bosses?</p>
+            <p className="mt-1 text-slate-300">
+              Story bosses gate quests and scale with level; Bloodbath bosses add extra mechanics and tighter timings; world bosses are large open-field
+              fights with shared rewards. Prep differently: more survivability for Bloodbath, more mobility for open-world bosses.
+            </p>
+          </div>
+        </div>
       </section>
     </article>
   );
