@@ -498,16 +498,16 @@ export default function UnholyProphecyPage() {
             without wasting tries.
           </p>
           <p className="text-base leading-relaxed text-slate-200">
-            If you searched 'An Unholy Prophecy where winds meet' after getting stuck at the traps or the door seals, follow the
-            breakdown below. Each section calls out the exact mechanic—braziers, emote timing, Meridian Touch, and the Shi Zhen
-            fight—so you don't miss a trigger.
+            If you searched &quot;An Unholy Prophecy where winds meet&quot; after getting stuck at the traps or the door seals, follow
+            the breakdown below. Each section calls out the exact mechanic—braziers, emote timing, Meridian Touch, and the Shi
+            Zhen fight—so you don&apos;t miss a trigger.
           </p>
         </div>
         <div className="grid gap-3 md:grid-cols-3">
           <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
             <div className="text-sm font-semibold text-purple-200">Fire arrow mechanics</div>
             <p className="mt-1 text-sm leading-relaxed text-slate-200">
-              Only fire arrows count for the three rooftop braziers—normal arrows won't trigger them, so bring extras.
+              Only fire arrows count for the three rooftop braziers—normal arrows won&apos;t trigger them, so bring extras.
             </p>
           </div>
           <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
@@ -548,7 +548,7 @@ export default function UnholyProphecyPage() {
           ))}
         </ol>
         <p className="text-xs text-slate-400">
-          If you landed here from searches like 'An Unholy Prophecy where winds meet,' save this TL;DR to jump back to any step quickly.
+          If you landed here from searches like &quot;An Unholy Prophecy where winds meet,&quot; save this TL;DR to jump back to any step quickly.
         </p>
       </section>
 

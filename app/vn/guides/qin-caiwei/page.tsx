@@ -168,13 +168,6 @@ const aiChatBasics = [
   "Lời chào ngắn, rõ ràng có thể là tín hiệu kết thúc chat và trao thiện cảm.",
 ];
 
-const stuckFixes = [
-  "Reset và đổi câu ngoặc: (giúp cô tha thứ cho mình) -> (giúp cô chấp nhận chuyện đã qua).",
-  "Luôn có 1 câu đồng cảm trước ngoặc; nhảy thẳng vào mệnh lệnh dễ trượt.",
-  "Đổi câu chào: thử Tôi sẽ nhớ câu chuyện của bạn hoặc (chúng ta rời đi như bạn tin cậy).",
-  "Nếu cô cứ tự giới thiệu lại, hãy nói lại vấn đề của cô trước khi giải.",
-];
-
 const successLines = [
   "Combo A: Kể tiếp đi? -> (giúp cô đối mặt quá khứ) -> (chúng ta thành bạn thân) -> Tạm biệt (cúi chào rồi đi).",
   "Combo B: Tôi hiểu tình thế của bạn. -> (cô được thấu hiểu và buông bỏ) -> Từ giờ chúng ta là bạn thẳng thắn. -> (cúi chào như bạn cũ)",
@@ -496,4 +489,3 @@ export default function QinCaiweiGuidePage() {
     </article>
   );
 }
-

@@ -1,4 +1,5 @@
 'use strict';
+/* eslint-disable @typescript-eslint/no-require-imports */
 
 // Wrapper to run Next.js commands with baseline/browserslist warnings suppressed via env vars.
 const { spawnSync } = require('child_process');

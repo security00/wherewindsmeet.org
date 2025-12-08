@@ -257,7 +257,7 @@ export default function QinCaiweiPage() {
               WWM Qin Caiwei Friend Task Guide (AI Chat)
             </h1>
             <p className="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
-              Qin Caiwei is one of the toughest AI Chat NPCs to win over. If your Where Winds Meet / WWM Qin Caiwei friend mission is stuck or the befriend task will not progress, use this guide: she loops if you rush, rejects blunt "we are friends" lines, and only moves when you listen, summarize her story, and describe a specific resolution. Use this five-step playbook and the copy-paste lines below to push her to Friend status quickly.
+              Qin Caiwei is one of the toughest AI Chat NPCs to win over. If your Where Winds Meet / WWM Qin Caiwei friend mission is stuck or the befriend task will not progress, use this guide: she loops if you rush, rejects blunt &quot;we are friends&quot; lines, and only moves when you listen, summarize her story, and describe a specific resolution. Use this five-step playbook and the copy-paste lines below to push her to Friend status quickly.
             </p>
             <ul className="text-xs text-emerald-200 space-y-1">
               <li>• TL;DR script: “Go on” → (helps her accept the past) → (we become close friends) → Farewell (bows and leaves).</li>

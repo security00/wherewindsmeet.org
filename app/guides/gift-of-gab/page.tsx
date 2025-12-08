@@ -71,7 +71,7 @@ export default function GiftOfGabPage() {
         <div className="grid gap-4 md:grid-cols-3">
           <div className="rounded-2xl border border-slate-700 bg-slate-800/40 p-4 space-y-2">
             <p className="text-sm font-semibold text-emerald-300">Card-Based Debate</p>
-            <p className="text-xs text-slate-300">Use dialogue cards to reduce opponent's Mental Focus to zero</p>
+            <p className="text-xs text-slate-300">Use dialogue cards to reduce opponent&apos;s Mental Focus to zero</p>
           </div>
           <div className="rounded-2xl border border-slate-700 bg-slate-800/40 p-4 space-y-2">
             <p className="text-sm font-semibold text-blue-300">Inspiration Resource</p>
@@ -84,7 +84,7 @@ export default function GiftOfGabPage() {
         </div>
 
         <p className="text-slate-300 text-sm leading-relaxed">
-          Gift of Gab is a persuasion minigame where you engage in dialogue duels with NPCs. Instead of traditional combat, you win by strategically using dialogue cards to wear down your opponent's Mental Focus. Each debate requires you to manage your Inspiration (the resource that powers your cards) and make tactical choices about which cards to play and when.
+          Gift of Gab is a persuasion minigame where you engage in dialogue duels with NPCs. Instead of traditional combat, you win by strategically using dialogue cards to wear down your opponent&apos;s Mental Focus. Each debate requires you to manage your Inspiration (the resource that powers your cards) and make tactical choices about which cards to play and when.
         </p>
       </section>
 
@@ -173,7 +173,7 @@ export default function GiftOfGabPage() {
 
             <div className="rounded-xl border border-slate-700 bg-slate-800/30 p-4">
               <p className="text-sm font-semibold text-slate-50 mb-2">🃏 Dialogue Cards</p>
-              <p className="text-xs text-slate-300">Cards deal damage, provide defense, lower opponent's defense, or heal Inspiration. Different styles have different card effects. You'll acquire more cards as you level up Scholar.</p>
+              <p className="text-xs text-slate-300">Cards deal damage, provide defense, lower opponent&apos;s defense, or heal Inspiration. Different styles have different card effects. You&apos;ll acquire more cards as you level up Scholar.</p>
             </div>
 
             <div className="rounded-xl border border-slate-700 bg-slate-800/30 p-4">
@@ -209,7 +209,7 @@ export default function GiftOfGabPage() {
           </p>
 
           <ol className="space-y-3 list-decimal list-inside text-sm text-slate-300">
-            <li><strong>Unlock:</strong> Reach Level 13+ and complete "Legacy: Scholar's Path" quest</li>
+            <li><strong>Unlock:</strong> Reach Level 13+ and complete &quot;Legacy: Scholar&apos;s Path&quot; quest</li>
             <li><strong>Level Up:</strong> Earn Scholar Notebook pages from dialogue wins or seasonal shops</li>
             <li><strong>Unlock Talents:</strong> Upgrade attributes to unlock Scholar talents that boost card effects</li>
             <li><strong>Upgrade Cards:</strong> Improve individual card damage and effects with upgrade materials</li>
@@ -228,8 +228,8 @@ export default function GiftOfGabPage() {
           <h3 className="text-lg font-semibold text-slate-50">Key Strategy Tips</h3>
           <ul className="space-y-2 text-sm text-slate-300">
             <li>✓ <strong>Pick the recommended style.</strong> The game suggests the optimal choice for each opponent.</li>
-            <li>✓ <strong>Play defensively early.</strong> Don't lose Mental Focus too fast—you can't recover it.</li>
-            <li>✓ <strong>Wait for Inspiration.</strong> Don't waste it. Hold expensive cards until you have enough Inspiration.</li>
+            <li>✓ <strong>Play defensively early.</strong> Don&apos;t lose Mental Focus too fast—you can&apos;t recover it.</li>
+            <li>✓ <strong>Wait for Inspiration.</strong> Don&apos;t waste it. Hold expensive cards until you have enough Inspiration.</li>
             <li>✓ <strong>Grab free damage.</strong> Always activate Trash Talk QTE prompts.</li>
             <li>✓ <strong>Finish with burst.</strong> As the timer runs low, use your strongest damage cards.</li>
           </ul>
@@ -245,7 +245,7 @@ export default function GiftOfGabPage() {
       <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 space-y-4">
         <h2 className="text-2xl font-bold text-slate-50">Quick Reference</h2>
         <div className="grid gap-3 md:grid-cols-2">
-          <div className="text-sm"><strong className="text-emerald-300">Win Condition:</strong> <span className="text-slate-300">Reduce opponent's Mental Focus to 0</span></div>
+          <div className="text-sm"><strong className="text-emerald-300">Win Condition:</strong> <span className="text-slate-300">Reduce opponent&apos;s Mental Focus to 0</span></div>
           <div className="text-sm"><strong className="text-blue-300">Resource:</strong> <span className="text-slate-300">Inspiration (regenerates automatically)</span></div>
           <div className="text-sm"><strong className="text-red-300">Critical Rule:</strong> <span className="text-slate-300">No Mental Focus recovery—play defensively</span></div>
           <div className="text-sm"><strong className="text-amber-300">Free Damage:</strong> <span className="text-slate-300">Trash Talk QTE buttons appear during debates</span></div>

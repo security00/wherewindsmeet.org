@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-
 export const metadata: Metadata = {
   title: "Chính sách quyền riêng tư Where Winds Meet Hub",
   description:
@@ -61,4 +59,3 @@ export default function PrivacyPage() {
     </article>
   );
 }
-

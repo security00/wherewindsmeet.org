@@ -44,7 +44,8 @@ export default function EmbeddedVideoGallery() {
 
       <div className="rounded-2xl border border-slate-700 bg-slate-800/30 p-4 text-sm text-slate-300">
         <p>
-          <strong>Privacy Notice:</strong> These videos use YouTube's privacy-enhanced mode (nocookie), which doesn't set cookies or store your watch history unless you click "Watch on YouTube."
+          <strong>Privacy Notice:</strong> These videos use YouTube&apos;s privacy-enhanced mode (nocookie), which
+          doesn&apos;t set cookies or store your watch history unless you click &quot;Watch on YouTube.&quot;
         </p>
       </div>
     </section>

@@ -26,24 +26,6 @@ export const metadata: Metadata = {
   },
 };
 
-const newsBlocks = [
-  {
-    title: "Cân bằng & combat",
-    summary:
-      "Tin tức Where Winds Meet ảnh hưởng build: chỉnh sát thương, hồi chiêu, rework hệ thống.",
-  },
-  {
-    title: "Sự kiện thế giới & cốt truyện mùa",
-    summary:
-      "Lễ hội, sự kiện giới hạn, hoạt động xoay kỳ kèm thưởng mới để khám phá.",
-  },
-  {
-    title: "Fix kỹ thuật & ổn định server",
-    summary:
-      "Bug fix, tối ưu hiệu năng, ghi chú server ảnh hưởng trải nghiệm mượt hay không.",
-  },
-];
-
 export default function NewsPage() {
   const sortedNews = [...newsItems].sort((a, b) =>
     a.date < b.date ? 1 : a.date > b.date ? -1 : 0,
@@ -167,4 +149,3 @@ export default function NewsPage() {
     </article>
   );
 }
-

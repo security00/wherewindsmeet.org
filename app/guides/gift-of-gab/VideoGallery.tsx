@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function VideoGallery() {
   const videos = [
     {
@@ -46,10 +48,13 @@ export default function VideoGallery() {
           <div key={video.id} className="rounded-2xl border border-slate-700 bg-slate-800/30 overflow-hidden hover:border-slate-600 transition-colors">
             {/* Video Thumbnail & Play Button */}
             <div className="relative bg-black/50 aspect-video flex items-center justify-center overflow-hidden group">
-              <img
+              <Image
                 src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
                 alt={video.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                priority={false}
               />
               <a
                 href={`https://www.youtube.com/watch?v=${video.youtubeId}`}

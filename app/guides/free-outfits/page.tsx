@@ -105,8 +105,6 @@ const freeSets = [
   { name: "Forgotten", source: "Complete Lifetime Lockup + Behind Bard Blues (≈200h jail sentence)." },
 ];
 
-const quickSetHighlights = freeSets.slice(0, 6);
-
 const freeOutfits = [
   { name: "Novice Wanderer", source: "Starter outfit." },
   { name: "Taming Storms", source: "Complete “A Horse Neighs in the Forest” (Heaven Has No Pier chapter)." },

@@ -151,7 +151,7 @@ export default function StyleComparisonTable() {
 
               <div className="border-t border-slate-700 pt-3">
                 <h4 className="text-sm font-bold text-cyan-300 mb-2">Play Style</h4>
-                <p className="text-sm text-slate-300 italic">"{style.playStyle}"</p>
+                <p className="text-sm text-slate-300 italic">&ldquo;{style.playStyle}&rdquo;</p>
               </div>
             </div>
           </div>

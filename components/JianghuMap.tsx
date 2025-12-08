@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 interface MapLandmark {
@@ -101,14 +101,17 @@ export default function JianghuMap() {
   const pathname = usePathname();
   const isVietnamese = pathname?.startsWith('/vn');
 
-  const withLangPrefix = (slug: string) => {
-    if (!isVietnamese) return slug;
-    return slug.startsWith('/vn') ? slug : `/vn${slug}`;
-  };
+  const withLangPrefix = useCallback(
+    (slug: string) => {
+      if (!isVietnamese) return slug;
+      return slug.startsWith('/vn') ? slug : `/vn${slug}`;
+    },
+    [isVietnamese]
+  );
 
   const localizedLandmarks = useMemo(
     () => landmarks.map((landmark) => ({ ...landmark, slug: withLangPrefix(landmark.slug) })),
-    [isVietnamese]
+    [withLangPrefix]
   );
 
   const quickLinks = useMemo(
@@ -117,7 +120,7 @@ export default function JianghuMap() {
       { label: 'Latest News', href: withLangPrefix('/news'), color: 'cyan' },
       { label: 'Watch Videos', href: withLangPrefix('/videos'), color: 'purple' },
     ],
-    [isVietnamese]
+    [withLangPrefix]
   );
 
   return (

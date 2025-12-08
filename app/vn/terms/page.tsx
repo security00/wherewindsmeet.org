@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-
 export const metadata: Metadata = {
   title: "Điều khoản sử dụng Where Winds Meet Hub",
   description:
@@ -68,4 +66,3 @@ export default function TermsPage() {
     </article>
   );
 }
-

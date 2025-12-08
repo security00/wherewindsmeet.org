@@ -435,15 +435,18 @@ export default function MistShroudedPrisonPage() {
           <h2 className="text-xl sm:text-2xl font-semibold text-slate-50">Clue note (loop 3 table)</h2>
         </div>
         <p className="text-sm text-slate-300 mb-3">
-          You'll see this note after burning the second bud in loop 3, before dropping onto the moving spikes. Read it, then continue the steps in
+          You&apos;ll see this note after burning the second bud in loop 3, before dropping onto the moving spikes. Read it, then continue the steps in
           order so the Where Winds Meet Mist-Shrouded Prison tomb flow stays intact.
         </p>
         <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 shadow-inner shadow-black/25">
-          <img
+          <Image
             src={cdn("/guides/mist-shrouded-prison/gr/read-note-in-prison-in-wwm-where-winds-meet.jpg")}
             alt="Prison note clue in Mist-Shrouded Prison"
+            width={1600}
+            height={900}
             loading="lazy"
             className="h-full w-full object-cover"
+            sizes="(max-width: 1024px) 100vw, 960px"
           />
         </div>
       </section>
@@ -467,7 +470,15 @@ export default function MistShroudedPrisonPage() {
                 </div>
               </div>
               <div className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60">
-                <img src={step.image.src} alt={step.image.alt} loading="lazy" className="h-full w-full object-cover" />
+                <Image
+                  src={step.image.src}
+                  alt={step.image.alt}
+                  loading="lazy"
+                  width={1600}
+                  height={900}
+                  className="h-full w-full object-cover"
+                  sizes="(max-width: 1024px) 100vw, 960px"
+                />
               </div>
             </li>
           ))}

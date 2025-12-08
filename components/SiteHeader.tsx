@@ -153,7 +153,6 @@ export function SiteHeader({
             width={32}
             height={32}
             className="h-8 w-8 rounded-full shadow-lg shadow-emerald-500/40"
-            priority
           />
           <div className="flex flex-col leading-tight">
             <span className="text-sm font-semibold tracking-wide text-slate-50">

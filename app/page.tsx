@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JianghuMapClient from "../components/JianghuMapClient";
+import { LiteYouTubeEmbed } from "../components/LiteYouTubeEmbed";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Global Launch Guides Hub",
@@ -75,18 +76,12 @@ export default function Home() {
           </div>
           </div>
 
-          <div className="relative aspect-video w-full overflow-hidden rounded-2xl border-2 border-slate-800/50 shadow-2xl shadow-black/50 group">
-            <div className="absolute inset-0 border-brush opacity-50 z-10 pointer-events-none"></div>
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/2cxhuAwDFl4?start=5&rel=0&modestbranding=1&playsinline=1"
-              title="Where Winds Meet - Global Launch Preview Stream"
-              className="h-full w-full border-0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
-            />
-          </div>
+          <LiteYouTubeEmbed
+            videoId="2cxhuAwDFl4"
+            start={5}
+            title="Where Winds Meet - Global Launch Preview Stream"
+            poster="/background/bg4.webp"
+          />
         </div>
       </section>
 
