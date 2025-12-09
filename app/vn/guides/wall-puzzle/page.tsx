@@ -2,14 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ZoomableImage } from "../../../guides/wall-puzzle/ZoomableImage";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Giải đố bức tường Where Winds Meet (Echoes of Old Battles)",
   description:
     "Hướng dẫn đố tường Echoes of Old Battles: đốt đủ hỏa cụ, dùng Yanyun Oath, nhấn đúng ký tự 移/百/漂 và lấy Mystic Touch of Death với lộ trình nhanh.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/vn/guides/wall-puzzle",
-  },
+  alternates: buildHreflangAlternates("/guides/wall-puzzle", { canonicalLanguage: "vi" }),
   openGraph: {
     title: "Giải đố bức tường Where Winds Meet",
     description:
@@ -490,4 +489,3 @@ export default function WallPuzzleGuidePage() {
     </article>
   );
 }
-

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 
@@ -8,9 +9,7 @@ export const metadata: Metadata = {
   title: "Patch notes Where Winds Meet, roadmap & cân bằng",
   description:
     "Patch notes Where Winds Meet mới nhất: roadmap, cân bằng, chỉnh vũ khí và nội dung mới. Theo dõi thay đổi để giữ build phù hợp meta.",
-  alternates: {
-    canonical: `${baseUrl}/vn/guides/patch-notes`,
-  },
+  alternates: buildHreflangAlternates("/guides/patch-notes", { canonicalLanguage: "vi" }),
   openGraph: {
     title: "Patch notes Where Winds Meet, roadmap & cân bằng",
     description:
@@ -165,4 +164,3 @@ export default function PatchNotesPage() {
     </article>
   );
 }
-

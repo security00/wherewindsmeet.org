@@ -2,14 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { bosses } from "@/lib/bosses";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Bosses 2025 – Weaknesses, Drops, Overviews",
   description:
     "Updated Jan 2025: Where Winds Meet bosses list with themes, weaknesses, drops, Bloodbath notes, and links to encounter overviews so you can pick your next fight fast.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/guides/bosses",
-  },
+  alternates: buildHreflangAlternates("/guides/bosses"),
 };
 
 export default function BossesPage() {

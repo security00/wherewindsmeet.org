@@ -2,17 +2,15 @@ import * as motion from "framer-motion/client";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { buildHreflangAlternates } from "@/lib/hreflang";
+import { weapons } from "@/lib/weapons";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet PVP Tier List - Dueling & PvP Weapons",
   description:
     "Where Winds Meet PVP tier list ranking weapons for dueling, small-scale PVP, and competitive combat. Learn which weapons dominate in PVP and how to build for player-vs-player success.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/guides/pvp-tier-list",
-  },
+  alternates: buildHreflangAlternates("/guides/pvp-tier-list"),
 };
-
-import { weapons } from "@/lib/weapons";
 
 const pvpTiers = [
   {

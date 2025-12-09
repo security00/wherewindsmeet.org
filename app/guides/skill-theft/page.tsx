@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Skill Theft Guide – unlock, stealth steps, mini-game tips",
   description:
     "How to unlock Skill Theft in Where Winds Meet, beat the ring-based observation mini-game, and use stolen skills to grab martial art weapons faster.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/guides/skill-theft",
-  },
+  alternates: buildHreflangAlternates("/guides/skill-theft"),
 };
 
 const miniGameShots = [

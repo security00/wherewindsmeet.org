@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import WalkthroughGallery from "../../../guides/woven-with-malice/WalkthroughGallery";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 const cdnBase = "https://static.wherewindsmeet.org";
@@ -11,9 +12,7 @@ export const metadata: Metadata = {
   title: "Hướng dẫn nhiệm vụ Sợi Định Mệnh (Woven with Malice)",
   description:
     "Hướng dẫn 31 bước Sợi Định Mệnh: giờ Tý/Sửu, nhuộm màu, đấu tăng, bẫy và đuổi theo ở rừng tre, kèm ảnh phóng to và cách xử lý lỗi.",
-  alternates: {
-    canonical: `${baseUrl}/vn/guides/woven-with-malice`,
-  },
+  alternates: buildHreflangAlternates("/guides/woven-with-malice", { canonicalLanguage: "vi" }),
   openGraph: {
     title: "Sợi Định Mệnh – hướng dẫn Where Winds Meet",
     description:

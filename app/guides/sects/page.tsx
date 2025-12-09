@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Sects – Factions, Ideals & Playstyles",
   description:
     "Overview of major sects in Where Winds Meet, their philosophies, typical roles, and which kinds of players they tend to suit, paired with in-game sect artwork.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/guides/sects",
-  },
+  alternates: buildHreflangAlternates("/guides/sects"),
 };
 
 type SectId =

@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Codes, Rewards & Redeem Guide",
   description:
     "Track active and expired Where Winds Meet codes, learn how to redeem them on PC and PS5, and prioritize the best rewards for new and returning players.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/guides/codes",
-  },
+  alternates: buildHreflangAlternates("/guides/codes"),
 };
 
 const exampleCodes = [

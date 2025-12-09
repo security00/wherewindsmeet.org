@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 const cdnBase = "https://static.wherewindsmeet.org";
@@ -181,9 +182,7 @@ export const metadata: Metadata = {
   title: "Where Winds Meet: Mist-Shrouded Prison – 6 Chests & Final Treasure",
   description:
     "Where Winds Meet Mist-Shrouded Prison tomb guide: unlock after Ephemeral Blight, follow loops 1–3 via red lady markers, and grab six chests and final treasure.",
-  alternates: {
-    canonical: `${baseUrl}/guides/mist-shrouded-prison`,
-  },
+  alternates: buildHreflangAlternates("/guides/mist-shrouded-prison"),
   openGraph: {
     title: "Where Winds Meet: Mist-Shrouded Prison – 6 Chests & Final Treasure",
     description:

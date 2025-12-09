@@ -2,14 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { bosses } from "@/lib/bosses";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Tổng quan boss & trận đánh lớn Where Winds Meet",
   description:
     "Danh sách boss và kẻ địch tên tuổi trong Where Winds Meet, tóm tắt bối cảnh, chủ đề và liên kết đến overview để chọn trận bạn muốn chinh phục.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/vn/guides/bosses",
-  },
+  alternates: buildHreflangAlternates("/guides/bosses", { canonicalLanguage: "vi" }),
 };
 
 export default function BossesPage() {
@@ -149,4 +148,3 @@ export default function BossesPage() {
     </article>
   );
 }
-

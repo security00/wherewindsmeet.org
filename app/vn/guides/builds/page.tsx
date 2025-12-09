@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 
@@ -7,9 +8,7 @@ export const metadata: Metadata = {
   title: "Builds Where Winds Meet – PVE & PVP",
   description:
     "Builds linh hoạt cho Where Winds Meet (PVE & PVP): phân bố chỉ số, ghép vũ khí, nhịp xoay chiêu và mẹo thực chiến.",
-  alternates: {
-    canonical: `${baseUrl}/vn/guides/builds`,
-  },
+  alternates: buildHreflangAlternates("/guides/builds", { canonicalLanguage: "vi" }),
   openGraph: {
     title: "Builds Where Winds Meet – PVE & PVP",
     description:
@@ -362,4 +361,3 @@ export default function BuildsPage() {
     </article>
   );
 }
-

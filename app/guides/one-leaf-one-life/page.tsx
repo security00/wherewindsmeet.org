@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 const cdnBase = "https://static.wherewindsmeet.org";
@@ -20,9 +21,7 @@ export const metadata: Metadata = {
   title: "Where Winds Meet One Leaf One Life Guide (2025)",
   description:
     "Jan 2025: One Leaf One Life walkthrough—start trigger, white leaf farming, Feast/Tale of Gold Leaves steps, time gates, puzzle answers, and Huang Liang epilogue rewards.",
-  alternates: {
-    canonical: `${baseUrl}/guides/one-leaf-one-life`,
-  },
+  alternates: buildHreflangAlternates("/guides/one-leaf-one-life"),
   openGraph: {
     title: "Where Winds Meet One Leaf One Life Guide (2025)",
     description:

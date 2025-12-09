@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import TierListClient from "../../../guides/tier-list/TierListClient";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 
@@ -7,9 +8,7 @@ export const metadata: Metadata = {
   title: "Tier List Where Winds Meet – PVP, PVE, đường vũ khí & nội công",
   description:
     "Tier list tương tác cho Where Winds Meet: xếp hạng PVP/PVE, đường vũ khí, kết hợp song vũ khí và nội công theo bản cập nhật mới nhất.",
-  alternates: {
-    canonical: `${baseUrl}/vn/guides/tier-list`,
-  },
+  alternates: buildHreflangAlternates("/guides/tier-list", { canonicalLanguage: "vi" }),
   openGraph: {
     title: "Tier List Where Winds Meet – PVP, PVE, đường vũ khí & nội công",
     description:
@@ -69,4 +68,3 @@ export default function TierListPage() {
     </>
   );
 }
-

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import WalkthroughGallery from "./WalkthroughGallery";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 const cdnBase = "https://static.wherewindsmeet.org";
@@ -11,9 +12,7 @@ export const metadata: Metadata = {
   title: "Where Winds Meet Woven with Malice Guide (2025)",
   description:
     "Jan 2025: Woven with Malice quest guide—Zi/Chou time gates, dyes, monk duel, trap+bamboo tail, and bug fixes for stalls.",
-  alternates: {
-    canonical: `${baseUrl}/guides/woven-with-malice`,
-  },
+  alternates: buildHreflangAlternates("/guides/woven-with-malice"),
   openGraph: {
     title: "Where Winds Meet Woven with Malice Guide (2025)",
     description:

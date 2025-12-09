@@ -5,14 +5,13 @@ import DialogueCardsComponent from "../../../guides/gift-of-gab/DialogueCardsCom
 import StyleComparisonTable from "../../../guides/gift-of-gab/StyleComparisonTable";
 import EmbeddedVideoGallery from "../../../guides/gift-of-gab/EmbeddedVideoGallery";
 import GiftOfGabImages from "../../../guides/gift-of-gab/GiftOfGabImages";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Gift of Gab – Hướng dẫn đối thoại Where Winds Meet",
   description:
     "Thắng Gift of Gab nhanh: chọn phong cách đúng, quản lý Inspiration, nâng Scholar và dùng thẻ + Trash Talk để hạ Mental Focus đối thủ.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/vn/guides/gift-of-gab",
-  },
+  alternates: buildHreflangAlternates("/guides/gift-of-gab", { canonicalLanguage: "vi" }),
   openGraph: {
     title: "Gift of Gab – Hướng dẫn đối thoại Where Winds Meet",
     description:
@@ -195,4 +194,3 @@ export default function GiftOfGabPage() {
     </article>
   );
 }
-

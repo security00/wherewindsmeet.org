@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "./analytics";
 import BackgroundWrapper from "../components/BackgroundWrapper";
 import { SiteHeader } from "../components/SiteHeader";
 import { LanguageSwitchPrompt } from "../components/LanguageSwitchPrompt";
 import { SiteFooter } from "../components/SiteFooter";
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://wherewindsmeet.org"),
@@ -21,13 +15,7 @@ export const metadata: Metadata = {
   },
   description:
     "Where Winds Meet guides hub with tier lists, builds, codes, and news to help players master the open world wuxia RPG across platforms.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/",
-    languages: {
-      "en-US": "https://wherewindsmeet.org/",
-      "vi-VN": "https://wherewindsmeet.org/vn",
-    },
-  },
+  alternates: buildHreflangAlternates("/"),
   openGraph: {
     title: "Where Winds Meet Guides Hub",
     description:
@@ -65,10 +53,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        />
       </head>
       <body
-        className={`${inter.className} antialiased text-slate-50 bg-slate-950`}
+        className="antialiased text-slate-50 bg-slate-950"
       >
         <Analytics />
         <BackgroundWrapper />

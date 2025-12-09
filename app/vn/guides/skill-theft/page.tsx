@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Trộm chiêu Where Winds Meet – mở, lén lút, mẹo mini-game",
   description:
     "Cách mở Trộm chiêu (Skill Theft), vượt mini-game vòng thời gian và dùng kỹ năng sao chép để lấy vũ khí võ học nhanh hơn.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/vn/guides/skill-theft",
-  },
+  alternates: buildHreflangAlternates("/guides/skill-theft", { canonicalLanguage: "vi" }),
 };
 
 const miniGameShots = [
@@ -189,4 +188,3 @@ export default function SkillTheftPage() {
     </article>
   );
 }
-

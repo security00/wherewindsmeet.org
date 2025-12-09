@@ -2,14 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { martialArtPaths, martialArtWeapons } from "@/lib/martialArts";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Martial Arts Weapons List & Unlock Guide",
   description:
     "Full comparison table of all 12 martial art weapons in Where Winds Meet with images, path focus, signature skills, and unlock methods via Skill Theft or sects.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/guides/martial-arts-weapons",
-  },
+  alternates: buildHreflangAlternates("/guides/martial-arts-weapons"),
 };
 
 const pathLookup = Object.fromEntries(

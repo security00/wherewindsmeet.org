@@ -5,14 +5,13 @@ import DialogueCardsComponent from "./DialogueCardsComponent";
 import StyleComparisonTable from "./StyleComparisonTable";
 import EmbeddedVideoGallery from "./EmbeddedVideoGallery";
 import GiftOfGabImages from "./GiftOfGabImages";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Gift of Gab Guide",
   description:
     "Win Gift of Gab fast: pick the right style, manage Inspiration, upgrade Scholar mastery, and use cards plus Trash Talk to drop enemy Mental Focus to zero.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/guides/gift-of-gab",
-  },
+  alternates: buildHreflangAlternates("/guides/gift-of-gab"),
   openGraph: {
     title: "Where Winds Meet Gift of Gab Guide",
     description:

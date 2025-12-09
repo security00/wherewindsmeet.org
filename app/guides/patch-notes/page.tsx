@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 
@@ -8,9 +9,7 @@ export const metadata: Metadata = {
   title: "Where Winds Meet Patch Notes, Roadmap & Balance Updates",
   description:
     "Latest Where Winds Meet patch notes, roadmap checkpoints, balance changes, weapon adjustments, and new content updates. Track changes to your favorite builds and strategies.",
-  alternates: {
-    canonical: `${baseUrl}/guides/patch-notes`,
-  },
+  alternates: buildHreflangAlternates("/guides/patch-notes"),
   openGraph: {
     title: "Where Winds Meet Patch Notes, Roadmap & Balance Updates",
     description:

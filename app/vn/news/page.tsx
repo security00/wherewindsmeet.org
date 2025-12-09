@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { newsItems } from "@/lib/news";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 
@@ -9,9 +10,7 @@ export const metadata: Metadata = {
   title: "Tin tức Where Winds Meet, roadmap & patch notes",
   description:
     "Tin tức Where Winds Meet chọn lọc: roadmap, cân bằng, patch notes để bạn nắm nhanh thay đổi quan trọng.",
-  alternates: {
-    canonical: `${baseUrl}/vn/news`,
-  },
+  alternates: buildHreflangAlternates("/news", { canonicalLanguage: "vi" }),
   openGraph: {
     title: "Tin tức Where Winds Meet, roadmap & patch notes",
     description:

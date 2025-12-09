@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { newsItems } from "@/lib/news";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 
@@ -9,9 +10,7 @@ export const metadata: Metadata = {
   title: "Where Winds Meet News, Roadmap Updates & Patch Notes",
   description:
     "Curated Where Winds Meet news with roadmap notes, balance updates, and patch notes so you quickly see what changed and why it matters.",
-  alternates: {
-    canonical: `${baseUrl}/news`,
-  },
+  alternates: buildHreflangAlternates("/news"),
   openGraph: {
     title: "Where Winds Meet News, Roadmap Updates & Patch Notes",
     description:
@@ -80,7 +79,7 @@ export default function NewsPage() {
     title: "Roadmap / Next Updates (watchlist)",
     summary:
       "Tracking upcoming Where Winds Meet updates: balance patches, boss/Bloodbath tweaks, anti-cheat actions, events, and new quest fixes. Highlights will be refreshed with each official post.",
-    updated: "Updated Jan 2025",
+    updated: "Updated Dec 2025",
     links: [
       { href: "/guides/tier-list", label: "China tier list & balance notes" },
       { href: "/guides/bosses", label: "Boss list & changes" },
@@ -141,7 +140,7 @@ export default function NewsPage() {
             <div className="flex items-center justify-between gap-2">
               <p className="font-semibold">Next update tracker (refreshes as news drops)</p>
               <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
-                Updated Jan 2025
+                Updated Dec 2025
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">

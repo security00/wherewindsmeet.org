@@ -5,14 +5,13 @@ import AppearanceSetsDisplay from "./AppearanceSetsDisplay";
 import OtherAppearancesDisplay from "./OtherAppearancesDisplay";
 import appearanceSets from "./appearance-sets.json";
 import otherAppearances from "./other-appearances.json";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Cosmetics & Appearance Guide – character customization",
   description:
     "Complete guide to appearance sets, hairstyles, and cosmetics in Where Winds Meet. Includes acquisition methods, rarity, and cultural inspiration.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/guides/cosmetics",
-  },
+  alternates: buildHreflangAlternates("/guides/cosmetics"),
 };
 
 export default function CosmeticsPage() {

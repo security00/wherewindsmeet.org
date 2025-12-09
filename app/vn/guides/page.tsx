@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Hướng dẫn Where Winds Meet cho người mới và cao thủ",
   description:
     "Tổng hợp hướng dẫn Where Winds Meet bằng Tiếng Việt: lộ trình tân thủ, đường lên cấp, hệ thống thế giới mở, tier list, builds và code để bạn luôn biết bước tiếp theo.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/vn/guides",
-  },
+  alternates: buildHreflangAlternates("/guides", { canonicalLanguage: "vi" }),
 };
 
 const guideSections = [

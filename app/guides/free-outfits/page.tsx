@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 
@@ -8,9 +9,7 @@ export const metadata: Metadata = {
   title: "Where Winds Meet Free Outfits Guide",
   description:
     "Where Winds Meet free outfits, sets, cosmetics, and hairstyles from events, quests, codes, shops, and social rewards—claim zero-cost tiers to save currency.",
-  alternates: {
-    canonical: `${baseUrl}/guides/free-outfits`,
-  },
+  alternates: buildHreflangAlternates("/guides/free-outfits"),
   openGraph: {
     title: "Where Winds Meet Free Outfits Guide",
     description:

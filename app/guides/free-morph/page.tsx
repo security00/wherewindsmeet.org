@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Free Morph (2025) – Where Winds Meet Mystic Skill",
   description:
     "How to unlock Free Morph in Where Winds Meet by deflecting Challenge Tian Ying's spinning kicks. Updated Jan 2025: quick unlock steps, cost, cooldown, tier bonuses, and best builds.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/guides/free-morph",
-  },
+  alternates: buildHreflangAlternates("/guides/free-morph"),
   openGraph: {
     title: "Free Morph Mystic Skill (2025) – Where Winds Meet",
     description:

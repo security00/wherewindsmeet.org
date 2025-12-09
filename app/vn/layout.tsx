@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://wherewindsmeet.org"),
@@ -32,13 +33,7 @@ export const metadata: Metadata = {
       "Hướng dẫn Where Winds Meet bằng Tiếng Việt: builds, tier list, code đổi quà và tin tức mới nhất.",
     images: ["https://wherewindsmeet.org/background/bg.jpg"],
   },
-  alternates: {
-    canonical: "https://wherewindsmeet.org/vn",
-    languages: {
-      "vi-VN": "https://wherewindsmeet.org/vn",
-      "en-US": "https://wherewindsmeet.org/",
-    },
-  },
+  alternates: buildHreflangAlternates("/", { canonicalLanguage: "vi" }),
   other: {
     "google-adsense-account": "ca-pub-1548791648803369",
   },

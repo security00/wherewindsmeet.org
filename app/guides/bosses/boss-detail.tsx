@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { BossId } from "@/lib/bosses";
 import { bosses } from "@/lib/bosses";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export function generateBossMetadata(id: BossId): Metadata {
   const boss = bosses.find((b) => b.id === id);
@@ -13,9 +14,7 @@ export function generateBossMetadata(id: BossId): Metadata {
   return {
     title: `${boss.name} Boss Overview – Where Winds Meet`,
     description: `Spoiler-light overview of ${boss.name} in Where Winds Meet with story context, encounter tone, and links to related weapons and builds.`,
-    alternates: {
-      canonical: `https://wherewindsmeet.org/guides/bosses/${boss.id}`,
-    },
+    alternates: buildHreflangAlternates(`/guides/bosses/${boss.id}`),
   };
 }
 

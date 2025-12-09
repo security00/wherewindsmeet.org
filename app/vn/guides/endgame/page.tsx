@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Hướng dẫn endgame Where Winds Meet – tiến độ & tối ưu",
   description:
     "Lộ trình endgame Where Winds Meet: pha tiến độ, farm tài nguyên, tối ưu chỉ số, boss khó, PVP và lối sống Jianghu sau cốt truyện.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/vn/guides/endgame",
-  },
+  alternates: buildHreflangAlternates("/guides/endgame", { canonicalLanguage: "vi" }),
 };
 
 const endgamePhases = [
@@ -177,4 +176,3 @@ export default function EndgamePage() {
     </article>
   );
 }
-

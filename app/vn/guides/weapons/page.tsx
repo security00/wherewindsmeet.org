@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { weapons } from "@/lib/weapons";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 
@@ -9,9 +10,7 @@ export const metadata: Metadata = {
   title: "Hướng dẫn vũ khí Where Winds Meet – Tổng quan & vai trò",
   description:
     "Tổng hợp vũ khí Where Winds Meet: vai trò, artwork chính thức và cách liên kết với tier list và builds.",
-  alternates: {
-    canonical: `${baseUrl}/vn/guides/weapons`,
-  },
+  alternates: buildHreflangAlternates("/guides/weapons", { canonicalLanguage: "vi" }),
   openGraph: {
     title: "Hướng dẫn vũ khí Where Winds Meet – Tổng quan & vai trò",
     description:
@@ -184,4 +183,3 @@ export default function WeaponsPage() {
     </article>
   );
 }
-

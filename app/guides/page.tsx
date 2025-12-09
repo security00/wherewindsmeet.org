@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Guides for Beginners & Veterans",
   description:
     "Focused Where Winds Meet guides with beginner tips, leveling routes, open world systems, tier lists, builds and codes so you always know what to do next.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/guides",
-  },
+  alternates: buildHreflangAlternates("/guides"),
 };
 
 const guideSections = [

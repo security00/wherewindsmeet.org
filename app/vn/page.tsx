@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JianghuMapClient from "../../components/JianghuMapClient";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Trung tâm hướng dẫn Where Winds Meet Tiếng Việt",
   description:
     "Hub Tiếng Việt cho Where Winds Meet với livestream, hướng dẫn nổi bật, code, tier list và cập nhật mới nhất cho người chơi PC, console, mobile.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/vn/",
-  },
+  alternates: buildHreflangAlternates("/", { canonicalLanguage: "vi" }),
 };
 
 export default function Home() {

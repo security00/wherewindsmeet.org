@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { weapons } from "@/lib/weapons";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 
@@ -9,9 +10,7 @@ export const metadata: Metadata = {
   title: "Where Winds Meet Weapons Guide – Overview & Roles",
   description:
     "Where Winds Meet weapons guide covering every weapon with roles, official showcase art, and notes on how they connect to tier lists and builds.",
-  alternates: {
-    canonical: `${baseUrl}/guides/weapons`,
-  },
+  alternates: buildHreflangAlternates("/guides/weapons"),
   openGraph: {
     title: "Where Winds Meet Weapons Guide – Overview & Roles",
     description:

@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Hub Terms of Use & Guidelines",
   description:
     "Review the Where Winds Meet fan hub terms of use, content guidelines, disclaimers, and contact details for support@wherewindsmeet.org before using the site.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/terms",
-  },
+  alternates: buildHreflangAlternates("/terms"),
 };
 
 export default function TermsPage() {
@@ -233,4 +232,3 @@ export default function TermsPage() {
     </article>
   );
 }
-

@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Weapon Tier List - Ranking Every Weapon",
   description:
     "Complete Where Winds Meet weapon tier list ranking all weapons for PVE, PVP, and endgame. Learn which weapons are strongest, easiest to use, and best for your playstyle.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/guides/weapons/tier-list",
-  },
+  alternates: buildHreflangAlternates("/guides/weapons/tier-list"),
 };
 
 const tierSummaries = [

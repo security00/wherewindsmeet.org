@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Endgame Guide - Progression & Optimization",
   description:
     "Master the Where Winds Meet endgame with guides on boss mechanics, resource farming, stat optimization, and post-story progression. Level cap content and optimization strategies.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/guides/endgame",
-  },
+  alternates: buildHreflangAlternates("/guides/endgame"),
 };
 
 const endgamePhases = [

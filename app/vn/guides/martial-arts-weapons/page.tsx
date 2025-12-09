@@ -2,14 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { martialArtPaths, martialArtWeapons } from "@/lib/martialArts";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Danh sách vũ khí võ học Where Winds Meet & cách mở",
   description:
     "Bảng so sánh 12 vũ khí võ học với hình ảnh, đường phái, kỹ năng đặc trưng và cách mở (Trộm chiêu hoặc gia nhập môn phái).",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/vn/guides/martial-arts-weapons",
-  },
+  alternates: buildHreflangAlternates("/guides/martial-arts-weapons", { canonicalLanguage: "vi" }),
 };
 
 const pathLookup = Object.fromEntries(
@@ -240,4 +239,3 @@ export default function MartialArtsWeaponsPage() {
     </article>
   );
 }
-

@@ -2,14 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ZoomableImage } from "./ZoomableImage";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Wall Puzzle Guide",
   description:
     "Echoes of Old Battles wall puzzle guide: light all braziers, use Yanyun Oath, press wall tiles 移/百/漂, and grab Touch of Death with map callouts and fixes.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/guides/wall-puzzle",
-  },
+  alternates: buildHreflangAlternates("/guides/wall-puzzle"),
   openGraph: {
     title: "Where Winds Meet Wall Puzzle Guide",
     description:

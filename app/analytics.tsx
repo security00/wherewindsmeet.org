@@ -7,6 +7,9 @@ const GA_MEASUREMENT_ID = "G-CELX735FQH";
 const ADSENSE_ID = "ca-pub-1548791648803369";
 
 export function Analytics() {
+  // Skip loading ads/analytics locally to avoid noise during development.
+  if (process.env.NODE_ENV !== "production") return null;
+
   const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {

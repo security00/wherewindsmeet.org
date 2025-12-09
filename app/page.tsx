@@ -2,14 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import JianghuMapClient from "../components/JianghuMapClient";
 import { LiteYouTubeEmbed } from "../components/LiteYouTubeEmbed";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Global Launch Guides Hub",
   description:
     "Global launch hub with the preview stream plus trending Where Winds Meet guides, codes, tier lists, and updates for players on PC, console, and mobile.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/",
-  },
+  alternates: buildHreflangAlternates("/"),
   openGraph: {
     title: "Where Winds Meet Global Launch Guides Hub",
     description:
@@ -34,7 +33,7 @@ export default function Home() {
     <div className="space-y-10">
       <JianghuMapClient />
 
-      <section className="card-wuxia rounded-3xl p-6 sm:p-8">
+      <section className="card-wuxia rounded-3xl p-6 sm:p-8 min-h-[520px]">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1.4fr)] lg:items-start">
           <div className="space-y-6">
             <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">

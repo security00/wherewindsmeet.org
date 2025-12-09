@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { featuredVideos } from "../../../lib/featuredVideos";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 
@@ -8,9 +9,7 @@ export const metadata: Metadata = {
   title: "Video Where Winds Meet – gameplay & highlight",
   description:
     "Xem tuyển tập video Where Winds Meet: gameplay, combat, khám phá và style cộng đồng, nhúng ngay trong hub.",
-  alternates: {
-    canonical: `${baseUrl}/vn/videos`,
-  },
+  alternates: buildHreflangAlternates("/videos", { canonicalLanguage: "vi" }),
   openGraph: {
     title: "Video Where Winds Meet – gameplay & highlight",
     description:
@@ -124,4 +123,3 @@ export default function VideosPage() {
     </div>
   );
 }
-

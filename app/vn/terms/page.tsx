@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 export const metadata: Metadata = {
   title: "Điều khoản sử dụng Where Winds Meet Hub",
   description:
     "Điều khoản cho hub fan Where Winds Meet: trạng thái không chính thức, cách dùng nội dung, nhúng bên thứ ba và liên hệ hỗ trợ.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/vn/terms",
-  },
+  alternates: buildHreflangAlternates("/terms", { canonicalLanguage: "vi" }),
 };
 
 export default function TermsPage() {

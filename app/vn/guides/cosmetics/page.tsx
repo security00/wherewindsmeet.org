@@ -5,14 +5,13 @@ import AppearanceSetsDisplay from "../../../guides/cosmetics/AppearanceSetsDispl
 import OtherAppearancesDisplay from "../../../guides/cosmetics/OtherAppearancesDisplay";
 import appearanceSets from "../../../guides/cosmetics/appearance-sets.json";
 import otherAppearances from "../../../guides/cosmetics/other-appearances.json";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Cosmetics & diện mạo Where Winds Meet",
   description:
     "Hướng dẫn cosmetics/appearance Where Winds Meet: set ngoại hình, kiểu tóc, cách sở hữu, độ hiếm và cảm hứng văn hóa.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/vn/guides/cosmetics",
-  },
+  alternates: buildHreflangAlternates("/guides/cosmetics", { canonicalLanguage: "vi" }),
 };
 
 export default function CosmeticsPage() {
@@ -86,4 +85,3 @@ export default function CosmeticsPage() {
     </article>
   );
 }
-

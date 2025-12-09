@@ -3,14 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import ItemTabs from "./ItemTabs";
 import { itemCategories } from "./data";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Items Index – materials, consumables, and curios",
   description:
     "Curated index of key items in Where Winds Meet with tabbed categories, images, uses, and quick locations, inspired by the wiki layout.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/guides/items",
-  },
+  alternates: buildHreflangAlternates("/guides/items"),
 };
 
 export default function ItemsPage() {

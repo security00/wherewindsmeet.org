@@ -13,6 +13,16 @@ export type NewsItem = {
 // News items based on official Where Winds Meet articles mirrored under ref-page/news.
 export const newsItems: NewsItem[] = [
   {
+    id: "closed-beta-lucky-draw",
+    title: "Notice: Closed Beta Pre-Registration Lucky Draw Event",
+    date: "2025-12-08",
+    type: "event",
+    summary:
+      "Lucky Draw participants from the closed beta can now check rewards via the event page; submission/linking deadline extended to December 14 (UTC). Link the original event account to your current character so rewards can be delivered in batches after December 20. For accounts that cannot be linked, email wherewindsmeet@global.netease.com with your event email and reward proof.",
+    officialUrl: "https://www.wherewindsmeetgame.com/news/official/luckydraw.html",
+    tags: ["Lucky Draw", "Closed beta", "Rewards"],
+  },
+  {
     id: "account-suspension-dec-2025",
     title: "Account Suspension for Violations (Ban Report)",
     date: "2025-12-06",

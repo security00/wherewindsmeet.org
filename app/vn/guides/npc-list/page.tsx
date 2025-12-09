@@ -5,6 +5,7 @@ import npcPins from "../../../../public/guides/npc-list/pins-old-friends.json";
 import NpcMapClient, { MapPin } from "../../../guides/npc-list/NpcMapClient";
 import NpcImagePreview from "../../../guides/npc-list/NpcImagePreview";
 import { useMemo } from "react";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 
@@ -12,9 +13,7 @@ export const metadata: Metadata = {
   title: "Danh sách NPC & Old Friends | Where Winds Meet",
   description:
     "Danh sách NPC Old Friends: khu vực, thưởng, mẹo AI Chat, bản đồ xem trước và câu copy-paste để kết bạn nhanh.",
-  alternates: {
-    canonical: `${baseUrl}/vn/guides/npc-list`,
-  },
+  alternates: buildHreflangAlternates("/guides/npc-list", { canonicalLanguage: "vi" }),
   openGraph: {
     title: "Danh sách NPC & Old Friends | Where Winds Meet",
     description:

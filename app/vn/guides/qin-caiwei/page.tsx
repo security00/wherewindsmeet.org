@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 const ogImage = `${baseUrl}/guides/qin-caiwei/hero.jpg`;
@@ -9,9 +10,7 @@ export const metadata: Metadata = {
   title: "Kết bạn Qin Caiwei | Where Winds Meet AI Chat",
   description:
     "Bị kẹt khi kết bạn Qin Caiwei? Xem lý do lặp thoại, script AI Chat dùng ngoặc, cách reset và chào tạm biệt để tăng thiện cảm nhanh.",
-  alternates: {
-    canonical: `${baseUrl}/vn/guides/qin-caiwei`,
-  },
+  alternates: buildHreflangAlternates("/guides/qin-caiwei", { canonicalLanguage: "vi" }),
   openGraph: {
     title: "Kết bạn Qin Caiwei | Where Winds Meet AI Chat",
     description:

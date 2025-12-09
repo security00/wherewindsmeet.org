@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 export const metadata: Metadata = {
   title: "Chính sách quyền riêng tư Where Winds Meet Hub",
   description:
     "Chính sách quyền riêng tư cho hub fan Where Winds Meet: dữ liệu tối thiểu thu thập, nhúng video và cách liên hệ support@wherewindsmeet.org.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/vn/privacy",
-  },
+  alternates: buildHreflangAlternates("/privacy", { canonicalLanguage: "vi" }),
 };
 
 export default function PrivacyPage() {

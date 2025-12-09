@@ -3,14 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import ItemTabs from "../../../guides/items/ItemTabs";
 import { itemCategories } from "../../../guides/items/data";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Chỉ mục vật phẩm Where Winds Meet – nguyên liệu, tiêu hao, hiếm",
   description:
     "Chỉ mục vật phẩm Where Winds Meet với tab danh mục, hình ảnh, công dụng và cách kiếm nhanh, bám theo bố cục wiki.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/vn/guides/items",
-  },
+  alternates: buildHreflangAlternates("/guides/items", { canonicalLanguage: "vi" }),
 };
 
 export default function ItemsPage() {

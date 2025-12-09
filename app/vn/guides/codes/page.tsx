@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Code Where Winds Meet, quà tặng và cách nhập",
   description:
     "Theo dõi code Where Winds Meet còn hạn, cách nhập trên PC/PS5, và mẹo ưu tiên phần thưởng cho người chơi mới lẫn quay lại.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/vn/guides/codes",
-  },
+  alternates: buildHreflangAlternates("/guides/codes", { canonicalLanguage: "vi" }),
 };
 
 const exampleCodes = [
@@ -220,4 +219,3 @@ export default function CodesPage() {
     </article>
   );
 }
-

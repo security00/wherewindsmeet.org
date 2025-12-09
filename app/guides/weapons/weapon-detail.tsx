@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { weapons, type WeaponId } from "@/lib/weapons";
 import { weaponDetails } from "@/lib/weaponDetails";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export function generateWeaponMetadata(id: WeaponId): Metadata {
   const weapon = weapons.find((w) => w.id === id);
@@ -13,9 +14,7 @@ export function generateWeaponMetadata(id: WeaponId): Metadata {
   return {
     title: `${weapon.name} Weapon Guide – Where Winds Meet`,
     description: `How ${weapon.name} tends to feel in Where Winds Meet, its typical strengths and tradeoffs, and how it can connect to common builds and tier list thinking.`,
-    alternates: {
-      canonical: `https://wherewindsmeet.org/guides/weapons/${weapon.id}`,
-    },
+    alternates: buildHreflangAlternates(`/guides/weapons/${weapon.id}`),
   };
 }
 

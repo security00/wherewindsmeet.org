@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import TierListClient from "./TierListClient";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 
@@ -7,9 +8,7 @@ export const metadata: Metadata = {
   title: "Where Winds Meet Tier List – PVP & PVE Weapons, Paths, Dual Builds",
   description:
     "Interactive Where Winds Meet tier list covering PVP tier list, PVE rankings, weapon paths, dual weapon combinations, and internal arts from the latest updates.",
-  alternates: {
-    canonical: `${baseUrl}/guides/tier-list`,
-  },
+  alternates: buildHreflangAlternates("/guides/tier-list"),
   openGraph: {
     title: "Where Winds Meet Tier List – PVP & PVE Weapons, Paths, Dual Builds",
     description:

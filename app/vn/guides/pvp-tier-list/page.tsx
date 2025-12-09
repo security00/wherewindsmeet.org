@@ -3,14 +3,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { weapons } from "@/lib/weapons";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Tier List PVP Where Winds Meet - Vũ khí đấu tay đôi",
   description:
     "Tier list PVP cho Where Winds Meet: xếp hạng vũ khí trong đấu tay đôi, giao tranh nhỏ và lối chơi cạnh tranh. Nắm vũ khí nào đang thống trị meta và cách build để thắng PVP.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/vn/guides/pvp-tier-list",
-  },
+  alternates: buildHreflangAlternates("/guides/pvp-tier-list", { canonicalLanguage: "vi" }),
 };
 
 const pvpTiers = [
@@ -169,4 +168,3 @@ export default function PVPTierListPage() {
     </article>
   );
 }
-

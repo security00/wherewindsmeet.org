@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Hub Privacy Policy & Data",
   description:
     "Read the Where Winds Meet fan hub privacy policy covering what limited data this site handles, how embedded videos work, and how to contact support@wherewindsmeet.org.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/privacy",
-  },
+  alternates: buildHreflangAlternates("/privacy"),
 };
 
 export default function PrivacyPage() {
@@ -226,4 +225,3 @@ export default function PrivacyPage() {
     </article>
   );
 }
-

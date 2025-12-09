@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Free Morph – Cách mở và dùng Mystic Skill (Where Winds Meet)",
   description:
     "Mở Free Morph trong Where Winds Meet bằng cách đỡ cú đá xoay của Tian Ying (Challenge). Xem chi phí, hồi chiêu, thưởng tier và cách đưa Mystic khống chế đơn mục tiêu này vào build.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/vn/guides/free-morph",
-  },
+  alternates: buildHreflangAlternates("/guides/free-morph", { canonicalLanguage: "vi" }),
   openGraph: {
     title: "Free Morph – Cách mở và dùng Mystic Skill (Where Winds Meet)",
     description:
@@ -199,4 +198,3 @@ export default function FreeMorphPage() {
     </article>
   );
 }
-

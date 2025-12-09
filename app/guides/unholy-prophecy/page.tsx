@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 const cdnBase = process.env.NEXT_PUBLIC_CDN_URL || "https://static.wherewindsmeet.org";
@@ -10,9 +11,7 @@ export const metadata: Metadata = {
   title: "Where Winds Meet An Unholy Prophecy Guide (2025)",
   description:
     "Jan 2025: An Unholy Prophecy walkthrough — rooftop braziers, Meridian Touch bell/door, spike hall, Shi Zhen fight, and fixes for stuck quests.",
-  alternates: {
-    canonical: `${baseUrl}/guides/unholy-prophecy`,
-  },
+  alternates: buildHreflangAlternates("/guides/unholy-prophecy"),
   openGraph: {
     title: "Where Winds Meet An Unholy Prophecy Guide (2025)",
     description:

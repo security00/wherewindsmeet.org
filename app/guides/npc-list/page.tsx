@@ -4,6 +4,7 @@ import Link from "next/link";
 import npcPins from "../../../public/guides/npc-list/pins-old-friends.json";
 import NpcMapClient, { MapPin } from "./NpcMapClient";
 import NpcImagePreview from "./NpcImagePreview";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 
@@ -11,9 +12,7 @@ export const metadata: Metadata = {
   title: "Where Winds Meet NPC List & Old Friends Map",
   description:
     "Where Winds Meet NPC list (Old Friends): regions, rewards, AI Chat tips, map preview, and copy-paste chat lines to befriend every NPC fast.",
-  alternates: {
-    canonical: `${baseUrl}/guides/npc-list`,
-  },
+  alternates: buildHreflangAlternates("/guides/npc-list"),
   openGraph: {
     title: "Where Winds Meet NPC List & Old Friends Map",
     description:

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 const ogImage = `${baseUrl}/guides/qin-caiwei/hero.jpg`;
@@ -9,9 +10,7 @@ export const metadata: Metadata = {
   title: "WWM Qin Caiwei Friend Guide (2025) | Where Winds Meet AI Chat",
   description:
     "WWM Qin Caiwei friend task walkthrough: Where Winds Meet Qin Caiwei friend script, why her AI chat loops, the reset that fixes it, and the farewell that triggers Old Friends rewards.",
-  alternates: {
-    canonical: `${baseUrl}/guides/qin-caiwei`,
-  },
+  alternates: buildHreflangAlternates("/guides/qin-caiwei"),
   openGraph: {
     title: "WWM Qin Caiwei Friend Guide (2025) | Where Winds Meet AI Chat",
     description:

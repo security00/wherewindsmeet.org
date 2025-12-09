@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Hướng dẫn tân thủ Where Winds Meet & lộ trình tuần đầu",
   description:
     "Hướng dẫn thực dụng cho người mới Where Winds Meet: từ lần mở game tới reset tuần đầu với thiết lập, ưu tiên và mẹo tài nguyên.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/vn/guides/new-players",
-  },
+  alternates: buildHreflangAlternates("/guides/new-players", { canonicalLanguage: "vi" }),
 };
 
 const chapters = [
@@ -273,4 +272,3 @@ export default function NewPlayersGuidePage() {
     </div>
   );
 }
-

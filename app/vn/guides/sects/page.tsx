@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Môn phái Where Winds Meet – triết lý & phong cách",
   description:
     "Tổng quan các môn phái Where Winds Meet: quan niệm, lối chơi gợi ý và kiểu người chơi phù hợp, kèm artwork trong game.",
-  alternates: {
-    canonical: "https://wherewindsmeet.org/vn/guides/sects",
-  },
+  alternates: buildHreflangAlternates("/guides/sects", { canonicalLanguage: "vi" }),
 };
 
 type Sect = {
@@ -199,4 +198,3 @@ export default function SectsPage() {
     </article>
   );
 }
-

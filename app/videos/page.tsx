@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { featuredVideos } from "../../lib/featuredVideos";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 
@@ -8,9 +9,7 @@ export const metadata: Metadata = {
   title: "Where Winds Meet Gameplay Videos & Highlights",
   description:
     "Watch curated Where Winds Meet gameplay videos, combat highlights, exploration moments, and community style clips in one place without leaving the guides hub.",
-  alternates: {
-    canonical: `${baseUrl}/videos`,
-  },
+  alternates: buildHreflangAlternates("/videos"),
   openGraph: {
     title: "Where Winds Meet Gameplay Videos & Highlights",
     description:
