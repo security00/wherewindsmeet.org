@@ -13,6 +13,26 @@ export type NewsItem = {
 // News items based on official Where Winds Meet articles mirrored under ref-page/news.
 export const newsItems: NewsItem[] = [
   {
+    id: "timeless-bonds-1-1-overview",
+    title: "[Timeless Bonds] Version 1.1 Update Overview (December 12)",
+    date: "2025-12-11",
+    type: "announcement",
+    summary:
+      "Version 1.1 lands December 11, 21:00 UTC with the Roaring Sands map in Kaifeng, new world boss Feng Ruzhi, the Velvet Shade sect, Taiping Mausoleum path trials, the Great Faceologist event, fresh appearances, and a long list of combat/UI fixes plus server/network optimizations.",
+    officialUrl: "https://www.wherewindsmeetgame.com/news/official/TimelessBonds.html",
+    tags: ["Version 1.1", "Update overview", "New map", "Boss", "Events"],
+  },
+  {
+    id: "mobile-launch-faq",
+    title: "Mobile Launch FAQ",
+    date: "2025-12-09",
+    type: "guide",
+    summary:
+      "Confirms mobile supports cross-progression and cross-play but warns existing PC/console players must link accounts before creating a mobile character; initial mobile difficulty caps at Story/Recommended with Expert unlocked at Lv30, Legend via PC carries over, Assist Deflection is on by default, mobile key layouts are not yet customizable, and some cutscenes use video until optimization improves.",
+    officialUrl: "https://www.wherewindsmeetgame.com/news/official/MobileFAQ.html",
+    tags: ["Mobile", "Cross-progression", "Difficulty", "Controls"],
+  },
+  {
     id: "closed-beta-lucky-draw",
     title: "Notice: Closed Beta Pre-Registration Lucky Draw Event",
     date: "2025-12-08",
