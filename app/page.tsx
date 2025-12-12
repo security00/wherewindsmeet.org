@@ -3,6 +3,7 @@ import Link from "next/link";
 import JianghuMapClient from "../components/JianghuMapClient";
 import { LiteYouTubeEmbed } from "../components/LiteYouTubeEmbed";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import EventSpotlight from "@/components/EventSpotlight";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Global Launch Guides Hub",
@@ -29,8 +30,29 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const cdnBase = process.env.NEXT_PUBLIC_CDN_URL || "https://static.wherewindsmeet.org";
+  const cdn = (path: string) => `${cdnBase}${path}`;
+
   return (
     <div className="space-y-10">
+      <EventSpotlight
+        eyebrow="Hot event · Dec 2025"
+        title="The Great Faceologist"
+        description="Limited-time face & make-up contest. Follow the correct in-game upload path and tick the event tag so your submission actually counts."
+        bullets={[
+          "Upload from Appearance → Edit Face (outfit gallery posts don’t count).",
+          "Manually tick the [The Great Faceologist] tag before publishing.",
+          "Daily upload cap is low (~5/day), so don’t waste slots.",
+        ]}
+        primaryHref="/guides/the-great-faceologist"
+        primaryLabel="Open event guide"
+        secondaryHref="/guides/cosmetics"
+        secondaryLabel="Cosmetics & appearance"
+        imageSrc={cdn("/guides/the-great-faceologist/hero.webp")}
+        imageFallbackSrc="/guides/the-great-faceologist/hero.webp"
+        imageAlt="The Great Faceologist event screen in Where Winds Meet"
+      />
+
       <JianghuMapClient />
 
       <section className="card-wuxia rounded-3xl p-6 sm:p-8 min-h-[520px]">
@@ -163,6 +185,12 @@ export default function Home() {
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {[
+            {
+              title: "The Great Faceologist",
+              href: "/guides/the-great-faceologist",
+              desc: "Event guide: how to join, where to upload, how to tag correctly, and fixes for missing tag / daily cap issues.",
+              tag: "Event",
+            },
             {
               title: "Mist-Shrouded Prison",
               href: "/guides/mist-shrouded-prison",

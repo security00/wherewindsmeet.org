@@ -139,6 +139,15 @@ const guideSections = [
     description: "Set ngoại hình, kiểu tóc và cosmetics lấy cảm hứng Mặc gia.",
   },
   {
+    title: "The Great Faceologist",
+    slug: "/vn/guides/the-great-faceologist",
+    label: "Sự kiện",
+    icon: "🎭",
+    color: "text-emerald-300",
+    size: "small",
+    description: "Sự kiện tạo mặt/makeup 12/2025: nộp bài đúng Edit Face, bật tag và tránh lỗi.",
+  },
+  {
     title: "Code đang hoạt động",
     slug: "/vn/guides/codes",
     label: "Quà miễn phí",

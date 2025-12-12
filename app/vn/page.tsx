@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import JianghuMapClient from "../../components/JianghuMapClient";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import EventSpotlight from "@/components/EventSpotlight";
 
 export const metadata: Metadata = {
   title: "Trung tâm hướng dẫn Where Winds Meet Tiếng Việt",
@@ -12,9 +13,29 @@ export const metadata: Metadata = {
 
 export default function Home() {
   const vnHref = (path: string) => (path.startsWith("/vn") ? path : `/vn${path}`);
+  const cdnBase = process.env.NEXT_PUBLIC_CDN_URL || "https://static.wherewindsmeet.org";
+  const cdn = (path: string) => `${cdnBase}${path}`;
 
   return (
     <div className="space-y-10">
+      <EventSpotlight
+        eyebrow="Sự kiện đang hot · 12/2025"
+        title="The Great Faceologist"
+        description="Sự kiện thi tạo mặt/makeup giới hạn thời gian. Muốn bài được tính, bạn phải upload đúng từ Edit Face và nhớ tick tag sự kiện trước khi publish."
+        bullets={[
+          "Upload từ Appearance → Edit Face (outfit gallery không được tính).",
+          "Tự tick tag [The Great Faceologist] trước khi đăng bài.",
+          "Giới hạn mỗi ngày thấp (~5 lượt), đừng phí vì quên tick tag.",
+        ]}
+        primaryHref={vnHref("/guides/the-great-faceologist")}
+        primaryLabel="Mở hướng dẫn sự kiện"
+        secondaryHref={vnHref("/guides/cosmetics")}
+        secondaryLabel="Cosmetics & diện mạo"
+        imageSrc={cdn("/guides/the-great-faceologist/hero.webp")}
+        imageFallbackSrc="/guides/the-great-faceologist/hero.webp"
+        imageAlt="Sự kiện The Great Faceologist trong Where Winds Meet"
+      />
+
       <JianghuMapClient />
 
       <section className="card-wuxia rounded-3xl p-6 sm:p-8">
@@ -73,6 +94,12 @@ export default function Home() {
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {[
+            {
+              title: "The Great Faceologist",
+              href: "/guides/the-great-faceologist",
+              desc: "Cách tham gia & nộp bài đúng: đi đúng đường upload, tick tag, và xử lý lỗi tag mất / chạm giới hạn ngày.",
+              tag: "Sự kiện",
+            },
             {
               title: "Thiện cảm Tần Thái Vị",
               href: "/guides/qin-caiwei",

@@ -3,6 +3,7 @@ import Link from "next/link";
 import JianghuMapClient from "../../components/JianghuMapClient";
 import { LiteYouTubeEmbed } from "../../components/LiteYouTubeEmbed";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import EventSpotlight from "@/components/EventSpotlight";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet – Deutscher Global-Launch-Guide-Hub",
@@ -29,8 +30,29 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const cdnBase = process.env.NEXT_PUBLIC_CDN_URL || "https://static.wherewindsmeet.org";
+  const cdn = (path: string) => `${cdnBase}${path}`;
+
   return (
     <div className="space-y-10">
+      <EventSpotlight
+        eyebrow="Hot Event · Dez 2025"
+        title="The Great Faceologist"
+        description="Zeitlich begrenzter Face/Make-up-Contest. Nutze den richtigen Upload-Pfad im Spiel und aktiviere den Event-Tag, damit dein Beitrag wirklich zählt."
+        bullets={[
+          "Nur Uploads aus Appearance → Edit Face zählen (Outfit-Gallery nicht).",
+          "Vor dem Publish den Tag [The Great Faceologist] manuell aktivieren.",
+          "Daily Cap ist niedrig (~5/Tag) – keine Slots verschwenden.",
+        ]}
+        primaryHref="/de/guides/the-great-faceologist"
+        primaryLabel="Event-Guide öffnen"
+        secondaryHref="/de/guides/cosmetics"
+        secondaryLabel="Kosmetik & Appearance"
+        imageSrc={cdn("/guides/the-great-faceologist/hero.webp")}
+        imageFallbackSrc="/guides/the-great-faceologist/hero.webp"
+        imageAlt="The Great Faceologist Event in Where Winds Meet"
+      />
+
       <JianghuMapClient />
 
       <section className="card-wuxia rounded-3xl p-6 sm:p-8 min-h-[520px]">
@@ -160,6 +182,12 @@ export default function Home() {
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {[
+            {
+              title: "The Great Faceologist",
+              href: "/de/guides/the-great-faceologist",
+              desc: "Event-Guide: Teilnahme, richtiger Upload-Pfad, Tag setzen und Fixes für fehlenden Tag / Daily Cap.",
+              tag: "Event",
+            },
             {
               title: "Nebelverhangenes Gefängnis",
               href: "/de/guides/mist-shrouded-prison",

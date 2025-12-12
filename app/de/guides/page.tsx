@@ -158,6 +158,15 @@ const guideSections = [
     description: "Appearance-Sets, Frisuren und Cosmetics inspiriert von Mohisten-Legenden.",
   },
   {
+    title: "The Great Faceologist",
+    slug: "/de/guides/the-great-faceologist",
+    label: "Event",
+    icon: "🎭",
+    color: "text-emerald-300",
+    size: "small",
+    description: "Dez 2025 Look‑Contest: richtig via Edit Face hochladen, Event‑Tag setzen, Bugs umgehen.",
+  },
+  {
     title: "Aktive Codes",
     slug: "/de/guides/codes",
     label: "Gratis",
