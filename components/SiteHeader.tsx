@@ -36,8 +36,22 @@ const vnNavLinks: NavLink[] = [
   { href: "/vn/news", label: "Tin tức" },
 ];
 
+const deNavLinks: NavLink[] = [
+  { href: "/de", label: "Start" },
+  { href: "/de/guides", label: "Guides" },
+  { href: "/de/guides/bosses", label: "Bosse" },
+  { href: "/de/guides/weapons", label: "Waffen" },
+  { href: "/de/guides/martial-arts-weapons", label: "Kampfkünste" },
+  { href: "/de/guides/tier-list", label: "Tierlist" },
+  { href: "/de/guides/builds", label: "Builds" },
+  { href: "/de/guides/codes", label: "Codes" },
+  { href: "/de/guides/items", label: "Items" },
+  { href: "/de/news", label: "News" },
+];
+
 const defaultBrandSubtitle = "Guides · Tier List · Codes";
 const vnBrandSubtitle = "Hướng dẫn · Xếp hạng · Mã quà";
+const deBrandSubtitle = "Guides · Tierlists · Codes";
 
 type LanguageOption = {
   code: string;
@@ -49,6 +63,7 @@ type LanguageOption = {
 const LANGUAGES: LanguageOption[] = [
   { code: "en", label: "English", flag: "🇺🇸", prefix: "" },
   { code: "vi", label: "Tiếng Việt", flag: "🇻🇳", prefix: "/vn" },
+  { code: "de", label: "Deutsch", flag: "🇩🇪", prefix: "/de" },
 ];
 
 const detectLanguage = (pathname?: string | null) => {
@@ -90,19 +105,27 @@ export function SiteHeader({
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
-  const isVietnamese = pathname?.startsWith("/vn");
   const currentLanguage = detectLanguage(pathname);
   const languageMenuRef = useRef<HTMLDivElement | null>(null);
 
   const resolvedLinks = useMemo(() => {
     if (links !== defaultNavLinks) return links;
-    return isVietnamese ? vnNavLinks : defaultNavLinks;
-  }, [links, isVietnamese]);
+    if (currentLanguage.code === "vi") return vnNavLinks;
+    if (currentLanguage.code === "de") return deNavLinks;
+    return defaultNavLinks;
+  }, [links, currentLanguage.code]);
 
   const resolvedBrandSubtitle =
-    brandSubtitle === defaultBrandSubtitle && isVietnamese ? vnBrandSubtitle : brandSubtitle;
+    brandSubtitle === defaultBrandSubtitle
+      ? currentLanguage.code === "vi"
+        ? vnBrandSubtitle
+        : currentLanguage.code === "de"
+          ? deBrandSubtitle
+          : defaultBrandSubtitle
+      : brandSubtitle;
 
-  const resolvedHomeHref = homeHref === "/" && isVietnamese ? "/vn" : homeHref;
+  const resolvedHomeHref =
+    homeHref === "/" && currentLanguage.prefix ? currentLanguage.prefix : homeHref;
 
   useEffect(() => {
     if (!isOpen) return;

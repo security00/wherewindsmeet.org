@@ -25,12 +25,11 @@ export const bosses: Boss[] = [
   {
     id: "dao-lord",
     name: "Dao Lord",
-    tagline:
-      "Elusive ruler of the Black Market and the Nine Mortal Ways.",
+    tagline: "Flüchtige Herrscherin des Schwarzmarkts und der Nine Mortal Ways.",
     description:
-      "Dao Lord runs the Black Market from the shadows, guiding the Nine Mortal Ways with a calm, unreadable presence. Official descriptions frame them as someone who glides through back alleys and whispered deals rather than open battlefields, making every appearance feel like a test of trust and perception as much as raw strength.",
-    encounterType: "Shadow boss / underworld confrontation",
-    theme: "contracts, information, hidden power in the dark",
+      "Agiert aus dem Schatten, lenkt den Schwarzmarkt und die Nine Mortal Ways mit ruhiger, undurchsichtiger Präsenz. Jeder Auftritt fühlt sich mehr wie ein Vertrauens- und Wahrnehmungstest an als wie eine offene Schlacht.",
+    encounterType: "Schattenboss / Unterwelt-Konfrontation",
+    theme: "Verträge, Informationen, verborgene Macht",
     backgroundVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e440aa64b1cb56a20c39SXz41N4r03",
     titleImage: "/bosses/6_tit_0a00d079.png",
@@ -38,11 +37,11 @@ export const bosses: Boss[] = [
   {
     id: "god-of-avaric",
     name: "God of Avarice",
-    tagline: "A mortal obsessed with hoarding enough wealth to touch godhood.",
+    tagline: "Sterblicher, besessen davon, Reichtum bis zur Göttlichkeit zu horten.",
     description:
-      "The so‑called God of Avarice was born mortal but never satisfied with human limits. Official material paints them as someone still chasing infinite wealth, even after paying steep personal costs. Serving unjust masters has only twisted that hunger, turning what might have been ambition into something darker and more dangerous.",
-    encounterType: "Greed‑themed trial / larger‑than‑life duel",
-    theme: "wealth, ambition, the cost of serving the wrong cause",
+      "Jagt unendlichem Reichtum nach, trotz hoher persönlicher Kosten. Der Dienst an falschen Herren verdrehte den Ehrgeiz zu etwas Dunklerem und Gefährlicherem.",
+    encounterType: "Gier-Prüfung / überlebensgroßes Duell",
+    theme: "Reichtum, Ehrgeiz, falsche Loyalität",
     backgroundVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e5cc6cd30209c0511f69xZfM5GC503",
     titleImage: "/bosses/10_tit_22cc1602.png",
@@ -50,11 +49,11 @@ export const bosses: Boss[] = [
   {
     id: "heartseeker",
     name: "Heartseeker",
-    tagline: "A haunting shape born from inner demons and familiar faces.",
+    tagline: "Gestalt aus inneren Dämonen, zugleich vertraut und verstörend.",
     description:
-      "Heartseeker is described as inner demons given form, reshaping themselves into a disturbing yet familiar visage. Rather than a simple external enemy, this encounter leans into the feeling of fighting your own fears and memories, with the design emphasizing unease over straightforward villainy.",
-    encounterType: "Inner‑world trial / psychological confrontation",
-    theme: "inner demons, memory, distorted reflections of the self",
+      "Ein Kampf gegen eigene Ängste und Erinnerungen; weniger klassischer Gegner, mehr psychologische Konfrontation.",
+    encounterType: "Innere Welt / psychologische Prüfung",
+    theme: "Innere Dämonen, Erinnerung, verzerrte Spiegelbilder",
     backgroundVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e66d629ae6e2c037d5a6XMt2Twli03",
     titleImage: "/bosses/3_tit_f504b30e.png",
@@ -62,11 +61,11 @@ export const bosses: Boss[] = [
   {
     id: "lucky-seventeen",
     name: "Lucky Seventeen",
-    tagline: "Pure‑hearted guardian of the Palace of Annals and master armor‑forger.",
+    tagline: "Reinen Herzens, Wächter des Palace of Annals, Meister-Schmied.",
     description:
-      "Lucky Seventeen guards the Palace of Annals and is renowned for their pure heart and unmatched armor‑forging skill. The official description hints at a character who cares as much about duty and craft as about combat itself, making any encounter with them feel tied to tradition, legacy, and what it means to protect history.",
-    encounterType: "Guardian duel / palace defense",
-    theme: "duty, craftsmanship, guardianship of knowledge",
+      "Verbindet Pflichtgefühl und Schmiedekunst; der Kampf wirkt wie ein Duell um Tradition und Bewahrung von Geschichte.",
+    encounterType: "Wächterduell / Palastverteidigung",
+    theme: "Pflicht, Handwerk, Hüter von Wissen",
     backgroundVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e657629ae6e2c037d428oNjEcOO703",
     titleImage: "/bosses/1_tit_85fcd171.png",
@@ -74,11 +73,11 @@ export const bosses: Boss[] = [
   {
     id: "murong-yuan",
     name: "Murong Yuan",
-    tagline: "Vengeful mechanist who betrayed the Mohists.",
+    tagline: "Rachsüchtiger Mechanist, der die Mohisten verriet.",
     description:
-      "Murong Yuan is a genius of mechanisms who turned against the Mohist school and went on to forge the legendary Quintadent Warship. Their story sits at the crossroads of invention and betrayal, suggesting encounters that revolve around intricate devices, traps, and the consequences of weaponizing ideals.",
-    encounterType: "Mechanist boss / device‑heavy confrontation",
-    theme: "technology, betrayal, turning ideals into war machines",
+      "Genie der Mechanik, erschuf das Quintadent-Kriegsschiff. Begegnungen drehen sich um Geräte, Fallen und die Folgen, Ideale zu Waffen zu machen.",
+    encounterType: "Mechanik-Boss / Geräte-Lastig",
+    theme: "Technik, Verrat, Ideale als Kriegsgerät",
     backgroundVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e5f9ec073ee12006cc49NBwJjrMe03",
     titleImage: "/bosses/7_tit_79faa323.png",
@@ -86,11 +85,11 @@ export const bosses: Boss[] = [
   {
     id: "qianye",
     name: "Qianye",
-    tagline: "Ruthless, cunning figure who lives behind shifting masks.",
+    tagline: "Rücksichtslos, listig, immer hinter wechselnden Masken.",
     description:
-      "Qianye is introduced as a mysterious figure, ruthless and cunning, skilled in disguise and manipulation. They represent the side of Jianghu where appearances are rarely what they seem, and every gesture might hide a deeper plot. Even without knowing full mechanics, the official description frames them as a test of perception and patience.",
-    encounterType: "Deception‑focused duel / cloak‑and‑dagger clash",
-    theme: "disguise, manipulation, reading what lies beneath the mask",
+      "Meister der Verkleidung und Manipulation; ein Test für Wahrnehmung und Geduld – nichts ist, wie es scheint.",
+    encounterType: "Täuschungsduell / Schattenklingen",
+    theme: "Maskerade, Manipulation, hinter die Fassade schauen",
     backgroundVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e5eb5e38916dd27deaf2bqROEQRE03",
     titleImage: "/bosses/8_tit_8ae9cdaf.png",
@@ -98,11 +97,11 @@ export const bosses: Boss[] = [
   {
     id: "the-void-king",
     name: "The Void King",
-    tagline: "A warrior intent on shattering the limits of the human body.",
+    tagline: "Krieger, der die Grenzen des Körpers sprengen will.",
     description:
-      "The Void King is described as a warrior determined to surpass physical limits, unleashing extraordinary power in combat. Rather than leaning on tricks or politics, this character embodies raw, honed strength pushed to extremes, giving their fights the feeling of an all‑or‑nothing test of endurance and timing.",
-    encounterType: "High‑intensity duel / power trial",
-    theme: "limits, discipline, overwhelming physical force",
+      "Reine, geschliffene Kraft bis zum Äußersten; weniger Tricks, mehr Ausdauer- und Timing-Prüfung.",
+    encounterType: "Hochintensives Duell / Kraftprobe",
+    theme: "Grenzen, Disziplin, überwältigende Stärke",
     backgroundVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e61aa78083738d6d492c26GNDq8t03",
     titleImage: "/bosses/4_tit_8b3e8cfc.png",
@@ -110,11 +109,11 @@ export const bosses: Boss[] = [
   {
     id: "tian-ying",
     name: "Tian Ying",
-    tagline: "Legendary assassin with no past on record and no family ties.",
+    tagline: "Legendäre Assassinin ohne bekannte Vergangenheit oder Familie.",
     description:
-      "Tian Ying is introduced as a legendary assassin and master of shadows, with no known family and an origin story that no one truly understands. They sit firmly in the archetype of the ghostlike killer: present everywhere, leaving almost nothing behind. Official material emphasizes their mystery more than any single allegiance.",
-    encounterType: "Assassin encounter / shadow duel",
-    theme: "assassination, anonymity, life lived between missions",
+      "Geistartige Killerin: überall anwesend, hinterlässt kaum Spuren. Mystery steht über Loyalität.",
+    encounterType: "Assassinen-Encounter / Schatten-Duell",
+    theme: "Attentat, Anonymität, Leben zwischen Missionen",
     backgroundVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e60972bc64d11682a8dakS0hHk2g03",
     titleImage: "/bosses/5_tit_f82610c3.png",
@@ -122,12 +121,11 @@ export const bosses: Boss[] = [
   {
     id: "ye-wanshan",
     name: "Ye Wanshan",
-    tagline:
-      "Once a northern defender, now leading a brutal assault on the central plains.",
+    tagline: "Einst Verteidiger des Nordens, jetzt gnadenloser Angreifer der Zentralebene.",
     description:
-      "Ye Wanshan was once a celebrated general defending the northern cities, but now leads his troops in a ruthless massacre of the central plains. That reversal turns his encounters into more than simple boss fights: they carry the weight of broken oaths, shifting loyalties, and the question of what could push a protector to become an executioner.",
-    encounterType: "Battlefield commander / large‑scale clash",
-    theme: "war, betrayal, the fall of once‑honorable heroes",
+      "Gefallener General; Kämpfe tragen das Gewicht gebrochener Eide und wechselnder Loyalitäten – was treibt einen Beschützer zum Henker?",
+    encounterType: "Feldherr / Großschlacht",
+    theme: "Krieg, Verrat, Fall eines Helden",
     backgroundVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e68c41a5c8a28ad3c2c07BGR5fzX03",
     titleImage: "/bosses/2_tit_6ec8679b.png",
@@ -135,11 +133,11 @@ export const bosses: Boss[] = [
   {
     id: "zheng-e",
     name: "Zheng E",
-    tagline: "A weary swordsman who once tried to save the world and now walks alone.",
+    tagline: "Ermüdeter Schwertkämpfer, einst Retter, nun allein unterwegs.",
     description:
-      "Zheng E once set out to save the world, but repeated trials left him a tired swordsman who turned his blade against humanity. The Changping blaze halted his descent into despair, yet with old friends gone he is left to carve out a path by himself. Official descriptions present him as one of the most tragic figures in Jianghu—caught between what he tried to protect and what he has done.",
-    encounterType: "Story‑defining duel / tragic swordsman battle",
-    theme: "idealism, disillusionment, walking forward alone",
+      "Wollte einst die Welt retten, wandte sich dann gegen die Menschheit. Tragische Figur zwischen Idealismus und Ernüchterung; geht nun allein weiter.",
+    encounterType: "Story-Duell / tragischer Schwertkampf",
+    theme: "Idealismus, Ernüchterung, Alleingang",
     backgroundVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e69aeb28216c8722c417KSsSJULb03",
     titleImage: "/bosses/9_tit_33d334bf.png",

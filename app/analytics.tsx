@@ -7,12 +7,12 @@ const GA_MEASUREMENT_ID = "G-CELX735FQH";
 const ADSENSE_ID = "ca-pub-1548791648803369";
 
 export function Analytics() {
-  // Skip loading ads/analytics locally to avoid noise during development.
-  if (process.env.NODE_ENV !== "production") return null;
+  const isProd = process.env.NODE_ENV === "production";
 
   const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {
+    if (!isProd) return;
     // Defer heavy third-party scripts until the user interacts or the page goes idle.
     let activated = false;
     const events = ["pointerdown", "scroll", "keydown", "touchstart"];
@@ -41,9 +41,9 @@ export function Analytics() {
     events.forEach((event) => window.addEventListener(event, enable, { passive: true }));
 
     return cleanup;
-  }, []);
+  }, [isProd]);
 
-  if (!shouldLoad) return null;
+  if (!isProd || !shouldLoad) return null;
 
   return (
     <>

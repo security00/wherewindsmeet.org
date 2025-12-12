@@ -5,6 +5,7 @@ const SITE_URL = "https://wherewindsmeet.org";
 const SUPPORTED_LANGUAGES = [
   { code: "en", hrefLang: "en-US", prefix: "" },
   { code: "vi", hrefLang: "vi-VN", prefix: "/vn" },
+  { code: "de", hrefLang: "de-DE", prefix: "/de" },
 ] as const;
 
 export type SupportedLanguageCode = (typeof SUPPORTED_LANGUAGES)[number]["code"];

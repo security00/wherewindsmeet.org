@@ -20,6 +20,14 @@ const LANGUAGE_SITES: LanguageSite[] = [
     cta: "Chuyển sang Tiếng Việt",
     stayCta: "Tiếp tục dùng bản hiện tại",
   },
+  {
+    countryCodes: ["DE", "AT", "CH", "LI", "LU"],
+    path: "/de",
+    label: "Deutsch",
+    message: "Wir haben eine deutsche Version für deine Region bereitgestellt.",
+    cta: "Zur deutschen Seite wechseln",
+    stayCta: "Auf dieser Sprache bleiben",
+  },
 ];
 
 const STORAGE_KEY = "wwm-lang-choice";
@@ -92,24 +100,24 @@ export function LanguageSwitchPrompt({ geoApiEndpoint }: { geoApiEndpoint?: stri
   };
 
   return (
-    <div className="mt-4 rounded-2xl border border-emerald-500/30 bg-emerald-950/60 p-4 text-sm text-emerald-50 shadow-lg shadow-emerald-900/30">
+    <div className="mt-4 rounded-2xl border border-amber-400/50 bg-amber-50/10 p-4 text-sm text-amber-50 shadow-lg shadow-amber-900/30 backdrop-blur">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="space-y-1">
-          <p className="text-base font-semibold text-emerald-100">Đã hỗ trợ {promptSite.label}</p>
-          <p className="text-xs text-emerald-100/80">{promptSite.message}</p>
+          <p className="text-base font-semibold text-amber-100">Đã hỗ trợ / Jetzt verfügbar: {promptSite.label}</p>
+          <p className="text-xs text-amber-100/80">{promptSite.message}</p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
           <button
             type="button"
             onClick={handleSwitch}
-            className="inline-flex items-center justify-center rounded-full bg-emerald-500/90 px-4 py-2 text-sm font-semibold text-emerald-950 shadow-md shadow-emerald-900/30 transition hover:bg-emerald-400"
+            className="inline-flex items-center justify-center rounded-full bg-amber-400 px-4 py-2 text-sm font-semibold text-amber-950 shadow-md shadow-amber-900/30 transition hover:bg-amber-300"
           >
             {promptSite.cta}
           </button>
           <button
             type="button"
             onClick={handleStay}
-            className="inline-flex items-center justify-center rounded-full border border-emerald-400/50 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-50 transition hover:border-emerald-300/70 hover:text-emerald-100"
+            className="inline-flex items-center justify-center rounded-full border border-amber-300/60 bg-amber-100/10 px-4 py-2 text-sm font-semibold text-amber-50 transition hover:border-amber-200/80 hover:text-amber-100"
           >
             {promptSite.stayCta}
           </button>

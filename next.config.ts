@@ -68,6 +68,10 @@ const nextConfig: NextConfig = {
           destination: '/:path*',
         },
         {
+          source: '/de/:path*',
+          destination: '/:path*',
+        },
+        {
           source: '/design/:path*',
           destination: '/design/:path*',
         },
@@ -117,6 +121,10 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/vn/:path*',
+        destination: '/:path*',
+      },
+      {
+        source: '/de/:path*',
         destination: '/:path*',
       },
       {

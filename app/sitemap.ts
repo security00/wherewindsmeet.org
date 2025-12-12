@@ -43,6 +43,11 @@ const staticEntries: Entry[] = [
   { path: "/terms", changeFrequency: "yearly", priority: 0.4 },
 ];
 
+const deEntries: Entry[] = staticEntries.map((entry) => ({
+  ...entry,
+  path: entry.path === "/" ? "/de" : `/de${entry.path}`,
+}));
+
 const vnEntries: Entry[] = [
   { path: "/vn", changeFrequency: "daily", priority: 0.9 },
   { path: "/vn/guides", changeFrequency: "daily", priority: 0.85 },
@@ -88,7 +93,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const entries = [...staticEntries, ...vnEntries, ...bossEntries, ...weaponEntries];
+  const entries = [...staticEntries, ...deEntries, ...vnEntries, ...bossEntries, ...weaponEntries];
 
   return entries.map((entry) => ({
     url: `${baseUrl}${entry.path}`,

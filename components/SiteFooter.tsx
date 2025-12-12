@@ -28,13 +28,26 @@ const vietnameseLinks: FooterLink[] = [
   { href: "mailto:support@wherewindsmeet.org", label: "Liên hệ: support@wherewindsmeet.org" },
 ];
 
+const germanLinks: FooterLink[] = [
+  { href: "/de/guides", label: "Guides" },
+  { href: "/de/guides/bosses", label: "Bosse" },
+  { href: "/de/guides/weapons", label: "Waffen" },
+  { href: "/de/news", label: "News" },
+  { href: "/de/privacy", label: "Datenschutz" },
+  { href: "/de/terms", label: "Nutzungsbedingungen" },
+  { href: "mailto:support@wherewindsmeet.org", label: "Kontakt: support@wherewindsmeet.org" },
+];
+
 export function SiteFooter() {
   const pathname = usePathname();
   const isVietnamese = pathname?.startsWith("/vn");
-  const links = isVietnamese ? vietnameseLinks : defaultLinks;
+  const isGerman = pathname?.startsWith("/de");
+  const links = isVietnamese ? vietnameseLinks : isGerman ? germanLinks : defaultLinks;
   const description = isVietnamese
     ? "Hub fan Where Winds Meet không chính thức. Mọi nhãn hiệu thuộc về chủ sở hữu tương ứng."
-    : "Unofficial Where Winds Meet fan hub. All trademarks are the property of their respective owners.";
+    : isGerman
+      ? "Inoffizieller Where Winds Meet Fan-Hub. Alle Marken gehören ihren jeweiligen Inhabern."
+      : "Unofficial Where Winds Meet fan hub. All trademarks are the property of their respective owners.";
 
   return (
     <footer className="border-t border-slate-800/80 bg-slate-950/90 py-6 text-xs text-slate-400">

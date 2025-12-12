@@ -263,10 +263,14 @@ const npcDetails: NpcEntry[] = [
   { name: "Angler", region: "Moonveil Mountain", area: "Harvestfall Village", hint: "You can find him sitting by the shoreline on the northeast side of the village.", image: "/guides/npc-list/angler.png" },
 ];
 
-const allPins: MapPin[] = (npcPins as any[]).map((p) => {
+const npcPinsArray = npcPins as unknown as Partial<MapPin>[];
+
+const allPins: MapPin[] = npcPinsArray.map((p) => {
   const detail = npcDetails.find((d) => d.name === p.name);
   return {
-    ...p,
+    name: p.name ?? detail?.name ?? "Unknown NPC",
+    x: p.x ?? 0,
+    y: p.y ?? 0,
     region: p.region ?? detail?.region ?? undefined,
     area: p.area ?? detail?.area ?? undefined,
     hint: p.hint ?? detail?.hint ?? undefined,

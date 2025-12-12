@@ -78,7 +78,7 @@ export const weapons: Weapon[] = [
     role: "Support",
     tier: "B",
     description:
-      "Fan focuses on channeling inner qi outward, turning graceful gestures into waves of ranged pressure and support. You chip away from a distance, soften groups with wide skills, and use healing or utility talents to keep yourself and allies standing. In Where Winds Meet it is a natural fit for players who like safer spacing, team-focused tools, and a calmer, more deliberate combat tempo.",
+      "Leitet inneres Qi nach außen: elegante Gesten werden zu Fern-Druck + Support. Du chippst aus Distanz, weichst Gruppen mit weiten Skills auf und nutzt Heil-/Utility-Talente, um dich und Verbündete stabil zu halten. Passt zu Spielern mit sicherem Spacing, teamfokussierten Tools und ruhigerem Kampftempo.",
     officialArt: "/weapons/official/wq5_58ac46bd.png",
     officialVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/690c68778175cef2669e231f6hiIvVK103",
@@ -88,10 +88,10 @@ export const weapons: Weapon[] = [
   {
     id: "umbrella",
     name: "Umbrella",
-    role: "Control",
-    tier: "S",
+    role: "Parry/Konter",
+    tier: "B",
     description:
-      "Umbrella looks delicate, but hides layers of defense and counter-attack potential. You can glide through projectiles, angle blocks, then snap the canopy open into sharp, flowing strikes that punish anyone who overextends. In Where Winds Meet it suits players who enjoy reactive play, weaving mobility, parries, and style into one elegant defensive-DPS weapon.",
+      "Wirkt zart, verbirgt aber Defense- und Konter-Potenzial: Geschosse gleiten, Blocks anwinkeln, Schirm öffnen und in fließende Schläge übergehen, die Überdehnungen bestrafen. Passt zu reaktiven Spielern, die Mobilität, Parry und Stil in einer eleganten Defensive-DPS-Waffe verweben.",
     officialArt: "/weapons/official/wq6_f29046e1.png",
     officialVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e7547f0a2d1e15a832beLfbRNdyu03",
@@ -101,14 +101,14 @@ export const weapons: Weapon[] = [
   {
     id: "rope-dart",
     name: "Rope Dart",
-    role: "Mobile control and picks",
+    role: "Mobile Control / Picks",
     tier: "S",
     description:
-      "Rope Dart plays like a stylish mix of grappling hook and execution tool. From mid-range you can yank enemies off balance, close gaps in an instant, or peel for allies with disruptive pulls and repositioning. In Where Winds Meet it rewards players who read movement patterns well, enjoy creative positioning, and like turning an enemy’s escape attempt into their downfall.",
+      "Stylishe Mischung aus Grapple und Execution-Tool: Aus Mid-Range Gegner aus dem Gleichgewicht reißen, Lücken sofort schließen oder Verbündete mit Pulls/Repositioning schützen. Belohnt Spieler mit gutem Movement-Reading, kreativem Positioning und dem Wunsch, Fluchtversuche in Niederlagen zu drehen.",
     officialArt: "/weapons/official/wq7_d8a85874.png",
     officialVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/690c6889be134a7f3324d9f6gQMKFy6i03",
-    localIcon: "/weapons/dualblades.png",
-    buildLink: "/guides/builds#dual-blades",
+    localIcon: "/weapons/ropedart.png",
+    buildLink: "/guides/builds#rope-dart-hunter",
   },
 ];

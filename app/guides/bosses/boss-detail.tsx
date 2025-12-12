@@ -5,25 +5,26 @@ import type { BossId } from "@/lib/bosses";
 import { bosses } from "@/lib/bosses";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
-export function generateBossMetadata(id: BossId): Metadata {
+export function generateBossMetadata(id: BossId, canonicalLanguage: "en" | "de" = "en"): Metadata {
   const boss = bosses.find((b) => b.id === id);
   if (!boss) {
     return {};
   }
 
   return {
-    title: `${boss.name} Boss Overview – Where Winds Meet`,
-    description: `Spoiler-light overview of ${boss.name} in Where Winds Meet with story context, encounter tone, and links to related weapons and builds.`,
-    alternates: buildHreflangAlternates(`/guides/bosses/${boss.id}`),
+    title: `${boss.name} Boss-Übersicht – Where Winds Meet`,
+    description: `Spoilerarme Übersicht zu ${boss.name}: Story-Ton, Encounter-Gefühl und Links zu Waffen/Builds.`,
+    alternates: buildHreflangAlternates(`/guides/bosses/${boss.id}`, { canonicalLanguage }),
   };
 }
 
-export function BossDetail({ bossId }: { bossId: BossId }) {
+export function BossDetail({ bossId, localePrefix = "" }: { bossId: BossId; localePrefix?: string }) {
   const boss = bosses.find((b) => b.id === bossId);
 
   if (!boss) {
     return null;
   }
+  const base = localePrefix || "";
 
   return (
     <article className="space-y-10">
@@ -33,7 +34,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
             {boss.name} in Where Winds Meet.
           </h1>
           <p className="text-sm font-medium uppercase tracking-wide text-emerald-300">
-            Encounter type: {boss.encounterType}
+            Encounter-Typ: {boss.encounterType}
           </p>
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
             {boss.tagline}
@@ -42,30 +43,24 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
             {boss.description}
           </p>
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-            Treat this page as a spoiler-light companion to the{" "}
+            Diese Seite ist eine spoilerarme Ergänzung zur{" "}
             <Link
               href="/guides/weapons"
               className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
             >
-              Where Winds Meet weapons overview
+              Waffen-Übersicht
             </Link>{" "}
-            and{" "}
+            und den{" "}
             <Link
               href="/guides/builds"
               className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
             >
-              build guides
+              Build-Guides
             </Link>
-            . When patch notes or new content arrive, the exact mechanics of{" "}
-            {boss.name} may evolve, but their story role and overall tone
-            usually stay recognizable.
+            . Patch Notes können die Mechanik von {boss.name} verändern; Story-Ton und Atmosphäre bleiben meist erkennbar.
           </p>
           <p className="text-xs text-slate-400">
-            Notes: This overview is based on official Where Winds Meet material
-            and general action RPG experience. It is written to describe story
-            themes and how the encounter tends to feel, not to guarantee exact
-            attacks or difficulty. Always rely on in-game experience and patch
-            notes first.
+            Hinweis: Grundlage sind offizielle Materialien und ARPG-Erfahrung. Fokus auf Stimmung/Erwartung, nicht auf exakte Frames. Im Spiel und Patch Notes haben Vorrang.
           </p>
         </div>
         <div className="space-y-4">
@@ -98,80 +93,56 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
 
       <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          What this encounter tends to feel like.
+          Wie sich der Kampf anfühlt.
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Without diving into full boss guides or spoiling specific mechanics,
-          it helps to think of {boss.name} as a test of theme and mindset as
-          much as raw gameplay. The way the arena, camera, and story beats are
-          framed in official footage sets expectations before you ever see a
-          health bar.
-        </p>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          As you approach this encounter, pay attention to how the game builds
-          atmosphere around it—music, pacing of dialogue, and how NPCs talk
-          about {boss.name}. Those cues are often your best hint about whether
-          you are about to face a relentless duel, a more methodical
-          battlefield, or something closer to an inner trial.
+          Denke an {boss.name} als Stimmungstest: Arena, Musik, Kamera und NPC-Dialoge verraten, ob dich ein hartes Duell, ein methodisches Schlachtfeld oder eher eine innere Prüfung erwartet.
         </p>
       </section>
 
       <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          Preparing your weapons and builds.
+          Vorbereitung: Waffen & Builds.
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Because this site is designed as a companion rather than a strict
-          checklist, preparation tips focus on principles instead of fixed
-          checklists. Before challenging {boss.name}, think about which weapons
-          and builds feel most comfortable for you in similar situations, then
-          use our guides as a reference rather than a script.
+          Diese Seite dient als Begleiter, kein strenger Fahrplan. Denke vor {boss.name} daran, welche Waffen/Builds dir in ähnlichen Situationen am besten liegen, und nutze die Guides als Referenz, nicht als Skript.
         </p>
         <ul className="space-y-2 text-sm leading-relaxed text-slate-200 sm:text-base">
           <li className="flex gap-3">
             <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
             <span>
-              Revisit the{" "}
+              Sieh dir die{" "}
               <Link
-                href="/guides/weapons"
+                href={`${base}/guides/weapons`}
                 className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
               >
-                weapons overview
+                Waffen-Übersicht
               </Link>{" "}
-              and look for options whose rhythm matches how you like to handle
-              sustained pressure, sudden bursts, or long windows of setup.
+              an und suche Optionen, deren Rhythmus zu deinem Umgang mit Dauer-Druck, Burstfenstern oder längeren Setups passt.
             </span>
           </li>
           <li className="flex gap-3">
             <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
             <span>
-              In the{" "}
+              In den{" "}
               <Link
-                href="/guides/builds"
+                href={`${base}/guides/builds`}
                 className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
               >
-                builds section
+                Build-Guides
               </Link>
-              , favor archetypes that give you enough sustain and comfort to
-              learn patterns. A build you can play calmly often beats a more
-              fragile “perfect” option when you are still learning a fight.
+              , wähle Archetypen mit genug Sustain und Komfort, um Muster zu lernen. Ein Build, den du ruhig spielen kannst, schlägt oft fragile „Perfekt“-Varianten beim Lernen.
             </span>
           </li>
           <li className="flex gap-3">
             <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
             <span>
-              Treat your first few clears as scouting runs. Note which parts of{" "}
-              {boss.name}
-              &apos;s encounter stress you the most—camera, adds, burst
-              windows—and adjust weapons and builds specifically around those
-              pain points.
+              Die ersten Clears sind Scouting: Notiere, was dich am meisten stresst (Kamera, Adds, Burstfenster) und passe Waffen/Builds gezielt an diese Pain Points an.
             </span>
           </li>
         </ul>
         <p className="text-xs text-slate-400">
-          If you later find that in-game experience diverges from how this
-          encounter feels here, prioritize your own observations. This page is a
-          starting perspective rather than a strict manual.
+          Weicht das Spielgefühl später ab, zählen deine eigenen Beobachtungen. Diese Seite ist eine Einstiegsperspektive, kein striktes Handbuch.
         </p>
       </section>
 
