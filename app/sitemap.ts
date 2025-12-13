@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { bosses } from "@/lib/bosses";
+import { latestNewsDate } from "@/lib/news";
 import { weapons } from "@/lib/weapons";
 
 const baseUrl = "https://wherewindsmeet.org";
@@ -8,7 +9,10 @@ type Entry = {
   path: string;
   changeFrequency?: MetadataRoute.Sitemap[0]["changeFrequency"];
   priority?: number;
+  lastModified?: MetadataRoute.Sitemap[0]["lastModified"];
 };
+
+const newsLastModified = new Date(latestNewsDate);
 
 const staticEntries: Entry[] = [
   { path: "/", changeFrequency: "daily", priority: 1 },
@@ -38,7 +42,7 @@ const staticEntries: Entry[] = [
   { path: "/guides/gift-of-gab", changeFrequency: "weekly", priority: 0.75 },
   { path: "/guides/new-players", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/sects", changeFrequency: "weekly", priority: 0.75 },
-  { path: "/news", changeFrequency: "daily", priority: 0.7 },
+  { path: "/news", changeFrequency: "daily", priority: 0.7, lastModified: newsLastModified },
   { path: "/videos", changeFrequency: "weekly", priority: 0.65 },
   { path: "/privacy", changeFrequency: "yearly", priority: 0.4 },
   { path: "/terms", changeFrequency: "yearly", priority: 0.4 },
@@ -76,7 +80,7 @@ const vnEntries: Entry[] = [
   { path: "/vn/guides/cosmetics", changeFrequency: "weekly", priority: 0.68 },
   { path: "/vn/guides/sects", changeFrequency: "weekly", priority: 0.67 },
   { path: "/vn/guides/endgame", changeFrequency: "weekly", priority: 0.7 },
-  { path: "/vn/news", changeFrequency: "daily", priority: 0.6 },
+  { path: "/vn/news", changeFrequency: "daily", priority: 0.6, lastModified: newsLastModified },
   { path: "/vn/privacy", changeFrequency: "yearly", priority: 0.35 },
   { path: "/vn/terms", changeFrequency: "yearly", priority: 0.35 },
   { path: "/vn/videos", changeFrequency: "weekly", priority: 0.55 },
@@ -99,6 +103,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return entries.map((entry) => ({
     url: `${baseUrl}${entry.path}`,
+    lastModified: entry.lastModified,
     changeFrequency: entry.changeFrequency,
     priority: entry.priority,
   }));

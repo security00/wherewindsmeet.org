@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { newsItems } from "@/lib/news";
+import { latestNewsDate, newsItems } from "@/lib/news";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
@@ -30,6 +30,7 @@ export default function NewsPage() {
     a.date < b.date ? 1 : a.date > b.date ? -1 : 0,
   );
 
+  const lastUpdatedLabel = `Cập nhật ${latestNewsDate}`;
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -37,6 +38,7 @@ export default function NewsPage() {
       name: metadata.title,
       description: metadata.description,
       url: `${baseUrl}/vn/news`,
+      dateModified: latestNewsDate,
     },
     {
       "@context": "https://schema.org",
@@ -81,6 +83,12 @@ export default function NewsPage() {
               Muốn lướt nhanh <span className="font-semibold text-emerald-400">patch notes</span> hoặc cập nhật{" "}
               <span className="font-semibold text-emerald-400">roadmap</span> mà không phải đọc mọi dòng? Bắt đầu tại đây.
             </p>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[11px] font-semibold tracking-wide text-emerald-100">
+              {lastUpdatedLabel}
+            </span>
           </div>
 
           <div className="mt-8 space-y-4">

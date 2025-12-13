@@ -13,6 +13,16 @@ export type NewsItem = {
 // News items based on official Where Winds Meet articles mirrored under ref-page/news.
 export const newsItems: NewsItem[] = [
   {
+    id: "updates-game-installation-playstation-store",
+    title: "Updates on Game Installation and PlayStation Store",
+    date: "2025-12-12",
+    type: "announcement",
+    summary:
+      "Notice for Closed Beta participants: uninstall the playtest client and reinstall the official release build. PlayStation Store purchases are platform-bound: Echo Beads and monthly pass value are only visible/usable on PlayStation Network, first-purchase Echo Jade bonus is one-time per account across platforms, and Battle Pass premium rewards/level-up claims depend on the platform where you purchased (with an Elite+Premium split allowing claims on both).",
+    officialUrl: "https://www.wherewindsmeetgame.com/news/official/1212notice.html",
+    tags: ["PlayStation", "Installation", "Top-up", "Battle Pass", "Cross-platform"],
+  },
+  {
     id: "timeless-bonds-1-1-overview",
     title: "[Timeless Bonds] Version 1.1 Update Overview (December 12)",
     date: "2025-12-11",
@@ -130,3 +140,8 @@ export const newsItems: NewsItem[] = [
     tags: ["Final test", "Closed beta", "Registration"],
   },
 ];
+
+export const latestNewsDate = newsItems.reduce(
+  (latest, item) => (item.date > latest ? item.date : latest),
+  "1970-01-01",
+);

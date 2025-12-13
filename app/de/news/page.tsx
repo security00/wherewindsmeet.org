@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { newsItems } from "@/lib/news";
+import { latestNewsDate, newsItems } from "@/lib/news";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
@@ -30,6 +30,7 @@ export default function NewsPage() {
     a.date < b.date ? 1 : a.date > b.date ? -1 : 0,
   );
 
+  const lastUpdatedLabel = `Aktualisiert ${latestNewsDate}`;
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -37,6 +38,7 @@ export default function NewsPage() {
       name: metadata.title,
       description: metadata.description,
       url: `${baseUrl}/de/news`,
+      dateModified: latestNewsDate,
     },
     {
       "@context": "https://schema.org",
@@ -52,7 +54,7 @@ export default function NewsPage() {
     title: "Roadmap / Nächste Updates (Watchlist)",
     summary:
       "Beobachtet kommende Where Winds Meet Updates: Balance-Patches, Boss/Bloodbath-Tweaks, Anti-Cheat, Events und Quest-Fixes. Wir aktualisieren nach jedem offiziellen Post.",
-    updated: "Aktualisiert Dez 2025",
+    updated: lastUpdatedLabel,
     links: [
       { href: "/de/guides/tier-list", label: "China-Tierlist & Balance-Notizen" },
       { href: "/de/guides/bosses", label: "Bossliste & Änderungen" },
@@ -105,7 +107,7 @@ export default function NewsPage() {
             <div className="flex items-center justify-between gap-2">
               <p className="font-semibold">Nächstes Update (wird laufend aktualisiert)</p>
               <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
-                Updated Dec 2025
+                {lastUpdatedLabel}
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
