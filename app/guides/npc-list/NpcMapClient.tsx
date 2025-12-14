@@ -3,6 +3,7 @@
 
 import { useMemo, useState } from "react";
 import NpcImagePreview from "./NpcImagePreview";
+import type { NpcImagePreviewUiText } from "./NpcImagePreview";
 
 export type MapPin = {
   name: string;
@@ -17,9 +18,47 @@ export type MapPin = {
 type Props = {
   pins: MapPin[];
   mapSrc?: string;
+  uiText?: Partial<NpcMapUiText>;
+  imagePreviewUiText?: Partial<NpcImagePreviewUiText>;
 };
 
-export default function NpcMapClient({ pins, mapSrc = "/guides/npc-list/map.gif" }: Props) {
+export type NpcMapUiText = {
+  regionLabel: string;
+  allOption: string;
+  searchPlaceholder: string;
+  showingPrefix: string;
+  showingSuffix: string;
+  mapAlt: string;
+  closeAriaLabel: string;
+  regionPrefix: string;
+  areaPrefix: string;
+  unknownValue: string;
+  portraitAltSuffix: string;
+  defaultHint: string;
+};
+
+const DEFAULT_UI_TEXT: NpcMapUiText = {
+  regionLabel: "Region",
+  allOption: "All",
+  searchPlaceholder: "Search NPC...",
+  showingPrefix: "Showing",
+  showingSuffix: "pins",
+  mapAlt: "Where Winds Meet Old Friends map",
+  closeAriaLabel: "Close",
+  regionPrefix: "Region:",
+  areaPrefix: "Area:",
+  unknownValue: "Unknown",
+  portraitAltSuffix: "portrait",
+  defaultHint: "Use the chat pattern above once you reach this NPC.",
+};
+
+export default function NpcMapClient({
+  pins,
+  mapSrc = "/guides/npc-list/map.gif",
+  uiText,
+  imagePreviewUiText,
+}: Props) {
+  const resolvedUiText = useMemo(() => ({ ...DEFAULT_UI_TEXT, ...uiText }), [uiText]);
   const [search, setSearch] = useState("");
   const [region, setRegion] = useState<string | "all">("all");
   const [selected, setSelected] = useState<MapPin | null>(null);
@@ -68,13 +107,13 @@ export default function NpcMapClient({ pins, mapSrc = "/guides/npc-list/map.gif"
     <div className="space-y-3">
       <div className="flex flex-wrap items-center gap-3 text-xs text-slate-300">
         <div className="flex items-center gap-2">
-          <label className="text-slate-400">Region</label>
+          <label className="text-slate-400">{resolvedUiText.regionLabel}</label>
           <select
             className="rounded border border-slate-700 bg-slate-900 px-2 py-1 text-xs text-slate-100"
             value={region}
             onChange={(e) => setRegion(e.target.value as "all" | string)}
           >
-            <option value="all">All</option>
+            <option value="all">{resolvedUiText.allOption}</option>
             {regions.map((r) => (
               <option key={r} value={r}>
                 {r}
@@ -83,13 +122,13 @@ export default function NpcMapClient({ pins, mapSrc = "/guides/npc-list/map.gif"
           </select>
         </div>
         <input
-          placeholder="Search NPC..."
+          placeholder={resolvedUiText.searchPlaceholder}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="rounded border border-slate-700 bg-slate-900 px-3 py-1 text-xs text-slate-100 focus:border-emerald-400 focus:outline-none"
         />
         <span className="text-slate-500">
-          Showing {filteredPins.length} / {pins.length} pins
+          {resolvedUiText.showingPrefix} {filteredPins.length} / {pins.length} {resolvedUiText.showingSuffix}
         </span>
       </div>
 
@@ -134,7 +173,7 @@ export default function NpcMapClient({ pins, mapSrc = "/guides/npc-list/map.gif"
         >
           <img
             src={!cdn || useLocalMap ? mapSrc : `${cdn}${mapSrc.startsWith("/") ? mapSrc : `/${mapSrc}`}`}
-            alt="Where Winds Meet Old Friends map"
+            alt={resolvedUiText.mapAlt}
             className="absolute inset-0 h-full w-full object-cover"
             onError={() => setUseLocalMap(true)}
           />
@@ -178,28 +217,30 @@ export default function NpcMapClient({ pins, mapSrc = "/guides/npc-list/map.gif"
                     <button
                       className="pointer-events-auto text-slate-400 hover:text-emerald-200"
                       onClick={() => setSelected(null)}
-                      aria-label="Close"
+                      aria-label={resolvedUiText.closeAriaLabel}
                     >
                       ✕
                     </button>
                   </div>
                   <p className="text-[11px] text-emerald-200 mt-1">
-                    Region: {selected.region || "Unknown"} {selected.area ? `· Area: ${selected.area}` : ""}
+                    {resolvedUiText.regionPrefix} {selected.region || resolvedUiText.unknownValue}{" "}
+                    {selected.area ? `· ${resolvedUiText.areaPrefix} ${selected.area}` : ""}
                   </p>
                   {selected.image ? (
                     <div className="mt-3 grid grid-cols-[120px_1fr] gap-3">
                       <NpcImagePreview
                         src={selected.image}
-                        alt={`${selected.name} portrait`}
+                        alt={`${selected.name} ${resolvedUiText.portraitAltSuffix}`}
                         thumbnailClassName="h-24"
+                        uiText={imagePreviewUiText}
                       />
                       <p className="text-slate-300 leading-relaxed">
-                        {selected.hint || "Use the chat pattern above once you reach this NPC."}
+                        {selected.hint || resolvedUiText.defaultHint}
                       </p>
                     </div>
                   ) : (
                     <p className="mt-3 text-slate-300 leading-relaxed">
-                      {selected.hint || "Use the chat pattern above once you reach this NPC."}
+                      {selected.hint || resolvedUiText.defaultHint}
                     </p>
                   )}
                 </div>

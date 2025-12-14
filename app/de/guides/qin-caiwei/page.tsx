@@ -280,7 +280,7 @@ export default function QinCaiweiDePage() {
                 🧶 Story-Quest: Woven with Malice
               </Link>
               <Link
-                href="/guides/npc-list"
+                href="/de/guides/npc-list"
                 className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-2 text-xs font-semibold text-slate-100 transition hover:border-emerald-300/60"
               >
                 🗺️ Old-Friends-Karte

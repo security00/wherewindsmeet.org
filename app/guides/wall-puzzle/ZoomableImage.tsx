@@ -12,6 +12,19 @@ type ZoomableImageProps = {
   sizes?: string;
   priority?: boolean;
   className?: string;
+  uiText?: Partial<ZoomableImageUiText>;
+};
+
+export type ZoomableImageUiText = {
+  openAriaLabelTemplate: string; // supports {alt}
+  closeLabel: string;
+  hintTemplate: string; // supports {pct}
+};
+
+const DEFAULT_UI_TEXT: ZoomableImageUiText = {
+  openAriaLabelTemplate: "Open full view of {alt}",
+  closeLabel: "Close",
+  hintTemplate: "Scroll or use +/- to zoom, drag/scroll to pan. Current: {pct}%",
 };
 
 export function ZoomableImage({
@@ -23,9 +36,11 @@ export function ZoomableImage({
   sizes,
   priority,
   className,
+  uiText,
 }: ZoomableImageProps) {
   const [open, setOpen] = useState(false);
   const [zoom, setZoom] = useState(1);
+  const resolvedUiText = { ...DEFAULT_UI_TEXT, ...uiText };
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -43,7 +58,7 @@ export function ZoomableImage({
         type="button"
         onClick={() => setOpen(true)}
         className="w-full focus:outline-none"
-        aria-label={`Open full view of ${alt}`}
+        aria-label={resolvedUiText.openAriaLabelTemplate.replace("{alt}", alt)}
       >
         <Image
           src={src}
@@ -71,7 +86,7 @@ export function ZoomableImage({
               onClick={() => setOpen(false)}
               className="absolute right-2 top-2 rounded-full bg-slate-900/80 px-3 py-1 text-xs font-semibold text-slate-100 shadow"
             >
-              Close
+              {resolvedUiText.closeLabel}
             </button>
             <div className="absolute left-3 top-2 flex gap-2 text-xs">
               <button
@@ -126,7 +141,8 @@ export function ZoomableImage({
               </div>
             {caption ? (
               <p className="mt-3 text-center text-xs text-slate-200">
-                {caption} • Scroll or use +/- to zoom, drag/scroll to pan. Current: {(zoom * 100).toFixed(0)}%
+                {caption} •{" "}
+                {resolvedUiText.hintTemplate.replace("{pct}", (zoom * 100).toFixed(0))}
               </p>
             ) : null}
           </div>

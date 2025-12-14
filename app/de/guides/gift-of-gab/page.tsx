@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import DialogueCardsComponent from "@/app/guides/gift-of-gab/DialogueCardsComponent";
+import DialogueCardsComponent, { type DialogueCard } from "@/app/guides/gift-of-gab/DialogueCardsComponent";
 import StyleComparisonTable from "@/app/guides/gift-of-gab/StyleComparisonTable";
+import type { DebateStyleComparisonRow } from "@/app/guides/gift-of-gab/StyleComparisonTable";
 import EmbeddedVideoGallery from "@/app/guides/gift-of-gab/EmbeddedVideoGallery";
+import type { EmbeddedVideo } from "@/app/guides/gift-of-gab/EmbeddedVideoGallery";
 import GiftOfGabImages from "@/app/guides/gift-of-gab/GiftOfGabImages";
+import type { GuideImage } from "@/app/guides/gift-of-gab/GiftOfGabImages";
+import dialogueCardsDeJson from "@/app/guides/gift-of-gab/cards.de.json";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
@@ -37,6 +41,111 @@ export const metadata: Metadata = {
     images: ["https://wherewindsmeet.org/guides/gift-of-gab/gameplay.jpg"],
   },
 };
+
+const dialogueCardsDe = dialogueCardsDeJson as unknown as DialogueCard[];
+
+const giftOfGabImagesDe: GuideImage[] = [
+  {
+    src: "/guides/gift-of-gab/gameplay.jpg",
+    alt: "Gift of Gab – Debatten-UI (Mental Focus & Karten)",
+    caption: "Haupt-UI im Gift of Gab: Mental Focus, Inspiration und Kartenhand auf einen Blick.",
+  },
+  {
+    src: "/guides/gift-of-gab/game-modes.jpg",
+    alt: "Gift of Gab – Modusauswahl",
+    caption: "Modi: Free Persuasion (AI-Chat) vs. Rhetoric Duel (kartenbasiert).",
+  },
+  {
+    src: "/guides/gift-of-gab/rebuttal-trash-talk.jpg",
+    alt: "Gift of Gab – Trash Talk QTE",
+    caption: "Gratis-QTEs (Trash Talk) erscheinen während der Debatte und geben Bonus-Effekte.",
+  },
+  {
+    src: "/guides/gift-of-gab/ui-opponent.jpg",
+    alt: "Gift of Gab – Gegner-UI & Ressourcen",
+    caption: "Achte auf Mental Focus des Gegners, deine Inspiration und die verfügbaren Karten.",
+  },
+];
+
+const giftOfGabVideosDe: EmbeddedVideo[] = [
+  {
+    id: "video-1",
+    videoId: "CZrZCx9vGyU",
+    title: "Gift of Gab – kompletter Guide",
+    description: "Alle Debattenstile, Kartentiming und ein Plan, um die meisten Dialogduelle zuverlässig zu gewinnen.",
+  },
+  {
+    id: "video-2",
+    videoId: "Jd315KSy9-w",
+    title: "Strategien & Kartenkombos",
+    description: "Fortgeschrittene Patterns und Kombos pro Stil – wann du Inspiration sparst und wann du finishst.",
+  },
+  {
+    id: "video-3",
+    videoId: "Rv26cKdKqCE",
+    title: "Scholar-Leveling & Vorteile",
+    description: "So schaltest du den Scholar-Fortschritt frei und nutzt Upgrades, um Karten stärker zu skalieren.",
+  },
+];
+
+const styleComparisonDe: DebateStyleComparisonRow[] = [
+  {
+    style: "Bluster",
+    emoji: "🎭",
+    strength: "Hoher Burst und Dominanz – funktioniert stark, wenn du Druck sauber in kurze Fenster packst.",
+    weakness: "Anfällig für Provocation, die Zweifel triggert und deinen Rhythmus bricht.",
+    cardTypes: ["Schaden", "Verteidigung", "Confidence-Boost"],
+    bestAgainst: "Filibuster",
+    weakAgainst: "Provocation",
+    playStyle: "Aggressiv, direkt: hohes Risiko, hohe Belohnung.",
+    inspirationCost: "moderate_high",
+    inspirationCostLabel: "Mittel bis hoch",
+    defensibility: "low",
+    defensibilityLabel: "Niedrig",
+  },
+  {
+    style: "Provocation",
+    emoji: "⚡",
+    strength: "Emotionaler Schaden, Silence-Effekte und Momentum – stark, wenn du den Gegner aus der Fassung bringst.",
+    weakness: "Wird oft von Rebuttal sauber gekontert, wenn du zu früh overcommitest.",
+    cardTypes: ["Emotionaler Schaden", "Silence", "Momentum"],
+    bestAgainst: "Bluster",
+    weakAgainst: "Rebuttal",
+    playStyle: "Chaotisch, persönlich, hohe Varianz.",
+    inspirationCost: "moderate",
+    inspirationCostLabel: "Mittel",
+    defensibility: "very_low",
+    defensibilityLabel: "Sehr niedrig",
+  },
+  {
+    style: "Rebuttal",
+    emoji: "🎯",
+    strength: "Logischer Schaden + solide Defense; ideal, wenn du konstant spielen und Fehler vermeiden willst.",
+    weakness: "Eher langsam – Filibuster kann dich über Tempo und Dauer-Druck aushebeln.",
+    cardTypes: ["Logik-Schaden", "Verteidigung", "Faktenbasiert"],
+    bestAgainst: "Provocation",
+    weakAgainst: "Filibuster",
+    playStyle: "Methodisch, kontrolliert, konstant.",
+    inspirationCost: "moderate",
+    inspirationCostLabel: "Mittel",
+    defensibility: "high",
+    defensibilityLabel: "Hoch",
+  },
+  {
+    style: "Filibuster",
+    emoji: "📢",
+    strength: "Zermürbender Dauer-Druck mit Recovery – gewinnt viele Runden über Ausdauer statt Burst.",
+    weakness: "Hat Probleme, Blusters direkten Druck zuverlässig zu beantworten, wenn du zu weit hinten bist.",
+    cardTypes: ["Dauer-Schaden", "Durchhaltevermögen", "Wortflut"],
+    bestAgainst: "Rebuttal",
+    weakAgainst: "Bluster",
+    playStyle: "Zäh, ausdauernd, Zermürbung.",
+    inspirationCost: "high",
+    inspirationCostLabel: "Hoch",
+    defensibility: "moderate",
+    defensibilityLabel: "Mittel",
+  },
+];
 
 export default function GiftOfGabDePage() {
   return (
@@ -74,7 +183,7 @@ export default function GiftOfGabDePage() {
           </div>
           <div className="rounded-2xl border border-slate-700 bg-slate-800/40 p-4 space-y-2">
             <p className="text-sm font-semibold text-blue-300">Inspiration-Ressource</p>
-            <p className="text-xs text-slate-300">Inspiration bezahlen, regeneriert passiv; günstige Karten eröffnen, teure finischen.</p>
+            <p className="text-xs text-slate-300">Inspiration kostet, regeneriert aber passiv: günstige Karten zum Aufbau, teure fürs Finish.</p>
           </div>
           <div className="rounded-2xl border border-slate-700 bg-slate-800/40 p-4 space-y-2">
             <p className="text-sm font-semibold text-purple-300">Runden ohne Zeitdruck</p>
@@ -90,13 +199,13 @@ export default function GiftOfGabDePage() {
 
       {/* Interface Bilder */}
       <section className="space-y-4">
-        <h3 className="text-2xl font-bold text-slate-50">In-Game Interface</h3>
-        <GiftOfGabImages />
+        <h3 className="text-2xl font-bold text-slate-50">Interface im Spiel</h3>
+        <GiftOfGabImages images={giftOfGabImagesDe} />
       </section>
 
       {/* Fast Win Checklist */}
       <section className="rounded-3xl border border-emerald-800/40 bg-emerald-950/30 p-6 shadow-lg space-y-4">
-        <h2 className="text-2xl font-bold text-slate-50">Schnell-Gewinn-Checkliste</h2>
+        <h2 className="text-2xl font-bold text-slate-50">Schnell gewinnen: Checkliste</h2>
         <ul className="space-y-2 text-sm text-slate-200">
           <li>✓ Stil-Vorschlag akzeptieren – das Spiel schlägt meist den Konter-Stil zum NPC vor.</li>
           <li>✓ Mit billigen Karten eröffnen, Inspiration sparen; bursten, wenn der gegnerische Balken niedrig ist.</li>
@@ -187,13 +296,49 @@ export default function GiftOfGabDePage() {
       <section className="space-y-4">
         <h2 className="text-2xl font-bold text-slate-50">Dialogkarten-Übersicht</h2>
         <p className="text-sm text-slate-300 mb-4">Alle 20 Karten über 5 Stile – mit Kosten, Effekt und Seltenheit.</p>
-        <DialogueCardsComponent />
+        <DialogueCardsComponent
+          cards={dialogueCardsDe}
+          uiText={{
+            title: "Dialogkarten – Übersicht",
+            intro:
+              "Alle Dialogkarten nach Debattenstil sortiert. Pro Karte siehst du Kosten, Effekt und Seltenheit – ideal zum Planen deiner Kombos.",
+            styleCardsSuffix: "Karten",
+            rarityLabels: { common: "Gewöhnlich", uncommon: "Ungewöhnlich", rare: "Selten" },
+            noteTitle: "Hinweis",
+            noteText:
+              "Karteneffekte skalieren mit Scholar-Level und Attribut-Upgrades. Universal-Karten passen zu jedem Stil und liefern häufig Heilung, Inspiration oder Utility.",
+          }}
+        />
       </section>
 
       {/* Style Comparison */}
       <section className="space-y-4">
         <h2 className="text-2xl font-bold text-slate-50">Stilvergleich</h2>
-        <StyleComparisonTable />
+        <StyleComparisonTable
+          rows={styleComparisonDe}
+          uiText={{
+            title: "Debattenstile im Vergleich",
+            intro:
+              "Die vier Stile haben klare Matchups. Nutze den Vergleich, um schnell zu sehen, was zu deinem Tempo passt und womit du den NPC konterst.",
+            strengths: "Stärken",
+            weaknesses: "Schwächen",
+            cardTypes: "Kartentypen",
+            bestAgainst: "Stark gegen",
+            weakAgainst: "Schwach gegen",
+            inspirationCost: "Inspiration-Kosten",
+            defensibility: "Defensiv",
+            playStyle: "Spielstil",
+            metaTitle: "Meta (Stein–Schere–Papier)",
+            metaHeaders: {
+              style: "Stil",
+              beats: "Kontert",
+              beatenBy: "Wird gekontert von",
+              difficultyVsBluster: "Matchup vs Bluster",
+              difficultyVsRebuttal: "Matchup vs Rebuttal",
+            },
+            difficultyLabels: { easy: "Leicht", medium: "Mittel", hard: "Schwer" },
+          }}
+        />
       </section>
 
       {/* Improve */}
@@ -218,7 +363,16 @@ export default function GiftOfGabDePage() {
       {/* Video */}
       <section className="space-y-4">
         <h2 className="text-2xl font-bold text-slate-50">Video-Beispiele</h2>
-        <EmbeddedVideoGallery />
+        <EmbeddedVideoGallery
+          videos={giftOfGabVideosDe}
+          uiText={{
+            title: "Videos (Beispiele)",
+            intro: "Wenn du Gift of Gab einmal „in Bewegung“ sehen willst, helfen diese Clips beim Timing und Kartenfluss.",
+            privacyTitle: "Datenschutz-Hinweis",
+            privacyText:
+              "Die Einbettungen nutzen den erweiterten Datenschutzmodus (youtube-nocookie.com). Cookies oder Watch-History werden in der Regel erst relevant, wenn du aktiv interagierst.",
+          }}
+        />
       </section>
 
       {/* Cross-links */}

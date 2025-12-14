@@ -1,3 +1,8 @@
-export { metadata } from "../../../../guides/weapons/spear/page";
-export { default } from "../../../../guides/weapons/spear/page";
+import type { Metadata } from "next";
+import { WeaponDetail, generateWeaponMetadata } from "../weapon-detail";
 
+export const metadata: Metadata = generateWeaponMetadata("spear");
+
+export default function SpearViPage() {
+  return <WeaponDetail weaponId="spear" />;
+}

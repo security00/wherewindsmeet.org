@@ -31,10 +31,10 @@ const chapters = [
                   <span className="transition-transform group-open:rotate-180">▼</span>
                 </summary>
                 <div className="px-4 pb-4 text-sm text-slate-300 space-y-2 border-t border-slate-800/50 pt-2">
-                  <p><span className="text-emerald-400 font-semibold">Guidance:</span> Detailed (Marker sichtbar lassen)</p>
-                  <p><span className="text-emerald-400 font-semibold">Control Mode:</span> ARPG (Kamera folgt der Bewegung)</p>
-                  <p><span className="text-emerald-400 font-semibold">Difficulty:</span> Recommended (ausgewogene Basis)</p>
-                  <p><span className="text-emerald-400 font-semibold">Social:</span> Shared Journey (Coop aktiviert)</p>
+                  <p><span className="text-emerald-400 font-semibold">Navigation (Guidance):</span> Detailed (Marker sichtbar lassen)</p>
+                  <p><span className="text-emerald-400 font-semibold">Steuerung (Control Mode):</span> ARPG (Kamera folgt der Bewegung)</p>
+                  <p><span className="text-emerald-400 font-semibold">Schwierigkeitsgrad (Difficulty):</span> Recommended (ausgewogene Basis)</p>
+                  <p><span className="text-emerald-400 font-semibold">Koop (Social):</span> Shared Journey (Coop aktiviert)</p>
                 </div>
               </details>
             </div>
@@ -47,7 +47,7 @@ const chapters = [
         content: (
           <>
             <p className="text-slate-300 mb-4">
-              Lege <span className="text-emerald-400">Defense auf die Maus</span> und <span className="text-red-400">Offense auf die Tastatur</span>.
+              Lege <span className="text-emerald-400">defensive Aktionen auf die Maus</span> und <span className="text-red-400">offensive Skills auf die Tastatur</span>.
             </p>
             <div className="grid grid-cols-2 gap-2 text-sm">
               <div className="bg-slate-900/50 p-3 rounded border border-slate-800">
@@ -59,7 +59,7 @@ const chapters = [
               <div className="bg-slate-900/50 p-3 rounded border border-slate-800">
                 <div className="text-xs text-slate-500 uppercase tracking-wider mb-1">Tastatur</div>
                 <div className="flex justify-between"><span className="text-slate-300">Q / E</span> <span className="text-red-400">Skills</span></div>
-                <div className="flex justify-between"><span className="text-slate-300">1 - 4</span> <span className="text-purple-400">Mystic Arts</span></div>
+                <div className="flex justify-between"><span className="text-slate-300">1 - 4</span> <span className="text-purple-400">Mystische Künste (Mystic Arts)</span></div>
                 <div className="flex justify-between"><span className="text-slate-300">F</span> <span className="text-blue-400">Movement</span></div>
               </div>
             </div>
@@ -78,7 +78,7 @@ const chapters = [
         title: "Charaktererstellung",
         content: (
           <p className="text-slate-300">
-            Wähle ein <span className="text-ink-gold font-serif">Aspiration Talent</span>, das zu deinem Spielstil passt (z. B. Drunken Precision für Minigames). Min-Max ist hier egal.
+            Wähle ein <span className="text-ink-gold font-serif">Aspirations‑Talent (Aspiration Talent)</span>, das zu deinem Spielstil passt (z. B. Drunken Precision für Minigames). Min‑Max ist hier zweitrangig.
           </p>
         ),
       },
@@ -88,8 +88,8 @@ const chapters = [
         content: (
           <ul className="space-y-2 text-sm text-slate-300 list-disc pl-4 marker:text-emerald-500">
             <li><strong className="text-slate-100">Qi-Leiste:</strong> Wenn sie bricht, kannst du nicht blocken – Abstand nehmen.</li>
-            <li><strong className="text-slate-100">Feind-Qi:</strong> Wenn sie bricht, öffnet sich ein Execution-Fenster.</li>
-            <li><strong className="text-slate-100">Mystic Arts:</strong> Flexible Skills für CC oder Rätsel.</li>
+            <li><strong className="text-slate-100">Feind-Qi:</strong> Wenn sie bricht, öffnet sich ein Execution‑Fenster (Finisher).</li>
+            <li><strong className="text-slate-100">Mystische Künste (Mystic Arts):</strong> Flexible Skills für CC oder Rätsel.</li>
           </ul>
         ),
       },
@@ -117,7 +117,7 @@ const chapters = [
           <ul className="space-y-2 text-sm text-slate-300">
             <li className="flex items-start gap-2">
               <span className="text-xl leading-none">🗿</span>
-              <span><strong className="text-slate-100">Boundary Stones</strong> früh freischalten für Fast Travel.</span>
+              <span><strong className="text-slate-100">Boundary Stones</strong> früh freischalten für Schnellreise (Fast Travel).</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-xl leading-none">🔥</span>
@@ -152,7 +152,7 @@ const chapters = [
             </div>
             <div className="flex items-center gap-3 p-2 rounded bg-slate-900/50 border border-slate-800/50">
               <div className="w-1 h-full bg-emerald-500 rounded-full"></div>
-              <div className="text-sm text-slate-300"><strong className="text-slate-100">Mental Energy & Stamina</strong> ausgeben</div>
+              <div className="text-sm text-slate-300"><strong className="text-slate-100">Mental Energy & Stamina</strong> (Energie/Ausdauer) ausgeben</div>
             </div>
           </div>
         ),
@@ -162,7 +162,7 @@ const chapters = [
         title: "Wöchentliche Prioritäten",
         content: (
           <p className="text-slate-300 text-sm">
-            Caps sind wichtiger als Botengänge. Priorisiere <span className="text-ink-gold">Weekly Dungeons</span> und kaufe limitierte Shop-Items (Innere Künste, Upgrade-Boxen) zuerst.
+            Caps sind wichtiger als Botengänge. Priorisiere <span className="text-ink-gold">wöchentliche Dungeons (Weekly Dungeons)</span> und kaufe limitierte Shop-Items (Innere Künste, Upgrade-Boxen) zuerst.
           </p>
         ),
       },
@@ -172,7 +172,7 @@ const chapters = [
         content: (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div className="p-3 rounded bg-slate-900/30 border border-slate-800">
-              <div className="text-emerald-400 font-serif font-bold mb-1">Gear recyceln</div>
+              <div className="text-emerald-400 font-serif font-bold mb-1">Ausrüstung recyceln</div>
               <p className="text-xs text-slate-400">Zerlegen von ungenutzter Ausrüstung gibt permanente Account-Power.</p>
             </div>
             <div className="p-3 rounded bg-slate-900/30 border border-slate-800">
@@ -194,7 +194,7 @@ export default function NewPlayersDePage() {
         <div className="absolute inset-0">
           <Image
             src="/background/30.webp"
-            alt="Where Winds Meet Beginner Guide Hintergrund"
+            alt="Where Winds Meet Einsteiger-Guide Hintergrund"
             fill
             className="object-cover object-center opacity-60"
             priority
@@ -213,7 +213,7 @@ export default function NewPlayersDePage() {
             <div className="flex flex-wrap gap-3 text-xs sm:text-sm">
               <span className="rounded-full border border-emerald-400/50 bg-emerald-500/10 px-3 py-1 text-emerald-100">Schnellstart</span>
               <span className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 text-slate-100">Einstellungen</span>
-              <span className="rounded-full border border-amber-400/50 bg-amber-500/10 px-3 py-1 text-amber-100">Dailies & Weeklies</span>
+              <span className="rounded-full border border-amber-400/50 bg-amber-500/10 px-3 py-1 text-amber-100">Daily- & Weekly-Routine</span>
             </div>
           </div>
         </div>

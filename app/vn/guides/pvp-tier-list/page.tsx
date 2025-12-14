@@ -2,7 +2,7 @@ import * as motion from "framer-motion/client";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { weapons } from "@/lib/weapons";
+import { weapons } from "@/lib/weapons.vi";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
@@ -37,6 +37,17 @@ const pvpTiers = [
 ];
 
 export default function PVPTierListPage() {
+  const roleLabelMap: Record<string, string> = {
+    Assassin: "Sát thủ",
+    Balanced: "Cân bằng",
+    Bleed: "Chảy máu",
+    Tank: "Chống chịu",
+    Support: "Hỗ trợ",
+    "Parry/Konter": "Đỡ đòn/Phản công",
+    "Mobile Control / Picks": "Khống chế cơ động / Bắt lẻ",
+    Control: "Khống chế",
+  };
+
   return (
     <article className="space-y-10 bg-ink-wash min-h-screen pb-20">
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-8 shadow-2xl shadow-black/50">
@@ -100,7 +111,7 @@ export default function PVPTierListPage() {
                   .map((weapon) => (
                     <Link
                       key={weapon.id}
-                      href={weapon.buildLink}
+                      href={`/vn${weapon.buildLink}`}
                       className="group relative flex items-center gap-4 rounded-xl border border-white/5 bg-white/5 p-3 transition-all hover:border-white/10 hover:bg-white/10 hover:translate-x-1"
                     >
                       <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg bg-slate-950 border border-slate-800">
@@ -123,7 +134,7 @@ export default function PVPTierListPage() {
                               weapon.role === "Bleed" ? "bg-orange-500/10 text-orange-400" :
                                 "bg-emerald-500/10 text-emerald-400"
                           }`}>
-                          {weapon.role}
+                          {roleLabelMap[weapon.role] ?? weapon.role}
                         </span>
                       </div>
                       <div className="absolute right-3 top-1/2 -translate-y-1/2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">

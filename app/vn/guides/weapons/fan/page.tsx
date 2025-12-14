@@ -1,3 +1,8 @@
-export { metadata } from "../../../../guides/weapons/fan/page";
-export { default } from "../../../../guides/weapons/fan/page";
+import type { Metadata } from "next";
+import { WeaponDetail, generateWeaponMetadata } from "../weapon-detail";
 
+export const metadata: Metadata = generateWeaponMetadata("fan");
+
+export default function FanViPage() {
+  return <WeaponDetail weaponId="fan" />;
+}

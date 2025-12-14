@@ -8,18 +8,18 @@ const baseUrl = "https://wherewindsmeet.org";
 export const metadata: Metadata = {
   title: "Gratis-Outfits & Sets | Where Winds Meet (DE)",
   description:
-    "Null-Kosten-Routen für Outfits, Sets, Kosmetik und Frisuren: Events, Quests, Codes, Shops und Social-Rewards auf Deutsch.",
+    "Null-Kosten-Routen für Outfits, Sets, Kosmetik und Frisuren: Events, Quests, Codes, Shops und Social-Belohnungen auf Deutsch.",
   alternates: buildHreflangAlternates("/guides/free-outfits", { canonicalLanguage: "de" }),
   openGraph: {
     title: "Gratis-Outfits & Sets | Where Winds Meet (DE)",
     description:
-      "Alle kostenlosen Outfits, Accessoires und Frisuren aus Events, Quests, Codes, Shops und Social-Rewards – Währung sparen, Style mitnehmen.",
+      "Alle kostenlosen Outfits, Accessoires und Frisuren aus Events, Quests, Codes, Shops und Social-Belohnungen – Währung sparen, Style mitnehmen.",
     url: `${baseUrl}/de/guides/free-outfits`,
   },
   twitter: {
     title: "Gratis-Outfits Guide (DE) | Where Winds Meet",
     description:
-      "Kostenlose Outfits/Frisuren finden: Events, Codes, Quests, Shops, Social-Rewards. Deutsch zusammengefasst.",
+      "Kostenlose Outfits/Frisuren finden: Events, Codes, Quests, Shops, Social-Belohnungen. Deutsch zusammengefasst.",
   },
 };
 
@@ -37,13 +37,13 @@ const highlightCards = [
     title: "Story-Quests & Erfolge",
     points: [
       "Haupt-/Nebenquests geben bei Erstabschluss Outfit-Teile oder Frisuren-Gutscheine – Dialogketten nicht skippen.",
-      "Exploration/Combat/Social-Erfolge verstecken Kosmetik-Rewards – regelmäßig offene Claims abholen.",
-      "Stadt-NPCs, Tavernen-Boards und Sektoren-Meister starten versteckte Ketten, die mit Free-Cosmetics enden.",
+      "Exploration/Combat/Social-Erfolge verstecken Kosmetik-Belohnungen – regelmäßig offene Belohnungen einsammeln.",
+      "Stadt-NPCs, Tavernen-Boards und Sektoren-Meister starten versteckte Ketten, die mit Gratis-Kosmetik enden.",
     ],
     image: "/free-outfits/free-outfits-grid.webp",
   },
   {
-    title: "Redeem-Codes & 0-Kosten-Shopplätze",
+    title: "Codes einlösen & 0‑Kosten‑Shopplätze",
     points: [
       "Aktive Codes enthalten oft universelle Kosmetik-Gutscheine – sofort einlösen, um Verfall zu vermeiden.",
       "Event-Shops haben manchmal 0-Währung-„Trial“-Kosmetik; zuerst claimen, bevor du etwas kaufst.",
@@ -160,12 +160,12 @@ export default function FreeOutfitsDePage() {
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/30" />
         </div>
         <div className="relative space-y-3">
-          <p className="text-xs uppercase tracking-wide text-emerald-300">Free cosmetics</p>
+          <p className="text-xs uppercase tracking-wide text-emerald-300">Kostenlose Kosmetik</p>
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
             Gratis-Outfits, Accessoires & Frisuren.
           </h1>
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-            Alle bekannten Null-Kosten-Routen gesammelt: Events, Quests, Codes, Shops, Social-Rewards. Spare Premiumwährung und hol dir trotzdem den Look.
+            Alle bekannten Null-Kosten-Routen gesammelt: Events, Quests, Codes, Shops, Social-Belohnungen. Spare Premiumwährung und hol dir trotzdem den Look.
           </p>
           <div className="flex flex-wrap gap-3 text-xs">
             <Link href="/de/guides/cosmetics" className="rounded-full border border-emerald-400/60 bg-emerald-500/10 px-3 py-1 font-semibold text-emerald-100 hover:border-emerald-300/80">

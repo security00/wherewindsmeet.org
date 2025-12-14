@@ -5,7 +5,7 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 export const metadata: Metadata = {
   title: "Where Winds Meet Codes, Belohnungen & Einlösen (DE)",
   description:
-    "Aktive und abgelaufene Where Winds Meet Codes im Blick, Einlösen auf PC und PS5/Console, plus welche Rewards sich für neue und zurückkehrende Spieler am meisten lohnen.",
+    "Aktive und abgelaufene Where Winds Meet Codes im Blick: Einlösen auf PC, Mobile und PS5 – plus welche Belohnungen sich für neue und zurückkehrende Spieler am meisten lohnen.",
   alternates: buildHreflangAlternates("/guides/codes", { canonicalLanguage: "de" }),
 };
 
@@ -53,7 +53,7 @@ const liveCodes = [
     code: "WWM251115",
     label: "Früher Launch-Eventcode",
     notes:
-      "Tauchte in TC-Community-Guides auf. Rewards können regional variieren, liefern meist nützliche Earlygame-Materialien.",
+      "Tauchte in TC-Community-Guides auf. Belohnungen können regional variieren, liefern meist nützliche Earlygame-Materialien.",
   },
   {
     code: "WWMGO1115",
@@ -170,7 +170,7 @@ export default function CodesPage() {
             <h3 className="text-lg font-semibold text-ink-spirit">PC & Mobile</h3>
             <ol className="space-y-3 text-sm text-slate-300">
               <li className="step-manual">
-                Öffne das <span className="text-slate-100 font-medium">Paimon-Menü</span> (Esc).
+                Öffne das <span className="text-slate-100 font-medium">Systemmenü</span> (Esc).
               </li>
               <li className="step-manual">
                 Gehe zu <span className="text-slate-100 font-medium">Einstellungen {'>'} Konto</span>.
@@ -178,6 +178,7 @@ export default function CodesPage() {
               <li className="step-manual">
                 Wähle <span className="text-slate-100 font-medium">Code einlösen</span>, gib den Code ein und bestätige.
               </li>
+              <li className="step-manual">Belohnungen im Spiel-Postfach abholen.</li>
             </ol>
           </div>
           <div className="space-y-4">

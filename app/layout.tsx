@@ -9,7 +9,7 @@ import { SiteFooter } from "../components/SiteFooter";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const inter = Inter({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });

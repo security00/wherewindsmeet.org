@@ -1,3 +1,8 @@
-export { metadata } from "../../../../guides/bosses/qianye/page";
-export { default } from "../../../../guides/bosses/qianye/page";
+import type { Metadata } from "next";
+import { BossDetail, generateBossMetadata } from "../boss-detail";
 
+export const metadata: Metadata = generateBossMetadata("qianye");
+
+export default function QianyeViPage() {
+  return <BossDetail bossId="qianye" />;
+}

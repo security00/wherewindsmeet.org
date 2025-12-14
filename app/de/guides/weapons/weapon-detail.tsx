@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { weapons, type WeaponId } from "@/lib/weapons";
-import { weaponDetails } from "@/lib/weaponDetails";
+import { weapons } from "@/lib/weapons.de";
+import { weaponDetails } from "@/lib/weaponDetails.de";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import type { WeaponId } from "@/lib/weapons";
 
 export function generateWeaponMetadata(id: WeaponId): Metadata {
   const weapon = weapons.find((w) => w.id === id);
@@ -13,7 +14,7 @@ export function generateWeaponMetadata(id: WeaponId): Metadata {
 
   return {
     title: `${weapon.name} Waffen-Guide – Where Winds Meet`,
-    description: `${weapon.name} Gefühl, Stärken/Tradeoffs und Links zu Builds/Tierlist (DE).`,
+    description: `${weapon.name}: Spielgefühl, Stärken/Trade-offs und Links zu Builds & Tierliste (DE).`,
     alternates: buildHreflangAlternates(`/guides/weapons/${weapon.id}`, { canonicalLanguage: "de" }),
   };
 }
@@ -22,20 +23,31 @@ export function WeaponDetail({ weaponId }: { weaponId: WeaponId }) {
   const weapon = weapons.find((w) => w.id === weaponId);
   if (!weapon) return null;
   const detail = weaponDetails[weapon.id];
+  const roleLabelMap: Record<string, string> = {
+    Assassin: "Assassine",
+    Balanced: "Ausgewogen",
+    Bleed: "Blutung",
+    Tank: "Tank",
+    Support: "Support",
+    "Parry/Konter": "Parade/Konter",
+    "Mobile Control / Picks": "Mobile Kontrolle / Picks",
+  };
+  const difficultyLabel =
+    detail?.difficulty === "Easy" ? "Leicht" : detail?.difficulty === "Moderate" ? "Mittel" : detail?.difficulty === "Advanced" ? "Anspruchsvoll" : "";
 
   return (
     <article className="space-y-10">
       <section className="grid gap-8 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] sm:p-8">
         <div className="space-y-4">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            {weapon.name} in Where Winds Meet.
+            {weapon.name} – Waffen-Guide
           </h1>
-          <p className="text-sm font-medium uppercase tracking-wide text-emerald-300">Rolle: {weapon.role}</p>
+          <p className="text-sm font-medium uppercase tracking-wide text-emerald-300">Rolle: {roleLabelMap[weapon.role] ?? weapon.role}</p>
           {detail && (
             <>
               <p className="text-sm leading-relaxed text-slate-200 sm:text-base">{detail.slogan}</p>
               <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
-                Difficulty: {detail.difficulty} · Empfohlen für: {detail.recommendedFor}
+                Schwierigkeit: {difficultyLabel} · Empfohlen für: {detail.recommendedFor}
               </p>
             </>
           )}
@@ -43,13 +55,13 @@ export function WeaponDetail({ weaponId }: { weaponId: WeaponId }) {
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
             Nutze diese Seite als Praxis-Begleiter zur{" "}
             <Link href="/de/guides/tier-list" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
-              Tierlist
+              Tierliste
             </Link>{" "}
             und den{" "}
             <Link href="/de/guides/builds" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
               Build-Guides
             </Link>
-            . Zahlen ändern sich, aber das Grundgefühl von {weapon.name} bleibt – wichtiger ist, ob der Rhythmus zu dir passt.
+            . Zahlen ändern sich, aber das Grundgefühl von {weapon.name} bleibt – wichtiger ist, ob der Rhythmus zu deinem Spielstil passt.
           </p>
           <p className="text-xs text-slate-400">
             Hinweis: Basis sind offizielle Showcases und ARPG-Erfahrung; Fokus auf Spielgefühl statt exakte Zahlen. Patch Notes und In-Game-Erfahrung haben Vorrang.
@@ -96,7 +108,7 @@ export function WeaponDetail({ weaponId }: { weaponId: WeaponId }) {
             </ul>
           </div>
           <div className="space-y-3">
-            <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">Trade-offs / Achtgeben</h2>
+            <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">Nachteile &amp; worauf du achten solltest</h2>
             <ul className="space-y-2 text-sm leading-relaxed text-slate-200 sm:text-base">
               {detail.cons.map((item, index) => (
                 <li key={index} className="flex gap-3">

@@ -1,3 +1,8 @@
-export { metadata } from "../../../../guides/bosses/murong-yuan/page";
-export { default } from "../../../../guides/bosses/murong-yuan/page";
+import type { Metadata } from "next";
+import { BossDetail, generateBossMetadata } from "../boss-detail";
 
+export const metadata: Metadata = generateBossMetadata("murong-yuan");
+
+export default function MurongYuanViPage() {
+  return <BossDetail bossId="murong-yuan" />;
+}

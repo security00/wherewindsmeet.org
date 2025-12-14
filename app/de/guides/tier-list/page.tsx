@@ -5,20 +5,20 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 const baseUrl = "https://wherewindsmeet.org";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Tierlist – Waffen, Pfade, Dual-Builds (DE)",
+  title: "Where Winds Meet Tierliste – Waffen, Pfade, Dual-Builds (DE)",
   description:
-    "Interaktive Where Winds Meet Tierlist auf Deutsch: PVP/PVE-Rankings, Waffenpfade, Dual-Waffen-Kombos und Innere Künste auf Basis der aktuellen Updates.",
+    "Interaktive Where Winds Meet Tierliste (Tierlist) auf Deutsch: PvP/PvE-Rankings, Waffenpfade, Dual-Waffen-Kombos und Innere Künste auf Basis der aktuellen Updates.",
   alternates: buildHreflangAlternates("/guides/tier-list", { canonicalLanguage: "de" }),
   openGraph: {
-    title: "Where Winds Meet Tierlist – Waffen, Pfade, Dual-Builds",
+    title: "Where Winds Meet Tierliste – Waffen, Pfade, Dual-Builds",
     description:
-      "Interaktive Tierlist für PVP/PVE, Waffenpfade, Dual-Kombos und Innere Künste – deutschsprachig.",
+      "Interaktive Tierliste (Tierlist) für PvP/PvE, Waffenpfade, Dual-Kombos und Innere Künste – deutschsprachig.",
     url: `${baseUrl}/de/guides/tier-list`,
   },
   twitter: {
-    title: "Where Winds Meet Tierlist – Waffen, Pfade, Dual-Builds (DE)",
+    title: "Where Winds Meet Tierliste – Waffen, Pfade, Dual-Builds (DE)",
     description:
-      "Deutschsprachige Tierlist mit PVP/PVE-Rankings, Waffenpfaden und Dual-Build-Hinweisen.",
+      "Deutschsprachige Tierliste (Tierlist) mit PvP/PvE-Rankings, Waffenpfaden und Dual-Build-Hinweisen.",
   },
 };
 
@@ -35,9 +35,9 @@ export default function TierListPage() {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: `${baseUrl}/de` },
+        { "@type": "ListItem", position: 1, name: "Start", item: `${baseUrl}/de` },
         { "@type": "ListItem", position: 2, name: "Guides", item: `${baseUrl}/de/guides` },
-        { "@type": "ListItem", position: 3, name: "Tierlist", item: `${baseUrl}/de/guides/tier-list` },
+        { "@type": "ListItem", position: 3, name: "Tierliste", item: `${baseUrl}/de/guides/tier-list` },
       ],
     },
   ];

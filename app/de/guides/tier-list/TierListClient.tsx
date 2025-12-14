@@ -69,7 +69,7 @@ type InternalArt = {
 };
 
 const tierTabs = [
-  { id: "weaponRankings", label: "Waffen-Ranking", helper: "Veteran · PVE · PVP" },
+  { id: "weaponRankings", label: "Waffen-Ranking", helper: "Veteran · PvE · PvP" },
   { id: "pathGuides", label: "Pfad-Guides", helper: "Spielstile & Werte" },
   { id: "combinations", label: "Dual-Builds", helper: "Waffenkombos" },
   { id: "internalArts", label: "Innere Künste", helper: "Passiv-Liste (Sheet 3)" },
@@ -136,7 +136,7 @@ const quickTierRows = [
     pve: "Gierige Glass-Cannon-Builds, Off-Meta-Hybride",
     pvp: "Experimentelle Mix-ups und Nischen-Counter",
     notes:
-      "Spielbar, aber anspruchsvoller oder schmaler im Fokus. Gut für erfahrene Spieler, die Matchups lernen und Risiko/Reward mögen.",
+      "Spielbar, aber anspruchsvoller oder schmaler im Fokus. Gut für erfahrene Spieler, die Matchups lernen und Risiko/Belohnung mögen.",
     style: "card-tier-b",
     icon: "🐆",
   },
@@ -167,7 +167,7 @@ export default function TierListClient() {
         <div className="pointer-events-none absolute inset-0">
           <Image
             src="/background/bg.webp"
-            alt="Where Winds Meet Tierlist Hintergrund"
+            alt="Where Winds Meet Tierliste Hintergrund"
             fill
             className="object-cover opacity-20"
           />
@@ -181,16 +181,16 @@ export default function TierListClient() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-balance text-4xl font-bold tracking-tight text-ink sm:text-5xl">
-              Where Winds Meet <span className="text-ink-gold">Tierlist</span>
+              Where Winds Meet <span className="text-ink-gold">Tierliste</span>
             </h1>
             <p className="mt-4 text-sm font-medium uppercase tracking-wide text-emerald-400/80">
-              PVE & PVP · Global Launch 1.0
+              PvE & PvP · Global Launch 1.0
             </p>
             <p className="mt-6 text-lg leading-relaxed text-slate-300">
               Praktischer Leitfaden für echte Spieler. Wir priorisieren <span className="text-slate-100 font-semibold">Komfort, Konstanz und Stil</span> statt reiner Tabellenwerte. Finde den Pfad, der dir das Jianghu wirklich erschließt.
             </p>
             <p className="mt-3 text-sm leading-relaxed text-slate-300">
-              Nutze dies als PVP- und PVE-Tierlist für Waffen, Pfade und Dual-Builds und klicke dich über die Tabs direkt in die Waffenguides.
+              Nutze dies als PvP- und PvE‑Tierliste für Waffen, Pfade und Dual-Builds und klicke dich über die Tabs direkt in die Waffenguides.
             </p>
           </motion.div>
         </div>
@@ -231,13 +231,13 @@ export default function TierListClient() {
                 </div>
               </div>
 
-              <div className="mt-6 space-y-4">
-                <div>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">PVE-Highlights</span>
+                <div className="mt-6 space-y-4">
+                  <div>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">PvE-Highlights</span>
                   <p className="mt-1 text-sm font-medium text-slate-200">{row.pve}</p>
                 </div>
                 <div>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">PVP-Highlights</span>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">PvP-Highlights</span>
                   <p className="mt-1 text-sm font-medium text-slate-200">{row.pvp}</p>
                 </div>
                 <div className="relative mt-4 rounded-xl bg-slate-950/40 p-3 text-xs leading-relaxed text-slate-400">
@@ -282,7 +282,7 @@ export default function TierListClient() {
                   <h3 className="text-xl font-semibold text-slate-100 group-hover:text-cyan-300 transition-colors">
                     破竹·風 – Dual Blades Assassin
                   </h3>
-                  <span className="text-xs font-medium px-2 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">PVP-Spezialist</span>
+                  <span className="text-xs font-medium px-2 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">PvP-Spezialist</span>
                 </div>
                 <p className="text-sm text-slate-300 leading-relaxed mb-3">
                   Rope Dart zieht Gegner aus der Position, dann springen Dual Blades hinein und finishen. Mechanisch anspruchsvoll, aber extrem befriedigend, wenn du Reads, Feints und Strafen auf Fehler liebst.
@@ -297,12 +297,12 @@ export default function TierListClient() {
 
           {/* How to Read Section */}
           <div className="card-wuxia rounded-3xl p-6 sm:p-8 space-y-4">
-            <h2 className="text-2xl font-bold text-slate-100 border-brush inline-block pb-2">So liest du diese Tierlist</h2>
+            <h2 className="text-2xl font-bold text-slate-100 border-brush inline-block pb-2">So liest du diese Tierliste</h2>
             <p className="text-slate-300 leading-relaxed">
               Jede Stufe spiegelt einen Gesamteindruck aus Schaden, Überleben, Bedienbarkeit und Flexibilität. Statt Mikro-Differenzen zu jagen, bündeln wir Waffen in Leistungsbändern.
             </p>
             <ul className="list-disc list-inside space-y-2 text-slate-300 marker:text-emerald-500">
-              <li><span className="text-slate-100 font-medium">PVE vs. PVP:</span> Gruppen nach echter Endgame-Performance. PVE priorisiert Konstanz/Kontrolle, PVP Burst und Mobilität.</li>
+              <li><span className="text-slate-100 font-medium">PvE vs. PvP:</span> Gruppen nach echter Endgame-Performance. PvE priorisiert Konstanz/Kontrolle, PvP Burst und Mobilität.</li>
               <li><span className="text-slate-100 font-medium">Tiers sind kein Schicksal:</span> Eine C-Tier-Lieblingswaffe kann mit Skill oft mehr leisten als ein Meta-Pick ohne Routine.</li>
             </ul>
           </div>
@@ -311,7 +311,7 @@ export default function TierListClient() {
         <div className="space-y-6">
           {/* Philosophy Section */}
           <div className="card-wuxia rounded-3xl p-6">
-            <h3 className="text-lg font-bold text-slate-100 mb-4 border-b border-slate-800 pb-2">Tierlist-Philosophie</h3>
+            <h3 className="text-lg font-bold text-slate-100 mb-4 border-b border-slate-800 pb-2">Tierliste-Philosophie</h3>
             <div className="space-y-4 text-sm text-slate-400 leading-relaxed">
               <p>
                 Diese Liste zielt auf <span className="text-slate-200">Konstanz</span>. Ein S-Tier, das Frame-Perfektion verlangt, kann für Casuals wie B-Tier wirken.
@@ -340,8 +340,8 @@ export default function TierListClient() {
           <div className="card-wuxia rounded-3xl p-6">
             <h3 className="text-lg font-bold text-slate-100 mb-4">Weitere Guides</h3>
             <div className="flex flex-col gap-2">
-              <Link href="/guides/pvp-tier-list" className="block rounded-lg bg-slate-800/50 px-4 py-3 text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors border border-transparent hover:border-slate-700">
-                ⚔️ Spezielle PVP-Tierlist (EN)
+              <Link href="/de/guides/pvp-tier-list" className="block rounded-lg bg-slate-800/50 px-4 py-3 text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors border border-transparent hover:border-slate-700">
+                ⚔️ Spezielle PvP‑Tierliste
               </Link>
               <Link href="/de/guides/weapons" className="block rounded-lg bg-slate-800/50 px-4 py-3 text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors border border-transparent hover:border-slate-700">
                 🗡️ Alle Waffenguides
@@ -407,7 +407,7 @@ export default function TierListClient() {
                   <div className="relative flex h-full flex-col">
                     <div className="flex items-start justify-between gap-3 px-4 pt-4 sm:px-5">
                       <div>
-                        <p className="text-[11px] uppercase tracking-wide text-emerald-400/80">Lokale Tierlist</p>
+                        <p className="text-[11px] uppercase tracking-wide text-emerald-400/80">Lokale Tierliste</p>
                         <p className="text-xs text-slate-400">Schnell scannen, direkt aus der Excel im Repo.</p>
                       </div>
                     </div>
@@ -482,12 +482,12 @@ export default function TierListClient() {
                                   <div className="flex gap-1">
                                     {weapon.pveRank ? (
                                       <span className={`rounded-full border px-2 py-1 font-semibold ${rankBadgeStyle(weapon.pveRank)}`}>
-                                        PVE {weapon.pveRank}
+                                        PvE {weapon.pveRank}
                                       </span>
                                     ) : null}
                                     {weapon.pvpRank ? (
                                       <span className={`rounded-full border px-2 py-1 font-semibold ${rankBadgeStyle(weapon.pvpRank)}`}>
-                                        PVP {weapon.pvpRank}
+                                        PvP {weapon.pvpRank}
                                       </span>
                                     ) : null}
                                   </div>
@@ -613,12 +613,12 @@ export default function TierListClient() {
                                 <div className="flex gap-1 text-[11px]">
                                   {combo.totalPve ? (
                                     <span className={`rounded-full border px-2 py-1 font-semibold ${rankBadgeStyle(combo.totalPve)}`}>
-                                      PVE {combo.totalPve}
+                                      PvE {combo.totalPve}
                                     </span>
                                   ) : null}
                                   {combo.totalPvp ? (
                                     <span className={`rounded-full border px-2 py-1 font-semibold ${rankBadgeStyle(combo.totalPvp)}`}>
-                                      PVP {combo.totalPvp}
+                                      PvP {combo.totalPvp}
                                     </span>
                                   ) : null}
                                 </div>

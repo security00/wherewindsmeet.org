@@ -55,7 +55,7 @@ const fastRoute = [
   "Zur Glocke zurück, lauschen, Gelehrten tot finden, erstes Taschentuch aufheben.",
   "Mönch Tranquillus stellen und kämpfen; zweites Taschentuch erhalten („mit Leben vergelten“).",
   "Fallenplatz wählen, tote Ranken mit Feuer verbrennen, Mädchen verstecken; Seidenraupenfrau erscheint und flieht.",
-  "Ihr folgen, dann den Mönch sehen, wie er in seiner eigenen Falle hängt.",
+  "Der Seidenraupenfrau folgen, dann sehen, wie der Mönch in seiner eigenen Falle hängt.",
   "Zum Bambushain, mit dem Mädchen sprechen, dann den Besitzer des Stickereipavillons verhören.",
   "Seinen Wagen prüfen, Schutt in nahegelegenen Ruinen räumen (Q + Sprung) und die Steinwand inspizieren.",
   "Wind Sense im Bambuswald nutzen, zwei Männer belauschen, Besitzer hinter dem Pavillon abfangen.",
@@ -226,7 +226,7 @@ const walkthrough: WalkthroughStep[] = [
   },
   {
     title: "Fliehendes Ziel verfolgen",
-    text: "Ihr nachsetzen und in Marker-Nähe bleiben, damit die Sequenz aktiv bleibt.",
+    text: "Der Seidenraupenfrau nachsetzen und in Marker-Nähe bleiben, damit die Sequenz aktiv bleibt.",
     image: {
       src: cdn("/guides/woven-with-malice/step-20-follow.png"),
       alt: "Verfolgung der Silkworm Lady",

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { featuredVideos } from "@/lib/featuredVideos";
+import { featuredVideos } from "@/lib/featuredVideos.de";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
@@ -8,7 +8,7 @@ const baseUrl = "https://wherewindsmeet.org";
 export const metadata: Metadata = {
   title: "Where Winds Meet Videos & Highlights (DE)",
   description:
-    "Kuratiere Where Winds Meet Videos an einem Ort: Builds in Aktion, Boss-Runs, Erkundung und Community-Stil – ohne den Hub zu verlassen.",
+    "Kuratiertes Where Winds Meet Video-Archiv: Builds in Aktion, Boss-Runs, Erkundung und Community-Style – ohne den Hub zu verlassen.",
   alternates: buildHreflangAlternates("/videos", { canonicalLanguage: "de" }),
   openGraph: {
     title: "Where Winds Meet Videos & Highlights (DE)",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   twitter: {
     title: "Where Winds Meet Videos & Highlights (DE)",
     description:
-      "Schau Builds, Tierlist-Picks und Routen in Bewegung, ohne den Hub zu verlassen.",
+      "Schau Builds, Tierlisten-Picks und Routen in Bewegung, ohne den Hub zu verlassen.",
   },
 };
 
@@ -72,10 +72,10 @@ export default function VideosPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Schau Where Winds Meet Gameplay & Highlights.
+            Sieh dir Where Winds Meet Gameplay & Highlights an.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Eine ruhige Sammlung handverlesener Videos: So fühlen sich Builds, Tierlist-Picks und Erkundungsrouten in Bewegung an – ohne den Hub zu verlassen.
+            Eine ruhige Sammlung handverlesener Videos: So fühlen sich Builds, Tierlisten-Picks und Erkundungsrouten in Bewegung an – ohne den Hub zu verlassen.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Blättere durch die Playlist und sieh Combat-Showcases, Erkundungs-Clips, Boss-Runs und Community-Style-Videos, während du weiter in den Guides liest.
@@ -88,7 +88,7 @@ export default function VideosPage() {
           Alle kuratierten Where Winds Meet Videos
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Jede Karte bettet ein Video direkt hier ein. Spiele sie nacheinander ab und bleib im Hub, während du Builds, Tierlists und Guides parallel offen hast.
+          Jede Karte bettet ein Video direkt hier ein. Spiele sie nacheinander ab und bleib im Hub, während du Builds, Tierlisten und Guides parallel offen hast.
         </p>
         <div className="grid gap-6 md:grid-cols-2">
           {featuredVideos.map((video) => (

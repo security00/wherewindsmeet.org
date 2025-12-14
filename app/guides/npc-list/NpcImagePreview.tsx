@@ -3,17 +3,35 @@
 
 import { useEffect, useMemo, useState } from "react";
 
+export type NpcImagePreviewUiText = {
+  instruction: string;
+  zoomIn: string;
+  zoomOut: string;
+  reset: string;
+  close: string;
+};
+
+const DEFAULT_UI_TEXT: NpcImagePreviewUiText = {
+  instruction: "Scroll or use buttons to zoom; click background to close",
+  zoomIn: "Zoom in",
+  zoomOut: "Zoom out",
+  reset: "1x",
+  close: "Close",
+};
+
 type Props = {
   src: string;
   alt: string;
   thumbnailClassName?: string;
+  uiText?: Partial<NpcImagePreviewUiText>;
 };
 
-export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32" }: Props) {
+export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32", uiText }: Props) {
   const [open, setOpen] = useState(false);
   const [zoom, setZoom] = useState(1);
   const [useLocal, setUseLocal] = useState(false);
   const cdn = process.env.NEXT_PUBLIC_CDN_URL;
+  const resolvedUiText = useMemo(() => ({ ...DEFAULT_UI_TEXT, ...uiText }), [uiText]);
 
   const resolvedSrc = useMemo(() => {
     const normalized = src.startsWith("/") ? src : `/${src}`;
@@ -75,7 +93,7 @@ export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32" 
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 bg-slate-900/70 px-4 py-2 text-[12px] text-slate-200">
-              <span className="text-[11px] text-slate-400">Scroll or use buttons to zoom; click background to close</span>
+              <span className="text-[11px] text-slate-400">{resolvedUiText.instruction}</span>
               <div className="flex gap-2">
                 <button
                   className="rounded-md border border-slate-700 bg-slate-950 px-3 py-1 hover:border-emerald-400 hover:text-emerald-200"
@@ -84,7 +102,7 @@ export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32" 
                     adjustZoom(0.2);
                   }}
                 >
-                  Zoom in
+                  {resolvedUiText.zoomIn}
                 </button>
                 <button
                   className="rounded-md border border-slate-700 bg-slate-950 px-3 py-1 hover:border-emerald-400 hover:text-emerald-200"
@@ -93,7 +111,7 @@ export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32" 
                     adjustZoom(-0.2);
                   }}
                 >
-                  Zoom out
+                  {resolvedUiText.zoomOut}
                 </button>
                 <button
                   className="rounded-md border border-slate-700 bg-slate-950 px-3 py-1 hover:border-emerald-400 hover:text-emerald-200"
@@ -102,7 +120,7 @@ export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32" 
                     setZoom(1);
                   }}
                 >
-                  1x
+                  {resolvedUiText.reset}
                 </button>
                 <button
                   className="rounded-md border border-slate-700 bg-slate-950 px-3 py-1 hover:border-rose-400 hover:text-rose-200"
@@ -111,7 +129,7 @@ export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32" 
                     setOpen(false);
                   }}
                 >
-                  Close
+                  {resolvedUiText.close}
                 </button>
               </div>
             </div>

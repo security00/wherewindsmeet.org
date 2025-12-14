@@ -6,14 +6,14 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 export const metadata: Metadata = {
   title: "Where Winds Meet Endgame Guide – Progression & Optimierung (DE)",
   description:
-    "Endgame meistern: Phasen, Farmrouten, Stat-Optimierung, Boss-Guides, PVP-Fokus und offene Welt im Spätspiel von Where Winds Meet.",
+    "Endgame meistern: Phasen, Farmrouten, Stat-Optimierung, Boss-Guides, PvP-Fokus und offene Welt im Spätspiel von Where Winds Meet.",
   alternates: buildHreflangAlternates("/guides/endgame", { canonicalLanguage: "de" }),
 };
 
 const endgamePhases = [
   { name: "Frühes Endgame (Level 30–40)", description: "Story abschließen, Endgame-Aktivitäten freischalten" },
   { name: "Mittleres Endgame (Level 40–50)", description: "Gezielt Gear farmen, harte Bosse meistern" },
-  { name: "Spätes Endgame (50+)", description: "Perfekte Optimierung, PVP, Challenges" },
+  { name: "Spätes Endgame (50+)", description: "Perfekte Optimierung, PvP, Challenges" },
 ];
 
 export default function EndgameDePage() {
@@ -32,15 +32,15 @@ export default function EndgameDePage() {
 
         <div className="relative space-y-3">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet Endgame meistern.
+            Where Winds Meet Endgame meistern
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Nach der Story beginnt die eigentliche Reise: Stats optimieren, Bosse lernen, seltene Belohnungen farmen und sich im PVP messen.
+            Nach der Story beginnt die eigentliche Reise: Stats optimieren, Bosse lernen, seltene Belohnungen farmen und sich im PvP messen.
             Dieser Endgame-Guide zeigt, was dich erwartet, wie du dich vorbereitest und worauf du deine Zeit fokussierst.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Viele Spieler fühlen sich im Endgame orientierungslos, weil keine Marker mehr die Richtung vorgeben. Willst du PVE-Bosse klarziehen?
-            Builds perfektionieren? PVP üben? Alles sammeln? Die Phasen helfen dir, Prioritäten zu setzen.
+            Viele Spieler fühlen sich im Endgame orientierungslos, weil keine Marker mehr die Richtung vorgeben. Willst du PvE-Bosse klarziehen?
+            Builds perfektionieren? PvP üben? Alles sammeln? Die Phasen helfen dir, Prioritäten zu setzen.
           </p>
         </div>
       </section>
@@ -50,7 +50,8 @@ export default function EndgameDePage() {
           Endgame-Phasen verstehen
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Das Endgame ist ein Ablauf von Phasen mit unterschiedlichen Zielen. Sie zu kennen hilft, realistische Meilensteine zu setzen und Überforderung zu vermeiden.
+          Das Endgame ist ein Ablauf von Phasen mit unterschiedlichen Zielen. Wenn du diese Phasen kennst, setzt du realistische Meilensteine und
+          vermeidest Überforderung.
         </p>
         <div className="grid gap-4 md:grid-cols-3">
           {endgamePhases.map((phase) => (
@@ -82,8 +83,8 @@ export default function EndgameDePage() {
             <p className="mt-2">Beste Drops kommen oft von Boss-Loops. Routen üben, Build auf den Boss zuschneiden, in Gruppe laufen, wenn solo zu hart.</p>
           </div>
           <div className="rounded-xl border border-slate-700 bg-slate-900/40 p-4">
-            <h3 className="font-semibold text-slate-50">Weeklies & Events</h3>
-            <p className="mt-2">Wöchentliche Lockouts nicht auslassen: Bosse, saisonale Events, Spezial-Challenges. Rewards stapeln sich über Zeit.</p>
+            <h3 className="font-semibold text-slate-50">Wöchentliches & Events</h3>
+            <p className="mt-2">Wöchentliche Lockouts nicht auslassen: Bosse, saisonale Events, Spezial-Challenges. Belohnungen stapeln sich über Zeit.</p>
           </div>
         </div>
       </section>
@@ -119,17 +120,17 @@ export default function EndgameDePage() {
 
       <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          PVP im Endgame
+          PvP im Endgame
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          PVP ist reaktiver als PVE: echte Spieler lesen deine Muster. Du brauchst ein Duell-optimiertes Build und Übung gegen Menschen. Die Tierlist hat PVP-Sektionen als Ausgangspunkt.
+          PvP ist reaktiver als PvE: echte Spieler lesen deine Muster. Du brauchst ein Duell-optimiertes Build und Übung gegen Menschen. Die Tierliste hat PvP-Sektionen als Ausgangspunkt.
         </p>
         <div className="mt-4">
           <Link
             href="/de/guides/tier-list"
             className="inline-flex items-center rounded-lg border border-slate-700 bg-slate-900/40 px-4 py-2 text-sm font-medium text-slate-100 transition-colors hover:border-slate-600 hover:bg-slate-900/60"
           >
-            PVE/PVP Tierlist
+            PvE/PvP‑Tierliste
           </Link>
         </div>
       </section>
@@ -137,25 +138,25 @@ export default function EndgameDePage() {
       <section className="grid gap-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
         <div className="space-y-4">
           <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-            Erkundung, Mystic Arts & Jianghu-Leben im Endgame
+            Erkundung, Mystische Künste (Mystic Arts) & Jianghu-Leben im Endgame
           </h2>
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-            TC-Guides betrachten Exploration als Kern des Endgames: Qinghe-Ränge, Serendipity-Chains, Movement-Rewards verändern das Traversal grundlegend.
+            TC-Guides betrachten Exploration als Kern des Endgames: Qinghe-Ränge, Serendipity-Chains und Movement-Belohnungen verändern das Traversal grundlegend.
           </p>
           <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-300">Qinghe-Exploration & Leichtfüßigkeit</h3>
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-            Push Qinghe-Erkundung früh auf ~5–6: schaltet große Movement-Skills wie Jade Fan Roaming the Mountains (玉扇遊山) oder Riding the Wind (馮虛禦風) frei. Viele Rätsel sind darauf ausgelegt.
+            Bring die Qinghe-Erkundung früh auf ~5–6: Das schaltet große Movement-Skills wie Jade Fan Roaming the Mountains (玉扇遊山) oder Riding the Wind (馮虛禦風) frei. Viele Rätsel sind darauf ausgelegt.
           </p>
           <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-300">Wichtige Mystic Arts</h3>
           <ul className="list-disc space-y-2 pl-5 text-sm text-slate-200">
-            <li><span className="font-semibold">Golden Jade Hand (金玉手):</span> Range-„Pressure Point“ für Kampf und Rätsel.</li>
-            <li><span className="font-semibold">Plucking Stars, Catching the Moon (攝星拿月):</span> Items/Weapons stehlen, z. B. Schildkunst im Xiangguo-Tempel.</li>
+            <li><span className="font-semibold">Golden Jade Hand (金玉手):</span> Fernkampf‑„Pressure Point“ für Kampf und Rätsel.</li>
+            <li><span className="font-semibold">Plucking Stars, Catching the Moon (攝星拿月):</span> Items/Waffen stehlen, z. B. Schildkunst im Xiangguo-Tempel.</li>
             <li><span className="font-semibold">Hidden Step (杳無形) &amp; Worldly Disguise (紅塵障目):</span> Schleichen/Verkleiden für Infiltration-Quests.</li>
             <li><span className="font-semibold">Formless Golden Body (無相金身):</span> Starker Defensiv-Buff gegen Burst und Stagger.</li>
           </ul>
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-300">Abwechslung zwischen Grinds</h3>
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-300">Abwechslung zwischen Grind-Phasen</h3>
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-            Musikstücke sammeln, Pitch Pot/Leaf Card/Shefu/ Sumō spielen, Aussichtspunkte taggen. Co-Play-Punkte und Achievements farmen – und Hände erholen.
+            Musikstücke sammeln, Pitch Pot/Leaf Card/Shefu/Sumō spielen, Aussichtspunkte taggen. Co-Play-Punkte und Erfolge farmen – und Hände erholen.
           </p>
         </div>
         <div className="space-y-3">
@@ -179,10 +180,10 @@ export default function EndgameDePage() {
           Deine Endgame-Reise planen
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Setze Meilensteine statt „Ende“. Erste Bosse, Stat-Balance, erstes PVP-Duell, seltene Cosmetics, Nutzen in Koop-Runs. So bleibt das Endgame motivierend.
+          Setze Meilensteine statt „Ende“. Erste Bosse, Stat-Balance, erstes PvP-Duell, seltene Cosmetics, Nutzen in Koop-Runs. So bleibt das Endgame motivierend.
         </p>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Checke regelmäßig Builds/Tierlist nach Patches. Wenn Optimierung wie Arbeit wirkt, Pause machen – Jianghu läuft nicht weg.
+          Checke regelmäßig Builds/Tierliste nach Patches. Wenn Optimierung wie Arbeit wirkt, Pause machen – Jianghu läuft nicht weg.
         </p>
       </section>
     </article>

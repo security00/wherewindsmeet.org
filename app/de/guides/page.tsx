@@ -6,8 +6,8 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 export const metadata: Metadata = {
   title: "Where Winds Meet Guides – Deutsch",
   description:
-    "Fokussierte Where Winds Meet Guides auf Deutsch: Einsteigerhilfen, Level-Routen, Open-World-Systeme, Tierlists, Builds und Codes – immer wissen, was als Nächstes zu tun ist.",
-  alternates: buildHreflangAlternates("/de/guides", { canonicalLanguage: "de" }),
+    "Fokussierte Where Winds Meet Guides auf Deutsch: Einsteigerhilfen, Level-Routen, Open-World-Systeme, Tierlisten, Builds und Codes – immer wissen, was als Nächstes zu tun ist.",
+  alternates: buildHreflangAlternates("/guides", { canonicalLanguage: "de" }),
 };
 
 const guideSections = [
@@ -22,9 +22,9 @@ const guideSections = [
       "Vom ersten Start bis zum ersten Wochen-Reset: clevere Einstellungen, sichere Story-Routen, Daily-Checklisten.",
   },
   {
-    title: "PVP-Meta-Tierlist",
+    title: "PvP-Meta-Tierliste",
     slug: "/de/guides/pvp-tier-list",
-    label: "Competitive",
+    label: "PvP",
     icon: "⚔️",
     color: "text-red-400",
     size: "medium",
@@ -33,7 +33,7 @@ const guideSections = [
   {
     title: "Beste Builds",
     slug: "/de/guides/builds",
-    label: "PVE & PVP",
+    label: "PvE & PvP",
     icon: "🔥",
     color: "text-orange-400",
     size: "medium",
@@ -60,7 +60,7 @@ const guideSections = [
   {
     title: "Skill Theft",
     slug: "/de/guides/skill-theft",
-    label: "Stealth",
+    label: "Schleichen",
     icon: "🕶️",
     color: "text-emerald-300",
     size: "small",
@@ -97,7 +97,7 @@ const guideSections = [
   {
     title: "Nebelverhangenes Gefängnis",
     slug: "/de/guides/mist-shrouded-prison",
-    label: "Grab",
+    label: "Gruft",
     icon: "🧭",
     color: "text-cyan-300",
     size: "small",
@@ -124,16 +124,16 @@ const guideSections = [
   {
     title: "Qin Caiwei Freundschaft",
     slug: "/de/guides/qin-caiwei",
-    label: "AI Chat",
+    label: "AI‑Chat",
     icon: "🤝",
     color: "text-emerald-300",
     size: "small",
-    description: "Ihre Dialogschleife stoppen mit Aktionen in Klammern und klaren Verabschiedungen.",
+    description: "Qin Caiweis Dialogschleife stoppen: Aktionen in Klammern und klare Verabschiedungen.",
   },
   {
     title: "Free Morph Mystic",
     slug: "/de/guides/free-morph",
-    label: "Mystic",
+    label: "Mystik",
     icon: "🌀",
     color: "text-cyan-300",
     size: "small",
@@ -151,7 +151,7 @@ const guideSections = [
   {
     title: "Kosmetik & Erscheinung",
     slug: "/de/guides/cosmetics",
-    label: "Customization",
+    label: "Anpassung",
     icon: "✨",
     color: "text-rose-300",
     size: "small",
@@ -187,7 +187,7 @@ const guideSections = [
   {
     title: "NPC-Liste (Old Friends)",
     slug: "/de/guides/npc-list",
-    label: "AI Chat",
+    label: "AI‑Chat",
     icon: "📜",
     color: "text-emerald-300",
     size: "small",
@@ -196,7 +196,7 @@ const guideSections = [
   {
     title: "Boss-Guides",
     slug: "/de/guides/bosses",
-    label: "Encounters",
+    label: "Bosskämpfe",
     icon: "👹",
     color: "text-purple-400",
     size: "small",
@@ -231,7 +231,7 @@ export default function GuidesPage() {
 
         <div className="relative z-10 flex h-full flex-col justify-center px-6 sm:px-12 lg:w-2/3">
           <h1 className="text-balance text-5xl font-bold tracking-tight text-slate-50 sm:text-6xl lg:text-7xl font-serif">
-            Wanderers <span className="text-ink-gold">Bibliothek</span>
+            Bibliothek der <span className="text-ink-gold">Wanderer</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-200/90 text-shadow-sm font-sans border-l-2 border-emerald-500/50 pl-4">
             Dein Begleiter auf dem Weg durchs Jianghu. Von Grundlagen bis Großmeister-Techniken – hier findest du deinen Pfad.

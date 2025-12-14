@@ -82,6 +82,12 @@ const heroImages = [
   },
 ];
 
+const zoomableUiText = {
+  openAriaLabelTemplate: "Bild in groß öffnen: {alt}",
+  closeLabel: "Schließen",
+  hintTemplate: "Scrollen oder +/- zum Zoomen, ziehen/scrollen zum Verschieben. Aktuell: {pct}%",
+} as const;
+
 const fireContraptions = [
   {
     title: "Trainingsplatz",
@@ -304,6 +310,7 @@ export default function WallPuzzleDePage() {
                 height={928}
                 sizes="(max-width: 768px) 100vw, 33vw"
                 priority
+                uiText={zoomableUiText}
               />
               <figcaption className="px-3 py-2 text-xs text-slate-300/90 border-t border-slate-800/80">
                 {img.caption} (zum Vergrößern klicken)
@@ -422,6 +429,7 @@ export default function WallPuzzleDePage() {
                   width={1650}
                   height={928}
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  uiText={zoomableUiText}
                 />
                 <figcaption className="px-4 py-3 text-xs text-slate-300/90 border-t border-slate-800/80">
                   {step.image.caption} (zum Vergrößern klicken)
@@ -449,6 +457,7 @@ export default function WallPuzzleDePage() {
                 width={1650}
                 height={928}
                 sizes="(max-width: 768px) 100vw, 33vw"
+                uiText={zoomableUiText}
               />
               <figcaption className="px-3 py-2 text-xs text-slate-300/90 border-t border-slate-800/80">
                 {img.caption} (zum Vergrößern klicken)

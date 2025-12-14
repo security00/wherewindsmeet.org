@@ -5,12 +5,31 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { ItemCategory, ItemCategoryId } from "./data";
 
+export type ItemTabsUiText = {
+  heading: string;
+  imagePending: string;
+  acquisitionLabel: string;
+  scrollToItems: string;
+  itemsSuffix: string;
+};
+
+const DEFAULT_UI_TEXT: ItemTabsUiText = {
+  heading: "Click to Switch Item Categories",
+  imagePending: "Image Pending",
+  acquisitionLabel: "Acquisition:",
+  scrollToItems: "Scroll to items ↓",
+  itemsSuffix: "items",
+};
+
 export default function ItemTabs({
   categories,
+  uiText,
 }: {
   categories: ItemCategory[];
+  uiText?: Partial<ItemTabsUiText>;
 }) {
   const [activeTab, setActiveTab] = useState<ItemCategoryId>("materials");
+  const resolvedUiText = useMemo(() => ({ ...DEFAULT_UI_TEXT, ...uiText }), [uiText]);
 
   const activeCategory = useMemo(
     () => categories.find((cat) => cat.id === activeTab) ?? categories[0],
@@ -40,7 +59,7 @@ export default function ItemTabs({
                     Wuxia
                   </p>
                   <p className="text-sm font-semibold text-emerald-100">
-                    Image Pending
+                    {resolvedUiText.imagePending}
                   </p>
                 </div>
               </div>
@@ -60,7 +79,7 @@ export default function ItemTabs({
             </h3>
             <p className="text-sm text-slate-200">{item.use}</p>
             <p className="text-xs text-slate-400">
-              <span className="font-semibold text-emerald-200">Acquisition: </span>{" "}
+              <span className="font-semibold text-emerald-200">{resolvedUiText.acquisitionLabel} </span>{" "}
               {item.location}
             </p>
           </div>
@@ -73,7 +92,7 @@ export default function ItemTabs({
     <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          Click to Switch Item Categories
+          {resolvedUiText.heading}
         </h2>
         <div className="flex flex-wrap gap-2">
           {categories.map((category) => (
@@ -105,7 +124,7 @@ export default function ItemTabs({
             href="#items-grid"
             className="text-xs font-semibold text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
           >
-            Scroll to items ↓
+            {resolvedUiText.scrollToItems}
           </Link>
         </div>
       </div>
@@ -119,7 +138,7 @@ export default function ItemTabs({
                   {group.title}
                 </h3>
                 <span className="text-xs text-slate-500">
-                  {group.items.length} items
+                  {group.items.length} {resolvedUiText.itemsSuffix}
                 </span>
               </div>
               {renderGrid(group.items)}

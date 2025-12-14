@@ -24,17 +24,17 @@ export default function TermsPage() {
       <section className="space-y-2">
         <h2 className="text-lg font-semibold text-slate-50">1. Inoffizieller Status</h2>
         <p>
-          Der Hub ist ein unabhängiges Fanprojekt für Where Winds Meet (Guides, Tierlists, Builds, Codes). Keine Zugehörigkeit oder Unterstützung durch Publisher/Entwickler. Marken und Assets gehören ihren jeweiligen Inhabern.
+          Der Hub ist ein unabhängiges Fanprojekt für Where Winds Meet (Guides, Tierlisten, Builds, Codes). Keine Zugehörigkeit oder Unterstützung durch Publisher/Entwickler. Marken und Assets gehören ihren jeweiligen Inhabern.
         </p>
         <p>
-          Meinungen und Einstufungen spiegeln die Sicht der Betreiber wider, nicht die offiziellen Aussagen des Spiels. Für verbindliche Infos nutze bitte die offiziellen Kanäle.
+          Meinungen und Einstufungen spiegeln die Sicht der Betreiber wider, nicht die offiziellen Aussagen des Spiels. Für verbindliche Informationen nutzen Sie bitte die offiziellen Kanäle.
         </p>
       </section>
 
       <section className="space-y-2">
         <h2 className="text-lg font-semibold text-slate-50">2. Nutzung der Inhalte</h2>
         <p>
-          Du darfst die Seiten privat und nicht-kommerziell lesen und teilen, solange du den Hub nicht als offiziell darstellst oder Eigentum am Inhalt beanspruchst.
+          Sie dürfen die Seiten privat und nicht-kommerziell lesen und teilen, solange Sie den Hub nicht als offiziell darstellen oder Eigentum am Inhalt beanspruchen.
         </p>
         <p>
           Größere Textpassagen zu kopieren und anderswo zu posten wird nicht empfohlen. Bei Zitaten bitte klare Quellenangabe und Link zurück zur jeweiligen Seite, damit Leser den Kontext und Aktualisierungen finden.
@@ -54,47 +54,47 @@ export default function TermsPage() {
           Eingebettete Videos (z. B. YouTube) unterliegen den Nutzungs- und Datenschutzregeln der jeweiligen Plattformen. Der Hub steuert deren Verhalten nicht.
         </p>
         <p>
-          Externe Links (offizielle WWM-Seiten, Foren, Socials, Gaming-Ressourcen) führen zu eigenen Bedingungen. Bitte prüfe diese, wenn du die Dienste nutzt.
+          Externe Links (offizielle WWM-Seiten, Foren, Socials, Gaming-Ressourcen) führen zu eigenen Bedingungen. Bitte prüfen Sie diese, wenn Sie die Dienste nutzen.
         </p>
       </section>
 
       <section className="space-y-2">
         <h2 className="text-lg font-semibold text-slate-50">5. Richtigkeit und Aktualität</h2>
         <p>
-          Das Spiel verändert sich durch Patches und neue Inhalte. Wir bemühen uns um Aktualität, dennoch können Guides, Tierlists oder Codes zeitweise veralten.
+          Das Spiel verändert sich durch Patches und neue Inhalte. Wir bemühen uns um Aktualität, dennoch können Guides, Tierlisten oder Codes zeitweise veralten.
         </p>
         <p>
-          Inhalte werden &ldquo;wie besehen&rdquo; bereitgestellt, ohne Gewähr. Nutze den Hub als hilfreichen Begleiter, nicht als garantiert fehlerfreie Quelle. Vor wichtigen Entscheidungen (Käufe, große In-Game-Investitionen) prüfe Details zusätzlich über offizielle Quellen oder mehrere Community-Sichten.
+          Inhalte werden &ldquo;wie besehen&rdquo; bereitgestellt, ohne Gewähr. Nutzen Sie den Hub als hilfreichen Begleiter, nicht als garantiert fehlerfreie Quelle. Vor wichtigen Entscheidungen (Käufe, große In-Game-Investitionen) prüfen Sie Details zusätzlich über offizielle Quellen oder mehrere Community-Sichten.
         </p>
       </section>
 
       <section className="space-y-2">
         <h2 className="text-lg font-semibold text-slate-50">6. Haftungsbeschränkung</h2>
         <p>
-          Als Fan-Seite können Verfügbarkeit, Gerätekombatibilität oder Fehlerfreiheit nicht garantiert werden. Soweit gesetzlich zulässig, haften die Betreiber nicht für mittelbare/folgende Schäden aus der Nutzung, z. B. verlorenen Fortschritt, verpasste Belohnungen oder Fehlinterpretationen von Build-Empfehlungen.
+          Als Fan-Seite können Verfügbarkeit, Gerätekompatibilität oder Fehlerfreiheit nicht garantiert werden. Soweit gesetzlich zulässig, haften die Betreiber nicht für mittelbare/folgende Schäden aus der Nutzung, z. B. verlorenen Fortschritt, verpasste Belohnungen oder Fehlinterpretationen von Build-Empfehlungen.
         </p>
         <p>
-          Nichts hier soll Rechte ausschließen, die dir nach zwingendem Recht deines Wohnsitzes zustehen. Ist eine Klausel unwirksam, bleiben die übrigen sinngemäß bestehen.
+          Nichts hier soll Rechte ausschließen, die Ihnen nach zwingendem Recht Ihres Wohnsitzes zustehen. Ist eine Klausel unwirksam, bleiben die übrigen sinngemäß bestehen.
         </p>
       </section>
 
       <section className="space-y-2">
         <h2 className="text-lg font-semibold text-slate-50">7. Kontakt & Feedback</h2>
         <p>
-          Fehler gefunden, anderer Tierlist-Standpunkt oder Sorge zur Darstellung? Melde dich unter{" "}
+          Fehler gefunden, anderer Tierlisten-Standpunkt oder Sorge zur Darstellung? Melden Sie sich unter{" "}
           <a href="mailto:support@wherewindsmeet.org" className="text-emerald-300 hover:text-emerald-200">
             support@wherewindsmeet.org
           </a>. Als Fanprojekt können Antwortzeiten variieren, Feedback fließt aber nach Möglichkeit in Updates ein.
         </p>
         <p>
-          Durch das Einsenden von nicht-vertraulichem Feedback erlaubst du, dass Vorschläge zur Verbesserung des Hubs genutzt werden (z. B. für künftige Guides oder UI-Anpassungen). Deine eigenen kreativen Werke (Videos, Fanart, umfangreiche Texte) bleiben deine.
+          Durch das Einsenden von nicht-vertraulichem Feedback erklären Sie sich damit einverstanden, dass Vorschläge zur Verbesserung des Hubs genutzt werden (z. B. für künftige Guides oder UI-Anpassungen). Ihre eigenen kreativen Werke (Videos, Fanart, umfangreiche Texte) bleiben Ihre.
         </p>
       </section>
 
       <section className="space-y-2">
         <h2 className="text-lg font-semibold text-slate-50">8. Änderungen dieser Bedingungen</h2>
         <p>
-          Bei neuen Funktionen oder rechtlichen Anforderungen können die Bedingungen aktualisiert werden. Die aktuelle Fassung steht auf dieser Seite. Nutzung nach Veröffentlichung bedeutet Zustimmung zur aktualisierten Version.
+          Bei neuen Funktionen oder rechtlichen Anforderungen können die Bedingungen aktualisiert werden. Die aktuelle Fassung steht auf dieser Seite. Die weitere Nutzung nach Veröffentlichung bedeutet Zustimmung zur aktualisierten Version.
         </p>
       </section>
 
@@ -103,7 +103,7 @@ export default function TermsPage() {
           Diese Bedingungen sind spielerfreundlich formuliert und ersetzen nicht die offiziellen Nutzungsbedingungen des Spiels oder verlinkter Drittanbieter.
         </p>
         <p>
-          Infos zum Umgang mit Daten findest du in der{" "}
+          Informationen zum Umgang mit Daten finden Sie in der{" "}
           <Link href="/de/privacy" className="text-emerald-300 hover:text-emerald-200">
             Datenschutzerklärung
           </Link>

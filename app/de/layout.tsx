@@ -8,11 +8,11 @@ export const metadata: Metadata = {
     template: "%s | WWM Hub (DE)",
   },
   description:
-    "Deutscher Where Winds Meet Guide-Hub mit Tierlists, Builds, Codes, News und Tipps für einen stressfreien Start.",
+    "Deutscher Where Winds Meet Guide-Hub mit Tierlisten, Builds, Codes, News und Tipps für einen stressfreien Start.",
   openGraph: {
     title: "Where Winds Meet - Deutscher Guide-Hub",
     description:
-      "Guides, Tierlists, Codes, News und Roadmap-Updates für deutschsprachige Spieler.",
+      "Guides, Tierlisten, Codes, News und Roadmap-Updates für deutschsprachige Spieler.",
     url: "https://wherewindsmeet.org/de",
     siteName: "Where Winds Meet Hub",
     images: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Where Winds Meet - Deutscher Guide-Hub",
     description:
-      "Guides, Tierlists, Codes und News für Where Winds Meet auf Deutsch.",
+      "Guides, Tierlisten, Codes und News für Where Winds Meet auf Deutsch.",
     images: ["https://wherewindsmeet.org/background/bg.jpg"],
   },
   alternates: buildHreflangAlternates("/", { canonicalLanguage: "de" }),

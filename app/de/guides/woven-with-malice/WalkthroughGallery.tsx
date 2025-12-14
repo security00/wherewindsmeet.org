@@ -18,7 +18,7 @@ export default function WalkthroughGallery({ steps }: { steps: WalkthroughStep[]
   const [dragStart, setDragStart] = useState<{ x: number; y: number } | null>(null);
 
   const open = (src: string, alt: string) => {
-    setLightbox({ src, alt: alt && alt.trim().length > 0 ? alt : "Woven with Malice Quest-Screenshot" });
+    setLightbox({ src, alt: alt && alt.trim().length > 0 ? alt : "Woven with Malice – Quest-Screenshot" });
     setZoom(1);
     setPan({ x: 0, y: 0 });
   };
@@ -125,7 +125,7 @@ export default function WalkthroughGallery({ steps }: { steps: WalkthroughStep[]
                   type="button"
                   onClick={zoomOut}
                   className="rounded-lg bg-slate-800 px-3 py-1 text-sm text-slate-100 hover:bg-slate-700"
-                  aria-label="Zoom out"
+                  aria-label="Rauszoomen"
                 >
                   −
                 </button>
@@ -136,7 +136,7 @@ export default function WalkthroughGallery({ steps }: { steps: WalkthroughStep[]
                   type="button"
                   onClick={zoomIn}
                   className="rounded-lg bg-slate-800 px-3 py-1 text-sm text-slate-100 hover:bg-slate-700"
-                  aria-label="Zoom in"
+                  aria-label="Reinzoomen"
                 >
                   +
                 </button>
@@ -145,7 +145,7 @@ export default function WalkthroughGallery({ steps }: { steps: WalkthroughStep[]
                   onClick={resetZoom}
                   className="rounded-lg bg-slate-800 px-3 py-1 text-sm text-slate-100 hover:bg-slate-700"
                 >
-                  Reset
+                  Zurücksetzen
                 </button>
                 <button
                   type="button"
@@ -167,7 +167,7 @@ export default function WalkthroughGallery({ steps }: { steps: WalkthroughStep[]
               <div className="flex min-h-full justify-center p-4">
                 <img
                   src={lightbox.src}
-                  alt={lightbox.alt || "Woven with Malice Quest-Screenshot"}
+                  alt={lightbox.alt || "Woven with Malice – Quest-Screenshot"}
                   className="max-w-none select-none cursor-grab active:cursor-grabbing"
                   style={{
                     transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})`,

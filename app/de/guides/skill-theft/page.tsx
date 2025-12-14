@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "Skill Theft Guide (DE) | Where Winds Meet",
-  description: "Beobachten, stehlen, sauber entkommen: so aktivierst du Skill Theft, Tipps für Route und Fehlervermeidung.",
+  title: "Skill Theft – Skills stehlen (Guide) | Where Winds Meet (DE)",
+  description: "Beobachten, stehlen, sauber entkommen: So aktivierst du Skill Theft, wählst Routen und vermeidest typische Fehler.",
   alternates: buildHreflangAlternates("/guides/skill-theft", { canonicalLanguage: "de" }),
 };
 

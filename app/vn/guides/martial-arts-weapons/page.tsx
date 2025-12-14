@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { martialArtPaths, martialArtWeapons } from "@/lib/martialArts";
+import { martialArtPaths, martialArtWeapons } from "@/lib/martialArts.vi";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
@@ -79,7 +79,7 @@ export default function MartialArtsWeaponsPage() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-[10px] uppercase tracking-[0.2em] text-emerald-300">
-                    Path
+                    Hệ phái
                   </p>
                   <h3 className="text-lg font-semibold text-slate-50">
                     {path.name}

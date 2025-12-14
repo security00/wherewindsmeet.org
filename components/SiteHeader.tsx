@@ -42,7 +42,7 @@ const deNavLinks: NavLink[] = [
   { href: "/de/guides/bosses", label: "Bosse" },
   { href: "/de/guides/weapons", label: "Waffen" },
   { href: "/de/guides/martial-arts-weapons", label: "Kampfkünste" },
-  { href: "/de/guides/tier-list", label: "Tierlist" },
+  { href: "/de/guides/tier-list", label: "Tierliste" },
   { href: "/de/guides/builds", label: "Builds" },
   { href: "/de/guides/codes", label: "Codes" },
   { href: "/de/guides/items", label: "Items" },
@@ -51,7 +51,7 @@ const deNavLinks: NavLink[] = [
 
 const defaultBrandSubtitle = "Guides · Tier List · Codes";
 const vnBrandSubtitle = "Hướng dẫn · Xếp hạng · Mã quà";
-const deBrandSubtitle = "Guides · Tierlists · Codes";
+const deBrandSubtitle = "Guides · Tierlisten · Codes";
 
 type LanguageOption = {
   code: string;
@@ -65,6 +65,42 @@ const LANGUAGES: LanguageOption[] = [
   { code: "vi", label: "Tiếng Việt", flag: "🇻🇳", prefix: "/vn" },
   { code: "de", label: "Deutsch", flag: "🇩🇪", prefix: "/de" },
 ];
+
+const UI_TEXT = {
+  en: {
+    homeAria: "Where Winds Meet home",
+    switchLanguageAria: "Switch language",
+    activeLabel: "Active",
+    openMenuAria: "Open menu",
+    openMenuSr: "Open menu",
+    closeMenuAria: "Close menu",
+    closeNavigationAria: "Close navigation",
+  },
+  vi: {
+    homeAria: "Trang chủ Where Winds Meet",
+    switchLanguageAria: "Đổi ngôn ngữ",
+    activeLabel: "Đang dùng",
+    openMenuAria: "Mở menu",
+    openMenuSr: "Mở menu",
+    closeMenuAria: "Đóng menu",
+    closeNavigationAria: "Đóng điều hướng",
+  },
+  de: {
+    homeAria: "Where Winds Meet Startseite",
+    switchLanguageAria: "Sprache wechseln",
+    activeLabel: "Aktiv",
+    openMenuAria: "Menü öffnen",
+    openMenuSr: "Menü öffnen",
+    closeMenuAria: "Menü schließen",
+    closeNavigationAria: "Navigation schließen",
+  },
+} as const;
+
+const getUiText = (code: string) => {
+  if (code === "vi") return UI_TEXT.vi;
+  if (code === "de") return UI_TEXT.de;
+  return UI_TEXT.en;
+};
 
 const detectLanguage = (pathname?: string | null) => {
   if (!pathname) return LANGUAGES[0];
@@ -107,6 +143,7 @@ export function SiteHeader({
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const currentLanguage = detectLanguage(pathname);
   const languageMenuRef = useRef<HTMLDivElement | null>(null);
+  const uiText = useMemo(() => getUiText(currentLanguage.code), [currentLanguage.code]);
 
   const resolvedLinks = useMemo(() => {
     if (links !== defaultNavLinks) return links;
@@ -169,7 +206,7 @@ export function SiteHeader({
   return (
     <header className="relative z-50 border-b border-slate-800/80 bg-slate-950/85 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link href={resolvedHomeHref} className="flex items-center gap-2" aria-label="Where Winds Meet home">
+        <Link href={resolvedHomeHref} className="flex items-center gap-2" aria-label={uiText.homeAria}>
           <Image
             src="/design/logo.png"
             alt="Where Winds Meet logo"
@@ -206,7 +243,7 @@ export function SiteHeader({
               type="button"
               onClick={() => setIsLangMenuOpen((open) => !open)}
               className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1.5 text-xs font-semibold text-emerald-100 shadow-sm transition hover:border-emerald-400/70 hover:text-emerald-50"
-              aria-label="Switch language"
+              aria-label={uiText.switchLanguageAria}
               aria-expanded={isLangMenuOpen}
             >
               <span className="text-lg leading-none">{currentLanguage.flag}</span>
@@ -235,7 +272,7 @@ export function SiteHeader({
                       <span className="text-lg leading-none">{lang.flag}</span>
                       <span className="flex-1">{lang.label}</span>
                       {lang.active ? (
-                        <span className="text-[11px] uppercase tracking-wide text-emerald-300">Active</span>
+                        <span className="text-[11px] uppercase tracking-wide text-emerald-300">{uiText.activeLabel}</span>
                       ) : null}
                     </Link>
                   ))}
@@ -249,9 +286,9 @@ export function SiteHeader({
           type="button"
           onClick={() => setIsOpen(true)}
           className="inline-flex items-center rounded-lg border border-slate-800 bg-slate-900 px-3 py-2 text-sm font-semibold text-slate-100 shadow-sm shadow-slate-900/50 transition sm:hidden"
-          aria-label="Open menu"
+          aria-label={uiText.openMenuAria}
         >
-          <span className="sr-only">Open menu</span>
+          <span className="sr-only">{uiText.openMenuSr}</span>
           <div className="flex flex-col gap-[5px]">
             <span className="h-0.5 w-5 rounded-full bg-slate-100" />
             <span className="h-0.5 w-5 rounded-full bg-slate-100" />
@@ -263,7 +300,7 @@ export function SiteHeader({
       {isOpen && (
         <div className="fixed inset-0 z-[60] sm:hidden">
           <button
-            aria-label="Close menu"
+            aria-label={uiText.closeMenuAria}
             className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm"
             onClick={() => setIsOpen(false)}
           />
@@ -272,7 +309,7 @@ export function SiteHeader({
               type="button"
               onClick={() => setIsOpen(false)}
               className="rounded-full border border-slate-700/80 bg-slate-900/90 p-2 text-slate-100 shadow-lg shadow-slate-950/60"
-              aria-label="Close navigation"
+              aria-label={uiText.closeNavigationAria}
             >
               ✕
             </button>
@@ -291,7 +328,7 @@ export function SiteHeader({
                   }`}
                 >
                   <span>{link.label}</span>
-                  {link.active ? <span className="text-[11px] text-emerald-300">Active</span> : null}
+                  {link.active ? <span className="text-[11px] text-emerald-300">{uiText.activeLabel}</span> : null}
                 </Link>
             ))}
           </nav>
@@ -314,7 +351,7 @@ export function SiteHeader({
                     <span className="text-lg leading-none">{lang.flag}</span>
                     <span className="flex-1">{lang.label}</span>
                     {lang.active ? (
-                      <span className="text-[11px] uppercase tracking-wide text-emerald-300">Active</span>
+                      <span className="text-[11px] uppercase tracking-wide text-emerald-300">{uiText.activeLabel}</span>
                     ) : null}
                   </Link>
                 ))}

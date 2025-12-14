@@ -1,15 +1,10 @@
 import { redirect } from "next/navigation";
 
 export default function GuidesRedirect({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   params,
 }: {
   params: { slug?: string[] };
 }) {
-  const slugPath = params.slug?.join("/") ?? "";
-
-  if (!slugPath) {
-    redirect("/vn/guides");
-  }
-
-  redirect(`/guides/${slugPath}`);
+  redirect("/vn/guides");
 }

@@ -34,7 +34,7 @@ export default function BossesPage() {
             Bosse und Legenden des Jianghu.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Kurzbeschreibungen zu Kampfstil, Drops und passenden Builds. Spoilerarm, damit du schnell entscheidest, wen du als Nächstes angehst.
+            Kurzbeschreibungen zu Kampfstil, Drops und passenden Builds. Spoilerarm, damit du schnell entscheiden kannst, wen du als Nächstes angehst.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link
@@ -53,7 +53,7 @@ export default function BossesPage() {
               href="/de/guides/tier-list"
               className="rounded-full border border-slate-700 px-4 py-2 text-xs font-semibold text-slate-100 hover:border-emerald-300/60"
             >
-              Tierlist (China-Perspektive)
+              Tierliste (China-Perspektive)
             </Link>
           </div>
           <p className="mt-3 text-xs text-slate-400 sm:text-sm">
@@ -96,7 +96,7 @@ export default function BossesPage() {
                 <p className="text-[11px] text-slate-400">Thema: {boss.theme}</p>
                 <div className="mt-3 flex flex-wrap gap-2 text-[11px]">
                   <Link
-                    href={`/guides/bosses/${boss.id}`}
+                    href={`/de/guides/bosses/${boss.id}`}
                     className="rounded-full bg-slate-900/80 px-3 py-1 text-emerald-300 ring-1 ring-emerald-400/60 hover:bg-emerald-500/10"
                   >
                     Encounter ansehen

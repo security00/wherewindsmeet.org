@@ -1,3 +1,8 @@
-export { metadata } from "../../../../guides/bosses/god-of-avaric/page";
-export { default } from "../../../../guides/bosses/god-of-avaric/page";
+import type { Metadata } from "next";
+import { BossDetail, generateBossMetadata } from "../boss-detail";
 
+export const metadata: Metadata = generateBossMetadata("god-of-avaric");
+
+export default function GodOfAvariceViPage() {
+  return <BossDetail bossId="god-of-avaric" />;
+}

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { weapons } from "@/lib/weapons";
+import { weapons } from "@/lib/weapons.vi";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
@@ -26,6 +26,16 @@ export const metadata: Metadata = {
 };
 
 export default function WeaponsPage() {
+  const roleLabelMap: Record<string, string> = {
+    Assassin: "Sát thủ",
+    Balanced: "Cân bằng",
+    Bleed: "Chảy máu",
+    Tank: "Chống chịu",
+    Support: "Hỗ trợ",
+    "Parry/Konter": "Đỡ đòn/Phản công",
+    "Mobile Control / Picks": "Khống chế cơ động / Bắt lẻ",
+  };
+
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -153,17 +163,17 @@ export default function WeaponsPage() {
                         weapon.tier === "A" ? "bg-orange-500/20 text-orange-400 border border-orange-500/30" :
                           "bg-blue-500/20 text-blue-400 border border-blue-500/30"
                       }`}>
-                      {weapon.tier} Tier
+                      {weapon.tier} Hạng
                     </span>
                     <span className="rounded-full bg-slate-900/80 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-emerald-300">
-                      {weapon.role}
+                      {roleLabelMap[weapon.role] ?? weapon.role}
                     </span>
                   </div>
                 </div>
                 <p className="text-xs text-slate-300">{weapon.description}</p>
                 <div className="mt-3 flex flex-wrap gap-2 text-[11px]">
                   <Link
-                    href={`/guides/weapons/${weapon.id}`}
+                    href={`/vn/guides/weapons/${weapon.id}`}
                     className="rounded-full bg-slate-900/80 px-3 py-1 text-emerald-300 ring-1 ring-emerald-400/60 hover:bg-emerald-500/10"
                   >
                     Xem chi tiết vũ khí

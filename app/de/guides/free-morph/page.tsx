@@ -6,7 +6,7 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 export const metadata: Metadata = {
   title: "Free Morph (2025) – Mystic-Skill freischalten",
   description:
-    "So schaltest du Free Morph frei: Tian Yings Drehtritte im Challenge parieren. Update Jan 2025: Kurzschritte, Kosten, Cooldown, Tier-Boni und beste Einsätze.",
+    "So schaltest du Free Morph frei: Tian Yings Drehtritte im Challenge-Kampf parieren. Update Jan 2025: Kurzguide, Kosten, Cooldown, Tier-Boni und beste Einsätze.",
   alternates: buildHreflangAlternates("/guides/free-morph", { canonicalLanguage: "de" }),
   openGraph: {
     title: "Free Morph Mystic-Skill (2025)",
@@ -35,10 +35,10 @@ export const metadata: Metadata = {
 };
 
 const quickFacts = [
-  { label: "Typ", value: "Offensiver Mystic – Single-Target-Control" },
+  { label: "Typ", value: "Offensiver Mystic – Einzelziel-Kontrolle" },
   { label: "Kosten / CD", value: "35 Vitalität • 3s CD (Tier 4: -5 Vitalität)" },
-  { label: "Kereneffekt", value: "Launch + Lufttritt-Salve, hält Ziel in der Luft, kleiner AoE-Abschluss" },
-  { label: "Tier-Bonus", value: "Tier 3: +20% Schaden gg. HP-Schild | Tier 4: -5 Vitalitätskosten" },
+  { label: "Kerneffekt", value: "Launch + Lufttritt-Salve, hält Ziel in der Luft, kleiner AoE-Abschluss" },
+  { label: "Tier-Bonus", value: "Tier 3: +20% Schaden gegen Ziele mit HP‑Schild | Tier 4: -5 Vitalitätskosten" },
 ];
 
 const unlockSteps = [
@@ -67,7 +67,7 @@ const tierBonuses = [
   },
   {
     tier: "Tier 4",
-    effect: "Vitalitätskosten -5, dadurch spambarer.",
+    effect: "Vitalitätskosten -5, dadurch häufiger einsetzbar.",
   },
 ];
 
@@ -107,8 +107,8 @@ export default function FreeMorphPage() {
             </p>
             <ul className="text-xs text-emerald-200 space-y-1">
               <li>• TL;DR: Challenge Tian Ying → Drehtritte in Phase 2 parieren → Free Morph erhalten.</li>
-              <li>• Kosten 35 Vitalität (Tier 4: -5) · 3s CD · Bonusschaden gg. HP-Schild.</li>
-              <li>• Am besten für Single-Target-Control; zwischen Mo Blade/Speer-Posturebreaks oder Dual-Blades-Flurries weben.</li>
+              <li>• Kosten 35 Vitalität (Tier 4: -5) · 3s CD · Bonusschaden gegen Ziele mit HP‑Schild.</li>
+              <li>• Am besten für Einzelziel-Kontrolle; zwischen Mo Blade/Speer-Posturebreaks oder Dual-Blades-Flurries einweben.</li>
             </ul>
           </div>
 
@@ -122,7 +122,7 @@ export default function FreeMorphPage() {
             />
             <div className="text-xs text-slate-200">
               <p className="font-semibold text-emerald-200">Free Morph</p>
-              <p>Koste 35 Vitalität · 3s CD</p>
+              <p>Kosten: 35 Vitalität · 3s CD</p>
               <p>Einzelziel-Juggle, kleiner AoE am Ende</p>
             </div>
           </div>
@@ -161,7 +161,7 @@ export default function FreeMorphPage() {
             href="/de/guides/tier-list"
             className="rounded-full border border-emerald-400/50 bg-emerald-500/10 px-3 py-1 font-semibold text-emerald-100 hover:border-emerald-300/70"
           >
-            Sieh aktuelle Meta
+            Aktuelle Meta ansehen
           </Link>
         </div>
       </section>

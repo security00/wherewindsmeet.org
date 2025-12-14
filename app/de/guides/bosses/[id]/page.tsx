@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { BossDetail, generateBossMetadata } from "@/app/guides/bosses/boss-detail";
+import { BossDetail, generateBossMetadata } from "../boss-detail";
 import type { BossId } from "@/lib/bosses";
 
 type Params = { params: { id: BossId } };
@@ -19,7 +19,7 @@ export function generateMetadata({ params }: Params): Metadata {
     "zheng-e",
   ];
   if (!ids.includes(params.id)) return {};
-  return generateBossMetadata(params.id, "de");
+  return generateBossMetadata(params.id);
 }
 
 export default function BossDetailDePage({ params }: Params) {
@@ -36,5 +36,5 @@ export default function BossDetailDePage({ params }: Params) {
     "zheng-e",
   ];
   if (!ids.includes(params.id)) return notFound();
-  return <BossDetail bossId={params.id} localePrefix="/de" />;
+  return <BossDetail bossId={params.id} />;
 }

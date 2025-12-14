@@ -529,7 +529,7 @@ export default function OneLeafDePage() {
             <div className="text-sm font-semibold uppercase tracking-wide text-emerald-200">Weiterlesen</div>
             <p className="text-base text-slate-100">
               Mehr Lost Chapters? Schau auch <Link href="/de/guides/woven-with-malice" className="underline underline-offset-4">Woven with Malice</Link>{" "}
-              sowie unsere <Link href="/de/guides/tier-list" className="underline underline-offset-4">Tierlists</Link> und{" "}
+              sowie unsere <Link href="/de/guides/tier-list" className="underline underline-offset-4">Tierlisten</Link> und{" "}
               <Link href="/de/guides/builds" className="underline underline-offset-4">Builds</Link>.
             </p>
           </div>

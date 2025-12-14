@@ -327,7 +327,7 @@ const faq = [
   },
   {
     q: "Welche Belohnungen gibt es?",
-    a: "Berichtet: Fame and Fortune Hanging Scroll, Custom Chest x5, Medicinal Tales, Lv.3 Ebon Iron x4, Echo Jade x30, Kaifeng Exploration x50, 100 Enlightenment Points, dazu 20.000 Charakter-EP und 20.000 Münzen.",
+    a: "Berichtet werden u. a.: Fame and Fortune Hanging Scroll, 5× Custom Chest, Medicinal Tales, 4× Lv. 3 Ebon Iron, 30× Echo Jade, 50× Kaifeng Exploration, 100 Enlightenment Points sowie 20.000 Charakter‑EP und 20.000 Münzen. (Itemnamen können je Region abweichen.)",
   },
   {
     q: "Wie lange dauert die Quest?",

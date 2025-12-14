@@ -13,6 +13,84 @@ export const metadata: Metadata = {
 };
 
 export default function ItemsPage() {
+  const categoryText: Record<
+    string,
+    { title: string; blurb: string }
+  > = {
+    materials: {
+      title: "Materialien",
+      blurb: "Grundressourcen aus Sammeln/Jagd – genutzt für Crafting, Einrichtung oder Kommissionen.",
+    },
+    development: {
+      title: "Entwicklungs-Materialien",
+      blurb: "Für Waffen-Durchbrüche, Innere-Kunst-Upgrades, Mechanik-Blueprints und fortgeschrittenes Crafting.",
+    },
+    consumables: {
+      title: "Verbrauchsgüter",
+      blurb: "Speisen, Weine und Köder – einmalige Items für Kampf- oder Lebens-Buffs.",
+    },
+    common: {
+      title: "Alltags-Items",
+      blurb: "Sammlerstücke, Geschenke und Deko – oft relevant für Favor, Quests oder Achievements.",
+    },
+  };
+
+  const groupTitle: Record<string, string> = {
+    "inner-way-passives": "Innere-Weg-Passiva",
+    "martial-arts-upgrades": "Kampfkunst-Upgrades",
+    miscellaneous: "Sonstiges",
+    "mystic-arts-upgrades": "Mystik-Upgrades",
+    "gear-tuning": "Ausrüstungs-Tuning",
+  };
+
+  const localizeUse = (value: string) => {
+    switch (value) {
+      case "Crafting/Breakthrough material (details pending)":
+        return "Handwerk-/Durchbruchmaterial (Details folgen)";
+      case "Weapon/Martial Arts/Mechanism development material (details pending)":
+        return "Entwicklungsmaterial für Waffen/Kampfkünste/Mechanik (Details folgen)";
+      case "Consumable: effect details pending":
+        return "Verbrauchsitem: Effekt-Details folgen";
+      case "Common item: effect details pending":
+        return "Alltagsitem: Effekt-Details folgen";
+      default:
+        return value;
+    }
+  };
+
+  const localizeLocation = (value: string) => {
+    switch (value) {
+      case "Gathering/Hunting/Merchant/Commission (details pending)":
+        return "Sammeln/Jagd/Händler/Kommission (Details folgen)";
+      case "Secret Realm/Commission/Merchant/Task Drop (details pending)":
+        return "Geheimes Reich/Kommission/Händler/Quest-Drops (Details folgen)";
+      case "Acquisition method pending":
+        return "Beschaffung folgt";
+      default:
+        return value;
+    }
+  };
+
+  const localizedCategories = itemCategories.map((category) => ({
+    ...category,
+    title: categoryText[category.id]?.title ?? category.title,
+    blurb: categoryText[category.id]?.blurb ?? category.blurb,
+    items: category.items.map((item) => ({
+      ...item,
+      use: localizeUse(item.use),
+      location: localizeLocation(item.location),
+    })),
+    groups: category.groups?.map((group) => ({
+      ...group,
+      title: groupTitle[group.id] ?? group.title,
+      items: group.items.map((item) => ({
+        ...item,
+        use: localizeUse(item.use),
+        location: localizeLocation(item.location),
+      })),
+    })),
+  }));
+
   return (
     <article className="space-y-10">
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
@@ -47,13 +125,22 @@ export default function ItemsPage() {
         </div>
       </section>
 
-      <ItemTabs categories={itemCategories} />
+      <ItemTabs
+        categories={localizedCategories}
+        uiText={{
+          heading: "Item-Kategorien wechseln",
+          imagePending: "Bild folgt",
+          acquisitionLabel: "Fundort:",
+          scrollToItems: "Zu den Items ↓",
+          itemsSuffix: "Items",
+        }}
+      />
 
       <section className="grid gap-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 md:grid-cols-2">
         <div className="space-y-2">
           <h3 className="text-lg font-semibold text-slate-50">Nutzungstipps</h3>
           <ul className="space-y-2 text-sm text-slate-300">
-            <li>Materialien/Entwicklungs-Mats priorisieren – sie gate-en Waffen- und Inner-Skill-Breakthroughs.</li>
+            <li>Materialien und Entwicklungs-Materialien priorisieren – sie sind die Engpässe für Waffen- und Innere‑Kunst‑Durchbrüche.</li>
             <li>2–3 Gruppengerichte vorbereiten; vor Teamplay essen für mehr Fehlertoleranz.</li>
             <li>Alltags-Items als Geschenke/Favor nutzen, um Begegnungen und Rabatte freizuschalten.</li>
           </ul>

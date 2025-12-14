@@ -43,12 +43,12 @@ const fallbackImages = {
 };
 
 export const metadata: Metadata = {
-  title: "The Great Faceologist (Dez 2025)",
+  title: "The Great Faceologist Guide (Dez 2025)",
   description:
     "The Great Faceologist (Dez 2025) in Where Winds Meet: Voraussetzungen, richtiger Upload-Pfad, Event-Tag setzen, Daily Cap und typische Fixes.",
   alternates: buildHreflangAlternates(basePath, { canonicalLanguage: "de" }),
   openGraph: {
-    title: "The Great Faceologist (Dez 2025)",
+    title: "The Great Faceologist Guide (Dez 2025)",
     description:
       "Nur Uploads aus Edit Face zählen – und nur, wenn du vor dem Publish den Tag [The Great Faceologist] aktivierst.",
     url: `${baseUrl}${pagePath}`,
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Great Faceologist (Dez 2025)",
+    title: "The Great Faceologist Guide (Dez 2025)",
     description:
       "So reichst du korrekt ein: Upload aus Edit Face und Event-Tag [The Great Faceologist] vor dem Publish aktivieren.",
     images: [images.hero, `${baseUrl}${fallbackImages.hero}`],
@@ -83,15 +83,15 @@ const quickFacts = [
   { label: "Event-Zeitraum", value: "11.–31. Dez 2025 (UTC)" },
   { label: "Voraussetzungen", value: "Level 5 + Qinghe-Hauptkapitel „Another New Wing“ abschließen" },
   { label: "Event-Typ", value: "Zeitlich begrenzter Face/Make-up-Contest" },
-  { label: "Wo einreichen", value: "Appearance → Edit Face / Makeup → Preview → Upload to Gallery" },
+  { label: "Wo einreichen", value: "Appearance → Edit Face/Makeup → Preview → „Upload to Gallery“" },
   { label: "Was zählt", value: "Nur Uploads mit aktivem Tag [The Great Faceologist]" },
   { label: "Daily Cap", value: "Ca. ~5 Uploads/Tag (geteiltes Limit für Appearance-Uploads)" },
 ];
 
 const tlDr = [
   "Appearance im Hauptmenü öffnen und unten auf den Appearance-Tab wechseln (nicht Outfits).",
-  "In Edit Face (oder Makeup) gehen, Preset auswählen/anpassen, dann Preview und Upload to Gallery.",
-  "Im Upload-Dialog unbedingt den Tag [The Great Faceologist] unter der Beschreibung aktivieren, erst dann publishen.",
+  "In Edit Face (oder Makeup) gehen, Preset auswählen/anpassen, dann Preview und „Upload to Gallery“.",
+  "Im Upload-Dialog unbedingt den Tag [The Great Faceologist] unter der Beschreibung aktivieren – erst dann mit „Publish“ veröffentlichen.",
   "Uploads aus der Outfit-Gallery zählen für dieses Event nicht.",
 ];
 
@@ -132,11 +132,11 @@ const pcSteps = [
     alt: "Preview nutzen, um den Frame vor dem Upload festzulegen",
   },
   {
-    title: "Upload to Gallery",
+    title: "„Upload to Gallery“ auswählen",
     desc: "R drücken (oder dem On-Screen-Prompt folgen), um den Upload-Dialog zu öffnen.",
     img: images.upload,
     fallbackImg: fallbackImages.upload,
-    alt: "Upload to Gallery Prompt",
+    alt: "Dialog: „Upload to Gallery“",
   },
   {
     title: "Titel & Beschreibung eintragen",
@@ -153,8 +153,8 @@ const pcSteps = [
     alt: "Event-Tag im Upload-Dialog aktivieren",
   },
   {
-    title: "Publish",
-    desc: "Publish-Taste drücken (Standard: Space). Der Eintrag zählt jetzt fürs Event.",
+    title: "„Publish“ (veröffentlichen)",
+    desc: "„Publish“ drücken (Standard: Space). Der Eintrag zählt jetzt fürs Event.",
     img: images.tagConfirm,
     fallbackImg: fallbackImages.tagConfirm,
     alt: "Vor dem Publish prüfen, dass der Event-Tag aktiv ist",
@@ -165,9 +165,9 @@ const consoleSteps = [
   "Pause-Menü → Appearance, um die Garderobe zu öffnen.",
   "Unten auf Appearance wechseln, um von Outfits zum Basis-Look zu gehen.",
   "Edit Face auswählen. Falls es fehlt: einmal zurück und erneut rein, oder Spiel neu starten.",
-  "Face/Makeup-Preset wählen → Preview → Upload to Gallery.",
-  "Im Upload-Dialog nach unten scrollen und den Tag [The Great Faceologist] aktivieren (zwischen Beschreibung und Privacy-Option).",
-  "Publish. Wenn der Tag nur im Makeup-Tab auftaucht, dort einreichen.",
+  "Face/Makeup-Preset wählen → Preview → „Upload to Gallery“.",
+  "Im Upload-Dialog nach unten scrollen und den Tag [The Great Faceologist] aktivieren (zwischen Beschreibung und Datenschutz-/Privacy-Option).",
+  "Mit „Publish“ veröffentlichen. Wenn der Tag nur im Makeup-Tab auftaucht, dort einreichen.",
 ];
 
 const issues = [
@@ -232,7 +232,7 @@ const breadcrumbStructuredData = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: `${baseUrl}/de` },
+    { "@type": "ListItem", position: 1, name: "Start", item: `${baseUrl}/de` },
     { "@type": "ListItem", position: 2, name: "Guides", item: `${baseUrl}/de/guides` },
     { "@type": "ListItem", position: 3, name: "The Great Faceologist", item: `${baseUrl}${pagePath}` },
   ],
@@ -243,7 +243,7 @@ const howToStructuredData = {
   "@type": "HowTo",
   name: "So reichst du für The Great Faceologist ein (Where Winds Meet)",
   description:
-    "Richtiger Weg: Appearance → Edit Face/Makeup → Preview → Upload to Gallery → Tag [The Great Faceologist] aktivieren → Publish.",
+    "Richtiger Weg: Appearance → Edit Face/Makeup → Preview → „Upload to Gallery“ → Tag [The Great Faceologist] aktivieren → „Publish“.",
   image: [images.hero],
   inLanguage: "de-DE",
   url: `${baseUrl}${pagePath}`,
@@ -306,7 +306,7 @@ export default function GreatFaceologistPageDe() {
             <p className="text-xs uppercase tracking-wide text-emerald-300">Zeitlich begrenztes Event</p>
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-              Update Dez 2025 · Tag-Schritte unten
+              Update Dez 2025 · Event-Tag-Schritte unten
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-50">
               The Great Faceologist – Teilnahme, Tag setzen, korrekt einreichen
@@ -316,7 +316,7 @@ export default function GreatFaceologistPageDe() {
               <strong>Edit Face</strong> veröffentlicht wird und der <strong>[The Great Faceologist]</strong>-Tag aktiv ist.
             </p>
             <ul className="text-xs text-emerald-200 space-y-1">
-              <li>• TL;DR: Appearance → Edit Face/Makeup → Preview → Upload → Tag aktivieren → Publish.</li>
+              <li>• Kurzfassung: Appearance → Edit Face/Makeup → Preview → „Upload to Gallery“ → Tag aktivieren → „Publish“.</li>
               <li>• Outfit-Uploads zählen nicht.</li>
               <li>• Daily Cap ist niedrig – keine Slots verschwenden.</li>
             </ul>
@@ -331,7 +331,7 @@ export default function GreatFaceologistPageDe() {
                 href="/de/guides/new-players"
                 className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
               >
-                New-Player-Route
+                Einsteiger-Route
               </Link>
             </div>
           </div>
@@ -421,7 +421,7 @@ export default function GreatFaceologistPageDe() {
           Faceologist ist an Appearance gebunden – deshalb erscheint der Event-Tag im Outfit-Upload nicht.
         </p>
         <div className="rounded-2xl border border-slate-700 bg-slate-900/60 p-4 text-sm text-slate-200">
-          Immer über: <strong>Appearance → Edit Face/Makeup → Upload to Gallery</strong> einreichen.
+          Immer über: <strong>Appearance → Edit Face/Makeup → „Upload to Gallery“</strong> einreichen.
         </div>
       </section>
 
@@ -486,7 +486,7 @@ export default function GreatFaceologistPageDe() {
           </li>
           <li>
             <Link href="/de/guides/new-players" className="underline underline-offset-4 hover:text-emerald-100">
-              New-Player-Route – Level-Voraussetzungen und Early Progress
+              Einsteiger-Route – Level-Voraussetzungen und Early Progress
             </Link>
           </li>
         </ul>

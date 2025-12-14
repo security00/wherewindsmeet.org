@@ -5,18 +5,18 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 const baseUrl = "https://wherewindsmeet.org";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Beste Builds – PVE & PVP Loadouts (DE)",
+  title: "Where Winds Meet Beste Builds – PvE & PvP Loadouts (DE)",
   description:
-    "Flexible Where Winds Meet Builds für PVE und PVP mit sinnvollen Stat-Plänen, Waffen-Paarungen und Rotationstipps – abgestimmt auf echte Spieler.",
+    "Flexible Where Winds Meet Builds für PvE und PvP mit sinnvollen Stat-Plänen, Waffen-Paarungen und Rotationstipps – abgestimmt auf echte Spieler.",
   alternates: buildHreflangAlternates("/guides/builds", { canonicalLanguage: "de" }),
   openGraph: {
-    title: "Where Winds Meet Beste Builds – PVE & PVP Loadouts",
+    title: "Where Winds Meet Beste Builds – PvE & PvP Loadouts",
     description:
-      "Flexible Builds für PVE und PVP mit sinnvollen Stat-Plänen, Waffen-Kombos und Rotationstipps.",
+      "Flexible Builds für PvE und PvP mit sinnvollen Stat-Plänen, Waffen-Kombos und Rotationstipps.",
     url: `${baseUrl}/de/guides/builds`,
   },
   twitter: {
-    title: "Where Winds Meet Beste Builds – PVE & PVP Loadouts",
+    title: "Where Winds Meet Beste Builds – PvE & PvP Loadouts",
     description:
       "Builds mit Komfort, Konstanz und Stil statt reiner Tabellenwerte.",
   },
@@ -101,7 +101,7 @@ export default function BuildsDePage() {
 
         {/* Vertikale Akzente */}
         <div className="absolute right-8 top-1/4 hidden text-vertical text-4xl font-bold text-slate-50/10 lg:block font-serif select-none">
-          Martial-Arts-Guides
+          Kampfkunst‑Guides
         </div>
         <div className="absolute left-8 top-1/3 hidden text-vertical text-3xl font-bold text-slate-50/10 lg:block font-serif select-none">
           Endlos anpassbar
@@ -112,10 +112,11 @@ export default function BuildsDePage() {
             Builds, die sich <span className="text-ink-gold">stark</span> und <span className="text-ink-jade">persönlich</span> anfühlen.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-200/90 text-shadow-sm font-sans">
-            Die besten Where Winds Meet Builds jagen nicht nur Zahlen. Sie übersetzen deine Lieblings-Wuxia-Fantasie in einen verlässlichen Kampfrhythmus, der zu Zeitplan, Reflexen und Experimentierlust passt.
+            Die besten Where Winds Meet Builds jagen nicht nur Zahlen. Gute Builds übersetzen deine Lieblings-Wuxia-Fantasie in einen verlässlichen
+            Kampfrhythmus, der zu deinem Zeitplan, deinen Reflexen und deiner Experimentierlust passt.
           </p>
           <p className="mt-3 max-w-2xl text-base leading-relaxed text-slate-200/90 text-shadow-sm font-sans">
-            Nutze dies als kompakte PVE- und PVP-Build-Übersicht, bevor du tiefer in Waffen-Guides, Pfadwahl und Rotationen einsteigst.
+            Nutze dies als kompakte PvE- und PvP-Build-Übersicht, bevor du tiefer in Waffen-Guides, Pfadwahl und Rotationen einsteigst.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <div className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-slate-300 backdrop-blur-sm">
@@ -125,7 +126,7 @@ export default function BuildsDePage() {
               Koop-Abenteuer
             </div>
             <div className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-slate-300 backdrop-blur-sm">
-              PVP-Taktiken
+              PvP-Taktiken
             </div>
           </div>
         </div>
@@ -225,7 +226,7 @@ export default function BuildsDePage() {
         {/* Adaptation Section */}
         <section className="bg-texture-noise rounded-3xl border border-slate-800/60 bg-slate-950/40 p-8 shadow-lg">
           <h2 className="text-xl font-bold tracking-tight text-slate-50 sm:text-2xl border-brush inline-block pb-2 mb-6 font-serif">
-            Anpassung für Solo, Koop und PVP.
+            Anpassung für Solo, Koop und PvP.
           </h2>
           <div className="grid gap-8 md:grid-cols-3">
             <div className="space-y-3">
@@ -241,7 +242,7 @@ export default function BuildsDePage() {
               </p>
             </div>
             <div className="space-y-3">
-              <h3 className="font-bold text-ink-spirit font-serif">PVP</h3>
+              <h3 className="font-bold text-ink-spirit font-serif">PvP</h3>
               <p className="text-sm text-slate-300 leading-relaxed font-sans">
                 Komfort gegen Unberechenbarkeit tauschen: Movement + Burst. Map-Kenntnis und Reaktionszeit sind der Kern.
               </p>
@@ -266,7 +267,7 @@ export default function BuildsDePage() {
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />
             <div className="absolute bottom-0 left-0 p-6">
               <p className="max-w-xl text-sm text-slate-200 text-shadow-sm font-sans">
-                Lange TC-Guides (TC = Traditional Chinese) teilen das Kampfsystem in klare Familien. Das Verständnis dieser Ziele hilft dir, Builds anzupassen, wenn das Meta sich dreht.
+                Lange TC-Guides (TC = traditionelles Chinesisch) teilen das Kampfsystem in klare Familien. Das Verständnis dieser Ziele hilft dir, Builds anzupassen, wenn das Meta sich dreht.
               </p>
             </div>
           </div>

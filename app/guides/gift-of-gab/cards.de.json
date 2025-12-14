@@ -1,0 +1,202 @@
+[
+  {
+    "id": "bluster-1",
+    "name": "Kühne Behauptung",
+    "originalName": "Bold Assertion",
+    "style": "Bluster",
+    "cost": 2,
+    "effect": "Fügt dem Mental Focus des Gegners mittleren Schaden zu.",
+    "description": "Eine selbstsichere Aussage, die am Selbstvertrauen des Gegners rüttelt.",
+    "rarity": "common"
+  },
+  {
+    "id": "bluster-2",
+    "name": "Überwältigendes Selbstvertrauen",
+    "originalName": "Overwhelming Confidence",
+    "style": "Bluster",
+    "cost": 4,
+    "effect": "Fügt hohen Schaden zu und senkt die Inspiration-Regeneration des Gegners leicht.",
+    "description": "So viel Selbstvertrauen ausstrahlen, dass der Gegner an seinen eigenen Argumenten zweifelt.",
+    "rarity": "rare"
+  },
+  {
+    "id": "bluster-3",
+    "name": "Abwimmelnde Geste",
+    "originalName": "Dismissive Wave",
+    "style": "Bluster",
+    "cost": 1,
+    "effect": "Fügt geringen Schaden zu und kostet kaum Inspiration.",
+    "description": "Das Argument des Gegners mit einer Handbewegung abtun – ohne es ernsthaft zu prüfen.",
+    "rarity": "common"
+  },
+  {
+    "id": "bluster-4",
+    "name": "Unerschütterliche Haltung",
+    "originalName": "Unwavering Stance",
+    "style": "Bluster",
+    "cost": 3,
+    "effect": "Verringert eingehenden Schaden für die nächsten 2 Runden um 30%.",
+    "description": "Unbeirrt bleiben und Konterargumente an sich abprallen lassen.",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "provocation-1",
+    "name": "Scharfe Bemerkung",
+    "originalName": "Cutting Remark",
+    "style": "Provocation",
+    "cost": 2,
+    "effect": "Fügt mittleren Schaden zu und provoziert eine emotionale Reaktion.",
+    "description": "Ein persönlicher Seitenhieb, der den Gegner aus der Fassung bringt.",
+    "rarity": "common"
+  },
+  {
+    "id": "provocation-2",
+    "name": "Emotionaler Ausbruch",
+    "originalName": "Emotional Explosion",
+    "style": "Provocation",
+    "cost": 5,
+    "effect": "Fügt sehr hohen Schaden zu, senkt aber in der nächsten Runde deine Inspiration-Regeneration.",
+    "description": "Eine so heftige Reaktion auslösen, dass der Gegner komplett den Fokus verliert.",
+    "rarity": "rare"
+  },
+  {
+    "id": "provocation-3",
+    "name": "Spöttisches Lachen",
+    "originalName": "Mocking Laugh",
+    "style": "Provocation",
+    "cost": 1,
+    "effect": "Fügt minimalen Schaden zu und bringt den Gegner 1 Runde lang zum Schweigen.",
+    "description": "Über das Argument des Gegners lachen – bis ihm die Worte fehlen.",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "provocation-4",
+    "name": "Persönlicher Angriff",
+    "originalName": "Personal Attack",
+    "style": "Provocation",
+    "cost": 3,
+    "effect": "Fügt Schaden proportional zum bereits verlorenen Mental Focus des Gegners zu.",
+    "description": "Nicht das Argument angreifen, sondern die Glaubwürdigkeit.",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "rebuttal-1",
+    "name": "Logischer Konter",
+    "originalName": "Logical Counter",
+    "style": "Rebuttal",
+    "cost": 2,
+    "effect": "Fügt mittleren Schaden zu und deckt einen logischen Fehler des Gegners auf.",
+    "description": "Das Argument des Gegners systematisch mit Fakten zerlegen.",
+    "rarity": "common"
+  },
+  {
+    "id": "rebuttal-2",
+    "name": "Unwiderlegbare Beweise",
+    "originalName": "Irrefutable Evidence",
+    "style": "Rebuttal",
+    "cost": 4,
+    "effect": "Fügt hohen Schaden zu und halbiert die Kosten der nächsten Karte des Gegners.",
+    "description": "Überwältigende Beweise vorlegen, die sich nicht entkräften lassen.",
+    "rarity": "rare"
+  },
+  {
+    "id": "rebuttal-3",
+    "name": "Geschäftsordnungsantrag",
+    "originalName": "Point of Order",
+    "style": "Rebuttal",
+    "cost": 2,
+    "effect": "Annulliert den letzten Angriff des Gegners und reflektiert 50% als Schaden.",
+    "description": "Mit einem Geschäftsordnungsantrag das Argument des Gegners aushebeln.",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "rebuttal-4",
+    "name": "Perfekte Verteidigung",
+    "originalName": "Perfect Defense",
+    "style": "Rebuttal",
+    "cost": 3,
+    "effect": "Blockt den nächsten Angriff des Gegners und gewährt 1 temporäre Verteidigung.",
+    "description": "Eine wasserdichte logische Verteidigung gegen Konterargumente aufbauen.",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "filibuster-1",
+    "name": "Endloser Monolog",
+    "originalName": "Endless Monologue",
+    "style": "Filibuster",
+    "cost": 3,
+    "effect": "Fügt 3 Sekunden lang pro Sekunde mittleren Schaden zu; der Gegner kann nicht reagieren.",
+    "description": "Ununterbrochen reden, ohne den Gegner zu Wort kommen zu lassen.",
+    "rarity": "common"
+  },
+  {
+    "id": "filibuster-2",
+    "name": "Wortlawine",
+    "originalName": "Wall of Words",
+    "style": "Filibuster",
+    "cost": 5,
+    "effect": "Fügt insgesamt hohen Schaden zu und reduziert den Schaden des Gegners in der nächsten Runde um 40%.",
+    "description": "Eine Wortflut entfesseln, in der der Gegner kein Opening findet.",
+    "rarity": "rare"
+  },
+  {
+    "id": "filibuster-3",
+    "name": "Abschweifender Exkurs",
+    "originalName": "Rambling Tangent",
+    "style": "Filibuster",
+    "cost": 2,
+    "effect": "Fügt Schaden zu und gewährt in der nächsten Runde zusätzlichen Kartennachzug.",
+    "description": "Abschweifen, um die Strategie des Gegners zu verwirren.",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "filibuster-4",
+    "name": "Wortreicher Schild",
+    "originalName": "Verbose Shield",
+    "style": "Filibuster",
+    "cost": 3,
+    "effect": "Erhöht deine Mental-Focus-Regeneration um 15% und gewährt 20% Schadensreduktion.",
+    "description": "Mit blumiger Sprache Zeit schinden und Angriffe abfedern.",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "universal-1",
+    "name": "Gefasste Antwort",
+    "originalName": "Composed Response",
+    "style": "Universal",
+    "cost": 1,
+    "effect": "Stellt 10% deines Mental Focus wieder her.",
+    "description": "Kurz durchatmen und wieder Haltung gewinnen.",
+    "rarity": "common"
+  },
+  {
+    "id": "universal-2",
+    "name": "Inspiration-Schub",
+    "originalName": "Inspiration Surge",
+    "style": "Universal",
+    "cost": 0,
+    "effect": "Stellt sofort 5 Inspiration wieder her.",
+    "description": "Ein Moment der Klarheit füllt deine mentale Energie auf.",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "universal-3",
+    "name": "Brillante Riposte",
+    "originalName": "Brilliant Riposte",
+    "style": "Universal",
+    "cost": 2,
+    "effect": "Fügt Schaden in Höhe von 1,5× dem Schaden des letzten gegnerischen Angriffs zu.",
+    "description": "Das Argument des Gegners gegen ihn wenden.",
+    "rarity": "rare"
+  },
+  {
+    "id": "universal-4",
+    "name": "Schweigen",
+    "originalName": "Silence",
+    "style": "Universal",
+    "cost": 3,
+    "effect": "Bringt den Gegner 2 Runden lang komplett zum Schweigen und verhindert Karteneinsatz.",
+    "description": "Den Gegner buchstäblich sprachlos machen.",
+    "rarity": "rare"
+  }
+]

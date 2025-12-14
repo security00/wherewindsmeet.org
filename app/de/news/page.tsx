@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { latestNewsDate, newsItems } from "@/lib/news";
+import type { NewsType } from "@/lib/news";
+import { latestNewsDate, newsItems } from "@/lib/news.de";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
@@ -26,11 +27,26 @@ export const metadata: Metadata = {
 };
 
 export default function NewsPage() {
+  const typeLabel: Record<NewsType, string> = {
+    announcement: "Ankündigung",
+    event: "Event",
+    guide: "Guide",
+    beta: "Beta",
+  };
+
+  const formatDateDe = (iso: string) => {
+    const parts = iso.split("-");
+    if (parts.length !== 3) return iso;
+    const [year, month, day] = parts;
+    if (!year || !month || !day) return iso;
+    return `${day}.${month}.${year}`;
+  };
+
   const sortedNews = [...newsItems].sort((a, b) =>
     a.date < b.date ? 1 : a.date > b.date ? -1 : 0,
   );
 
-  const lastUpdatedLabel = `Aktualisiert ${latestNewsDate}`;
+  const lastUpdatedLabel = `Aktualisiert: ${formatDateDe(latestNewsDate)}`;
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -56,7 +72,7 @@ export default function NewsPage() {
       "Beobachtet kommende Where Winds Meet Updates: Balance-Patches, Boss/Bloodbath-Tweaks, Anti-Cheat, Events und Quest-Fixes. Wir aktualisieren nach jedem offiziellen Post.",
     updated: lastUpdatedLabel,
     links: [
-      { href: "/de/guides/tier-list", label: "China-Tierlist & Balance-Notizen" },
+      { href: "/de/guides/tier-list", label: "China-Tierliste & Balance-Notizen" },
       { href: "/de/guides/bosses", label: "Bossliste & Änderungen" },
       { href: "/de/guides/unholy-prophecy", label: "An Unholy Prophecy (Quest-Fixes)" },
       { href: "/de/guides/woven-with-malice", label: "Woven with Malice (Zeitschranken)" },
@@ -115,7 +131,7 @@ export default function NewsPage() {
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link href="/de/guides/tier-list" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
-                Tierlist (China-Perspektive)
+                Tierliste (China-Perspektive)
               </Link>
               <Link href="/de/guides/bosses" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
                 Boss-Änderungen
@@ -162,11 +178,11 @@ export default function NewsPage() {
                       {item.title}
                     </h2>
                     <span className="rounded-full border border-emerald-500/30 bg-emerald-950/30 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.1)]">
-                      {item.type}
+                      {typeLabel[item.type] ?? item.type}
                     </span>
                   </div>
                   <p className="text-xs font-medium text-slate-500 font-mono">
-                    {item.date}
+                    {formatDateDe(item.date)}
                     {item.tags && item.tags.length > 0 && (
                       <>
                         <span className="mx-2 text-slate-700">|</span>
@@ -208,7 +224,7 @@ export default function NewsPage() {
             Schwerpunkt sind Updates, die dein tägliches Spielgefühl ändern – Steuerung, Performance, Events, Balance. Saison-Events mit Ablaufdatum werden deutlich markiert.
           </p>
           <p>
-            Jede News verknüpfen wir mit relevanten Guides (z. B. Boss-Änderungen → Boss-Guide, Codes → Rewards-Guide), damit du direkt weiterklicken kannst.
+            Jede News verknüpfen wir mit relevanten Guides (z. B. Boss-Änderungen → Boss-Guide, Codes → Belohnungs-Guide), damit du direkt weiterklicken kannst.
           </p>
         </div>
       </section>

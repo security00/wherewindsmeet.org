@@ -60,10 +60,10 @@ const vnEntries: Entry[] = [
   { path: "/vn/guides/pvp-tier-list", changeFrequency: "weekly", priority: 0.78 },
   { path: "/vn/guides/free-morph", changeFrequency: "weekly", priority: 0.75 },
   { path: "/vn/guides/codes", changeFrequency: "daily", priority: 0.8 },
-  { path: "/vn/guides/builds", changeFrequency: "weekly", priority: 0.75 },
-  { path: "/vn/guides/weapons", changeFrequency: "weekly", priority: 0.8 },
-  { path: "/vn/guides/bosses", changeFrequency: "weekly", priority: 0.75 },
   { path: "/vn/guides/builds", changeFrequency: "weekly", priority: 0.78 },
+  { path: "/vn/guides/weapons", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/vn/guides/weapons/tier-list", changeFrequency: "weekly", priority: 0.75 },
+  { path: "/vn/guides/bosses", changeFrequency: "weekly", priority: 0.75 },
   { path: "/vn/guides/items", changeFrequency: "weekly", priority: 0.75 },
   { path: "/vn/guides/martial-arts-weapons", changeFrequency: "weekly", priority: 0.75 },
   { path: "/vn/guides/wall-puzzle", changeFrequency: "weekly", priority: 0.75 },
@@ -76,6 +76,7 @@ const vnEntries: Entry[] = [
   { path: "/vn/guides/qin-caiwei", changeFrequency: "weekly", priority: 0.72 },
   { path: "/vn/guides/gift-of-gab", changeFrequency: "weekly", priority: 0.7 },
   { path: "/vn/guides/woven-with-malice", changeFrequency: "weekly", priority: 0.72 },
+  { path: "/vn/guides/mist-shrouded-prison", changeFrequency: "weekly", priority: 0.72 },
   { path: "/vn/guides/npc-list", changeFrequency: "weekly", priority: 0.72 },
   { path: "/vn/guides/cosmetics", changeFrequency: "weekly", priority: 0.68 },
   { path: "/vn/guides/sects", changeFrequency: "weekly", priority: 0.67 },
@@ -99,7 +100,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const entries = [...staticEntries, ...deEntries, ...vnEntries, ...bossEntries, ...weaponEntries];
+  const deBossEntries: Entry[] = bossEntries.map((entry) => ({
+    ...entry,
+    path: `/de${entry.path}`,
+  }));
+  const vnBossEntries: Entry[] = bossEntries.map((entry) => ({
+    ...entry,
+    path: `/vn${entry.path}`,
+  }));
+  const deWeaponEntries: Entry[] = weaponEntries.map((entry) => ({
+    ...entry,
+    path: `/de${entry.path}`,
+  }));
+  const vnWeaponEntries: Entry[] = weaponEntries.map((entry) => ({
+    ...entry,
+    path: `/vn${entry.path}`,
+  }));
+
+  const entries = [
+    ...staticEntries,
+    ...deEntries,
+    ...vnEntries,
+    ...bossEntries,
+    ...weaponEntries,
+    ...deBossEntries,
+    ...vnBossEntries,
+    ...deWeaponEntries,
+    ...vnWeaponEntries,
+  ];
 
   return entries.map((entry) => ({
     url: `${baseUrl}${entry.path}`,

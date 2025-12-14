@@ -1,3 +1,8 @@
-export { metadata } from "../../../../guides/weapons/dual-blades/page";
-export { default } from "../../../../guides/weapons/dual-blades/page";
+import type { Metadata } from "next";
+import { WeaponDetail, generateWeaponMetadata } from "../weapon-detail";
 
+export const metadata: Metadata = generateWeaponMetadata("dual-blades");
+
+export default function DualBladesViPage() {
+  return <WeaponDetail weaponId="dual-blades" />;
+}

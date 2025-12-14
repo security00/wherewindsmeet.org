@@ -16,7 +16,7 @@ const LANGUAGE_SITES: LanguageSite[] = [
     countryCodes: ["VN"],
     path: "/vn",
     label: "Tiếng Việt",
-    message: "Chúng tôi đã có phiên bản Tiếng Việt cho khu vực của bạn.",
+    message: "Hiện đã có phiên bản tiếng Việt.",
     cta: "Chuyển sang Tiếng Việt",
     stayCta: "Tiếp tục dùng bản hiện tại",
   },
@@ -24,9 +24,9 @@ const LANGUAGE_SITES: LanguageSite[] = [
     countryCodes: ["DE", "AT", "CH", "LI", "LU"],
     path: "/de",
     label: "Deutsch",
-    message: "Wir haben eine deutsche Version für deine Region bereitgestellt.",
+    message: "Es gibt jetzt auch eine deutsche Version.",
     cta: "Zur deutschen Seite wechseln",
-    stayCta: "Auf dieser Sprache bleiben",
+    stayCta: "Auf dieser Seite bleiben",
   },
 ];
 
@@ -103,7 +103,9 @@ export function LanguageSwitchPrompt({ geoApiEndpoint }: { geoApiEndpoint?: stri
     <div className="mt-4 rounded-2xl border border-amber-400/50 bg-amber-50/10 p-4 text-sm text-amber-50 shadow-lg shadow-amber-900/30 backdrop-blur">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="space-y-1">
-          <p className="text-base font-semibold text-amber-100">Đã hỗ trợ / Jetzt verfügbar: {promptSite.label}</p>
+          <p className="text-base font-semibold text-amber-100">
+            {promptSite.path === "/vn" ? "Đã hỗ trợ:" : "Jetzt verfügbar:"} {promptSite.label}
+          </p>
           <p className="text-xs text-amber-100/80">{promptSite.message}</p>
         </div>
         <div className="flex flex-wrap items-center gap-2">

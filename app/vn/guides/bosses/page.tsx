@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { bosses } from "@/lib/bosses";
+import { bosses } from "@/lib/bosses.vi";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
@@ -93,7 +93,7 @@ export default function BossesPage() {
                 </p>
                 <div className="mt-3 flex flex-wrap gap-2 text-[11px]">
                   <Link
-                    href={`/guides/bosses/${boss.id}`}
+                    href={`/vn/guides/bosses/${boss.id}`}
                     className="rounded-full bg-slate-900/80 px-3 py-1 text-emerald-300 ring-1 ring-emerald-400/60 hover:bg-emerald-500/10"
                   >
                     Xem overview trận

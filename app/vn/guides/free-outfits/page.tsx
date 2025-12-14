@@ -72,59 +72,95 @@ const checklist = [
 ];
 
 const freeSets = [
-  { name: "Master Deceiver", source: "Open Beta pre-registration mail reward." },
-  { name: "Mountain Pine", source: "Beta test reward." },
-  { name: "Swaying Lotus", source: "Pre-registration milestone mail." },
-  { name: "First Step", source: "Complete “Another New Wing” in Heaven Has No Pier." },
-  { name: "Elegy of Petals", source: "Solemn Echo permanent banner (Echo Jade pulls are farmable)." },
-  { name: "Return of Spring", source: "Solemn Echo permanent banner." },
-  { name: "Crimson Curtain", source: "Solemn Echo permanent banner." },
-  { name: "Blazing Passes", source: "Solemn Echo permanent banner." },
-  { name: "Peaceful Life", source: "Finish 7 chapters of A Warrior's Journey." },
-  { name: "Humble Hero", source: "Reach Lv61 in Path of the Strong event." },
-  { name: "Blazing Midnight", source: "Join Midnight Blades sect, buy in sect shop." },
-  { name: "Heavenly Frost", source: "Join Well of Heaven sect, buy in sect shop." },
-  { name: "Silent Current", source: "Join Silver Needle sect, buy in sect shop." },
-  { name: "Ninefold Freedom", source: "Join Nine Mortal Ways sect, buy in sect shop." },
-  { name: "Enlightened Mind", source: "Season Shop for 520 Cosmetic Chests." },
-  { name: "Chasing Red", source: "Still Shore campaign: 520 Cosmetic Chests or random from campaign chests." },
-  { name: "Bounty Hunter", source: "Purchase in Bounty Shop." },
-  { name: "Sound of Valor", source: "Reach exploration Lv5 in Qinghe." },
-  { name: "Opulent Grace", source: "Reach exploration Lv5 in Kaifeng." },
-  { name: "Penstroke Posy", source: "Advance in Scholar profession." },
-  { name: "Art of Healing", source: "Advance in Healer profession." },
-  { name: "Gray Wolf", source: "Buy with Adventure Slip (Social Shop: Wandering Paths)." },
-  { name: "Purple Dew", source: "Buy with Adventure Slip (Social Shop: Wandering Paths)." },
-  { name: "Loyal Heart", source: "Buy with Harmony Charm (Social Shop: Partnership)." },
-  { name: "Twin Swallows", source: "Buy with Harmony Charm (Social Shop: Discipleship)." },
-  { name: "Still Moonlight", source: "Buy with Harmony Charm (Social Shop: Sworn Cohort)." },
-  { name: "Flawed Harmony", source: "Reach Partnership Lv3." },
-  { name: "Yaksha", source: "Gather Sin Leaf in Perception Forest, buy in Sin Leaf Exchange." },
-  { name: "Orchid Dew", source: "Guide Red Gold Boutique." },
-  { name: "Alms Pilgrim", source: "Encounter “Hero & Beauty” near Bloomveil Monastery Outpost (Qinghe)." },
-  { name: "Forgotten", source: "Complete Lifetime Lockup + Behind Bard Blues (≈200h jail sentence)." },
+  { name: "Master Deceiver", source: "Phần thưởng qua thư khi đăng ký trước Open Beta." },
+  { name: "Mountain Pine", source: "Phần thưởng tham gia beta test." },
+  { name: "Swaying Lotus", source: "Thư thưởng mốc đăng ký trước (pre-registration milestone)." },
+  { name: "First Step", source: "Hoàn thành “Another New Wing” tại Heaven Has No Pier." },
+  {
+    name: "Elegy of Petals",
+    source: "Banner thường trực Solemn Echo (có thể farm lượt quay bằng Echo Jade).",
+  },
+  { name: "Return of Spring", source: "Banner thường trực Solemn Echo." },
+  { name: "Crimson Curtain", source: "Banner thường trực Solemn Echo." },
+  { name: "Blazing Passes", source: "Banner thường trực Solemn Echo." },
+  { name: "Peaceful Life", source: "Hoàn thành 7 chương của A Warrior's Journey." },
+  { name: "Humble Hero", source: "Đạt cấp 61 trong sự kiện Path of the Strong." },
+  { name: "Blazing Midnight", source: "Gia nhập môn phái Midnight Blades, mua trong shop môn phái." },
+  { name: "Heavenly Frost", source: "Gia nhập môn phái Well of Heaven, mua trong shop môn phái." },
+  { name: "Silent Current", source: "Gia nhập môn phái Silver Needle, mua trong shop môn phái." },
+  { name: "Ninefold Freedom", source: "Gia nhập môn phái Nine Mortal Ways, mua trong shop môn phái." },
+  { name: "Enlightened Mind", source: "Season Shop (giá: 520 Cosmetic Chests)." },
+  {
+    name: "Chasing Red",
+    source: "Chiến dịch Still Shore: 520 Cosmetic Chests hoặc ngẫu nhiên từ rương chiến dịch.",
+  },
+  { name: "Bounty Hunter", source: "Mua tại Bounty Shop." },
+  { name: "Sound of Valor", source: "Đạt cấp Khám phá 5 tại Qinghe." },
+  { name: "Opulent Grace", source: "Đạt cấp Khám phá 5 tại Kaifeng." },
+  { name: "Penstroke Posy", source: "Thăng tiến trong nghề Scholar." },
+  { name: "Art of Healing", source: "Thăng tiến trong nghề Healer." },
+  {
+    name: "Gray Wolf",
+    source: "Mua bằng Adventure Slip (Social Shop: Wandering Paths).",
+  },
+  {
+    name: "Purple Dew",
+    source: "Mua bằng Adventure Slip (Social Shop: Wandering Paths).",
+  },
+  {
+    name: "Loyal Heart",
+    source: "Mua bằng Harmony Charm (Social Shop: Partnership).",
+  },
+  {
+    name: "Twin Swallows",
+    source: "Mua bằng Harmony Charm (Social Shop: Discipleship).",
+  },
+  {
+    name: "Still Moonlight",
+    source: "Mua bằng Harmony Charm (Social Shop: Sworn Cohort).",
+  },
+  { name: "Flawed Harmony", source: "Đạt cấp Partnership 3." },
+  {
+    name: "Yaksha",
+    source: "Nhặt Sin Leaf ở Perception Forest, đổi tại Sin Leaf Exchange.",
+  },
+  { name: "Orchid Dew", source: "Red Gold Boutique (xem hướng dẫn cửa hàng)." },
+  {
+    name: "Alms Pilgrim",
+    source: "Gặp sự kiện “Hero & Beauty” gần Bloomveil Monastery Outpost (Qinghe).",
+  },
+  {
+    name: "Forgotten",
+    source: "Hoàn thành Lifetime Lockup + Behind Bard Blues (án tù khoảng 200 giờ).",
+  },
 ];
 
 const freeOutfits = [
-  { name: "Novice Wanderer", source: "Starter outfit." },
-  { name: "Taming Storms", source: "Complete “A Horse Neighs in the Forest” (Heaven Has No Pier chapter)." },
-  { name: "Jianghu: Wanderer", source: "Solemn Echo permanent banner (Echo Jade pulls are farmable)." },
-  { name: "Blue Clouds", source: "Season Shop for 360 Cosmetic Chests." },
-  { name: "Autumn Orchid", source: "Season Shop for 360 Cosmetic Chests." },
-  { name: "Bathrobe: Golden Threads", source: "Finish “Golden Guest” achievement." },
+  { name: "Novice Wanderer", source: "Trang phục khởi đầu." },
+  {
+    name: "Taming Storms",
+    source: "Hoàn thành “A Horse Neighs in the Forest” (chương Heaven Has No Pier).",
+  },
+  {
+    name: "Jianghu: Wanderer",
+    source: "Banner thường trực Solemn Echo (có thể farm lượt quay bằng Echo Jade).",
+  },
+  { name: "Blue Clouds", source: "Season Shop (giá: 360 Cosmetic Chests)." },
+  { name: "Autumn Orchid", source: "Season Shop (giá: 360 Cosmetic Chests)." },
+  { name: "Bathrobe: Golden Threads", source: "Hoàn thành thành tựu “Golden Guest”." },
 ];
 
 const freeHairstyles = [
   {
-    name: "Starter Hairstyles (1–12)",
+    name: "Kiểu tóc mặc định (1–12)",
     source:
-      "Brush hair with the bronze mirror in Blissful Retreat twice per day until all starter styles are unlocked.",
+      "Chải tóc bằng gương đồng ở Blissful Retreat 2 lần mỗi ngày cho đến khi mở đủ các kiểu tóc mặc định.",
   },
-  { name: "Unbound: Hair", source: "Solemn Echo permanent banner." },
+  { name: "Unbound: Hair", source: "Banner thường trực Solemn Echo." },
   {
-    name: "Daily combing tip",
+    name: "Mẹo chải tóc hằng ngày",
     source:
-      "Visit the house south of Blissful Retreat waypoint; interact twice daily to collect missed starter styles.",
+      "Ghé ngôi nhà phía nam waypoint Blissful Retreat; tương tác 2 lần mỗi ngày để nhận lại các kiểu tóc mặc định còn thiếu.",
   },
 ];
 

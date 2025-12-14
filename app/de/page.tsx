@@ -8,12 +8,12 @@ import EventSpotlight from "@/components/EventSpotlight";
 export const metadata: Metadata = {
   title: "Where Winds Meet – Deutscher Global-Launch-Guide-Hub",
   description:
-    "Deutscher Hub zum Global Launch mit Preview-Stream sowie gefragten Where Winds Meet Guides, Codes, Tierlists und Updates für PC, Konsole und Mobile.",
+    "Deutscher Hub zum Global Launch mit Preview-Stream sowie gefragten Where Winds Meet Guides, Codes, Tierlisten und Updates für PC, Konsole und Mobile.",
   alternates: buildHreflangAlternates("/", { canonicalLanguage: "de" }),
   openGraph: {
     title: "Where Winds Meet – Deutscher Guide-Hub",
     description:
-      "Schau den Preview-Stream und finde die gefragtesten Where Winds Meet Guides: Tierlists, Codes, Bosse, Roadmap und Quests wie An Unholy Prophecy, One Leaf One Life und Woven with Malice.",
+      "Schau den Preview-Stream und finde die gefragtesten Where Winds Meet Guides: Tierlisten, Codes, Bosse, Roadmap und Quests wie An Unholy Prophecy, One Leaf One Life und Woven with Malice.",
     url: "https://wherewindsmeet.org/de",
     images: [
       {
@@ -36,13 +36,13 @@ export default function Home() {
   return (
     <div className="space-y-10">
       <EventSpotlight
-        eyebrow="Hot Event · Dez 2025"
+        eyebrow="Aktuelles Event · Dez 2025"
         title="The Great Faceologist"
-        description="Zeitlich begrenzter Face/Make-up-Contest. Nutze den richtigen Upload-Pfad im Spiel und aktiviere den Event-Tag, damit dein Beitrag wirklich zählt."
+        description="Zeitlich begrenzter Face-/Make-up-Contest. Nutze den richtigen Upload‑Pfad im Spiel und aktiviere den Event‑Tag, damit dein Beitrag gewertet wird."
         bullets={[
-          "Nur Uploads aus Appearance → Edit Face zählen (Outfit-Gallery nicht).",
-          "Vor dem Publish den Tag [The Great Faceologist] manuell aktivieren.",
-          "Daily Cap ist niedrig (~5/Tag) – keine Slots verschwenden.",
+          "Nur Uploads über Appearance → Edit Face zählen (nicht aus der Outfit-Gallery).",
+          "Vor dem Veröffentlichen den Tag [The Great Faceologist] manuell aktivieren.",
+          "Tageslimit ist niedrig (~5/Tag) – keine Slots verschwenden.",
         ]}
         primaryHref="/de/guides/the-great-faceologist"
         primaryLabel="Event-Guide öffnen"
@@ -132,12 +132,12 @@ export default function Home() {
             >
               Free Morph freischalten
             </Link>
-            <Link
-              href="/de/guides/tier-list"
-              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
-            >
-              China-Tierlist
-            </Link>
+              <Link
+                href="/de/guides/tier-list"
+                className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+              >
+                China‑Tierliste
+              </Link>
             <Link
               href="/de/guides/unholy-prophecy"
               className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
@@ -165,7 +165,7 @@ export default function Home() {
           </div>
           <p className="mt-3 w-full text-xs text-emerald-50/80">
             Schnellzugriff für Top-Suchen: nächstes Update, Bossliste, Qin-Caiwei-Guide, Free Morph
-            freischalten und China-Perspektive der Tierlist für Waffen/Builds.
+            freischalten und China-Perspektive der Tierliste für Waffen/Builds.
           </p>
         </div>
       </section>
@@ -225,7 +225,7 @@ export default function Home() {
               tag: "Jianghu",
             },
             {
-              title: "Wall Puzzle",
+              title: "Wandrätsel (Wall Puzzle)",
               href: "/de/guides/wall-puzzle",
               desc: "Echoes of Old Battles: Feuerstellen, Yanyun Oath, Wandfelder 移/百/漂 drücken.",
               tag: "Puzzle",
@@ -243,9 +243,9 @@ export default function Home() {
               tag: "Belohnungen",
             },
             {
-              title: "Tierlists",
+              title: "Tierlisten",
               href: "/de/guides/tier-list",
-              desc: "PVP/PVE-Rankings und Waffen-Tiers nach Balance-Änderungen.",
+              desc: "PvP/PvE-Rankings und Waffen-Tiers nach Balance-Änderungen.",
               tag: "Meta",
             },
           ].map((item) => (
@@ -298,10 +298,10 @@ export default function Home() {
             {
               title: "Builds & Talentpfade",
               href: "/de/guides/builds",
-              desc: "Für aktuelle Patches: flexible PVE/PVP-Archetypen mit Waffenwechseln.",
+              desc: "Für aktuelle Patches: flexible PvE/PvP-Archetypen mit Waffenwechseln.",
             },
             {
-              title: "Patch-Notes Summary",
+              title: "Patch-Notes: Kurzfassung",
               href: "/de/guides/patch-notes",
               desc: "Kurzfassung: Schadens-Tuning, Cooldown-Anpassungen, Meta-Verschiebungen.",
             },
@@ -364,7 +364,7 @@ export default function Home() {
             {
               title: "Roadmap & Updates",
               desc: "News, Events und Roadmap-Schritte, um Freebies rechtzeitig abzuholen.",
-              href: "/news",
+              href: "/de/news",
               badge: "Was kommt",
             },
             {

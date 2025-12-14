@@ -196,7 +196,7 @@ export default function CodesPage() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-ink-spirit">PC & Mobile</h3>
             <ol className="space-y-3 text-sm text-slate-300">
-              <li className="step-manual">Open the <span className="text-slate-100 font-medium">Paimon Menu</span> (Esc).</li>
+              <li className="step-manual">Open the <span className="text-slate-100 font-medium">System Menu</span> (Esc).</li>
               <li className="step-manual">Navigate to <span className="text-slate-100 font-medium">Settings {'>'} Account</span>.</li>
               <li className="step-manual">Select <span className="text-slate-100 font-medium">Redeem Code</span>.</li>
               <li className="step-manual">Paste the code and check your in-game mail.</li>
