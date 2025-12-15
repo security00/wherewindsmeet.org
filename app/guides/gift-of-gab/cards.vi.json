@@ -1,0 +1,202 @@
+[
+  {
+    "id": "bluster-1",
+    "name": "Khẳng định đanh thép",
+    "originalName": "Bold Assertion",
+    "style": "Bluster",
+    "cost": 2,
+    "effect": "Gây sát thương vừa lên Mental Focus của đối thủ.",
+    "description": "Đưa ra lời khẳng định đầy tự tin khiến đối thủ lung lay.",
+    "rarity": "common"
+  },
+  {
+    "id": "bluster-2",
+    "name": "Tự tin áp đảo",
+    "originalName": "Overwhelming Confidence",
+    "style": "Bluster",
+    "cost": 4,
+    "effect": "Gây sát thương cao và giảm nhẹ tốc độ hồi Inspiration của đối thủ.",
+    "description": "Tỏ ra quá tự tin đến mức khiến đối thủ nghi ngờ chính lập luận của mình.",
+    "rarity": "rare"
+  },
+  {
+    "id": "bluster-3",
+    "name": "Phẩy tay khinh thường",
+    "originalName": "Dismissive Wave",
+    "style": "Bluster",
+    "cost": 1,
+    "effect": "Gây sát thương thấp, tốn rất ít Inspiration.",
+    "description": "Phủi bỏ lập luận của đối thủ mà không cần tranh luận dài dòng.",
+    "rarity": "common"
+  },
+  {
+    "id": "bluster-4",
+    "name": "Thế đứng vững vàng",
+    "originalName": "Unwavering Stance",
+    "style": "Bluster",
+    "cost": 3,
+    "effect": "Giảm 30% sát thương nhận vào trong 2 lượt tiếp theo.",
+    "description": "Giữ vững lập trường trước mọi phản biện.",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "provocation-1",
+    "name": "Lời châm chọc sắc bén",
+    "originalName": "Cutting Remark",
+    "style": "Provocation",
+    "cost": 2,
+    "effect": "Gây sát thương vừa và kích động cảm xúc đối thủ.",
+    "description": "Chọc đúng điểm khó chịu khiến đối thủ bực bội.",
+    "rarity": "common"
+  },
+  {
+    "id": "provocation-2",
+    "name": "Bùng nổ cảm xúc",
+    "originalName": "Emotional Explosion",
+    "style": "Provocation",
+    "cost": 5,
+    "effect": "Gây sát thương cực cao nhưng giảm tốc độ hồi Inspiration của bạn ở lượt sau.",
+    "description": "Kích hoạt phản ứng mạnh khiến đối thủ mất tập trung hoàn toàn.",
+    "rarity": "rare"
+  },
+  {
+    "id": "provocation-3",
+    "name": "Cười nhạo",
+    "originalName": "Mocking Laugh",
+    "style": "Provocation",
+    "cost": 1,
+    "effect": "Gây sát thương rất thấp, khiến đối thủ bị câm lặng 1 lượt.",
+    "description": "Cười nhạo lập luận của đối thủ, khiến họ nhất thời \"tắc lời\".",
+    "rarity": "common"
+  },
+  {
+    "id": "provocation-4",
+    "name": "Công kích cá nhân",
+    "originalName": "Personal Attack",
+    "style": "Provocation",
+    "cost": 3,
+    "effect": "Gây sát thương tỉ lệ với lượng Mental Focus mà đối thủ đã mất.",
+    "description": "Tấn công uy tín của đối thủ thay vì bám vào lập luận.",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "rebuttal-1",
+    "name": "Phản biện logic",
+    "originalName": "Logical Counter",
+    "style": "Rebuttal",
+    "cost": 2,
+    "effect": "Gây sát thương vừa và phơi bày lỗi logic của đối thủ.",
+    "description": "Dùng dữ kiện để bóc tách lập luận đối thủ một cách hệ thống.",
+    "rarity": "common"
+  },
+  {
+    "id": "rebuttal-2",
+    "name": "Bằng chứng không thể chối cãi",
+    "originalName": "Irrefutable Evidence",
+    "style": "Rebuttal",
+    "cost": 4,
+    "effect": "Gây sát thương cao và giảm 50% chi phí thẻ tiếp theo của đối thủ.",
+    "description": "Đưa ra bằng chứng áp đảo khiến đối thủ không thể phủ nhận.",
+    "rarity": "rare"
+  },
+  {
+    "id": "rebuttal-3",
+    "name": "Nhắc điều lệ",
+    "originalName": "Point of Order",
+    "style": "Rebuttal",
+    "cost": 2,
+    "effect": "Hóa giải đòn đánh trước đó của đối thủ và phản lại 50% thành sát thương.",
+    "description": "Dùng thủ tục tranh biện để vô hiệu hóa lập luận của đối thủ.",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "rebuttal-4",
+    "name": "Phòng thủ hoàn hảo",
+    "originalName": "Perfect Defense",
+    "style": "Rebuttal",
+    "cost": 3,
+    "effect": "Chặn đòn tấn công tiếp theo của đối thủ và nhận 1 lớp phòng thủ tạm thời.",
+    "description": "Dựng nên hàng phòng thủ logic kín kẽ trước mọi phản công.",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "filibuster-1",
+    "name": "Độc thoại bất tận",
+    "originalName": "Endless Monologue",
+    "style": "Filibuster",
+    "cost": 3,
+    "effect": "Gây sát thương vừa mỗi giây trong 3 giây; đối thủ không thể đáp trả.",
+    "description": "Nói liên tục không cho đối thủ chen lời.",
+    "rarity": "common"
+  },
+  {
+    "id": "filibuster-2",
+    "name": "Bức tường lời nói",
+    "originalName": "Wall of Words",
+    "style": "Filibuster",
+    "cost": 5,
+    "effect": "Gây sát thương cộng dồn cao, giảm 40% sát thương của đối thủ ở lượt sau.",
+    "description": "Tuôn ra lời lẽ dồn dập khiến đối thủ không tìm được kẽ hở.",
+    "rarity": "rare"
+  },
+  {
+    "id": "filibuster-3",
+    "name": "Lạc đề lan man",
+    "originalName": "Rambling Tangent",
+    "style": "Filibuster",
+    "cost": 2,
+    "effect": "Gây sát thương và nhận thêm lượt rút thẻ ở lượt sau.",
+    "description": "Lái sang chuyện bên lề để làm rối nhịp tính toán của đối thủ.",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "filibuster-4",
+    "name": "Lá chắn dài dòng",
+    "originalName": "Verbose Shield",
+    "style": "Filibuster",
+    "cost": 3,
+    "effect": "Tăng 15% hồi Mental Focus và giảm 20% sát thương nhận vào.",
+    "description": "Dùng lời lẽ hoa mỹ để làm chậm nhịp tấn công của đối thủ.",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "universal-1",
+    "name": "Phản hồi điềm tĩnh",
+    "originalName": "Composed Response",
+    "style": "Universal",
+    "cost": 1,
+    "effect": "Hồi 10% Mental Focus của bạn.",
+    "description": "Bình tâm lại để lấy lại thế cân bằng.",
+    "rarity": "common"
+  },
+  {
+    "id": "universal-2",
+    "name": "Bùng nổ cảm hứng",
+    "originalName": "Inspiration Surge",
+    "style": "Universal",
+    "cost": 0,
+    "effect": "Hồi ngay 5 điểm Inspiration.",
+    "description": "Một khoảnh khắc sáng tỏ giúp phục hồi năng lượng tinh thần.",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "universal-3",
+    "name": "Đáp trả xuất sắc",
+    "originalName": "Brilliant Riposte",
+    "style": "Universal",
+    "cost": 2,
+    "effect": "Gây sát thương bằng sát thương đòn đánh gần nhất của đối thủ × 1.5.",
+    "description": "Dùng chính lập luận của đối thủ để phản đòn.",
+    "rarity": "rare"
+  },
+  {
+    "id": "universal-4",
+    "name": "Câm lặng",
+    "originalName": "Silence",
+    "style": "Universal",
+    "cost": 3,
+    "effect": "Khiến đối thủ bị câm lặng hoàn toàn trong 2 lượt, không thể dùng thẻ.",
+    "description": "Khiến đối thủ hoàn toàn \"tắc lời\".",
+    "rarity": "rare"
+  }
+]

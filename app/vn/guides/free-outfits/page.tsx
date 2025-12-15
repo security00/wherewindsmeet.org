@@ -8,19 +8,19 @@ const baseUrl = "https://wherewindsmeet.org";
 export const metadata: Metadata = {
   title: "Trang phục miễn phí Where Winds Meet",
   description:
-    "Trang phục/set/cosmetics/kiểu tóc miễn phí trong Where Winds Meet từ sự kiện, nhiệm vụ, code, shop và thưởng xã giao—ưu tiên các lựa chọn 0-cost để tiết kiệm tiền tệ.",
+    "Trang phục/set/ngoại hình (cosmetics)/kiểu tóc miễn phí trong Where Winds Meet từ sự kiện, nhiệm vụ, code, shop và thưởng xã giao—ưu tiên các lựa chọn 0-cost để tiết kiệm tiền tệ.",
   alternates: buildHreflangAlternates("/guides/free-outfits", { canonicalLanguage: "vi" }),
   openGraph: {
     title: "Trang phục miễn phí Where Winds Meet",
     description:
-      "Trang phục/set/cosmetics/kiểu tóc miễn phí từ sự kiện, nhiệm vụ, code, shop và xã giao—ưu tiên 0-cost để tiết kiệm tiền tệ.",
+      "Trang phục/set/ngoại hình (cosmetics)/kiểu tóc miễn phí từ sự kiện, nhiệm vụ, code, shop và xã giao—ưu tiên 0-cost để tiết kiệm tiền tệ.",
     url: `${baseUrl}/vn/guides/free-outfits`,
     locale: "vi_VN",
   },
   twitter: {
     title: "Trang phục miễn phí Where Winds Meet",
     description:
-      "Trang phục/set/cosmetics/kiểu tóc miễn phí từ sự kiện, nhiệm vụ, code, shop và xã giao—ưu tiên 0-cost để tiết kiệm tiền tệ.",
+      "Trang phục/set/ngoại hình (cosmetics)/kiểu tóc miễn phí từ sự kiện, nhiệm vụ, code, shop và xã giao—ưu tiên 0-cost để tiết kiệm tiền tệ.",
   },
 };
 
@@ -47,16 +47,16 @@ const highlightCards = [
     title: "Code & ô shop 0-cost",
     points: [
       "Code đang hoạt động thường có voucher cosmetics—nhập sớm tránh hết hạn.",
-      "Shop sự kiện đôi khi có ô 0 tiền “dùng thử”; nhận trước rồi hãy mua.",
+      "Cửa hàng sự kiện đôi khi có ô 0 tiền “dùng thử”; nhận trước rồi hãy mua.",
       "Lưu ý bậc 0→discount: lấy miễn phí xong mới cân nhắc bậc trả phí.",
     ],
     image: "/free-outfits/free-sets.webp",
   },
   {
-    title: "Hệ thống xã hội & co-op",
+    title: "Hệ thống xã hội & tổ đội",
     points: [
       "Cống hiến bang, mốc thiện cảm và điểm xã giao đổi được phụ kiện/emote—đừng để tràn điểm.",
-      "Co-op daily và clear lần đầu nội dung nhóm có thể rơi box cosmetic hoặc thuốc nhuộm.",
+      "Nhiệm vụ tổ đội (co-op) hằng ngày và lần đầu vượt nội dung tổ đội có thể rơi rương ngoại hình hoặc thuốc nhuộm.",
       "Cuộc thi ảnh/UGC thường thưởng cosmetic theo chủ đề; xem thông báo chính thức dịp lễ.",
     ],
     image: "/free-outfits/free-hairstyles.webp",
@@ -64,9 +64,9 @@ const highlightCards = [
 ];
 
 const checklist = [
-  "Hàng ngày: nhận đăng nhập, làm daily sự kiện, kiểm tra ô shop 0-cost trước khi chi tiền.",
-  "Hàng tuần: làm nhiệm vụ bang/co-op, đạt trần tiền sự kiện, đổi box cosmetic ngẫu nhiên.",
-  "Liên tục: nhận thành tựu còn sót ở Khám phá/Chiến đấu/Xã giao để gom cosmetic ẩn.",
+  "Hàng ngày: nhận đăng nhập, làm nhiệm vụ ngày của sự kiện, kiểm tra ô shop 0-cost trước khi chi tiền.",
+  "Hàng tuần: làm nhiệm vụ bang/tổ đội (co-op), đạt trần tiền sự kiện, đổi rương ngoại hình ngẫu nhiên.",
+  "Liên tục: nhận thành tựu còn sót ở Khám phá/Chiến đấu/Xã giao để gom ngoại hình ẩn.",
   "Mùa/lễ: chuẩn bị nhiệm vụ yêu cầu trước lễ hội để không lỡ đổi trang phục giới hạn.",
   "Code: nhập code (xem trang Codes) sớm tránh hết hạn và cộng dồn với sự kiện.",
 ];
@@ -181,7 +181,7 @@ export default function FreeOutfitsPage() {
           "@type": "ListItem",
           position: 1,
           name: "Trang chủ",
-          item: baseUrl,
+          item: `${baseUrl}/vn`,
         },
         {
           "@type": "ListItem",
@@ -436,7 +436,7 @@ export default function FreeOutfitsPage() {
             Thành tựu/nhiệm vụ ẩn: mốc khám phá, chuỗi NPC thị trấn, thử thách môn phái thường cho phụ kiện/voucher tóc—xem bảng thành tựu hàng tuần.
           </p>
           <p>
-            Hệ thống xã hội: cống hiến bang, điểm thiện cảm, hoạt động co-op đổi được box cosmetic—tiêu điểm trước reset tuần để tránh tràn.
+            Hệ thống xã hội: cống hiến bang, điểm thiện cảm, hoạt động tổ đội (co-op) đổi được rương ngoại hình (cosmetic) — ưu tiên tiêu trước reset tuần để tránh tràn.
           </p>
           <p>
             Nhịp patch: bản lớn và dịp lễ hay xoay/ rerun set. Chuẩn bị điều kiện trước để sẵn sàng khi shop mở.

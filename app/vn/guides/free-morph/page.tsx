@@ -95,10 +95,10 @@ export default function FreeMorphPage() {
 
         <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="space-y-3">
-            <p className="text-xs uppercase tracking-wide text-emerald-300">Mystic Skill</p>
+            <p className="text-xs uppercase tracking-wide text-emerald-300">Bí thuật (Mystic)</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-50">Free Morph – Cách mở & sử dụng</h1>
             <p className="max-w-3xl text-sm sm:text-base text-slate-300 leading-relaxed">
-              Học Free Morph bằng cách đỡ chuỗi đá xoay của Tian Ying trong bản Challenge. Hiểu hiệu ứng nhấc mục tiêu, thưởng tier và cách gắn vào build PvE/PvP.
+              Học Free Morph bằng cách đỡ chuỗi đá xoay của Tian Ying trong chế độ Challenge. Hiểu hiệu ứng nhấc mục tiêu, thưởng theo tier và cách gắn vào build PvE/PvP.
             </p>
           </div>
 
@@ -112,7 +112,7 @@ export default function FreeMorphPage() {
             />
             <div className="text-sm text-slate-200">
               <p className="font-semibold text-slate-50">Free Morph</p>
-              <p className="text-xs text-slate-400">Mystic tấn công • Khống chế đơn mục tiêu</p>
+              <p className="text-xs text-slate-400">Bí thuật tấn công • Khống chế đơn mục tiêu</p>
             </div>
           </div>
         </div>
@@ -133,7 +133,7 @@ export default function FreeMorphPage() {
       <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
         <div className="flex items-center justify-between flex-wrap gap-3">
           <h2 className="text-2xl font-bold text-slate-50">Cách mở Free Morph</h2>
-          <span className="text-xs text-slate-500">Nguồn: Challenge Tian Ying (deflect đá xoay)</span>
+          <span className="text-xs text-slate-500">Nguồn: Challenge Tian Ying (đỡ/deflect đá xoay)</span>
         </div>
         <ol className="space-y-3 list-decimal list-inside text-sm text-slate-300">
           {unlockSteps.map((step) => (
@@ -171,7 +171,7 @@ export default function FreeMorphPage() {
           ))}
         </ul>
         <div className="rounded-2xl border border-emerald-600/30 bg-emerald-950/30 p-4 text-sm text-emerald-100">
-          Kết hợp với công cụ nhấc/giữ mục tiêu khác (Talon Strike, Yaksha Rush) trong PvE boss; hoặc dùng như khống chế bất ngờ trong PvP sau khi dụ đối thủ whiff. Tier 4 giảm Thể lực giúp kẹp giữa kỹ năng cơ động an toàn hơn.
+          Kết hợp với công cụ nhấc/giữ mục tiêu khác (Talon Strike, Yaksha Rush) khi đánh boss PvE; hoặc dùng như khống chế bất ngờ trong PvP sau khi dụ đối thủ trượt chiêu. Tier 4 giảm Thể lực giúp kẹp giữa các kỹ năng cơ động an toàn hơn.
         </div>
       </section>
 
@@ -190,7 +190,7 @@ export default function FreeMorphPage() {
           </li>
           <li>
             <Link href="/vn/guides/builds" className="underline underline-offset-4 hover:text-emerald-100">
-              Builds – archetype PvE/PvP cập nhật theo patch
+              Bộ build – mẫu lối chơi PvE/PvP theo patch mới
             </Link>
           </li>
         </ul>

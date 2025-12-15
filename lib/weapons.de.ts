@@ -89,7 +89,7 @@ export const weapons: Weapon[] = [
     officialArt: "/weapons/official/wq7_d8a85874.png",
     officialVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/690c6889be134a7f3324d9f6gQMKFy6i03",
-    localIcon: "/weapons/ropedart.png",
+    localIcon: "/martial-arts/weapons/mortal-rope-dart.png",
     buildLink: "/guides/builds#rope-dart-hunter",
   },
 ];

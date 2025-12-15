@@ -1,26 +1,26 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { featuredVideos } from "../../../lib/featuredVideos";
+import { featuredVideos } from "@/lib/featuredVideos.vi";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 
 export const metadata: Metadata = {
-  title: "Video Where Winds Meet – gameplay & highlight",
+  title: "Video Where Winds Meet – gameplay, combat, boss, khám phá",
   description:
-    "Xem tuyển tập video Where Winds Meet: gameplay, combat, khám phá và style cộng đồng, nhúng ngay trong hub.",
+    "Tuyển tập video Where Winds Meet: gameplay, combat, boss run, khám phá và style cộng đồng — nhúng ngay trong hub.",
   alternates: buildHreflangAlternates("/videos", { canonicalLanguage: "vi" }),
   openGraph: {
-    title: "Video Where Winds Meet – gameplay & highlight",
+    title: "Video Where Winds Meet – gameplay, combat, boss, khám phá",
     description:
-      "Xem tuyển tập video Where Winds Meet: gameplay, combat, khám phá và style cộng đồng, nhúng ngay trong hub.",
+      "Tuyển tập video Where Winds Meet: gameplay, combat, boss run, khám phá và style cộng đồng — nhúng ngay trong hub.",
     url: `${baseUrl}/vn/videos`,
     locale: "vi_VN",
   },
   twitter: {
-    title: "Video Where Winds Meet – gameplay & highlight",
+    title: "Video Where Winds Meet – gameplay, combat, boss, khám phá",
     description:
-      "Xem tuyển tập video Where Winds Meet: gameplay, combat, khám phá và style cộng đồng.",
+      "Tuyển tập video Where Winds Meet: gameplay, combat, boss run, khám phá và style cộng đồng.",
   },
 };
 
@@ -37,8 +37,8 @@ export default function VideosPage() {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Trang chủ", item: baseUrl },
-        { "@type": "ListItem", position: 2, name: "Videos", item: `${baseUrl}/vn/videos` },
+        { "@type": "ListItem", position: 1, name: "Trang chủ", item: `${baseUrl}/vn` },
+        { "@type": "ListItem", position: 2, name: "Video", item: `${baseUrl}/vn/videos` },
       ],
     },
     ...featuredVideos.map((video) => ({

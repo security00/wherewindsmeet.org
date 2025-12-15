@@ -6,9 +6,9 @@ import { weapons } from "@/lib/weapons.vi";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "Tier List PVP Where Winds Meet - Vũ khí đấu tay đôi",
+  title: "Tier list PvP Where Winds Meet – vũ khí đấu tay đôi",
   description:
-    "Tier list PVP cho Where Winds Meet: xếp hạng vũ khí trong đấu tay đôi, giao tranh nhỏ và lối chơi cạnh tranh. Nắm vũ khí nào đang thống trị meta và cách build để thắng PVP.",
+    "Tier list PvP cho Where Winds Meet: xếp hạng vũ khí trong đấu tay đôi, giao tranh nhỏ và lối chơi cạnh tranh. Nắm vũ khí đang mạnh trong meta và cách build để thắng PvP.",
   alternates: buildHreflangAlternates("/guides/pvp-tier-list", { canonicalLanguage: "vi" }),
 };
 
@@ -54,7 +54,7 @@ export default function PVPTierListPage() {
         <div className="pointer-events-none absolute inset-0">
           <Image
             src="/background/bg1.webp"
-            alt="Nền tier list PVP Where Winds Meet"
+            alt="Nền tier list PvP Where Winds Meet"
             fill
             className="object-cover opacity-30 mix-blend-overlay"
           />
@@ -63,7 +63,7 @@ export default function PVPTierListPage() {
 
         <div className="relative z-10 space-y-6">
           <h1 className="text-balance text-4xl font-bold tracking-tight text-ink sm:text-5xl font-serif">
-            Ảnh chụp <span className="text-ink-red">meta PVP</span>
+            Ảnh chụp <span className="text-ink-red">meta PvP</span>
           </h1>
           <div className="max-w-3xl space-y-4 text-slate-300 leading-relaxed font-sans">
             <p>

@@ -1,0 +1,88 @@
+[
+  {
+    "id": "peng-shan",
+    "name": "Peng Shan Vạn Trọng",
+    "chineseName": "蓬山万重",
+    "tagline": "\"Đỉnh núi muôn trùng, chẳng ngại chốn cao\"",
+    "inspiration": "Câu chuyện về Qing — cựu thủ lĩnh Mặc gia trong truyền thuyết.",
+    "character": "Qing",
+    "characterDescription": "Thủ lĩnh Mặc gia đời trước, nổi tiếng hào hoa, nhiệt huyết và kiên định.",
+    "theme": "Chủ đề cơ quan chim đồng",
+    "image": "/guides/cosmetics/cosmetics-04.webp",
+    "galleryImages": [
+      "/guides/cosmetics/cosmetics-05.webp",
+      "/guides/cosmetics/cosmetics-06.webp",
+      "/guides/cosmetics/cosmetics-07.webp",
+      "/guides/cosmetics/cosmetics-08.webp",
+      "/guides/cosmetics/cosmetics-09.webp",
+      "/guides/cosmetics/cosmetics-10.webp",
+      "/guides/cosmetics/cosmetics-11.webp",
+      "/guides/cosmetics/cosmetics-12.webp",
+      "/guides/cosmetics/cosmetics-15.webp"
+    ],
+    "designHighlights": [
+      "Toàn bộ cánh tay trái là cơ quan đồng",
+      "Họa tiết đồng lớn, gợi liên tưởng hiện vật khảo cổ",
+      "Chỉ vàng và điểm nhấn da"
+    ],
+    "contents": [
+      "Avatar động",
+      "Màn trình diễn tại khu định cư",
+      "Khuyên tai",
+      "Trang sức mặt",
+      "Phụ kiện nhỏ",
+      "Phụ kiện lớn",
+      "Áo choàng (cape)"
+    ],
+    "features": [
+      "Tách áo/quần",
+      "Có thể nhuộm màu",
+      "Hiệu ứng động"
+    ],
+    "acquisition": {
+      "method": "Đổi tại Harmony Store",
+      "cost": "2× Octave Aperture (八音窍)",
+      "availableDate": "21/11"
+    },
+    "rarity": "Nổi bật",
+    "theme_category": "Truyền thuyết Mặc gia"
+  },
+  {
+    "id": "zui-yun",
+    "name": "Túy Vân, Tỉnh Vũ",
+    "chineseName": "醉云醒雨",
+    "tagline": "Thần thái điềm tĩnh, khí chất an nhiên.",
+    "inspiration": "Gợi từ đêm mưa trong giang hồ — tĩnh lặng, thanh nhã và có chút hoài niệm.",
+    "character": "",
+    "characterDescription": "",
+    "theme": "Chủ đề đêm mưa giang hồ",
+    "image": "/guides/cosmetics/cosmetics-13.webp",
+    "galleryImages": [
+      "/guides/cosmetics/cosmetics-14.webp"
+    ],
+    "designHighlights": [
+      "Họa tiết mưa và mây",
+      "Vải mềm rủ, dáng áo thanh thoát",
+      "Thẩm mỹ tối giản, điềm tĩnh"
+    ],
+    "contents": [
+      "Khuyên tai",
+      "Trang sức mặt",
+      "Trang điểm",
+      "Phụ kiện (tách rời)",
+      "Thưởng avatar"
+    ],
+    "features": [
+      "Tách rời từng phần",
+      "Có thể nhuộm màu"
+    ],
+    "acquisition": {
+      "method": "Mua trong shop",
+      "cost": "2580× Resonant Pearl (长鸣珠)",
+      "availableDate": "21/11"
+    },
+    "rarity": "Tiêu chuẩn",
+    "theme_category": "Đêm mưa"
+  }
+]
+

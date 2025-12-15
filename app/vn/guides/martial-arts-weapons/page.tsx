@@ -206,7 +206,7 @@ export default function MartialArtsWeaponsPage() {
             </li>
             <li>
               <span className="font-semibold text-emerald-200">Oddity & thư:</span>{" "}
-              Nộp Oddity đầu cho Qi Sheng hoặc kiểm tra hòm thư; vài vũ khí được phát miễn phí.
+              Nộp Oddity (kỳ vật) đầu cho Qi Sheng hoặc kiểm tra hòm thư; vài vũ khí được phát miễn phí.
             </li>
           </ul>
           <Link
@@ -222,10 +222,10 @@ export default function MartialArtsWeaponsPage() {
           </h3>
           <ul className="space-y-2 text-sm text-slate-300">
             <li>
-              Dùng Zhou Coin và Training Item để tăng cấp; không vượt cấp nhân vật nếu chưa breakthrough.
+              Dùng Zhou Coin và vật phẩm luyện tập (Training Item) để tăng cấp; không thể vượt cấp nhân vật nếu chưa đột phá (breakthrough).
             </li>
             <li>
-              Breakthrough mỗi 10 cấp cần Custom Tips (mua bằng Jade Fish ở Activity Shop) + coin + Training Item.
+              Mỗi 10 cấp cần đột phá (breakthrough): Custom Tips (mua bằng Jade Fish ở Activity Shop) + coin + Training Item.
             </li>
             <li>
               Nâng cấp tăng sát thương lẫn hiệu ứng phụ (khiên/hồi máu), nên vũ khí hỗ trợ cũng mạnh hơn rõ rệt.

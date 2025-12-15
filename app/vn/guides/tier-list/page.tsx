@@ -1,25 +1,25 @@
 import type { Metadata } from "next";
-import TierListClient from "../../../guides/tier-list/TierListClient";
+import TierListClient from "./TierListClient";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 
 export const metadata: Metadata = {
-  title: "Tier List Where Winds Meet – PVP, PVE, đường vũ khí & nội công",
+  title: "Tier list Where Winds Meet – PvP, PvE, đường vũ khí & nội công",
   description:
-    "Tier list tương tác cho Where Winds Meet: xếp hạng PVP/PVE, đường vũ khí, kết hợp song vũ khí và nội công theo bản cập nhật mới nhất.",
+    "Tier list tương tác cho Where Winds Meet: xếp hạng PvP/PvE, đường vũ khí, kết hợp song vũ khí và nội công theo bản cập nhật mới nhất.",
   alternates: buildHreflangAlternates("/guides/tier-list", { canonicalLanguage: "vi" }),
   openGraph: {
-    title: "Tier List Where Winds Meet – PVP, PVE, đường vũ khí & nội công",
+    title: "Tier list Where Winds Meet – PvP, PvE, đường vũ khí & nội công",
     description:
-      "Tier list tương tác cho Where Winds Meet: xếp hạng PVP/PVE, đường vũ khí, kết hợp song vũ khí và nội công theo bản cập nhật mới nhất.",
+      "Tier list tương tác cho Where Winds Meet: xếp hạng PvP/PvE, đường vũ khí, kết hợp song vũ khí và nội công theo bản cập nhật mới nhất.",
     url: `${baseUrl}/vn/guides/tier-list`,
     locale: "vi_VN",
   },
   twitter: {
-    title: "Tier List Where Winds Meet – PVP, PVE, đường vũ khí & nội công",
+    title: "Tier list Where Winds Meet – PvP, PvE, đường vũ khí & nội công",
     description:
-      "Tier list tương tác cho Where Winds Meet: xếp hạng PVP/PVE, đường vũ khí, kết hợp song vũ khí và nội công theo bản cập nhật mới nhất.",
+      "Tier list tương tác cho Where Winds Meet: xếp hạng PvP/PvE, đường vũ khí, kết hợp song vũ khí và nội công theo bản cập nhật mới nhất.",
   },
 };
 
@@ -40,7 +40,7 @@ export default function TierListPage() {
           "@type": "ListItem",
           position: 1,
           name: "Trang chủ",
-          item: baseUrl,
+          item: `${baseUrl}/vn`,
         },
         {
           "@type": "ListItem",

@@ -3,14 +3,14 @@ import Image from "next/image";
 import FeaturedImagesGallery from "../../../guides/cosmetics/FeaturedImagesGallery";
 import AppearanceSetsDisplay from "../../../guides/cosmetics/AppearanceSetsDisplay";
 import OtherAppearancesDisplay from "../../../guides/cosmetics/OtherAppearancesDisplay";
-import appearanceSets from "../../../guides/cosmetics/appearance-sets.json";
-import otherAppearances from "../../../guides/cosmetics/other-appearances.json";
+import appearanceSets from "../../../guides/cosmetics/appearance-sets.vi.json";
+import otherAppearances from "../../../guides/cosmetics/other-appearances.vi.json";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "Cosmetics & diện mạo Where Winds Meet",
+  title: "Ngoại hình (Cosmetics) & diện mạo Where Winds Meet",
   description:
-    "Hướng dẫn cosmetics/appearance Where Winds Meet: set ngoại hình, kiểu tóc, cách sở hữu, độ hiếm và cảm hứng văn hóa.",
+    "Hướng dẫn ngoại hình (cosmetics/appearance) Where Winds Meet: set diện mạo, kiểu tóc, cách sở hữu, độ hiếm và gợi ý phối đồ theo chủ đề giang hồ/Mặc gia.",
   alternates: buildHreflangAlternates("/guides/cosmetics", { canonicalLanguage: "vi" }),
 };
 
@@ -31,13 +31,13 @@ export default function CosmeticsPage() {
 
         <div className="relative space-y-3">
           <p className="text-xs uppercase tracking-wide text-emerald-300">
-            Cosmetics & diện mạo
+            Ngoại hình & diện mạo
           </p>
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
             Tùy biến diện mạo nhân vật.
           </h1>
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-            Khám phá set ngoại hình lấy cảm hứng từ văn hóa giang hồ và Mặc gia. Mỗi cosmetic kể câu chuyện riêng với thẩm mỹ Trung Hoa cổ; phối đồ, kiểu tóc và hiệu ứng để thể hiện cá tính.
+            Khám phá các set ngoại hình lấy cảm hứng từ giang hồ và truyền thuyết Mặc gia. Mỗi món cosmetics/appearance đều có chủ đề thẩm mỹ riêng; phối trang phục (outfit), kiểu tóc và hiệu ứng để thể hiện phong cách của bạn.
           </p>
         </div>
       </section>
@@ -52,18 +52,18 @@ export default function CosmeticsPage() {
         <div className="space-y-2">
           <h3 className="text-lg font-semibold text-slate-50">Mẹo tùy biến</h3>
           <ul className="space-y-2 text-sm text-slate-300">
-            <li>Nhiều set tách áo/quần—trộn để có phối đồ riêng.</li>
-            <li>Hầu hết cosmetics có thể nhuộm màu.</li>
-            <li>Sự kiện giới hạn thường giảm giá mạnh—xem kỹ trước khi bỏ lỡ.</li>
-            <li>Set lấy cảm hứng Mặc gia và giang hồ—sưu tầm để trải nghiệm trọn văn hóa.</li>
+            <li>Nhiều set tách áo/quần — trộn để có phối đồ riêng.</li>
+            <li>Phần lớn ngoại hình có thể nhuộm màu.</li>
+            <li>Sự kiện giới hạn thường giảm giá mạnh — kiểm tra kỹ để không bỏ lỡ.</li>
+            <li>Các set chủ đề Mặc gia/giang hồ có bản sắc rất rõ — sưu tầm để hoàn thiện phong cách.</li>
           </ul>
         </div>
         <div className="space-y-2">
           <h3 className="text-lg font-semibold text-slate-50">Tiền tệ</h3>
           <ul className="space-y-2 text-sm text-slate-300">
-            <li><span className="text-emerald-200 font-semibold">Octave Aperture (八音窍)</span> - tiền cao cấp từ gameplay/sự kiện.</li>
-            <li><span className="text-emerald-200 font-semibold">Resonant Pearl (长鸣珠)</span> - tiền phổ thông mua cosmetics.</li>
-            <li>Tiết kiệm cho vật phẩm giới hạn hoặc cửa hàng Harmony xoay kỳ.</li>
+            <li><span className="text-emerald-200 font-semibold">Octave Aperture (八音窍)</span> – tiền cao cấp (nhận từ gameplay/sự kiện).</li>
+            <li><span className="text-emerald-200 font-semibold">Resonant Pearl (长鸣珠)</span> – tiền phổ thông để mua ngoại hình.</li>
+            <li>Ưu tiên tiết kiệm cho vật phẩm giới hạn hoặc cửa hàng Harmony xoay kỳ.</li>
           </ul>
         </div>
       </section>
@@ -72,13 +72,13 @@ export default function CosmeticsPage() {
         <h2 className="text-2xl font-semibold text-slate-50 mb-4">Về tùy biến diện mạo</h2>
         <div className="space-y-4 text-sm text-slate-300 leading-relaxed">
           <p>
-            Tùy biến không chỉ là ngoại hình—mỗi set dựa trên thẩm mỹ và câu chuyện giang hồ/Mặc gia, thể hiện thủ công và văn hóa.
+            Tùy biến không chỉ là “đẹp” — nhiều set dựa trên thẩm mỹ và câu chuyện giang hồ/Mặc gia, thể hiện tinh thần thủ công và văn hóa.
           </p>
           <p>
-            Harmony Store có bộ sưu tập vĩnh viễn lẫn xoay kỳ. Từ cơ khí đồng của bộ Peng Shan đến thiết kế lấy cảm hứng mưa, luôn có lựa chọn hợp gu.
+            Harmony Store có bộ sưu tập vĩnh viễn lẫn xoay kỳ. Từ cơ khí đồng của Peng Shan đến chủ đề đêm mưa của Túy Vân, luôn có lựa chọn phù hợp phong cách của bạn.
           </p>
           <p className="text-emerald-200">
-            Mẹo: kiểm tra thường xuyên để bắt kịp vật phẩm mùa và khuyến mãi.
+            Mẹo: kiểm tra định kỳ để bắt kịp vật phẩm theo mùa và các đợt khuyến mãi.
           </p>
         </div>
       </section>

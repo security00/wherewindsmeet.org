@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { latestNewsDate, newsItems } from "@/lib/news";
+import type { NewsType } from "@/lib/news";
+import { latestNewsDate, newsItems } from "@/lib/news.vi";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
@@ -26,11 +27,26 @@ export const metadata: Metadata = {
 };
 
 export default function NewsPage() {
+  const typeLabel: Record<NewsType, string> = {
+    announcement: "Thông báo",
+    event: "Sự kiện",
+    guide: "Hướng dẫn",
+    beta: "Beta",
+  };
+
+  const formatDateVi = (iso: string) => {
+    const parts = iso.split("-");
+    if (parts.length !== 3) return iso;
+    const [year, month, day] = parts;
+    if (!year || !month || !day) return iso;
+    return `${day}/${month}/${year}`;
+  };
+
   const sortedNews = [...newsItems].sort((a, b) =>
     a.date < b.date ? 1 : a.date > b.date ? -1 : 0,
   );
 
-  const lastUpdatedLabel = `Cập nhật ${latestNewsDate}`;
+  const lastUpdatedLabel = `Cập nhật: ${formatDateVi(latestNewsDate)}`;
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -44,7 +60,7 @@ export default function NewsPage() {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Trang chủ", item: baseUrl },
+        { "@type": "ListItem", position: 1, name: "Trang chủ", item: `${baseUrl}/vn` },
         { "@type": "ListItem", position: 2, name: "Tin tức", item: `${baseUrl}/vn/news` },
       ],
     },
@@ -91,6 +107,41 @@ export default function NewsPage() {
             </span>
           </div>
 
+          <div
+            id="next-update"
+            className="rounded-2xl border border-emerald-500/40 bg-emerald-500/10 p-4 text-sm text-emerald-50 shadow-inner shadow-emerald-900/40"
+          >
+            <div className="flex items-center justify-between gap-2">
+              <p className="font-semibold">Theo dõi “update tiếp theo” (tự cập nhật khi có tin mới)</p>
+              <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
+                {lastUpdatedLabel}
+              </span>
+            </div>
+            <p className="mt-2 text-emerald-100/90">
+              Tổng hợp nhanh các thông tin liên quan “bản cập nhật tiếp theo”: cân bằng, boss/Bloodbath, sự kiện và code. Khi có thông báo mới, phần tóm tắt sẽ được cập nhật ngắn gọn trong 2–3 gạch đầu dòng.
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2 text-xs">
+              <Link
+                href="/vn/guides/tier-list"
+                className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80"
+              >
+                Tier list (góc nhìn CN)
+              </Link>
+              <Link
+                href="/vn/guides/bosses"
+                className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80"
+              >
+                Thay đổi boss
+              </Link>
+              <Link
+                href="/vn/guides/codes"
+                className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80"
+              >
+                Code mới nhất
+              </Link>
+            </div>
+          </div>
+
           <div className="mt-8 space-y-4">
             {sortedNews.map((item) => (
               <div
@@ -103,11 +154,11 @@ export default function NewsPage() {
                       {item.title}
                     </h2>
                     <span className="rounded-full border border-emerald-500/30 bg-emerald-950/30 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.1)]">
-                      {item.type}
+                      {typeLabel[item.type] ?? item.type}
                     </span>
                   </div>
                   <p className="text-xs font-medium text-slate-500 font-mono">
-                    {item.date}
+                    {formatDateVi(item.date)}
                     {item.tags && item.tags.length > 0 && (
                       <>
                         <span className="mx-2 text-slate-700">|</span>
@@ -149,7 +200,7 @@ export default function NewsPage() {
             Tin nào ảnh hưởng build sẽ được phản ánh ở trang builds/tier list. Sự kiện có code hay lợi ích lâu dài sẽ được gắn nhãn và liên kết sang trang rewards/codes.
           </p>
           <p>
-            Nếu có thay đổi lớn mà bạn muốn cập nhật cụ thể (PVP, boss, chất lượng sống), hãy nhắn—tôi sẽ đẩy lên sớm hơn.
+            Nếu có thay đổi lớn mà bạn muốn cập nhật cụ thể (PvP, boss, chất lượng sống), hãy nhắn — chúng tôi sẽ ưu tiên cập nhật sớm.
           </p>
         </div>
       </section>

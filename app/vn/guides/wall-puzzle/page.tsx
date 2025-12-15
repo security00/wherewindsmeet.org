@@ -80,6 +80,12 @@ const heroImages = [
   },
 ];
 
+const zoomUiText = {
+  openAriaLabelTemplate: "Mở ảnh phóng to: {alt}",
+  closeLabel: "Đóng",
+  hintTemplate: "Cuộn hoặc dùng +/- để zoom; kéo/cuộn để di chuyển. Hiện tại: {pct}%",
+} as const;
+
 const fireContraptions = [
   {
     title: "Sân tập",
@@ -302,6 +308,7 @@ export default function WallPuzzleGuidePage() {
                 height={928}
                 sizes="(max-width: 768px) 100vw, 33vw"
                 priority
+                uiText={zoomUiText}
               />
               <figcaption className="px-3 py-2 text-xs text-slate-300/90 border-t border-slate-800/80">
                 {img.caption} (nhấn để phóng to)
@@ -418,6 +425,7 @@ export default function WallPuzzleGuidePage() {
                   width={1650}
                   height={928}
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  uiText={zoomUiText}
                 />
                 <figcaption className="px-4 py-3 text-xs text-slate-300/90 border-t border-slate-800/80">
                   {step.image.caption} (nhấn để phóng to)
@@ -445,6 +453,7 @@ export default function WallPuzzleGuidePage() {
                 width={1650}
                 height={928}
                 sizes="(max-width: 768px) 100vw, 33vw"
+                uiText={zoomUiText}
               />
               <figcaption className="px-3 py-2 text-xs text-slate-300/90 border-t border-slate-800/80">
                 {img.caption} (nhấn để phóng to)

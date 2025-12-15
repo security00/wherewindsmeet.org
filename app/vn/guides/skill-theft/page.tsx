@@ -177,10 +177,10 @@ export default function SkillTheftPage() {
               <span className="text-emerald-200">Vernal Umbrella</span>.
             </li>
             <li>
-              Quay lại thánh địa cũ sau khi nâng cấp; stat cao giúp lén an toàn hơn.
+              Quay lại thánh địa cũ sau khi nâng cấp; chỉ số cao giúp lén an toàn hơn.
             </li>
             <li>
-              Khi đi nhóm, hoán đổi sang võ học hỗ trợ để team hưởng lợi từ bộ chiêu đã trộm.
+              Khi đi nhóm, hoán đổi sang võ học hỗ trợ để tổ đội hưởng lợi từ bộ chiêu đã trộm.
             </li>
           </ul>
         </div>

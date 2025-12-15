@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
 export type LightboxItem = {
@@ -21,9 +22,48 @@ type Props = {
   className?: string;
 };
 
+type LightboxUiText = {
+  zoomOutAria: string;
+  zoomInAria: string;
+  reset: string;
+  close: string;
+  prev: string;
+  next: string;
+};
+
 export default function LightboxGallery({ items, columns = 2, className }: Props) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const close = useCallback(() => setActiveIndex(null), []);
+  const pathname = usePathname();
+  const language = pathname?.startsWith("/vn") ? "vi" : pathname?.startsWith("/de") ? "de" : "en";
+
+  const uiText: LightboxUiText =
+    language === "vi"
+      ? {
+          zoomOutAria: "Thu nhỏ",
+          zoomInAria: "Phóng to",
+          reset: "Đặt lại",
+          close: "Đóng",
+          prev: "Trước",
+          next: "Tiếp",
+        }
+      : language === "de"
+        ? {
+            zoomOutAria: "Rauszoomen",
+            zoomInAria: "Reinzoomen",
+            reset: "Zurücksetzen",
+            close: "Schließen",
+            prev: "Zurück",
+            next: "Weiter",
+          }
+        : {
+            zoomOutAria: "Zoom out",
+            zoomInAria: "Zoom in",
+            reset: "Reset",
+            close: "Close",
+            prev: "Prev",
+            next: "Next",
+          };
 
   // Prevent background scroll when lightbox is open.
   useEffect(() => {
@@ -93,6 +133,7 @@ export default function LightboxGallery({ items, columns = 2, className }: Props
             index={activeIndex}
             onClose={close}
             setIndex={setActiveIndex}
+            uiText={uiText}
           />
         ) : null}
       </AnimatePresence>
@@ -105,11 +146,13 @@ function Lightbox({
   index,
   onClose,
   setIndex,
+  uiText,
 }: {
   items: LightboxItem[];
   index: number;
   onClose: () => void;
   setIndex: React.Dispatch<React.SetStateAction<number | null>>;
+  uiText: LightboxUiText;
 }) {
   const item = items[index];
 
@@ -296,7 +339,7 @@ function Lightbox({
             type="button"
             onClick={zoomOut}
             className="rounded-md border border-slate-700 bg-slate-900/80 px-2 py-1 text-xs text-slate-100 hover:border-emerald-400/60"
-            aria-label="Zoom out"
+            aria-label={uiText.zoomOutAria}
           >
             −
           </button>
@@ -304,7 +347,7 @@ function Lightbox({
             type="button"
             onClick={zoomIn}
             className="rounded-md border border-slate-700 bg-slate-900/80 px-2 py-1 text-xs text-slate-100 hover:border-emerald-400/60"
-            aria-label="Zoom in"
+            aria-label={uiText.zoomInAria}
           >
             +
           </button>
@@ -313,14 +356,14 @@ function Lightbox({
             onClick={resetView}
             className="rounded-md border border-slate-700 bg-slate-900/80 px-2 py-1 text-xs text-slate-100 hover:border-emerald-400/60"
           >
-            Reset
+            {uiText.reset}
           </button>
           <button
             type="button"
             onClick={onClose}
             className="rounded-md border border-slate-700 bg-slate-900/80 px-2 py-1 text-xs text-slate-100 hover:border-emerald-400/60"
           >
-            Close
+            {uiText.close}
           </button>
         </div>
 
@@ -330,14 +373,14 @@ function Lightbox({
             onClick={prev}
             className="rounded-md border border-slate-700 bg-slate-900/80 px-2 py-1 text-xs text-slate-100 hover:border-emerald-400/60"
           >
-            Prev
+            {uiText.prev}
           </button>
           <button
             type="button"
             onClick={next}
             className="rounded-md border border-slate-700 bg-slate-900/80 px-2 py-1 text-xs text-slate-100 hover:border-emerald-400/60"
           >
-            Next
+            {uiText.next}
           </button>
         </div>
 

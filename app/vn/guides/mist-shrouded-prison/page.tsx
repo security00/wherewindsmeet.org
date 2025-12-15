@@ -326,7 +326,7 @@ const breadcrumbStructuredData = {
 const related = [
   { href: "/vn/guides/unholy-prophecy", title: "An Unholy Prophecy (thắp lửa, Meridian Touch)" },
   { href: "/vn/guides/woven-with-malice", title: "Sợi Định Mệnh (mốc giờ, bẫy)" },
-  { href: "/vn/guides/one-leaf-one-life", title: "One Leaf, One Life (walkthrough Lost Chapter)" },
+  { href: "/vn/guides/one-leaf-one-life", title: "One Leaf, One Life – hướng dẫn Lost Chapter" },
   { href: "/vn/news#roadmap", title: "Roadmap / cập nhật tiếp theo" },
 ];
 
@@ -531,13 +531,13 @@ export default function MistShroudedPrisonPage() {
           <h2 className="text-xl sm:text-2xl font-semibold text-slate-50">Video hướng dẫn (YouTube)</h2>
         </div>
         <p className="text-sm text-slate-300">
-          Nếu bạn vẫn thấy các bước minh họa chưa rõ, hãy xem video walkthrough này để theo trọn lộ trình Mist-Shrouded Prison.
+          Nếu bạn vẫn thấy các bước minh họa chưa rõ, hãy xem video hướng dẫn này để theo trọn lộ trình Mist-Shrouded Prison.
         </p>
         <div className="relative w-full overflow-hidden rounded-2xl border border-slate-800 bg-black shadow-inner shadow-black/25" style={{ paddingBottom: "56.25%" }}>
           <iframe
             className="absolute inset-0 h-full w-full"
             src="https://www.youtube-nocookie.com/embed/dHDy9nzQsd4"
-            title="Video walkthrough Mist-Shrouded Prison"
+            title="Video hướng dẫn Mist-Shrouded Prison"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { usePathname } from "next/navigation";
 
 type AppearanceSet = {
   id: string;
@@ -38,6 +39,90 @@ export default function AppearanceSetsDisplay({
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const pathname = usePathname();
+  const language = pathname?.startsWith("/vn") ? "vi" : pathname?.startsWith("/de") ? "de" : "en";
+
+  const uiText =
+    language === "vi"
+      ? {
+          sectionTitle: "Các set ngoại hình nổi bật",
+          sectionIntro: "Danh sách set được tuyển chọn — kèm chủ đề, thành phần, cách sở hữu và ảnh phóng to",
+          clickToEnlarge: "Nhấn để phóng to",
+          availablePrefix: "Có từ:",
+          inspiration: "Cảm hứng",
+          featuredCharacter: "Nhân vật đại diện",
+          themeDesign: "Chủ đề & thiết kế",
+          setContents: "Trong set có",
+          features: "Tính năng",
+          closeLightboxAria: "Đóng ảnh phóng to",
+          zoomOutAria: "Thu nhỏ",
+          zoomInAria: "Phóng to",
+          reset: "Đặt lại",
+          resetAria: "Đặt lại zoom",
+          instructions: "Kéo chuột để di chuyển · Nút +/- để zoom · ESC để đóng",
+          imageCounterPrefix: "Ảnh",
+          imageCounterOf: "trên",
+          imageCounterMain: "Chính",
+          prevImageAria: "Ảnh trước",
+          nextImageAria: "Ảnh tiếp theo",
+          altSetFallback: "Set ngoại hình",
+          altMainImage: "Ảnh chính",
+          altGalleryImage: "Ảnh {n}",
+          thumbMainSuffix: "thumbnail ảnh chính",
+        }
+      : language === "de"
+        ? {
+            sectionTitle: "Ausgewählte Appearance-Sets",
+            sectionIntro: "Kuratiert: Thema, Inhalt, Features, Beschaffung und zoomfähige Screenshots",
+            clickToEnlarge: "Klicken zum Vergrößern",
+            availablePrefix: "Verfügbar:",
+            inspiration: "Inspiration",
+            featuredCharacter: "Vorgestellter Charakter",
+            themeDesign: "Thema & Design",
+            setContents: "Set-Inhalt",
+            features: "Features",
+            closeLightboxAria: "Lightbox schließen",
+            zoomOutAria: "Rauszoomen",
+            zoomInAria: "Reinzoomen",
+            reset: "Zurücksetzen",
+            resetAria: "Zoom zurücksetzen",
+            instructions: "Ziehen zum Verschieben · +/- zum Zoomen · ESC zum Schließen",
+            imageCounterPrefix: "Bild",
+            imageCounterOf: "von",
+            imageCounterMain: "Hauptbild",
+            prevImageAria: "Vorheriges Bild",
+            nextImageAria: "Nächstes Bild",
+            altSetFallback: "Appearance-Set",
+            altMainImage: "Hauptbild",
+            altGalleryImage: "Galeriebild {n}",
+            thumbMainSuffix: "Hauptbild-Thumbnail",
+          }
+        : {
+            sectionTitle: "Featured Appearance Sets",
+            sectionIntro: "Curated cosmetic sets inspired by Mohist legends and jianghu culture",
+            clickToEnlarge: "Click to enlarge",
+            availablePrefix: "Available:",
+            inspiration: "Inspiration",
+            featuredCharacter: "Featured Character",
+            themeDesign: "Theme & Design",
+            setContents: "Set Contents",
+            features: "Features",
+            closeLightboxAria: "Close lightbox",
+            zoomOutAria: "Zoom out",
+            zoomInAria: "Zoom in",
+            reset: "Reset",
+            resetAria: "Reset zoom",
+            instructions: "Drag to pan · Use buttons to zoom · ESC to close",
+            imageCounterPrefix: "Image",
+            imageCounterOf: "of",
+            imageCounterMain: "Main",
+            prevImageAria: "Previous image",
+            nextImageAria: "Next image",
+            altSetFallback: "Appearance set",
+            altMainImage: "Main image",
+            altGalleryImage: "Gallery image {n}",
+            thumbMainSuffix: "main image thumbnail",
+          };
 
   const handleZoom = (direction: 'in' | 'out') => {
     setZoom((prev) => {
@@ -75,21 +160,24 @@ export default function AppearanceSetsDisplay({
       ? activeLightboxSet?.image ?? ""
       : activeLightboxSet?.galleryImages?.[lightboxImage.imageIdx] ?? activeLightboxSet?.image ?? ""
     : "";
+  const activeLightboxName = activeLightboxSet?.name ?? uiText.altSetFallback;
   const activeLightboxAlt = lightboxImage
-    ? `${activeLightboxSet?.name ?? "Appearance set"} - ${
-        activeLightboxIsMain ? "Main image" : `Gallery image ${lightboxImage.imageIdx + 1}`
+    ? `${activeLightboxName} - ${
+        activeLightboxIsMain
+          ? uiText.altMainImage
+          : uiText.altGalleryImage.replace("{n}", String(lightboxImage.imageIdx + 1))
       }`
-    : "Appearance set image";
-  const activeLightboxThumbAlt = `${activeLightboxSet?.name ?? "Appearance set"} main image thumbnail`;
+    : activeLightboxName;
+  const activeLightboxThumbAlt = `${activeLightboxName} ${uiText.thumbMainSuffix}`;
 
   return (
     <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
       <div className="space-y-2 mb-6">
         <h2 className="text-2xl font-semibold tracking-tight text-slate-50">
-          Featured Appearance Sets
+          {uiText.sectionTitle}
         </h2>
         <p className="text-sm text-slate-300">
-          Curated cosmetic sets inspired by Mohist legends and jianghu culture
+          {uiText.sectionIntro}
         </p>
       </div>
 
@@ -131,7 +219,9 @@ export default function AppearanceSetsDisplay({
                     </span>
                   </div>
                   {set.acquisition.availableDate && (
-                    <div>Available: {set.acquisition.availableDate}</div>
+                    <div>
+                      {uiText.availablePrefix} {set.acquisition.availableDate}
+                    </div>
                   )}
                 </div>
               </div>
@@ -148,13 +238,13 @@ export default function AppearanceSetsDisplay({
                   <div className="relative h-64 md:h-96 rounded-lg overflow-hidden border border-slate-700 bg-slate-900 flex items-center justify-center cursor-pointer group hover:border-emerald-500/50 transition" onClick={() => setLightboxImage({ setId: set.id, imageIdx: selectedImageIdx[set.id] || 0 })}>
                     <Image
                       src={set.galleryImages?.[selectedImageIdx[set.id] || 0] || set.image}
-                      alt={`${set.name} - Image ${(selectedImageIdx[set.id] || 0) + 1}`}
+                      alt={`${set.name} - ${uiText.imageCounterPrefix} ${(selectedImageIdx[set.id] || 0) + 1}`}
                       fill
                       className="object-contain p-4 group-hover:scale-105 transition-transform"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
-                      <span className="text-white text-sm font-semibold">Click to enlarge</span>
+                      <span className="text-white text-sm font-semibold">{uiText.clickToEnlarge}</span>
                     </div>
                   </div>
 
@@ -205,7 +295,7 @@ export default function AppearanceSetsDisplay({
                 {set.inspiration && (
                   <div>
                     <p className="text-xs uppercase tracking-wide text-emerald-300 mb-2">
-                      Inspiration
+                      {uiText.inspiration}
                     </p>
                     <p className="text-sm text-slate-200">{set.inspiration}</p>
                   </div>
@@ -214,7 +304,7 @@ export default function AppearanceSetsDisplay({
                 {set.character && (
                   <div>
                     <p className="text-xs uppercase tracking-wide text-emerald-300 mb-2">
-                      Featured Character
+                      {uiText.featuredCharacter}
                     </p>
                     <div className="space-y-1">
                       <p className="text-sm font-semibold text-slate-50">
@@ -229,7 +319,7 @@ export default function AppearanceSetsDisplay({
 
                 <div>
                   <p className="text-xs uppercase tracking-wide text-emerald-300 mb-2">
-                    Theme & Design
+                    {uiText.themeDesign}
                   </p>
                   <div className="space-y-2">
                     <p className="text-sm font-semibold text-slate-50">
@@ -246,7 +336,7 @@ export default function AppearanceSetsDisplay({
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <p className="text-xs uppercase tracking-wide text-emerald-300 mb-2">
-                      Set Contents
+                      {uiText.setContents}
                     </p>
                     <ul className="text-sm text-slate-300 space-y-1">
                       {set.contents.map((content, idx) => (
@@ -260,7 +350,7 @@ export default function AppearanceSetsDisplay({
 
                   <div>
                     <p className="text-xs uppercase tracking-wide text-emerald-300 mb-2">
-                      Features
+                      {uiText.features}
                     </p>
                     <ul className="text-sm text-slate-300 space-y-1">
                       {set.features.map((feature, idx) => (
@@ -303,7 +393,7 @@ export default function AppearanceSetsDisplay({
                 resetZoom();
               }}
               className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-white transition"
-              aria-label="Close lightbox"
+              aria-label={uiText.closeLightboxAria}
             >
               ✕
             </button>
@@ -313,26 +403,26 @@ export default function AppearanceSetsDisplay({
               <button
                 onClick={() => handleZoom('out')}
                 className="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-white transition"
-                aria-label="Zoom out"
-                title="Zoom out (−)"
+                aria-label={uiText.zoomOutAria}
+                title={`${uiText.zoomOutAria} (−)`}
               >
                 −
               </button>
               <button
                 onClick={() => handleZoom('in')}
                 className="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-white transition"
-                aria-label="Zoom in"
-                title="Zoom in (+)"
+                aria-label={uiText.zoomInAria}
+                title={`${uiText.zoomInAria} (+)`}
               >
                 +
               </button>
               <button
                 onClick={resetZoom}
                 className="px-3 h-10 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-white transition text-sm"
-                aria-label="Reset zoom"
-                title="Reset"
+                aria-label={uiText.resetAria}
+                title={uiText.reset}
               >
-                重置
+                {uiText.reset}
               </button>
             </div>
 
@@ -364,17 +454,17 @@ export default function AppearanceSetsDisplay({
 
             {/* Instructions */}
             <div className="absolute bottom-4 right-4 z-10 bg-slate-800 px-3 py-2 rounded text-xs text-slate-400 max-w-xs">
-              <p>鼠标拖拽移动 · 按钮放大缩小 · ESC关闭</p>
+              <p>{uiText.instructions}</p>
             </div>
 
             {/* Navigation Info */}
             <div className="bg-slate-800 px-6 py-3 text-center text-sm text-slate-300">
               <p>
-                Image{' '}
+                {uiText.imageCounterPrefix}{" "}
                 <span className="text-emerald-300 font-semibold">
-                  {lightboxImage.imageIdx === -1 ? 'Main' : lightboxImage.imageIdx + 1}
+                  {lightboxImage.imageIdx === -1 ? uiText.imageCounterMain : lightboxImage.imageIdx + 1}
                 </span>
-                {' '}of{' '}
+                {" "}{uiText.imageCounterOf}{" "}
                 <span className="text-emerald-300 font-semibold">
                   {(sets.find((s) => s.id === lightboxImage.setId)?.galleryImages?.length || 0) + 1}
                 </span>
@@ -392,7 +482,7 @@ export default function AppearanceSetsDisplay({
                   resetZoom();
                 }}
                 className="w-12 h-12 rounded-full bg-emerald-500/20 hover:bg-emerald-500/40 flex items-center justify-center text-white transition border border-emerald-500/30 hover:border-emerald-500/60"
-                aria-label="Previous image"
+                aria-label={uiText.prevImageAria}
               >
                 ←
               </button>
@@ -405,7 +495,7 @@ export default function AppearanceSetsDisplay({
                   resetZoom();
                 }}
                 className="w-12 h-12 rounded-full bg-emerald-500/20 hover:bg-emerald-500/40 flex items-center justify-center text-white transition border border-emerald-500/30 hover:border-emerald-500/60"
-                aria-label="Next image"
+                aria-label={uiText.nextImageAria}
               >
                 →
               </button>
@@ -424,11 +514,11 @@ export default function AppearanceSetsDisplay({
                       ? 'border-emerald-400'
                       : 'border-slate-700 hover:border-slate-600'
                   }`}
-                  aria-label="Main image"
+                  aria-label={uiText.altMainImage}
                 >
                   <Image
                     src={activeLightboxSet?.image ?? activeLightboxSrc}
-                    alt={activeLightboxThumbAlt || `${activeLightboxSet.name} main image thumbnail`}
+                    alt={activeLightboxThumbAlt || `${activeLightboxSet.name} ${uiText.thumbMainSuffix}`}
                     width={64}
                     height={64}
                     className="w-full h-full object-cover"
@@ -448,11 +538,11 @@ export default function AppearanceSetsDisplay({
                           ? 'border-emerald-400'
                           : 'border-slate-700 hover:border-slate-600'
                       }`}
-                      aria-label={`Image ${idx + 1}`}
+                      aria-label={`${uiText.imageCounterPrefix} ${idx + 1}`}
                     >
                       <Image
                         src={img}
-                        alt={`Gallery image ${idx + 1} thumbnail`}
+                        alt={uiText.altGalleryImage.replace("{n}", String(idx + 1))}
                         width={64}
                         height={64}
                         className="w-full h-full object-cover"

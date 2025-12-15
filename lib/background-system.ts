@@ -85,11 +85,30 @@ export const routeBackgroundMap: Record<string, string> = {
   '/terms': 'bg22',
 };
 
+const LOCALE_PREFIXES = ['/vn', '/de'] as const;
+
+const normalizePathnameForBackground = (pathname: string) => {
+  if (!pathname) return '/';
+
+  const trimmed = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
+
+  for (const prefix of LOCALE_PREFIXES) {
+    if (trimmed === prefix) return '/';
+    if (trimmed.startsWith(`${prefix}/`)) {
+      const stripped = trimmed.slice(prefix.length);
+      return stripped || '/';
+    }
+  }
+
+  return trimmed || '/';
+};
+
 /**
  * 根据路由获取背景信息
  */
 export function getBackgroundForRoute(pathname: string): BackgroundInfo {
-  const bgKey = routeBackgroundMap[pathname] || 'bg1';
+  const normalizedPathname = normalizePathnameForBackground(pathname);
+  const bgKey = routeBackgroundMap[normalizedPathname] || 'bg1';
   return backgroundLibrary[bgKey];
 }
 

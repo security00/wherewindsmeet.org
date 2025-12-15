@@ -35,7 +35,7 @@ const liveCodes = [
     code: "WWMGLtiktok",
     label: "Chiến dịch TikTok ra mắt toàn cầu",
     notes:
-      "Chia sẻ qua kênh TikTok; thường tặng bundle nhỏ gồm cosmetics và vật phẩm tiến độ. Xuất hiện trong tin 2025-11-17 (Zh), nên hãy nhập sớm.",
+      "Chia sẻ qua kênh TikTok; thường tặng gói quà nhỏ gồm ngoại hình (cosmetics) và vật phẩm tiến độ. Xuất hiện trong tổng hợp cộng đồng (Zh) ngày 2025-11-17, nên hãy nhập sớm.",
   },
   {
     code: "WWMGLyoutube",
@@ -105,7 +105,7 @@ export default function CodesPage() {
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-100 bg-emerald-900/60 px-2 py-1 rounded border border-emerald-700/50 shadow-sm shadow-emerald-900/50">
-                    Active
+                    Đang hoạt động
                   </span>
                   <span className="text-lg filter drop-shadow-md">🎁</span>
                 </div>
@@ -210,10 +210,10 @@ export default function CodesPage() {
           Chiến lược nhập code
         </h2>
         <p className="text-sm text-slate-300 leading-relaxed mb-4">
-          Người mới thường thấy rất nhiều code. Đừng hoảng: hãy chia chúng thành <span className="text-slate-100">Tiến độ</span> (nhập ngay) và <span className="text-slate-100">Cosmetics</span> (nhập sau).
+          Người mới thường thấy rất nhiều mã. Đừng hoảng: hãy chia chúng thành <span className="text-slate-100">Tiến độ</span> (nhập ngay) và <span className="text-slate-100">Ngoại hình</span> (nhập sau).
         </p>
         <p className="text-sm text-slate-300 leading-relaxed">
-          Khi có thứ tự ưu tiên, code sẽ là làn gió nhẹ hỗ trợ thay vì gây áp lực FOMO.
+          Khi có thứ tự ưu tiên, code sẽ là làn gió nhẹ hỗ trợ thay vì gây áp lực “sợ bỏ lỡ” (FOMO).
         </p>
       </section>
     </article>

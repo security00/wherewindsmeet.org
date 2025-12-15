@@ -445,7 +445,7 @@ export default function QinCaiweiGuidePage() {
           Không chỉ cho đủ bộ: Old Friends mở quà tuần, đoạn truyện nhỏ và tiền tệ ổn định. Qinghe cũng đếm Old Friends cho mục tiêu khám phá, nên nâng thiện cảm sớm giúp tiến độ vùng. Vì chat của cô khó chịu, xử lý ngay sẽ tránh phải quay lại khi bạn muốn chạy nhiệm vụ nhanh.
         </p>
         <ul className="space-y-2 text-sm text-slate-300">
-          <li className="flex gap-2"><span className="text-emerald-300">-</span><span>Quà tuần: coin, nguyên liệu, vật phẩm thú vị.</span></li>
+          <li className="flex gap-2"><span className="text-emerald-300">-</span><span>Quà tuần: tiền/coin, nguyên liệu, vật phẩm thú vị.</span></li>
           <li className="flex gap-2"><span className="text-emerald-300">-</span><span>Tính vào checklist Old Friends ở Qinghe.</span></li>
           <li className="flex gap-2"><span className="text-emerald-300">-</span><span>Tránh quay lại chat kẹt khi tập trung endgame.</span></li>
         </ul>

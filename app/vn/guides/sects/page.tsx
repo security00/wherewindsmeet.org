@@ -140,10 +140,10 @@ export default function SectsPage() {
             Môn phái trong Where Winds Meet – đứng cùng ai?
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Môn phái không chỉ là nhánh kỹ năng; đó là triết lý, vòng xã hội và mạch truyện dài. Chọn theo fantasy trước, tối ưu sau.
+            Môn phái không chỉ là nhánh kỹ năng; đó là triết lý, vòng xã hội và mạch truyện dài. Hãy chọn theo cảm hứng/lối chơi bạn thích trước, tối ưu sau.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Mỗi phái tóm gọn: họ tin gì, sống/đánh ra sao, kiểu người chơi hợp. Coi như moodboard—nhân vật bạn vẫn có thể khác biệt.
+            Mỗi phái tóm gọn: họ tin gì, sống/đánh ra sao, kiểu người chơi hợp. Coi như “bảng cảm hứng” — nhân vật bạn vẫn có thể khác biệt.
           </p>
         </div>
       </section>

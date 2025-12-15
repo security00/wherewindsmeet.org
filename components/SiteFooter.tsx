@@ -15,7 +15,7 @@ const defaultLinks: FooterLink[] = [
   { href: "/news", label: "News" },
   { href: "/privacy", label: "Privacy" },
   { href: "/terms", label: "Terms" },
-  { href: "mailto:support@wherewindsmeet.org", label: "Contact: support@wherewindsmeet.org" },
+  { href: "mailto:support@wherewindsmeet.org", label: "support@wherewindsmeet.org" },
 ];
 
 const vietnameseLinks: FooterLink[] = [
@@ -23,9 +23,9 @@ const vietnameseLinks: FooterLink[] = [
   { href: "/vn/guides/bosses", label: "Boss" },
   { href: "/vn/guides/weapons", label: "Vũ khí" },
   { href: "/vn/news", label: "Tin tức" },
-  { href: "/vn/privacy", label: "Chính sách riêng tư" },
+  { href: "/vn/privacy", label: "Riêng tư" },
   { href: "/vn/terms", label: "Điều khoản" },
-  { href: "mailto:support@wherewindsmeet.org", label: "Liên hệ: support@wherewindsmeet.org" },
+  { href: "mailto:support@wherewindsmeet.org", label: "support@wherewindsmeet.org" },
 ];
 
 const germanLinks: FooterLink[] = [
@@ -35,7 +35,7 @@ const germanLinks: FooterLink[] = [
   { href: "/de/news", label: "News" },
   { href: "/de/privacy", label: "Datenschutz" },
   { href: "/de/terms", label: "Nutzungsbedingungen" },
-  { href: "mailto:support@wherewindsmeet.org", label: "Kontakt: support@wherewindsmeet.org" },
+  { href: "mailto:support@wherewindsmeet.org", label: "support@wherewindsmeet.org" },
 ];
 
 export function SiteFooter() {
@@ -44,7 +44,7 @@ export function SiteFooter() {
   const isGerman = pathname?.startsWith("/de");
   const links = isVietnamese ? vietnameseLinks : isGerman ? germanLinks : defaultLinks;
   const description = isVietnamese
-    ? "Hub fan Where Winds Meet không chính thức. Mọi nhãn hiệu thuộc về chủ sở hữu tương ứng."
+    ? "Fan hub không chính thức về Where Winds Meet. Mọi nhãn hiệu thuộc về chủ sở hữu tương ứng."
     : isGerman
       ? "Inoffizieller Where Winds Meet Fan-Hub. Alle Marken gehören ihren jeweiligen Inhabern."
       : "Unofficial Where Winds Meet fan hub. All trademarks are the property of their respective owners.";
@@ -53,13 +53,13 @@ export function SiteFooter() {
     <footer className="border-t border-slate-800/80 bg-slate-950/90 py-6 text-xs text-slate-400">
       <div className="mx-auto flex max-w-7xl flex-col justify-between gap-3 px-4 sm:flex-row sm:px-6 lg:px-8">
         <p>{description}</p>
-        <div className="flex flex-wrap items-center gap-4">
+        <div className="flex flex-wrap items-center gap-3">
           {links.map((link) =>
             link.href.startsWith("mailto:") ? (
               <a
                 key={link.href}
                 href={link.href}
-                className="transition-colors hover:text-emerald-400"
+                className="whitespace-nowrap transition-colors hover:text-emerald-400"
               >
                 {link.label}
               </a>
@@ -67,7 +67,7 @@ export function SiteFooter() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="transition-colors hover:text-emerald-400"
+                className="whitespace-nowrap transition-colors hover:text-emerald-400"
               >
                 {link.label}
               </Link>

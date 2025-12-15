@@ -5,21 +5,21 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 const baseUrl = "https://wherewindsmeet.org";
 
 export const metadata: Metadata = {
-  title: "Builds Where Winds Meet – PVE & PVP",
+  title: "Builds Where Winds Meet – PvE & PvP",
   description:
-    "Builds linh hoạt cho Where Winds Meet (PVE & PVP): phân bố chỉ số, ghép vũ khí, nhịp xoay chiêu và mẹo thực chiến.",
+    "Builds linh hoạt cho Where Winds Meet (PvE & PvP): phân bố chỉ số, ghép vũ khí, nhịp xoay chiêu và mẹo thực chiến.",
   alternates: buildHreflangAlternates("/guides/builds", { canonicalLanguage: "vi" }),
   openGraph: {
-    title: "Builds Where Winds Meet – PVE & PVP",
+    title: "Builds Where Winds Meet – PvE & PvP",
     description:
-      "Builds linh hoạt cho Where Winds Meet (PVE & PVP): phân bố chỉ số, ghép vũ khí, nhịp xoay chiêu và mẹo thực chiến.",
+      "Builds linh hoạt cho Where Winds Meet (PvE & PvP): phân bố chỉ số, ghép vũ khí, nhịp xoay chiêu và mẹo thực chiến.",
     url: `${baseUrl}/vn/guides/builds`,
     locale: "vi_VN",
   },
   twitter: {
-    title: "Builds Where Winds Meet – PVE & PVP",
+    title: "Builds Where Winds Meet – PvE & PvP",
     description:
-      "Builds linh hoạt cho Where Winds Meet (PVE & PVP): phân bố chỉ số, ghép vũ khí, nhịp xoay chiêu và mẹo thực chiến.",
+      "Builds linh hoạt cho Where Winds Meet (PvE & PvP): phân bố chỉ số, ghép vũ khí, nhịp xoay chiêu và mẹo thực chiến.",
   },
 };
 
@@ -61,7 +61,7 @@ export default function BuildsPage() {
           "@type": "ListItem",
           position: 1,
           name: "Trang chủ",
-          item: baseUrl,
+          item: `${baseUrl}/vn`,
         },
         {
           "@type": "ListItem",
@@ -108,23 +108,23 @@ export default function BuildsPage() {
         <div className="relative z-10 flex h-full flex-col justify-end px-6 pb-16 sm:px-12 lg:w-2/3">
           <h1 className="text-balance text-4xl font-bold tracking-tight text-slate-50 sm:text-5xl lg:text-6xl font-serif">
             Builds vừa <span className="text-ink-gold">mạnh</span> vừa{" "}
-            <span className="text-ink-jade">hợp gu</span>.
+            <span className="text-ink-jade">hợp lối chơi</span>.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-200/90 text-shadow-sm font-sans">
-            Build tốt không chỉ chạy theo con số; nó biến fantasy võ hiệp của bạn thành nhịp combat tin cậy, hợp thời gian, phản xạ và mức kiên nhẫn thử nghiệm.
+            Build tốt không chỉ chạy theo con số; nó biến phong cách võ hiệp bạn theo đuổi thành nhịp combat tin cậy, phù hợp thời gian, phản xạ và mức kiên nhẫn thử nghiệm.
           </p>
           <p className="mt-3 max-w-2xl text-base leading-relaxed text-slate-200/90 text-shadow-sm font-sans">
-            Dùng trang này như sổ tay PVE/PVP trước khi đào sâu vũ khí, tuyến tâm pháp và vòng xoay chiêu.
+            Dùng trang này như sổ tay PvE/PvP trước khi đào sâu vũ khí, tuyến tâm pháp và vòng xoay chiêu.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <div className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-slate-300 backdrop-blur-sm">
-              Solo
+              Chơi đơn
             </div>
             <div className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-slate-300 backdrop-blur-sm">
-              Co-op
+              Tổ đội
             </div>
             <div className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-slate-300 backdrop-blur-sm">
-              PVP
+              PvP
             </div>
           </div>
         </div>
@@ -220,23 +220,23 @@ export default function BuildsPage() {
 
         <section className="bg-texture-noise rounded-3xl border border-slate-800/60 bg-slate-950/40 p-8 shadow-lg">
           <h2 className="text-xl font-bold tracking-tight text-slate-50 sm:text-2xl border-brush inline-block pb-2 mb-6 font-serif">
-            Điều chỉnh cho solo, co-op, PVP.
+            Điều chỉnh cho chơi đơn, tổ đội (co-op), PvP.
           </h2>
           <div className="grid gap-8 md:grid-cols-3">
             <div className="space-y-3">
-              <h3 className="font-bold text-ink-spirit font-serif">Solo</h3>
+              <h3 className="font-bold text-ink-spirit font-serif">Chơi đơn</h3>
               <p className="text-sm text-slate-300 leading-relaxed font-sans">
                 Ưu tiên tự hồi, công cụ khẩn cấp, vòng xoay dễ tha thứ. Bạn vừa là tank vừa là healer.
               </p>
             </div>
             <div className="space-y-3">
-              <h3 className="font-bold text-ink-spirit font-serif">Co-op</h3>
+              <h3 className="font-bold text-ink-spirit font-serif">Tổ đội</h3>
               <p className="text-sm text-slate-300 leading-relaxed font-sans">
-                Giảm thủ để tăng buff nhóm. Tập trung synergy và tạo cơ hội cho đồng đội.
+                Giảm thủ để tăng buff nhóm. Tập trung tương tác (synergy) và tạo cơ hội cho đồng đội.
               </p>
             </div>
             <div className="space-y-3">
-              <h3 className="font-bold text-ink-spirit font-serif">PVP</h3>
+              <h3 className="font-bold text-ink-spirit font-serif">PvP</h3>
               <p className="text-sm text-slate-300 leading-relaxed font-sans">
                 Hy sinh sự thoải mái để lấy di chuyển khó đoán và burst. Thuộc map và phản xạ sắc bén là chìa khóa.
               </p>

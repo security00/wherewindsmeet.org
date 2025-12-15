@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JianghuMapClient from "../../components/JianghuMapClient";
+import { LiteYouTubeEmbed } from "../../components/LiteYouTubeEmbed";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 import EventSpotlight from "@/components/EventSpotlight";
 
 export const metadata: Metadata = {
   title: "Trung tâm hướng dẫn Where Winds Meet Tiếng Việt",
   description:
-    "Hub Tiếng Việt cho Where Winds Meet với livestream, hướng dẫn nổi bật, code, tier list và cập nhật mới nhất cho người chơi PC, console, mobile.",
+    "Trung tâm Tiếng Việt cho Where Winds Meet với livestream, hướng dẫn nổi bật, code, tier list và cập nhật mới nhất cho người chơi PC, console, mobile.",
   alternates: buildHreflangAlternates("/", { canonicalLanguage: "vi" }),
 };
 
@@ -19,18 +20,18 @@ export default function Home() {
   return (
     <div className="space-y-10">
       <EventSpotlight
-        eyebrow="Sự kiện đang hot · 12/2025"
+        eyebrow="Sự kiện nổi bật · 12/2025"
         title="The Great Faceologist"
-        description="Sự kiện thi tạo mặt/makeup giới hạn thời gian. Muốn bài được tính, bạn phải upload đúng từ Edit Face và nhớ tick tag sự kiện trước khi publish."
+        description="Sự kiện thi tạo mặt/trang điểm giới hạn thời gian. Muốn bài được tính, bạn phải tải lên đúng từ Edit Face và nhớ chọn tag sự kiện trước khi đăng."
         bullets={[
-          "Upload từ Appearance → Edit Face (outfit gallery không được tính).",
-          "Tự tick tag [The Great Faceologist] trước khi đăng bài.",
-          "Giới hạn mỗi ngày thấp (~5 lượt), đừng phí vì quên tick tag.",
+          "Tải lên từ Appearance → Edit Face (mục Outfit Gallery không được tính).",
+          "Chọn tag [The Great Faceologist] trước khi đăng bài.",
+          "Giới hạn mỗi ngày thấp (~5 lượt) — đừng mất lượt vì quên chọn tag.",
         ]}
         primaryHref={vnHref("/guides/the-great-faceologist")}
         primaryLabel="Mở hướng dẫn sự kiện"
         secondaryHref={vnHref("/guides/cosmetics")}
-        secondaryLabel="Cosmetics & diện mạo"
+        secondaryLabel="Ngoại hình (Cosmetics)"
         imageSrc={cdn("/guides/the-great-faceologist/hero.webp")}
         imageFallbackSrc="/guides/the-great-faceologist/hero.webp"
         imageAlt="Sự kiện The Great Faceologist trong Where Winds Meet"
@@ -38,7 +39,7 @@ export default function Home() {
 
       <JianghuMapClient />
 
-      <section className="card-wuxia rounded-3xl p-6 sm:p-8">
+      <section className="card-wuxia rounded-3xl p-6 sm:p-8 min-h-[520px]">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1.4fr)] lg:items-start">
           <div className="space-y-6">
             <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
@@ -49,14 +50,14 @@ export default function Home() {
                 Where Winds Meet là game hành động nhập vai thế giới mở lấy bối cảnh một thời kỳ hỗn loạn của Trung Hoa cổ. Bạn chu du giang hồ sống động, luyện võ học, khinh công, nội công và chọn con đường riêng giữa vai trò hiệp khách, cuốn vào tranh đấu triều đình hay tự do khám phá.
               </p>
               <p>
-                Hub ra mắt này tổng hợp hướng dẫn, builds và mã đổi quà giúp người chơi trên PC, console, mobile bắt đầu nhanh và nắm rõ các cập nhật mới.
+                Trung tâm ra mắt này tổng hợp hướng dẫn, build và mã đổi quà giúp người chơi trên PC, console, mobile bắt đầu nhanh và nắm rõ các cập nhật mới.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Link
-                  href={vnHref("/guides/woven-with-malice")}
+                  href={vnHref("/guides/one-leaf-one-life")}
                   className="inline-flex items-center gap-2 rounded-full border border-emerald-400/60 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-200 transition hover:border-emerald-300/80 hover:text-emerald-100"
                 >
-                  🧶 Nhiệm vụ Sợi Định Mệnh (hot)
+                  🍂 Nhiệm vụ One Leaf, One Life — được tìm nhiều nhất, hướng dẫn đầy đủ
                 </Link>
                 <Link
                   href={vnHref("/guides/wall-puzzle")}
@@ -64,22 +65,89 @@ export default function Home() {
                 >
                   🧩 Giải đố bức tường
                 </Link>
+                <Link
+                  href={vnHref("/guides/unholy-prophecy")}
+                  className="inline-flex items-center gap-2 rounded-full border border-purple-400/60 bg-purple-500/10 px-4 py-2 text-sm font-semibold text-purple-200 transition hover:border-purple-300/80 hover:text-purple-100"
+                >
+                  🔮 Nhiệm vụ An Unholy Prophecy — bệ lửa, Meridian Touch, hành lang chông
+                </Link>
               </div>
             </div>
           </div>
 
-          <div className="relative aspect-video w-full overflow-hidden rounded-2xl border-2 border-slate-800/50 shadow-2xl shadow-black/50 group">
-            <div className="absolute inset-0 border-brush opacity-50 z-10 pointer-events-none"></div>
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/2cxhuAwDFl4?start=5&rel=0&modestbranding=1&playsinline=1"
-              title="Where Winds Meet - Global Launch Preview Stream"
-              className="h-full w-full border-0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
-            />
+          <LiteYouTubeEmbed
+            videoId="2cxhuAwDFl4"
+            start={5}
+            title="Where Winds Meet - Global Launch Preview Stream"
+            poster="/background/bg4.webp"
+          />
+        </div>
+      </section>
+
+      <section className="rounded-3xl border border-emerald-500/20 bg-emerald-500/5 p-5 shadow-lg shadow-emerald-900/30">
+        <div className="flex flex-wrap items-center gap-3">
+          <p className="text-sm font-semibold text-emerald-100">
+            Chọn nhanh (tìm kiếm nhiều)
+          </p>
+          <div className="flex flex-wrap gap-2 text-xs">
+            <Link
+              href={vnHref("/news#next-update")}
+              className="rounded-full border border-emerald-500/50 bg-emerald-500/10 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/70"
+            >
+              Update tiếp theo
+            </Link>
+            <Link
+              href={vnHref("/guides/bosses")}
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              Boss & điểm yếu
+            </Link>
+            <Link
+              href={vnHref("/guides/qin-caiwei")}
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              Kết thân Tần Thái Vị
+            </Link>
+            <Link
+              href={vnHref("/guides/free-morph")}
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              Mở Free Morph
+            </Link>
+            <Link
+              href={vnHref("/guides/tier-list")}
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              Tier list (góc nhìn CN)
+            </Link>
+            <Link
+              href={vnHref("/guides/unholy-prophecy")}
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              An Unholy Prophecy
+            </Link>
+            <Link
+              href={vnHref("/guides/one-leaf-one-life")}
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              One Leaf One Life
+            </Link>
+            <Link
+              href={vnHref("/guides/woven-with-malice")}
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              Woven with Malice
+            </Link>
+            <Link
+              href={vnHref("/guides/mist-shrouded-prison")}
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              Mist-Shrouded Prison (rương)
+            </Link>
           </div>
+          <p className="mt-3 w-full text-xs text-emerald-50/80">
+            Lối tắt cho các truy vấn phổ biến: update tiếp theo, boss & điểm yếu, kết thân Tần Thái Vị, mở Free Morph và tier list (góc nhìn Trung Quốc) để so sánh vũ khí/build.
+          </p>
         </div>
       </section>
 
@@ -88,6 +156,7 @@ export default function Home() {
           <div>
             <p className="text-xs uppercase tracking-wide text-emerald-300">Xu hướng</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-50">Hướng dẫn Where Winds Meet được tìm kiếm nhiều</h2>
+            <p className="text-xs text-amber-200 mt-1">Mới: Mist-Shrouded Prison – đủ 6 rương (đã có bản sửa spawn rương cuối)</p>
           </div>
           <span className="text-xs text-slate-400">Cập nhật theo từ khóa Google Trends</span>
         </div>
@@ -101,22 +170,40 @@ export default function Home() {
               tag: "Sự kiện",
             },
             {
+              title: "Mist-Shrouded Prison",
+              href: "/guides/mist-shrouded-prison",
+              desc: "Hầm mộ mới: tìm lối vào, theo dõi vòng lặp bằng “cô gái đỏ”, lấy đủ 6 rương + kho báu cuối (có spawn-fix).",
+              tag: "Mới",
+            },
+            {
+              title: "One Leaf, One Life",
+              href: "/guides/one-leaf-one-life",
+              desc: "Lost Chapter được tìm nhiều nhất: trigger mở nhiệm vụ, chuỗi phụ trắng lá, puzzle và kết Gold Leaf.",
+              tag: "Xu hướng",
+            },
+            {
               title: "Thiện cảm Tần Thái Vị",
               href: "/guides/qin-caiwei",
-              desc: "Chặn vòng lặp AI Chat với câu thoại mẫu và lộ trình 5 bước để thân thiện nhanh.",
+              desc: "Chặn vòng lặp AI Chat với câu thoại mẫu và lộ trình 5 bước để tăng thiện cảm nhanh.",
               tag: "AI Chat",
             },
             {
               title: "Gift of Gab",
               href: "/guides/gift-of-gab",
-              desc: "Thắng minigame đối thoại: lựa chọn phong cách, điểm Cảm hứng, combo thẻ và thành thục Scholar.",
+              desc: "Thắng minigame đối thoại: chọn style, điểm Cảm hứng, combo thẻ và thành thục Scholar.",
               tag: "Đối thoại",
             },
             {
-              title: "Free Morph Mystic",
+              title: "Free Morph (Mystic)",
               href: "/guides/free-morph",
-              desc: "Mở khóa Mystic juggling bằng cách đỡ xoay Thiên Ứng; chi phí, hồi chiêu, thưởng tier.",
-              tag: "Mystic",
+              desc: "Mở Free Morph bằng cách đỡ chuỗi đá xoay của Thiên Ứng; chi phí, hồi chiêu và bonus theo tier.",
+              tag: "Bí thuật",
+            },
+            {
+              title: "An Unholy Prophecy",
+              href: "/guides/unholy-prophecy",
+              desc: "Jianghu Legacy 07: bệ lửa trên mái, cửa Meridian Touch, bẫy chông và đánh Shi Zhen.",
+              tag: "Jianghu",
             },
             {
               title: "Giải đố bức tường",
@@ -125,9 +212,9 @@ export default function Home() {
               tag: "Câu đố",
             },
             {
-              title: "Sợi Định Mệnh",
+              title: "Woven with Malice",
               href: "/guides/woven-with-malice",
-              desc: "Hành trình 31 bước Lost Chapter, các mốc giờ, bẫy, và lỗi cần né.",
+              desc: "Walkthrough Lost Chapter 31 bước, mốc giờ, bẫy và các lỗi cần né.",
               tag: "Nhiệm vụ",
             },
             {
@@ -139,7 +226,7 @@ export default function Home() {
             {
               title: "Tier List",
               href: "/guides/tier-list",
-              desc: "Xếp hạng PVP/PVE và vũ khí sau các đợt cân bằng.",
+              desc: "Xếp hạng PvP/PvE và vũ khí sau các đợt cân bằng.",
               tag: "Meta",
             },
           ].map((item) => (
@@ -192,7 +279,7 @@ export default function Home() {
             {
               title: "Builds & lộ trình Thiên phú",
               href: "/guides/builds",
-              desc: "Cập nhật theo patch mới: các archetype PVE/PVP linh hoạt với hoán đổi vũ khí.",
+              desc: "Cập nhật theo patch mới: các archetype PvE/PvP linh hoạt với hoán đổi vũ khí.",
             },
             {
               title: "Tóm tắt Patch Notes",
@@ -220,10 +307,10 @@ export default function Home() {
 
       <section className="grid gap-6 rounded-3xl border border-slate-800/80 bg-slate-950/80 p-6 shadow-2xl shadow-slate-950/40 md:grid-cols-2">
         <div className="space-y-3">
-          <p className="text-xs uppercase tracking-wide text-emerald-300">Freebie nhanh</p>
+          <p className="text-xs uppercase tracking-wide text-emerald-300">Quà miễn phí</p>
           <h2 className="text-2xl font-bold text-slate-50">Nhận trang phục và code miễn phí mới nhất.</h2>
           <p className="text-sm leading-relaxed text-slate-200">
-            Theo dõi lộ trình nhận trang phục miễn phí, cosmetics, kiểu tóc và ghép cùng các mã đổi quà mới nhất để lấp đầy tủ đồ mà không tốn tiền tệ cao cấp.
+            Theo dõi lộ trình nhận trang phục miễn phí, ngoại hình (cosmetics), kiểu tóc và kết hợp với các mã đổi quà mới nhất để làm đầy tủ đồ mà không cần tiêu tiền tệ cao cấp.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
@@ -236,7 +323,7 @@ export default function Home() {
               href={vnHref("/guides/cosmetics")}
               className="rounded-full border border-slate-700 bg-slate-900/70 px-4 py-2 text-sm font-semibold text-slate-200 hover:border-emerald-400 hover:text-emerald-50"
             >
-              Thư viện cosmetics
+              Thư viện ngoại hình
             </Link>
             <Link
               href={vnHref("/news")}
@@ -250,9 +337,9 @@ export default function Home() {
           {[
             {
               title: "Trang phục & set miễn phí",
-              desc: "Cửa hàng sự kiện, quà nhiệm vụ và mục Social Shop giá 0 được gom lại.",
+              desc: "Cửa hàng sự kiện, quà nhiệm vụ và các mục giá 0 trong Social Shop được gom lại.",
               href: "/guides/free-outfits",
-              badge: "Lộ trình 0 cost",
+              badge: "Lộ trình miễn phí",
             },
             {
               title: "Roadmap & sự kiện",
@@ -262,13 +349,13 @@ export default function Home() {
             },
             {
               title: "Ảnh hưởng patch notes",
-              desc: "Kiểm tra patch mới có thêm cosmetics miễn phí hay đổi tỷ lệ rớt sự kiện.",
+              desc: "Kiểm tra patch mới có thêm ngoại hình (cosmetics) miễn phí hay đổi tỷ lệ rớt sự kiện.",
               href: "/guides/patch-notes",
               badge: "Meta thay đổi",
             },
             {
               title: "Set diện mạo",
-              desc: "Xem trang phục, nhuộm màu và phụ kiện để kết hợp cùng freebies.",
+              desc: "Xem trang phục, nhuộm màu và phụ kiện để kết hợp cùng quà miễn phí.",
               href: "/guides/cosmetics",
               badge: "Gợi ý phong cách",
             },

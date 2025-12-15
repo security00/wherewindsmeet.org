@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useMemo, useState } from "react";
+import { usePathname } from "next/navigation";
 
 type LiteYouTubeEmbedProps = {
   videoId: string;
@@ -12,6 +13,27 @@ type LiteYouTubeEmbedProps = {
 
 export function LiteYouTubeEmbed({ videoId, title, start = 0, poster = "/background/bg.webp" }: LiteYouTubeEmbedProps) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const pathname = usePathname();
+  const language = pathname?.startsWith("/vn") ? "vi" : pathname?.startsWith("/de") ? "de" : "en";
+
+  const uiText =
+    language === "vi"
+      ? {
+          playAriaTemplate: "Phát video: {title}",
+          clickToPlay: "Nhấn để phát bản xem trước",
+          deferred: "Chỉ tải khi bạn nhấn (tiết kiệm dữ liệu di động)",
+        }
+      : language === "de"
+        ? {
+            playAriaTemplate: "Video abspielen: {title}",
+            clickToPlay: "Vorschau abspielen",
+            deferred: "Lädt erst beim Klick (spart mobile Daten)",
+          }
+        : {
+            playAriaTemplate: "Play {title}",
+            clickToPlay: "Click to play preview",
+            deferred: "Deferred load to save mobile data",
+          };
   const iframeSrc = useMemo(
     () =>
       `https://www.youtube-nocookie.com/embed/${videoId}?start=${start}&rel=0&modestbranding=1&playsinline=1&autoplay=1`,
@@ -37,7 +59,7 @@ export function LiteYouTubeEmbed({ videoId, title, start = 0, poster = "/backgro
           type="button"
           onClick={() => setIsPlaying(true)}
           className="relative h-full w-full overflow-hidden text-left"
-          aria-label={`Play ${title}`}
+          aria-label={uiText.playAriaTemplate.replace("{title}", title)}
         >
           <Image
             src={poster}
@@ -52,8 +74,8 @@ export function LiteYouTubeEmbed({ videoId, title, start = 0, poster = "/backgro
             <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/90 text-slate-950 text-2xl font-semibold shadow-lg shadow-emerald-900/50 transition group-hover:scale-105 group-hover:bg-emerald-400">
               ▶
             </span>
-            <p className="text-sm font-semibold text-slate-100">Click to play preview</p>
-            <p className="text-xs text-slate-200/80">Deferred load to save mobile data</p>
+            <p className="text-sm font-semibold text-slate-100">{uiText.clickToPlay}</p>
+            <p className="text-xs text-slate-200/80">{uiText.deferred}</p>
           </div>
         </button>
       )}

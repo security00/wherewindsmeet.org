@@ -1,0 +1,47 @@
+[
+  {
+    "id": "fu-lan-hairstyle",
+    "name": "Kiểu tóc Phù Lam",
+    "chineseName": "浮岚",
+    "category": "Kiểu tóc",
+    "image": "/guides/cosmetics/cosmetics-29.webp",
+    "acquisition": {
+      "method": "Đổi tại Harmony Store",
+      "cost": "1× Octave Aperture (八音窍)",
+      "duration": "Giới hạn thời gian – 90 ngày"
+    },
+    "rarity": "Giới hạn"
+  },
+  {
+    "id": "miao-cactus-handguards",
+    "name": "Găng tay Meow Xương Rồng",
+    "chineseName": "喵仙人掌",
+    "category": "Ngoại hình giáp tay",
+    "image": "/guides/cosmetics/cosmetics-18.webp",
+    "galleryImages": [
+      "/guides/cosmetics/cosmetics-18.webp",
+      "/guides/cosmetics/cosmetics-21.webp"
+    ],
+    "acquisition": {
+      "method": "Mua trong shop",
+      "cost": "60× Resonant Pearl (长鸣珠)"
+    },
+    "rarity": "Đặc biệt"
+  },
+  {
+    "id": "cold-crow-mystic",
+    "name": "Hàn Nha Độ Ảnh",
+    "chineseName": "寒鸦渡影",
+    "category": "Hiệu ứng Mystic",
+    "image": "/guides/cosmetics/cosmetics-17.gif",
+    "acquisition": {
+      "method": "Mua trong shop – giảm giá giới hạn",
+      "regularCost": "300× Resonant Pearl (长鸣珠)",
+      "discountedCost": "60× Resonant Pearl (长鸣珠)",
+      "discountAvailable": true
+    },
+    "rarity": "Nổi bật",
+    "note": "Ưu đãi giới hạn — giảm 80%"
+  }
+]
+

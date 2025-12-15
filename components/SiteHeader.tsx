@@ -29,9 +29,9 @@ const vnNavLinks: NavLink[] = [
   { href: "/vn/guides/bosses", label: "Boss" },
   { href: "/vn/guides/weapons", label: "Vũ khí" },
   { href: "/vn/guides/martial-arts-weapons", label: "Võ học" },
-  { href: "/vn/guides/tier-list", label: "Tier List" },
-  { href: "/vn/guides/builds", label: "Builds" },
-  { href: "/vn/guides/codes", label: "Code" },
+  { href: "/vn/guides/tier-list", label: "Xếp hạng" },
+  { href: "/vn/guides/builds", label: "Bộ build" },
+  { href: "/vn/guides/codes", label: "Mã quà" },
   { href: "/vn/guides/items", label: "Vật phẩm" },
   { href: "/vn/news", label: "Tin tức" },
 ];
@@ -330,8 +330,8 @@ export function SiteHeader({
                   <span>{link.label}</span>
                   {link.active ? <span className="text-[11px] text-emerald-300">{uiText.activeLabel}</span> : null}
                 </Link>
-            ))}
-          </nav>
+              ))}
+            </nav>
             <div className="mt-4 rounded-2xl border border-slate-800/80 bg-slate-900/80 p-3">
               <div className="space-y-2">
                 {languageTargets.map((lang) => (

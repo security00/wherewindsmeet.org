@@ -89,6 +89,117 @@ const landmarks: MapLandmark[] = [
   },
 ];
 
+type LanguageCode = "en" | "vi" | "de";
+
+const UI_TEXT: Record<
+  LanguageCode,
+  {
+    badge: string;
+    title: string;
+    subtitle: string;
+    quickLinks: { guides: string; news: string; videos: string };
+    enter: string;
+  }
+> = {
+  en: {
+    badge: "Jianghu World · Guide Map",
+    title: "Choose Your Path",
+    subtitle: "Select a landmark to begin your journey through Where Winds Meet",
+    quickLinks: { guides: "View All Guides", news: "Latest News", videos: "Watch Videos" },
+    enter: "Enter",
+  },
+  vi: {
+    badge: "Thế giới Jianghu · Bản đồ hướng dẫn",
+    title: "Chọn lộ trình của bạn",
+    subtitle: "Chọn một điểm đến để bắt đầu hành trình trong Where Winds Meet",
+    quickLinks: { guides: "Xem tất cả hướng dẫn", news: "Tin tức mới nhất", videos: "Xem video" },
+    enter: "Mở",
+  },
+  de: {
+    badge: "Jianghu-Welt · Guide-Karte",
+    title: "Wähle deinen Weg",
+    subtitle: "Wähle einen Ort und starte deine Reise in Where Winds Meet",
+    quickLinks: { guides: "Alle Guides", news: "Aktuelle News", videos: "Videos ansehen" },
+    enter: "Öffnen",
+  },
+};
+
+const LANDMARK_TEXT: Record<
+  Exclude<LanguageCode, "en">,
+  Record<string, Pick<MapLandmark, "label" | "chineseName" | "description">>
+> = {
+  vi: {
+    "new-players": {
+      label: "Hướng dẫn tân thủ",
+      chineseName: "Làng Tân Thủ",
+      description: "Bắt đầu hành trình giang hồ của bạn",
+    },
+    "tier-list": {
+      label: "Xếp hạng",
+      chineseName: "Đỉnh Luận Kiếm",
+      description: "Tranh tài ở đỉnh cao võ học",
+    },
+    builds: {
+      label: "Bộ build",
+      chineseName: "Võ đường",
+      description: "Làm chủ phong cách chiến đấu",
+    },
+    codes: {
+      label: "Mã quà",
+      chineseName: "Kho báu",
+      description: "Nhận phần thưởng",
+    },
+    weapons: {
+      label: "Vũ khí",
+      chineseName: "Kho binh khí",
+      description: "Khám phá binh khí huyền thoại",
+    },
+    bosses: {
+      label: "Boss",
+      chineseName: "Đấu trường Boss",
+      description: "Đối đầu kẻ thù đáng gờm",
+    },
+  },
+  de: {
+    "new-players": {
+      label: "Einsteiger-Guide",
+      chineseName: "Neulingsdorf",
+      description: "Starte deine Reise im Jianghu",
+    },
+    "tier-list": {
+      label: "Tierliste",
+      chineseName: "Gipfelduell",
+      description: "Miss dich an der Spitze der Kampfkünste",
+    },
+    builds: {
+      label: "Builds",
+      chineseName: "Kampfhalle",
+      description: "Meistere deinen Kampfstil",
+    },
+    codes: {
+      label: "Codes",
+      chineseName: "Schatzkammer",
+      description: "Sichere dir Belohnungen",
+    },
+    weapons: {
+      label: "Waffen",
+      chineseName: "Waffenkammer",
+      description: "Entdecke legendäre Waffen",
+    },
+    bosses: {
+      label: "Bosse",
+      chineseName: "Boss-Arena",
+      description: "Stell dich gefährlichen Gegnern",
+    },
+  },
+};
+
+const CATEGORY_LABEL: Record<LanguageCode, Record<MapLandmark["category"], string>> = {
+  en: { beginner: "Beginner", combat: "Combat", rewards: "Rewards", knowledge: "Knowledge" },
+  vi: { beginner: "Tân thủ", combat: "Giao tranh", rewards: "Phần thưởng", knowledge: "Kiến thức" },
+  de: { beginner: "Einsteiger", combat: "Kampf", rewards: "Belohnungen", knowledge: "Wissen" },
+};
+
 const categoryColors = {
   beginner: 'emerald',
   combat: 'red',
@@ -99,28 +210,38 @@ const categoryColors = {
 export default function JianghuMap() {
   const [hoveredLandmark, setHoveredLandmark] = useState<string | null>(null);
   const pathname = usePathname();
-  const isVietnamese = pathname?.startsWith('/vn');
+  const language: LanguageCode = pathname?.startsWith("/vn") ? "vi" : pathname?.startsWith("/de") ? "de" : "en";
+  const uiText = UI_TEXT[language];
 
   const withLangPrefix = useCallback(
     (slug: string) => {
-      if (!isVietnamese) return slug;
-      return slug.startsWith('/vn') ? slug : `/vn${slug}`;
+      if (language === "en") return slug;
+      const prefix = language === "vi" ? "/vn" : "/de";
+      return slug.startsWith(prefix) ? slug : `${prefix}${slug}`;
     },
-    [isVietnamese]
+    [language]
   );
 
   const localizedLandmarks = useMemo(
-    () => landmarks.map((landmark) => ({ ...landmark, slug: withLangPrefix(landmark.slug) })),
-    [withLangPrefix]
+    () =>
+      landmarks.map((landmark) => {
+        const localized = language === "en" ? undefined : LANDMARK_TEXT[language]?.[landmark.id];
+        return {
+          ...landmark,
+          ...localized,
+          slug: withLangPrefix(landmark.slug),
+        };
+      }),
+    [language, withLangPrefix]
   );
 
   const quickLinks = useMemo(
     () => [
-      { label: 'View All Guides', href: withLangPrefix('/guides'), color: 'emerald' },
-      { label: 'Latest News', href: withLangPrefix('/news'), color: 'cyan' },
-      { label: 'Watch Videos', href: withLangPrefix('/videos'), color: 'purple' },
+      { label: uiText.quickLinks.guides, href: withLangPrefix('/guides'), color: 'emerald' },
+      { label: uiText.quickLinks.news, href: withLangPrefix('/news'), color: 'cyan' },
+      { label: uiText.quickLinks.videos, href: withLangPrefix('/videos'), color: 'purple' },
     ],
-    [withLangPrefix]
+    [withLangPrefix, uiText]
   );
 
   return (
@@ -136,7 +257,7 @@ export default function JianghuMap() {
           <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-400/10 text-emerald-300">
             ●
           </span>
-          Jianghu World · Guide Map
+          {uiText.badge}
         </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
@@ -144,7 +265,7 @@ export default function JianghuMap() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mt-4 text-balance text-3xl font-bold tracking-tight text-slate-50 sm:text-4xl lg:text-5xl"
         >
-          Choose Your Path
+          {uiText.title}
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: -20 }}
@@ -152,7 +273,7 @@ export default function JianghuMap() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-2 text-sm text-slate-300 sm:text-base"
         >
-          Select a landmark to begin your journey through Where Winds Meet
+          {uiText.subtitle}
         </motion.p>
       </div>
 
@@ -169,7 +290,7 @@ export default function JianghuMap() {
             </div>
             <div className="flex flex-col leading-tight">
               <span className="text-sm font-semibold text-slate-100">{landmark.chineseName || landmark.label}</span>
-              <span className="text-xs text-slate-400">{landmark.category}</span>
+              <span className="text-xs text-slate-400">{CATEGORY_LABEL[language][landmark.category]}</span>
             </div>
           </Link>
         ))}
@@ -267,7 +388,7 @@ export default function JianghuMap() {
                       {landmark.description}
                     </div>
                     <div className={`mt-2 inline-flex items-center gap-1 text-xs font-medium text-${color}-300`}>
-                      Enter
+                      {uiText.enter}
                       <span aria-hidden>→</span>
                     </div>
                   </motion.div>

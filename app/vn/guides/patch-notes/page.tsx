@@ -37,7 +37,7 @@ export default function PatchNotesPage() {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Trang chủ", item: baseUrl },
+        { "@type": "ListItem", position: 1, name: "Trang chủ", item: `${baseUrl}/vn` },
         { "@type": "ListItem", position: 2, name: "Hướng dẫn", item: `${baseUrl}/vn/guides` },
         { "@type": "ListItem", position: 3, name: "Patch Notes", item: `${baseUrl}/vn/guides/patch-notes` },
       ],
@@ -66,10 +66,10 @@ export default function PatchNotesPage() {
             Patch notes và cập nhật cân bằng Where Winds Meet.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Cập nhật patch notes giúp giữ build đúng meta và hiểu đường phát triển. Mỗi chỉnh cân bằng, thay đổi vũ khí hay hệ thống mới đều ảnh hưởng tới lối chơi PVE, co-op, PVP.
+            Cập nhật patch notes giúp giữ build đúng meta và hiểu đường phát triển. Mỗi chỉnh cân bằng, thay đổi vũ khí hay hệ thống mới đều ảnh hưởng tới lối chơi PvE, tổ đội (co-op), PvP.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Trang này cũng đánh dấu mốc roadmap và cửa sổ cập nhật để bạn chủ động lên kế hoạch respec hoặc thử build mới.
+            Trang này cũng đánh dấu mốc roadmap và cửa sổ cập nhật để bạn chủ động lên kế hoạch respec (tẩy điểm) hoặc thử build mới.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Thay vì hoảng khi vũ khí bị chỉnh, hãy đọc patch notes như la bàn tinh chỉnh. Phần lớn thay đổi nhằm mở thêm lựa chọn, không phải phá build của bạn.
@@ -85,7 +85,7 @@ export default function PatchNotesPage() {
           Game thường có nhịp patch rõ: patch lớn vài tuần một lần (cân bằng + nội dung), hotfix xen giữa, cập nhật mùa thêm khu vực/vũ khí/hệ thống. Biết nhịp này để không bị động.
         </p>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Nếu patch lớn sắp tới, có thể hoãn respec đắt đến khi xem đủ chi tiết. Hotfix sửa bug vũ khí bạn thích là tin vui—hãy thử lại.
+          Nếu patch lớn sắp tới, có thể hoãn respec (tẩy điểm) đến khi xem đủ chi tiết. Hotfix sửa bug vũ khí bạn thích là tin vui—hãy thử lại.
         </p>
       </section>
 
@@ -94,30 +94,30 @@ export default function PatchNotesPage() {
           Đọc thay đổi cân bằng thế nào?
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Chú ý ngôn ngữ patch: buff nhỏ đôi khi bùng nổ khi cộng dồn với build; nerf có thể chỉ áp dụng PVP. Hãy xem chỉ số nào bị động tới và thử thực tế trước khi bỏ vũ khí.
+          Chú ý ngôn ngữ patch: buff nhỏ đôi khi bùng nổ khi cộng dồn với build; nerf có thể chỉ áp dụng PvP. Hãy xem chỉ số nào bị động tới và thử thực tế trước khi bỏ vũ khí.
         </p>
         <div className="space-y-4">
           <div className="rounded-xl border border-slate-700 bg-slate-900/40 p-4">
             <h3 className="text-sm font-semibold text-slate-50">Buff</h3>
             <p className="mt-2 text-xs leading-relaxed text-slate-200">
-              Tăng sát thương hợp lối chơi dồn damage, giảm hồi chiêu lại thay đổi lớn với build spam kỹ năng. Điều chỉnh scaling tỏa sáng ở endgame khi stat cao.
+              Tăng sát thương hợp lối chơi dồn sát thương; giảm hồi chiêu lại tạo khác biệt lớn với build xoay kỹ năng. Điều chỉnh tỉ lệ theo chỉ số (scaling) sẽ phát huy ở endgame khi chỉ số cao.
             </p>
           </div>
           <div className="rounded-xl border border-slate-700 bg-slate-900/40 p-4">
             <h3 className="text-sm font-semibold text-slate-50">Nerf</h3>
             <p className="mt-2 text-xs leading-relaxed text-slate-200">
-              Thường nhắm ngữ cảnh. Nếu nerf chỉ cho PVP, PVE có thể không ảnh hưởng. Thử xoay sang build/stat gần giống để giữ cảm giác chơi.
+              Thường nhắm ngữ cảnh. Nếu nerf chỉ cho PvP, PvE có thể không ảnh hưởng. Thử xoay sang build/chỉ số gần giống để giữ cảm giác chơi.
             </p>
           </div>
           <div className="rounded-xl border border-slate-700 bg-slate-900/40 p-4">
             <h3 className="text-sm font-semibold text-slate-50">Hệ thống mới</h3>
             <p className="mt-2 text-xs leading-relaxed text-slate-200">
-              Cơ chế mới thường chưa rõ meta—người thử sớm sẽ tìm synergy trước khi cộng đồng ổn định. Đây là cơ hội sáng tạo.
+              Cơ chế mới thường chưa rõ meta—người thử sớm sẽ tìm tương tác (synergy) trước khi cộng đồng ổn định. Đây là cơ hội sáng tạo.
             </p>
           </div>
         </div>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Skim nhanh để xem vũ khí/kỹ năng bạn dùng bị ảnh hưởng, rồi tự test. Nhiều thay đổi đọc có vẻ xấu nhưng chơi thực tế vẫn ổn.
+          Lướt nhanh để xem vũ khí/kỹ năng bạn dùng bị ảnh hưởng, rồi tự test. Nhiều thay đổi đọc có vẻ xấu nhưng chơi thực tế vẫn ổn.
         </p>
       </section>
 
@@ -126,13 +126,13 @@ export default function PatchNotesPage() {
           Điều chỉnh build sau patch
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Không phải patch nào cũng cần respec. Thường chỉ cần chỉnh vài điểm stat hoặc đổi một kỹ năng, giữ nguyên bản sắc build.
+          Không phải patch nào cũng cần respec (tẩy điểm). Thường chỉ cần chỉnh vài điểm chỉ số hoặc đổi một kỹ năng, giữ nguyên bản sắc build.
         </p>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
           So sánh thay đổi với tier list/builds: buff có đẩy vũ khí lên hạng? nerf có khiến vũ khí tương tự trở thành lựa chọn tốt hơn? Đôi khi nerf này lại là buff cho lựa chọn khác cùng phong cách.
         </p>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          PVE/co-op thường chỉ QoL; build vẫn dùng được. PVP có thể phải xoay nhiều hơn nếu matchup đổi hẳn.
+          PvE/tổ đội (co-op) thường chỉ là QoL (chất lượng trải nghiệm); build vẫn dùng được. PvP có thể phải xoay nhiều hơn nếu kèo (matchup) đổi hẳn.
         </p>
       </section>
 
@@ -150,7 +150,7 @@ export default function PatchNotesPage() {
           </li>
           <li className="flex gap-2">
             <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            <span>Đối chiếu với <Link href="/vn/guides/pvp-tier-list" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">PVP tier list</Link> nếu chơi đối kháng.</span>
+            <span>Đối chiếu với <Link href="/vn/guides/pvp-tier-list" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">tier list PvP</Link> nếu chơi đối kháng.</span>
           </li>
           <li className="flex gap-2">
             <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />

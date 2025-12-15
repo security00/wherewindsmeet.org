@@ -52,7 +52,7 @@ export default function WeaponsPage() {
           "@type": "ListItem",
           position: 1,
           name: "Trang chủ",
-          item: baseUrl,
+          item: `${baseUrl}/vn`,
         },
         {
           "@type": "ListItem",

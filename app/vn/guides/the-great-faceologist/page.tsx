@@ -43,14 +43,14 @@ const fallbackImages = {
 };
 
 export const metadata: Metadata = {
-  title: "el gran faceologo – Cách tham gia (12/2025)",
+  title: "The Great Faceologist – Cách tham gia (12/2025)",
   description:
-    "el gran faceologo (12/2025) trong Where Winds Meet: điều kiện, đường upload đúng, cách tick tag sự kiện, giới hạn mỗi ngày, và lỗi thường gặp.",
+    "The Great Faceologist (12/2025) trong Where Winds Meet: điều kiện, đường upload đúng, cách chọn tag sự kiện, giới hạn mỗi ngày, và lỗi thường gặp.",
   alternates: buildHreflangAlternates(basePath, { canonicalLanguage: "vi" }),
   openGraph: {
-    title: "el gran faceologo – Cách tham gia (12/2025)",
+    title: "The Great Faceologist – Cách tham gia (12/2025)",
     description:
-      "Đi đúng đường cho el gran faceologo: Appearance → Edit Face, rồi tick tag [The Great Faceologist] trước khi publish để bài được tính cho sự kiện.",
+      "Đi đúng đường cho The Great Faceologist: Appearance → Edit Face, rồi chọn tag [The Great Faceologist] trước khi đăng để bài được tính cho sự kiện.",
     url: `${baseUrl}${pagePath}`,
     siteName: "Where Winds Meet Hub",
     images: [
@@ -58,13 +58,13 @@ export const metadata: Metadata = {
         url: images.hero,
         width: 1317,
         height: 741,
-        alt: "Sự kiện el gran faceologo trong Where Winds Meet",
+        alt: "Sự kiện The Great Faceologist trong Where Winds Meet",
       },
       {
         url: `${baseUrl}${fallbackImages.hero}`,
         width: 1317,
         height: 741,
-        alt: "Sự kiện el gran faceologo (ảnh dự phòng)",
+        alt: "Sự kiện The Great Faceologist (ảnh dự phòng)",
       },
     ],
     locale: "vi_VN",
@@ -72,9 +72,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "el gran faceologo – Cách tham gia (12/2025)",
+    title: "The Great Faceologist – Cách tham gia (12/2025)",
     description:
-      "Cách nộp bài đúng cho el gran faceologo: upload từ Edit Face và nhớ tick tag sự kiện.",
+      "Cách nộp bài đúng cho The Great Faceologist: upload từ Edit Face và nhớ chọn tag sự kiện.",
     images: [images.hero, `${baseUrl}${fallbackImages.hero}`],
   },
 };
@@ -91,7 +91,7 @@ const quickFacts = [
 const tlDr = [
   "Mở Appearance từ menu chính, rồi chuyển sang tab Appearance ở phía dưới (không phải Outfits).",
   "Vào Edit Face (hoặc Makeup), chọn/chỉnh preset, rồi Preview và Upload to Gallery.",
-  "Trong hộp upload, nhớ tick tag [The Great Faceologist] ngay dưới ô mô tả trước khi publish.",
+  "Trong hộp upload, nhớ chọn tag [The Great Faceologist] ngay dưới ô mô tả trước khi đăng.",
   "Upload từ Outfit gallery sẽ không được tính cho sự kiện này.",
 ];
 
@@ -192,7 +192,7 @@ const issues = [
     title: "Bị chạm giới hạn upload mỗi ngày",
     fixes: [
       "Giới hạn dùng chung với upload ngoại hình khác; thường khoảng 5 bài/ngày.",
-      "Luôn kiểm tra tag sự kiện đã được highlight trước khi publish để khỏi phí lượt.",
+      "Luôn kiểm tra tag sự kiện đã được highlight trước khi đăng (publish) để khỏi phí lượt.",
       "Dùng Preview để thử ánh sáng/khung hình trước khi đăng thật.",
     ],
     img: images.dailyCap,
@@ -203,20 +203,20 @@ const issues = [
 
 const faq = [
   {
-    q: "Bắt đầu sự kiện el gran faceologo ở đâu?",
-    a: "Nếu bạn thấy Event Center trong game thì vào đó, hoặc nộp theo luồng Gallery/Upload từ Appearance → Edit Face. Quan trọng nhất là trước khi publish phải tick đúng tag sự kiện.",
+    q: "Bắt đầu sự kiện The Great Faceologist ở đâu?",
+    a: "Nếu bạn thấy Event Center trong game thì vào đó, hoặc nộp theo luồng Gallery/Upload từ Appearance → Edit Face. Quan trọng nhất là trước khi đăng (publish) phải chọn đúng tag sự kiện.",
   },
   {
-    q: 'Bài nào được tính là bài dự thi "el gran faceologo"?',
-    a: "Chỉ các bài upload trong mục Appearance (mặt/makeup) đăng từ Edit Face (hoặc tab Makeup) mới được tính, và bạn phải tick tag [The Great Faceologist] trước khi publish.",
+    q: 'Bài nào được tính là bài dự thi "The Great Faceologist"?',
+    a: "Chỉ các bài upload trong mục Appearance (mặt/makeup) đăng từ Edit Face (hoặc tab Makeup) mới được tính, và bạn phải chọn tag [The Great Faceologist] trước khi đăng (publish).",
   },
   {
     q: "Vì sao không thấy tag [The Great Faceologist]?",
     a: "Thử upload từ tab Makeup, thoát hẳn Appearance rồi vào lại, hoặc restart game. Đồng thời kiểm tra bạn không đăng từ Outfit gallery.",
   },
   {
-    q: "Mỗi ngày upload được bao nhiêu bài el gran faceologo?",
-    a: "Giới hạn ngày dùng chung với các lượt upload ngoại hình khác và khá thấp (thường khoảng 5). Hãy chắc chắn đã tick tag để khỏi phí lượt vì đăng nhầm bài không tag.",
+    q: "Mỗi ngày upload được bao nhiêu bài The Great Faceologist?",
+    a: "Giới hạn ngày dùng chung với các lượt upload ngoại hình khác và khá thấp (thường khoảng 5). Hãy chắc chắn đã chọn tag để khỏi phí lượt vì đăng nhầm bài không tag.",
   },
 ];
 
@@ -232,18 +232,18 @@ const breadcrumbStructuredData = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Trang chủ", item: baseUrl },
+    { "@type": "ListItem", position: 1, name: "Trang chủ", item: `${baseUrl}/vn` },
     { "@type": "ListItem", position: 2, name: "Hướng dẫn", item: `${baseUrl}/vn/guides` },
-    { "@type": "ListItem", position: 3, name: "el gran faceologo", item: `${baseUrl}${pagePath}` },
+    { "@type": "ListItem", position: 3, name: "The Great Faceologist", item: `${baseUrl}${pagePath}` },
   ],
 };
 
 const howToStructuredData = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  name: "Cách nộp bài sự kiện el gran faceologo (Where Winds Meet)",
+  name: "Cách nộp bài sự kiện The Great Faceologist (Where Winds Meet)",
   description:
-    "Đi đúng đường: Appearance → Edit Face/Makeup → Preview → Upload to Gallery → tick [The Great Faceologist] → Publish.",
+    "Đi đúng đường: Appearance → Edit Face/Makeup → Preview → Upload to Gallery → chọn tag [The Great Faceologist] → Publish (Đăng).",
   image: [images.hero],
   inLanguage: "vi-VN",
   url: `${baseUrl}${pagePath}`,
@@ -306,26 +306,26 @@ export default function GreatFaceologistPageVn() {
             <p className="text-xs uppercase tracking-wide text-emerald-300">Sự kiện giới hạn thời gian</p>
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-              Cập nhật 12/2025 · Có hướng dẫn tick tag bên dưới
+              Cập nhật 12/2025 · Có hướng dẫn chọn tag bên dưới
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-50">
-              el gran faceologo – Cách tham gia, tick tag và nộp bài
+              The Great Faceologist – Cách tham gia, chọn tag và nộp bài
             </h1>
             <p className="max-w-3xl text-sm sm:text-base text-slate-300 leading-relaxed">
-              el gran faceologo là sự kiện thi tạo mặt/makeup trong Where Winds Meet. Bài của bạn chỉ được tính nếu đăng từ{" "}
+              The Great Faceologist là sự kiện thi tạo mặt/makeup trong Where Winds Meet. Bài của bạn chỉ được tính nếu đăng từ{" "}
               <strong>Edit Face</strong> và tự tick đúng <strong>[The Great Faceologist]</strong>.
             </p>
             <ul className="text-xs text-emerald-200 space-y-1">
-              <li>• TL;DR: Appearance → Edit Face/Makeup → Preview → Upload → tick tag → Publish.</li>
+              <li>• TL;DR: Appearance → Edit Face/Makeup → Preview → Upload → chọn tag → Publish (Đăng).</li>
               <li>• Upload outfit sẽ không được tính.</li>
-              <li>• Giới hạn mỗi ngày thấp, nên đừng phí lượt vì quên tick tag.</li>
+              <li>• Giới hạn mỗi ngày thấp, nên đừng phí lượt vì quên chọn tag.</li>
             </ul>
             <div className="flex flex-wrap gap-2 text-xs">
               <Link
                 href="/vn/guides/cosmetics"
                 className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
               >
-                Cosmetics & ngoại hình
+                Ngoại hình (Cosmetics)
               </Link>
               <Link
                 href="/vn/guides/new-players"
@@ -340,7 +340,7 @@ export default function GreatFaceologistPageVn() {
             <FallbackImage
               src={images.hero}
               fallbackSrc={fallbackImages.hero}
-              alt="Ảnh sự kiện el gran faceologo"
+              alt="Ảnh sự kiện The Great Faceologist"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 40vw"
@@ -398,8 +398,8 @@ export default function GreatFaceologistPageVn() {
         </div>
 
         <div className="rounded-2xl border border-amber-500/30 bg-amber-900/20 p-4 text-xs text-amber-100">
-          Tip: Nếu không thấy tag, hãy chuyển sang tab <strong>Makeup</strong> trong Edit Face và upload từ đó. Nhiều người báo là
-          checkbox chỉ hiện ở đường này.
+          Mẹo: Nếu không thấy tag, hãy chuyển sang tab <strong>Makeup</strong> trong Edit Face và upload từ đó. Nhiều người báo là
+          ô tick/checkbox chỉ hiện ở đường này.
         </div>
       </section>
 
@@ -418,7 +418,7 @@ export default function GreatFaceologistPageVn() {
         <h2 className="text-2xl font-bold text-slate-50">Vì sao upload Outfit không được tính?</h2>
         <p className="text-sm text-slate-300 leading-relaxed">
           Where Winds Meet tách riêng bài đăng <strong>Outfit</strong> và <strong>Appearance</strong> (mặt/makeup). Sự kiện{" "}
-          <strong>el gran faceologo</strong> chỉ nhận Appearance, nên tag sự kiện sẽ không xuất hiện ở màn hình upload outfit.
+          <strong>The Great Faceologist</strong> chỉ nhận Appearance, nên tag sự kiện sẽ không xuất hiện ở màn hình upload outfit.
         </p>
         <div className="rounded-2xl border border-slate-700 bg-slate-900/60 p-4 text-sm text-slate-200">
           Luôn nộp theo đường: <strong>Appearance → Edit Face/Makeup → Upload to Gallery</strong>.
@@ -427,7 +427,7 @@ export default function GreatFaceologistPageVn() {
 
       {/* FAQ */}
       <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-5">
-        <h2 className="text-2xl font-bold text-slate-50">FAQ – el gran faceologo</h2>
+        <h2 className="text-2xl font-bold text-slate-50">FAQ – The Great Faceologist</h2>
         <div className="space-y-4">
           {faq.map((item) => (
             <div key={item.q} className="rounded-2xl border border-slate-800/80 bg-slate-900/70 p-5 space-y-2">
