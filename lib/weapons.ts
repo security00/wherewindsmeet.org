@@ -78,7 +78,7 @@ export const weapons: Weapon[] = [
     role: "Support",
     tier: "B",
     description:
-      "Leitet inneres Qi nach außen: elegante Gesten werden zu Fern-Druck + Support. Du chippst aus Distanz, weichst Gruppen mit weiten Skills auf und nutzt Heil-/Utility-Talente, um dich und Verbündete stabil zu halten. Passt zu Spielern mit sicherem Spacing, teamfokussierten Tools und ruhigerem Kampftempo.",
+      "The Fan channels inner qi outward: elegant gestures become ranged pressure plus support. You chip from a safe distance, soften groups with wide skills, and use healing/utility tools to stabilize yourself and allies. It fits players with clean spacing, team-focused utility, and a calmer combat tempo.",
     officialArt: "/weapons/official/wq5_58ac46bd.png",
     officialVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/690c68778175cef2669e231f6hiIvVK103",
@@ -88,10 +88,10 @@ export const weapons: Weapon[] = [
   {
     id: "umbrella",
     name: "Umbrella",
-    role: "Parry/Konter",
+    role: "Parry/Counter",
     tier: "B",
     description:
-      "Wirkt zart, verbirgt aber Defense- und Konter-Potenzial: Geschosse gleiten, Blocks anwinkeln, Schirm öffnen und in fließende Schläge übergehen, die Überdehnungen bestrafen. Passt zu reaktiven Spielern, die Mobilität, Parry und Stil in einer eleganten Defensive-DPS-Waffe verweben.",
+      "It looks delicate, but hides serious defense and counterplay: glide through projectiles, angle guards, open the umbrella, and flow into strikes that punish overextensions. It fits reactive players who want to weave mobility, parries, and style into an elegant defensive DPS weapon.",
     officialArt: "/weapons/official/wq6_f29046e1.png",
     officialVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e7547f0a2d1e15a832beLfbRNdyu03",
@@ -104,7 +104,7 @@ export const weapons: Weapon[] = [
     role: "Mobile Control / Picks",
     tier: "S",
     description:
-      "Stylishe Mischung aus Grapple und Execution-Tool: Aus Mid-Range Gegner aus dem Gleichgewicht reißen, Lücken sofort schließen oder Verbündete mit Pulls/Repositioning schützen. Belohnt Spieler mit gutem Movement-Reading, kreativem Positioning und dem Wunsch, Fluchtversuche in Niederlagen zu drehen.",
+      "A stylish mix of grapple and execution tool: yank enemies off balance from mid-range, instantly close gaps, or protect allies with pulls and repositioning. It rewards strong movement reading, creative positioning, and the instinct to turn escape attempts into losses.",
     officialArt: "/weapons/official/wq7_d8a85874.png",
     officialVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/690c6889be134a7f3324d9f6gQMKFy6i03",

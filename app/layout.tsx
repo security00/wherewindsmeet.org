@@ -16,10 +16,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://wherewindsmeet.org"),
-  title: {
-    default: "Where Winds Meet Guides Hub",
-    template: "%s | WWM Hub",
-  },
+  title: "Where Winds Meet Guides Hub",
   description:
     "Where Winds Meet guides hub with tier lists, builds, codes, and news to help players master the open world wuxia RPG across platforms.",
   alternates: buildHreflangAlternates("/"),

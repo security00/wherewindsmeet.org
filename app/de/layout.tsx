@@ -3,10 +3,7 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://wherewindsmeet.org"),
-  title: {
-    default: "Where Winds Meet - Deutscher Guide-Hub",
-    template: "%s | WWM Hub (DE)",
-  },
+  title: "Where Winds Meet - Deutscher Guide-Hub",
   description:
     "Deutscher Where Winds Meet Guide-Hub mit Tierlisten, Builds, Codes, News und Tipps für einen stressfreien Start.",
   openGraph: {

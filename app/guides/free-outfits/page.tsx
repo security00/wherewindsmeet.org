@@ -6,20 +6,20 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 const baseUrl = "https://wherewindsmeet.org";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Free Outfits Guide",
+  title: "Where Winds Meet Free Outfits & Cosmetics Guide",
   description:
-    "Where Winds Meet free outfits, sets, cosmetics, and hairstyles from events, quests, codes, shops, and social rewards—claim zero-cost tiers to save currency.",
+    "Free outfits, sets, cosmetics, and hairstyles in Where Winds Meet (WWM), with where to get each one (events, quests, redeem codes, shops, and social rewards).",
   alternates: buildHreflangAlternates("/guides/free-outfits"),
   openGraph: {
-    title: "Where Winds Meet Free Outfits Guide",
+    title: "Where Winds Meet Free Outfits & Cosmetics Guide",
     description:
-      "Where Winds Meet free outfits, sets, cosmetics, and hairstyles from events, quests, codes, shops, and social rewards—claim zero-cost tiers to save currency.",
+      "Free outfits, sets, cosmetics, and hairstyles in Where Winds Meet (WWM), with where to get each one (events, quests, redeem codes, shops, and social rewards).",
     url: `${baseUrl}/guides/free-outfits`,
   },
   twitter: {
-    title: "Where Winds Meet Free Outfits Guide",
+    title: "Where Winds Meet Free Outfits & Cosmetics Guide",
     description:
-      "Where Winds Meet free outfits, sets, cosmetics, and hairstyles from events, quests, codes, shops, and social rewards—claim zero-cost tiers to save currency.",
+      "Free outfits, sets, cosmetics, and hairstyles in Where Winds Meet (WWM), with where to get each one (events, quests, redeem codes, shops, and social rewards).",
   },
 };
 

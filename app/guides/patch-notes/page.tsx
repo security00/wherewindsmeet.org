@@ -6,20 +6,20 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 const baseUrl = "https://wherewindsmeet.org";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Patch Notes, Roadmap & Balance Updates",
+  title: "Where Winds Meet Patch Notes – Balance Changes & Roadmap",
   description:
-    "Latest Where Winds Meet patch notes, roadmap checkpoints, balance changes, weapon adjustments, and new content updates. Track changes to your favorite builds and strategies.",
+    "Where Winds Meet patch notes guide: where to find official notes, how to read buffs/nerfs, and how to adjust weapons, builds, and tier list picks after updates.",
   alternates: buildHreflangAlternates("/guides/patch-notes"),
   openGraph: {
-    title: "Where Winds Meet Patch Notes, Roadmap & Balance Updates",
+    title: "Where Winds Meet Patch Notes – Balance Changes & Roadmap",
     description:
-      "Latest Where Winds Meet patch notes, roadmap checkpoints, balance changes, weapon adjustments, and new content updates.",
+      "Where Winds Meet patch notes guide: how to read buffs/nerfs, track roadmap updates, and adjust your builds after changes.",
     url: `${baseUrl}/guides/patch-notes`,
   },
   twitter: {
-    title: "Where Winds Meet Patch Notes, Roadmap & Balance Updates",
+    title: "Where Winds Meet Patch Notes – Balance Changes & Roadmap",
     description:
-      "Latest Where Winds Meet patch notes, roadmap checkpoints, balance changes, weapon adjustments, and new content updates.",
+      "Where Winds Meet patch notes guide: how to read buffs/nerfs, track roadmap updates, and adjust your builds after changes.",
   },
 };
 

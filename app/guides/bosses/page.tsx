@@ -4,16 +4,54 @@ import Link from "next/link";
 import { bosses } from "@/lib/bosses";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
+const baseUrl = "https://wherewindsmeet.org";
+
 export const metadata: Metadata = {
-  title: "Where Winds Meet Bosses 2025 – Weaknesses, Drops, Overviews",
+  title: "Where Winds Meet Bosses – Boss List & Encounter Overviews",
   description:
-    "Updated Jan 2025: Where Winds Meet bosses list with themes, weaknesses, drops, Bloodbath notes, and links to encounter overviews so you can pick your next fight fast.",
+    "Spoiler-light boss list for Where Winds Meet (WWM) with quick themes, encounter types, and links to each boss overview—plus builds and weapon guides for prep.",
   alternates: buildHreflangAlternates("/guides/bosses"),
 };
 
 export default function BossesPage() {
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: metadata.title,
+      description: metadata.description,
+      url: `${baseUrl}/guides/bosses`,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: baseUrl },
+        { "@type": "ListItem", position: 2, name: "Guides", item: `${baseUrl}/guides` },
+        { "@type": "ListItem", position: 3, name: "Bosses", item: `${baseUrl}/guides/bosses` },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: "Where Winds Meet bosses",
+      itemListOrder: "Unordered",
+      numberOfItems: bosses.length,
+      itemListElement: bosses.map((boss, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: boss.name,
+        url: `${baseUrl}/guides/bosses/${boss.id}`,
+      })),
+    },
+  ];
+
   return (
     <article className="space-y-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
         <div className="pointer-events-none absolute inset-0">
           <Image
@@ -28,15 +66,15 @@ export default function BossesPage() {
         <div className="relative">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-200">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            Updated Jan 2025 · Weaknesses & drops at a glance
+            Boss list · Spoiler-light encounter overviews
           </div>
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
             Meet the bosses and legends of Jianghu.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            This page gathers the major Where Winds Meet bosses and named foes in one place, focusing on how they fight, what they drop,
-            and which encounters suit your current build. It is a spoiler-light boss list with links to weaknesses and Bloodbath notes so
-            you can decide which legend to hunt next.
+            This page gathers the major Where Winds Meet bosses and named foes in one place, focusing on encounter vibe, fight pacing, and
+            which fights suit your current build. It is a spoiler-light boss list with links to each encounter overview so you can decide
+            which legend to hunt next.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Use it alongside the{" "}
@@ -61,7 +99,7 @@ export default function BossesPage() {
               href="/guides/bosses#faq"
               className="rounded-full border border-emerald-400/50 bg-emerald-500/10 px-4 py-2 text-xs font-semibold text-emerald-100 hover:border-emerald-300/70"
             >
-              Boss weaknesses & drops (FAQ)
+              Boss quick answers (FAQ)
             </Link>
             <Link
               href="/news"
@@ -241,10 +279,11 @@ export default function BossesPage() {
             </p>
           </div>
           <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
-            <p className="font-semibold text-slate-50">Do bosses have notable weaknesses or drops?</p>
+            <p className="font-semibold text-slate-50">Do bosses have notable weaknesses or rewards?</p>
             <p className="mt-1 text-slate-300">
-              Most bosses are weak to posture breaks and damage-over-time procs. Drops are primarily cosmetic lore items and upgrade materials; check
-              each encounter overview for specifics. Always open the chest after the cutscene to avoid missing the reward.
+              Exact weaknesses and rewards vary by boss and can shift with updates. This page stays spoiler-light, so for reliable rewards info,
+              check the in-game reward preview (if available) and official patch notes. Use the encounter overviews here for story tone, pacing,
+              and prep links to weapons/builds.
             </p>
           </div>
           <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">

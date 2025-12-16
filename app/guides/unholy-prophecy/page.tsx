@@ -8,14 +8,14 @@ const cdnBase = process.env.NEXT_PUBLIC_CDN_URL || "https://static.wherewindsmee
 const cdn = (path: string) => `${cdnBase}${path}`;
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet An Unholy Prophecy Guide (2025)",
+  title: "An Unholy Prophecy Walkthrough – Where Winds Meet (WWM)",
   description:
-    "Jan 2025: An Unholy Prophecy walkthrough — rooftop braziers, Meridian Touch bell/door, spike hall, Shi Zhen fight, and fixes for stuck quests.",
+    "Step-by-step An Unholy Prophecy guide: light rooftop braziers, solve the Meridian Touch bell/door puzzle, clear spike traps, beat Shi Zhen, and fix common stuck steps.",
   alternates: buildHreflangAlternates("/guides/unholy-prophecy"),
   openGraph: {
-    title: "Where Winds Meet An Unholy Prophecy Guide (2025)",
+    title: "An Unholy Prophecy Walkthrough – Where Winds Meet (WWM)",
     description:
-      "Full An Unholy Prophecy guide: start in Jadewood Court, light rooftop braziers, use Meridian Touch, clear spike traps, defeat Shi Zhen, and unstick bugged steps.",
+      "Full An Unholy Prophecy walkthrough: start in Jadewood Court, light rooftop braziers, use Meridian Touch, clear spike traps, defeat Shi Zhen, and unstick common bugged steps.",
     url: `${baseUrl}/guides/unholy-prophecy`,
     siteName: "Where Winds Meet Hub",
     images: [
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Where Winds Meet An Unholy Prophecy Guide (2025)",
+    title: "An Unholy Prophecy Walkthrough – Where Winds Meet (WWM)",
     description:
-      "TL;DR and bug fixes for An Unholy Prophecy: braziers, Meridian Touch, spike hall, Shi Zhen boss.",
+      "TL;DR and fixes for An Unholy Prophecy: braziers, Meridian Touch, spike hall, and the Shi Zhen boss fight.",
     images: [cdn("/guides/unholy-prophecy/header.png")],
   },
 };

@@ -5,6 +5,8 @@ import { weapons, type WeaponId } from "@/lib/weapons";
 import { weaponDetails } from "@/lib/weaponDetails";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
+const baseUrl = "https://wherewindsmeet.org";
+
 export function generateWeaponMetadata(id: WeaponId): Metadata {
   const weapon = weapons.find((w) => w.id === id);
   if (!weapon) {
@@ -26,9 +28,32 @@ export function WeaponDetail({ weaponId }: { weaponId: WeaponId }) {
   }
 
   const detail = weaponDetails[weapon.id];
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: `${weapon.name} Weapon Guide – Where Winds Meet`,
+      description: weapon.description,
+      url: `${baseUrl}/guides/weapons/${weapon.id}`,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: baseUrl },
+        { "@type": "ListItem", position: 2, name: "Guides", item: `${baseUrl}/guides` },
+        { "@type": "ListItem", position: 3, name: "Weapons", item: `${baseUrl}/guides/weapons` },
+        { "@type": "ListItem", position: 4, name: weapon.name, item: `${baseUrl}/guides/weapons/${weapon.id}` },
+      ],
+    },
+  ];
 
   return (
     <article className="space-y-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <section className="grid gap-8 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] sm:p-8">
         <div className="space-y-4">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">

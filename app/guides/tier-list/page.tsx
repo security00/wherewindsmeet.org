@@ -5,20 +5,20 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 const baseUrl = "https://wherewindsmeet.org";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Tier List – PVP & PVE Weapons, Paths, Dual Builds",
+  title: "WWM Tier List – Where Winds Meet PVE & PVP Rankings",
   description:
-    "Interactive Where Winds Meet tier list covering PVP tier list, PVE rankings, weapon paths, dual weapon combinations, and internal arts from the latest updates.",
+    "Interactive Where Winds Meet tier list for PVE and PVP: weapon rankings, paths, dual-weapon combos, and internal arts for quick comparisons.",
   alternates: buildHreflangAlternates("/guides/tier-list"),
   openGraph: {
-    title: "Where Winds Meet Tier List – PVP & PVE Weapons, Paths, Dual Builds",
+    title: "WWM Tier List – Where Winds Meet PVE & PVP Rankings",
     description:
-      "Interactive Where Winds Meet tier list covering PVP tier list, PVE rankings, weapon paths, dual weapon combinations, and internal arts from the latest updates.",
+      "Interactive Where Winds Meet tier list for PVE and PVP: weapon rankings, paths, dual-weapon combos, and internal arts for quick comparisons.",
     url: `${baseUrl}/guides/tier-list`,
   },
   twitter: {
-    title: "Where Winds Meet Tier List – PVP & PVE Weapons, Paths, Dual Builds",
+    title: "WWM Tier List – Where Winds Meet PVE & PVP Rankings",
     description:
-      "Interactive Where Winds Meet tier list covering PVP tier list, PVE rankings, weapon paths, dual weapon combinations, and internal arts from the latest updates.",
+      "Interactive Where Winds Meet tier list for PVE and PVP: weapon rankings, paths, dual-weapon combos, and internal arts for quick comparisons.",
   },
 };
 

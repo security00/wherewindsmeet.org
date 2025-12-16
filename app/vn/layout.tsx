@@ -3,10 +3,7 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://wherewindsmeet.org"),
-  title: {
-    default: "Where Winds Meet - Trung tâm hướng dẫn Tiếng Việt",
-    template: "%s | WWM Hub (VN)",
-  },
+  title: "Where Winds Meet - Trung tâm hướng dẫn Tiếng Việt",
   description:
     "Tổng hợp hướng dẫn Where Winds Meet bằng Tiếng Việt: tier list, builds, code đổi quà, tin tức và mẹo chơi để bạn khám phá giang hồ thuận lợi hơn.",
   openGraph: {

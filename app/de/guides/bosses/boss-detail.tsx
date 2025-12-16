@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import type { BossId } from "@/lib/bosses";
-import { bosses } from "@/lib/bosses";
+import { bosses } from "@/lib/bosses.de";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export function generateBossMetadata(id: BossId): Metadata {
