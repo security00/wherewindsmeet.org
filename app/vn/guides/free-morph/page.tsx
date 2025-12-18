@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: "Where Winds Meet Hub",
     images: [
       {
-        url: "https://wherewindsmeet.org/guides/free-morph/free-morph-icon.webp",
+        url: "https://static.wherewindsmeet.org/guides/free-morph/free-morph-icon.webp",
         width: 256,
         height: 256,
         alt: "Biểu tượng kỹ năng Free Morph",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Free Morph – Cách mở và dùng Mystic Skill (Where Winds Meet)",
     description:
       "Cách mở Free Morph, hiểu thưởng tier và lồng vào build PvE/PvP như một Mystic khống chế/nhấc đối thủ.",
-    images: ["https://wherewindsmeet.org/guides/free-morph/free-morph-icon.webp"],
+    images: ["https://static.wherewindsmeet.org/guides/free-morph/free-morph-icon.webp"],
   },
 };
 
@@ -83,7 +83,7 @@ export default function FreeMorphPage() {
     <article className="space-y-12">
       <section className="relative overflow-hidden rounded-3xl border border-slate-800/60 bg-slate-950/80 p-6 sm:p-8 shadow-lg shadow-slate-950/60">
         <div className="pointer-events-none absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/bg3.webp"
             alt="Phông vách núi wuxia"
             fill
@@ -103,7 +103,7 @@ export default function FreeMorphPage() {
           </div>
 
           <div className="flex items-center gap-4 rounded-2xl border border-slate-800 bg-slate-900/70 px-4 py-3 shadow-inner shadow-slate-950/40">
-            <Image
+            <CdnImage
               src="/guides/free-morph/free-morph-icon.webp"
               alt="Biểu tượng Free Morph"
               width={72}

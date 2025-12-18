@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { weapons } from "@/lib/weapons.de";
 import { weaponDetails } from "@/lib/weaponDetails.de";
@@ -69,7 +69,7 @@ export function WeaponDetail({ weaponId }: { weaponId: WeaponId }) {
         </div>
         <div className="space-y-4">
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
-            <Image
+            <CdnImage
               src={weapon.officialArt}
               alt={weapon.name}
               fill

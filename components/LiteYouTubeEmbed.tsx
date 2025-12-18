@@ -1,6 +1,6 @@
 'use client';
 
-import Image from "next/image";
+import CdnImage from "@/components/CdnImageClient";
 import { useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 
@@ -61,7 +61,7 @@ export function LiteYouTubeEmbed({ videoId, title, start = 0, poster = "/backgro
           className="relative h-full w-full overflow-hidden text-left"
           aria-label={uiText.playAriaTemplate.replace("{title}", title)}
         >
-          <Image
+          <CdnImage
             src={poster}
             alt={title}
             fill

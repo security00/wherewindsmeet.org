@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 import LightboxGallery from "@/components/LightboxGallery";
@@ -41,14 +41,14 @@ const fallbackImages = {
 };
 
 export const metadata: Metadata = {
-  title: "The Great Faceologist (Dec 2025) – How to Submit",
+  title: "Where Winds Meet The Great Faceologist – How to Submit",
   description:
-    "Where Winds Meet The Great Faceologist (Dec 2025): requirements, correct upload path, how to tag your submission, daily cap, and common fixes.",
+    "Photo didn’t count? Where Winds Meet The Great Faceologist (Dec 2025): exact upload path + event tag (with screenshots), daily cap, requirements, and fixes.",
   alternates: buildHreflangAlternates(slug),
   openGraph: {
-    title: "The Great Faceologist (Dec 2025) – How to Submit",
+    title: "Where Winds Meet The Great Faceologist – How to Submit",
     description:
-      "Complete guide to The Great Faceologist event: enter via Edit Face, tag your upload correctly, and avoid daily cap mistakes.",
+      "Photo didn’t count? Follow the exact submission path, tick the event tag, and avoid the daily cap — with screenshots for each step.",
     url: `${baseUrl}${slug}`,
     siteName: "Where Winds Meet Hub",
     images: [
@@ -70,9 +70,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Great Faceologist (Dec 2025) – How to Submit",
+    title: "Where Winds Meet The Great Faceologist – How to Submit",
     description:
-      "Join, tag, and submit your face/make-up preset correctly for The Great Faceologist contest.",
+      "Exact submission path + event tag location (screenshots), daily cap, requirements, and fixes if your photo didn’t count.",
     images: [images.hero, `${baseUrl}${fallbackImages.hero}`],
   },
 };
@@ -88,6 +88,10 @@ const quickFacts = [
   },
   { label: "What counts", value: "Only uploads tagged with [The Great Faceologist]" },
   { label: "Daily cap", value: "Up to ~5 appearance uploads per day (shared limit)" },
+  {
+    label: "Rewards",
+    value: "Event quests + popularity milestones (often includes Echo Jades and cosmetics/decorations; check Event Center for your server)",
+  },
 ];
 
 const tlDr = [
@@ -128,7 +132,7 @@ const pcSteps = [
   },
   {
     title: "Preview your shot",
-    desc: "Click Preview and frame your character’s face the way you want it to appear in the gallery.",
+    desc: "Click Preview, pick an outfit/background if prompted, and frame your character’s face the way you want it to appear in the gallery.",
     img: images.preview,
     fallbackImg: fallbackImages.preview,
     alt: "Previewing your face before upload",
@@ -213,6 +217,10 @@ const faq = [
     a: "Only Appearance uploads (face/make-up) published from Edit Face (or the Makeup tab) count, and only if you tick the [The Great Faceologist] tag before you publish.",
   },
   {
+    q: "My Faceologist photo didn’t count — why?",
+    a: "In Where Winds Meet The Great Faceologist, most “didn’t count” cases are either (1) publishing from the Outfit gallery path or (2) forgetting to tick the [The Great Faceologist] tag under the description before you publish. Re-submit from Edit Face/Makeup and confirm the tag is highlighted.",
+  },
+  {
     q: "Why is the [The Great Faceologist] tag missing?",
     a: "Try uploading from the Makeup tab, fully close/reopen Appearance, or restart the game client. Also confirm you’re not uploading from the Outfit gallery path.",
   },
@@ -293,7 +301,7 @@ export default function GreatFaceologistPage() {
       {/* Hero */}
       <section className="relative overflow-hidden rounded-3xl border border-slate-800/60 bg-slate-950/80 p-6 sm:p-8 shadow-lg shadow-slate-950/60">
         <div className="pointer-events-none absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/bg3.webp"
             alt="Where Winds Meet background"
             fill
@@ -311,13 +319,15 @@ export default function GreatFaceologistPage() {
               Updated Dec 2025 · The Great Faceologist tagging steps below
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-50">
-              The Great Faceologist – How to Join, Tag, and Submit
+              Where Winds Meet The Great Faceologist – How to Join, Tag, and Submit
             </h1>
             <p className="max-w-3xl text-sm sm:text-base text-slate-300 leading-relaxed">
-              The Great Faceologist is a face & make‑up customization contest in Where Winds Meet. Your upload only counts if it is
-              published from <strong>Edit Face</strong> and manually tagged with <strong>[The Great Faceologist]</strong>.
+              Where Winds Meet The Great Faceologist is a limited‑time face & make‑up customization contest. Your photo/upload only
+              counts if it is published from <strong>Edit Face</strong> and manually tagged with{" "}
+              <strong>[The Great Faceologist]</strong>.
             </p>
             <ul className="text-xs text-emerald-200 space-y-1">
+              <li>• Photo didn’t count? It’s almost always the missing event tag or the wrong upload path.</li>
               <li>• TL;DR: Appearance → Edit Face/Makeup → Preview → Upload → tick the event tag → Publish.</li>
               <li>• Outfit gallery posts never count for The Great Faceologist.</li>
               <li>• Daily cap is low, so don’t waste uploads without the tag.</li>
@@ -351,8 +361,63 @@ export default function GreatFaceologistPage() {
         </div>
       </section>
 
+      {/* On this page */}
+      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
+        <h2 className="text-2xl font-bold text-slate-50">On this page</h2>
+        <div className="flex flex-wrap gap-2 text-xs">
+          <a
+            href="#quick-facts"
+            className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+          >
+            Quick Facts
+          </a>
+          <a
+            href="#rewards"
+            className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+          >
+            Rewards
+          </a>
+          <a
+            href="#tldr"
+            className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+          >
+            TL;DR
+          </a>
+          <a
+            href="#submit-pc"
+            className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+          >
+            Submit on PC
+          </a>
+          <a
+            href="#submit-console"
+            className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+          >
+            Submit on Console
+          </a>
+          <a
+            href="#issues"
+            className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+          >
+            Fixes
+          </a>
+          <a
+            href="#faq"
+            className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+          >
+            FAQ
+          </a>
+          <a
+            href="#sources"
+            className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+          >
+            Sources
+          </a>
+        </div>
+      </section>
+
       {/* Quick Facts */}
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-6">
+      <section id="quick-facts" className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-6">
         <h2 className="text-2xl font-bold text-slate-50">Quick Facts</h2>
         <div className="grid gap-4 md:grid-cols-2">
           {quickFacts.map((item) => (
@@ -364,8 +429,21 @@ export default function GreatFaceologistPage() {
         </div>
       </section>
 
+      {/* Rewards */}
+      <section id="rewards" className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
+        <h2 className="text-2xl font-bold text-slate-50">Rewards & Event Quests</h2>
+        <p className="text-sm text-slate-300 leading-relaxed">
+          Where Winds Meet The Great Faceologist rewards typically come from event quests (upload, apply/favorite/comment/share) and
+          popularity milestones. Exact rewards can differ by server/region, so open the in‑game Event Center to see the full list.
+        </p>
+        <ul className="space-y-2 text-sm text-slate-300">
+          <li>• Common reward types include Echo Jades, coins, decorations, and cosmetic items.</li>
+          <li>• To confirm your submission counted, open the event page and check the “Mine/My Entries” tab for your post and popularity.</li>
+        </ul>
+      </section>
+
       {/* TL;DR */}
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
+      <section id="tldr" className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
         <h2 className="text-2xl font-bold text-slate-50">TL;DR Submission Route</h2>
         <ul className="space-y-2 text-sm text-slate-300">
           {tlDr.map((line) => (
@@ -375,7 +453,7 @@ export default function GreatFaceologistPage() {
       </section>
 
       {/* PC Steps */}
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
+      <section id="submit-pc" className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
         <div className="flex items-center justify-between flex-wrap gap-3">
           <h2 className="text-2xl font-bold text-slate-50">How to Submit on PC</h2>
           <span className="text-xs text-slate-500">Make sure you’re in Edit Face, not Outfit gallery</span>
@@ -406,7 +484,7 @@ export default function GreatFaceologistPage() {
       </section>
 
       {/* Console Steps */}
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
+      <section id="submit-console" className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
         <h2 className="text-2xl font-bold text-slate-50">How to Submit on Console</h2>
         <ol className="space-y-2 list-decimal list-inside text-sm text-slate-300">
           {consoleSteps.map((line) => (
@@ -416,7 +494,7 @@ export default function GreatFaceologistPage() {
       </section>
 
       {/* Outfit Gallery Explanation */}
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
+      <section id="outfit-gallery" className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
         <h2 className="text-2xl font-bold text-slate-50">Why Outfit Gallery Uploads Don’t Count</h2>
         <p className="text-sm text-slate-300 leading-relaxed">
           Where Winds Meet separates <strong>Outfit</strong> posts from <strong>Appearance</strong> (face/make‑up) posts. The Great
@@ -428,7 +506,7 @@ export default function GreatFaceologistPage() {
       </section>
 
       {/* FAQ */}
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-5">
+      <section id="faq" className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-5">
         <h2 className="text-2xl font-bold text-slate-50">The Great Faceologist FAQ</h2>
         <div className="space-y-4">
           {faq.map((item) => (
@@ -441,7 +519,7 @@ export default function GreatFaceologistPage() {
       </section>
 
       {/* Issues */}
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-6">
+      <section id="issues" className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-6">
         <h2 className="text-2xl font-bold text-slate-50">Common Issues & Fixes</h2>
         <div className="space-y-4">
           {issues.map((item) => (
@@ -472,8 +550,56 @@ export default function GreatFaceologistPage() {
         </div>
       </section>
 
+      {/* Sources */}
+      <section id="sources" className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg">
+        <details className="group">
+          <summary className="cursor-pointer select-none text-lg font-bold text-slate-50">
+            Sources (optional)
+          </summary>
+          <p className="mt-3 text-sm text-slate-300 leading-relaxed">
+            If you want the official patch context or an external reward table to cross‑check, these references are useful. (Rewards
+            can vary by server/region — always trust your in‑game Event Center first.)
+          </p>
+          <ul className="mt-4 space-y-2 text-sm text-emerald-200">
+            <li>
+              •{" "}
+              <a
+                href="https://www.wherewindsmeetgame.com/news/official/TimelessBonds.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:text-emerald-100"
+              >
+                Where Winds Meet (Official): Timeless Bonds v1.1 update overview
+              </a>
+            </li>
+            <li>
+              •{" "}
+              <a
+                href="https://www.dexerto.com/wikis/where-winds-meet/the-great-faceologist/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:text-emerald-100"
+              >
+                Dexerto: The Great Faceologist quest rewards + popularity milestones
+              </a>
+            </li>
+            <li>
+              •{" "}
+              <a
+                href="https://allthings.how/how-to-use-the-great-faceologist-event-in-where-winds-meet/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:text-emerald-100"
+              >
+                AllThings.How: tagging location + step-by-step submission path
+              </a>
+            </li>
+          </ul>
+        </details>
+      </section>
+
       {/* Related */}
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
+      <section id="related-guides" className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
         <h2 className="text-2xl font-bold text-slate-50">Related Guides</h2>
         <ul className="space-y-2 text-sm text-emerald-200">
           <li>

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: "https://wherewindsmeet.org/",
     images: [
       {
-        url: "https://wherewindsmeet.org/background/bg.jpg",
+        url: "https://static.wherewindsmeet.org/background/bg.jpg",
         width: 1200,
         height: 630,
         alt: "Where Winds Meet global launch background art",
@@ -45,7 +45,7 @@ export default function Home() {
           "Daily upload cap is low (~5/day), so don’t waste slots.",
         ]}
         primaryHref="/guides/the-great-faceologist"
-        primaryLabel="Open event guide"
+        primaryLabel="Where Winds Meet The Great Faceologist guide"
         secondaryHref="/guides/cosmetics"
         secondaryLabel="Cosmetics & appearance"
         imageSrc={cdn("/guides/the-great-faceologist/hero.webp")}
@@ -92,6 +92,18 @@ export default function Home() {
                 className="inline-flex items-center gap-2 rounded-full border border-purple-400/60 bg-purple-500/10 px-4 py-2 text-sm font-semibold text-purple-200 transition hover:border-purple-300/80 hover:text-purple-100"
               >
                 🔮 An Unholy Prophecy quest — fire braziers, Meridian Touch, spike hall
+              </Link>
+              <Link
+                href="/tools/interactive-map"
+                className="inline-flex items-center gap-2 rounded-full border border-amber-400/60 bg-amber-500/10 px-4 py-2 text-sm font-semibold text-amber-200 transition hover:border-amber-300/80 hover:text-amber-100"
+              >
+                🗺️ Interactive map — MapGenie + CN alt
+              </Link>
+              <Link
+                href="/guides/desktop-widget"
+                className="inline-flex items-center gap-2 rounded-full border border-sky-400/60 bg-sky-500/10 px-4 py-2 text-sm font-semibold text-sky-200 transition hover:border-sky-300/80 hover:text-sky-100"
+              >
+                🖥️ Desktop widget (daily assistant) setup
               </Link>
             </div>
           </div>
@@ -170,6 +182,68 @@ export default function Home() {
           <p className="mt-3 w-full text-xs text-emerald-50/80">
             Fast path for top queries: Where Winds Meet next update, Where Winds Meet bosses list, Where Winds Meet Qin Caiwei friendship guide, Where Winds Meet Free Morph unlock, and the China tier list perspective to compare weapons and builds.
           </p>
+        </div>
+      </section>
+
+      <section className="rounded-3xl border border-slate-800/80 bg-slate-950/80 p-6 sm:p-8 shadow-2xl shadow-slate-950/40 space-y-6">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <p className="text-xs uppercase tracking-wide text-emerald-300">Tools</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-50">Quick tools for faster sessions</h2>
+            <p className="text-sm text-slate-300 mt-2 max-w-3xl">
+              Use the interactive map, reset timer, and checklist to plan around daily/weekly windows — then jump into PVP combos
+              when you want to practice duel conversions.
+            </p>
+          </div>
+          <Link href="/tools" className="text-xs text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
+            View all tools →
+          </Link>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {[
+            {
+              title: "Interactive map",
+              href: "/tools/interactive-map",
+              desc: "MapGenie + CN alt embedded with a quick FAQ (NPCs, chests, collectibles).",
+              tag: "Map",
+            },
+            {
+              title: "Reset timer",
+              href: "/tools/reset-timer",
+              desc: "Live daily + weekly reset countdown with time zone display.",
+              tag: "Timer",
+            },
+            {
+              title: "Daily & weekly checklist",
+              href: "/tools/checklist",
+              desc: "Personal routine tracker stored locally in your browser (auto-clears on reset cycles).",
+              tag: "Checklist",
+            },
+            {
+              title: "PVP combos",
+              href: "/tools/pvp-combos",
+              desc: "Embedded combo database + curated duel videos and quick links back into builds.",
+              tag: "PVP",
+            },
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="group flex h-full flex-col justify-between rounded-2xl border border-slate-800/80 bg-slate-900/70 p-5 shadow-lg transition hover:-translate-y-1 hover:border-emerald-500/40 hover:shadow-emerald-900/20"
+            >
+              <div className="flex items-center justify-between gap-2">
+                <h3 className="text-lg font-bold text-slate-50 group-hover:text-emerald-300 transition">
+                  {item.title}
+                </h3>
+                <span className="text-[11px] uppercase tracking-wide text-emerald-200/90 border border-emerald-500/30 rounded-full px-2 py-0.5">
+                  {item.tag}
+                </span>
+              </div>
+              <p className="mt-3 text-sm text-slate-300 leading-relaxed">{item.desc}</p>
+              <span className="mt-4 text-xs text-emerald-300 group-hover:text-emerald-200">Open tool →</span>
+            </Link>
+          ))}
         </div>
       </section>
 

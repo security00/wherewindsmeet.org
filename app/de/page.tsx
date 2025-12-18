@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: "https://wherewindsmeet.org/de",
     images: [
       {
-        url: "https://wherewindsmeet.org/background/bg.jpg",
+        url: "https://static.wherewindsmeet.org/background/bg.jpg",
         width: 1200,
         height: 630,
         alt: "Where Winds Meet Global-Launch Artwork",
@@ -45,7 +45,7 @@ export default function Home() {
           "Tageslimit ist niedrig (~5/Tag) – keine Slots verschwenden.",
         ]}
         primaryHref="/de/guides/the-great-faceologist"
-        primaryLabel="Event-Guide öffnen"
+        primaryLabel="Where Winds Meet The Great Faceologist Guide"
         secondaryHref="/de/guides/cosmetics"
         secondaryLabel="Kosmetik & Appearance"
         imageSrc={cdn("/guides/the-great-faceologist/hero.webp")}
@@ -90,6 +90,18 @@ export default function Home() {
                   className="inline-flex items-center gap-2 rounded-full border border-purple-400/60 bg-purple-500/10 px-4 py-2 text-sm font-semibold text-purple-200 transition hover:border-purple-300/80 hover:text-purple-100"
                 >
                   🔮 An Unholy Prophecy – Feuerbecken, Meridian-Touch, Stachelgang
+                </Link>
+                <Link
+                  href="/de/tools/interactive-map"
+                  className="inline-flex items-center gap-2 rounded-full border border-amber-400/60 bg-amber-500/10 px-4 py-2 text-sm font-semibold text-amber-200 transition hover:border-amber-300/80 hover:text-amber-100"
+                >
+                  🗺️ Interaktive Karte – MapGenie + CN-Alternative
+                </Link>
+                <Link
+                  href="/de/guides/desktop-widget"
+                  className="inline-flex items-center gap-2 rounded-full border border-sky-400/60 bg-sky-500/10 px-4 py-2 text-sm font-semibold text-sky-200 transition hover:border-sky-300/80 hover:text-sky-100"
+                >
+                  🖥️ Desktop-Widget (Daily Assistant) einrichten
                 </Link>
               </div>
             </div>
@@ -167,6 +179,68 @@ export default function Home() {
             Schnellzugriff für Top-Suchen: nächstes Update, Bossliste, Qin-Caiwei-Guide, Free Morph
             freischalten und China-Perspektive der Tierliste für Waffen/Builds.
           </p>
+        </div>
+      </section>
+
+      <section className="rounded-3xl border border-slate-800/80 bg-slate-950/80 p-6 sm:p-8 shadow-2xl shadow-slate-950/40 space-y-6">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <p className="text-xs uppercase tracking-wide text-emerald-300">Tools</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-50">Schnelle Tools für deine Session</h2>
+            <p className="mt-2 max-w-3xl text-sm text-slate-300">
+              Interaktive Karte, Reset Timer und Checkliste helfen beim Planen rund um Daily/Weekly — und PVP Combos ist
+              perfekt zum Üben von Duel-Convert-Combos.
+            </p>
+          </div>
+          <Link href="/de/tools" className="text-xs text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
+            Alle Tools →
+          </Link>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {[
+            {
+              title: "Interaktive Karte",
+              href: "/de/tools/interactive-map",
+              desc: "MapGenie + CN-Alternative (Embed) mit kurzem FAQ: NPCs, Truhen, Sammelobjekte.",
+              tag: "Karte",
+            },
+            {
+              title: "Reset Timer",
+              href: "/de/tools/reset-timer",
+              desc: "Live-Countdown für Daily + Weekly Reset inklusive Zeitzonen-Anzeige.",
+              tag: "Timer",
+            },
+            {
+              title: "Daily & Weekly Checkliste",
+              href: "/de/tools/checklist",
+              desc: "Persönlicher Routine-Tracker (lokal im Browser gespeichert, Auto-Reset zu Reset-Zeiten).",
+              tag: "Checkliste",
+            },
+            {
+              title: "PVP Combos",
+              href: "/de/tools/pvp-combos",
+              desc: "Eingebettete Combo-Datenbank + kuratierte Duel-Videos und Quick Links zu Builds.",
+              tag: "PVP",
+            },
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="group flex h-full flex-col justify-between rounded-2xl border border-slate-800/80 bg-slate-900/70 p-5 shadow-lg transition hover:-translate-y-1 hover:border-emerald-500/40 hover:shadow-emerald-900/20"
+            >
+              <div className="flex items-center justify-between gap-2">
+                <h3 className="text-lg font-bold text-slate-50 group-hover:text-emerald-300 transition">
+                  {item.title}
+                </h3>
+                <span className="rounded-full border border-emerald-500/30 px-2 py-0.5 text-[11px] uppercase tracking-wide text-emerald-200/90">
+                  {item.tag}
+                </span>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-slate-300">{item.desc}</p>
+              <span className="mt-4 text-xs text-emerald-300 group-hover:text-emerald-200">Tool öffnen →</span>
+            </Link>
+          ))}
         </div>
       </section>
 

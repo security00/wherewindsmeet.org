@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import WalkthroughGallery from "./WalkthroughGallery";
 import { buildHreflangAlternates } from "@/lib/hreflang";
@@ -407,7 +407,7 @@ export default function WovenWithMaliceDePage() {
 
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 shadow-2xl shadow-emerald-900/30">
         <div className="absolute inset-0">
-          <Image
+          <CdnImage
             src={cdn("/guides/woven-with-malice/header-02.png")}
             alt="Woven with Malice Artwork"
             fill

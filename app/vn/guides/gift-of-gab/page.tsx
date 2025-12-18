@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import DialogueCardsComponent, { type DialogueCard } from "@/app/guides/gift-of-gab/DialogueCardsComponent";
 import StyleComparisonTable from "@/app/guides/gift-of-gab/StyleComparisonTable";
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "Where Winds Meet Hub",
     images: [
       {
-        url: "https://wherewindsmeet.org/guides/gift-of-gab/gameplay.jpg",
+        url: "https://static.wherewindsmeet.org/guides/gift-of-gab/gameplay.jpg",
         width: 1600,
         height: 900,
         alt: "Giao diện Gift of Gab trong Where Winds Meet",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: "Gift of Gab – Hướng dẫn đối thoại Where Winds Meet",
     description:
       "Thắng Gift of Gab nhanh: style đúng, quản lý Inspiration, nâng Scholar, dùng thẻ + Trash Talk.",
-    images: ["https://wherewindsmeet.org/guides/gift-of-gab/gameplay.jpg"],
+    images: ["https://static.wherewindsmeet.org/guides/gift-of-gab/gameplay.jpg"],
   },
 };
 
@@ -160,7 +160,7 @@ export default function GiftOfGabPage() {
     <article className="space-y-12">
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-8 shadow-lg shadow-slate-950/60">
         <div className="pointer-events-none absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/bg2.webp"
             alt="Nền Gift of Gab"
             fill

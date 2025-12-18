@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { ZoomableImage } from "../../../guides/wall-puzzle/ZoomableImage";
 import { buildHreflangAlternates } from "@/lib/hreflang";
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "Where Winds Meet Hub",
     images: [
       {
-        url: "https://wherewindsmeet.org/guides/wall-puzzle/wall-tiles-right.webp",
+        url: "https://static.wherewindsmeet.org/guides/wall-puzzle/wall-tiles-right.webp",
         width: 1650,
         height: 928,
         alt: "Nhấn 移 và 百 trên bức tường bên phải trong câu đố",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Giải đố bức tường Where Winds Meet",
     description:
       "Đốt hỏa cụ, dùng Yanyun Oath, nhấn ký tự 移/百/漂 để mở phòng thưởng Touch of Death.",
-    images: ["https://wherewindsmeet.org/guides/wall-puzzle/wall-tiles-right.webp"],
+    images: ["https://static.wherewindsmeet.org/guides/wall-puzzle/wall-tiles-right.webp"],
   },
 };
 
@@ -241,7 +241,7 @@ export default function WallPuzzleGuidePage() {
     <article className="space-y-12">
       <section className="relative overflow-hidden rounded-3xl border border-slate-800/60 bg-slate-950/70 p-6 sm:p-10 shadow-2xl">
         <div className="pointer-events-none absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/13.webp"
             alt="Tàn tích tường đá trong Where Winds Meet"
             fill

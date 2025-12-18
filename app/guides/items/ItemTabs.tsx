@@ -1,6 +1,6 @@
 'use client';
 
-import Image from "next/image";
+import CdnImage from "@/components/CdnImageClient";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { ItemCategory, ItemCategoryId } from "./data";
@@ -64,7 +64,7 @@ export default function ItemTabs({
                 </div>
               </div>
             ) : (
-              <Image
+              <CdnImage
                 src={item.image}
                 alt={item.name}
                 fill

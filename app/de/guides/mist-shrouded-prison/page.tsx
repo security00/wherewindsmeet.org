@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -343,7 +343,7 @@ export default function MistShroudedPrisonDePage() {
 
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-8 shadow-2xl shadow-slate-950/40">
         <div className="pointer-events-none absolute inset-0">
-          <Image
+          <CdnImage
             src={heroImage}
             alt="Mist-Shrouded Prison Routen-Vorschau"
             fill
@@ -440,7 +440,7 @@ export default function MistShroudedPrisonDePage() {
           Reihenfolge halten, damit der Mist-Shrouded-Prison-Fluss konsistent bleibt.
         </p>
         <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 shadow-inner shadow-black/25">
-          <Image
+          <CdnImage
             src={cdn("/guides/mist-shrouded-prison/gr/read-note-in-prison-in-wwm-where-winds-meet.jpg")}
             alt="Hinweiszettel in der Mist-Shrouded Prison"
             width={1600}
@@ -471,7 +471,7 @@ export default function MistShroudedPrisonDePage() {
                 </div>
               </div>
               <div className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60">
-                <Image
+                <CdnImage
                   src={step.image.src}
                   alt={step.image.alt}
                   loading="lazy"

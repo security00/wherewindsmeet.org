@@ -1,8 +1,7 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
-
+import CdnImage from "@/components/CdnImageClient";
 type ZoomableImageProps = {
   src: string;
   alt: string;
@@ -60,7 +59,7 @@ export function ZoomableImage({
         className="w-full focus:outline-none"
         aria-label={resolvedUiText.openAriaLabelTemplate.replace("{alt}", alt)}
       >
-        <Image
+        <CdnImage
           src={src}
           alt={alt}
           width={width}
@@ -130,7 +129,7 @@ export function ZoomableImage({
                   transition: "transform 120ms ease",
                   }}
                 >
-                  <Image
+                  <CdnImage
                     src={src}
                     alt={alt}
                     width={width}

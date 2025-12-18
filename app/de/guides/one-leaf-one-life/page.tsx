@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -124,7 +124,7 @@ export default function OneLeafDePage() {
     <div className="min-h-screen bg-ink-wash text-slate-100">
       <section className="relative overflow-hidden border-b border-slate-800/60 bg-slate-950/70">
         <div className="absolute inset-0">
-          <Image
+          <CdnImage
             src={heroImage}
             alt="One Leaf, One Life Start"
             fill
@@ -226,7 +226,7 @@ export default function OneLeafDePage() {
             </p>
           </div>
           <figure className="overflow-hidden rounded-2xl border border-slate-800">
-            <Image
+            <CdnImage
               src={images.start}
               alt="Startpunkt Hopewell Academy"
               width={1650}
@@ -303,7 +303,7 @@ export default function OneLeafDePage() {
 
             <div className="space-y-4">
               <figure className="overflow-hidden rounded-2xl border border-slate-800">
-                <Image
+                <CdnImage
                   src={images.feast1}
                   alt="Feast of Leaves Volume 1 Start"
                   width={1650}
@@ -316,7 +316,7 @@ export default function OneLeafDePage() {
                 </figcaption>
               </figure>
               <figure className="overflow-hidden rounded-2xl border border-slate-800">
-                <Image
+                <CdnImage
                   src={images.foodInspection}
                   alt="Verdorbenes Essen inspizieren"
                   width={1650}
@@ -408,7 +408,7 @@ export default function OneLeafDePage() {
 
             <div className="space-y-4">
               <figure className="overflow-hidden rounded-2xl border border-slate-800">
-                <Image
+                <CdnImage
                   src={images.feast2}
                   alt="Feast of Leaves Volume 2 Start"
                   width={1650}
@@ -421,7 +421,7 @@ export default function OneLeafDePage() {
                 </figcaption>
               </figure>
               <figure className="overflow-hidden rounded-2xl border border-slate-800">
-                <Image
+                <CdnImage
                   src={images.tale2}
                   alt="Tale of Gold Leaves Volume 2 Start"
                   width={1650}
@@ -508,7 +508,7 @@ export default function OneLeafDePage() {
 
             <div className="space-y-4">
               <figure className="overflow-hidden rounded-2xl border border-slate-800">
-                <Image
+                <CdnImage
                   src={images.epilogue}
                   alt="Epilog One Leaf, One Life"
                   width={1650}

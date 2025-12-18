@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -30,7 +30,7 @@ export default function EndgamePage() {
     <article className="space-y-10">
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
         <div className="pointer-events-none absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/bg1.webp"
             alt="Where Winds Meet endgame content background"
             fill
@@ -322,7 +322,7 @@ export default function EndgamePage() {
         </div>
         <div className="space-y-3">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
-            <Image
+            <CdnImage
               src="/background/bg3.webp"
               alt="Where Winds Meet character playing music in a scenic field"
               fill

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import type { NewsType } from "@/lib/news";
 import { latestNewsDate, newsItems } from "@/lib/news.vi";
@@ -74,7 +74,7 @@ export default function NewsPage() {
       />
       <section className="relative overflow-hidden rounded-3xl border border-slate-800/60 bg-slate-950/40 p-8 shadow-2xl backdrop-blur-md bg-texture-noise">
         <div className="pointer-events-none absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/6.webp"
             alt="Nền tin tức Where Winds Meet"
             fill

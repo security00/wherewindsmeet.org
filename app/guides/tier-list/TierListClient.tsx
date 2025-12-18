@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImageClient";
 import Link from "next/link";
 import tierListData from "@/public/tier-list.json";
 
@@ -165,7 +165,7 @@ export default function TierListClient() {
       {/* Hero Section */}
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-2xl shadow-slate-950/60 sm:p-8">
         <div className="pointer-events-none absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/bg.webp"
             alt="Where Winds Meet tier list background art"
             fill
@@ -462,7 +462,7 @@ export default function TierListClient() {
                                 <div className="flex items-start gap-3">
                                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-950/50 ring-1 ring-slate-800/80 shadow-inner">
                                     {weapon.icon ? (
-                                      <Image
+                                      <CdnImage
                                         src={weapon.icon}
                                         alt={`${weapon.name} icon`}
                                         width={48}
@@ -524,7 +524,7 @@ export default function TierListClient() {
                                 <div className="flex items-start gap-3">
                                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-950/50 ring-1 ring-slate-800/80 shadow-inner">
                                     {path.icon ? (
-                                      <Image
+                                      <CdnImage
                                         src={path.icon}
                                         alt={`${path.pathGuide} icon`}
                                         width={48}

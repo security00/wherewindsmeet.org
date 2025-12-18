@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { weapons } from "@/lib/weapons.vi";
 import { buildHreflangAlternates } from "@/lib/hreflang";
@@ -78,7 +78,7 @@ export default function WeaponsPage() {
       />
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
         <div className="pointer-events-none absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/bg3.webp"
             alt="Nền hướng dẫn vũ khí Where Winds Meet"
             fill
@@ -145,7 +145,7 @@ export default function WeaponsPage() {
               className="group flex flex-col overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 shadow-sm shadow-slate-950/60 transition hover:border-emerald-400/80 hover:shadow-emerald-500/30"
             >
               <div className="relative aspect-[16/9] w-full bg-slate-900/80">
-                <Image
+                <CdnImage
                   src={weapon.officialArt}
                   alt={weapon.name}
                   fill

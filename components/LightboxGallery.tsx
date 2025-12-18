@@ -1,10 +1,11 @@
 "use client";
 
-import Image from "next/image";
+import CdnImage from "@/components/CdnImageClient";
 import { AnimatePresence, motion } from "framer-motion";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import { resolveCdnAssetSrc } from "@/lib/image-utils";
 
 export type LightboxItem = {
   src: string;
@@ -94,6 +95,10 @@ export default function LightboxGallery({ items, columns = 2, className }: Props
     <>
       <div className={clsx("grid gap-3 sm:gap-4", gridCols, className)}>
         {items.map((item, idx) => (
+          (() => {
+            const resolved = resolveCdnAssetSrc(item.src, item.fallbackSrc);
+
+            return (
           <button
             key={`${item.src}-${idx}`}
             type="button"
@@ -101,20 +106,20 @@ export default function LightboxGallery({ items, columns = 2, className }: Props
             className="group text-left"
           >
             <div className="relative aspect-video overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60">
-              <Image
-                src={item.src}
+              <CdnImage
+                src={resolved.src}
+                fallbackSrc={resolved.fallbackSrc}
                 alt={item.alt}
                 fill
                 className="object-contain transition-transform duration-300 group-hover:scale-[1.02]"
                 sizes="(max-width: 768px) 50vw, 33vw"
                 priority={idx < 2}
-                unoptimized
                 onError={(e) => {
                   const img = e.currentTarget;
-                  if (!item.fallbackSrc) return;
+                  if (!resolved.fallbackSrc) return;
                   if (img.dataset.fallbackApplied === "true") return;
                   img.dataset.fallbackApplied = "true";
-                  img.src = item.fallbackSrc;
+                  img.src = resolved.fallbackSrc;
                 }}
               />
               <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/20" />
@@ -123,6 +128,8 @@ export default function LightboxGallery({ items, columns = 2, className }: Props
               <p className="mt-2 text-xs text-slate-400 leading-snug">{item.caption}</p>
             ) : null}
           </button>
+            );
+          })()
         ))}
       </div>
 
@@ -155,6 +162,10 @@ function Lightbox({
   uiText: LightboxUiText;
 }) {
   const item = items[index];
+  const resolvedItem = useMemo(
+    () => resolveCdnAssetSrc(item.src, item.fallbackSrc),
+    [item.fallbackSrc, item.src]
+  );
 
   const [scale, setScale] = useState(1);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -402,16 +413,17 @@ function Lightbox({
             <div style={{ transform: `translate3d(${offset.x}px, ${offset.y}px, 0)` }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={item.src}
+                src={resolvedItem.src}
+                {...(resolvedItem.fallbackSrc ? { "data-fallback-src": resolvedItem.fallbackSrc } : {})}
                 alt={item.alt}
                 draggable={false}
                 className="max-h-full max-w-full select-none"
                 onError={(e) => {
                   const img = e.currentTarget;
-                  if (!item.fallbackSrc) return;
+                  if (!resolvedItem.fallbackSrc) return;
                   if (img.dataset.fallbackApplied === "true") return;
                   img.dataset.fallbackApplied = "true";
-                  img.src = item.fallbackSrc;
+                  img.src = resolvedItem.fallbackSrc;
                 }}
                 style={{
                   transform: `scale(${scale})`,

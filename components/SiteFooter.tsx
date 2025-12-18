@@ -10,6 +10,7 @@ type FooterLink = {
 
 const defaultLinks: FooterLink[] = [
   { href: "/guides", label: "Guides" },
+  { href: "/tools", label: "Tools" },
   { href: "/guides/bosses", label: "Bosses" },
   { href: "/guides/weapons", label: "Weapons" },
   { href: "/news", label: "News" },
@@ -20,6 +21,7 @@ const defaultLinks: FooterLink[] = [
 
 const vietnameseLinks: FooterLink[] = [
   { href: "/vn/guides", label: "Hướng dẫn" },
+  { href: "/vn/tools", label: "Công cụ" },
   { href: "/vn/guides/bosses", label: "Boss" },
   { href: "/vn/guides/weapons", label: "Vũ khí" },
   { href: "/vn/news", label: "Tin tức" },
@@ -30,6 +32,7 @@ const vietnameseLinks: FooterLink[] = [
 
 const germanLinks: FooterLink[] = [
   { href: "/de/guides", label: "Guides" },
+  { href: "/de/tools", label: "Tools" },
   { href: "/de/guides/bosses", label: "Bosse" },
   { href: "/de/guides/weapons", label: "Waffen" },
   { href: "/de/news", label: "News" },

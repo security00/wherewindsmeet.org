@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 import LightboxGallery from "@/components/LightboxGallery";
@@ -43,14 +43,14 @@ const fallbackImages = {
 };
 
 export const metadata: Metadata = {
-  title: "The Great Faceologist – Cách tham gia (12/2025)",
+  title: "Where Winds Meet The Great Faceologist – Cách nộp bài",
   description:
-    "The Great Faceologist (12/2025) trong Where Winds Meet: điều kiện, đường upload đúng, cách chọn tag sự kiện, giới hạn mỗi ngày, và lỗi thường gặp.",
+    "Ảnh không được tính? Where Winds Meet The Great Faceologist (12/2025): đường nộp bài chuẩn + vị trí tag (kèm ảnh), giới hạn ~5/ngày, điều kiện và cách sửa lỗi.",
   alternates: buildHreflangAlternates(basePath, { canonicalLanguage: "vi" }),
   openGraph: {
-    title: "The Great Faceologist – Cách tham gia (12/2025)",
+    title: "Where Winds Meet The Great Faceologist – Cách nộp bài",
     description:
-      "Đi đúng đường cho The Great Faceologist: Appearance → Edit Face, rồi chọn tag [The Great Faceologist] trước khi đăng để bài được tính cho sự kiện.",
+      "Ảnh không được tính? Đi đúng đường, tick đúng tag sự kiện và tránh phí lượt daily cap — có ảnh minh họa từng bước.",
     url: `${baseUrl}${pagePath}`,
     siteName: "Where Winds Meet Hub",
     images: [
@@ -72,9 +72,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Great Faceologist – Cách tham gia (12/2025)",
+    title: "Where Winds Meet The Great Faceologist – Cách nộp bài",
     description:
-      "Cách nộp bài đúng cho The Great Faceologist: upload từ Edit Face và nhớ chọn tag sự kiện.",
+      "Đường nộp bài chuẩn + vị trí tag sự kiện (có ảnh), daily cap, điều kiện và cách sửa lỗi khi ảnh không được tính.",
     images: [images.hero, `${baseUrl}${fallbackImages.hero}`],
   },
 };
@@ -86,6 +86,10 @@ const quickFacts = [
   { label: "Nộp ở đâu", value: "Appearance → Edit Face / Makeup → Preview → Upload to Gallery" },
   { label: "Thế nào mới được tính", value: "Upload phải tick tag [The Great Faceologist]" },
   { label: "Giới hạn mỗi ngày", value: "Khoảng ~5 bài/ngày (dùng chung giới hạn upload ngoại hình)" },
+  {
+    label: "Phần thưởng",
+    value: "Nhiệm vụ sự kiện + mốc độ nổi tiếng (thường có Echo Jades và đồ trang trí/cosmetic; xem Event Center để chắc chắn)",
+  },
 ];
 
 const tlDr = [
@@ -126,7 +130,7 @@ const pcSteps = [
   },
   {
     title: "Preview để căn khung hình",
-    desc: "Bấm Preview và căn khung nhân vật. Ảnh preview chính là ảnh sẽ xuất hiện trong gallery.",
+    desc: "Bấm Preview, chọn outfit/background nếu được hỏi, rồi căn khung nhân vật. Ảnh preview chính là ảnh sẽ xuất hiện trong gallery.",
     img: images.preview,
     fallbackImg: fallbackImages.preview,
     alt: "Preview và căn camera trước khi upload",
@@ -211,6 +215,10 @@ const faq = [
     a: "Chỉ các bài upload trong mục Appearance (mặt/makeup) đăng từ Edit Face (hoặc tab Makeup) mới được tính, và bạn phải chọn tag [The Great Faceologist] trước khi đăng (publish).",
   },
   {
+    q: "Vì sao ảnh/bài của mình không được tính?",
+    a: "Trong Where Winds Meet The Great Faceologist, đa số trường hợp “không được tính” là do (1) upload sai luồng Outfit gallery hoặc (2) quên tick tag [The Great Faceologist] ngay dưới ô mô tả trước khi Publish. Hãy nộp lại từ Edit Face/Makeup và kiểm tra tag đã highlight.",
+  },
+  {
     q: "Vì sao không thấy tag [The Great Faceologist]?",
     a: "Thử upload từ tab Makeup, thoát hẳn Appearance rồi vào lại, hoặc restart game. Đồng thời kiểm tra bạn không đăng từ Outfit gallery.",
   },
@@ -291,7 +299,7 @@ export default function GreatFaceologistPageVn() {
       {/* Hero */}
       <section className="relative overflow-hidden rounded-3xl border border-slate-800/60 bg-slate-950/80 p-6 sm:p-8 shadow-lg shadow-slate-950/60">
         <div className="pointer-events-none absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/bg3.webp"
             alt="Phông nền wuxia"
             fill
@@ -309,13 +317,14 @@ export default function GreatFaceologistPageVn() {
               Cập nhật 12/2025 · Có hướng dẫn chọn tag bên dưới
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-50">
-              The Great Faceologist – Cách tham gia, chọn tag và nộp bài
+              Where Winds Meet The Great Faceologist – Cách tham gia, chọn tag và nộp bài
             </h1>
             <p className="max-w-3xl text-sm sm:text-base text-slate-300 leading-relaxed">
-              The Great Faceologist là sự kiện thi tạo mặt/makeup trong Where Winds Meet. Bài của bạn chỉ được tính nếu đăng từ{" "}
-              <strong>Edit Face</strong> và tự tick đúng <strong>[The Great Faceologist]</strong>.
+              Where Winds Meet The Great Faceologist là sự kiện thi tạo mặt/makeup giới hạn thời gian. Ảnh/bài của bạn chỉ được tính
+              nếu đăng từ <strong>Edit Face</strong> và tự tick đúng <strong>[The Great Faceologist]</strong>.
             </p>
             <ul className="text-xs text-emerald-200 space-y-1">
+              <li>• Ảnh không được tính? Thường là thiếu tag sự kiện hoặc đi sai luồng upload.</li>
               <li>• TL;DR: Appearance → Edit Face/Makeup → Preview → Upload → chọn tag → Publish (Đăng).</li>
               <li>• Upload outfit sẽ không được tính.</li>
               <li>• Giới hạn mỗi ngày thấp, nên đừng phí lượt vì quên chọn tag.</li>
@@ -349,8 +358,63 @@ export default function GreatFaceologistPageVn() {
         </div>
       </section>
 
+      {/* On this page */}
+      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
+        <h2 className="text-2xl font-bold text-slate-50">Trong trang này</h2>
+        <div className="flex flex-wrap gap-2 text-xs">
+          <a
+            href="#quick-facts"
+            className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+          >
+            Thông tin nhanh
+          </a>
+          <a
+            href="#rewards"
+            className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+          >
+            Phần thưởng
+          </a>
+          <a
+            href="#tldr"
+            className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+          >
+            TL;DR
+          </a>
+          <a
+            href="#submit-pc"
+            className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+          >
+            Nộp trên PC
+          </a>
+          <a
+            href="#submit-console"
+            className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+          >
+            Nộp trên Console
+          </a>
+          <a
+            href="#issues"
+            className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+          >
+            Lỗi & cách sửa
+          </a>
+          <a
+            href="#faq"
+            className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+          >
+            FAQ
+          </a>
+          <a
+            href="#sources"
+            className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+          >
+            Nguồn tham khảo
+          </a>
+        </div>
+      </section>
+
       {/* Quick Facts */}
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-6">
+      <section id="quick-facts" className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-6">
         <h2 className="text-2xl font-bold text-slate-50">Thông tin nhanh</h2>
         <div className="grid gap-4 md:grid-cols-2">
           {quickFacts.map((item) => (
@@ -362,8 +426,21 @@ export default function GreatFaceologistPageVn() {
         </div>
       </section>
 
+      {/* Rewards */}
+      <section id="rewards" className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
+        <h2 className="text-2xl font-bold text-slate-50">Phần thưởng & nhiệm vụ sự kiện</h2>
+        <p className="text-sm text-slate-300 leading-relaxed">
+          Phần thưởng của Where Winds Meet The Great Faceologist thường đến từ nhiệm vụ sự kiện (upload, apply/favorite/comment/share)
+          và các mốc độ nổi tiếng (popularity). Tùy server/region nên hãy mở Event Center trong game để xem danh sách chính xác.
+        </p>
+        <ul className="space-y-2 text-sm text-slate-300">
+          <li>• Thường gặp: Echo Jades, tiền, đồ trang trí và vật phẩm cosmetic.</li>
+          <li>• Để kiểm tra bài đã được tính: mở trang sự kiện và xem mục “Mine/My Entries” (Bài của tôi) cùng popularity.</li>
+        </ul>
+      </section>
+
       {/* TL;DR */}
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
+      <section id="tldr" className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
         <h2 className="text-2xl font-bold text-slate-50">TL;DR – Đi đúng đường để bài được tính</h2>
         <ul className="space-y-2 text-sm text-slate-300">
           {tlDr.map((line) => (
@@ -373,7 +450,7 @@ export default function GreatFaceologistPageVn() {
       </section>
 
       {/* PC Steps */}
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
+      <section id="submit-pc" className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
         <div className="flex items-center justify-between flex-wrap gap-3">
           <h2 className="text-2xl font-bold text-slate-50">Cách nộp bài trên PC</h2>
           <span className="text-xs text-slate-500">Đảm bảo bạn đang ở Edit Face, không phải Outfit gallery</span>
@@ -404,7 +481,7 @@ export default function GreatFaceologistPageVn() {
       </section>
 
       {/* Console Steps */}
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
+      <section id="submit-console" className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
         <h2 className="text-2xl font-bold text-slate-50">Cách nộp bài trên Console</h2>
         <ol className="space-y-2 list-decimal list-inside text-sm text-slate-300">
           {consoleSteps.map((line) => (
@@ -414,7 +491,7 @@ export default function GreatFaceologistPageVn() {
       </section>
 
       {/* Outfit Gallery Explanation */}
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
+      <section id="outfit-gallery" className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
         <h2 className="text-2xl font-bold text-slate-50">Vì sao upload Outfit không được tính?</h2>
         <p className="text-sm text-slate-300 leading-relaxed">
           Where Winds Meet tách riêng bài đăng <strong>Outfit</strong> và <strong>Appearance</strong> (mặt/makeup). Sự kiện{" "}
@@ -426,7 +503,7 @@ export default function GreatFaceologistPageVn() {
       </section>
 
       {/* FAQ */}
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-5">
+      <section id="faq" className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-5">
         <h2 className="text-2xl font-bold text-slate-50">FAQ – The Great Faceologist</h2>
         <div className="space-y-4">
           {faq.map((item) => (
@@ -439,7 +516,7 @@ export default function GreatFaceologistPageVn() {
       </section>
 
       {/* Issues */}
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-6">
+      <section id="issues" className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-6">
         <h2 className="text-2xl font-bold text-slate-50">Lỗi thường gặp & cách xử lý</h2>
         <div className="space-y-4">
           {issues.map((item) => (
@@ -468,6 +545,54 @@ export default function GreatFaceologistPageVn() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Sources */}
+      <section id="sources" className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg">
+        <details className="group">
+          <summary className="cursor-pointer select-none text-lg font-bold text-slate-50">
+            Nguồn tham khảo (tuỳ chọn)
+          </summary>
+          <p className="mt-3 text-sm text-slate-300 leading-relaxed">
+            Nếu bạn muốn đối chiếu bối cảnh bản cập nhật hoặc bảng phần thưởng bên ngoài, các nguồn dưới đây khá hữu ích. (Phần thưởng có
+            thể khác theo server/region — hãy tin Event Center trong game trước.)
+          </p>
+          <ul className="mt-4 space-y-2 text-sm text-emerald-200">
+            <li>
+              •{" "}
+              <a
+                href="https://www.wherewindsmeetgame.com/news/official/TimelessBonds.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:text-emerald-100"
+              >
+                Where Winds Meet (Official): Timeless Bonds v1.1 update overview
+              </a>
+            </li>
+            <li>
+              •{" "}
+              <a
+                href="https://www.dexerto.com/wikis/where-winds-meet/the-great-faceologist/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:text-emerald-100"
+              >
+                Dexerto: rewards + popularity milestones (The Great Faceologist)
+              </a>
+            </li>
+            <li>
+              •{" "}
+              <a
+                href="https://allthings.how/how-to-use-the-great-faceologist-event-in-where-winds-meet/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:text-emerald-100"
+              >
+                AllThings.How: tagging location + step-by-step submission path
+              </a>
+            </li>
+          </ul>
+        </details>
       </section>
 
       {/* Related */}

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
+import CdnImage from "@/components/CdnImageClient";
 import { usePathname } from "next/navigation";
 
 type AppearanceSet = {
@@ -236,7 +236,7 @@ export default function AppearanceSetsDisplay({
                 {/* Image Gallery */}
                 <div className="relative bg-slate-950/70 p-4">
                   <div className="relative h-64 md:h-96 rounded-lg overflow-hidden border border-slate-700 bg-slate-900 flex items-center justify-center cursor-pointer group hover:border-emerald-500/50 transition" onClick={() => setLightboxImage({ setId: set.id, imageIdx: selectedImageIdx[set.id] || 0 })}>
-                    <Image
+                    <CdnImage
                       src={set.galleryImages?.[selectedImageIdx[set.id] || 0] || set.image}
                       alt={`${set.name} - ${uiText.imageCounterPrefix} ${(selectedImageIdx[set.id] || 0) + 1}`}
                       fill
@@ -259,7 +259,7 @@ export default function AppearanceSetsDisplay({
                             : 'border-slate-700 hover:border-slate-600'
                         }`}
                       >
-                        <Image
+                        <CdnImage
                           src={set.image}
                           alt={`${set.name} main`}
                           width={64}
@@ -277,7 +277,7 @@ export default function AppearanceSetsDisplay({
                               : 'border-slate-700 hover:border-slate-600'
                           }`}
                         >
-                          <Image
+                          <CdnImage
                             src={img}
                             alt={`${set.name} - ${idx + 1}`}
                             width={64}
@@ -440,7 +440,7 @@ export default function AppearanceSetsDisplay({
               onMouseUp={handleMouseUp}
               onMouseLeave={handleMouseUp}
             >
-              <Image
+              <CdnImage
                 src={activeLightboxSrc}
                 alt={activeLightboxAlt || `${activeLightboxSet.name} zoomed image`}
                 fill
@@ -516,7 +516,7 @@ export default function AppearanceSetsDisplay({
                   }`}
                   aria-label={uiText.altMainImage}
                 >
-                  <Image
+                  <CdnImage
                     src={activeLightboxSet?.image ?? activeLightboxSrc}
                     alt={activeLightboxThumbAlt || `${activeLightboxSet.name} ${uiText.thumbMainSuffix}`}
                     width={64}
@@ -540,7 +540,7 @@ export default function AppearanceSetsDisplay({
                       }`}
                       aria-label={`${uiText.imageCounterPrefix} ${idx + 1}`}
                     >
-                      <Image
+                      <CdnImage
                         src={img}
                         alt={uiText.altGalleryImage.replace("{n}", String(idx + 1))}
                         width={64}

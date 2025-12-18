@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: "Where Winds Meet Hub",
     images: [
       {
-        url: "https://wherewindsmeet.org/background/bg.jpg",
+        url: "https://static.wherewindsmeet.org/background/bg.jpg",
         width: 1200,
         height: 630,
         alt: "Where Winds Meet fan hub cover",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Where Winds Meet - Hướng dẫn Tiếng Việt",
     description:
       "Hướng dẫn Where Winds Meet bằng Tiếng Việt: builds, tier list, code đổi quà và tin tức mới nhất.",
-    images: ["https://wherewindsmeet.org/background/bg.jpg"],
+    images: ["https://static.wherewindsmeet.org/background/bg.jpg"],
   },
   alternates: buildHreflangAlternates("/", { canonicalLanguage: "vi" }),
   other: {

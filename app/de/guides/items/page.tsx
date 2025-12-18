@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import ItemTabs from "@/app/guides/items/ItemTabs";
 import { itemCategories } from "@/app/guides/items/data";
@@ -95,7 +95,7 @@ export default function ItemsPage() {
     <article className="space-y-10">
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
         <div className="pointer-events-none absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/bg2.webp"
             alt="Where Winds Meet Items Hintergrund"
             fill

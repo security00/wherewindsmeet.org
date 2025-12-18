@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -74,6 +74,25 @@ const guideSections = [
     color: "text-cyan-300",
     size: "small",
     description: "Exakte Wandkacheln und Feuerstellen für Echoes of Old Battles.",
+  },
+  {
+    title: "Xiangqi (Schach) Puzzle Guide",
+    slug: "/de/guides/xiangqi",
+    label: "Puzzle",
+    icon: "♟️",
+    color: "text-emerald-300",
+    size: "small",
+    description: "Chinese Chess Puzzles: schnelle Checkliste, typische Muster und praktische Taktiken für Gewinnlinien.",
+  },
+  {
+    title: "Desktop Widget (Daily Assistant)",
+    slug: "/de/guides/desktop-widget",
+    label: "Utility",
+    icon: "🖥️",
+    color: "text-sky-300",
+    size: "small",
+    description:
+      "Erklärt die „Desktop Widget“-Verwirrung und zeigt das beste PC-Setup: Reset-Timer + Checkliste pinnen.",
   },
   {
     title: "An Unholy Prophecy",
@@ -164,7 +183,8 @@ const guideSections = [
     icon: "🎭",
     color: "text-emerald-300",
     size: "small",
-    description: "Dez 2025 Look‑Contest: richtig via Edit Face hochladen, Event‑Tag setzen, Bugs umgehen.",
+    description:
+      "Where Winds Meet The Great Faceologist (Dez 2025): Edit-Face-Upload, Event-Tag, Daily Cap, Belohnungen und Fixes.",
   },
   {
     title: "Aktive Codes",
@@ -218,7 +238,7 @@ export default function GuidesPage() {
     <div className="min-h-screen bg-ink-wash pb-20">
       <section className="relative h-[40vh] min-h-[400px] w-full overflow-hidden">
         <div className="absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/bg2.webp"
             alt="Where Winds Meet Guides Hintergrundbild"
             fill

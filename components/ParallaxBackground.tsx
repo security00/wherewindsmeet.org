@@ -1,7 +1,9 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useMemo } from "react";
 import type { BackgroundInfo } from '@/lib/background-system';
+import { resolveCdnAssetSrc } from "@/lib/image-utils";
 
 interface ParallaxBackgroundProps {
   background: BackgroundInfo;
@@ -19,18 +21,21 @@ export default function ParallaxBackground({
 
   // 控制背景整体轻微上下移动，幅度限制在一屏以内，避免露出纯色底。
   const y = useTransform(scrollY, [0, 1000], [0, 120 * parallaxSpeed]);
+  const resolved = useMemo(() => resolveCdnAssetSrc(background.path), [background.path]);
+  const alt = `Where Winds Meet background art – ${background.description}`;
 
   return (
     <div className="pointer-events-none fixed inset-0 z-0">
       {/* 背景图层：高度拉伸到视口的 2 倍，用单张图做视差位移且不平铺，避免出现分割线 */}
-      <motion.div
-        className="absolute inset-x-0 -inset-y-1/2"
+      <motion.img
+        src={resolved.src}
+        {...(resolved.fallbackSrc ? { "data-fallback-src": resolved.fallbackSrc } : {})}
+        alt={alt}
+        aria-hidden="true"
+        draggable={false}
+        className="absolute inset-x-0 -inset-y-1/2 h-[200%] w-full object-cover"
         style={{
           y,
-          backgroundImage: `url(${background.path})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
           opacity,
         }}
       />

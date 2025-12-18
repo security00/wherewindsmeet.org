@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
+import CdnImage from "@/components/CdnImageClient";
 import { usePathname } from "next/navigation";
 
 type OtherAppearance = {
@@ -142,7 +142,7 @@ export default function OtherAppearancesDisplay({
                       className="relative h-48 w-full bg-slate-900 flex items-center justify-center cursor-pointer group hover:bg-slate-800/50 transition overflow-hidden"
                       onClick={() => setLightboxImage({ id: item.id, image: item.galleryImages![selectedImageIdx[item.id] || 0] })}
                     >
-                      <Image
+                      <CdnImage
                         src={item.galleryImages[selectedImageIdx[item.id] || 0]}
                         alt={item.name}
                         fill
@@ -168,7 +168,7 @@ export default function OtherAppearancesDisplay({
                             }`}
                             aria-label={uiText.viewImageAriaTemplate.replace("{n}", String(idx + 1))}
                           >
-                            <Image
+                            <CdnImage
                               src={img}
                               alt={buildThumbnailAlt(item.name, idx + 1)}
                               width={48}
@@ -186,7 +186,7 @@ export default function OtherAppearancesDisplay({
                     className="relative h-48 w-full bg-slate-900 flex items-center justify-center cursor-pointer group hover:bg-slate-800/50 transition overflow-hidden"
                     onClick={() => setLightboxImage({ id: item.id, image: item.image! })}
                   >
-                    <Image
+                    <CdnImage
                       src={item.image!}
                       alt={item.name}
                       fill
@@ -334,7 +334,7 @@ export default function OtherAppearancesDisplay({
               onMouseUp={handleMouseUp}
               onMouseLeave={handleMouseUp}
             >
-              <Image
+              <CdnImage
                 src={lightboxImage.image}
                 alt="Enlarged image"
                 fill

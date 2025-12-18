@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { latestNewsDate, newsItems } from "@/lib/news";
 import { buildHreflangAlternates } from "@/lib/hreflang";
@@ -99,7 +99,7 @@ export default function NewsPage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden rounded-3xl border border-slate-800/60 bg-slate-950/40 p-8 shadow-2xl backdrop-blur-md bg-texture-noise">
         <div className="pointer-events-none absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/6.webp"
             alt="Where Winds Meet news background art"
             fill

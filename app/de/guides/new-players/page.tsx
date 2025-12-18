@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -192,7 +192,7 @@ export default function NewPlayersDePage() {
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] w-full overflow-hidden">
         <div className="absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/30.webp"
             alt="Where Winds Meet Einsteiger-Guide Hintergrund"
             fill
@@ -232,7 +232,7 @@ export default function NewPlayersDePage() {
                 <h2 className="text-2xl font-bold text-slate-50 sm:text-3xl">{chapter.title}</h2>
               </div>
               <div className="relative h-28 w-full overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 shadow-inner shadow-slate-950/40 sm:w-52">
-                <Image
+                <CdnImage
                   src={chapter.image}
                   alt={chapter.title}
                   fill

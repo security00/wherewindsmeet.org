@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import npcPins from "../../../../public/guides/npc-list/pins-old-friends.json";
 import NpcMapClient, { MapPin } from "../../../guides/npc-list/NpcMapClient";
@@ -473,7 +473,7 @@ export default function NpcListPage() {
     <article className="space-y-12">
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-10 shadow-2xl shadow-black/40">
         <div className="pointer-events-none absolute inset-0">
-          <Image
+          <CdnImage
             src="/guides/npc-list/hero.png"
             alt="Ảnh bìa danh sách NPC Old Friends (Where Winds Meet)"
             fill

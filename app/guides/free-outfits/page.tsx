@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -252,7 +252,7 @@ export default function FreeOutfitsPage() {
 
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
         <div className="pointer-events-none absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/bg5.webp"
             alt="Where Winds Meet free outfits background art"
             fill
@@ -375,7 +375,7 @@ export default function FreeOutfitsPage() {
             className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-5 shadow-sm shadow-slate-950/60"
           >
             <div className="pointer-events-none absolute inset-0">
-              <Image
+              <CdnImage
                 src={card.image}
                 alt={card.title}
                 fill
@@ -430,7 +430,7 @@ export default function FreeOutfitsPage() {
               className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/80 shadow-sm shadow-slate-950/60"
             >
               <div className="relative aspect-[16/9] w-full">
-                <Image
+                <CdnImage
                   src={item.src}
                   alt={item.alt}
                   fill

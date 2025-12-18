@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { martialArtPaths, martialArtWeapons } from "@/lib/martialArts.vi";
 import { buildHreflangAlternates } from "@/lib/hreflang";
@@ -20,7 +20,7 @@ export default function MartialArtsWeaponsPage() {
     <article className="space-y-10">
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
         <div className="pointer-events-none absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/bg5.webp"
             alt="Nền võ học Where Winds Meet"
             fill
@@ -131,7 +131,7 @@ export default function MartialArtsWeaponsPage() {
                     <td className="rounded-l-2xl border border-slate-800 bg-slate-950/80 px-4 py-3">
                       <div className="flex items-center gap-3">
                         <div className="relative h-20 w-28 overflow-hidden rounded-xl border border-slate-800 bg-slate-900/80">
-                          <Image
+                          <CdnImage
                             src={weapon.image}
                             alt={weapon.name}
                             fill

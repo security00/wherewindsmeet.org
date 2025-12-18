@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImageClient";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 
@@ -13,6 +13,7 @@ type NavLink = {
 const defaultNavLinks: NavLink[] = [
   { href: "/", label: "Home" },
   { href: "/guides", label: "Guides" },
+  { href: "/tools", label: "Tools" },
   { href: "/guides/bosses", label: "Bosses" },
   { href: "/guides/weapons", label: "Weapons" },
   { href: "/guides/martial-arts-weapons", label: "Martial Arts" },
@@ -26,6 +27,7 @@ const defaultNavLinks: NavLink[] = [
 const vnNavLinks: NavLink[] = [
   { href: "/vn", label: "Trang chủ" },
   { href: "/vn/guides", label: "Hướng dẫn" },
+  { href: "/vn/tools", label: "Công cụ" },
   { href: "/vn/guides/bosses", label: "Boss" },
   { href: "/vn/guides/weapons", label: "Vũ khí" },
   { href: "/vn/guides/martial-arts-weapons", label: "Võ học" },
@@ -39,6 +41,7 @@ const vnNavLinks: NavLink[] = [
 const deNavLinks: NavLink[] = [
   { href: "/de", label: "Start" },
   { href: "/de/guides", label: "Guides" },
+  { href: "/de/tools", label: "Tools" },
   { href: "/de/guides/bosses", label: "Bosse" },
   { href: "/de/guides/weapons", label: "Waffen" },
   { href: "/de/guides/martial-arts-weapons", label: "Kampfkünste" },
@@ -207,7 +210,7 @@ export function SiteHeader({
     <header className="relative z-50 border-b border-slate-800/80 bg-slate-950/85 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href={resolvedHomeHref} className="flex items-center gap-2" aria-label={uiText.homeAria}>
-          <Image
+          <CdnImage
             src="/design/logo.png"
             alt="Where Winds Meet logo"
             width={32}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -76,6 +76,25 @@ const guideSections = [
     color: "text-cyan-300",
     size: "small",
     description: "Exact wall tile presses and fire contraptions for Echoes of Old Battles.",
+  },
+  {
+    title: "Xiangqi (Chess) Puzzle Guide",
+    slug: "/guides/xiangqi",
+    label: "Puzzle",
+    icon: "♟️",
+    color: "text-emerald-300",
+    size: "small",
+    description: "Chinese chess puzzles: fast checklist, common patterns, and player-friendly tactics to spot winning lines.",
+  },
+  {
+    title: "Desktop Widget (Daily Assistant)",
+    slug: "/guides/desktop-widget",
+    label: "Utility",
+    icon: "🖥️",
+    color: "text-sky-300",
+    size: "small",
+    description:
+      "Clarifies the “desktop widget” confusion and shows a clean PC setup: pin a reset timer + checklist window.",
   },
   {
     title: "An Unholy Prophecy",
@@ -165,7 +184,8 @@ const guideSections = [
     icon: "🎭",
     color: "text-emerald-300",
     size: "small",
-    description: "Dec 2025 appearance contest: correct Edit Face uploads, tagging, and fixes.",
+    description:
+      "Where Winds Meet The Great Faceologist (Dec 2025): correct Edit Face uploads, event tag, daily cap, rewards, and fixes.",
   },
   {
     title: "Active Codes",
@@ -222,7 +242,7 @@ export default function GuidesPage() {
       {/* Hero Section */}
       <section className="relative h-[40vh] min-h-[400px] w-full overflow-hidden">
         <div className="absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/bg2.webp"
             alt="Where Winds Meet guides background art"
             fill

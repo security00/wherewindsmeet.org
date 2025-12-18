@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -228,7 +228,7 @@ export default function QinCaiweiGuidePage() {
 
           <div className="relative">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 shadow-xl shadow-black/40">
-              <Image
+              <CdnImage
                 src="/guides/qin-caiwei/hero.jpg"
                 alt="Chân dung AI Chat của Qin Caiwei"
                 fill

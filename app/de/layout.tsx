@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: "Where Winds Meet Hub",
     images: [
       {
-        url: "https://wherewindsmeet.org/background/bg.jpg",
+        url: "https://static.wherewindsmeet.org/background/bg.jpg",
         width: 1200,
         height: 630,
         alt: "Where Winds Meet fan hub cover",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Where Winds Meet - Deutscher Guide-Hub",
     description:
       "Guides, Tierlisten, Codes und News für Where Winds Meet auf Deutsch.",
-    images: ["https://wherewindsmeet.org/background/bg.jpg"],
+    images: ["https://static.wherewindsmeet.org/background/bg.jpg"],
   },
   alternates: buildHreflangAlternates("/", { canonicalLanguage: "de" }),
 };

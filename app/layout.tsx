@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
-import { Inter } from "next/font/google";
 import { Analytics } from "./analytics";
 import BackgroundWrapper from "../components/BackgroundWrapper";
 import { SiteHeader } from "../components/SiteHeader";
 import { LanguageSwitchPrompt } from "../components/LanguageSwitchPrompt";
 import { SiteFooter } from "../components/SiteFooter";
 import { buildHreflangAlternates } from "@/lib/hreflang";
-
-const inter = Inter({
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://wherewindsmeet.org"),
@@ -28,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "Where Winds Meet Hub",
     images: [
       {
-        url: "https://wherewindsmeet.org/background/bg.jpg",
+        url: "https://static.wherewindsmeet.org/background/bg.jpg",
         width: 1200,
         height: 630,
         alt: "Where Winds Meet fan hub cover",
@@ -42,7 +36,7 @@ export const metadata: Metadata = {
     title: "Where Winds Meet Guides, News & Codes Hub",
     description:
       "Where Winds Meet guides hub with tier lists, builds, codes, and news to help players master the open world wuxia RPG across platforms.",
-    images: ["https://wherewindsmeet.org/background/bg.jpg"],
+    images: ["https://static.wherewindsmeet.org/background/bg.jpg"],
   },
   other: {
     "google-adsense-account": "ca-pub-1548791648803369",
@@ -55,9 +49,37 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en">
       <head>
         <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+        <Script
+          id="cdn-image-fallback"
+          strategy="beforeInteractive"
+        >{`
+          (function () {
+            function applyFallback(img) {
+              if (!img) return;
+              var fallbackSrc = img.getAttribute('data-fallback-src');
+              if (!fallbackSrc) return;
+              if (img.getAttribute('data-fallback-applied') === 'true') return;
+              if (img.getAttribute('src') === fallbackSrc) return;
+              img.setAttribute('data-fallback-applied', 'true');
+              img.removeAttribute('srcset');
+              img.setAttribute('src', fallbackSrc);
+            }
+
+            window.addEventListener(
+              'error',
+              function (event) {
+                var target = event && event.target;
+                if (!target || !target.tagName) return;
+                if (target.tagName !== 'IMG') return;
+                applyFallback(target);
+              },
+              true
+            );
+          })();
+        `}</Script>
       </head>
       <body
         className="antialiased text-slate-50 bg-slate-950"

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
+import CdnImage from "@/components/CdnImageClient";
 import { usePathname } from "next/navigation";
 
 export default function FeaturedImagesGallery() {
@@ -127,7 +127,7 @@ export default function FeaturedImagesGallery() {
             resetZoom();
           }}
         >
-          <Image
+          <CdnImage
             src={images[selectedImageIdx].src}
             alt={images[selectedImageIdx].alt}
             fill
@@ -153,7 +153,7 @@ export default function FeaturedImagesGallery() {
               }`}
               aria-label={uiText.viewImageAriaTemplate.replace("{n}", String(idx + 1))}
             >
-              <Image
+              <CdnImage
                 src={image.src}
                 alt={image.alt}
                 width={80}
@@ -245,7 +245,7 @@ export default function FeaturedImagesGallery() {
               onMouseUp={handleMouseUp}
               onMouseLeave={handleMouseUp}
             >
-              <Image
+              <CdnImage
                 src={lightboxImage}
                 alt={uiText.enlargedAlt}
                 fill

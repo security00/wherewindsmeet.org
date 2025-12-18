@@ -1,5 +1,4 @@
-import Image from "next/image";
-
+import CdnImage from "@/components/CdnImage";
 export type GuideImage = {
   src: string;
   alt: string;
@@ -42,7 +41,7 @@ export default function GiftOfGabImages({ images }: Props) {
         {resolvedImages.map((image, index) => (
           <figure key={index} className="space-y-2">
             <div className="relative bg-black/40 rounded-2xl border border-slate-700 overflow-hidden">
-              <Image
+              <CdnImage
                 src={image.src}
                 alt={image.alt}
                 width={600}

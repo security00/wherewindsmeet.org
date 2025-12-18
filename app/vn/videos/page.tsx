@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import { featuredVideos } from "@/lib/featuredVideos.vi";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -61,7 +61,7 @@ export default function VideosPage() {
       />
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
         <div className="pointer-events-none absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/bg4.webp"
             alt="Nền video Where Winds Meet"
             fill

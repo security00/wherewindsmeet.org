@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import DialogueCardsComponent from "./DialogueCardsComponent";
 import StyleComparisonTable from "./StyleComparisonTable";
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: "Where Winds Meet Hub",
     images: [
       {
-        url: "https://wherewindsmeet.org/guides/gift-of-gab/gameplay.jpg",
+        url: "https://static.wherewindsmeet.org/guides/gift-of-gab/gameplay.jpg",
         width: 1600,
         height: 900,
         alt: "Gift of Gab gameplay interface in Where Winds Meet",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Where Winds Meet Gift of Gab Guide",
     description:
       "Win Gift of Gab fast: pick the right style, manage Inspiration, upgrade Scholar mastery, and use cards plus Trash Talk to drop enemy Mental Focus to zero.",
-    images: ["https://wherewindsmeet.org/guides/gift-of-gab/gameplay.jpg"],
+    images: ["https://static.wherewindsmeet.org/guides/gift-of-gab/gameplay.jpg"],
   },
 };
 
@@ -44,7 +44,7 @@ export default function GiftOfGabPage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-8 shadow-lg shadow-slate-950/60">
         <div className="pointer-events-none absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/bg2.webp"
             alt="Gift of Gab background"
             fill

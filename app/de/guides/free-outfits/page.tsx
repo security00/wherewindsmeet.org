@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -151,7 +151,7 @@ export default function FreeOutfitsDePage() {
 
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
         <div className="pointer-events-none absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/bg4.webp"
             alt="Gratis-Outfits Hintergrund"
             fill
@@ -181,7 +181,7 @@ export default function FreeOutfitsDePage() {
       <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {highlightCards.map((card) => (
           <div key={card.title} className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/80 p-4 shadow-lg shadow-slate-950/60">
-            <Image
+            <CdnImage
               src={card.image}
               alt={card.title}
               width={640}

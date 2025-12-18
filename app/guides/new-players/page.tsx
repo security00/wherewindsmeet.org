@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -192,7 +192,7 @@ export default function NewPlayersGuidePage() {
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] w-full overflow-hidden">
         <div className="absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/30.webp"
             alt="Where Winds Meet beginner guide background art"
             fill
@@ -254,7 +254,7 @@ export default function NewPlayersGuidePage() {
               <section key={chapter.id} id={chapter.id} className="scroll-mt-24">
                 {/* Chapter Header */}
                 <div className="relative h-48 rounded-3xl overflow-hidden mb-8 border border-slate-800 shadow-2xl group">
-                  <Image
+                  <CdnImage
                     src={chapter.image}
                     alt={chapter.title}
                     fill

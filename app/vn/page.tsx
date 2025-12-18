@@ -29,7 +29,7 @@ export default function Home() {
           "Giới hạn mỗi ngày thấp (~5 lượt) — đừng mất lượt vì quên chọn tag.",
         ]}
         primaryHref={vnHref("/guides/the-great-faceologist")}
-        primaryLabel="Mở hướng dẫn sự kiện"
+        primaryLabel="Hướng dẫn Where Winds Meet The Great Faceologist"
         secondaryHref={vnHref("/guides/cosmetics")}
         secondaryLabel="Ngoại hình (Cosmetics)"
         imageSrc={cdn("/guides/the-great-faceologist/hero.webp")}
@@ -70,6 +70,18 @@ export default function Home() {
                   className="inline-flex items-center gap-2 rounded-full border border-purple-400/60 bg-purple-500/10 px-4 py-2 text-sm font-semibold text-purple-200 transition hover:border-purple-300/80 hover:text-purple-100"
                 >
                   🔮 Nhiệm vụ An Unholy Prophecy — bệ lửa, Meridian Touch, hành lang chông
+                </Link>
+                <Link
+                  href={vnHref("/tools/interactive-map")}
+                  className="inline-flex items-center gap-2 rounded-full border border-amber-400/60 bg-amber-500/10 px-4 py-2 text-sm font-semibold text-amber-200 transition hover:border-amber-300/80 hover:text-amber-100"
+                >
+                  🗺️ Bản đồ tương tác — MapGenie + lựa chọn CN
+                </Link>
+                <Link
+                  href={vnHref("/guides/desktop-widget")}
+                  className="inline-flex items-center gap-2 rounded-full border border-sky-400/60 bg-sky-500/10 px-4 py-2 text-sm font-semibold text-sky-200 transition hover:border-sky-300/80 hover:text-sky-100"
+                >
+                  🖥️ Cách setup “desktop widget” (daily assistant)
                 </Link>
               </div>
             </div>
@@ -148,6 +160,71 @@ export default function Home() {
           <p className="mt-3 w-full text-xs text-emerald-50/80">
             Lối tắt cho các truy vấn phổ biến: update tiếp theo, boss & điểm yếu, kết thân Tần Thái Vị, mở Free Morph và tier list (góc nhìn Trung Quốc) để so sánh vũ khí/build.
           </p>
+        </div>
+      </section>
+
+      <section className="rounded-3xl border border-slate-800/80 bg-slate-950/80 p-6 sm:p-8 shadow-2xl shadow-slate-950/40 space-y-6">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <p className="text-xs uppercase tracking-wide text-emerald-300">Công cụ</p>
+            <h2 className="text-2xl font-bold text-slate-50 sm:text-3xl">Công cụ nhanh cho phiên chơi hiệu quả</h2>
+            <p className="mt-2 max-w-3xl text-sm text-slate-300">
+              Dùng bản đồ tương tác, reset timer và checklist để canh daily/weekly — rồi vào PVP combos khi bạn muốn luyện
+              convert trong đấu tay đôi.
+            </p>
+          </div>
+          <Link
+            href={vnHref("/tools")}
+            className="text-xs text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+          >
+            Xem tất cả công cụ →
+          </Link>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {[
+            {
+              title: "Bản đồ tương tác",
+              href: "/tools/interactive-map",
+              desc: "Nhúng MapGenie + lựa chọn CN kèm FAQ nhanh (NPC, rương, vật phẩm, lộ trình).",
+              tag: "Bản đồ",
+            },
+            {
+              title: "Reset timer",
+              href: "/tools/reset-timer",
+              desc: "Đếm ngược reset daily + weekly theo thời gian thực (có múi giờ).",
+              tag: "Timer",
+            },
+            {
+              title: "Checklist daily & weekly",
+              href: "/tools/checklist",
+              desc: "Theo dõi routine cá nhân (lưu cục bộ trong trình duyệt; tự reset theo chu kỳ).",
+              tag: "Checklist",
+            },
+            {
+              title: "PVP combos",
+              href: "/tools/pvp-combos",
+              desc: "Nhúng kho combo + video duel chọn lọc và link nhanh quay lại build/tier list.",
+              tag: "PVP",
+            },
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={vnHref(item.href)}
+              className="group flex h-full flex-col justify-between rounded-2xl border border-slate-800/80 bg-slate-900/70 p-5 shadow-lg transition hover:-translate-y-1 hover:border-emerald-500/40 hover:shadow-emerald-900/20"
+            >
+              <div className="flex items-center justify-between gap-2">
+                <h3 className="text-lg font-bold text-slate-50 group-hover:text-emerald-300 transition">
+                  {item.title}
+                </h3>
+                <span className="rounded-full border border-emerald-500/30 px-2 py-0.5 text-[11px] uppercase tracking-wide text-emerald-200/90">
+                  {item.tag}
+                </span>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-slate-300">{item.desc}</p>
+              <span className="mt-4 text-xs text-emerald-300 group-hover:text-emerald-200">Mở công cụ →</span>
+            </Link>
+          ))}
         </div>
       </section>
 

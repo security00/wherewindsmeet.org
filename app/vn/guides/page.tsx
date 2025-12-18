@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -76,6 +76,25 @@ const guideSections = [
     description: "Thứ tự nhấn ô và đốt lửa trong Echoes of Old Battles.",
   },
   {
+    title: "Puzzle cờ tướng (Xiangqi)",
+    slug: "/vn/guides/xiangqi",
+    label: "Câu đố",
+    icon: "♟️",
+    color: "text-emerald-300",
+    size: "small",
+    description: "Checklist giải nhanh, pattern thường gặp và mẹo thực dụng để nhìn ra nước thắng.",
+  },
+  {
+    title: "Desktop widget (daily assistant)",
+    slug: "/vn/guides/desktop-widget",
+    label: "Tiện ích",
+    icon: "🖥️",
+    color: "text-sky-300",
+    size: "small",
+    description:
+      "Giải thích vì sao “desktop widget” dễ nhầm và hướng dẫn setup PC gọn: ghim reset timer + checklist.",
+  },
+  {
     title: "Tà Khúc",
     slug: "/vn/guides/unholy-prophecy",
     label: "Jianghu Legacy",
@@ -145,7 +164,8 @@ const guideSections = [
     icon: "🎭",
     color: "text-emerald-300",
     size: "small",
-    description: "Sự kiện tạo mặt/makeup 12/2025: nộp bài đúng Edit Face, bật tag và tránh lỗi.",
+    description:
+      "Where Winds Meet The Great Faceologist (12/2025): nộp từ Edit Face, tick tag, daily cap, phần thưởng và cách sửa lỗi.",
   },
   {
     title: "Code đang hoạt động",
@@ -200,7 +220,7 @@ export default function GuidesPage() {
     <div className="min-h-screen bg-ink-wash pb-20">
       <section className="relative h-[40vh] min-h-[400px] w-full overflow-hidden">
         <div className="absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/bg2.webp"
             alt="Hình nền hướng dẫn Where Winds Meet"
             fill

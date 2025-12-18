@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
@@ -87,7 +87,7 @@ export default function BuildsPage() {
       />
       <section className="relative h-[60vh] min-h-[500px] w-full overflow-hidden">
         <div className="absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/bg4.webp"
             alt="Nền builds Where Winds Meet"
             fill
@@ -250,7 +250,7 @@ export default function BuildsPage() {
           </h2>
 
           <div className="relative h-48 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80 sm:h-64 shadow-inner">
-            <Image
+            <CdnImage
               src="/background/builds.webp"
               alt="Hình tổng quan builds Where Winds Meet"
               fill

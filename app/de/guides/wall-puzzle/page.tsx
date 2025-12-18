@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { ZoomableImage } from "@/app/guides/wall-puzzle/ZoomableImage";
 import { buildHreflangAlternates } from "@/lib/hreflang";
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "Where Winds Meet Hub",
     images: [
       {
-        url: "https://wherewindsmeet.org/guides/wall-puzzle/wall-tiles-right.webp",
+        url: "https://static.wherewindsmeet.org/guides/wall-puzzle/wall-tiles-right.webp",
         width: 1650,
         height: 928,
         alt: "Die Steine 移 und 百 an der rechten Wand im Echoes of Old Battles Rätsel drücken",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Wandrätsel Guide (DE) | Where Winds Meet",
     description:
       "Schritt-für-Schritt-Lösung für das Echoes of Old Battles Wandrätsel: Feuerstellen, Yanyun Oath, Wandsteine 移/百/漂, Touch of Death.",
-    images: ["https://wherewindsmeet.org/guides/wall-puzzle/wall-tiles-right.webp"],
+    images: ["https://static.wherewindsmeet.org/guides/wall-puzzle/wall-tiles-right.webp"],
   },
 };
 
@@ -243,7 +243,7 @@ export default function WallPuzzleDePage() {
     <article className="space-y-12">
       <section className="relative overflow-hidden rounded-3xl border border-slate-800/60 bg-slate-950/70 p-6 sm:p-10 shadow-2xl">
         <div className="pointer-events-none absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/13.webp"
             alt="Verfallene Mauern in Where Winds Meet"
             fill

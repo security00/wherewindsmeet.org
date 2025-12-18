@@ -2,8 +2,9 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { useState } from "react";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImageClient";
 import type { WalkthroughStep } from "./page";
+import { resolveCdnAssetSrc } from "@/lib/image-utils";
 
 type LightboxState = {
   src: string;
@@ -16,6 +17,7 @@ export default function WalkthroughGallery({ steps }: { steps: WalkthroughStep[]
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState<{ x: number; y: number } | null>(null);
+  const resolvedLightbox = lightbox ? resolveCdnAssetSrc(lightbox.src) : null;
 
   const open = (src: string, alt: string) => {
     setLightbox({ src, alt: alt && alt.trim().length > 0 ? alt : "Woven with Malice quest screenshot" });
@@ -78,7 +80,7 @@ export default function WalkthroughGallery({ steps }: { steps: WalkthroughStep[]
                 onClick={() => open(step.image!.src, step.image!.alt)}
                 className="relative aspect-[16/9] w-full overflow-hidden focus:outline-none focus:ring-2 focus:ring-emerald-400"
               >
-                <Image
+                <CdnImage
                   src={step.image.src}
                   alt={step.image.alt}
                   fill
@@ -166,7 +168,8 @@ export default function WalkthroughGallery({ steps }: { steps: WalkthroughStep[]
             >
               <div className="flex min-h-full justify-center p-4">
                 <img
-                  src={lightbox.src}
+                  src={resolvedLightbox?.src ?? lightbox.src}
+                  {...(resolvedLightbox?.fallbackSrc ? { "data-fallback-src": resolvedLightbox.fallbackSrc } : {})}
                   alt={lightbox.alt || "Woven with Malice quest screenshot"}
                   className="max-w-none select-none cursor-grab active:cursor-grabbing"
                   style={{

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -473,7 +473,7 @@ export default function UnholyProphecyDePage() {
             <div className="mt-5 rounded-xl border border-slate-800 bg-slate-950/80 p-3">
               <div className="text-xs uppercase tracking-wide text-slate-400">Start-Position Karte</div>
               <div className="relative mt-2 aspect-video overflow-hidden rounded-lg bg-slate-950">
-                <Image
+                <CdnImage
                   src={cdn("/guides/unholy-prophecy/game8/b6847fd4b9fd993041db58e258ecd4c9.png")}
                   alt="Startpunkt von An Unholy Prophecy im Martial Temple, Jadewood Court"
                   fill
@@ -619,7 +619,7 @@ export default function UnholyProphecyDePage() {
                         </span>
                         <div className="relative aspect-video overflow-hidden rounded-lg bg-slate-950">
                           {item.type === "image" ? (
-                            <Image
+                            <CdnImage
                               src={item.src}
                               alt={item.alt ?? `${step.title} – Schritt ${baseNum}`}
                               fill

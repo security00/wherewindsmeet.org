@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -140,7 +140,7 @@ export default function OneLeafOneLifeGuide() {
     <div className="min-h-screen bg-ink-wash text-slate-100">
       <section className="relative overflow-hidden border-b border-slate-800/60 bg-slate-950/70">
         <div className="absolute inset-0">
-          <Image
+          <CdnImage
             src={heroImage}
             alt="One Leaf, One Life quest banner art"
             fill
@@ -252,7 +252,7 @@ export default function OneLeafOneLifeGuide() {
             </p>
           </div>
           <figure className="overflow-hidden rounded-2xl border border-slate-800">
-            <Image
+            <CdnImage
               src={images.start}
               alt="Hopewell Academy boundary stone and burning shop starting One Leaf, One Life"
               width={1650}
@@ -330,7 +330,7 @@ export default function OneLeafOneLifeGuide() {
 
             <div className="space-y-4">
               <figure className="overflow-hidden rounded-2xl border border-slate-800">
-                <Image
+                <CdnImage
                   src={images.feast1}
                   alt="Starting Feast of Leaves Volume 1"
                   width={1650}
@@ -343,7 +343,7 @@ export default function OneLeafOneLifeGuide() {
                 </figcaption>
               </figure>
               <figure className="overflow-hidden rounded-2xl border border-slate-800">
-                <Image
+                <CdnImage
                   src={images.foodInspection}
                   alt="Inspecting spoiled food during Feast of Leaves Volume 1"
                   width={1650}
@@ -435,7 +435,7 @@ export default function OneLeafOneLifeGuide() {
 
             <div className="space-y-4">
               <figure className="overflow-hidden rounded-2xl border border-slate-800">
-                <Image
+                <CdnImage
                   src={images.feast2}
                   alt="Feast of Leaves Volume 2 start"
                   width={1650}
@@ -448,7 +448,7 @@ export default function OneLeafOneLifeGuide() {
                 </figcaption>
               </figure>
               <figure className="overflow-hidden rounded-2xl border border-slate-800">
-                <Image
+                <CdnImage
                   src={images.tale2}
                   alt="Tale of Gold Leaves Volume 2 start"
                   width={1650}
@@ -535,7 +535,7 @@ export default function OneLeafOneLifeGuide() {
 
             <div className="space-y-4">
               <figure className="overflow-hidden rounded-2xl border border-slate-800">
-                <Image
+                <CdnImage
                   src={images.epilogue}
                   alt="Epilogue of One Leaf, One Life quest"
                   width={1650}

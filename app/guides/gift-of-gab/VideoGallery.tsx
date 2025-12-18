@@ -1,5 +1,4 @@
-import Image from "next/image";
-
+import CdnImage from "@/components/CdnImage";
 export default function VideoGallery() {
   const videos = [
     {
@@ -48,7 +47,7 @@ export default function VideoGallery() {
           <div key={video.id} className="rounded-2xl border border-slate-700 bg-slate-800/30 overflow-hidden hover:border-slate-600 transition-colors">
             {/* Video Thumbnail & Play Button */}
             <div className="relative bg-black/50 aspect-video flex items-center justify-center overflow-hidden group">
-              <Image
+              <CdnImage
                 src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
                 alt={video.title}
                 fill

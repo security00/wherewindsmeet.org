@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { weapons, type WeaponId } from "@/lib/weapons";
 import { weaponDetails } from "@/lib/weaponDetails";
@@ -104,7 +104,7 @@ export function WeaponDetail({ weaponId }: { weaponId: WeaponId }) {
         </div>
         <div className="space-y-4">
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
-            <Image
+            <CdnImage
               src={weapon.officialArt}
               alt={weapon.name}
               fill
@@ -692,7 +692,7 @@ export function WeaponDetail({ weaponId }: { weaponId: WeaponId }) {
             Sample Spear builds from Traditional Chinese guides.
           </h2>
           <div className="relative h-40 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80 sm:h-52">
-            <Image
+            <CdnImage
               src="https://www.ludens.com.tw/wp-content/uploads/2025/11/20251116012957_1.jpg"
               alt="Where Winds Meet spear and sword build screenshot"
               fill
@@ -812,7 +812,7 @@ export function WeaponDetail({ weaponId }: { weaponId: WeaponId }) {
             Umbrella &amp; fan builds inspired by Traditional Chinese guides.
           </h2>
           <div className="relative h-40 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80 sm:h-52">
-            <Image
+            <CdnImage
               src="https://www.ludens.com.tw/wp-content/uploads/2025/11/20251116015118_1.jpg"
               alt="Where Winds Meet umbrella and fan builds screenshot"
               fill

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import type { BossId } from "@/lib/bosses";
 import { bosses } from "@/lib/bosses.de";
@@ -75,7 +75,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
             <div className="pointer-events-none absolute bottom-3 left-3 h-10 w-40 sm:h-12 sm:w-48">
-              <Image
+              <CdnImage
                 src={boss.titleImage}
                 alt={boss.name}
                 fill

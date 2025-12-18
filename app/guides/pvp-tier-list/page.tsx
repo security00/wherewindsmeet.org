@@ -1,6 +1,6 @@
 import * as motion from "framer-motion/client";
 import type { Metadata } from "next";
-import Image from "next/image";
+import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 import { weapons } from "@/lib/weapons";
@@ -42,7 +42,7 @@ export default function PVPTierListPage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-8 shadow-2xl shadow-black/50">
         <div className="pointer-events-none absolute inset-0">
-          <Image
+          <CdnImage
             src="/background/bg1.webp"
             alt="Where Winds Meet PVP tier list background"
             fill
@@ -108,7 +108,7 @@ export default function PVPTierListPage() {
                       className="group relative flex items-center gap-4 rounded-xl border border-white/5 bg-white/5 p-3 transition-all hover:border-white/10 hover:bg-white/10 hover:translate-x-1"
                     >
                       <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg bg-slate-950 border border-slate-800">
-                        <Image
+                        <CdnImage
                           src={weapon.localIcon}
                           alt={weapon.name}
                           fill
@@ -163,13 +163,23 @@ export default function PVPTierListPage() {
       {/* CTA */}
       <section className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-emerald-900/40 to-slate-900/40 p-8 text-center border border-emerald-500/20">
         <h2 className="text-2xl font-bold text-slate-100 mb-2 font-serif">Need a specific build?</h2>
-        <p className="text-slate-400 mb-6 font-sans">Check our detailed breakdown of stats, skills, and combos.</p>
+        <p className="text-slate-400 mb-6 font-sans">
+          Check our detailed breakdown of stats, skills, and combos — or jump straight into a combo database.
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          <Link
+            href="/tools/pvp-combos"
+            className="inline-flex items-center justify-center rounded-full border border-emerald-500/40 bg-emerald-500/10 px-6 py-3 text-sm font-bold text-emerald-100 shadow-lg shadow-emerald-900/20 transition-all hover:border-emerald-400/70 hover:text-emerald-50 hover:scale-105"
+          >
+            PVP combos tool →
+          </Link>
         <Link
           href="/guides/builds"
           className="inline-flex items-center justify-center rounded-full bg-emerald-600 px-8 py-3 text-sm font-bold text-white shadow-lg shadow-emerald-900/20 transition-all hover:bg-emerald-500 hover:scale-105"
         >
           View All Builds
         </Link>
+        </div>
       </section>
     </article>
   );
