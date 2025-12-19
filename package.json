@@ -6,6 +6,8 @@
     "dev": "node ./scripts/run-with-baseline-env.cjs dev",
     "build": "node ./scripts/run-with-baseline-env.cjs build",
     "start": "node ./scripts/run-with-baseline-env.cjs start",
+    "seo:check": "node ./scripts/seo-check.cjs",
+    "seo:check:full": "npm run build && npm run seo:check",
     "lint": "eslint"
   },
   "dependencies": {
