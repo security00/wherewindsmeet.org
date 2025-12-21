@@ -34,6 +34,11 @@ export default function InteractiveMapPage() {
 
       <section className="space-y-4">
         <InteractiveMapEmbed
+          deferLoad
+          deferMs={2500}
+          loadingTitle="Đang tải bản đồ tương tác…"
+          loadingDescription="Iframe được tải khi trình duyệt rảnh để trang mượt hơn. Bạn cũng có thể tải ngay."
+          loadNowLabel="Tải bản đồ ngay"
           options={[
             {
               id: "mapgenie",

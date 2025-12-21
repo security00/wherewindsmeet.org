@@ -35,6 +35,8 @@ export default function InteractiveMapPage() {
 
       <section className="space-y-4">
         <InteractiveMapEmbed
+          deferLoad
+          deferMs={2500}
           options={[
             {
               id: "mapgenie",

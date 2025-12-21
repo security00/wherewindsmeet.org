@@ -78,9 +78,26 @@ export function LanguageSwitchPrompt({ geoApiEndpoint }: { geoApiEndpoint?: stri
       }
     };
 
-    fetchCountry();
+    // Delay geo lookup until the browser is idle to protect INP/LCP on first view.
+    const fallbackTimeoutId = window.setTimeout(fetchCountry, 1500);
+    const idleId =
+      typeof window.requestIdleCallback === "function"
+        ? window.requestIdleCallback(
+            () => {
+              window.clearTimeout(fallbackTimeoutId);
+              fetchCountry();
+            },
+            { timeout: 3000 }
+          )
+        : null;
 
-    return () => controller.abort();
+    return () => {
+      controller.abort();
+      window.clearTimeout(fallbackTimeoutId);
+      if (idleId && typeof window.cancelIdleCallback === "function") {
+        window.cancelIdleCallback(idleId);
+      }
+    };
   }, [geoEndpoint]);
 
   if (!promptSite) {
@@ -100,29 +117,38 @@ export function LanguageSwitchPrompt({ geoApiEndpoint }: { geoApiEndpoint?: stri
   };
 
   return (
-    <div className="mt-4 rounded-2xl border border-amber-400/50 bg-amber-50/10 p-4 text-sm text-amber-50 shadow-lg shadow-amber-900/30 backdrop-blur">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div className="space-y-1">
-          <p className="text-base font-semibold text-amber-100">
-            {promptSite.path === "/vn" ? "Đã hỗ trợ:" : "Jetzt verfügbar:"} {promptSite.label}
-          </p>
-          <p className="text-xs text-amber-100/80">{promptSite.message}</p>
-        </div>
-        <div className="flex flex-wrap items-center gap-2">
-          <button
-            type="button"
-            onClick={handleSwitch}
-            className="inline-flex items-center justify-center rounded-full bg-amber-400 px-4 py-2 text-sm font-semibold text-amber-950 shadow-md shadow-amber-900/30 transition hover:bg-amber-300"
-          >
-            {promptSite.cta}
-          </button>
-          <button
-            type="button"
-            onClick={handleStay}
-            className="inline-flex items-center justify-center rounded-full border border-amber-300/60 bg-amber-100/10 px-4 py-2 text-sm font-semibold text-amber-50 transition hover:border-amber-200/80 hover:text-amber-100"
-          >
-            {promptSite.stayCta}
-          </button>
+    <div className="pointer-events-none fixed inset-x-0 bottom-4 z-[70] px-4 sm:bottom-6">
+      <div
+        role="dialog"
+        aria-label="Language suggestion"
+        className="pointer-events-auto mx-auto max-w-xl rounded-2xl border border-amber-400/50 bg-amber-50/10 p-4 text-sm text-amber-50 shadow-lg shadow-amber-900/30 backdrop-blur"
+        style={{
+          paddingBottom: "max(1rem, env(safe-area-inset-bottom))",
+        }}
+      >
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="space-y-1">
+            <p className="text-base font-semibold text-amber-100">
+              {promptSite.path === "/vn" ? "Đã hỗ trợ:" : "Jetzt verfügbar:"} {promptSite.label}
+            </p>
+            <p className="text-xs text-amber-100/80">{promptSite.message}</p>
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              type="button"
+              onClick={handleSwitch}
+              className="inline-flex items-center justify-center rounded-full bg-amber-400 px-4 py-2 text-sm font-semibold text-amber-950 shadow-md shadow-amber-900/30 transition hover:bg-amber-300"
+            >
+              {promptSite.cta}
+            </button>
+            <button
+              type="button"
+              onClick={handleStay}
+              className="inline-flex items-center justify-center rounded-full border border-amber-300/60 bg-amber-100/10 px-4 py-2 text-sm font-semibold text-amber-50 transition hover:border-amber-200/80 hover:text-amber-100"
+            >
+              {promptSite.stayCta}
+            </button>
+          </div>
         </div>
       </div>
     </div>

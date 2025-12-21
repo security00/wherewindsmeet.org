@@ -52,6 +52,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+        <link rel="preconnect" href="https://static.wherewindsmeet.org" crossOrigin="anonymous" />
         <Script
           id="cdn-image-fallback"
           strategy="beforeInteractive"

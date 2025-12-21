@@ -35,6 +35,11 @@ export default function InteractiveMapPage() {
 
       <section className="space-y-4">
         <InteractiveMapEmbed
+          deferLoad
+          deferMs={2500}
+          loadingTitle="Interaktive Karte wird geladen…"
+          loadingDescription="Das Embed wird im Idle geladen, damit die Seite reaktionsschnell bleibt. Du kannst es auch sofort laden."
+          loadNowLabel="Karte jetzt laden"
           options={[
             {
               id: "mapgenie",

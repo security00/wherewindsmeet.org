@@ -57,6 +57,8 @@ export default function PVPTierListPage() {
             alt="Nền tier list PvP Where Winds Meet"
             fill
             className="object-cover opacity-30 mix-blend-overlay"
+            sizes="100vw"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/40" />
         </div>
