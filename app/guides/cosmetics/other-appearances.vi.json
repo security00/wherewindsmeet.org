@@ -42,6 +42,24 @@
     },
     "rarity": "Nổi bật",
     "note": "Ưu đãi giới hạn — giảm 80%"
+  },
+  {
+    "id": "flicker-of-faces",
+    "name": "Flicker of Faces (ngoại hình shop)",
+    "chineseName": "",
+    "category": "Ngoại hình shop (trang phục)",
+    "image": "https://static.wherewindsmeet.org/guides/flicker-of-faces/flicker-of-faces-preview.png",
+    "galleryImages": [
+      "https://static.wherewindsmeet.org/guides/flicker-of-faces/flicker-of-faces-preview.png",
+      "https://static.wherewindsmeet.org/guides/flicker-of-faces/flicker-of-faces-price.png",
+      "https://static.wherewindsmeet.org/guides/flicker-of-faces/flicker-of-faces-voucher-tooltip.png"
+    ],
+    "acquisition": {
+      "method": "Mua trong shop (lên kệ giới hạn)",
+      "cost": "2580× pearls",
+      "duration": "Thường lên shop khoảng 25–26/12/2025 (xem giờ chính xác theo server trong game)"
+    },
+    "rarity": "Giới hạn",
+    "note": "Voucher: 10% mỗi cái, cộng tối đa 5 (tối đa 50%). Xem: /vn/guides/flicker-of-faces"
   }
 ]
-

@@ -168,6 +168,16 @@ const guideSections = [
       "Where Winds Meet The Great Faceologist (12/2025): nộp từ Edit Face, tick tag, daily cap, phần thưởng và cách sửa lỗi.",
   },
   {
+    title: "Flicker of Faces (ngoại hình)",
+    slug: "/vn/guides/flicker-of-faces",
+    label: "Cosmetics",
+    icon: "🧧",
+    color: "text-rose-300",
+    size: "small",
+    description:
+      "Flicker of Faces shop appearance (12/2025): ảnh preview, giá tham khảo, thời gian lên shop và cách cộng voucher (10% × tối đa 5).",
+  },
+  {
     title: "Code đang hoạt động",
     slug: "/vn/guides/codes",
     label: "Quà miễn phí",

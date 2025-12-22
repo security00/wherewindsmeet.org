@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
+import Link from "next/link";
 import FeaturedImagesGallery from "./FeaturedImagesGallery";
 import AppearanceSetsDisplay from "./AppearanceSetsDisplay";
 import OtherAppearancesDisplay from "./OtherAppearancesDisplay";
@@ -42,6 +43,24 @@ export default function CosmeticsPage() {
             Express your character&apos;s personality through customizable outfits, hairstyles, and effects
             that blend function with artistic beauty.
           </p>
+        </div>
+      </section>
+
+      <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="space-y-1">
+            <p className="text-xs uppercase tracking-wide text-emerald-300">Trending</p>
+            <h2 className="text-xl font-semibold text-slate-50">Flicker of Faces (Shop Appearance)</h2>
+            <p className="text-sm text-slate-300">
+              Preview images, price reference, listing time, and how Flicker of Faces Voucher stacks (10% × up to 5).
+            </p>
+          </div>
+          <Link
+            href="/guides/flicker-of-faces"
+            className="w-fit rounded-full border border-emerald-400/60 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-100 hover:border-emerald-300/80"
+          >
+            Read Flicker of Faces guide
+          </Link>
         </div>
       </section>
 

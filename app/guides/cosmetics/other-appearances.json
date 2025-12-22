@@ -42,5 +42,24 @@
     },
     "rarity": "Featured",
     "note": "Limited time promotion - 80% off"
+  },
+  {
+    "id": "flicker-of-faces",
+    "name": "Flicker of Faces (Shop Appearance)",
+    "chineseName": "",
+    "category": "Shop Appearance (Outfit)",
+    "image": "https://static.wherewindsmeet.org/guides/flicker-of-faces/flicker-of-faces-preview.png",
+    "galleryImages": [
+      "https://static.wherewindsmeet.org/guides/flicker-of-faces/flicker-of-faces-preview.png",
+      "https://static.wherewindsmeet.org/guides/flicker-of-faces/flicker-of-faces-price.png",
+      "https://static.wherewindsmeet.org/guides/flicker-of-faces/flicker-of-faces-voucher-tooltip.png"
+    ],
+    "acquisition": {
+      "method": "Shop Purchase (Limited Listing)",
+      "cost": "2580x Pearls",
+      "duration": "Listing around Dec 25–26, 2025 (check your in-game shop for exact server time)"
+    },
+    "rarity": "Limited",
+    "note": "Voucher discounts: 10% each, stack up to 5 (max 50%). Guide: /guides/flicker-of-faces"
   }
 ]

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
+import Link from "next/link";
 import FeaturedImagesGallery from "../../../guides/cosmetics/FeaturedImagesGallery";
 import AppearanceSetsDisplay from "../../../guides/cosmetics/AppearanceSetsDisplay";
 import OtherAppearancesDisplay from "../../../guides/cosmetics/OtherAppearancesDisplay";
@@ -39,6 +40,24 @@ export default function CosmeticsPage() {
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
             Khám phá các set ngoại hình lấy cảm hứng từ giang hồ và truyền thuyết Mặc gia. Mỗi món cosmetics/appearance đều có chủ đề thẩm mỹ riêng; phối trang phục (outfit), kiểu tóc và hiệu ứng để thể hiện phong cách của bạn.
           </p>
+        </div>
+      </section>
+
+      <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="space-y-1">
+            <p className="text-xs uppercase tracking-wide text-emerald-300">Đang hot</p>
+            <h2 className="text-xl font-semibold text-slate-50">Flicker of Faces (ngoại hình shop)</h2>
+            <p className="text-sm text-slate-300">
+              Ảnh preview, giá tham khảo, giờ lên shop và cách voucher cộng dồn (10% × tối đa 5).
+            </p>
+          </div>
+          <Link
+            href="/vn/guides/flicker-of-faces"
+            className="w-fit rounded-full border border-emerald-400/60 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-100 hover:border-emerald-300/80"
+          >
+            Xem guide Flicker of Faces
+          </Link>
         </div>
       </section>
 

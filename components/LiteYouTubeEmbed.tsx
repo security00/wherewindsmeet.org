@@ -1,17 +1,37 @@
 'use client';
 
-import CdnImage from "@/components/CdnImageClient";
 import { useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
+import FallbackImage from "@/components/FallbackImage";
+import { resolveCdnAssetSrc } from "@/lib/image-utils";
 
 type LiteYouTubeEmbedProps = {
   videoId: string;
   title: string;
   start?: number;
   poster?: string;
+  analytics?: {
+    eventName: string;
+    params?: Record<string, string | number | boolean>;
+  };
 };
 
-export function LiteYouTubeEmbed({ videoId, title, start = 0, poster = "/background/bg.webp" }: LiteYouTubeEmbedProps) {
+type GtagFunction = (...args: unknown[]) => void;
+
+function safeTrack(eventName: string, params?: Record<string, string | number | boolean>) {
+  if (typeof window === "undefined") return;
+  const gtag = (window as unknown as { gtag?: GtagFunction }).gtag;
+  if (typeof gtag !== "function") return;
+  gtag("event", eventName, params || {});
+}
+
+export function LiteYouTubeEmbed({
+  videoId,
+  title,
+  start = 0,
+  poster = "/background/bg.webp",
+  analytics,
+}: LiteYouTubeEmbedProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const pathname = usePathname();
   const language = pathname?.startsWith("/vn") ? "vi" : pathname?.startsWith("/de") ? "de" : "en";
@@ -40,6 +60,8 @@ export function LiteYouTubeEmbed({ videoId, title, start = 0, poster = "/backgro
     [videoId, start]
   );
 
+  const resolvedPoster = useMemo(() => resolveCdnAssetSrc(poster), [poster]);
+
   return (
     <div className="relative aspect-video w-full overflow-hidden rounded-2xl border-2 border-slate-800/50 shadow-2xl shadow-black/50 group">
       <div className="absolute inset-0 border-brush opacity-50 z-10 pointer-events-none"></div>
@@ -57,12 +79,22 @@ export function LiteYouTubeEmbed({ videoId, title, start = 0, poster = "/backgro
       ) : (
         <button
           type="button"
-          onClick={() => setIsPlaying(true)}
+          onClick={() => {
+            if (analytics?.eventName) {
+              safeTrack(analytics.eventName, {
+                video_id: videoId,
+                video_title: title,
+                ...(analytics.params || {}),
+              });
+            }
+            setIsPlaying(true);
+          }}
           className="relative h-full w-full overflow-hidden text-left"
           aria-label={uiText.playAriaTemplate.replace("{title}", title)}
         >
-          <CdnImage
-            src={poster}
+          <FallbackImage
+            src={resolvedPoster.src}
+            fallbackSrc={resolvedPoster.fallbackSrc}
             alt={title}
             fill
             sizes="(max-width: 1024px) 100vw, 720px"

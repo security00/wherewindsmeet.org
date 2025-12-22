@@ -188,6 +188,16 @@ const guideSections = [
       "Where Winds Meet The Great Faceologist (Dec 2025): correct Edit Face uploads, event tag, daily cap, rewards, and fixes.",
   },
   {
+    title: "Flicker of Faces (Appearance)",
+    slug: "/guides/flicker-of-faces",
+    label: "Cosmetics",
+    icon: "🧧",
+    color: "text-rose-300",
+    size: "small",
+    description:
+      "Flicker of Faces shop appearance (Dec 2025): preview images, price, listing time, and voucher stacking (10% × up to 5).",
+  },
+  {
     title: "Active Codes",
     slug: "/guides/codes",
     label: "Free Rewards",
