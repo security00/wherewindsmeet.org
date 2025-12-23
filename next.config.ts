@@ -135,18 +135,6 @@ const nextConfig: NextConfig = {
     BASELINE_BROWSER_MAPPING_IGNORE_OLD_DATA: "true",
     BROWSERSLIST_IGNORE_OLD_DATA: "true",
   },
-  async rewrites() {
-    return [
-      {
-        source: '/vn/:path*',
-        destination: '/:path*',
-      },
-      {
-        source: '/de/:path*',
-        destination: '/:path*',
-      },
-    ];
-  },
 };
 
 export default nextConfig;
