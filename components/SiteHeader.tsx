@@ -22,6 +22,7 @@ const defaultNavLinks: NavLink[] = [
   { href: "/guides/codes", label: "Codes" },
   { href: "/guides/items", label: "Items" },
   { href: "/news", label: "News" },
+  { href: "/videos", label: "Videos" },
 ];
 
 const vnNavLinks: NavLink[] = [
@@ -36,6 +37,7 @@ const vnNavLinks: NavLink[] = [
   { href: "/vn/guides/codes", label: "Mã quà" },
   { href: "/vn/guides/items", label: "Vật phẩm" },
   { href: "/vn/news", label: "Tin tức" },
+  { href: "/vn/videos", label: "Video" },
 ];
 
 const deNavLinks: NavLink[] = [
@@ -50,6 +52,7 @@ const deNavLinks: NavLink[] = [
   { href: "/de/guides/codes", label: "Codes" },
   { href: "/de/guides/items", label: "Items" },
   { href: "/de/news", label: "News" },
+  { href: "/de/videos", label: "Videos" },
 ];
 
 const defaultBrandSubtitle = "Guides · Tier List · Codes";
