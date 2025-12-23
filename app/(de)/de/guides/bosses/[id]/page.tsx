@@ -3,38 +3,29 @@ import { notFound } from "next/navigation";
 import { BossDetail, generateBossMetadata } from "../boss-detail";
 import type { BossId } from "@/lib/bosses";
 
-type Params = { params: { id: BossId } };
+type Params = { params: { id: BossId } | Promise<{ id: BossId }> };
 
-export function generateMetadata({ params }: Params): Metadata {
-  const ids: BossId[] = [
-    "dao-lord",
-    "god-of-avaric",
-    "heartseeker",
-    "lucky-seventeen",
-    "murong-yuan",
-    "qianye",
-    "the-void-king",
-    "tian-ying",
-    "ye-wanshan",
-    "zheng-e",
-  ];
-  if (!ids.includes(params.id)) return {};
-  return generateBossMetadata(params.id);
+const ids: BossId[] = [
+  "dao-lord",
+  "god-of-avaric",
+  "heartseeker",
+  "lucky-seventeen",
+  "murong-yuan",
+  "qianye",
+  "the-void-king",
+  "tian-ying",
+  "ye-wanshan",
+  "zheng-e",
+];
+
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const { id } = await params;
+  if (!ids.includes(id)) return {};
+  return generateBossMetadata(id);
 }
 
-export default function BossDetailDePage({ params }: Params) {
-  const ids: BossId[] = [
-    "dao-lord",
-    "god-of-avaric",
-    "heartseeker",
-    "lucky-seventeen",
-    "murong-yuan",
-    "qianye",
-    "the-void-king",
-    "tian-ying",
-    "ye-wanshan",
-    "zheng-e",
-  ];
-  if (!ids.includes(params.id)) return notFound();
-  return <BossDetail bossId={params.id} />;
+export default async function BossDetailDePage({ params }: Params) {
+  const { id } = await params;
+  if (!ids.includes(id)) notFound();
+  return <BossDetail bossId={id} />;
 }
