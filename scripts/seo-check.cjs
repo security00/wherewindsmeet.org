@@ -6,6 +6,7 @@ const { setTimeout: delay } = require("node:timers/promises");
 
 const DEFAULT_PORT = 3100;
 const DEFAULT_MAX_PAGES = 600;
+const DEFAULT_ORIGIN = null;
 const SITE_ORIGIN = "https://wherewindsmeet.org";
 
 const parseArgValue = (args, key) => {
@@ -208,12 +209,20 @@ const main = async () => {
     console.log(`SEO smoke check (internal links)
 
 Usage:
-  node scripts/seo-check.cjs [--port 3100] [--max-pages 600]
+  node scripts/seo-check.cjs [--origin https://wherewindsmeet.org] [--port 3100] [--max-pages 600]
 
 Notes:
-  - Requires a production build (run \`npm run build\` first).
+  - If scanning localhost, requires a production build (run \`npm run build\` first).
   - Fails on internal 4xx/5xx.
   - Prints internal redirects (3xx) as warnings.
+
+Examples:
+  # Scan a live deployment
+  node scripts/seo-check.cjs --origin https://wherewindsmeet.org
+
+  # Scan a local production server (will auto-start if needed)
+  npm run build
+  node scripts/seo-check.cjs --port 3100
 `);
     return;
   }
@@ -222,21 +231,51 @@ Notes:
   const maxPages = Number(
     parseArgValue(args, "--max-pages") || process.env.SEO_CHECK_MAX_PAGES || DEFAULT_MAX_PAGES,
   );
-  const baseUrl = `http://localhost:${port}`;
+  const originArg = parseArgValue(args, "--origin") || process.env.SEO_CHECK_ORIGIN || DEFAULT_ORIGIN;
+  const baseUrl = (originArg ? String(originArg) : `http://localhost:${port}`).replace(/\/+$/, "");
+  const isLocalOrigin = (() => {
+    try {
+      const url = new URL(baseUrl);
+      return url.hostname === "localhost" || url.hostname === "127.0.0.1";
+    } catch {
+      return false;
+    }
+  })();
 
-  if (!existsSync(".next/BUILD_ID")) {
+  if (isLocalOrigin && !existsSync(".next/BUILD_ID")) {
     console.error("Missing production build. Run `npm run build` before running this check.");
     process.exitCode = 2;
     return;
   }
 
-  const alreadyRunning = await isSitemapAvailable(baseUrl);
-  const server = alreadyRunning
-    ? null
-    : spawn(process.execPath, ["./scripts/run-with-baseline-env.cjs", "start", "-p", String(port)], {
-        stdio: "inherit",
-        env: process.env,
-      });
+  const spawnPort = (() => {
+    if (!isLocalOrigin) return port;
+    try {
+      const url = new URL(baseUrl);
+      return Number(url.port) || port;
+    } catch {
+      return port;
+    }
+  })();
+
+  const alreadyRunning = isLocalOrigin ? await isSitemapAvailable(baseUrl) : true;
+
+  if (!isLocalOrigin) {
+    const sitemapAvailable = await isSitemapAvailable(baseUrl);
+    if (!sitemapAvailable) {
+      console.error(`Sitemap not available at ${baseUrl}/sitemap.xml`);
+      process.exitCode = 2;
+      return;
+    }
+  }
+
+  const server =
+    isLocalOrigin && !alreadyRunning
+      ? spawn(process.execPath, ["./scripts/run-with-baseline-env.cjs", "start", "-p", String(spawnPort)], {
+          stdio: "inherit",
+          env: process.env,
+        })
+      : null;
 
   const stopServer = async () => {
     if (!server) return;
@@ -247,7 +286,7 @@ Notes:
   };
 
   try {
-    if (!alreadyRunning) await waitForServer(baseUrl);
+    if (server) await waitForServer(baseUrl);
     const { visitedCount, broken, redirectHops } = await crawl(baseUrl, maxPages);
 
     console.log(`\nSEO check: scanned ${visitedCount} pages (limit ${maxPages}).`);

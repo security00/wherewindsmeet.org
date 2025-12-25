@@ -159,6 +159,15 @@ const guideSections = [
     description: "Qin Caiweis Dialogschleife stoppen: Aktionen in Klammern und klare Verabschiedungen.",
   },
   {
+    title: "Murong Yuan Adoptivvater",
+    slug: "/de/guides/murong-yuan-adoptive-father",
+    label: "Quiz & Lore",
+    icon: "🎯",
+    color: "text-amber-300",
+    size: "small",
+    description: "Schnelle Quiz-Antwort (Li Jun) vs Story (Murong Yanzhao) + Namensvarianten.",
+  },
+  {
     title: "Free Morph Mystic",
     slug: "/de/guides/free-morph",
     label: "Mystik",

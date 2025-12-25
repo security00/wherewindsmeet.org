@@ -140,6 +140,15 @@ const guideSections = [
     description: "Thoát vòng lặp thoại với hành động trong ngoặc và chào tạm biệt rõ ràng.",
   },
   {
+    title: "Murong Yuan cha nuôi",
+    slug: "/vn/guides/murong-yuan-adoptive-father",
+    label: "Quiz & Lore",
+    icon: "🎯",
+    color: "text-amber-300",
+    size: "small",
+    description: "Đáp án quiz (Li Jun) vs lore (Murong Yanzhao) + bảng biến thể tên.",
+  },
+  {
     title: "Free Morph (Mystic)",
     slug: "/vn/guides/free-morph",
     label: "Bí thuật",

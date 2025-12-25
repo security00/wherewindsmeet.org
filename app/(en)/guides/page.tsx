@@ -151,6 +151,15 @@ const guideSections = [
     description: "Stop her dialogue loop with bracketed actions and clear farewells.",
   },
   {
+    title: "Murong Yuan Adoptive Father",
+    slug: "/guides/murong-yuan-adoptive-father",
+    label: "Quiz / Lore",
+    icon: "🎯",
+    color: "text-amber-300",
+    size: "small",
+    description: "Fast quiz answer (Li Jun) + story context (Murong Yanzhao) with name-variant cheat sheet.",
+  },
+  {
     title: "Free Morph Mystic",
     slug: "/guides/free-morph",
     label: "Mystic",
