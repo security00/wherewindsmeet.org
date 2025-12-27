@@ -257,13 +257,19 @@ export default function Home() {
           <div>
             <p className="text-xs uppercase tracking-wide text-emerald-300">Xu hướng</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-50">Hướng dẫn Where Winds Meet được tìm kiếm nhiều</h2>
-            <p className="text-xs text-amber-200 mt-1">Mới: Mist-Shrouded Prison – đủ 6 rương (đã có bản sửa spawn rương cuối)</p>
+            <p className="text-xs text-amber-200 mt-1">Mới: đáp án Prize Quiz “Purple Star catastrophe” (The Zhao Brothers)</p>
           </div>
           <span className="text-xs text-slate-400">Cập nhật theo từ khóa Google Trends</span>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {[
+            {
+              title: "Purple Star Catastrophe (Đáp án quiz)",
+              href: "/guides/who-is-destined-to-face-the-purple-star-catastrophe",
+              desc: "World’s Digest Prize Quiz: cách vào đúng menu + đáp án đúng (The Zhao Brothers) kèm ảnh minh họa.",
+              tag: "Quiz",
+            },
             {
               title: "The Great Faceologist",
               href: "/guides/the-great-faceologist",

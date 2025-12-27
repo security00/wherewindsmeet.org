@@ -249,13 +249,19 @@ export default function Home() {
           <div>
             <p className="text-xs uppercase tracking-wide text-emerald-300">Gerade im Trend</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-50">Gefragte Where Winds Meet Guides</h2>
-            <p className="text-xs text-amber-200 mt-1">Neu: Nebelverhangenes Gefängnis – alle 6 Truhen (inkl. Spawn-Fixes)</p>
+            <p className="text-xs text-amber-200 mt-1">Neu: Purple-Star-Katastrophe Prize Quiz Antwort (The Zhao Brothers)</p>
           </div>
           <span className="text-xs text-slate-400">Aktualisiert nach Google-Trends-Keywords</span>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {[
+            {
+              title: "Purple-Star-Katastrophe (Quiz-Antwort)",
+              href: "/de/guides/who-is-destined-to-face-the-purple-star-catastrophe",
+              desc: "World’s Digest Prize Quiz: exakter Pfad + richtige Auswahl (The Zhao Brothers) mit Screenshots.",
+              tag: "Quiz",
+            },
             {
               title: "The Great Faceologist",
               href: "/de/guides/the-great-faceologist",

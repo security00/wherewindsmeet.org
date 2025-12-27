@@ -168,6 +168,15 @@ const guideSections = [
     description: "Schnelle Quiz-Antwort (Li Jun) vs Story (Murong Yanzhao) + Namensvarianten.",
   },
   {
+    title: "Purple-Star-Katastrophe (Quiz-Antwort)",
+    slug: "/de/guides/who-is-destined-to-face-the-purple-star-catastrophe",
+    label: "Quiz & Lore",
+    icon: "🟣",
+    color: "text-purple-300",
+    size: "small",
+    description: "Daily Prize Quiz: „Who is destined to face the Purple Star catastrophe?“ Antwort: The Zhao Brothers.",
+  },
+  {
     title: "Free Morph Mystic",
     slug: "/de/guides/free-morph",
     label: "Mystik",
@@ -277,7 +286,7 @@ export default function GuidesPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-transparent to-slate-950/80" />
         </div>
 
-        <div className="relative z-10 flex h-full flex-col justify-center px-6 sm:px-12 lg:w-2/3">
+        <div className="relative z-30 flex h-full flex-col justify-center px-6 sm:px-12 lg:w-2/3">
           <h1 className="text-balance text-5xl font-bold tracking-tight text-slate-50 sm:text-6xl lg:text-7xl font-serif">
             Bibliothek der <span className="text-ink-gold">Wanderer</span>
           </h1>
@@ -290,6 +299,12 @@ export default function GuidesPage() {
           >
             🍂 Neuester Lost Chapter: One Leaf, One Life
           </Link>
+          <Link
+            href="/de/guides/murong-yuan-adoptive-father"
+            className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-amber-400/60 bg-amber-500/10 px-4 py-2 text-sm font-semibold text-amber-200 transition hover:border-amber-300/80 hover:text-amber-100"
+          >
+            🎯 Trend-Quiz: Murong Yuan Adoptivvater (schnelle Antwort)
+          </Link>
         </div>
 
         <div className="absolute right-12 top-1/2 -translate-y-1/2 hidden text-vertical text-6xl font-bold text-slate-50/5 lg:block font-serif select-none">
@@ -297,7 +312,7 @@ export default function GuidesPage() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 relative z-20 -mt-4 sm:-mt-8 lg:-mt-12 pb-8">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 relative z-20 pb-8">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 auto-rows-[180px]">
           {guideSections.map((section) => (
             <Link

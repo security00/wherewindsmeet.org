@@ -252,13 +252,19 @@ export default function Home() {
           <div>
             <p className="text-xs uppercase tracking-wide text-emerald-300">Trending now</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-50">Where Winds Meet guides players search for</h2>
-            <p className="text-xs text-amber-200 mt-1">New: Mist-Shrouded Prison all chests (final spawn fixes included)</p>
+            <p className="text-xs text-amber-200 mt-1">New: Purple Star Catastrophe Prize Quiz answer (The Zhao Brothers)</p>
           </div>
           <span className="text-xs text-slate-400">Updated with Google Trends keywords</span>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {[
+            {
+              title: "Purple Star Catastrophe (Quiz Answer)",
+              href: "/guides/who-is-destined-to-face-the-purple-star-catastrophe",
+              desc: "World’s Digest Prize Quiz: where to find it + the correct answer (The Zhao Brothers) with screenshots.",
+              tag: "Quiz",
+            },
             {
               title: "The Great Faceologist",
               href: "/guides/the-great-faceologist",

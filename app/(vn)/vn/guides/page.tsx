@@ -149,6 +149,15 @@ const guideSections = [
     description: "Đáp án quiz (Li Jun) vs lore (Murong Yanzhao) + bảng biến thể tên.",
   },
   {
+    title: "Purple Star Catastrophe (Đáp án quiz)",
+    slug: "/vn/guides/who-is-destined-to-face-the-purple-star-catastrophe",
+    label: "Quiz & Lore",
+    icon: "🟣",
+    color: "text-purple-300",
+    size: "small",
+    description: "Daily Prize Quiz: “Who is destined to face the Purple Star catastrophe?” Đáp án: The Zhao Brothers.",
+  },
+  {
     title: "Free Morph (Mystic)",
     slug: "/vn/guides/free-morph",
     label: "Bí thuật",
@@ -259,7 +268,7 @@ export default function GuidesPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-transparent to-slate-950/80" />
         </div>
 
-        <div className="relative z-10 flex h-full flex-col justify-center px-6 sm:px-12 lg:w-2/3">
+        <div className="relative z-30 flex h-full flex-col justify-center px-6 sm:px-12 lg:w-2/3">
           <h1 className="text-balance text-5xl font-bold tracking-tight text-slate-50 sm:text-6xl lg:text-7xl font-serif">
             Thư viện <span className="text-ink-gold">lữ khách</span>
           </h1>
@@ -267,10 +276,16 @@ export default function GuidesPage() {
             Người đồng hành của bạn trên hành trình giang hồ: từ bước di chuyển cơ bản đến tuyệt kỹ đại tông sư, mọi đường đi đều ở đây.
           </p>
           <Link
-            href="/vn/guides/woven-with-malice"
+            href="/vn/guides/one-leaf-one-life"
             className="mt-4 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-400/60 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-200 transition hover:border-emerald-300/80 hover:text-emerald-100"
           >
-            🧶 Hướng dẫn mới: nhiệm vụ Sợi Định Mệnh
+            🍂 Lost Chapter mới nhất: One Leaf, One Life
+          </Link>
+          <Link
+            href="/vn/guides/murong-yuan-adoptive-father"
+            className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-amber-400/60 bg-amber-500/10 px-4 py-2 text-sm font-semibold text-amber-200 transition hover:border-amber-300/80 hover:text-amber-100"
+          >
+            🎯 Quiz đang hot: cha nuôi Murong Yuan (đáp án nhanh)
           </Link>
         </div>
 
@@ -279,7 +294,7 @@ export default function GuidesPage() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 -mt-20 relative z-20">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 relative z-20">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 auto-rows-[180px]">
           {guideSections.map((section) => (
             <Link
