@@ -3,11 +3,24 @@ import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
+const baseUrl = "https://wherewindsmeet.org";
+
 export const metadata: Metadata = {
   title: "Where Winds Meet Beginner Guide & First Week Roadmap",
   description:
     "A practical Where Winds Meet beginner guide that walks you from first launch to your first weekly reset with smart settings, priorities, and resource tips.",
   alternates: buildHreflangAlternates("/guides/new-players"),
+  openGraph: {
+    title: "Where Winds Meet Beginner Guide & First Week Roadmap",
+    description:
+      "A practical Where Winds Meet beginner guide that walks you from first launch to your first weekly reset with smart settings, priorities, and resource tips.",
+    url: `${baseUrl}/guides/new-players`,
+  },
+  twitter: {
+    title: "Where Winds Meet Beginner Guide & First Week Roadmap",
+    description:
+      "A practical Where Winds Meet beginner guide that walks you from first launch to your first weekly reset with smart settings, priorities, and resource tips.",
+  },
 };
 
 const chapters = [
@@ -187,8 +200,46 @@ const chapters = [
 ];
 
 export default function NewPlayersGuidePage() {
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: metadata.title,
+      description: metadata.description,
+      url: `${baseUrl}/guides/new-players`,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: baseUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Guides",
+          item: `${baseUrl}/guides`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Beginner Guide",
+          item: `${baseUrl}/guides/new-players`,
+        },
+      ],
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-ink-wash pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] w-full overflow-hidden">
         <div className="absolute inset-0">
@@ -208,16 +259,24 @@ export default function NewPlayersGuidePage() {
               Updated for Launch
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-50 font-serif mb-6 text-shadow-lg">
-              The Wanderer&apos;s <span className="text-ink-gold">First Steps</span>
+              Where Winds Meet <span className="text-ink-gold">Beginner Guide</span>
             </h1>
             <p className="text-lg text-slate-200/90 leading-relaxed max-w-xl">
-              From your first login to your first weekly reset. A practical roadmap to surviving Jianghu without the confusion.
+              From your first login to your first weekly reset. A first-week roadmap for smart settings, priorities, and resource habits—without the confusion.
             </p>
           </div>
         </div>
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
+        <section className="mb-10 rounded-2xl border border-slate-800/70 bg-slate-950/70 p-4 text-sm text-slate-200 shadow-sm shadow-slate-950/60">
+          Searching for the official Where Winds Meet roadmap? This page is a{" "}
+          <span className="font-semibold">beginner progression roadmap</span>. For announcements and release updates, check{" "}
+          <Link href="/news" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
+            news & updates
+          </Link>
+          .
+        </section>
         <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-12">
 
           {/* Sidebar Navigation (Desktop) */}

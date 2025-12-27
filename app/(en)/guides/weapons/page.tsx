@@ -78,13 +78,13 @@ export default function WeaponsPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet weapons and how they feel to play.
+            Where Winds Meet <span className="text-ink-gold">Weapons Guide</span>
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            This page collects every current Where Winds Meet weapon in one
-            place. Instead of only listing raw damage or patch notes, it focuses
-            on how each weapon actually feels to play—its reach, rhythm, and
-            ideal matchups.
+            This weapons guide collects every current Where Winds Meet weapon in
+            one place. Instead of only listing raw damage or patch notes, it
+            focuses on how each weapon actually feels to play—its reach, rhythm,
+            and ideal matchups.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             If you need a quick ranking snapshot, open the dedicated{" "}

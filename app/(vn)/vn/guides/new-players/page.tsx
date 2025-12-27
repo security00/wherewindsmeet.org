@@ -3,11 +3,25 @@ import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
+const baseUrl = "https://wherewindsmeet.org";
+
 export const metadata: Metadata = {
   title: "Hướng dẫn tân thủ Where Winds Meet & lộ trình tuần đầu",
   description:
     "Hướng dẫn thực dụng cho người mới Where Winds Meet: từ lần mở game tới reset tuần đầu với thiết lập, ưu tiên và mẹo tài nguyên.",
   alternates: buildHreflangAlternates("/guides/new-players", { canonicalLanguage: "vi" }),
+  openGraph: {
+    title: "Hướng dẫn tân thủ Where Winds Meet & lộ trình tuần đầu",
+    description:
+      "Hướng dẫn thực dụng cho người mới Where Winds Meet: từ lần mở game tới reset tuần đầu với thiết lập, ưu tiên và mẹo tài nguyên.",
+    url: `${baseUrl}/vn/guides/new-players`,
+    locale: "vi_VN",
+  },
+  twitter: {
+    title: "Hướng dẫn tân thủ Where Winds Meet & lộ trình tuần đầu",
+    description:
+      "Hướng dẫn thực dụng cho người mới Where Winds Meet: từ lần mở game tới reset tuần đầu với thiết lập, ưu tiên và mẹo tài nguyên.",
+  },
 };
 
 const chapters = [
@@ -191,8 +205,46 @@ const chapters = [
 ];
 
 export default function NewPlayersGuidePage() {
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: metadata.title,
+      description: metadata.description,
+      url: `${baseUrl}/vn/guides/new-players`,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Trang chủ",
+          item: `${baseUrl}/vn`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Hướng dẫn",
+          item: `${baseUrl}/vn/guides`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Tân thủ",
+          item: `${baseUrl}/vn/guides/new-players`,
+        },
+      ],
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-ink-wash pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] w-full overflow-hidden">
         <div className="absolute inset-0">
@@ -212,17 +264,25 @@ export default function NewPlayersGuidePage() {
               Cập nhật cho Launch
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-50 font-serif mb-6 text-shadow-lg">
-              Bước chân <span className="text-ink-gold">đầu tiên</span> của Lữ khách
+              Hướng dẫn tân thủ <span className="text-ink-gold">Where Winds Meet</span>
             </h1>
             <p className="text-lg text-slate-200/90 leading-relaxed max-w-xl">
-              Từ lần đăng nhập đầu tiên đến lần reset tuần đầu tiên. Một lộ trình thực dụng để bạn sống sót ở Giang hồ mà
-              không bị rối.
+              Từ lần đăng nhập đầu tiên đến reset tuần đầu. Lộ trình tuần đầu giúp bạn ưu tiên đúng thứ—thiết lập, nhiệm vụ,
+              routine và tài nguyên—mà không bị rối.
             </p>
           </div>
         </div>
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
+        <section className="mb-10 rounded-2xl border border-slate-800/70 bg-slate-950/70 p-4 text-sm text-slate-200 shadow-sm shadow-slate-950/60">
+          Bạn đang tìm roadmap chính thức của Where Winds Meet? Trang này là{" "}
+          <span className="font-semibold">roadmap tiến trình cho tân thủ</span>. Với thông báo và cập nhật phát hành, xem{" "}
+          <Link href="/vn/news" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
+            tin tức & cập nhật
+          </Link>
+          .
+        </section>
         <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-12">
           {/* Sidebar Navigation (Desktop) */}
           <aside className="hidden lg:block">
@@ -325,4 +385,3 @@ export default function NewPlayersGuidePage() {
     </div>
   );
 }
-

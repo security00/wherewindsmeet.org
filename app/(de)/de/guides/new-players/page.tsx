@@ -3,11 +3,24 @@ import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
+const baseUrl = "https://wherewindsmeet.org";
+
 export const metadata: Metadata = {
   title: "Where Winds Meet Einsteiger-Guide & Erste-Woche-Roadmap (DE)",
   description:
     "Praktischer Where Winds Meet Einsteiger-Guide: vom ersten Start bis zum ersten Wochenreset mit sinnvollen Settings, Prioritäten und Ressourcentipps.",
   alternates: buildHreflangAlternates("/guides/new-players", { canonicalLanguage: "de" }),
+  openGraph: {
+    title: "Where Winds Meet Einsteiger-Guide & Erste-Woche-Roadmap (DE)",
+    description:
+      "Praktischer Where Winds Meet Einsteiger-Guide: vom ersten Start bis zum ersten Wochenreset mit sinnvollen Settings, Prioritäten und Ressourcentipps.",
+    url: `${baseUrl}/de/guides/new-players`,
+  },
+  twitter: {
+    title: "Where Winds Meet Einsteiger-Guide & Erste-Woche-Roadmap (DE)",
+    description:
+      "Praktischer Where Winds Meet Einsteiger-Guide: vom ersten Start bis zum ersten Wochenreset mit sinnvollen Settings, Prioritäten und Ressourcentipps.",
+  },
 };
 
 const chapters = [
@@ -187,8 +200,31 @@ const chapters = [
 ];
 
 export default function NewPlayersDePage() {
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: metadata.title,
+      description: metadata.description,
+      url: `${baseUrl}/de/guides/new-players`,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Start", item: `${baseUrl}/de` },
+        { "@type": "ListItem", position: 2, name: "Guides", item: `${baseUrl}/de/guides` },
+        { "@type": "ListItem", position: 3, name: "Einsteiger", item: `${baseUrl}/de/guides/new-players` },
+      ],
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-ink-wash pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] w-full overflow-hidden">
         <div className="absolute inset-0">

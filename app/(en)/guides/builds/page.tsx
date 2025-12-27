@@ -109,7 +109,8 @@ export default function BuildsPage() {
 
         <div className="relative z-10 flex h-full flex-col justify-end px-6 pb-16 sm:px-12 lg:w-2/3">
           <h1 className="text-balance text-4xl font-bold tracking-tight text-slate-50 sm:text-5xl lg:text-6xl font-serif">
-            Builds that <span className="text-ink-gold">feel powerful</span> and{" "}
+            Where Winds Meet builds that{" "}
+            <span className="text-ink-gold">feel powerful</span> and{" "}
             <span className="text-ink-jade">personal</span>.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-200/90 text-shadow-sm font-sans">
@@ -382,7 +383,7 @@ export default function BuildsPage() {
                 <span className="text-[10px] uppercase tracking-wider text-slate-500 border border-slate-700 px-2 py-0.5 rounded-full font-sans">Assassin</span>
               </div>
               <p className="text-xs font-medium text-emerald-400 font-sans">
-                Dual Blades + Rope Dart
+                Dual Blades build · Rope Dart pairing
               </p>
               <p className="text-xs leading-relaxed text-slate-400 group-hover:text-slate-300 transition-colors font-sans">
                 Hyper-mobile melee. Dive in, punish, and disengage. Rewards sharp reactions and map knowledge.
