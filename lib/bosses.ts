@@ -1,5 +1,6 @@
 export type BossId =
   | "dao-lord"
+  | "feng-ruzhi"
   | "god-of-avaric"
   | "heartseeker"
   | "lucky-seventeen"
@@ -33,6 +34,17 @@ export const bosses: Boss[] = [
     backgroundVideo:
       "https://yysls-build-na.fp.ps.easebar.com/file/68f9e440aa64b1cb56a20c39SXz41N4r03",
     titleImage: "/bosses/6_tit_0a00d079.png",
+  },
+  {
+    id: "feng-ruzhi",
+    name: "Feng Ruzhi",
+    tagline: "A relentless world boss with a Silk Ball steal fail condition.",
+    description:
+      "First encountered during the Heavenfall campaign in Roaring Sands (Kaifeng), then available as a world boss in Verdant Hill Village. The fight is infamous for its objective pressure: if your Silk Ball gets stolen, you must recover it fast or the run ends.",
+    encounterType: "World boss / objective-style duel",
+    theme: "Pressure, footwork, Silk Ball recovery",
+    backgroundVideo: "/guides/bosses/feng-ruzhi/preview.mp4",
+    titleImage: "/bosses/feng-ruzhi-title.png",
   },
   {
     id: "god-of-avaric",

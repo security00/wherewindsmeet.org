@@ -139,6 +139,12 @@ export default function Home() {
               Boss & điểm yếu
             </Link>
             <Link
+              href={vnHref("/guides/bosses/feng-ruzhi")}
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              Feng Ruzhi (Silk Ball)
+            </Link>
+            <Link
               href={vnHref("/guides/qin-caiwei")}
               className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
             >
@@ -182,7 +188,8 @@ export default function Home() {
             </Link>
           </div>
           <p className="mt-3 w-full text-xs text-emerald-50/80">
-            Lối tắt cho các truy vấn phổ biến: update tiếp theo, boss & điểm yếu, kết thân Tần Thái Vị, mở Free Morph và tier list (góc nhìn Trung Quốc) để so sánh vũ khí/build.
+            Lối tắt cho các truy vấn phổ biến: update tiếp theo, boss & điểm yếu, Feng Ruzhi (vị trí + Silk Ball), kết thân Tần Thái Vị, mở
+            Free Morph và tier list (góc nhìn Trung Quốc) để so sánh vũ khí/build.
           </p>
         </div>
       </section>

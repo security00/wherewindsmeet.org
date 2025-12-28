@@ -44,6 +44,12 @@ export const featuredVideos: FeaturedVideo[] = [
       "Video xoay quanh các trận khó và thử thách – hữu ích khi bạn muốn hiểu nhịp boss hoặc so sánh build endgame.",
   },
   {
+    id: "ImGcZ7vtI_g",
+    title: "Where Winds Meet – Guide Feng Ruzhi (Legend/Abyss) · Silk Ball",
+    description:
+      "Boss guide tập trung: cơ chế cướp Silk Ball (mất bóng là thua), cửa sổ phản công an toàn và cách các run sạch kiểm soát áp lực ở độ khó cao.",
+  },
+  {
     id: "dlisDRSIBME",
     title: "Where Winds Meet – Khoảnh khắc điện ảnh",
     description:
@@ -56,4 +62,3 @@ export const featuredVideos: FeaturedVideo[] = [
       "Showcase phong cách cộng đồng: outfit, diện mạo và cách thể hiện – rất hợp nếu bạn quan tâm cosmetics và sưu tầm.",
   },
 ];
-

@@ -14,6 +14,17 @@ export const bosses: Boss[] = [
     titleImage: "/bosses/6_tit_0a00d079.png",
   },
   {
+    id: "feng-ruzhi",
+    name: "Feng Ruzhi",
+    tagline: "World boss mới, nổi tiếng vì cơ chế cướp Silk Ball (mất bóng là thua).",
+    description:
+      "Lần đầu chạm trán trong chiến dịch Heavenfall ở Roaring Sands (Kaifeng), sau đó xuất hiện như world boss tại Verdant Hill Village. Trận này bị “ám ảnh” bởi yếu tố mục tiêu: nếu Silk Ball bị cướp, bạn phải giành lại thật nhanh, nếu không sẽ bị tính thua dù HP vẫn còn.",
+    encounterType: "World boss / Tỉ thí có cơ chế mục tiêu",
+    theme: "Áp lực, di chuyển, giành lại Silk Ball",
+    backgroundVideo: "/guides/bosses/feng-ruzhi/preview.mp4",
+    titleImage: "/bosses/feng-ruzhi-title.png",
+  },
+  {
     id: "god-of-avaric",
     name: "God of Avarice",
     tagline: "Kẻ phàm tục ám ảnh bởi việc tích lũy của cải đến mức “thành thần”.",
@@ -122,4 +133,3 @@ export const bosses: Boss[] = [
     titleImage: "/bosses/9_tit_33d334bf.png",
   },
 ];
-

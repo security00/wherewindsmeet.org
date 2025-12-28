@@ -137,6 +137,12 @@ export default function Home() {
               Boss list & weaknesses
             </Link>
             <Link
+              href="/guides/bosses/feng-ruzhi"
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              Feng Ruzhi (Silk Ball) boss guide
+            </Link>
+            <Link
               href="/guides/qin-caiwei"
               className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
             >
@@ -180,7 +186,7 @@ export default function Home() {
             </Link>
           </div>
           <p className="mt-3 w-full text-xs text-emerald-50/80">
-            Fast path for top queries: Where Winds Meet next update, Where Winds Meet bosses list, Where Winds Meet Qin Caiwei friendship guide, Where Winds Meet Free Morph unlock, and the China tier list perspective to compare weapons and builds.
+            Fast path for top queries: Where Winds Meet next update, Where Winds Meet bosses list, Where Winds Meet Feng Ruzhi location & Silk Ball mechanic, Where Winds Meet Qin Caiwei friendship guide, Where Winds Meet Free Morph unlock, and the China tier list perspective to compare weapons and builds.
           </p>
         </div>
       </section>

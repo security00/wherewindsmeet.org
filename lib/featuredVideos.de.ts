@@ -44,6 +44,12 @@ export const featuredVideos: FeaturedVideo[] = [
       "Fokus auf anspruchsvolle Encounters: hilfreich, wenn du Boss-Mechaniken einordnen oder Endgame-Builds vergleichen willst.",
   },
   {
+    id: "ImGcZ7vtI_g",
+    title: "Where Winds Meet – Feng Ruzhi Guide (Legend/Abyss) · Silk Ball",
+    description:
+      "Fokussierter Boss-Guide: Silk-Ball-Diebstahl als Fail-Bedingung, sichere Punish-Fenster und wie saubere Runs den Druck auf hoher Schwierigkeit managen.",
+  },
+  {
     id: "dlisDRSIBME",
     title: "Where Winds Meet – Cinematic Moments",
     description:
@@ -56,4 +62,3 @@ export const featuredVideos: FeaturedVideo[] = [
       "Community-Style-Showcase mit Fokus auf Outfits, Looks und Ausdruck – passt gut zu Cosmetics- und Sammel-Guides.",
   },
 ];
-

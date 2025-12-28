@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { BossId } from "@/lib/bosses";
 import { bosses } from "@/lib/bosses.de";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import { resolveCdnAssetSrc } from "@/lib/image-utils";
 
 export function generateBossMetadata(id: BossId): Metadata {
   const boss = bosses.find((b) => b.id === id);
@@ -67,7 +68,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
         <div className="space-y-4">
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
             <video
-              src={boss.backgroundVideo}
+              src={resolveCdnAssetSrc(boss.backgroundVideo).src}
               muted
               playsInline
               preload="metadata"
@@ -85,7 +86,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
             </div>
           </div>
           <p className="text-xs text-slate-400">
-            Vorschaubild basiert auf offiziellen Boss-Showcase-Clips und Titel-Art von Where Winds Meet. Die Optik kann sich mit Updates im Laufe der Zeit ändern.
+            Vorschaubild basiert auf Boss-Showcase-Clips und Titel-Art (wenn verfügbar offiziell). Die Optik kann sich mit Updates im Laufe der Zeit ändern.
           </p>
         </div>
       </section>
@@ -154,7 +155,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
         </p>
         <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
           <video
-            src={boss.backgroundVideo}
+            src={resolveCdnAssetSrc(boss.backgroundVideo).src}
             controls
             muted
             loop
@@ -166,7 +167,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
             Beim Zuschauen lohnt es sich, auf Details wie Bildausschnitt, Angriffsketten und Kameradistanzen zu achten. Solche Hinweise sagen oft mehr darüber aus, ob ein Encounter Geduld, Aggression oder präzises Movement belohnt, als jede einzelne Zahlenangabe.
           </p>
           <p>
-            Videolinks verweisen auf offizielles Showcase-Material. Wenn ein Clip nicht lädt, hat sich vermutlich die Hosting-URL geändert, seit diese Seite zuletzt aktualisiert wurde.
+            Videolinks verweisen meist auf offizielles Showcase-Material. Wenn ein Clip nicht lädt, hat sich vermutlich die Hosting-URL geändert (oder die Quelle wurde verschoben), seit diese Seite zuletzt aktualisiert wurde.
           </p>
         </div>
       </section>

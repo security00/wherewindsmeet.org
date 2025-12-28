@@ -3,6 +3,7 @@ import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { bosses } from "@/lib/bosses.de";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import { resolveCdnAssetSrc } from "@/lib/image-utils";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Bossliste – Boss-Übersichten & Themen (DE)",
@@ -74,7 +75,7 @@ export default function BossesPage() {
             >
               <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-900/80">
                 <video
-                  src={boss.backgroundVideo}
+                  src={resolveCdnAssetSrc(boss.backgroundVideo).src}
                   muted
                   autoPlay
                   loop

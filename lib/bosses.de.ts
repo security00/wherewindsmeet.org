@@ -14,6 +14,17 @@ export const bosses: Boss[] = [
     titleImage: "/bosses/6_tit_0a00d079.png",
   },
   {
+    id: "feng-ruzhi",
+    name: "Feng Ruzhi",
+    tagline: "World Boss mit Silk-Ball-Mechanik und harter Fail-Bedingung.",
+    description:
+      "Erstes Aufeinandertreffen im Heavenfall-Kampagnenabschnitt in Roaring Sands (Kaifeng); danach als World Boss in Verdant Hill Village verfügbar. Der Kampf ist berüchtigt, weil er ein Ziel-Element hat: Wird dein Silk Ball gestohlen, musst du ihn schnell zurückholen – sonst endet der Versuch.",
+    encounterType: "World Boss / Duell mit Zielmechanik",
+    theme: "Druck, Footwork, Silk-Ball-Rückeroberung",
+    backgroundVideo: "/guides/bosses/feng-ruzhi/preview.mp4",
+    titleImage: "/bosses/feng-ruzhi-title.png",
+  },
+  {
     id: "god-of-avaric",
     name: "God of Avarice",
     tagline: "Sterblicher, besessen davon, Reichtum bis zur Göttlichkeit zu horten.",

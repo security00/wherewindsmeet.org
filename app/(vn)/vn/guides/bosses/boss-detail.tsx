@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { BossId } from "@/lib/bosses";
 import { bosses } from "@/lib/bosses.vi";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import { resolveCdnAssetSrc } from "@/lib/image-utils";
 
 export function generateBossMetadata(id: BossId): Metadata {
   const boss = bosses.find((b) => b.id === id);
@@ -62,7 +63,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
         <div className="space-y-4">
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
             <video
-              src={boss.backgroundVideo}
+              src={resolveCdnAssetSrc(boss.backgroundVideo).src}
               muted
               playsInline
               preload="metadata"
@@ -80,7 +81,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
             </div>
           </div>
           <p className="text-xs text-slate-400">
-            Ảnh/clip minh họa dựa trên showcase chính thức của Where Winds Meet. Hình ảnh có thể thay đổi theo patch hoặc cosmetics.
+            Ảnh/clip minh họa dựa trên showcase boss và title art (ưu tiên nguồn chính thức khi có). Hình ảnh có thể thay đổi theo patch hoặc cosmetics.
           </p>
         </div>
       </section>
@@ -149,7 +150,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
         </p>
         <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
           <video
-            src={boss.backgroundVideo}
+            src={resolveCdnAssetSrc(boss.backgroundVideo).src}
             controls
             muted
             loop
@@ -161,7 +162,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
             Khi xem, bạn có thể để ý: boss mở giao tranh từ đâu, có bao nhiêu cửa sổ an toàn để phản công, và khi nào nên reset thay vì cố “tham đòn”.
           </p>
           <p>
-            Nếu video không tải, có thể URL hosting đã thay đổi kể từ lần trang được cập nhật gần nhất.
+            Nếu video không tải, có thể URL hosting đã thay đổi (hoặc nguồn đã chuyển) kể từ lần trang được cập nhật gần nhất.
           </p>
         </div>
       </section>

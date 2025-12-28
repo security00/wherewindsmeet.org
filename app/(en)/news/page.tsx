@@ -185,10 +185,21 @@ export default function NewsPage() {
               ))}
             </div>
             <div className="mt-3 rounded-xl border border-slate-800 bg-slate-900/80 p-3 text-xs text-slate-300">
-              New hot search to watch: Mist-Shrouded Prison (tomb) chests. See the dedicated guide for the sixth/last chest and spawn fixes:
-              <Link href="/guides/mist-shrouded-prison" className="ml-1 text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
-                Mist-Shrouded Prison guide
-              </Link>
+              <p className="font-semibold text-slate-200">New hot searches to watch</p>
+              <ul className="mt-2 space-y-1">
+                <li>
+                  Feng Ruzhi boss (Silk Ball) — location + unlock + mechanic:
+                  <Link href="/guides/bosses/feng-ruzhi" className="ml-1 text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
+                    Feng Ruzhi guide
+                  </Link>
+                </li>
+                <li>
+                  Mist-Shrouded Prison (tomb) chests — sixth/last chest + spawn fixes:
+                  <Link href="/guides/mist-shrouded-prison" className="ml-1 text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
+                    Mist-Shrouded Prison guide
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
 

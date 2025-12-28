@@ -7,6 +7,7 @@ type Params = { params: { id: BossId } | Promise<{ id: BossId }> };
 
 const ids: BossId[] = [
   "dao-lord",
+  "feng-ruzhi",
   "god-of-avaric",
   "heartseeker",
   "lucky-seventeen",

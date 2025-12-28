@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { BossId } from "@/lib/bosses";
 import { bosses } from "@/lib/bosses";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import { resolveCdnAssetSrc } from "@/lib/image-utils";
 
 const baseUrl = "https://wherewindsmeet.org";
 
@@ -92,7 +93,7 @@ export function BossDetail({ bossId, localePrefix = "" }: { bossId: BossId; loca
         <div className="space-y-4">
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
             <video
-              src={boss.backgroundVideo}
+              src={resolveCdnAssetSrc(boss.backgroundVideo).src}
               muted
               playsInline
               preload="metadata"
@@ -110,8 +111,7 @@ export function BossDetail({ bossId, localePrefix = "" }: { bossId: BossId; loca
             </div>
           </div>
           <p className="text-xs text-slate-400">
-            The thumbnail above uses official Where Winds Meet boss showcase
-            footage and title art. Exact visuals may change over time as the
+            The thumbnail above uses boss showcase footage and title art (official when available). Exact visuals may change over time as the
             game evolves.
           </p>
         </div>
@@ -184,7 +184,7 @@ export function BossDetail({ bossId, localePrefix = "" }: { bossId: BossId; loca
         </p>
         <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
           <video
-            src={boss.backgroundVideo}
+            src={resolveCdnAssetSrc(boss.backgroundVideo).src}
             controls
             muted
             loop
@@ -199,9 +199,8 @@ export function BossDetail({ bossId, localePrefix = "" }: { bossId: BossId; loca
             encounter rewards patience, aggression, or careful movement.
           </p>
           <p>
-            Video links reference official showcase footage. If a clip fails to
-            load, it likely means the hosting URL has changed since this page
-            was last updated.
+            Video links usually reference official showcase footage. If a clip fails to load, it likely means the hosting URL has changed
+            since this page was last updated (or the original source has moved).
           </p>
         </div>
       </section>

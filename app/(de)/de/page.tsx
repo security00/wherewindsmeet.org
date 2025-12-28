@@ -133,6 +133,12 @@ export default function Home() {
               Bossliste & Schwächen
             </Link>
             <Link
+              href="/de/guides/bosses/feng-ruzhi"
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              Feng Ruzhi (Silk Ball) Boss-Guide
+            </Link>
+            <Link
               href="/de/guides/qin-caiwei"
               className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
             >
@@ -176,8 +182,8 @@ export default function Home() {
             </Link>
           </div>
           <p className="mt-3 w-full text-xs text-emerald-50/80">
-            Schnellzugriff für Top-Suchen: nächstes Update, Bossliste, Qin-Caiwei-Guide, Free Morph
-            freischalten und China-Perspektive der Tierliste für Waffen/Builds.
+            Schnellzugriff für Top-Suchen: nächstes Update, Bossliste, Feng Ruzhi (Silk Ball), Qin-Caiwei-Guide, Free Morph freischalten und
+            China-Perspektive der Tierliste für Waffen/Builds.
           </p>
         </div>
       </section>

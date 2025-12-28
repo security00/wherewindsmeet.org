@@ -43,6 +43,12 @@ export const featuredVideos: FeaturedVideo[] = [
       "Footage centered on challenging encounters in Where Winds Meet, useful context for players reviewing tier lists and late game builds.",
   },
   {
+    id: "ImGcZ7vtI_g",
+    title: "Where Winds Meet Feng Ruzhi guide (Legend/Abyss) – Silk Ball mechanic",
+    description:
+      "A focused Feng Ruzhi boss guide showing the Silk Ball steal fail condition, safe punish windows, and how clean runs manage pressure on high difficulty.",
+  },
+  {
     id: "dlisDRSIBME",
     title: "Where Winds Meet cinematic moments",
     description:
