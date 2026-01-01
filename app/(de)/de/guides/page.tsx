@@ -177,6 +177,15 @@ const guideSections = [
     description: "Daily Prize Quiz: „Who is destined to face the Purple Star catastrophe?“ Antwort: The Zhao Brothers.",
   },
   {
+    title: "Ghost Revelry Hall: Welche Fraktion kontrolliert es?",
+    slug: "/de/guides/which-faction-controls-ghost-revelry-hall",
+    label: "Quest / Ort",
+    icon: "👻",
+    color: "text-emerald-300",
+    size: "small",
+    description: "Kurzantwort: keine beitretbare Fraktion — Banden + Geister. Unbound-Cavern-Route mit Screenshots.",
+  },
+  {
     title: "Free Morph Mystic",
     slug: "/de/guides/free-morph",
     label: "Mystik",

@@ -158,6 +158,15 @@ const guideSections = [
     description: "Daily Prize Quiz: “Who is destined to face the Purple Star catastrophe?” Đáp án: The Zhao Brothers.",
   },
   {
+    title: "Ghost Revelry Hall do phe nào kiểm soát?",
+    slug: "/vn/guides/which-faction-controls-ghost-revelry-hall",
+    label: "Quest / Location",
+    icon: "👻",
+    color: "text-emerald-300",
+    size: "small",
+    description: "Đáp án nhanh: không có phe để gia nhập — băng nhóm + ma quái. Có đường đi Unbound Cavern kèm screenshot.",
+  },
+  {
     title: "Free Morph (Mystic)",
     slug: "/vn/guides/free-morph",
     label: "Bí thuật",
