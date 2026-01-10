@@ -13,6 +13,16 @@ export type NewsItem = {
 // News items based on official Where Winds Meet articles mirrored under ref-page/news.
 export const newsItems: NewsItem[] = [
   {
+    id: "live-to-game-1-2-overview",
+    title: "[Live to Game] Version 1.2 Update Overview",
+    date: "2026-01-08",
+    type: "announcement",
+    summary:
+      "Version 1.2 arrives after maintenance on Jan 9 (UTC+8, 05:00–10:00) with Echo Jade ×50 compensation for eligible accounts registered before the update. Highlights include new areas such as Nine Mortal Ways Base and Mistveil Prison, new story chapters and encounters, Guild Battle preseason, multiple limited-time events, an appearance showcase, plus broad QoL improvements and performance/bug-fix optimizations (including Photo Mode and controller updates).",
+    officialUrl: "https://www.wherewindsmeetgame.com/news/official/LivetoGame.html",
+    tags: ["Version 1.2", "Maintenance", "New areas", "Guild Battle", "Events", "Optimizations"],
+  },
+  {
     id: "updates-game-installation-playstation-store",
     title: "Updates on Game Installation and PlayStation Store",
     date: "2025-12-12",

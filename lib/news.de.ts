@@ -4,6 +4,16 @@ import type { NewsItem } from "./news";
 // Source links are kept identical to the English list for parity.
 export const newsItems: NewsItem[] = [
   {
+    id: "live-to-game-1-2-overview",
+    title: "[Live to Game] Version 1.2 – Update-Übersicht",
+    date: "2026-01-08",
+    type: "announcement",
+    summary:
+      "Version 1.2 startet nach Wartung am 9. Jan. (UTC+8, 05:00–10:00) mit Echo Jade ×50 als Kompensation für berechtigte Accounts (registriert vor dem Update). Highlights: neue Gebiete wie Nine Mortal Ways Base und Mistveil Prison, neue Story-Kapitel/Encounters, Guild-Battle-Preseason, mehrere zeitlich begrenzte Events, eine Appearance-Showcase sowie zahlreiche QoL- und Performance-/Bugfix-Optimierungen (u.a. Foto-Modus und Controller).",
+    officialUrl: "https://www.wherewindsmeetgame.com/news/official/LivetoGame.html",
+    tags: ["Version 1.2", "Wartung", "Neue Gebiete", "Guild Battle", "Events", "Optimierungen"],
+  },
+  {
     id: "updates-game-installation-playstation-store",
     title: "Update zu Installation & PlayStation Store",
     date: "2025-12-12",
@@ -129,4 +139,3 @@ export const latestNewsDate = newsItems.reduce(
   (latest, item) => (item.date > latest ? item.date : latest),
   "1970-01-01",
 );
-
