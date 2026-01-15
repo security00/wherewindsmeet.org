@@ -3,7 +3,6 @@ import Link from "next/link";
 import JianghuMapClient from "@/components/JianghuMapClient";
 import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
 import { buildHreflangAlternates } from "@/lib/hreflang";
-import EventSpotlight from "@/components/EventSpotlight";
 
 export const metadata: Metadata = {
   title: "Trung tâm hướng dẫn Where Winds Meet Tiếng Việt",
@@ -38,29 +37,9 @@ export const metadata: Metadata = {
 
 export default function Home() {
   const vnHref = (path: string) => (path.startsWith("/vn") ? path : `/vn${path}`);
-  const cdnBase = process.env.NEXT_PUBLIC_CDN_URL || "https://static.wherewindsmeet.org";
-  const cdn = (path: string) => `${cdnBase}${path}`;
 
   return (
     <div className="space-y-10">
-      <EventSpotlight
-        eyebrow="Sự kiện nổi bật · 12/2025"
-        title="The Great Faceologist"
-        description="Sự kiện thi tạo mặt/trang điểm giới hạn thời gian. Muốn bài được tính, bạn phải tải lên đúng từ Edit Face và nhớ chọn tag sự kiện trước khi đăng."
-        bullets={[
-          "Tải lên từ Appearance → Edit Face (mục Outfit Gallery không được tính).",
-          "Chọn tag [The Great Faceologist] trước khi đăng bài.",
-          "Giới hạn mỗi ngày thấp (~5 lượt) — đừng mất lượt vì quên chọn tag.",
-        ]}
-        primaryHref={vnHref("/guides/the-great-faceologist")}
-        primaryLabel="Hướng dẫn Where Winds Meet The Great Faceologist"
-        secondaryHref={vnHref("/guides/cosmetics")}
-        secondaryLabel="Ngoại hình (Cosmetics)"
-        imageSrc={cdn("/guides/the-great-faceologist/hero.webp")}
-        imageFallbackSrc="/guides/the-great-faceologist/hero.webp"
-        imageAlt="Sự kiện The Great Faceologist trong Where Winds Meet"
-      />
-
       <JianghuMapClient />
 
       <section className="card-wuxia rounded-3xl p-6 sm:p-8 min-h-[520px]">
@@ -276,12 +255,6 @@ export default function Home() {
               href: "/guides/who-is-destined-to-face-the-purple-star-catastrophe",
               desc: "World’s Digest Prize Quiz: cách vào đúng menu + đáp án đúng (The Zhao Brothers) kèm ảnh minh họa.",
               tag: "Quiz",
-            },
-            {
-              title: "The Great Faceologist",
-              href: "/guides/the-great-faceologist",
-              desc: "Cách tham gia & nộp bài đúng: đi đúng đường upload, tick tag, và xử lý lỗi tag mất / chạm giới hạn ngày.",
-              tag: "Sự kiện",
             },
             {
               title: "Mist-Shrouded Prison",

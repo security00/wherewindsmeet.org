@@ -3,7 +3,6 @@ import Link from "next/link";
 import JianghuMapClient from "@/components/JianghuMapClient";
 import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
 import { buildHreflangAlternates } from "@/lib/hreflang";
-import EventSpotlight from "@/components/EventSpotlight";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet – Deutscher Global-Launch-Guide-Hub",
@@ -30,29 +29,8 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const cdnBase = process.env.NEXT_PUBLIC_CDN_URL || "https://static.wherewindsmeet.org";
-  const cdn = (path: string) => `${cdnBase}${path}`;
-
   return (
     <div className="space-y-10">
-      <EventSpotlight
-        eyebrow="Aktuelles Event · Dez 2025"
-        title="The Great Faceologist"
-        description="Zeitlich begrenzter Face-/Make-up-Contest. Nutze den richtigen Upload‑Pfad im Spiel und aktiviere den Event‑Tag, damit dein Beitrag gewertet wird."
-        bullets={[
-          "Nur Uploads über Appearance → Edit Face zählen (nicht aus der Outfit-Gallery).",
-          "Vor dem Veröffentlichen den Tag [The Great Faceologist] manuell aktivieren.",
-          "Tageslimit ist niedrig (~5/Tag) – keine Slots verschwenden.",
-        ]}
-        primaryHref="/de/guides/the-great-faceologist"
-        primaryLabel="Where Winds Meet The Great Faceologist Guide"
-        secondaryHref="/de/guides/cosmetics"
-        secondaryLabel="Kosmetik & Appearance"
-        imageSrc={cdn("/guides/the-great-faceologist/hero.webp")}
-        imageFallbackSrc="/guides/the-great-faceologist/hero.webp"
-        imageAlt="The Great Faceologist Event in Where Winds Meet"
-      />
-
       <JianghuMapClient />
 
       <section className="card-wuxia rounded-3xl p-6 sm:p-8 min-h-[520px]">
@@ -267,12 +245,6 @@ export default function Home() {
               href: "/de/guides/who-is-destined-to-face-the-purple-star-catastrophe",
               desc: "World’s Digest Prize Quiz: exakter Pfad + richtige Auswahl (The Zhao Brothers) mit Screenshots.",
               tag: "Quiz",
-            },
-            {
-              title: "The Great Faceologist",
-              href: "/de/guides/the-great-faceologist",
-              desc: "Event-Guide: Teilnahme, richtiger Upload-Pfad, Tag setzen und Fixes für fehlenden Tag / Daily Cap.",
-              tag: "Event",
             },
             {
               title: "Nebelverhangenes Gefängnis",

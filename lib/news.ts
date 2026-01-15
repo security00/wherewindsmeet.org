@@ -13,6 +13,16 @@ export type NewsItem = {
 // News items based on official Where Winds Meet articles mirrored under ref-page/news.
 export const newsItems: NewsItem[] = [
   {
+    id: "version-1-2-jan8-bug-fixes-optimizations",
+    title: "Version 1.2 (January 8th) Bug Fixes and Optimizations",
+    date: "2026-01-14",
+    type: "announcement",
+    summary:
+      "A post-1.2 patch note roundup focused on QoL, systems, and combat: Online Mode exploration now syncs treasure chest/oddity rewards and completion with Solo, Quest Replay is added for Qinghe/Kaifeng main chapters, per-skill Martial Arts Effects can be customized, and Monthly Fund gets a VIP Shop + Must-Haves List. Also includes dye plan expansion via Dreamtint Kit (with retroactive kits for eligible early accounts), bag sorting/filtering upgrades, Arena Practice, open-world level scaling tweaks, gear recycling/affix UX updates, chat refinements, Photo additions, and many smaller weapon/dungeon adjustments.",
+    officialUrl: "https://www.wherewindsmeetgame.com/news/official/JAN8.html",
+    tags: ["Version 1.2", "Bug fixes", "Optimizations", "QoL", "Patch notes"],
+  },
+  {
     id: "live-to-game-1-2-overview",
     title: "[Live to Game] Version 1.2 Update Overview",
     date: "2026-01-08",

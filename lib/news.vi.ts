@@ -4,6 +4,16 @@ import type { NewsItem } from "./news";
 // Source links are kept identical to the English list for parity.
 export const newsItems: NewsItem[] = [
   {
+    id: "version-1-2-jan8-bug-fixes-optimizations",
+    title: "Phiên bản 1.2 (08/01) — Sửa lỗi & tối ưu",
+    date: "2026-01-14",
+    type: "announcement",
+    summary:
+      "Bản ghi chú sau 1.2 tập trung vào QoL/hệ thống/combat: thêm khám phá ở Online Mode (đồng bộ rương/oddities và tiến độ với Solo), Quest Replay cho chương chính Qinghe/Kaifeng, tùy biến Martial Arts Effects theo từng skill, và nâng cấp Monthly Fund (VIP Shop + Must-Haves List). Ngoài ra còn mở rộng Dye Plan bằng Dreamtint Kit (có tặng lại kit cho tài khoản đủ điều kiện), tối ưu sắp xếp/lọc túi đồ, Arena Practice, chỉnh level quái theo khu vực, cập nhật gear recycling/affix UI, cải thiện chat, bổ sung Photo - Stroll, và nhiều tinh chỉnh nhỏ cho vũ khí/phó bản/arena.",
+    officialUrl: "https://www.wherewindsmeetgame.com/news/official/JAN8.html",
+    tags: ["Version 1.2", "Sửa lỗi", "Tối ưu", "QoL", "Patch notes"],
+  },
+  {
     id: "live-to-game-1-2-overview",
     title: "[Live to Game] Tổng quan cập nhật phiên bản 1.2",
     date: "2026-01-08",

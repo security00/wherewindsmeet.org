@@ -4,6 +4,16 @@ import type { NewsItem } from "./news";
 // Source links are kept identical to the English list for parity.
 export const newsItems: NewsItem[] = [
   {
+    id: "version-1-2-jan8-bug-fixes-optimizations",
+    title: "Version 1.2 (8. Januar) – Bugfixes & Optimierungen",
+    date: "2026-01-14",
+    type: "announcement",
+    summary:
+      "Patch-Notes rund um Version 1.2 mit QoL-, System- und Combat-Verbesserungen: Erkundung im Online-Modus synchronisiert Truhen/Oddities und Fortschritt mit Solo, Quest Replay für Qinghe- und Kaifeng-Hauptkapitel, pro Skill anpassbare Martial-Arts-Effekte sowie ein Monthly-Fund-Upgrade (VIP Shop + Must-Haves List). Dazu kommen Dye-Plan-Erweiterung via Dreamtint Kit (inkl. retroaktiver Kits für berechtigte Early-Accounts), Bag-Sortierung/Filter, Arena Practice, Anpassungen am Open-World-Levelscaling, Gear-Recycling/Affix-UX, Chat-Refinements, neue Photo-Optionen und viele kleinere Weapon-/Dungeon-Tweaks.",
+    officialUrl: "https://www.wherewindsmeetgame.com/news/official/JAN8.html",
+    tags: ["Version 1.2", "Bugfixes", "Optimierungen", "QoL", "Patch Notes"],
+  },
+  {
     id: "live-to-game-1-2-overview",
     title: "[Live to Game] Version 1.2 – Update-Übersicht",
     date: "2026-01-08",
