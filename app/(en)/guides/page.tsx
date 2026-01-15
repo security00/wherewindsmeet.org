@@ -124,6 +124,15 @@ const guideSections = [
     description: "Mistveil Forest tomb: three-loop route with six chests, final treasure, and spawn fixes.",
   },
   {
+    title: "Mistveil City (Unlock)",
+    slug: "/guides/mistveil-city",
+    label: "Region",
+    icon: "🏙️",
+    color: "text-cyan-300",
+    size: "small",
+    description: "Why Mistveil City is locked (Jan 22 vs Jan 26) + what to do now: Ephemeral Blight and cures.",
+  },
+  {
     title: "One Leaf, One Life",
     slug: "/guides/one-leaf-one-life",
     label: "Lost Chapter",

@@ -132,6 +132,16 @@ const guideSections = [
     description: "Grab in Mistveil Forest: Drei-Runden-Route mit sechs Truhen und Endschatz (inkl. Spawn-Fixes).",
   },
   {
+    title: "Mistveil City (Freischaltung)",
+    slug: "/de/guides/mistveil-city",
+    label: "Region",
+    icon: "🏙️",
+    color: "text-cyan-300",
+    size: "small",
+    description:
+      "Warum Mistveil City gesperrt ist (22. vs 26. Jan 2026) + Vorbereitung: Ephemeral Blight und die drei Cure-Notizen.",
+  },
+  {
     title: "One Leaf, One Life",
     slug: "/de/guides/one-leaf-one-life",
     label: "Lost Chapter",

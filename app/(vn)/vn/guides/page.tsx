@@ -122,6 +122,15 @@ const guideSections = [
     description: "Mộ trong Mistveil Forest: route 3 vòng, 6 rương, kho báu cuối + mẹo sửa lỗi spawn.",
   },
   {
+    title: "Mistveil City (Mở khóa)",
+    slug: "/vn/guides/mistveil-city",
+    label: "Khu vực",
+    icon: "🏙️",
+    color: "text-cyan-300",
+    size: "small",
+    description: "Vì sao Mistveil City bị khóa (Jan 22 vs Jan 26, 2026) + việc nên làm: Ephemeral Blight và 3 cure.",
+  },
+  {
     title: "Gift of Gab",
     slug: "/vn/guides/gift-of-gab",
     label: "Đối thoại",
