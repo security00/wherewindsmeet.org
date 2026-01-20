@@ -187,6 +187,15 @@ const guideSections = [
     description: "Fast answer: no joinable faction — gangs + haunted forces. Unbound Cavern route with screenshots.",
   },
   {
+    title: "Find Officer Nan",
+    slug: "/guides/find-officer-nan",
+    label: "Quest / NPC",
+    icon: "🕵️",
+    color: "text-sky-300",
+    size: "small",
+    description: "The Gilded Chase: Officer Nan at the Harvestfall docks + Mirage Boat location.",
+  },
+  {
     title: "Free Morph Mystic",
     slug: "/guides/free-morph",
     label: "Mystic",

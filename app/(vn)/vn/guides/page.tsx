@@ -176,6 +176,15 @@ const guideSections = [
     description: "Đáp án nhanh: không có phe để gia nhập — băng nhóm + ma quái. Có đường đi Unbound Cavern kèm screenshot.",
   },
   {
+    title: "Tìm Officer Nan",
+    slug: "/vn/guides/find-officer-nan",
+    label: "Quest / NPC",
+    icon: "🕵️",
+    color: "text-sky-300",
+    size: "small",
+    description: "The Gilded Chase: Officer Nan ở bến Harvestfall + vị trí trên Mirage Boat.",
+  },
+  {
     title: "Free Morph (Mystic)",
     slug: "/vn/guides/free-morph",
     label: "Bí thuật",

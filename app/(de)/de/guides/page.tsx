@@ -196,6 +196,15 @@ const guideSections = [
     description: "Kurzantwort: keine beitretbare Fraktion — Banden + Geister. Unbound-Cavern-Route mit Screenshots.",
   },
   {
+    title: "Officer Nan finden",
+    slug: "/de/guides/find-officer-nan",
+    label: "Quest / NPC",
+    icon: "🕵️",
+    color: "text-sky-300",
+    size: "small",
+    description: "The Gilded Chase: Officer Nan am Harvestfall-Dock + Mirage-Boat-Position.",
+  },
+  {
     title: "Free Morph Mystic",
     slug: "/de/guides/free-morph",
     label: "Mystik",
