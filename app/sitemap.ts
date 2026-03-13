@@ -3,6 +3,8 @@ import { bosses } from "@/lib/bosses";
 import { latestNewsDate } from "@/lib/news";
 import { weapons } from "@/lib/weapons";
 
+export const dynamic = "force-static";
+
 const baseUrl = "https://wherewindsmeet.org";
 
 type Entry = {
