@@ -7,6 +7,10 @@ type Params = { params: { id: WeaponId } | Promise<{ id: WeaponId }> };
 
 const ids: WeaponId[] = ["dual-blades", "sword", "spear", "mo-blade", "fan", "umbrella", "rope-dart"];
 
+export function generateStaticParams() {
+  return ids.map((id) => ({ id }));
+}
+
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { id } = await params;
   if (!ids.includes(id)) return {};

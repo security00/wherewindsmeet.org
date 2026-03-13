@@ -19,6 +19,10 @@ const ids: BossId[] = [
   "zheng-e",
 ];
 
+export function generateStaticParams() {
+  return ids.map((id) => ({ id }));
+}
+
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { id } = await params;
   if (!ids.includes(id)) return {};
