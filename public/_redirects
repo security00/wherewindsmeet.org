@@ -37,3 +37,6 @@
 /fast-travel-and-movement /guides/new-players 301
 /guides/combat-guide-beginner-builds /guides/new-players 301
 /disclaimer /terms 301
+
+# VN catch-all redirect
+/vn/guides/* /vn/guides 301
