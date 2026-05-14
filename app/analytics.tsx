@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 const GA_MEASUREMENT_ID = "G-CELX735FQH";
 const ADSENSE_ID = "ca-pub-1548791648803369";
+const PLAUSIBLE_SCRIPT_SRC = "https://plausible.shipsolo.io/js/pa-ygCIsSexYA3JT_gyd8Ht4.js";
 
 export function Analytics() {
   const isProd = process.env.NODE_ENV === "production";
@@ -81,6 +82,19 @@ export function Analytics() {
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', '${GA_MEASUREMENT_ID}');
+            `}
+          </Script>
+
+          <Script
+            id="plausible-script"
+            async
+            src={PLAUSIBLE_SCRIPT_SRC}
+            strategy="afterInteractive"
+          />
+          <Script id="plausible-init" strategy="afterInteractive">
+            {`
+              window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+              plausible.init();
             `}
           </Script>
 
