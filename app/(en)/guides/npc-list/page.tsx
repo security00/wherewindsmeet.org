@@ -9,14 +9,14 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 const baseUrl = "https://wherewindsmeet.org";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet NPC List & Old Friends Map",
+  title: "NPC Where Winds Meet List, Old Friends Map & Rewards",
   description:
-    "Where Winds Meet NPC list (Old Friends): regions, rewards, AI Chat tips, map preview, and copy-paste chat lines to befriend every NPC fast.",
+    "NPC Where Winds Meet list for Old Friends: locations, Stonewash Strand checks, rewards, AI Chat tips, map preview, and copy-paste friendship lines.",
   alternates: buildHreflangAlternates("/guides/npc-list"),
   openGraph: {
-    title: "Where Winds Meet NPC List & Old Friends Map",
+    title: "NPC Where Winds Meet List, Old Friends Map & Rewards",
     description:
-      "Old Friends and NPC locations, rewards, AI Chat tips, and copy-paste lines to befriend NPCs fast in Where Winds Meet.",
+      "Old Friends and NPC locations, Stonewash Strand checks, rewards, AI Chat tips, and copy-paste lines to befriend NPCs fast in Where Winds Meet.",
     url: `${baseUrl}/guides/npc-list`,
     siteName: "Where Winds Meet Hub",
     images: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Where Winds Meet NPC List & Old Friends Map",
+    title: "NPC Where Winds Meet List, Old Friends Map & Rewards",
     description:
       "Find Old Friends fast: NPC list, regions, rewards, AI Chat tips, map preview, and copy-paste lines to befriend NPCs in Where Winds Meet.",
     images: [
@@ -319,6 +319,9 @@ export default function NpcListPage() {
 
         <div className="relative grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
           <div className="space-y-4">
+            <div className="mb-4 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-sm text-emerald-50">
+              Players are finding this page through “npc where winds meet” and Old Friends searches. Use the map first, then jump to Qin Caiwei or Stonewash Strand-style friend checks when a specific NPC blocks completion.
+            </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-50">
               Where Winds Meet NPC List (Old Friends)
             </h1>

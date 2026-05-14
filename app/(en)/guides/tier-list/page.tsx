@@ -8,18 +8,18 @@ const baseUrl = "https://wherewindsmeet.org";
 export const metadata: Metadata = {
   title: "WWM Tier List – Where Winds Meet PVE & PVP Rankings",
   description:
-    "Interactive Where Winds Meet tier list for PVE and PVP: weapon rankings, paths, dual-weapon combos, and internal arts for quick comparisons.",
+    "WWM tier list for 2026: Where Winds Meet PVE and PVP rankings, arena-rank links, weapon tiers, paths, dual-weapon combos, and internal arts.",
   alternates: buildHreflangAlternates("/guides/tier-list"),
   openGraph: {
     title: "WWM Tier List – Where Winds Meet PVE & PVP Rankings",
     description:
-      "Interactive Where Winds Meet tier list for PVE and PVP: weapon rankings, paths, dual-weapon combos, and internal arts for quick comparisons.",
+      "WWM tier list for 2026: Where Winds Meet PVE and PVP rankings, arena-rank links, weapon tiers, paths, dual-weapon combos, and internal arts.",
     url: `${baseUrl}/guides/tier-list`,
   },
   twitter: {
     title: "WWM Tier List – Where Winds Meet PVE & PVP Rankings",
     description:
-      "Interactive Where Winds Meet tier list for PVE and PVP: weapon rankings, paths, dual-weapon combos, and internal arts for quick comparisons.",
+      "WWM tier list for 2026: Where Winds Meet PVE and PVP rankings, arena-rank links, weapon tiers, paths, dual-weapon combos, and internal arts.",
   },
 };
 
@@ -65,7 +65,11 @@ export default function TierListPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <section className="mb-6 rounded-2xl border border-slate-800 bg-slate-950/70 p-4 text-sm text-slate-200 shadow-sm shadow-slate-950/60">
-        Want a weapons-only view? Browse the{" "}
+        Updated for WWM tier list and arena-rank searches. Want a PVP-only page? Open the{" "}
+        <Link href="/guides/pvp-tier-list" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
+          PVP tier list and arena ranks
+        </Link>{" "}
+        or browse the{" "}
         <Link href="/guides/weapons/tier-list" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
           weapons tier list
         </Link>{" "}

@@ -3,8 +3,8 @@ import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "Skill Theft – Skills stehlen (Guide) | Where Winds Meet (DE)",
-  description: "Beobachten, stehlen, sauber entkommen: So aktivierst du Skill Theft, wählst Routen und vermeidest typische Fehler.",
+  title: "Where Winds Meet Kampfkunst Diebstahl Guide (DE)",
+  description: "Where Winds Meet Kampfkunst Diebstahl Guide: Skill Theft aktivieren, Skills stehlen, Beobachten starten, sauber entkommen und typische Fehler vermeiden.",
   alternates: buildHreflangAlternates("/guides/skill-theft", { canonicalLanguage: "de" }),
 };
 
@@ -15,7 +15,7 @@ export default function SkillTheftDePage() {
         <p className="text-xs uppercase tracking-wide text-emerald-300">Stealth / Minigame</p>
         <h1 className="text-3xl font-bold text-slate-50 sm:text-4xl">Skill Theft – Kurzguide</h1>
         <p className="text-slate-300 leading-relaxed">
-          Aktivierung, optimale Route und sauberes Entkommen, damit der Diebstahl nicht fehlschlägt.
+          Aktualisiert für Suchanfragen wie “where winds meet kampfkunst diebstahl”: Aktivierung, optimale Route und sauberes Entkommen, damit Skill Theft nicht fehlschlägt.
         </p>
       </header>
 

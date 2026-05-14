@@ -7,14 +7,14 @@ const baseUrl = "https://wherewindsmeet.org";
 const ogImage = `${baseUrl}/guides/qin-caiwei/hero.jpg`;
 
 export const metadata: Metadata = {
-  title: "WWM Qin Caiwei Friend Guide (2025) | Where Winds Meet AI Chat",
+  title: "Qin Caiwei Where Winds Meet Guide 2026 | AI Chat",
   description:
-    "WWM Qin Caiwei friend task walkthrough: Where Winds Meet Qin Caiwei friend script, why her AI chat loops, the reset that fixes it, and the farewell that triggers Old Friends rewards.",
+    "Qin Caiwei Where Winds Meet guide: AI Chat script, Old Friends location, loop fixes, reset tips, and the farewell lines that trigger friendship rewards.",
   alternates: buildHreflangAlternates("/guides/qin-caiwei"),
   openGraph: {
-    title: "WWM Qin Caiwei Friend Guide (2025) | Where Winds Meet AI Chat",
+    title: "Qin Caiwei Where Winds Meet Guide 2026 | AI Chat",
     description:
-      "Stuck on the Where Winds Meet Qin Caiwei friend mission? Use this Jan 2025 update: quick WWM Qin Caiwei script, bracketed lines, and reset steps to break the loop and reach Friend fast.",
+      "Stuck on Qin Caiwei in Where Winds Meet? Use the updated 2026 AI Chat script, bracketed resolution lines, reset tips, and Old Friends reward checklist.",
     url: `${baseUrl}/guides/qin-caiwei`,
     siteName: "Where Winds Meet Hub",
     images: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "WWM Qin Caiwei Friend Guide (2025) | Where Winds Meet AI Chat",
+    title: "Qin Caiwei Where Winds Meet Guide 2026 | AI Chat",
     description:
       "Copy-paste script to finish the WWM Qin Caiwei friend task, fix the AI Chat loop, and collect Old Friends rewards quickly.",
     images: [
@@ -41,6 +41,12 @@ export const metadata: Metadata = {
     ],
   },
 };
+
+const searchIntentNotes = [
+  "Search query to match: qin caiwei where winds meet.",
+  "Use this page when Qin Caiwei repeats herself, refuses friendship, or never triggers the Old Friends reward.",
+  "Related pages: NPC list for other Old Friends, tier list for build checks after you finish social tasks.",
+];
 
 const quickFacts = [
   { label: "NPC type", value: "AI Chat (Old Friends)", icon: "💬" },
@@ -241,6 +247,15 @@ const supportLinks = [
 export default function QinCaiweiPage() {
   return (
     <article className="space-y-12">
+      <section className="mb-6 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-sm text-emerald-50 shadow-sm shadow-emerald-950/50">
+        <p className="font-semibold">Updated for current searches: Qin Caiwei Where Winds Meet</p>
+        <ul className="mt-2 list-disc space-y-1 pl-5 text-emerald-50/90">
+          {searchIntentNotes.map((note) => (
+            <li key={note}>{note}</li>
+          ))}
+        </ul>
+      </section>
+
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-10 shadow-2xl shadow-black/40">
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-slate-950/60 to-slate-950" />
         <div className="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-emerald-500/10 blur-3xl" />

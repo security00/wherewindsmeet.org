@@ -6,9 +6,9 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 import { weapons } from "@/lib/weapons";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet PVP Tier List - Dueling & PvP Weapons",
+  title: "Where Winds Meet PVP Tier List & Arena Ranks 2026",
   description:
-    "Where Winds Meet PVP tier list ranking weapons for dueling, small-scale PVP, and competitive combat. Learn which weapons dominate in PVP and how to build for player-vs-player success.",
+    "Where Winds Meet PVP tier list for arena ranks, duel ranking, WWM PVP ranks, weapons, roles, and competitive build checks after 2026 updates.",
   alternates: buildHreflangAlternates("/guides/pvp-tier-list"),
 };
 
@@ -55,7 +55,7 @@ export default function PVPTierListPage() {
 
         <div className="relative z-10 space-y-6">
           <h1 className="text-balance text-4xl font-bold tracking-tight text-ink sm:text-5xl font-serif">
-            PVP Meta <span className="text-ink-red">Snapshot</span>
+            PVP Tier List & <span className="text-ink-red">Arena Ranks</span>
           </h1>
           <div className="max-w-3xl space-y-4 text-slate-300 leading-relaxed font-sans">
             <p>
@@ -63,7 +63,7 @@ export default function PVPTierListPage() {
               Static defenses struggle against the speed of top-tier assassins.
             </p>
             <p>
-              This list ranks weapons based on their performance in high-level duels and small-scale skirmishes.
+              This list ranks weapons based on their performance in high-level duels, small-scale skirmishes, WWM arena ranks, and PVP ranking climbs. Use it with the main tier list when checking whether your build still fits the 2026 meta.
             </p>
           </div>
         </div>
@@ -75,7 +75,7 @@ export default function PVPTierListPage() {
           <h2 className="text-2xl font-bold text-slate-100 font-serif">
             Weapon Tier List
           </h2>
-          <span className="text-xs text-slate-500 font-mono">Updated for Early Access</span>
+          <span className="text-xs text-slate-500 font-mono">Updated for 2026 arena-rank searches</span>
         </div>
 
         <div className="grid gap-8">
