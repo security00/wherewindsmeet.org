@@ -5,21 +5,21 @@ import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Global Launch Guides Hub",
+  title: "Where Winds Meet Guides 2026, Codes & Updates",
   description:
-    "Global launch hub with the preview stream plus trending Where Winds Meet guides, codes, tier lists, and updates for players on PC, console, and mobile.",
+    "Updated 2026 Where Winds Meet hub with May codes, Version 1.6 news, Qinchuan and Hexi guides, tier lists, builds, bosses, and quest walkthroughs.",
   alternates: buildHreflangAlternates("/"),
   openGraph: {
-    title: "Where Winds Meet Global Launch Guides Hub",
+    title: "Where Winds Meet Guides 2026, Codes & Updates",
     description:
-      "Watch the preview stream and dive into trending Where Winds Meet guides: tier lists, codes, bosses, roadmap, and quests like An Unholy Prophecy, One Leaf One Life, and Woven with Malice.",
+      "Updated 2026 Where Winds Meet hub for May codes, Version 1.6 news, Qinchuan and Hexi catch-up, tier lists, builds, bosses, and quest walkthroughs.",
     url: "https://wherewindsmeet.org/",
     images: [
       {
         url: "https://static.wherewindsmeet.org/background/bg.jpg",
         width: 1200,
         height: 630,
-        alt: "Where Winds Meet global launch background art",
+        alt: "Where Winds Meet 2026 guides hub background art",
       },
     ],
     siteName: "Where Winds Meet Hub",
