@@ -7,6 +7,7 @@ const baseUrl = "https://wherewindsmeet.org";
 type Step = { title: string; detail: string };
 type Faq = { question: string; answer: string };
 type Related = { href: string; label: string };
+type Card = { title: string; summary: string; items: string[] };
 
 type GuideData = {
   slug: string;
@@ -22,92 +23,126 @@ type GuideData = {
   faqs: Faq[];
   related: Related[];
   sources: { label: string; href: string }[];
+  intentCards: Card[];
 };
 
 const guide: GuideData = {
   "slug": "sunken-city-lake",
-  "title": "Sunken City Lake Where Winds Meet Guide",
+  "title": "Sunken City Lake Where Winds Meet Guide: Unlock, Dreamtouch Brush, Entrance, and Rewards",
   "metaTitle": "Sunken City Lake Where Winds Meet Guide",
-  "description": "Sunken City Lake Where Winds Meet guide: how to unlock the Qinchuan campaign quest, where to start, what blocks progress, and related painter quest links.",
+  "description": "Sunken City Lake Where Winds Meet guide: unlock after To Friends, to the End, speak with the painter, get Dreamtouch Brush, dive for the entrance, chase Lan Ao, and claim rewards.",
   "eyebrow": "Breakout query · Qinchuan campaign",
   "updated": "2026-05-14",
-  "quickAnswer": "Sunken City Lake is a Qinchuan campaign quest search. The key is not just finding the lake: you usually need to progress the related Qinchuan / To Friends, to the End chain, then speak with the painter near Sunken City Lake.",
+  "quickAnswer": "Sunken City Lake is not just a lake location search. It is a Qinchuan campaign quest that unlocks after progress in To Friends, to the End. The practical path is: advance the painter chain, talk to the painter by the large rock near Sunken City Lake, pick up the Dreamtouch Brush, then search underwater for the entrance.",
   "facts": [
     {
-      "label": "Quest type",
-      "value": "Campaign / side-story quest"
-    },
-    {
       "label": "Region",
-      "value": "Qinchuan Path"
+      "value": "Qinchuan Path, Hexi"
     },
     {
-      "label": "Main blocker",
-      "value": "Prerequisite painter chain"
+      "label": "Unlock req.",
+      "value": "Progress To Friends, to the End"
     },
     {
-      "label": "Search trend",
-      "value": "Breakout"
+      "label": "Key item",
+      "value": "Dreamtouch Brush"
+    },
+    {
+      "label": "Rewards",
+      "value": "Echo Jade, Hexi EXP, Coins"
     }
   ],
   "steps": [
     {
-      "title": "Progress the Qinchuan painter chain",
-      "detail": "Search results point to Sunken City Lake unlocking after progress in To Friends, to the End / related Worldly Affairs content."
+      "title": "Progress To Friends, to the End first",
+      "detail": "If the painter does not trigger Sunken City Lake, return to the Qinchuan Worldly Affairs chain. This is the most important blocker behind the breakout query."
     },
     {
-      "title": "Go to the Sunken City Lake area",
-      "detail": "Once prerequisites are done, look for the painter near the large rock around Sunken City Lake."
+      "title": "Speak with the painter near Sunken City Lake",
+      "detail": "After prerequisites, go to the large rock near Sunken City Lake and talk to the painter to unlock the campaign route."
     },
     {
-      "title": "Speak with the painter",
-      "detail": "Talking to the painter should unlock or advance the campaign quest route."
+      "title": "Pick up the Dreamtouch Brush",
+      "detail": "Follow the waypoint after the painter conversation. The brush is found left from the grass near ruins; treat it as the quest key that moves you into the lake sequence."
     },
     {
-      "title": "Follow the campaign objectives",
-      "detail": "After the unlock, use the quest tracker. If it stalls, return to To Friends, to the End and confirm all prior objectives are complete."
+      "title": "Search underwater for the entrance",
+      "detail": "Use the waypoint and conserve stamina. If you can glide/float over water with Idle Wind, use it until you need to dive directly toward the entrance marker."
+    },
+    {
+      "title": "Follow the city sequence and chase Lan Ao",
+      "detail": "Later beats include following scent with Wind Sense, entering the house by the medicine stall, finding a warehouse key, investigating a cliff, and listening to Fang Bai / Lan Ao conversations."
+    },
+    {
+      "title": "Collect rewards and return to Qinchuan cleanup",
+      "detail": "After completion, use Qinchuan hub for chests, oddities, and remaining linked quests."
     }
   ],
   "blockers": [
     {
-      "title": "Painter does not offer the quest",
-      "detail": "Finish more of To Friends, to the End or Qinchuan Worldly Affairs first."
+      "title": "Painter does not start the quest",
+      "detail": "You are probably too early in To Friends, to the End."
     },
     {
-      "title": "Wrong lake / wrong region",
-      "detail": "This guide is for Qinchuan Path’s Sunken City Lake, not older region water areas."
+      "title": "Cannot find underwater entrance",
+      "detail": "Use the waypoint and manage stamina; glide or float until the final dive if possible."
     },
     {
-      "title": "Need screenshots",
-      "detail": "Use external visual guides for exact map pins while this page stays a fast checklist."
+      "title": "Lost after Dreamtouch Brush",
+      "detail": "The brush leads into the underwater entrance step; do not leave the area before checking the water marker."
     }
   ],
   "faqs": [
     {
-      "question": "Where do I start Sunken City Lake?",
-      "answer": "Near Sunken City Lake in Qinchuan Path, after the related prerequisite chain has progressed enough."
+      "question": "How do I unlock Sunken City Lake?",
+      "answer": "Progress To Friends, to the End, then speak with the painter at the large rock near Sunken City Lake."
     },
     {
-      "question": "Is Sunken City Lake tied to To Friends, to the End?",
-      "answer": "Yes, current search sources connect the unlock path to To Friends, to the End / Qinchuan painter content."
+      "question": "Where is the Dreamtouch Brush?",
+      "answer": "After speaking with the painter, follow the waypoint; references place it left from the grass near ruins."
     },
     {
-      "question": "Why is it trending?",
-      "answer": "It appears in the new Qinchuan content cluster, so players are searching exact quest names as they hit blockers."
+      "question": "What rewards does Sunken City Lake give?",
+      "answer": "Reference rewards include Lingering Melody, Medicinal Tales, Oscillating Jade, Echo Jade, Hexi Exploration, Enlightenment Points, Character EXP, and Coins."
     },
     {
-      "question": "Should we do Sunken City Lake before Qinchuan exploration?",
-      "answer": "Do the quest chain first if you are blocked, then return to exploration and collectibles."
+      "question": "Is this a Qinchuan quest?",
+      "answer": "Yes. It is part of the Qinchuan Path / Hexi content cluster."
+    }
+  ],
+  "intentCards": [
+    {
+      "title": "Unlock intent",
+      "summary": "Most users need to know why the quest is missing.",
+      "items": [
+        "Check To Friends, to the End progress",
+        "Find painter near the lake",
+        "Confirm Qinchuan Path access"
+      ]
+    },
+    {
+      "title": "Objective intent",
+      "summary": "Users who already unlocked it need the route order.",
+      "items": [
+        "Dreamtouch Brush",
+        "Underwater entrance",
+        "Lan Ao chase and investigation"
+      ]
+    },
+    {
+      "title": "Reward intent",
+      "summary": "Players want to know whether it is worth finishing.",
+      "items": [
+        "Echo Jade and Coins",
+        "Hexi Exploration",
+        "Quest completion rewards"
+      ]
     }
   ],
   "related": [
     {
       "href": "/guides/qinchuan",
-      "label": "Qinchuan guide hub"
-    },
-    {
-      "href": "/guides/codes",
-      "label": "May 2026 codes"
+      "label": "Qinchuan hub"
     },
     {
       "href": "/guides/patch-notes",
@@ -128,7 +163,7 @@ const guide: GuideData = {
   ],
   "sources": [
     {
-      "label": "Game8 Sunken City Lake walkthrough reference",
+      "label": "Game8 Sunken City Lake reference",
       "href": "https://game8.co/games/Where-Winds-Meet/archives/597961"
     },
     {
@@ -149,10 +184,7 @@ export const metadata: Metadata = {
     siteName: "Where Winds Meet Hub",
     type: "article",
   },
-  twitter: {
-    title: guide.metaTitle,
-    description: guide.description,
-  },
+  twitter: { title: guide.metaTitle, description: guide.description },
 };
 
 export default function RisingQueryGuidePage() {
@@ -184,7 +216,7 @@ export default function RisingQueryGuidePage() {
         <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300">{guide.eyebrow}</p>
         <h1 className="mt-3 text-balance text-3xl font-bold tracking-tight text-slate-50 sm:text-5xl">{guide.title}</h1>
         <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">{guide.quickAnswer}</p>
-        <p className="mt-3 text-xs text-slate-500">Updated {guide.updated} · Built to answer rising Google Trends queries without copying full walkthroughs from other sites.</p>
+        <p className="mt-3 text-xs text-slate-500">Updated {guide.updated} · Original answer-first guide for rising Google Trends queries.</p>
         <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {guide.facts.map((fact) => (
             <div key={fact.label} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
@@ -197,7 +229,7 @@ export default function RisingQueryGuidePage() {
 
       <section className="grid gap-6 lg:grid-cols-[0.68fr_0.32fr]">
         <div className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/40">
-          <h2 className="text-2xl font-bold text-slate-50">Fast walkthrough</h2>
+          <h2 className="text-2xl font-bold text-slate-50">Answer-first walkthrough</h2>
           <ol className="space-y-4">
             {guide.steps.map((step, index) => (
               <li key={step.title} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
@@ -211,7 +243,7 @@ export default function RisingQueryGuidePage() {
 
         <aside className="space-y-6">
           <section className="rounded-3xl border border-amber-500/30 bg-amber-500/10 p-5 text-sm text-amber-50">
-            <h2 className="text-lg font-bold text-amber-100">Common blockers</h2>
+            <h2 className="text-lg font-bold text-amber-100">Why players search this</h2>
             <ul className="mt-3 space-y-3">
               {guide.blockers.map((item) => (
                 <li key={item.title}>
@@ -235,6 +267,21 @@ export default function RisingQueryGuidePage() {
         </aside>
       </section>
 
+      <section className="rounded-3xl border border-emerald-500/20 bg-emerald-500/10 p-6 shadow-lg shadow-slate-950/40">
+        <h2 className="text-2xl font-bold text-emerald-50">Search intent checklist</h2>
+        <div className="mt-5 grid gap-4 md:grid-cols-3">
+          {guide.intentCards.map((card) => (
+            <div key={card.title} className="rounded-2xl border border-emerald-400/30 bg-slate-950/70 p-4">
+              <h3 className="text-lg font-semibold text-emerald-50">{card.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-emerald-50/80">{card.summary}</p>
+              <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-emerald-50/75">
+                {card.items.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/40">
         <h2 className="text-2xl font-bold text-slate-50">FAQ</h2>
         <div className="mt-5 grid gap-4 md:grid-cols-2">
@@ -249,7 +296,7 @@ export default function RisingQueryGuidePage() {
 
       <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-5 text-sm text-slate-400">
         <h2 className="font-semibold text-slate-200">Reference sources</h2>
-        <p className="mt-2">This page is an original summary/checklist. Use the external pages below when you want screenshots, maps, or full route media.</p>
+        <p className="mt-2">Original summary page. External references are listed for verification and screenshots; they are not mirrored here.</p>
         <ul className="mt-3 list-disc space-y-1 pl-5">
           {guide.sources.map((source) => (
             <li key={source.href}><a href={source.href} target="_blank" rel="noreferrer" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">{source.label}</a></li>

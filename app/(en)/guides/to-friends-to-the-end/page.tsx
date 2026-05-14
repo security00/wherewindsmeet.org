@@ -7,6 +7,7 @@ const baseUrl = "https://wherewindsmeet.org";
 type Step = { title: string; detail: string };
 type Faq = { question: string; answer: string };
 type Related = { href: string; label: string };
+type Card = { title: string; summary: string; items: string[] };
 
 type GuideData = {
   slug: string;
@@ -22,92 +23,126 @@ type GuideData = {
   faqs: Faq[];
   related: Related[];
   sources: { label: string; href: string }[];
+  intentCards: Card[];
 };
 
 const guide: GuideData = {
   "slug": "to-friends-to-the-end",
-  "title": "To Friends, to the End Where Winds Meet Walkthrough",
+  "title": "To Friends, to the End Where Winds Meet Walkthrough: Unlock, Painter, Lettered and Locked",
   "metaTitle": "To Friends, to the End Where Winds Meet Guide",
-  "description": "To Friends, to the End Where Winds Meet walkthrough: unlock requirements, Xiao Pass Old Road start, Qinchuan painter chain, common blockers, and related Sunken City Lake links.",
+  "description": "To Friends, to the End Where Winds Meet guide: unlock after Lost Among Ancient Bulwarks, talk to the Unknown Person/Painter, solve Lettered and Locked, free Wen Moshen, and unlock Qinchuan follow-ups.",
   "eyebrow": "Breakout query · Worldly Affairs",
   "updated": "2026-05-14",
-  "quickAnswer": "To Friends, to the End is a Qinchuan Worldly Affairs quest around Xiao Pass Old Road. It matters because it appears to unlock or gate several nearby rising-query objectives, including Sunken City Lake and travel-permit-related steps.",
+  "quickAnswer": "To Friends, to the End is the bridge quest for several Qinchuan searches. It unlocks after Lost Among Ancient Bulwarks. Talk to the Unknown Person, meet the painter at Mustard Hut, investigate Xiao Pass Old Road, complete Lettered and Locked, free Wen Moshen, then report back to the painter.",
   "facts": [
     {
       "label": "Quest type",
-      "value": "Worldly Affairs / Jianghu Legacy"
+      "value": "Worldly Affairs"
     },
     {
-      "label": "Area",
-      "value": "Xiao Pass Old Road, Qinchuan"
+      "label": "Region",
+      "value": "Qinchuan Path, Hexi"
     },
     {
-      "label": "Prerequisite",
-      "value": "Lost Among Ancient Bulwarks / Lettered and Locked signals"
+      "label": "Unlock req.",
+      "value": "Lost Among Ancient Bulwarks"
     },
     {
-      "label": "Related trend",
-      "value": "Sunken City Lake"
+      "label": "Key blocker",
+      "value": "Lettered and Locked"
     }
   ],
   "steps": [
     {
-      "title": "Reach Xiao Pass Old Road",
-      "detail": "Use the Qinchuan boundary-stone network and look around Xiao Pass Old Road for the quest start area."
+      "title": "Complete Lost Among Ancient Bulwarks",
+      "detail": "This is the first gate. After it ends, talk to the Unknown Person who gives or discusses the regional map."
     },
     {
-      "title": "Clear prerequisite Qinchuan quests",
-      "detail": "If the quest does not appear, finish the earlier Qinchuan Worldly Affairs chain. Search sources mention Lost Among Ancient Bulwarks and Lettered and Locked as relevant blockers."
+      "title": "Follow the Unknown Person to Mustard Hut",
+      "detail": "The Unknown Person is revealed as the painter. This conversation introduces the missing friend Fang Bai and starts the practical investigation."
     },
     {
-      "title": "Follow the painter storyline",
-      "detail": "The painter thread is the important through-line. Read objective text carefully before jumping to Sunken City Lake."
+      "title": "Search Xiao Pass Old Road for clues",
+      "detail": "The quest points you toward Xiao Pass Old Road. Do not skip this investigation, because it connects into the Lettered and Locked exploration objective."
     },
     {
-      "title": "Use this as the unlock bridge",
-      "detail": "After the chain advances, return to Sunken City Lake or The People’s Wish / Travel Permit if those are the steps blocking you."
+      "title": "Complete Lettered and Locked at the outpost",
+      "detail": "You can sneak around the outpost rather than fully clearing it. Look for the dungeon near the road and wooden-bridge towers."
+    },
+    {
+      "title": "Free Wen Moshen",
+      "detail": "Speak with Wen Moshen, then find the cage key. References place the key on the tower closest to the dungeon entrance, on top in a box."
+    },
+    {
+      "title": "Report back to the painter",
+      "detail": "Return to the painter at Mustard Hut after Lettered and Locked. This is what makes the chain useful for Sunken City Lake follow-up."
     }
   ],
   "blockers": [
     {
-      "title": "Quest not visible",
-      "detail": "You may be missing a prior Worldly Affairs quest in the Qinchuan path."
+      "title": "Quest missing",
+      "detail": "Finish Lost Among Ancient Bulwarks first."
     },
     {
-      "title": "Lettered and Locked confusion",
-      "detail": "If an objective points back to Xiao Pass Old Road Outpost, finish that exploration step first."
+      "title": "Cannot progress at Xiao Pass Old Road",
+      "detail": "You probably need Lettered and Locked, not random exploration."
     },
     {
-      "title": "Jumping to Sunken City too early",
-      "detail": "Sunken City Lake may not unlock until this chain reaches the right point."
+      "title": "Cannot open Wen Moshen cage",
+      "detail": "Climb the nearby tower closest to the dungeon entrance and look for the key box."
     }
   ],
   "faqs": [
     {
-      "question": "Where does To Friends, to the End start?",
-      "answer": "Search references place it near Xiao Pass Old Road in Qinchuan / Hexi."
+      "question": "How do I unlock To Friends, to the End?",
+      "answer": "Complete Lost Among Ancient Bulwarks, then talk to the Unknown Person who appears afterward."
     },
     {
-      "question": "Why do I need it for Sunken City Lake?",
-      "answer": "Current guides indicate Sunken City Lake unlocks after progress in this Worldly Affairs chain."
+      "question": "Where is Mustard Hut used?",
+      "answer": "The Unknown Person / painter route sends you south to Mustard Hut and later back there after Lettered and Locked."
     },
     {
-      "question": "Is it a main quest?",
-      "answer": "It is described as Worldly Affairs / Jianghu Legacy content, not a simple collectible objective."
+      "question": "Do I need to clear the outpost?",
+      "answer": "References suggest full outpost completion is optional; you can sneak to the dungeon route."
     },
     {
-      "question": "What should I do if stuck?",
-      "answer": "Check prerequisite quest names, activate local boundary stones, and finish any Xiao Pass Old Road outpost objective."
+      "question": "Why does this matter for Sunken City Lake?",
+      "answer": "Sunken City Lake uses the same painter chain and appears to require progress in this quest."
+    }
+  ],
+  "intentCards": [
+    {
+      "title": "Unlock intent",
+      "summary": "Users ask because the quest does not show.",
+      "items": [
+        "Lost Among Ancient Bulwarks first",
+        "Talk to Unknown Person",
+        "Go to Mustard Hut"
+      ]
+    },
+    {
+      "title": "Stuck intent",
+      "summary": "Most blockers happen at Xiao Pass Old Road.",
+      "items": [
+        "Lettered and Locked",
+        "Dungeon near wooden bridge towers",
+        "Tower key for Wen Moshen"
+      ]
+    },
+    {
+      "title": "Cluster intent",
+      "summary": "This page should pass users to the next Qinchuan page.",
+      "items": [
+        "Sunken City Lake",
+        "Travel Permit",
+        "Qinchuan exploration"
+      ]
     }
   ],
   "related": [
     {
       "href": "/guides/qinchuan",
-      "label": "Qinchuan guide hub"
-    },
-    {
-      "href": "/guides/codes",
-      "label": "May 2026 codes"
+      "label": "Qinchuan hub"
     },
     {
       "href": "/guides/patch-notes",
@@ -149,10 +184,7 @@ export const metadata: Metadata = {
     siteName: "Where Winds Meet Hub",
     type: "article",
   },
-  twitter: {
-    title: guide.metaTitle,
-    description: guide.description,
-  },
+  twitter: { title: guide.metaTitle, description: guide.description },
 };
 
 export default function RisingQueryGuidePage() {
@@ -184,7 +216,7 @@ export default function RisingQueryGuidePage() {
         <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300">{guide.eyebrow}</p>
         <h1 className="mt-3 text-balance text-3xl font-bold tracking-tight text-slate-50 sm:text-5xl">{guide.title}</h1>
         <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">{guide.quickAnswer}</p>
-        <p className="mt-3 text-xs text-slate-500">Updated {guide.updated} · Built to answer rising Google Trends queries without copying full walkthroughs from other sites.</p>
+        <p className="mt-3 text-xs text-slate-500">Updated {guide.updated} · Original answer-first guide for rising Google Trends queries.</p>
         <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {guide.facts.map((fact) => (
             <div key={fact.label} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
@@ -197,7 +229,7 @@ export default function RisingQueryGuidePage() {
 
       <section className="grid gap-6 lg:grid-cols-[0.68fr_0.32fr]">
         <div className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/40">
-          <h2 className="text-2xl font-bold text-slate-50">Fast walkthrough</h2>
+          <h2 className="text-2xl font-bold text-slate-50">Answer-first walkthrough</h2>
           <ol className="space-y-4">
             {guide.steps.map((step, index) => (
               <li key={step.title} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
@@ -211,7 +243,7 @@ export default function RisingQueryGuidePage() {
 
         <aside className="space-y-6">
           <section className="rounded-3xl border border-amber-500/30 bg-amber-500/10 p-5 text-sm text-amber-50">
-            <h2 className="text-lg font-bold text-amber-100">Common blockers</h2>
+            <h2 className="text-lg font-bold text-amber-100">Why players search this</h2>
             <ul className="mt-3 space-y-3">
               {guide.blockers.map((item) => (
                 <li key={item.title}>
@@ -235,6 +267,21 @@ export default function RisingQueryGuidePage() {
         </aside>
       </section>
 
+      <section className="rounded-3xl border border-emerald-500/20 bg-emerald-500/10 p-6 shadow-lg shadow-slate-950/40">
+        <h2 className="text-2xl font-bold text-emerald-50">Search intent checklist</h2>
+        <div className="mt-5 grid gap-4 md:grid-cols-3">
+          {guide.intentCards.map((card) => (
+            <div key={card.title} className="rounded-2xl border border-emerald-400/30 bg-slate-950/70 p-4">
+              <h3 className="text-lg font-semibold text-emerald-50">{card.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-emerald-50/80">{card.summary}</p>
+              <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-emerald-50/75">
+                {card.items.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/40">
         <h2 className="text-2xl font-bold text-slate-50">FAQ</h2>
         <div className="mt-5 grid gap-4 md:grid-cols-2">
@@ -249,7 +296,7 @@ export default function RisingQueryGuidePage() {
 
       <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-5 text-sm text-slate-400">
         <h2 className="font-semibold text-slate-200">Reference sources</h2>
-        <p className="mt-2">This page is an original summary/checklist. Use the external pages below when you want screenshots, maps, or full route media.</p>
+        <p className="mt-2">Original summary page. External references are listed for verification and screenshots; they are not mirrored here.</p>
         <ul className="mt-3 list-disc space-y-1 pl-5">
           {guide.sources.map((source) => (
             <li key={source.href}><a href={source.href} target="_blank" rel="noreferrer" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">{source.label}</a></li>

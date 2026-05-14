@@ -7,6 +7,7 @@ const baseUrl = "https://wherewindsmeet.org";
 type Step = { title: string; detail: string };
 type Faq = { question: string; answer: string };
 type Related = { href: string; label: string };
+type Card = { title: string; summary: string; items: string[] };
 
 type GuideData = {
   slug: string;
@@ -22,92 +23,126 @@ type GuideData = {
   faqs: Faq[];
   related: Related[];
   sources: { label: string; href: string }[];
+  intentCards: Card[];
 };
 
 const guide: GuideData = {
   "slug": "travel-permit",
-  "title": "Where Winds Meet Travel Permit Guide",
-  "metaTitle": "Where Winds Meet Travel Permit Guide",
-  "description": "Where Winds Meet Travel Permit guide for The People’s Wish: where the permit step appears, how to find identity details, and what to do if the form blocks progress.",
-  "eyebrow": "Breakout query · Puzzle objective",
+  "title": "Where Winds Meet Travel Permit Answers: The People’s Wish Guide",
+  "metaTitle": "Where Winds Meet Travel Permit Answers Guide",
+  "description": "Where Winds Meet Travel Permit answers for The People’s Wish: Xu Jian, Flora Expert, Find Poplar Seeds, six clue check, tomb steps, second tomb tribute puzzle, and common form blockers.",
+  "eyebrow": "Breakout query · The People’s Wish",
   "updated": "2026-05-14",
-  "quickAnswer": "The Travel Permit query points to The People’s Wish in Qinchuan Path. The core task is to find the correct identity details, fill in the permit, then deliver it to the waiter; if you cannot fill it out, you probably missed an inspectable clue in the room.",
+  "quickAnswer": "The Travel Permit answer is the exact reason users search this page. In The People’s Wish, after finding all six clues, fill the permit with: Name: Xu Jian; Truly: Flora Expert; Purpose: Find Poplar Seeds. If the form rejects you, you likely missed a clue in the room.",
   "facts": [
     {
-      "label": "Related quest",
-      "value": "The People’s Wish"
+      "label": "Quest",
+      "value": "The People’s Wish / Jianghu Legacy 06"
     },
     {
       "label": "Region",
-      "value": "Qinchuan Path / Hexi"
+      "value": "Qinchuan Path, Hexi"
     },
     {
-      "label": "Objective type",
-      "value": "Form / clue puzzle"
+      "label": "Name",
+      "value": "Xu Jian"
     },
     {
-      "label": "Common blocker",
-      "value": "Missing identity details"
+      "label": "Purpose",
+      "value": "Find Poplar Seeds"
     }
   ],
   "steps": [
     {
-      "title": "Start The People’s Wish quest chain",
-      "detail": "Travel Permit searches connect to The People’s Wish, listed as Jianghu Legacy 06 in Qinchuan Path."
+      "title": "Enter the first tomb",
+      "detail": "The People’s Wish sends you into a tomb sequence and then to an inn-like room."
     },
     {
-      "title": "Search the room for identity details",
-      "detail": "Before filling the permit, inspect nearby objects and clues. The form expects details from the environment, not guesses."
+      "title": "Pick up the Travel Permit",
+      "detail": "Take the permit from the floor and place it on the table before investigating the room."
     },
     {
-      "title": "Fill out the Travel Permit",
-      "detail": "Use the clue details you collected. If the form rejects your answer, re-check every interactable item in the room."
+      "title": "Find all six clues",
+      "detail": "Do not guess the form immediately. Inspect the room until all identity clues are collected."
     },
     {
-      "title": "Deliver the permit to the waiter",
-      "detail": "After the form is accepted, return to the quest NPC/waiter to continue the Jianghu Legacy route."
+      "title": "Fill the Travel Permit answers",
+      "detail": "Use Name: Xu Jian; Truly: Flora Expert; Purpose: Find Poplar Seeds."
+    },
+    {
+      "title": "Continue into later tomb puzzles",
+      "detail": "The second tomb includes returning items to correct places, checking tributes, and choosing the Auspicious Bronze Horse."
+    },
+    {
+      "title": "Finish the central-platform route",
+      "detail": "Later steps return you to the platform and additional clue/tactic puzzles before the quest closes."
     }
   ],
   "blockers": [
     {
-      "title": "Form rejects answers",
-      "detail": "You likely missed one of the required clue items."
+      "title": "Permit answer fails",
+      "detail": "Find all six clues before submitting. The game may not accept correct text if clues are missing."
     },
     {
-      "title": "No Travel Permit objective",
-      "detail": "Confirm you are on The People’s Wish, not a generic travel-system quest."
+      "title": "Wrong quest",
+      "detail": "This is The People’s Wish, not general travel unlock or fast travel."
     },
     {
-      "title": "Following travel-method videos",
-      "detail": "Those may be about movement unlocks, not the permit puzzle."
+      "title": "Second tomb confusion",
+      "detail": "After the permit, you still need item placement, tribute checks, and the Auspicious Bronze Horse choice."
     }
   ],
   "faqs": [
     {
-      "question": "What quest is the Travel Permit in?",
-      "answer": "Search results tie it to The People’s Wish in Qinchuan Path."
+      "question": "What are the Travel Permit answers?",
+      "answer": "Name: Xu Jian. Truly: Flora Expert. Purpose: Find Poplar Seeds."
     },
     {
-      "question": "How do I get the correct permit details?",
-      "answer": "Inspect the room for identity clues, then fill the form based on those details."
+      "question": "How many clues do I need?",
+      "answer": "References say to find all six clues in the room before filling the Travel Permit."
     },
     {
-      "question": "Is Travel Permit about fast travel?",
-      "answer": "Usually no. This rising query appears to be the quest-form objective, not a general mount or travel system."
+      "question": "What quest is this from?",
+      "answer": "The People’s Wish, Jianghu Legacy 06 in Qinchuan Path / Hexi."
     },
     {
-      "question": "What if the waiter will not accept it?",
-      "answer": "Re-check the form and make sure all required identity details were found before submitting."
+      "question": "What comes after the permit?",
+      "answer": "More tomb-room puzzles, including item placement, tribute investigation, and choosing the Auspicious Bronze Horse."
+    }
+  ],
+  "intentCards": [
+    {
+      "title": "Answer intent",
+      "summary": "This is the exact search demand.",
+      "items": [
+        "Name: Xu Jian",
+        "Truly: Flora Expert",
+        "Purpose: Find Poplar Seeds"
+      ]
+    },
+    {
+      "title": "Validation intent",
+      "summary": "Why correct answers still fail.",
+      "items": [
+        "Find all six clues",
+        "Place permit on table",
+        "Re-check inspectables"
+      ]
+    },
+    {
+      "title": "Next-step intent",
+      "summary": "What users need after the form.",
+      "items": [
+        "Second tomb",
+        "Tribute statues",
+        "Auspicious Bronze Horse"
+      ]
     }
   ],
   "related": [
     {
       "href": "/guides/qinchuan",
-      "label": "Qinchuan guide hub"
-    },
-    {
-      "href": "/guides/codes",
-      "label": "May 2026 codes"
+      "label": "Qinchuan hub"
     },
     {
       "href": "/guides/patch-notes",
@@ -118,12 +153,12 @@ const guide: GuideData = {
       "label": "Interactive map"
     },
     {
-      "href": "/guides/qinchuan",
-      "label": "Qinchuan hub"
-    },
-    {
       "href": "/guides/to-friends-to-the-end",
       "label": "To Friends, to the End"
+    },
+    {
+      "href": "/guides/sunken-city-lake",
+      "label": "Sunken City Lake"
     }
   ],
   "sources": [
@@ -149,10 +184,7 @@ export const metadata: Metadata = {
     siteName: "Where Winds Meet Hub",
     type: "article",
   },
-  twitter: {
-    title: guide.metaTitle,
-    description: guide.description,
-  },
+  twitter: { title: guide.metaTitle, description: guide.description },
 };
 
 export default function RisingQueryGuidePage() {
@@ -184,7 +216,7 @@ export default function RisingQueryGuidePage() {
         <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300">{guide.eyebrow}</p>
         <h1 className="mt-3 text-balance text-3xl font-bold tracking-tight text-slate-50 sm:text-5xl">{guide.title}</h1>
         <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">{guide.quickAnswer}</p>
-        <p className="mt-3 text-xs text-slate-500">Updated {guide.updated} · Built to answer rising Google Trends queries without copying full walkthroughs from other sites.</p>
+        <p className="mt-3 text-xs text-slate-500">Updated {guide.updated} · Original answer-first guide for rising Google Trends queries.</p>
         <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {guide.facts.map((fact) => (
             <div key={fact.label} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
@@ -197,7 +229,7 @@ export default function RisingQueryGuidePage() {
 
       <section className="grid gap-6 lg:grid-cols-[0.68fr_0.32fr]">
         <div className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/40">
-          <h2 className="text-2xl font-bold text-slate-50">Fast walkthrough</h2>
+          <h2 className="text-2xl font-bold text-slate-50">Answer-first walkthrough</h2>
           <ol className="space-y-4">
             {guide.steps.map((step, index) => (
               <li key={step.title} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
@@ -211,7 +243,7 @@ export default function RisingQueryGuidePage() {
 
         <aside className="space-y-6">
           <section className="rounded-3xl border border-amber-500/30 bg-amber-500/10 p-5 text-sm text-amber-50">
-            <h2 className="text-lg font-bold text-amber-100">Common blockers</h2>
+            <h2 className="text-lg font-bold text-amber-100">Why players search this</h2>
             <ul className="mt-3 space-y-3">
               {guide.blockers.map((item) => (
                 <li key={item.title}>
@@ -235,6 +267,21 @@ export default function RisingQueryGuidePage() {
         </aside>
       </section>
 
+      <section className="rounded-3xl border border-emerald-500/20 bg-emerald-500/10 p-6 shadow-lg shadow-slate-950/40">
+        <h2 className="text-2xl font-bold text-emerald-50">Search intent checklist</h2>
+        <div className="mt-5 grid gap-4 md:grid-cols-3">
+          {guide.intentCards.map((card) => (
+            <div key={card.title} className="rounded-2xl border border-emerald-400/30 bg-slate-950/70 p-4">
+              <h3 className="text-lg font-semibold text-emerald-50">{card.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-emerald-50/80">{card.summary}</p>
+              <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-emerald-50/75">
+                {card.items.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/40">
         <h2 className="text-2xl font-bold text-slate-50">FAQ</h2>
         <div className="mt-5 grid gap-4 md:grid-cols-2">
@@ -249,7 +296,7 @@ export default function RisingQueryGuidePage() {
 
       <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-5 text-sm text-slate-400">
         <h2 className="font-semibold text-slate-200">Reference sources</h2>
-        <p className="mt-2">This page is an original summary/checklist. Use the external pages below when you want screenshots, maps, or full route media.</p>
+        <p className="mt-2">Original summary page. External references are listed for verification and screenshots; they are not mirrored here.</p>
         <ul className="mt-3 list-disc space-y-1 pl-5">
           {guide.sources.map((source) => (
             <li key={source.href}><a href={source.href} target="_blank" rel="noreferrer" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">{source.label}</a></li>
