@@ -13,6 +13,26 @@ export type NewsItem = {
 // News items based on official Where Winds Meet articles mirrored under ref-page/news.
 export const newsItems: NewsItem[] = [
   {
+    id: "anti-cheat-enforcement-pvp-may-12-2026",
+    title: "Anti-Cheat Enforcement Update for PvP Gameplay",
+    date: "2026-05-12",
+    type: "announcement",
+    summary:
+      "Official May 12 PvP fair-play update: the team says it is monitoring competitive modes and acting against violations that damage a fair, healthy PvP environment. Read the original notice for enforcement details before drawing conclusions about specific rank changes.",
+    officialUrl: "https://www.wherewindsmeetgame.com/news/official/AntiCheat512.html",
+    tags: ["PvP", "Anti-cheat", "Fair play", "Arena", "May 2026"],
+  },
+  {
+    id: "account-suspension-apr21-may10-2026",
+    title: "Account Suspension Notice (April 21-May 10)",
+    date: "2026-05-11",
+    type: "announcement",
+    summary:
+      "Official May 11 account-suspension notice covering the April 21-May 10 window. The post warns against unauthorized third-party tools and abnormal behavior such as cheats, speed hacks, and macros, with penalties ranging from leaderboard removal to gameplay restrictions or bans.",
+    officialUrl: "https://www.wherewindsmeetgame.com/news/official/Banreport511.html",
+    tags: ["Account suspension", "Anti-cheat", "Leaderboard", "PvP", "May 2026"],
+  },
+  {
     id: "may-8-2026-optimizations-fixes",
     title: "May 8 Optimizations & Fixes",
     date: "2026-05-08",

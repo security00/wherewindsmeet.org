@@ -80,7 +80,7 @@ export default function NewsPage() {
   const roadmapBlock = {
     title: "Roadmap / Next Updates (watchlist)",
     summary:
-      "Updated for May 2026: official mobile news has moved through Hexi, Liangzhou, Qinchuan, Version 1.6 Flows of Dreams, May 8 fixes, and an exchange-code leak warning. Use this page to bridge older January guides with the current live-service cycle.",
+      "Updated through the official May 12 news feed: PvP anti-cheat enforcement, the April 21-May 10 account suspension notice, May 8 fixes, Exchange Code Announcement, Hexi DEV AMA, Qinchuan Card Exchange, and Version 1.6 / Flows of Dreams remain summarized here with links back to the original articles.",
     updated: lastUpdatedLabel,
     links: [
       { href: "/guides/tier-list", label: "China tier list & balance notes" },
@@ -146,7 +146,7 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Latest freshness pass: May 8 fixes, the May 3 exchange-code warning, the Hexi DEV AMA, Qinchuan Card Exchange, and Version 1.6 / Flows of Dreams are now tracked here. Check the codes page before trusting large social-media code lists.
+              Latest official-news pass: May 12 PvP anti-cheat enforcement, the May 11 account suspension notice, May 8 fixes, the May 3 exchange-code warning, the Hexi DEV AMA, Qinchuan Card Exchange, and Version 1.6 / Flows of Dreams are summarized here with links to the original posts.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link href="/guides/tier-list" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
@@ -191,6 +191,9 @@ export default function NewsPage() {
                   <Link href="/guides/codes" className="ml-1 text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
                     active codes page
                   </Link>
+                </li>
+                <li>
+                  May 12 PvP anti-cheat enforcement and May 11 account suspension notice — important context for arena-rank and PvP-rank searches.
                 </li>
                 <li>
                   Version 1.6 / Flows of Dreams and May 8 optimizations — use this page for the current update trail before reading older Version 1.2 notes.
