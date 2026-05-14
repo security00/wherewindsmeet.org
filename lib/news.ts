@@ -13,6 +13,46 @@ export type NewsItem = {
 // News items based on official Where Winds Meet articles mirrored under ref-page/news.
 export const newsItems: NewsItem[] = [
   {
+    id: "may-8-2026-optimizations-fixes",
+    title: "May 8 Optimizations & Fixes",
+    date: "2026-05-08",
+    type: "announcement",
+    summary:
+      "Latest official mobile news notes include May 8 fixes, highlighted by a Lost Chapter: To Friends, to the End objective fix for the 'Investigate the surroundings' step. Treat this as a maintenance/quality-of-life patch rather than a full season launch, then check quest guides if you were blocked by progression bugs.",
+    officialUrl: "https://www.wherewindsmeetgame.com/m/news/",
+    tags: ["May 2026", "Fixes", "Lost Chapter", "Quest bugs", "Maintenance"],
+  },
+  {
+    id: "exchange-code-announcement-may-2026",
+    title: "Exchange Code Announcement and Disabled Leak Codes",
+    date: "2026-05-03",
+    type: "announcement",
+    summary:
+      "The official mobile news feed notes that a batch of 30 recently leaked exchange codes was disabled. For players, that means May 2026 code lists should be treated carefully: redeem verified codes quickly, but expect leaked batches to fail if they were not intended for public release.",
+    officialUrl: "https://www.wherewindsmeetgame.com/m/news/",
+    tags: ["Codes", "Exchange codes", "May 2026", "Rewards"],
+  },
+  {
+    id: "dev-ama-hexi-qinchuan-2026",
+    title: "DEV AMA Recap: The Journey Through Hexi",
+    date: "2026-05-02",
+    type: "announcement",
+    summary:
+      "The official news feed summarizes developer answers from the Hexi expansion arc, covering the journey from Jade Gate Pass through Liangzhou and into the Qinchuan finale. This is the key context for players returning after older Version 1.2 guides: the live game has moved beyond January content.",
+    officialUrl: "https://www.wherewindsmeetgame.com/m/news/",
+    tags: ["Hexi", "Qinchuan", "DEV AMA", "Roadmap", "May 2026"],
+  },
+  {
+    id: "flows-of-dreams-version-1-6",
+    title: "[Flows of Dreams] Version 1.6 Update Overview",
+    date: "2026-04-30",
+    type: "announcement",
+    summary:
+      "The official mobile news feed lists Version 1.6, Flows of Dreams, alongside Qinchuan Card Exchange and April 30 optimization notes. Returning players should use this as the current content checkpoint before relying on older Version 1.2 or Version 1.3 assumptions.",
+    officialUrl: "https://www.wherewindsmeetgame.com/m/news/",
+    tags: ["Version 1.6", "Flows of Dreams", "Qinchuan", "Events", "April 2026"],
+  },
+  {
     id: "version-1-2-jan8-bug-fixes-optimizations",
     title: "Version 1.2 (January 8th) Bug Fixes and Optimizations",
     date: "2026-01-14",

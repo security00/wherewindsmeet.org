@@ -6,20 +6,20 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 const baseUrl = "https://wherewindsmeet.org";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Patch Notes – Balance Changes & Roadmap",
+  title: "Where Winds Meet Patch Notes May 2026 & Roadmap",
   description:
-    "Where Winds Meet patch notes guide: where to find official notes, how to read buffs/nerfs, and how to adjust weapons, builds, and tier list picks after updates.",
+    "May 2026 Where Winds Meet patch notes tracker covering Version 1.6, Qinchuan, Hexi, May 8 fixes, code warnings, and build/tier-list checks.",
   alternates: buildHreflangAlternates("/guides/patch-notes"),
   openGraph: {
-    title: "Where Winds Meet Patch Notes – Balance Changes & Roadmap",
+    title: "Where Winds Meet Patch Notes May 2026 & Roadmap",
     description:
-      "Where Winds Meet patch notes guide: how to read buffs/nerfs, track roadmap updates, and adjust your builds after changes.",
+      "May 2026 Where Winds Meet patch notes tracker: Version 1.6, Qinchuan, Hexi, May 8 fixes, code warnings, and build/tier-list checks.",
     url: `${baseUrl}/guides/patch-notes`,
   },
   twitter: {
-    title: "Where Winds Meet Patch Notes – Balance Changes & Roadmap",
+    title: "Where Winds Meet Patch Notes May 2026 & Roadmap",
     description:
-      "Where Winds Meet patch notes guide: how to read buffs/nerfs, track roadmap updates, and adjust your builds after changes.",
+      "May 2026 Where Winds Meet patch notes tracker: Version 1.6, Qinchuan, Hexi, May 8 fixes, code warnings, and build/tier-list checks.",
   },
 };
 
@@ -79,20 +79,13 @@ export default function PatchNotesPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet patch notes and balance updates.
+            Where Winds Meet patch notes, May 2026 updates, and roadmap.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Staying informed about Where Winds Meet patch notes is essential for
-            keeping your builds relevant and understanding how the meta evolves.
-            Every balance change, weapon adjustment, and new system introduced in
-            Where Winds Meet patch updates reshapes how you approach combat,
-            character progression, and endgame content. This guide helps you decode
-            what each Where Winds Meet patch means for your favorite strategies.
+            Updated May 14, 2026: Where Winds Meet has moved well beyond the old Version 1.2 notes. The current live-service trail includes Hexi, Liangzhou, Qinchuan, Version 1.6 / Flows of Dreams, May 8 optimizations and fixes, and a May exchange-code warning. Use this page to catch up before you trust older tier-list or build advice.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-            We also flag roadmap checkpoints and upcoming update windows so you
-            know when major Where Winds Meet changes are likely to land and can
-            plan respecs or new builds accordingly.
+            We flag roadmap checkpoints, official news beats, and practical player impact so you know what to re-check: codes, quest bugs, boss guides, builds, and tier-list assumptions.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Rather than panic when you see a weapon adjusted or a new feature added,
@@ -113,34 +106,18 @@ export default function PatchNotesPage() {
         </div>
       </section>
 
-      <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+      <section className="space-y-6 rounded-3xl border border-emerald-500/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/40">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          Understanding Where Winds Meet patch cycles.
+          May 2026 catch-up: what changed recently.
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Where Winds Meet typically follows a predictable patch cycle that helps
-          you plan when to expect major changes. Between seasonal updates and
-          hotfixes, the game is constantly refined based on player feedback and new
-          content needs. Understanding this rhythm allows you to stay ahead of the
-          curve instead of scrambling to adapt when the next Where Winds Meet patch
-          lands.
+          The most important freshness signal is that the official mobile news feed now lists May 2026 updates: May 8 optimizations and fixes, a May 3 exchange-code announcement, DEV AMA context for the Hexi journey, Qinchuan Card Exchange, and Version 1.6 / Flows of Dreams. If you last played around Version 1.2, treat this as your catch-up checkpoint.
         </p>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Major patches usually arrive every few weeks and include significant
-          balance changes, new content, and system adjustments. These are the Where
-          Winds Meet updates that most directly affect your builds and playstyle.
-          Hotfixes may arrive between major patches to address critical bugs or
-          obviously broken interactions. Seasonal updates add entire new regions,
-          weapons, and progression mechanics, transforming the Where Winds Meet
-          experience in fundamental ways.
+          Start with practical checks: redeem the current Qinchuan/Hexi codes, re-open blocked Lost Chapter quests after the May 8 fixes, and compare your build against newer Qinchuan/Version 1.6 assumptions before spending scarce upgrade materials.
         </p>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          By checking official Where Winds Meet patch notes regularly, you can plan
-          your character progression strategically. If a major patch is coming in
-          two weeks, you might hold off on expensive respec decisions until you see
-          the full Where Winds Meet patch details. If a hotfix addresses a bug that
-          affected your favorite weapon, you have permission to be excited about
-          reclaiming that option.
+          Also note the May 3 code warning: a leaked batch of exchange codes was disabled, so very large social-media code lists may include dead entries. Use the codes page here as a cleaner starting list, then verify every reward in-game.
         </p>
       </section>
 

@@ -80,7 +80,7 @@ export default function NewsPage() {
   const roadmapBlock = {
     title: "Roadmap / Next Updates (watchlist)",
     summary:
-      "Tracking upcoming Where Winds Meet updates: balance patches, boss/Bloodbath tweaks, anti-cheat actions, events, and new quest fixes. Highlights will be refreshed with each official post.",
+      "Updated for May 2026: official mobile news has moved through Hexi, Liangzhou, Qinchuan, Version 1.6 Flows of Dreams, May 8 fixes, and an exchange-code leak warning. Use this page to bridge older January guides with the current live-service cycle.",
     updated: lastUpdatedLabel,
     links: [
       { href: "/guides/tier-list", label: "China tier list & balance notes" },
@@ -146,8 +146,7 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Watching for official “next update” beats: balance notes, new bosses/Bloodbath variants, and event codes. Check back here or
-              the tier list after announcements; key highlights will be summarized in 2–3 bullets within an hour of posts.
+              Latest freshness pass: May 8 fixes, the May 3 exchange-code warning, the Hexi DEV AMA, Qinchuan Card Exchange, and Version 1.6 / Flows of Dreams are now tracked here. Check the codes page before trusting large social-media code lists.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link href="/guides/tier-list" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
@@ -187,6 +186,15 @@ export default function NewsPage() {
             <div className="mt-3 rounded-xl border border-slate-800 bg-slate-900/80 p-3 text-xs text-slate-300">
               <p className="font-semibold text-slate-200">New hot searches to watch</p>
               <ul className="mt-2 space-y-1">
+                <li>
+                  Where Winds Meet codes May 2026 — Qinchuan/Hexi codes plus disabled leaked-code warning:
+                  <Link href="/guides/codes" className="ml-1 text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
+                    active codes page
+                  </Link>
+                </li>
+                <li>
+                  Version 1.6 / Flows of Dreams and May 8 optimizations — use this page for the current update trail before reading older Version 1.2 notes.
+                </li>
                 <li>
                   Feng Ruzhi boss (Silk Ball) — location + unlock + mechanic:
                   <Link href="/guides/bosses/feng-ruzhi" className="ml-1 text-emerald-300 underline underline-offset-4 hover:text-emerald-200">

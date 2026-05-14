@@ -37,7 +37,7 @@ export default function Home() {
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1.4fr)] lg:items-start">
           <div className="space-y-6">
             <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-              Global Launch <span className="text-ink-gold">Preview Stream</span>
+              2026 Updated <span className="text-ink-gold">Guides Hub</span>
             </h2>
             <div className="space-y-4 text-slate-300 leading-relaxed">
             <p>
@@ -48,9 +48,9 @@ export default function Home() {
               and free exploration.
             </p>
             <p>
-              This global launch hub collects guides, builds,
-              and codes to help players on PC, console, and mobile get the most out
-              of every journey.
+              This 2026 refresh collects guides, builds, latest update notes,
+              and active codes to help returning players catch up from Version 1.2
+              into the Hexi, Liangzhou, and Qinchuan update cycle.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
               <Link
@@ -99,14 +99,20 @@ export default function Home() {
       <section className="rounded-3xl border border-emerald-500/20 bg-emerald-500/5 p-5 shadow-lg shadow-emerald-900/30">
         <div className="flex flex-wrap items-center gap-3">
           <p className="text-sm font-semibold text-emerald-100">
-            Quick picks (high searches)
+            Quick picks (May 2026 refresh)
           </p>
           <div className="flex flex-wrap gap-2 text-xs">
             <Link
               href="/news#next-update"
               className="rounded-full border border-emerald-500/50 bg-emerald-500/10 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/70"
             >
-              Next update
+              Version 1.6 / May updates
+            </Link>
+            <Link
+              href="/guides/codes"
+              className="rounded-full border border-amber-500/60 bg-amber-500/10 px-3 py-1 font-semibold text-amber-50 hover:border-amber-300/70"
+            >
+              May 2026 active codes
             </Link>
             <Link
               href="/guides/bosses"
@@ -164,7 +170,7 @@ export default function Home() {
             </Link>
           </div>
           <p className="mt-3 w-full text-xs text-emerald-50/80">
-            Fast path for top queries: Where Winds Meet next update, Where Winds Meet bosses list, Where Winds Meet Feng Ruzhi location & Silk Ball mechanic, Where Winds Meet Qin Caiwei friendship guide, Where Winds Meet Free Morph unlock, and the China tier list perspective to compare weapons and builds.
+            Fast path for active searches: Where Winds Meet codes May 2026, latest update and patch notes, Version 1.6 / Flows of Dreams, Qinchuan and Hexi catch-up, bosses list, Feng Ruzhi location, Qin Caiwei friendship, Free Morph unlock, and the China tier list perspective to compare weapons and builds.
           </p>
         </div>
       </section>
@@ -236,7 +242,7 @@ export default function Home() {
           <div>
             <p className="text-xs uppercase tracking-wide text-emerald-300">Trending now</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-50">Where Winds Meet guides players search for</h2>
-            <p className="text-xs text-amber-200 mt-1">New: Purple Star Catastrophe Prize Quiz answer (The Zhao Brothers)</p>
+            <p className="text-xs text-amber-200 mt-1">Freshness pass: May 2026 codes, Version 1.6 news, Qinchuan/Hexi catch-up, plus existing quest guides.</p>
           </div>
           <span className="text-xs text-slate-400">Updated with Google Trends keywords</span>
         </div>
@@ -300,13 +306,13 @@ export default function Home() {
             {
               title: "Active Codes",
               href: "/guides/codes",
-              desc: "Redeem the latest rewards before they expire. Updated frequently.",
+              desc: "May 2026 active codes, disabled leaked-code warning, rewards, and redeem steps.",
               tag: "Rewards",
             },
             {
               title: "Tier Lists",
               href: "/guides/tier-list",
-              desc: "PVP/PVE rankings and weapon tiers after balance changes.",
+              desc: "PVP/PVE rankings and weapon tiers to re-check after Version 1.6 and Qinchuan changes.",
               tag: "Meta",
             },
           ].map((item) => (

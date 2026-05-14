@@ -1,13 +1,31 @@
 'use strict';
 /* eslint-disable @typescript-eslint/no-require-imports */
-const { spawn } = require("node:child_process");
-const { existsSync } = require("node:fs");
+const { existsSync, statSync } = require("node:fs");
+const { createServer } = require("node:http");
+const { createReadStream } = require("node:fs");
+const { extname, join, normalize } = require("node:path");
 const { setTimeout: delay } = require("node:timers/promises");
 
 const DEFAULT_PORT = 3100;
 const DEFAULT_MAX_PAGES = 600;
 const DEFAULT_ORIGIN = null;
 const SITE_ORIGIN = "https://wherewindsmeet.org";
+const OUT_DIR = "out";
+
+const contentTypes = {
+  ".html": "text/html; charset=utf-8",
+  ".xml": "application/xml; charset=utf-8",
+  ".txt": "text/plain; charset=utf-8",
+  ".json": "application/json; charset=utf-8",
+  ".css": "text/css; charset=utf-8",
+  ".js": "text/javascript; charset=utf-8",
+  ".svg": "image/svg+xml",
+  ".png": "image/png",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".webp": "image/webp",
+  ".ico": "image/x-icon",
+};
 
 const parseArgValue = (args, key) => {
   const index = args.indexOf(key);
@@ -86,6 +104,42 @@ const fetchWithTimeout = async (url, options = {}, timeoutMs = 15000) => {
   } finally {
     clearTimeout(timeout);
   }
+};
+
+const startStaticServer = (port) => {
+  const server = createServer((request, response) => {
+    try {
+      const url = new URL(request.url || "/", `http://localhost:${port}`);
+      const pathname = decodeURIComponent(url.pathname);
+      const safePath = normalize(pathname).replace(/^(\.\.[/\\])+/, "");
+      const candidates = [];
+
+      if (safePath === "/") candidates.push(join(OUT_DIR, "index.html"));
+      else {
+        candidates.push(join(OUT_DIR, safePath));
+        candidates.push(join(OUT_DIR, safePath, "index.html"));
+        candidates.push(join(OUT_DIR, `${safePath}.html`));
+      }
+
+      const filePath = candidates.find((candidate) => existsSync(candidate) && statSync(candidate).isFile());
+      if (!filePath) {
+        response.writeHead(404, { "content-type": "text/plain; charset=utf-8" });
+        response.end("Not found");
+        return;
+      }
+
+      response.writeHead(200, { "content-type": contentTypes[extname(filePath)] || "application/octet-stream" });
+      createReadStream(filePath).pipe(response);
+    } catch (error) {
+      response.writeHead(500, { "content-type": "text/plain; charset=utf-8" });
+      response.end(String(error));
+    }
+  });
+
+  return new Promise((resolve, reject) => {
+    server.once("error", reject);
+    server.listen(port, "127.0.0.1", () => resolve(server));
+  });
 };
 
 const waitForServer = async (baseUrl, timeoutMs = 30000) => {
@@ -242,8 +296,8 @@ Examples:
     }
   })();
 
-  if (isLocalOrigin && !existsSync(".next/BUILD_ID")) {
-    console.error("Missing production build. Run `npm run build` before running this check.");
+  if (isLocalOrigin && !existsSync(OUT_DIR)) {
+    console.error("Missing static export. Run `npm run build` before running this check.");
     process.exitCode = 2;
     return;
   }
@@ -269,20 +323,11 @@ Examples:
     }
   }
 
-  const server =
-    isLocalOrigin && !alreadyRunning
-      ? spawn(process.execPath, ["./scripts/run-with-baseline-env.cjs", "start", "-p", String(spawnPort)], {
-          stdio: "inherit",
-          env: process.env,
-        })
-      : null;
+  const server = isLocalOrigin && !alreadyRunning ? await startStaticServer(spawnPort) : null;
 
   const stopServer = async () => {
     if (!server) return;
-    if (server.killed) return;
-    server.kill("SIGTERM");
-    await delay(250);
-    if (!server.killed) server.kill("SIGKILL");
+    await new Promise((resolve) => server.close(resolve));
   };
 
   try {
