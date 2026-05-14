@@ -267,6 +267,36 @@ export default function RisingQueryGuidePage() {
         </aside>
       </section>
 
+
+      <section className="rounded-3xl border border-cyan-400/25 bg-cyan-500/10 p-6 shadow-lg shadow-slate-950/40">
+        <h2 className="text-2xl font-bold text-cyan-50">Visual answer card: Travel Permit fields</h2>
+        <p className="mt-2 max-w-3xl text-sm leading-6 text-cyan-50/80">
+          This is an original visual checklist. Replace these cards with our own in-game screenshots later; for now they make the route and answer sequence scannable without copying another site’s images.
+        </p>
+        <div className="mt-5 grid gap-3 md:grid-cols-4">
+          <div className="relative rounded-2xl border border-cyan-300/30 bg-slate-950/75 p-4">
+            <div className="mb-3 inline-flex h-9 min-w-9 items-center justify-center rounded-full bg-cyan-400/20 px-3 text-sm font-bold text-cyan-100">Name</div>
+            <h3 className="text-base font-semibold text-slate-50">Xu Jian</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-300">Enter only after all six clues are found.</p>
+          </div>
+          <div className="relative rounded-2xl border border-cyan-300/30 bg-slate-950/75 p-4">
+            <div className="mb-3 inline-flex h-9 min-w-9 items-center justify-center rounded-full bg-cyan-400/20 px-3 text-sm font-bold text-cyan-100">Truly</div>
+            <h3 className="text-base font-semibold text-slate-50">Flora Expert</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-300">This is the identity clue, not a title guess.</p>
+          </div>
+          <div className="relative rounded-2xl border border-cyan-300/30 bg-slate-950/75 p-4">
+            <div className="mb-3 inline-flex h-9 min-w-9 items-center justify-center rounded-full bg-cyan-400/20 px-3 text-sm font-bold text-cyan-100">Purpose</div>
+            <h3 className="text-base font-semibold text-slate-50">Find Poplar Seeds</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-300">Use this exact purpose when filling the permit.</p>
+          </div>
+          <div className="relative rounded-2xl border border-cyan-300/30 bg-slate-950/75 p-4">
+            <div className="mb-3 inline-flex h-9 min-w-9 items-center justify-center rounded-full bg-cyan-400/20 px-3 text-sm font-bold text-cyan-100">Next</div>
+            <h3 className="text-base font-semibold text-slate-50">Auspicious Bronze Horse</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-300">Second tomb tribute puzzle comes after the permit.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="rounded-3xl border border-emerald-500/20 bg-emerald-500/10 p-6 shadow-lg shadow-slate-950/40">
         <h2 className="text-2xl font-bold text-emerald-50">Search intent checklist</h2>
         <div className="mt-5 grid gap-4 md:grid-cols-3">

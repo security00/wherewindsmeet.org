@@ -267,6 +267,36 @@ export default function RisingQueryGuidePage() {
         </aside>
       </section>
 
+
+      <section className="rounded-3xl border border-cyan-400/25 bg-cyan-500/10 p-6 shadow-lg shadow-slate-950/40">
+        <h2 className="text-2xl font-bold text-cyan-50">Visual route: Unknown Person → Mustard Hut → Lettered and Locked</h2>
+        <p className="mt-2 max-w-3xl text-sm leading-6 text-cyan-50/80">
+          This is an original visual checklist. Replace these cards with our own in-game screenshots later; for now they make the route and answer sequence scannable without copying another site’s images.
+        </p>
+        <div className="mt-5 grid gap-3 md:grid-cols-4">
+          <div className="relative rounded-2xl border border-cyan-300/30 bg-slate-950/75 p-4">
+            <div className="mb-3 inline-flex h-9 min-w-9 items-center justify-center rounded-full bg-cyan-400/20 px-3 text-sm font-bold text-cyan-100">1</div>
+            <h3 className="text-base font-semibold text-slate-50">Unknown Person</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-300">Talk after Lost Among Ancient Bulwarks.</p>
+          </div>
+          <div className="relative rounded-2xl border border-cyan-300/30 bg-slate-950/75 p-4">
+            <div className="mb-3 inline-flex h-9 min-w-9 items-center justify-center rounded-full bg-cyan-400/20 px-3 text-sm font-bold text-cyan-100">2</div>
+            <h3 className="text-base font-semibold text-slate-50">Mustard Hut</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-300">Meet the painter and learn about Fang Bai.</p>
+          </div>
+          <div className="relative rounded-2xl border border-cyan-300/30 bg-slate-950/75 p-4">
+            <div className="mb-3 inline-flex h-9 min-w-9 items-center justify-center rounded-full bg-cyan-400/20 px-3 text-sm font-bold text-cyan-100">3</div>
+            <h3 className="text-base font-semibold text-slate-50">Xiao Pass Old Road</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-300">Follow clues into Lettered and Locked.</p>
+          </div>
+          <div className="relative rounded-2xl border border-cyan-300/30 bg-slate-950/75 p-4">
+            <div className="mb-3 inline-flex h-9 min-w-9 items-center justify-center rounded-full bg-cyan-400/20 px-3 text-sm font-bold text-cyan-100">4</div>
+            <h3 className="text-base font-semibold text-slate-50">Wen Moshen key</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-300">Find the tower key, free him, report back.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="rounded-3xl border border-emerald-500/20 bg-emerald-500/10 p-6 shadow-lg shadow-slate-950/40">
         <h2 className="text-2xl font-bold text-emerald-50">Search intent checklist</h2>
         <div className="mt-5 grid gap-4 md:grid-cols-3">
