@@ -42,11 +42,20 @@ const guideSections = [
       "Flexible setups for every playstyle. Tank, DPS, and Support archetypes.",
   },
   {
+    title: "WWM Weapon Tier List",
+    slug: "/guides/weapons/tier-list",
+    label: "Best Weapons",
+    icon: "🗡️",
+    color: "text-blue-400",
+    size: "medium",
+    description: "Best Where Winds Meet weapons ranked for PVE, PVP, arena, and endgame builds.",
+  },
+  {
     title: "Weapon Encyclopedia",
     slug: "/guides/weapons",
     label: "All Weapons",
-    icon: "🗡️",
-    color: "text-blue-400",
+    icon: "📚",
+    color: "text-blue-300",
     size: "small",
     description: "Complete stats and lore for every weapon.",
   },
@@ -367,10 +376,10 @@ export default function GuidesPage() {
             🍂 Latest Lost Chapter: One Leaf, One Life quest guide
           </Link>
           <Link
-            href="/guides/murong-yuan-adoptive-father"
-            className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-amber-400/60 bg-amber-500/10 px-4 py-2 text-sm font-semibold text-amber-200 transition hover:border-amber-300/80 hover:text-amber-100"
+            href="/guides/weapons/tier-list"
+            className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-blue-400/60 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-100 transition hover:border-blue-300/80 hover:text-blue-50"
           >
-            🎯 Trending Quiz: Murong Yuan adoptive father (fast answer)
+            🗡️ Trending: WWM weapon tier list and best weapons
           </Link>
         </div>
 

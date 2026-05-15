@@ -4,11 +4,35 @@ import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Weapon Tier List - Ranking Every Weapon",
+  title: "WWM Weapon Tier List – Best Where Winds Meet Weapons",
   description:
-    "Complete Where Winds Meet weapon tier list ranking all weapons for PVE, PVP, and endgame. Learn which weapons are strongest, easiest to use, and best for your playstyle.",
+    "WWM weapon tier list for Where Winds Meet: best weapons ranked for PVE, PVP, arena climbing, beginners, and endgame builds after the latest updates.",
   alternates: buildHreflangAlternates("/guides/weapons/tier-list"),
 };
+
+const quickRankings = [
+  { tier: "S", weapons: "Rope Dart, Dual Blades", bestFor: "PVP pressure, fast picks, mobile burst windows" },
+  { tier: "A", weapons: "Spear, Mo Blade", bestFor: "Safe PVE clears, bruiser damage, boss learning" },
+  { tier: "B", weapons: "Sword, Fan, Umbrella", bestFor: "Beginner comfort, support, counters, specialist builds" },
+];
+
+const faqs = [
+  {
+    question: "What is the best weapon in Where Winds Meet?",
+    answer:
+      "For most players, Rope Dart and Dual Blades are the strongest aggressive picks right now because they combine mobility, pressure, and burst. Spear and Mo Blade are safer if you care more about stable PVE clears.",
+  },
+  {
+    question: "What is the best PVP weapon in WWM?",
+    answer:
+      "Dual Blades and Rope Dart are the first weapons to test for PVP because they can force engagements and punish mistakes quickly. Umbrella remains useful for players who prefer reactive counters.",
+  },
+  {
+    question: "Is this WWM weapon tier list beginner friendly?",
+    answer:
+      "Yes. New players should treat S tier as the ceiling, not a command. If you want a smoother start, Spear, Sword, or Mo Blade can feel easier while you learn dodges, parries, and boss timings.",
+  },
+];
 
 const tierSummaries = [
   {
@@ -119,8 +143,34 @@ const weaponCategories = [
 ];
 
 export default function WeaponTierListPage() {
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: "WWM Weapon Tier List – Best Where Winds Meet Weapons",
+      description: metadata.description,
+      url: "https://wherewindsmeet.org/guides/weapons/tier-list",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    },
+  ];
+
   return (
     <article className="space-y-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
         <div className="pointer-events-none absolute inset-0">
           <CdnImage
@@ -133,11 +183,16 @@ export default function WeaponTierListPage() {
         </div>
 
         <div className="relative">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-300">
+            WWM weapon tier list · PVE · PVP · Arena
+          </p>
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet weapon tier list ranking every weapon.
+            WWM Weapon Tier List: Best Where Winds Meet Weapons Ranked
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Choosing the right weapon is foundational to your Where Winds Meet
+            This WWM weapon tier list answers the search directly: which Where
+            Winds Meet weapons are worth investing in for PVE, PVP, arena ranks,
+            and endgame builds. Choosing the right weapon is foundational to your Where Winds Meet
             experience. Each weapon in Where Winds Meet has a distinct playstyle,
             power curve, and learning curve. This dedicated Where Winds Meet weapon
             tier list breaks down every weapon across multiple dimensions: raw power,
@@ -166,6 +221,29 @@ export default function WeaponTierListPage() {
             specific weapons and finally jump into the builds guide to finish your
             setup.
           </p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            {quickRankings.map((row) => (
+              <div key={row.tier} className="rounded-2xl border border-emerald-500/20 bg-slate-950/70 p-4">
+                <p className="text-xs font-semibold uppercase tracking-widest text-emerald-300">{row.tier} Tier</p>
+                <p className="mt-2 text-sm font-semibold text-slate-50">{row.weapons}</p>
+                <p className="mt-2 text-xs leading-relaxed text-slate-300">{row.bestFor}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href="/guides/pvp-tier-list"
+              className="inline-flex items-center rounded-full border border-red-400/40 bg-red-500/10 px-4 py-2 text-sm font-semibold text-red-100 transition hover:border-red-300/70"
+            >
+              PVP tier list & arena ranks →
+            </Link>
+            <Link
+              href="/guides/tier-list"
+              className="inline-flex items-center rounded-full border border-emerald-400/40 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-100 transition hover:border-emerald-300/70"
+            >
+              Full WWM tier list →
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -412,7 +490,21 @@ export default function WeaponTierListPage() {
 
       <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          Keeping your Where Winds Meet weapon tier list current.
+          WWM weapon tier list FAQ.
+        </h2>
+        <div className="space-y-4">
+          {faqs.map((faq) => (
+            <div key={faq.question} className="rounded-2xl border border-slate-800 bg-slate-900/40 p-4">
+              <h3 className="text-sm font-semibold text-slate-50">{faq.question}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+          Keeping your WWM weapon tier list current.
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
           This Where Winds Meet weapon tier list reflects the current patch. After
