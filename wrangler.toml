@@ -1,0 +1,11 @@
+name = "wherewindsmeet-org"
+compatibility_date = "2026-05-28"
+routes = [
+  { pattern = "wherewindsmeet.org/*", zone_name = "wherewindsmeet.org" },
+  { pattern = "www.wherewindsmeet.org/*", zone_name = "wherewindsmeet.org" },
+]
+
+[assets]
+directory = "./out"
+html_handling = "auto-trailing-slash"
+not_found_handling = "404-page"
