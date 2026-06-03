@@ -102,19 +102,6 @@
     ]
   },
   {
-    "basePath": "/guides/imperial-decree",
-    "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-06-04",
-    "gameVersion": "Version 1.7 / The Imperial Palace",
-    "priorityCluster": "week-2-breakout-query",
-    "sourceUrls": [
-      "https://www.wherewindsmeetgame.com/news/official/TheImperialPalace.html",
-      "https://game8.co/games/Where-Winds-Meet/archives/603080",
-      "https://game8.co/games/Where-Winds-Meet/archives/603066",
-      "https://www.reddit.com/answers/68829f0f-b49d-4b3a-9f7a-1e782709e9d1/?q=Explain+Imperial+Decree+in+WhereWindsMeet&source=PDP&tl=en"
-    ]
-  },
-  {
     "basePath": "/guides/npc-list",
     "languages": ["en", "vi", "de"],
     "lastChecked": "2026-06-03",
