@@ -142,6 +142,15 @@ const guideSections = [
     description: "Qinchuan Path hub: unlocks, Sunken City Lake, Travel Permit, To Friends to the End, and exploration priorities.",
   },
   {
+    title: "Imperial Decree",
+    slug: "/guides/imperial-decree",
+    label: "Breakout",
+    icon: "📜",
+    color: "text-amber-300",
+    size: "medium",
+    description: "Imperial Palace activity guide: unlock location, Finance S answer meanings, rewards, and blockers.",
+  },
+  {
     title: "Sunken City Lake",
     slug: "/guides/sunken-city-lake",
     label: "Breakout",
@@ -370,10 +379,10 @@ export default function GuidesPage() {
             Your companion for the journey through Jianghu. From basic movements to grandmaster techniques, find your path here.
           </p>
           <Link
-            href="/guides/one-leaf-one-life"
+            href="/guides/imperial-decree"
             className="mt-4 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-400/60 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-200 transition hover:border-emerald-300/80 hover:text-emerald-100"
           >
-            🍂 Latest Lost Chapter: One Leaf, One Life quest guide
+            Trending: Imperial Decree Finance S answers
           </Link>
           <Link
             href="/guides/weapons/tier-list"
