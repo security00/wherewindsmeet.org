@@ -107,7 +107,7 @@ const guide: GuideData = {
     },
     {
       "href": "/guides/codes",
-      "label": "May 2026 codes"
+      "label": "Palace-era codes"
     },
     {
       "href": "/guides/patch-notes",

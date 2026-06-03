@@ -3,9 +3,9 @@ import CdnImage from "@/components/CdnImage";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Codes, Belohnungen & Einlösen (DE)",
+  title: "Where Winds Meet Codes Juni 2026, Palace-Belohnungen (DE)",
   description:
-    "Aktive und abgelaufene Where Winds Meet Codes im Blick: Einlösen auf PC, Mobile und PS5 – plus welche Belohnungen sich für neue und zurückkehrende Spieler am meisten lohnen.",
+    "Gemeldete Where Winds Meet Codes für Version 1.7, Palace-Belohnungen, Einlösen auf PC/Mobile/PS5 und Hinweise zu abgelaufenen oder geleakten Codes.",
   alternates: buildHreflangAlternates("/guides/codes", { canonicalLanguage: "de" }),
 };
 
@@ -31,6 +31,18 @@ const exampleCodes = [
 ];
 
 const liveCodes = [
+  {
+    code: "PALACE0528",
+    label: "Gemeldeter Imperial-Palace-Code",
+    notes:
+      "Von Drittanbieter-Code-Trackern im Version-1.7-/Palace-Zeitfenster gemeldet. Im Spiel prüfen; nicht als offizielle Aktiv-Bestätigung behandeln.",
+  },
+  {
+    code: "PALACEGO",
+    label: "Gemeldeter Palace-Launch-Code",
+    notes:
+      "Als Palace-Update-Belohnung gemeldet. Wenn dein Server ihn ablehnt, als abgelaufen markieren und mit älteren Qinchuan/Hexi-Codes fortfahren.",
+  },
   {
     code: "WWMGLtiktok",
     label: "Global-Launch TikTok-Kampagne",
@@ -93,7 +105,7 @@ export default function CodesPage() {
 
       <section className="space-y-6">
         <h2 className="text-2xl font-bold text-slate-100 border-brush inline-block pb-2">
-          Aktive Codes <span className="text-sm font-normal text-slate-400 ml-2">(gemeldet)</span>
+          Gemeldete Codes <span className="text-sm font-normal text-slate-400 ml-2">(im Spiel prüfen)</span>
         </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {liveCodes.map((entry) => (
@@ -104,7 +116,7 @@ export default function CodesPage() {
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-100 bg-emerald-900/60 px-2 py-1 rounded border border-emerald-700/50 shadow-sm shadow-emerald-900/50">
-                    Aktiv
+                    Gemeldet
                   </span>
                   <span className="text-lg filter drop-shadow-md">🎁</span>
                 </div>
@@ -122,7 +134,7 @@ export default function CodesPage() {
           ))}
         </div>
         <p className="text-xs text-slate-500 italic">
-          * Codes sind regionsabhängig und zeitlich begrenzt. Immer im Spiel prüfen.
+          * Codes sind regionsabhängig und zeitlich begrenzt. Immer im Spiel prüfen; Palace-Code-Berichte von Drittseiten sind keine offizielle Garantie.
         </p>
       </section>
 

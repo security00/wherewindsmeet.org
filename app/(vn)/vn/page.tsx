@@ -5,14 +5,14 @@ import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "Trung tâm hướng dẫn Where Winds Meet Tiếng Việt",
+  title: "Where Winds Meet Version 1.7 Guide Hub Tiếng Việt",
   description:
-    "Trung tâm Tiếng Việt cho Where Winds Meet với livestream, hướng dẫn nổi bật, code, tier list và cập nhật mới nhất cho người chơi PC, console, mobile.",
+    "Trung tâm Tiếng Việt cho Where Winds Meet Version 1.7, The Imperial Palace, code Palace, tier list, build, boss và patch notes cho người chơi PC, console, mobile.",
   alternates: buildHreflangAlternates("/", { canonicalLanguage: "vi" }),
   openGraph: {
-    title: "Trung tâm hướng dẫn Where Winds Meet Tiếng Việt",
+    title: "Where Winds Meet Version 1.7 Guide Hub Tiếng Việt",
     description:
-      "Trung tâm Tiếng Việt cho Where Winds Meet: livestream, hướng dẫn nổi bật, code, tier list và cập nhật mới nhất cho người chơi PC, console, mobile.",
+      "Trung tâm Tiếng Việt cho Where Winds Meet: Version 1.7, The Imperial Palace, code Palace, tier list, build, boss và patch notes.",
     url: "https://wherewindsmeet.org/vn",
     images: [
       {
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Trung tâm hướng dẫn Where Winds Meet Tiếng Việt",
+    title: "Where Winds Meet Version 1.7 Guide Hub Tiếng Việt",
     description:
-      "Hướng dẫn nổi bật, code, tier list và tin cập nhật mới nhất cho Where Winds Meet (Tiếng Việt).",
+      "Hướng dẫn Version 1.7, code Palace, tier list và tin cập nhật mới nhất cho Where Winds Meet (Tiếng Việt).",
     images: ["https://static.wherewindsmeet.org/background/bg.jpg"],
   },
 };
@@ -46,14 +46,14 @@ export default function Home() {
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1.4fr)] lg:items-start">
           <div className="space-y-6">
             <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-              Livestream <span className="text-ink-gold">ra mắt toàn cầu</span>
+              Version 1.7 <span className="text-ink-gold">The Imperial Palace</span>
             </h2>
             <div className="space-y-4 text-slate-300 leading-relaxed">
               <p>
                 Where Winds Meet là game hành động nhập vai thế giới mở lấy bối cảnh một thời kỳ hỗn loạn của Trung Hoa cổ. Bạn chu du giang hồ sống động, luyện võ học, khinh công, nội công và chọn con đường riêng giữa vai trò hiệp khách, cuốn vào tranh đấu triều đình hay tự do khám phá.
               </p>
               <p>
-                Trung tâm ra mắt này tổng hợp hướng dẫn, build và mã đổi quà giúp người chơi trên PC, console, mobile bắt đầu nhanh và nắm rõ các cập nhật mới.
+                Trung tâm này đã được làm mới cho Version 1.7 / The Imperial Palace: code Palace dạng reported, patch notes 29/05, Path Balance, build, tier list và các hướng dẫn Qinchuan/Hexi cũ để người chơi quay lại bắt kịp nhanh.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Link
@@ -109,7 +109,7 @@ export default function Home() {
               href={vnHref("/news#next-update")}
               className="rounded-full border border-emerald-500/50 bg-emerald-500/10 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/70"
             >
-              Update tiếp theo
+              Version 1.7 / Palace
             </Link>
             <Link
               href={vnHref("/guides/bosses")}

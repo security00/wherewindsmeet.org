@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
+import { getContentFreshness } from "@/lib/contentFreshness";
 import { latestNewsDate, newsItems } from "@/lib/news";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
+const freshness = getContentFreshness("/news");
 
 export const metadata: Metadata = {
   title: "Where Winds Meet News, Roadmap Updates & Patch Notes",
@@ -43,9 +45,7 @@ const newsBlocks = [
 ];
 
 export default function NewsPage() {
-  const sortedNews = [...newsItems].sort((a, b) =>
-    a.date < b.date ? 1 : a.date > b.date ? -1 : 0,
-  );
+  const sortedNews = newsItems;
 
   const lastUpdatedLabel = `Updated ${latestNewsDate}`;
   const structuredData = [
@@ -80,7 +80,7 @@ export default function NewsPage() {
   const roadmapBlock = {
     title: "Roadmap / Next Updates (watchlist)",
     summary:
-      "Updated through the official May 12 news feed: PvP anti-cheat enforcement, the April 21-May 10 account suspension notice, May 8 fixes, Exchange Code Announcement, Hexi DEV AMA, Qinchuan Card Exchange, and Version 1.6 / Flows of Dreams remain summarized here with links back to the original articles.",
+      "Updated against the official desktop news index: the pinned unofficial-trading crackdown, May 29 Version 1.7 Patch Notes, May 27 Patch Notes, The Imperial Palace overview, and Version 1.7 Path Balance announcement now mirror the official list order.",
     updated: lastUpdatedLabel,
     links: [
       { href: "/guides/tier-list", label: "China tier list & balance notes" },
@@ -146,7 +146,7 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Latest official-news pass: May 12 PvP anti-cheat enforcement, the May 11 account suspension notice, May 8 fixes, the May 3 exchange-code warning, the Hexi DEV AMA, Qinchuan Card Exchange, and Version 1.6 / Flows of Dreams are summarized here with links to the original posts.
+              Latest official-news pass: {freshness?.gameVersion ?? "Version 1.7 / The Imperial Palace"} plus the pinned unofficial-trading crackdown, May 29 patch notes, May 27 Patch Notes, The Imperial Palace overview, and Version 1.7 Path Balance announcement. The list below follows the official news index order.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link href="/guides/tier-list" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
@@ -187,16 +187,16 @@ export default function NewsPage() {
               <p className="font-semibold text-slate-200">New hot searches to watch</p>
               <ul className="mt-2 space-y-1">
                 <li>
-                  Where Winds Meet codes May 2026 — Qinchuan/Hexi codes plus disabled leaked-code warning:
+                  Where Winds Meet codes June 2026 — Palace-era reports plus older Qinchuan/Hexi codes and the disabled leaked-code warning:
                   <Link href="/guides/codes" className="ml-1 text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
                     active codes page
                   </Link>
                 </li>
                 <li>
-                  May 12 PvP anti-cheat enforcement and May 11 account suspension notice — important context for arena-rank and PvP-rank searches.
+                  Version 1.7 / The Imperial Palace — current update anchor for roadmap, event, and returning-player searches.
                 </li>
                 <li>
-                  Version 1.6 / Flows of Dreams and May 8 optimizations — use this page for the current update trail before reading older Version 1.2 notes.
+                  May 29 patch notes and May 26 Path Balance — re-check tier list, builds, weapon pages, and PVP advice against these notes before trusting older meta.
                 </li>
                 <li>
                   Feng Ruzhi boss (Silk Ball) — location + unlock + mechanic:

@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
+import { getContentFreshness } from "@/lib/contentFreshness";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
+const freshness = getContentFreshness("/guides/codes");
+
 export const metadata: Metadata = {
-  title: "Where Winds Meet Codes May 2026 – Active Rewards",
+  title: "Where Winds Meet Codes June 2026 – Palace Rewards",
   description:
-    "Updated May 2026 Where Winds Meet codes list with active rewards, disabled leaked exchange codes warning, redemption steps, and expired launch codes.",
+    "Updated Where Winds Meet codes tracker for Version 1.7, Palace-era reported rewards, disabled leaked exchange code warnings, redemption steps, and expired launch codes.",
   alternates: buildHreflangAlternates("/guides/codes"),
 };
 
@@ -30,62 +33,85 @@ const exampleCodes = [
   },
 ];
 
-const lastChecked = "May 14, 2026";
+const lastChecked = freshness?.lastChecked ?? "2026-06-03";
 
 const liveCodes = [
   {
+    code: "PALACE0528",
+    label: "Imperial Palace reported code",
+    status: "Reported",
+    notes:
+      "Reported by third-party code trackers during the Version 1.7 / Imperial Palace window. Verify in-game before treating it as active; Palace-era codes can rotate quickly.",
+  },
+  {
+    code: "PALACEGO",
+    label: "Palace launch reported code",
+    status: "Reported",
+    notes:
+      "Reported as a Palace update reward. Use it as a candidate code, not an official guarantee, and move it to expired if your server rejects it.",
+  },
+  {
     code: "QINCHUAN0430",
     label: "Qinchuan update code",
+    status: "Reported",
     notes:
-      "Reported by code trackers in May 2026 with Echo Jade, Resonating Melody, and Coins. Redeem first because update/event codes can expire without much warning.",
+      "Older Qinchuan-era code reported with Echo Jade, Resonating Melody, and Coins. Try it after Palace-era candidates because update/event codes can expire without much warning.",
   },
   {
     code: "LIANGZHOUGO",
     label: "Liangzhou follow-up reward",
+    status: "Reported",
     notes:
       "Reported as a Liangzhou/Hexi-era code with Echo Jade, an Inner Way Note chest, and Coins. If your server rejects it, move it to your expired list.",
   },
   {
     code: "LIANGZHOU0402",
     label: "Liangzhou April code",
+    status: "Reported",
     notes:
       "Reported as an April 2026 Liangzhou code. Good quick check for returning players catching up on older Hexi rewards.",
   },
   {
     code: "MEETINHEXI",
     label: "Hexi expansion code",
+    status: "Reported",
     notes:
       "Reported reward bundle includes Echo Jade, Coins, Inner Way Note chests, and Oscillating Jades. Still worth trying on returning accounts.",
   },
   {
     code: "HEXI0306",
     label: "Hexi March code",
+    status: "Reported",
     notes:
       "Reported Hexi code for Echo Jade and Coins. Redeem before older expansion campaigns rotate out.",
   },
   {
     code: "GOOSENEWS",
     label: "Goose news reward",
+    status: "Reported",
     notes:
       "Reported as a smaller Echo Jade plus Inner Way chest reward. Useful for new accounts that missed launch freebies.",
   },
   {
     code: "DEVLOG2601",
     label: "Developer log code",
+    status: "Reported",
     notes:
       "Reported as a dev-log reward. Some communities previously listed expiry windows, so verify in-game before assuming it still works.",
   },
   {
     code: "WWMDEVTALK",
     label: "Dev talk reward",
+    status: "Reported",
     notes:
       "Reported as Echo Jade and Coins. Prioritize it with other official/community dev-post codes.",
   },
   {
     code: "WWMGLyoutube",
     label: "Global launch YouTube campaign",
+    status: "Reported",
     notes:
-      "Older launch campaign code that some May 2026 lists still report as active. Try it after newer Qinchuan/Hexi codes.",
+      "Older launch campaign code that some lists still report as active. Try it after newer Palace/Qinchuan/Hexi codes.",
   },
 ];
 
@@ -106,11 +132,11 @@ export default function CodesPage() {
 
         <div className="relative z-10 space-y-6">
           <h1 className="text-balance text-4xl font-bold tracking-tight text-ink sm:text-5xl">
-            Where Winds Meet <span className="text-ink-gold">Codes May 2026</span>
+            Where Winds Meet <span className="text-ink-gold">Codes June 2026</span>
           </h1>
           <div className="max-w-3xl space-y-4 text-slate-300 leading-relaxed">
             <p>
-              Updated {lastChecked}: this page refreshes the Where Winds Meet codes list for the Qinchuan/Hexi era instead of leaving old launch-only codes at the top. Start with the newest reported codes, then try older launch rewards only if your account has never claimed them.
+              Updated {lastChecked}: this page refreshes the Where Winds Meet codes list for {freshness?.gameVersion ?? "Version 1.7 / The Imperial Palace"} instead of leaving old launch-only codes at the top. Start with Palace-era reported codes, then try Qinchuan/Hexi and older launch rewards only if your account has never claimed them.
             </p>
             <p>
               Important: the official news feed also reported that a leaked batch of 30 exchange codes was disabled in early May 2026. If a code from social media fails, it may simply be one of those disabled leak codes rather than a problem with your account.
@@ -122,7 +148,7 @@ export default function CodesPage() {
       {/* Live Codes Section */}
       <section className="space-y-6">
         <h2 className="text-2xl font-bold text-slate-100 border-brush inline-block pb-2">
-          Active Codes <span className="text-sm font-normal text-slate-400 ml-2">(reported, checked {lastChecked})</span>
+          Reported Codes <span className="text-sm font-normal text-slate-400 ml-2">(verify in-game, checked {lastChecked})</span>
         </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {liveCodes.map((entry) => (
@@ -133,7 +159,7 @@ export default function CodesPage() {
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-100 bg-emerald-900/60 px-2 py-1 rounded border border-emerald-700/50 shadow-sm shadow-emerald-900/50">
-                    Active
+                    {entry.status}
                   </span>
                   <span className="text-lg filter drop-shadow-md">🎁</span>
                 </div>
@@ -153,12 +179,12 @@ export default function CodesPage() {
           ))}
         </div>
         <p className="text-xs text-slate-500 italic">
-          * Codes are region-dependent and time-limited. Always check in-game. Leaked May 2026 batches may already be disabled.
+          * Codes are region-dependent and time-limited. Always check in-game. Leaked batches may already be disabled, and third-party Palace code reports are not official confirmations.
         </p>
       </section>
 
       <section className="rounded-3xl border border-amber-500/30 bg-amber-500/10 p-6 text-sm text-amber-50 shadow-lg shadow-amber-950/30">
-        <h2 className="text-xl font-bold text-amber-100">May 2026 exchange-code warning</h2>
+        <h2 className="text-xl font-bold text-amber-100">Exchange-code warning</h2>
         <p className="mt-3 leading-relaxed text-amber-50/90">
           The official mobile news feed posted an Exchange Code Announcement on May 3, 2026 saying that a leaked batch of 30 codes had been disabled. That means some very large social-media lists may be noisy. Use this page as a practical checklist: try the most recent Qinchuan/Hexi codes first, then treat failed leaked codes as expired instead of retrying them for days.
         </p>

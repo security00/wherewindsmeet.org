@@ -5,12 +5,12 @@ import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet – Deutscher Global-Launch-Guide-Hub",
+  title: "Where Winds Meet Version 1.7 – Deutscher Guide-Hub",
   description:
-    "Deutscher Hub zum Global Launch mit Preview-Stream sowie gefragten Where Winds Meet Guides, Codes, Tierlisten und Updates für PC, Konsole und Mobile.",
+    "Deutscher Hub zu Where Winds Meet Version 1.7, The Imperial Palace, Palace-Codes, Patch Notes, Tierlisten, Builds und Boss-Guides für PC, Konsole und Mobile.",
   alternates: buildHreflangAlternates("/", { canonicalLanguage: "de" }),
   openGraph: {
-    title: "Where Winds Meet – Deutscher Guide-Hub",
+    title: "Where Winds Meet Version 1.7 – Deutscher Guide-Hub",
     description:
       "Schau den Preview-Stream und finde die gefragtesten Where Winds Meet Guides: Tierlisten, Codes, Bosse, Roadmap und Quests wie An Unholy Prophecy, One Leaf One Life und Woven with Malice.",
     url: "https://wherewindsmeet.org/de",
@@ -37,7 +37,7 @@ export default function Home() {
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1.4fr)] lg:items-start">
           <div className="space-y-6">
             <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-              Global-Launch <span className="text-ink-gold">Preview-Stream</span>
+              Version 1.7 <span className="text-ink-gold">The Imperial Palace</span>
             </h2>
             <div className="space-y-4 text-slate-300 leading-relaxed">
               <p>
@@ -47,8 +47,8 @@ export default function Home() {
                 zwischen wanderndem Held, Hofintrigen und freier Erkundung.
               </p>
               <p>
-                Dieser Global-Launch-Hub bündelt Guides, Builds und Codes, damit Spieler auf PC,
-                Konsole und Mobile jede Reise optimal nutzen.
+                Dieser Hub wurde für Version 1.7 / The Imperial Palace aktualisiert: Palace-Code-Kandidaten, Patch Notes vom 29. Mai,
+                Path Balance, Builds, Tierlisten und ältere Qinchuan/Hexi-Catch-up-Guides stehen jetzt zusammen.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Link
@@ -102,7 +102,7 @@ export default function Home() {
               href="/de/news#next-update"
               className="rounded-full border border-emerald-500/50 bg-emerald-500/10 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/70"
             >
-              Nächstes Update
+              Version 1.7 / Palace
             </Link>
             <Link
               href="/de/guides/bosses"

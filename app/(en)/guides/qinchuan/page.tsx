@@ -137,7 +137,7 @@ const guide: GuideData = {
     { href: "/guides/to-friends-to-the-end", label: "To Friends, to the End" },
     { href: "/guides/travel-permit", label: "Travel Permit / The People’s Wish" },
     { href: "/guides/verdant-flute", label: "Verdant Flute / Flute of the Tides" },
-    { href: "/guides/codes", label: "May 2026 codes" },
+    { href: "/guides/codes", label: "Palace-era codes" },
     { href: "/guides/patch-notes", label: "Patch notes tracker" },
     { href: "/tools/interactive-map", label: "Interactive map" },
   ],

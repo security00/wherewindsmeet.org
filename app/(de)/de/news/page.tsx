@@ -42,9 +42,7 @@ export default function NewsPage() {
     return `${day}.${month}.${year}`;
   };
 
-  const sortedNews = [...newsItems].sort((a, b) =>
-    a.date < b.date ? 1 : a.date > b.date ? -1 : 0,
-  );
+  const sortedNews = newsItems;
 
   const lastUpdatedLabel = `Aktualisiert: ${formatDateDe(latestNewsDate)}`;
   const structuredData = [
@@ -69,7 +67,7 @@ export default function NewsPage() {
   const roadmapBlock = {
     title: "Roadmap / Nächste Updates (Watchlist)",
     summary:
-      "Beobachtet kommende Where Winds Meet Updates: Balance-Patches, Boss/Bloodbath-Tweaks, Anti-Cheat, Events und Quest-Fixes. Wir aktualisieren nach jedem offiziellen Post.",
+      "Aktualisiert auf Version 1.7: The Imperial Palace, Patch Notes vom 29. Mai, Hotfix-Fenster vom 28. Mai und Path Balance vom 26. Mai stehen jetzt vor älteren Anti-Cheat-, Code-, Hexi-, Qinchuan- und Version-1.6-Notizen.",
     updated: lastUpdatedLabel,
     links: [
       { href: "/de/guides/tier-list", label: "China-Tierliste & Balance-Notizen" },
@@ -121,13 +119,13 @@ export default function NewsPage() {
             className="rounded-2xl border border-emerald-500/40 bg-emerald-500/10 p-4 text-sm text-emerald-50 shadow-inner shadow-emerald-900/40"
           >
             <div className="flex items-center justify-between gap-2">
-              <p className="font-semibold">Nächstes Update (wird laufend aktualisiert)</p>
+              <p className="font-semibold">Version 1.7 / The Imperial Palace (laufend aktualisiert)</p>
               <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
                 {lastUpdatedLabel}
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Beobachten offizielle „Next Update“-Beats: Balance-Notizen, neue Bosse/Bloodbath-Varianten, Event-Codes. Nach Ankündigungen fassen wir die wichtigsten Punkte in 2–3 Bullet-Points zusammen.
+              Latest pass: The Imperial Palace, Patch Notes vom 29. Mai, Hotfix vom 28. Mai und Path Balance vom 26. Mai. Ältere Anti-Cheat-, Code-Warnungs-, Hexi-, Qinchuan- und Version-1.6-Posts bleiben darunter als Catch-up.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link href="/de/guides/tier-list" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">

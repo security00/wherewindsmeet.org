@@ -3,9 +3,9 @@ import CdnImage from "@/components/CdnImage";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "Code Where Winds Meet, quà tặng và cách nhập",
+  title: "Code Where Winds Meet tháng 6/2026, quà Palace",
   description:
-    "Theo dõi code Where Winds Meet còn hạn, cách nhập trên PC/PS5, và mẹo ưu tiên phần thưởng cho người chơi mới lẫn quay lại.",
+    "Theo dõi code Where Winds Meet Version 1.7, quà Palace dạng reported, cách nhập trên PC/PS5/mobile và cảnh báo code đã hết hạn hoặc bị vô hiệu hóa.",
   alternates: buildHreflangAlternates("/guides/codes", { canonicalLanguage: "vi" }),
 };
 
@@ -31,6 +31,18 @@ const exampleCodes = [
 ];
 
 const liveCodes = [
+  {
+    code: "PALACE0528",
+    label: "Code Imperial Palace được báo cáo",
+    notes:
+      "Được các trang theo dõi code bên thứ ba báo cáo trong giai đoạn Version 1.7 / Palace. Hãy kiểm tra trong game; đừng xem đây là xác nhận chính thức.",
+  },
+  {
+    code: "PALACEGO",
+    label: "Code launch Palace được báo cáo",
+    notes:
+      "Được báo cáo là code thưởng cho bản Palace. Nếu server từ chối, hãy chuyển sang nhóm hết hạn rồi thử các code Qinchuan/Hexi cũ.",
+  },
   {
     code: "WWMGLtiktok",
     label: "Chiến dịch TikTok ra mắt toàn cầu",
@@ -94,7 +106,7 @@ export default function CodesPage() {
 
       <section className="space-y-6">
         <h2 className="text-2xl font-bold text-slate-100 border-brush inline-block pb-2">
-          Code đang hoạt động <span className="text-sm font-normal text-slate-400 ml-2">(báo cáo)</span>
+          Code được báo cáo <span className="text-sm font-normal text-slate-400 ml-2">(hãy kiểm tra trong game)</span>
         </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {liveCodes.map((entry) => (
@@ -105,7 +117,7 @@ export default function CodesPage() {
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-100 bg-emerald-900/60 px-2 py-1 rounded border border-emerald-700/50 shadow-sm shadow-emerald-900/50">
-                    Đang hoạt động
+                    Báo cáo
                   </span>
                   <span className="text-lg filter drop-shadow-md">🎁</span>
                 </div>
@@ -125,7 +137,7 @@ export default function CodesPage() {
           ))}
         </div>
         <p className="text-xs text-slate-500 italic">
-          * Code phụ thuộc khu vực và có hạn dùng. Luôn kiểm tra trong game.
+          * Code phụ thuộc khu vực và có hạn dùng. Luôn kiểm tra trong game; báo cáo code Palace từ bên thứ ba không phải xác nhận chính thức.
         </p>
       </section>
 

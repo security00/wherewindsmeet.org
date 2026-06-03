@@ -1,0 +1,89 @@
+[
+  {
+    "basePath": "/",
+    "languages": ["en", "vi", "de"],
+    "lastChecked": "2026-06-03",
+    "gameVersion": "Version 1.7 / The Imperial Palace",
+    "priorityCluster": "week-1-rescue",
+    "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/m/news/",
+      "https://www.wherewindsmeetgame.com/news/official/TheImperialPalace.html",
+      "https://www.wherewindsmeetgame.com/news/official/529update.html"
+    ]
+  },
+  {
+    "basePath": "/news",
+    "languages": ["en", "vi", "de"],
+    "lastChecked": "2026-06-03",
+    "gameVersion": "Version 1.7 / The Imperial Palace",
+    "priorityCluster": "week-1-rescue",
+    "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/m/news/",
+      "https://www.wherewindsmeetgame.com/news/official/TheImperialPalace.html",
+      "https://www.wherewindsmeetgame.com/news/official/529update.html"
+    ]
+  },
+  {
+    "basePath": "/guides/patch-notes",
+    "languages": ["en", "vi", "de"],
+    "lastChecked": "2026-06-03",
+    "gameVersion": "Version 1.7 / The Imperial Palace",
+    "priorityCluster": "week-1-rescue",
+    "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/m/news/",
+      "https://www.wherewindsmeetgame.com/news/official/529update.html"
+    ]
+  },
+  {
+    "basePath": "/guides/codes",
+    "languages": ["en", "vi", "de"],
+    "lastChecked": "2026-06-03",
+    "gameVersion": "Version 1.7 / The Imperial Palace",
+    "priorityCluster": "week-1-rescue",
+    "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/m/news/",
+      "https://www.pcgamer.com/games/action/where-winds-meet-codes/"
+    ]
+  },
+  {
+    "basePath": "/guides/tier-list",
+    "languages": ["en", "vi", "de"],
+    "lastChecked": "2026-06-03",
+    "gameVersion": "Version 1.7 / Path Balance",
+    "priorityCluster": "week-2-meta-refresh",
+    "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/m/news/"
+    ]
+  },
+  {
+    "basePath": "/guides/builds",
+    "languages": ["en", "vi", "de"],
+    "lastChecked": "2026-06-03",
+    "gameVersion": "Version 1.7 / Path Balance",
+    "priorityCluster": "week-2-meta-refresh",
+    "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/m/news/"
+    ]
+  },
+  {
+    "basePath": "/guides/weapons/tier-list",
+    "languages": ["en", "vi", "de"],
+    "lastChecked": "2026-06-03",
+    "gameVersion": "Version 1.7 / Path Balance",
+    "priorityCluster": "week-2-meta-refresh",
+    "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/m/news/"
+    ]
+  },
+  {
+    "basePath": "/guides/qinchuan",
+    "languages": ["en", "vi", "de"],
+    "lastChecked": "2026-06-03",
+    "gameVersion": "Version 1.7 / The Imperial Palace",
+    "priorityCluster": "week-2-region-cluster",
+    "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/m/news/",
+      "https://www.wherewindsmeetgame.com/news/official/TheImperialPalace.html"
+    ]
+  }
+]

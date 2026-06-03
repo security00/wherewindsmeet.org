@@ -42,9 +42,7 @@ export default function NewsPage() {
     return `${day}/${month}/${year}`;
   };
 
-  const sortedNews = [...newsItems].sort((a, b) =>
-    a.date < b.date ? 1 : a.date > b.date ? -1 : 0,
-  );
+  const sortedNews = newsItems;
 
   const lastUpdatedLabel = `Cập nhật: ${formatDateVi(latestNewsDate)}`;
   const structuredData = [
@@ -112,13 +110,13 @@ export default function NewsPage() {
             className="rounded-2xl border border-emerald-500/40 bg-emerald-500/10 p-4 text-sm text-emerald-50 shadow-inner shadow-emerald-900/40"
           >
             <div className="flex items-center justify-between gap-2">
-              <p className="font-semibold">Theo dõi “update tiếp theo” (tự cập nhật khi có tin mới)</p>
+              <p className="font-semibold">Theo dõi Version 1.7 / The Imperial Palace</p>
               <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
                 {lastUpdatedLabel}
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Tổng hợp nhanh các thông tin liên quan “bản cập nhật tiếp theo”: cân bằng, boss/Bloodbath, sự kiện và code. Khi có thông báo mới, phần tóm tắt sẽ được cập nhật ngắn gọn trong 2–3 gạch đầu dòng.
+              Latest pass hiện theo The Imperial Palace, patch notes 29/05, hotfix 28/05 và Path Balance 26/05. Các tin anti-cheat, code warning, Hexi, Qinchuan và Version 1.6 cũ vẫn nằm bên dưới để người chơi quay lại bắt kịp.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link

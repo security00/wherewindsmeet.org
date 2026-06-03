@@ -6,10 +6,12 @@
     "dev": "node ./scripts/run-with-baseline-env.cjs dev",
     "build": "node ./scripts/run-with-baseline-env.cjs build",
     "start": "node ./scripts/run-with-baseline-env.cjs start",
-    "seo:check": "node ./scripts/seo-check.cjs",
+    "seo:check": "node ./scripts/seo-check.cjs && npm run seo:check:freshness",
     "seo:check:live": "node ./scripts/seo-check.cjs --origin https://wherewindsmeet.org",
     "seo:check:full": "npm run build && npm run seo:check",
+    "seo:check:freshness": "node ./scripts/seo-freshness-check.cjs",
     "seo:check:hreflang": "node ./scripts/seo-hreflang-regression.cjs --origin https://wherewindsmeet.org",
+    "seo:gsc:prioritize": "node ./scripts/gsc-priority.cjs",
     "lint": "eslint"
   },
   "dependencies": {

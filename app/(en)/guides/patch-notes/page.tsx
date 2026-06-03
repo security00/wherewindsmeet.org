@@ -1,25 +1,27 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
+import { getContentFreshness } from "@/lib/contentFreshness";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
+const freshness = getContentFreshness("/guides/patch-notes");
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Patch Notes May 2026 & Roadmap",
+  title: "Where Winds Meet Version 1.7 Patch Notes & Roadmap",
   description:
-    "May 2026 Where Winds Meet patch notes tracker covering Version 1.6, Qinchuan, Hexi, May 8 fixes, code warnings, and build/tier-list checks.",
+    "Where Winds Meet patch notes tracker for Version 1.7, The Imperial Palace, May 29 fixes, Path Balance, Palace codes, and build/tier-list checks.",
   alternates: buildHreflangAlternates("/guides/patch-notes"),
   openGraph: {
-    title: "Where Winds Meet Patch Notes May 2026 & Roadmap",
+    title: "Where Winds Meet Version 1.7 Patch Notes & Roadmap",
     description:
-      "May 2026 Where Winds Meet patch notes tracker: Version 1.6, Qinchuan, Hexi, May 8 fixes, code warnings, and build/tier-list checks.",
+      "Where Winds Meet patch notes tracker: Version 1.7, The Imperial Palace, May 29 fixes, Path Balance, Palace codes, and build/tier-list checks.",
     url: `${baseUrl}/guides/patch-notes`,
   },
   twitter: {
-    title: "Where Winds Meet Patch Notes May 2026 & Roadmap",
+    title: "Where Winds Meet Version 1.7 Patch Notes & Roadmap",
     description:
-      "May 2026 Where Winds Meet patch notes tracker: Version 1.6, Qinchuan, Hexi, May 8 fixes, code warnings, and build/tier-list checks.",
+      "Where Winds Meet patch notes tracker: Version 1.7, The Imperial Palace, May 29 fixes, Path Balance, Palace codes, and build/tier-list checks.",
   },
 };
 
@@ -79,10 +81,10 @@ export default function PatchNotesPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet patch notes, May 2026 updates, and roadmap.
+            Where Winds Meet Version 1.7 patch notes and roadmap.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Updated May 14, 2026: Where Winds Meet has moved well beyond the old Version 1.2 notes. The current live-service trail includes Hexi, Liangzhou, Qinchuan, Version 1.6 / Flows of Dreams, May 8 optimizations and fixes, and a May exchange-code warning. Use this page to catch up before you trust older tier-list or build advice.
+            Updated {freshness?.lastChecked ?? "2026-06-03"}: Where Winds Meet has moved into {freshness?.gameVersion ?? "Version 1.7 / The Imperial Palace"}. The current live-service trail includes The Imperial Palace overview, May 29 patch notes, the May 28 hotfix window, and the May 26 Path Balance adjustment. Use this page to catch up before you trust older tier-list or build advice.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             We flag roadmap checkpoints, official news beats, and practical player impact so you know what to re-check: codes, quest bugs, boss guides, builds, and tier-list assumptions.
@@ -108,16 +110,16 @@ export default function PatchNotesPage() {
 
       <section className="space-y-6 rounded-3xl border border-emerald-500/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/40">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          May 2026 catch-up: what changed recently.
+          Version 1.7 catch-up: what changed recently.
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          The most important freshness signal is that the official mobile news feed now lists May 2026 updates: May 8 optimizations and fixes, a May 3 exchange-code announcement, DEV AMA context for the Hexi journey, Qinchuan Card Exchange, and Version 1.6 / Flows of Dreams. If you last played around Version 1.2, treat this as your catch-up checkpoint.
+          The most important freshness signal is that the official news feed now lists Version 1.7 updates: The Imperial Palace overview, May 29 follow-up patch notes, May 28 patch notes, and a May 26 Path Balance adjustment. If you last played around Version 1.2 or the Version 1.6 / Flows of Dreams period, treat this as your new catch-up checkpoint.
         </p>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Start with practical checks: redeem the current Qinchuan/Hexi codes, re-open blocked Lost Chapter quests after the May 8 fixes, and compare your build against newer Qinchuan/Version 1.6 assumptions before spending scarce upgrade materials.
+          Start with practical checks: verify Palace-era code reports in-game, re-open blocked event or quest steps after the May 29 fixes, and compare your build against the May 26 Path Balance notes before spending scarce upgrade materials.
         </p>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Also note the May 3 code warning: a leaked batch of exchange codes was disabled, so very large social-media code lists may include dead entries. Use the codes page here as a cleaner starting list, then verify every reward in-game.
+          Also keep the May 3 exchange-code warning in mind: a leaked batch of exchange codes was disabled, so very large social-media code lists may include dead entries. Use the codes page here as a cleaner starting list, then verify every reward in-game.
         </p>
       </section>
 
