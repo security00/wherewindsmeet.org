@@ -223,6 +223,15 @@ export default function PatchNotesPage() {
               Cheaper Martial Art Reset and lower Inner Way Conversion costs change how aggressively returning players can test builds.
             </p>
           </Link>
+          <Link
+            href="/guides/imperial-decree"
+            className="rounded-2xl border border-emerald-400/40 bg-slate-950/60 p-4 transition hover:border-emerald-300/70"
+          >
+            <p className="text-sm font-semibold text-slate-50">Imperial Decree Finance answers</p>
+            <p className="mt-1 text-xs leading-relaxed text-slate-300">
+              Palace-era search target: where Imperial Decree starts, how the Finance memorials work, and what response intent leads to S rewards.
+            </p>
+          </Link>
         </div>
       </section>
 
