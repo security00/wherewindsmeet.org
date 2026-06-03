@@ -85,5 +85,18 @@
       "https://www.wherewindsmeetgame.com/m/news/",
       "https://www.wherewindsmeetgame.com/news/official/TheImperialPalace.html"
     ]
+  },
+  {
+    "basePath": "/guides/npc-list",
+    "languages": ["en", "vi", "de"],
+    "lastChecked": "2026-06-03",
+    "gameVersion": "Version 1.7 / The Imperial Palace",
+    "priorityCluster": "week-2-ctr-rescue",
+    "sourceUrls": [
+      "doc/seo-data-readout-2026-06-03.md",
+      "https://www.wherewindsmeetgame.com/news/index.html",
+      "https://game8.co/games/Where-Winds-Meet/archives/565812",
+      "public/guides/npc-list/603.json"
+    ]
   }
 ]

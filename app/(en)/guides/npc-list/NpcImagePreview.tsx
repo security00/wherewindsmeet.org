@@ -33,11 +33,23 @@ export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32",
   const cdn = process.env.NEXT_PUBLIC_CDN_URL;
   const resolvedUiText = useMemo(() => ({ ...DEFAULT_UI_TEXT, ...uiText }), [uiText]);
 
+  const localFallbackSrc = useMemo(() => {
+    if (src.startsWith("http://") || src.startsWith("https://")) {
+      try {
+        return new URL(src).pathname;
+      } catch {
+        return src;
+      }
+    }
+    return src.startsWith("/") ? src : `/${src}`;
+  }, [src]);
+
   const resolvedSrc = useMemo(() => {
-    const normalized = src.startsWith("/") ? src : `/${src}`;
-    if (!cdn || useLocal) return normalized;
-    return `${cdn}${normalized}`;
-  }, [cdn, src, useLocal]);
+    if (useLocal) return localFallbackSrc;
+    if (src.startsWith("http://") || src.startsWith("https://")) return src;
+    if (!cdn) return localFallbackSrc;
+    return `${cdn}${localFallbackSrc}`;
+  }, [cdn, localFallbackSrc, src, useLocal]);
 
   const adjustZoom = (delta: number) => {
     setZoom((z) => {
