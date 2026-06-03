@@ -2,15 +2,60 @@ import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { bosses } from "@/lib/bosses";
+import { getContentFreshness } from "@/lib/contentFreshness";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 import { resolveCdnAssetSrc } from "@/lib/image-utils";
 
 const baseUrl = "https://wherewindsmeet.org";
+const freshness = getContentFreshness("/guides/bosses");
+
+const versionBossWatch = [
+  {
+    label: "Ghost Master",
+    status: "May 29 fix",
+    searchIntent: "where winds meet ghost master / skyward bond boss",
+    detail:
+      "Official May 29 notes fixed a Skyward Bond issue where the Ghost Master could spawn in the preparation area. Treat older Ghost Master bug reports as stale unless they appear after this fix window.",
+    source: "https://www.wherewindsmeetgame.com/news/official/529update.html",
+  },
+  {
+    label: "Hero's Realm bosses",
+    status: "May 27 tuning",
+    searchIntent: "where winds meet hero's realm boss guide",
+    detail:
+      "The May 27 live update added boss guidance marks, better lock-on camera support, smarter combat assist behavior, item-dropping rules, and enemy-flash attack prompts for Hero's Realm.",
+    source: "https://www.wherewindsmeetgame.com/news/official/527update.html",
+  },
+  {
+    label: "Sword Trial bosses",
+    status: "May 27 tuning",
+    searchIntent: "where winds meet sword trial boss guide",
+    detail:
+      "Sword Trial also received boss guidance marks, lock-on/camera improvements, and smarter combat-assist behavior, so returning players should retry clears before relying on old difficulty impressions.",
+    source: "https://www.wherewindsmeetgame.com/news/official/527update.html",
+  },
+  {
+    label: "Sandstorm Tavern",
+    status: "May 15 release",
+    searchIntent: "where winds meet sandstorm tavern guide",
+    detail:
+      "Sandstorm Tavern launched in the May 15 update for a May 15 to June 5 event window and remains permanently available afterward, making it a stronger guide target than a temporary news-only mention.",
+    source: "https://www.wherewindsmeetgame.com/news/official/515update.html",
+  },
+  {
+    label: "Sunken City Lake / Lunar Eidolon",
+    status: "May 15 fix",
+    searchIntent: "where winds meet sunken city lake boss lunar eidolon",
+    detail:
+      "The May 15 patch fixed an issue where Sunken City Lake's Lunar Eidolon could sometimes not enter its final phase, so old blocker advice should be refreshed.",
+    source: "https://www.wherewindsmeetgame.com/news/official/515update.html",
+  },
+];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Bosses – Boss List & Encounter Overviews",
+  title: "Where Winds Meet Bosses - Ghost Master, Dungeon Bosses & Boss List",
   description:
-    "Spoiler-light boss list for Where Winds Meet (WWM) with quick themes, encounter types, and links to each boss overview—plus builds and weapon guides for prep.",
+    "Version 1.7 Where Winds Meet boss guide hub: Ghost Master, Hero's Realm, Sword Trial, Sandstorm Tavern, Sunken City Lake, boss list, builds, and weapon prep.",
   alternates: buildHreflangAlternates("/guides/bosses"),
 };
 
@@ -22,6 +67,7 @@ export default function BossesPage() {
       name: metadata.title,
       description: metadata.description,
       url: `${baseUrl}/guides/bosses`,
+      dateModified: freshness?.lastChecked ?? "2026-06-03",
     },
     {
       "@context": "https://schema.org",
@@ -67,15 +113,13 @@ export default function BossesPage() {
         <div className="relative">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-200">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            Boss list · Spoiler-light encounter overviews
+            Version 1.7 boss and dungeon guide hub
           </div>
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Meet the bosses and legends of Jianghu.
+            Where Winds Meet bosses: Ghost Master watch, dungeon bosses, and major encounters.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            This page gathers the major Where Winds Meet bosses and named foes in one place, focusing on encounter vibe, fight pacing, and
-            which fights suit your current build. It is a spoiler-light boss list with links to each encounter overview so you can decide
-            which legend to hunt next.
+            Updated {freshness?.lastChecked ?? "2026-06-03"} for {freshness?.gameVersion ?? "Version 1.7 / The Imperial Palace"}: this page tracks both the established Where Winds Meet boss list and the newest boss or dungeon searches from the current patch cycle. Start with Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, and Sunken City Lake notes before using older boss advice.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Use it alongside the{" "}
@@ -92,8 +136,7 @@ export default function BossesPage() {
             >
               build guides
             </Link>{" "}
-            to pair each fight with a weapon and playstyle that matches its tone
-            and your preferences.
+            to pair each fight with a weapon and playstyle that matches its tone and your preferences. The gallery below stays spoiler-light, while the update watch highlights what changed in official patch notes.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link
@@ -103,10 +146,10 @@ export default function BossesPage() {
               Boss quick answers (FAQ)
             </Link>
             <Link
-              href="/news"
+              href="/guides/patch-notes"
               className="rounded-full border border-slate-700 px-4 py-2 text-xs font-semibold text-slate-100 hover:border-emerald-300/60"
             >
-              Next update & boss changes
+              Latest patch notes
             </Link>
             <Link
               href="/guides/tier-list"
@@ -116,12 +159,45 @@ export default function BossesPage() {
             </Link>
           </div>
           <p className="mt-3 text-xs text-slate-400 sm:text-sm">
-            All descriptions on this page are based on official Where Winds Meet
-            material and general action RPG experience. They are written to set
-            expectations about story tone and encounter feel, not to make hard
-            claims about exact mechanics or balance. In game experience and
-            patch notes always come first.
+            Boss information changes quickly after live-service patches. Official notes and in-game reward previews come first; this page helps you decide which encounter guide or build page to check next.
           </p>
+        </div>
+      </section>
+
+      <section className="space-y-6 rounded-3xl border border-amber-400/30 bg-amber-500/10 p-6 shadow-lg shadow-amber-950/30">
+        <div className="space-y-2">
+          <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">Version 1.7 watchlist</p>
+          <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+            New boss and dungeon searches to refresh first.
+          </h2>
+          <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+            These are not all full boss pages yet. They are the highest-priority update notes to turn into guides as soon as we have stable gameplay details, screenshots, and reward confirmation.
+          </p>
+        </div>
+        <div className="grid gap-4 lg:grid-cols-2">
+          {versionBossWatch.map((item) => (
+            <article key={item.label} className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="rounded-full bg-amber-400/15 px-2.5 py-1 text-[11px] font-semibold text-amber-100">
+                  {item.status}
+                </span>
+                <a
+                  href={item.source}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[11px] font-semibold text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+                >
+                  Official source
+                </a>
+              </div>
+              <h3 className="mt-3 text-base font-semibold text-slate-50">{item.label}</h3>
+              <p className="mt-1 text-xs text-slate-400">Search intent: {item.searchIntent}</p>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">{item.detail}</p>
+            </article>
+          ))}
+        </div>
+        <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4 text-sm leading-relaxed text-slate-300">
+          <span className="font-semibold text-slate-100">Next content move:</span> once screenshots and reliable mechanics are available, split Ghost Master, Hero&apos;s Realm, Sword Trial, and Sandstorm Tavern into standalone guides, then link them from Patch Notes, Builds, Weapons, and the home page.
         </div>
       </section>
 

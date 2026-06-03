@@ -7,21 +7,68 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 const baseUrl = "https://wherewindsmeet.org";
 const freshness = getContentFreshness("/guides/patch-notes");
 
+const latestUpdateCards = [
+  {
+    title: "May 29 Version 1.7 fixes",
+    date: "2026-05-29",
+    source: "https://www.wherewindsmeetgame.com/news/official/529update.html",
+    summary:
+      "Follow-up fixes after The Imperial Palace launch: Skyward Bond's Ghost Master preparation-area spawn issue, Palace map loading on mobile, Palace Unveiled check-in rewards, Guild Hero's Realm blank pages, Kaifeng model display, controller shop selection, and the Jadeware translation fix.",
+    playerAction:
+      "Re-test Palace events, Skyward Bond, Guild Hero's Realm, and mobile map loading before assuming an older guide or bug report still applies.",
+  },
+  {
+    title: "May 27 / May 28 live maintenance",
+    date: "2026-05-28",
+    source: "https://www.wherewindsmeetgame.com/news/official/527update.html",
+    summary:
+      "Large live update covering Path Tutorial, cheaper Martial Art Reset, Inner Way Conversion cost changes, Arena updates, Hero's Realm and Sword Trial boss comfort changes, Guild War tuning, World Map replay support, and social/recruitment improvements.",
+    playerAction:
+      "Re-check builds, reset costs, boss camera settings, Hero's Realm/Sword Trial progression, and Arena plans after this patch.",
+  },
+  {
+    title: "Version 1.7 / The Imperial Palace",
+    date: "2026-05-27",
+    source: "https://www.wherewindsmeetgame.com/news/official/TheImperialPalace.html",
+    summary:
+      "Official Version 1.7 overview anchor for The Imperial Palace. Treat it as the current update context for Palace content, new event searches, returning-player catch-up, and guide freshness checks.",
+    playerAction:
+      "Use Version 1.7 as the baseline when reading patch notes, codes, boss notes, tier lists, and builds.",
+  },
+  {
+    title: "Sandstorm Tavern and older boss fixes",
+    date: "2026-05-15",
+    source: "https://www.wherewindsmeetgame.com/news/official/515update.html",
+    summary:
+      "Sandstorm Tavern went live for the May 15 to June 5 event window and remains permanently available afterward. The same patch fixed Sunken City Lake's Lunar Eidolon final-phase issue and missing Moongazing Maiden combat voice lines.",
+    playerAction:
+      "Use Sandstorm Tavern as a long-tail guide target, and re-run Sunken City Lake if old boss-blocker advice says Lunar Eidolon was impossible to finish.",
+  },
+];
+
+const impactChecklist = [
+  "Where Winds Meet patch notes today / new update: lead with May 29 and May 27 instead of older May 2026 summaries.",
+  "Boss and dungeon searches: mention Ghost Master, Hero's Realm, Sword Trial, Sandstorm Tavern, Sunken City Lake, and Lunar Eidolon where relevant.",
+  "Build searches: call out cheaper Martial Art Reset and lower Inner Way Conversion cost before telling players to respec.",
+  "Tier-list searches: tie weapon and Path recommendations back to the May 26 Path Balance and May 27 live maintenance window.",
+  "Mobile and controller searches: Palace map loading and Season Shop controller selection were official May 29 fixes.",
+];
+
 export const metadata: Metadata = {
-  title: "Where Winds Meet Version 1.7 Patch Notes & Roadmap",
+  title: "Where Winds Meet Patch Notes Today - Version 1.7, Bosses & Roadmap",
   description:
-    "Where Winds Meet patch notes tracker for Version 1.7, The Imperial Palace, May 29 fixes, Path Balance, Palace codes, and build/tier-list checks.",
+    "Where Winds Meet patch notes tracker for Version 1.7: May 29 fixes, Ghost Master, The Imperial Palace, Sandstorm Tavern, Path Balance, bosses, builds, and roadmap checks.",
   alternates: buildHreflangAlternates("/guides/patch-notes"),
   openGraph: {
-    title: "Where Winds Meet Version 1.7 Patch Notes & Roadmap",
+    title: "Where Winds Meet Patch Notes Today - Version 1.7, Bosses & Roadmap",
     description:
-      "Where Winds Meet patch notes tracker: Version 1.7, The Imperial Palace, May 29 fixes, Path Balance, Palace codes, and build/tier-list checks.",
+      "Where Winds Meet patch notes tracker: Version 1.7, May 29 fixes, Ghost Master, The Imperial Palace, Sandstorm Tavern, Path Balance, bosses, builds, and roadmap checks.",
     url: `${baseUrl}/guides/patch-notes`,
   },
   twitter: {
-    title: "Where Winds Meet Version 1.7 Patch Notes & Roadmap",
+    title: "Where Winds Meet Patch Notes Today - Version 1.7",
     description:
-      "Where Winds Meet patch notes tracker: Version 1.7, The Imperial Palace, May 29 fixes, Path Balance, Palace codes, and build/tier-list checks.",
+      "Version 1.7 patch notes tracker: May 29 fixes, Ghost Master, The Imperial Palace, Sandstorm Tavern, Path Balance, bosses, builds, and roadmap checks.",
   },
 };
 
@@ -81,13 +128,13 @@ export default function PatchNotesPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet Version 1.7 patch notes and roadmap.
+            Where Winds Meet patch notes today: Version 1.7, bosses, dungeons, and roadmap.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Updated {freshness?.lastChecked ?? "2026-06-03"}: Where Winds Meet has moved into {freshness?.gameVersion ?? "Version 1.7 / The Imperial Palace"}. The current live-service trail includes The Imperial Palace overview, May 29 patch notes, the May 28 hotfix window, and the May 26 Path Balance adjustment. Use this page to catch up before you trust older tier-list or build advice.
+            Updated {freshness?.lastChecked ?? "2026-06-03"}: Where Winds Meet has moved into {freshness?.gameVersion ?? "Version 1.7 / The Imperial Palace"}. The current live-service trail includes The Imperial Palace overview, May 29 fixes, the May 27 / May 28 live maintenance window, the May 26 Path Balance adjustment, and the Sandstorm Tavern release. Use this page to catch up before you trust older boss, tier-list, or build advice.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-            We flag roadmap checkpoints, official news beats, and practical player impact so you know what to re-check: codes, quest bugs, boss guides, builds, and tier-list assumptions.
+            We flag roadmap checkpoints, official news beats, and practical player impact so you know what to re-check: codes, quest bugs, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, boss guides, builds, and tier-list assumptions.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Rather than panic when you see a weapon adjusted or a new feature added,
@@ -108,6 +155,42 @@ export default function PatchNotesPage() {
         </div>
       </section>
 
+      <section className="space-y-6 rounded-3xl border border-amber-400/30 bg-amber-500/10 p-6 shadow-lg shadow-amber-950/30">
+        <div className="space-y-2">
+          <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">Latest official update queue</p>
+          <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+            What changed in the newest Where Winds Meet patch notes?
+          </h2>
+          <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+            If you searched for Where Winds Meet patch notes today, start here. These are the update beats that should drive the next round of guides, internal links, and title rewrites.
+          </p>
+        </div>
+        <div className="grid gap-4 lg:grid-cols-2">
+          {latestUpdateCards.map((item) => (
+            <article key={item.title} className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="rounded-full bg-amber-400/15 px-2.5 py-1 text-[11px] font-semibold text-amber-100">
+                  {item.date}
+                </span>
+                <a
+                  href={item.source}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[11px] font-semibold text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+                >
+                  Official source
+                </a>
+              </div>
+              <h3 className="mt-3 text-base font-semibold text-slate-50">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">{item.summary}</p>
+              <p className="mt-3 text-xs leading-relaxed text-slate-400">
+                <span className="font-semibold text-slate-200">Player action:</span> {item.playerAction}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="space-y-6 rounded-3xl border border-emerald-500/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/40">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
           Version 1.7 catch-up: what changed recently.
@@ -121,6 +204,43 @@ export default function PatchNotesPage() {
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
           Also keep the May 3 exchange-code warning in mind: a leaked batch of exchange codes was disabled, so very large social-media code lists may include dead entries. Use the codes page here as a cleaner starting list, then verify every reward in-game.
         </p>
+        <div className="grid gap-3 md:grid-cols-2">
+          <Link
+            href="/guides/bosses"
+            className="rounded-2xl border border-emerald-400/40 bg-slate-950/60 p-4 transition hover:border-emerald-300/70"
+          >
+            <p className="text-sm font-semibold text-slate-50">Boss and dungeon guide queue</p>
+            <p className="mt-1 text-xs leading-relaxed text-slate-300">
+              Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, Sunken City Lake, and other pages that need patch-aware notes.
+            </p>
+          </Link>
+          <Link
+            href="/guides/builds"
+            className="rounded-2xl border border-emerald-400/40 bg-slate-950/60 p-4 transition hover:border-emerald-300/70"
+          >
+            <p className="text-sm font-semibold text-slate-50">Build reset and meta checks</p>
+            <p className="mt-1 text-xs leading-relaxed text-slate-300">
+              Cheaper Martial Art Reset and lower Inner Way Conversion costs change how aggressively returning players can test builds.
+            </p>
+          </Link>
+        </div>
+      </section>
+
+      <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+          SEO guide checklist after Version 1.7.
+        </h2>
+        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+          The highest-value pages should not only say &quot;latest patch.&quot; They should answer the specific searches players make right after an update lands.
+        </p>
+        <ul className="space-y-2 text-sm leading-relaxed text-slate-200">
+          {impactChecklist.map((item) => (
+            <li key={item} className="flex gap-3">
+              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">

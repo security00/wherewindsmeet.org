@@ -31,7 +31,10 @@
     "priorityCluster": "week-1-rescue",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
-      "https://www.wherewindsmeetgame.com/news/official/529update.html"
+      "https://www.wherewindsmeetgame.com/news/official/529update.html",
+      "https://www.wherewindsmeetgame.com/news/official/527update.html",
+      "https://www.wherewindsmeetgame.com/news/official/TheImperialPalace.html",
+      "https://www.wherewindsmeetgame.com/news/official/515update.html"
     ]
   },
   {
@@ -43,6 +46,18 @@
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
       "https://www.pcgamer.com/games/action/where-winds-meet-codes/"
+    ]
+  },
+  {
+    "basePath": "/guides/bosses",
+    "languages": ["en", "vi", "de"],
+    "lastChecked": "2026-06-03",
+    "gameVersion": "Version 1.7 / Boss and Dungeon Watch",
+    "priorityCluster": "week-2-boss-dungeon-refresh",
+    "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/news/official/529update.html",
+      "https://www.wherewindsmeetgame.com/news/official/527update.html",
+      "https://www.wherewindsmeetgame.com/news/official/515update.html"
     ]
   },
   {
