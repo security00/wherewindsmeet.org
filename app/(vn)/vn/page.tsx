@@ -112,6 +112,24 @@ export default function Home() {
               Version 1.7 / Palace
             </Link>
             <Link
+              href={vnHref("/news#organic-search-watch")}
+              className="rounded-full border border-blue-500/50 bg-blue-500/10 px-3 py-1 font-semibold text-blue-50 hover:border-blue-300/70"
+            >
+              Future draw / hot searches
+            </Link>
+            <Link
+              href={vnHref("/guides/patch-notes#upcoming-nerfs")}
+              className="rounded-full border border-red-500/50 bg-red-500/10 px-3 py-1 font-semibold text-red-50 hover:border-red-300/70"
+            >
+              Upcoming nerfs
+            </Link>
+            <Link
+              href={vnHref("/guides/tier-list#arena-ranks")}
+              className="rounded-full border border-emerald-500/50 bg-emerald-500/10 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/70"
+            >
+              WWM arena ranks
+            </Link>
+            <Link
               href={vnHref("/guides/bosses")}
               className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
             >

@@ -54,6 +54,37 @@ const impactChecklist = [
   "Mobile and controller searches: Palace map loading and Season Shop controller selection were official May 29 fixes.",
 ];
 
+const upcomingNerfWatch = [
+  {
+    topic: "Path Balance",
+    status: "Offizielle Basis",
+    action:
+      "Nimm die Path-Balance-Ankuendigung vom 26. Mai als Startpunkt, bevor du ein Build oder eine Waffe als neu generft bezeichnest.",
+    href: "/de/guides/tier-list#arena-ranks",
+  },
+  {
+    topic: "Arena und PVP ranks",
+    status: "Hohe Suchintention",
+    action:
+      "Wenn Spieler nach upcoming nerfs suchen, leite sie von Patch Notes zu Arena ranks, PVP-Tierliste und Waffen-Tierliste weiter.",
+    href: "/de/guides/pvp-tier-list",
+  },
+  {
+    topic: "Build reset costs",
+    status: "Live-Maintenance-Impact",
+    action:
+      "Guenstigerer Martial Art Reset und niedrigere Inner Way Conversion-Kosten machen Post-Patch-Tests fuer Rueckkehrer weniger riskant.",
+    href: "/de/guides/builds",
+  },
+  {
+    topic: "Boss- und Dungeon-Komfortfixes",
+    status: "Nicht als Nerf ueberlesen",
+    action:
+      "Hero's Realm, Sword Trial, Ghost Master und Palace-Fixes koennen Guide-Ratschlaege aendern, auch wenn sie keine Waffen-Nerfs sind.",
+    href: "/de/guides/bosses",
+  },
+];
+
 export const metadata: Metadata = {
   title: "Where Winds Meet Patch Notes Heute - Version 1.7, Bosse & Roadmap",
   description:
@@ -158,6 +189,40 @@ export default function PatchNotesDePage() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section id="upcoming-nerfs" className="space-y-5 rounded-3xl border border-red-400/30 bg-red-500/10 p-6 shadow-lg shadow-red-950/30">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wide text-red-200">Search intent: upcoming nerf wwm</p>
+          <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+            Upcoming nerfs und Balance-Watch.
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+            Wer nach upcoming nerfs sucht, will meist wissen, ob Upgrades warten sollten, ein Build-Reset sinnvoll ist
+            oder vor dem naechsten Arena-Push ein Waffenwechsel noetig wird. Offizielle Notes bleiben die Quelle der Wahrheit.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2">
+          {upcomingNerfWatch.map((item) => (
+            <Link
+              key={item.topic}
+              href={item.href}
+              className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 transition hover:border-red-300/60"
+            >
+              <div className="flex flex-wrap items-center gap-2">
+                <p className="text-sm font-semibold text-slate-50">{item.topic}</p>
+                <span className="rounded-full border border-red-300/40 bg-red-500/10 px-2 py-0.5 text-[11px] font-semibold text-red-100">
+                  {item.status}
+                </span>
+              </div>
+              <p className="mt-2 text-xs leading-5 text-slate-300">{item.action}</p>
+            </Link>
+          ))}
+        </div>
+        <p className="text-xs leading-5 text-red-100/80">
+          Hinweis: Creator-Listen und Social Posts koennen fruehe Warnungen liefern, aber ein Nerf sollte erst als bestaetigt gelten,
+          wenn er in offiziellen Patch Notes oder Maintenance-Texten steht.
+        </p>
       </section>
 
       <section className="space-y-6 rounded-3xl border border-emerald-500/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/40">

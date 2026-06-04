@@ -223,6 +223,7 @@ const quickFacts = [
 ];
 
 const tlDr = [
+  "Mistveil Prison la cach tim ngan gon ma nhieu nguoi choi dung cho huyen mo Mist-Shrouded Prison trong Where Winds Meet. Route nay gan voi Mistveil Forest, The Ephemeral Blight, thuoc giai cua Zhai Xu, red lady loop markers, 6 ruong va kho bau cuoi.",
   "Hoàn thành The Ephemeral Blight: thu đủ Mistveil Forest Cures, giao Zhai Xu để lấy thuốc giải, dọn sương, đi thang máy gần Central Mistveil Forest, rồi đốt nụ hoa xanh đầu tiên để vào hầm mộ Mist-Shrouded Prison.",
   "Vòng 1: bỏ qua phòng cửa phủ gân, leo thang trái, lấy rương 1 ở phòng đỏ có cô gái đỏ. Đi qua hành lang độc và đốt nụ; rương 2 kích hoạt chông trần, sau đó cưỡi chông di chuyển để tới rương 3.",
   "Giẫm tấm áp lực phía trên phòng chông, bám theo bẫy chông ngang để lấy rương 4, rồi rơi qua cổng—cô gái đỏ cạnh thang là vòng 2. Lặp phòng chông/tấm áp lực để đẩy bố cục sang vòng 3.",
@@ -263,6 +264,10 @@ const steps = [
 ];
 
 const faq = [
+  {
+    q: "Mistveil Prison co phai Mist-Shrouded Prison khong?",
+    a: "Dung voi phan lon search intent. Nguoi choi hay go Mistveil Prison vi huyen mo nay mo qua Mistveil Forest va The Ephemeral Blight, nhung route can lam la Mist-Shrouded Prison voi 6 ruong, loop markers va kho bau cuoi.",
+  },
   {
     q: "Bắt đầu Mist-Shrouded Prison như thế nào?",
     a: "Hoàn thành The Ephemeral Blight, thu đủ Mistveil Forest Cures, giao Zhai Xu để lấy thuốc giải, dọn sương, đi thang máy gần Central Mistveil Forest và đốt nụ hoa đầu tiên để vào.",
@@ -373,6 +378,15 @@ export default function MistShroudedPrisonPage() {
             <span className="rounded-full bg-slate-900/70 px-3 py-1 ring-1 ring-amber-400/40">Chông & nụ hoa xanh</span>
           </div>
         </div>
+      </section>
+
+      <section id="mistveil-prison" className="rounded-3xl border border-cyan-400/30 bg-cyan-500/10 p-5 shadow-lg shadow-cyan-950/30">
+        <p className="text-xs font-semibold uppercase tracking-wide text-cyan-200">Alias note</p>
+        <h2 className="mt-2 text-xl font-semibold text-slate-50">Mistveil Prison la Mist-Shrouded Prison trong route nay.</h2>
+        <p className="mt-2 text-sm leading-6 text-slate-200">
+          Nhieu nguoi choi tim &quot;mistveil prison&quot;. Trong game, search intent nay thuong tro toi huyen mo Mist-Shrouded Prison
+          lien ket voi Mistveil Forest, The Ephemeral Blight, thuoc giai cua Zhai Xu, red lady loop markers, 6 ruong va phong kho bau cuoi.
+        </p>
       </section>
 
       <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg space-y-4">

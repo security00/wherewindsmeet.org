@@ -54,6 +54,37 @@ const impactChecklist = [
   "Mobile va controller search: Palace map loading va Season Shop controller selection la fix chinh thuc May 29.",
 ];
 
+const upcomingNerfWatch = [
+  {
+    topic: "Path Balance",
+    status: "Moc chinh thuc",
+    action:
+      "Dung thong bao Path Balance May 26 lam diem bat dau truoc khi goi mot build hay vu khi la bi nerf.",
+    href: "/vn/guides/tier-list#arena-ranks",
+  },
+  {
+    topic: "Arena va PVP ranks",
+    status: "Search intent cao",
+    action:
+      "Khi nguoi choi hoi upcoming nerfs, dua ho toi arena ranks, PVP tier list va weapon tier list de so sanh tac dong meta.",
+    href: "/vn/guides/pvp-tier-list",
+  },
+  {
+    topic: "Build reset costs",
+    status: "Maintenance da anh huong",
+    action:
+      "Martial Art Reset re hon va Inner Way Conversion thap hon giup nguoi choi quay lai test build sau patch de hon.",
+    href: "/vn/guides/builds",
+  },
+  {
+    topic: "Boss va dungeon comfort fixes",
+    status: "Dung doc thanh nerf",
+    action:
+      "Hero's Realm, Sword Trial, Ghost Master va Palace fixes co the doi advice trong guide, du khong phai nerf vu khi.",
+    href: "/vn/guides/bosses",
+  },
+];
+
 export const metadata: Metadata = {
   title: "Where Winds Meet Patch Notes Hom Nay - Version 1.7, Boss & Roadmap",
   description:
@@ -158,6 +189,39 @@ export default function PatchNotesViPage() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section id="upcoming-nerfs" className="space-y-5 rounded-3xl border border-red-400/30 bg-red-500/10 p-6 shadow-lg shadow-red-950/30">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wide text-red-200">Search intent: upcoming nerf wwm</p>
+          <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+            Upcoming nerfs va balance watch.
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+            Nguoi choi tim upcoming nerfs thuong muon biet co nen tam dung nang cap, reset build hay doi vu khi truoc lan day arena tiep theo.
+            Hay dung patch notes chinh thuc lam nguon dung, roi mo cac guide duoi day de kiem tra tac dong.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2">
+          {upcomingNerfWatch.map((item) => (
+            <Link
+              key={item.topic}
+              href={item.href}
+              className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 transition hover:border-red-300/60"
+            >
+              <div className="flex flex-wrap items-center gap-2">
+                <p className="text-sm font-semibold text-slate-50">{item.topic}</p>
+                <span className="rounded-full border border-red-300/40 bg-red-500/10 px-2 py-0.5 text-[11px] font-semibold text-red-100">
+                  {item.status}
+                </span>
+              </div>
+              <p className="mt-2 text-xs leading-5 text-slate-300">{item.action}</p>
+            </Link>
+          ))}
+        </div>
+        <p className="text-xs leading-5 text-red-100/80">
+          Ghi chu: creator lists va social posts co the la canh bao som, nhung chi nen goi mot nerf la confirmed khi no xuat hien trong official patch notes hoac text maintenance trong game.
+        </p>
       </section>
 
       <section className="space-y-6 rounded-3xl border border-emerald-500/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/40">

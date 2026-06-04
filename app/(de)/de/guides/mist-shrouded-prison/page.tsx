@@ -224,6 +224,7 @@ const quickFacts = [
 ];
 
 const tlDr = [
+  "Mistveil Prison ist der kurze Suchname, den viele Spieler fuer die Mist-Shrouded Prison in Where Winds Meet nutzen. Die Route fuehrt ueber Mistveil Forest, The Ephemeral Blight, Zhai Xus Antidot, rote Dame als Loop-Marker, sechs Truhen und den Endschatz.",
   "The Ephemeral Blight abschließen: alle Mistveil Forest Cures einsammeln, bei Zhai Xu abgeben für das Antidot, Nebel lichten, Aufzug bei Central Mistveil Forest nehmen und die erste blaue Knospe verbrennen, um die Mist-Shrouded Prison zu betreten.",
   "Loop 1: geäderte Tür ignorieren, Leiter links hoch, Truhe 1 im roten Raum bei der roten Dame. Durch Giftkorridor, Knospe verbrennen; Truhe 2 löst Deckenstacheln aus, dann die beweglichen Stacheln reiten, um Truhe 3 zu holen.",
   "Oben die Platte drücken, den horizontalen Stacheln folgen und Truhe 4 nehmen, dann durchs Tor fallen – rote Dame an der Leiter markiert Loop 2. Stachelraum/Platte wiederholen, um die Mist-Shrouded Prison in Loop 3 zu schieben.",
@@ -264,6 +265,10 @@ const steps = [
 ];
 
 const faq = [
+  {
+    q: "Ist Mistveil Prison dasselbe wie Mist-Shrouded Prison?",
+    a: "Fuer die meisten Suchanfragen ja. Spieler schreiben oft Mistveil Prison, weil die Gruft ueber Mistveil Forest und The Ephemeral Blight freigeschaltet wird; der eigentliche Guide-Zielpunkt ist die Mist-Shrouded Prison mit sechs Truhen, Loop-Markern und Endschatz.",
+  },
   {
     q: "Wie starte ich Mist-Shrouded Prison?",
     a: "The Ephemeral Blight abschließen, alle Mistveil Forest Cures bei Zhai Xu abgeben, Antidot nutzen, Aufzug bei Central Mistveil Forest nehmen, erste Knospe verbrennen.",
@@ -376,6 +381,15 @@ export default function MistShroudedPrisonDePage() {
             <span className="rounded-full bg-slate-900/70 px-3 py-1 ring-1 ring-amber-400/40">Stacheln & blaue Knospen</span>
           </div>
         </div>
+      </section>
+
+      <section id="mistveil-prison" className="rounded-3xl border border-cyan-400/30 bg-cyan-500/10 p-5 shadow-lg shadow-cyan-950/30">
+        <p className="text-xs font-semibold uppercase tracking-wide text-cyan-200">Alias note</p>
+        <h2 className="mt-2 text-xl font-semibold text-slate-50">Mistveil Prison meint hier Mist-Shrouded Prison.</h2>
+        <p className="mt-2 text-sm leading-6 text-slate-200">
+          Viele Spieler suchen nach &quot;mistveil prison&quot;. Gemeint ist in dieser Route die Mist-Shrouded Prison Gruft,
+          verbunden mit Mistveil Forest, The Ephemeral Blight, Zhai Xus Antidot, roten Loop-Markern, sechs Truhen und dem finalen Schatzraum.
+        </p>
       </section>
 
       <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg space-y-4">

@@ -31,6 +31,15 @@ const guideSections = [
     description: "Leo rank với meta mới nhất sau patch.",
   },
   {
+    title: "Patch Notes / Upcoming Nerfs",
+    slug: "/vn/guides/patch-notes",
+    label: "Cap nhat",
+    icon: "🧭",
+    color: "text-red-300",
+    size: "small",
+    description: "Version 1.7, Path Balance, upcoming nerfs va tac dong toi arena ranks, build, boss.",
+  },
+  {
     title: "Bộ build mạnh",
     slug: "/vn/guides/builds",
     label: "PvE & PvP",
@@ -313,6 +322,18 @@ export default function GuidesPage() {
             className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-amber-400/60 bg-amber-500/10 px-4 py-2 text-sm font-semibold text-amber-200 transition hover:border-amber-300/80 hover:text-amber-100"
           >
             🎯 Quiz đang hot: cha nuôi Murong Yuan (đáp án nhanh)
+          </Link>
+          <Link
+            href="/vn/news#organic-search-watch"
+            className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-blue-400/60 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-200 transition hover:border-blue-300/80 hover:text-blue-100"
+          >
+            News: future draw, arena ranks, upcoming nerfs
+          </Link>
+          <Link
+            href="/vn/guides/tier-list#arena-ranks"
+            className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-400/60 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-200 transition hover:border-emerald-300/80 hover:text-emerald-100"
+          >
+            WWM arena ranks va tier-list checks
           </Link>
         </div>
 
