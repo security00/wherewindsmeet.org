@@ -38,6 +38,10 @@ type PageCopy = {
   decisionRows: Array<{ title: string; body: string; href: string; label: string }>;
   accountHeading: string;
   accountNotes: string[];
+  iosNoteHeading: string;
+  iosNoteBody: string;
+  iosSearchLabel: string;
+  iosFallbackLabel: string;
   officialHeading: string;
   officialSources: Array<{ label: string; href: string }>;
   faqHeading: string;
@@ -50,16 +54,16 @@ const officialSources = [
     href: "https://www.wherewindsmeetgame.com/",
   },
   {
+    label: "Official mobile download",
+    href: "https://adl.easebar.com/d/g/wwm/c/officialwebsite?type=ios",
+  },
+  {
     label: "Steam page",
     href: "https://store.steampowered.com/app/3564740/Where_Winds_Meet/",
   },
   {
     label: "PlayStation page",
     href: "https://www.playstation.com/en-us/games/where-winds-meet/",
-  },
-  {
-    label: "App Store page",
-    href: "https://apps.apple.com/us/app/where-winds-meet/id6472396866",
   },
   {
     label: "Google Play page",
@@ -88,10 +92,10 @@ const sharedPlatforms: PlatformStatus[] = [
   },
   {
     name: "iOS",
-    status: "Available on the App Store for iPhone and iPad.",
+    status: "The official website lists an iOS App Store route; use the official download page because Apple's web link can redirect by region.",
     bestFor: "Best for mobile check-ins, casual exploration, and playing away from your desk.",
-    action: "Open App Store",
-    href: "https://apps.apple.com/us/app/where-winds-meet/id6472396866",
+    action: "How to find iOS app",
+    href: "#ios-download-note",
   },
   {
     name: "Android",
@@ -113,7 +117,7 @@ const copy: Record<ContentLanguage, PageCopy> = {
     checkedLabel: "Checked June 4, 2026",
     summaryTitle: "Short answer",
     summary:
-      "Where Winds Meet is positioned as a free-to-play wuxia RPG across PC, PlayStation 5, iOS, and Android. Steam lists cross-platform multiplayer, PlayStation lists the PS5 version as free-to-play, and the official mobile/store pages confirm iOS and Android routes.",
+      "Where Winds Meet is positioned as a free-to-play wuxia RPG across PC, PlayStation 5, iOS, and Android. Steam lists cross-platform multiplayer, PlayStation lists the PS5 version as free-to-play, and the official download/mobile pages confirm iOS and Android routes.",
     quickFacts: [
       "Main keyword target: where winds meet platforms",
       "High-intent variants: ps5, pc, mobile, ios, android",
@@ -152,6 +156,11 @@ const copy: Record<ContentLanguage, PageCopy> = {
       "Treat cross-progression and account-linking details as a pre-download check, because official availability does not always mean every store account behaves the same in every region.",
       "If you are moving between platforms, test with a low-risk login first and keep screenshots of account IDs, server, and character name.",
     ],
+    iosNoteHeading: "iOS download note",
+    iosNoteBody:
+      "Apple's web App Store link can redirect some regions to a generic App Store page instead of the Where Winds Meet listing. The safest path is to open the App Store app on iPhone/iPad and search the exact game name. Use the official download fallback only if you want to verify the publisher route.",
+    iosSearchLabel: "Search term: Where Winds Meet",
+    iosFallbackLabel: "Official iOS download fallback",
     officialHeading: "Official sources checked",
     officialSources,
     faqHeading: "Where Winds Meet platform FAQ",
@@ -169,7 +178,7 @@ const copy: Record<ContentLanguage, PageCopy> = {
       {
         question: "Is Where Winds Meet on mobile?",
         answer:
-          "Yes. The App Store page lists Where Winds Meet for iPhone and iPad, and official game copy refers to mobile play across PS5, PC, and mobile.",
+          "Yes. The official website lists an iOS App Store route for Where Winds Meet. Because Apple's web App Store can redirect by region, use the official download page or search Where Winds Meet inside the App Store app if the direct web page opens the wrong region.",
       },
       {
         question: "Does Where Winds Meet have cross-play?",
@@ -193,7 +202,7 @@ const copy: Record<ContentLanguage, PageCopy> = {
     checkedLabel: "Kiem tra ngay 2026-06-04",
     summaryTitle: "Cau tra loi ngan",
     summary:
-      "Where Winds Meet duoc dinh vi la game wuxia RPG mien phi tren PC, PlayStation 5, iOS va Android. Steam liet ke cross-platform multiplayer, PlayStation liet ke ban PS5 mien phi, va cac trang mobile/store chinh thuc xac nhan iOS/Android.",
+      "Where Winds Meet duoc dinh vi la game wuxia RPG mien phi tren PC, PlayStation 5, iOS va Android. Steam liet ke cross-platform multiplayer, PlayStation liet ke ban PS5 mien phi, va trang download/mobile chinh thuc xac nhan iOS/Android.",
     quickFacts: [
       "Tu khoa chinh: where winds meet platforms",
       "Bien the quan trong: ps5, pc, mobile, ios, android",
@@ -232,6 +241,11 @@ const copy: Record<ContentLanguage, PageCopy> = {
       "Hay xem cross-progression/account linking la buoc can kiem tra truoc khi tai, vi moi khu vuc va store account co the khac nhau.",
       "Neu doi nen tang, hay thu login rui ro thap truoc va giu screenshot account ID, server, ten nhan vat.",
     ],
+    iosNoteHeading: "Ghi chu tai iOS",
+    iosNoteBody:
+      "Link web App Store cua Apple co the redirect theo khu vuc va mo trang chung thay vi listing Where Winds Meet. Cach an toan nhat la mo App Store tren iPhone/iPad va tim dung ten game. Chi dung fallback download chinh thuc neu ban muon kiem tra route cua publisher.",
+    iosSearchLabel: "Tu khoa tim: Where Winds Meet",
+    iosFallbackLabel: "Fallback download iOS chinh thuc",
     officialHeading: "Nguon chinh thuc da kiem tra",
     officialSources,
     faqHeading: "FAQ nen tang Where Winds Meet",
@@ -248,7 +262,7 @@ const copy: Record<ContentLanguage, PageCopy> = {
       {
         question: "Where Winds Meet co tren mobile khong?",
         answer:
-          "Co. App Store liet ke ban iPhone/iPad, va copy chinh thuc nhac den mobile cung PS5 va PC.",
+          "Co. Website chinh thuc co route App Store cho iOS. Vi web App Store cua Apple co the tu redirect theo khu vuc, hay dung trang download chinh thuc hoac tim Where Winds Meet ngay trong App Store app neu link web mo sai khu vuc.",
       },
       {
         question: "Where Winds Meet co cross-play khong?",
@@ -272,7 +286,7 @@ const copy: Record<ContentLanguage, PageCopy> = {
     checkedLabel: "Geprueft am 2026-06-04",
     summaryTitle: "Kurzantwort",
     summary:
-      "Where Winds Meet ist als kostenloses Wuxia-RPG fuer PC, PlayStation 5, iOS und Android positioniert. Steam listet Cross-Platform Multiplayer, PlayStation listet die PS5-Version als kostenlos, und offizielle Mobile/Store-Seiten bestaetigen iOS und Android.",
+      "Where Winds Meet ist als kostenloses Wuxia-RPG fuer PC, PlayStation 5, iOS und Android positioniert. Steam listet Cross-Platform Multiplayer, PlayStation listet die PS5-Version als kostenlos, und offizielle Download/Mobile-Seiten bestaetigen iOS und Android.",
     quickFacts: [
       "Hauptziel: where winds meet platforms",
       "Wichtige Varianten: ps5, pc, mobile, ios, android",
@@ -311,6 +325,11 @@ const copy: Record<ContentLanguage, PageCopy> = {
       "Behandle Cross-Progression und Account-Linking als Check vor dem Download, weil Store-Accounts je nach Region unterschiedlich funktionieren koennen.",
       "Wenn du die Plattform wechselst, teste erst einen sicheren Login und speichere Account-ID, Server und Charakternamen.",
     ],
+    iosNoteHeading: "iOS Download Hinweis",
+    iosNoteBody:
+      "Apples Web-App-Store kann je nach Region auf eine allgemeine App-Store-Seite umleiten, statt die Where Winds Meet Liste zu oeffnen. Am sichersten ist es, die App Store App auf iPhone/iPad zu oeffnen und exakt nach dem Spielnamen zu suchen. Nutze den offiziellen Download-Fallback nur zur Publisher-Pruefung.",
+    iosSearchLabel: "Suchbegriff: Where Winds Meet",
+    iosFallbackLabel: "Offizieller iOS Download Fallback",
     officialHeading: "Gepruefte offizielle Quellen",
     officialSources,
     faqHeading: "Where Winds Meet Plattform FAQ",
@@ -328,7 +347,7 @@ const copy: Record<ContentLanguage, PageCopy> = {
       {
         question: "Gibt es Where Winds Meet auf Mobile?",
         answer:
-          "Ja. Der App Store listet iPhone und iPad, und offizieller Store-Text nennt Mobile zusammen mit PS5 und PC.",
+          "Ja. Die offizielle Website listet eine iOS App Store Route. Weil Apples Web-App-Store je nach Region umleiten kann, nutze die offizielle Download-Seite oder suche Where Winds Meet direkt in der App Store App.",
       },
       {
         question: "Hat Where Winds Meet Cross-Play?",
@@ -487,16 +506,46 @@ export default function PlatformsGuidePage({ language }: { language: ContentLang
                 </div>
                 <p className="mt-4 text-sm leading-relaxed text-slate-300">{platform.status}</p>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-400">{platform.bestFor}</p>
-                <a
-                  href={platform.href}
-                  className="mt-5 inline-flex w-fit rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-xs font-semibold text-slate-100 transition hover:border-emerald-300/70 hover:text-emerald-100"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  {platform.action}
-                </a>
+                {platform.href.startsWith("#") ? (
+                  <a
+                    href={platform.href}
+                    className="mt-5 inline-flex w-fit rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-xs font-semibold text-slate-100 transition hover:border-emerald-300/70 hover:text-emerald-100"
+                  >
+                    {platform.action}
+                  </a>
+                ) : (
+                  <a
+                    href={platform.href}
+                    className="mt-5 inline-flex w-fit rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-xs font-semibold text-slate-100 transition hover:border-emerald-300/70 hover:text-emerald-100"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    {platform.action}
+                  </a>
+                )}
               </article>
             ))}
+          </div>
+        </section>
+
+        <section id="ios-download-note" className="scroll-mt-24 rounded-3xl border border-sky-400/25 bg-sky-500/10 p-6 shadow-xl shadow-slate-950/30 lg:p-8">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-wide text-sky-200">iOS</p>
+            <h2 className="mt-1 text-2xl font-bold text-sky-50">{entry.iosNoteHeading}</h2>
+            <p className="mt-3 text-sm leading-relaxed text-sky-50/85">{entry.iosNoteBody}</p>
+          </div>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <span className="rounded-full border border-sky-300/30 bg-slate-950/40 px-4 py-2 text-sm font-semibold text-sky-50">
+              {entry.iosSearchLabel}
+            </span>
+            <a
+              href="https://adl.easebar.com/d/g/wwm/c/officialwebsite?type=ios"
+              className="rounded-full border border-sky-300/50 bg-slate-950/50 px-4 py-2 text-sm font-semibold text-sky-50 transition hover:border-sky-200 hover:text-white"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              {entry.iosFallbackLabel}
+            </a>
           </div>
         </section>
 

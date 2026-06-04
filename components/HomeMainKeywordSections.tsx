@@ -323,7 +323,6 @@ function buildStructuredData(entry: HomeContent) {
         "https://www.wherewindsmeetgame.com/",
         "https://store.steampowered.com/app/3564740/Where_Winds_Meet/",
         "https://www.playstation.com/en-us/games/where-winds-meet/",
-        "https://apps.apple.com/us/app/where-winds-meet/id6472396866",
         "https://play.google.com/store/apps/details?id=com.netease.yysls",
       ],
     },
