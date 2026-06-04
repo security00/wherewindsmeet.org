@@ -10,12 +10,12 @@ const freshness = getContentFreshness("/");
 export const metadata: Metadata = {
   title: "Where Winds Meet Version 1.7 Guides, Codes & Updates",
   description:
-    "Updated Where Winds Meet hub for Version 1.7, The Imperial Palace, Palace codes, patch notes, tier lists, builds, bosses, and quest walkthroughs.",
+    "Updated Where Winds Meet hub for Version 1.7, The Imperial Palace, Palace codes, patch notes, arena ranks, tier lists, builds, bosses, and quest walkthroughs.",
   alternates: buildHreflangAlternates("/"),
   openGraph: {
     title: "Where Winds Meet Version 1.7 Guides, Codes & Updates",
     description:
-      "Updated Where Winds Meet hub for Version 1.7, The Imperial Palace, Palace codes, patch notes, tier lists, builds, bosses, and quest walkthroughs.",
+      "Updated Where Winds Meet hub for Version 1.7, The Imperial Palace, Palace codes, patch notes, arena ranks, tier lists, builds, bosses, and quest walkthroughs.",
     url: "https://wherewindsmeet.org/",
     images: [
       {
@@ -109,7 +109,13 @@ export default function Home() {
               href="/news#next-update"
               className="rounded-full border border-emerald-500/50 bg-emerald-500/10 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/70"
             >
-              Version 1.7 / Palace updates
+              News / future draw watch
+            </Link>
+            <Link
+              href="/guides/patch-notes#upcoming-nerfs"
+              className="rounded-full border border-red-500/50 bg-red-500/10 px-3 py-1 font-semibold text-red-50 hover:border-red-300/70"
+            >
+              Upcoming nerfs watch
             </Link>
             <Link
               href="/guides/codes"
@@ -145,7 +151,13 @@ export default function Home() {
               href="/guides/tier-list"
               className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
             >
-              China tier list view
+              WWM arena ranks
+            </Link>
+            <Link
+              href="/guides/imperial-decree"
+              className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
+            >
+              Imperial Decree Finance
             </Link>
             <Link
               href="/guides/unholy-prophecy"
@@ -173,7 +185,7 @@ export default function Home() {
             </Link>
           </div>
           <p className="mt-3 w-full text-xs text-emerald-50/80">
-            Fast path for active searches: Where Winds Meet codes June 2026, Version 1.7 patch notes, The Imperial Palace update, Path Balance changes, Qinchuan and Hexi catch-up, bosses list, Feng Ruzhi location, Qin Caiwei friendship, Free Morph unlock, and the China tier list perspective to compare weapons and builds.
+            Fast path for active searches: Where Winds Meet news, future draw previews, WWM arena ranks, upcoming nerfs, codes June 2026, Version 1.7 patch notes, The Imperial Palace update, Path Balance changes, Qinchuan and Hexi catch-up, bosses list, Feng Ruzhi location, Imperial Decree, and Mistveil Prison aliases.
           </p>
         </div>
       </section>
@@ -261,8 +273,20 @@ export default function Home() {
             {
               title: "Mist-Shrouded Prison",
               href: "/guides/mist-shrouded-prison",
-              desc: "New tomb guide: find the entrance, track loops via the red lady, and secure all six chests plus the final treasure (spawn fixes included).",
+              desc: "Mistveil Prison alias covered: find the entrance, track red lady loops, and secure six chests plus the final treasure.",
               tag: "New",
+            },
+            {
+              title: "Patch Notes / Upcoming Nerfs",
+              href: "/guides/patch-notes#upcoming-nerfs",
+              desc: "Balance watch for upcoming nerf searches: Path Balance, Arena rank impact, reset costs, and boss comfort fixes.",
+              tag: "Nerf Watch",
+            },
+            {
+              title: "Imperial Decree Finance",
+              href: "/guides/imperial-decree",
+              desc: "Palace activity guide with Finance S-answer meanings, video walkthrough, rewards, and blockers.",
+              tag: "Trending",
             },
             {
               title: "One Leaf, One Life",
@@ -315,7 +339,7 @@ export default function Home() {
             {
               title: "Tier Lists",
               href: "/guides/tier-list",
-              desc: "PVP/PVE rankings and weapon tiers to re-check after Version 1.7 Path Balance and Palace changes.",
+              desc: "WWM arena ranks, PVP/PVE rankings, and weapon tiers to re-check after Version 1.7 Path Balance.",
               tag: "Meta",
             },
           ].map((item) => (
@@ -373,7 +397,7 @@ export default function Home() {
             {
               title: "Patch Notes Summary",
               href: "/guides/patch-notes",
-              desc: "Condensed highlights: damage tuning, cooldown tweaks, and meta shifts.",
+              desc: "Condensed highlights: upcoming nerf watch, Path Balance, damage tuning, cooldown tweaks, and meta shifts.",
             },
             {
               title: "Weapons Encyclopedia",

@@ -179,14 +179,14 @@ const walkthrough = [
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet: Mist-Shrouded Prison – 6 Chests & Final Treasure",
+  title: "Where Winds Meet Mist-Shrouded Prison / Mistveil Prison Guide",
   description:
-    "Where Winds Meet Mist-Shrouded Prison tomb guide: unlock after Ephemeral Blight, follow loops 1–3 via red lady markers, and grab six chests and final treasure.",
+    "Where Winds Meet Mist-Shrouded Prison guide, also searched as Mistveil Prison: unlock after Ephemeral Blight, follow red lady loops, and grab six chests plus final treasure.",
   alternates: buildHreflangAlternates("/guides/mist-shrouded-prison"),
   openGraph: {
-    title: "Where Winds Meet: Mist-Shrouded Prison – 6 Chests & Final Treasure",
+    title: "Where Winds Meet Mist-Shrouded Prison / Mistveil Prison Guide",
     description:
-      "Where Winds Meet Mist-Shrouded Prison tomb guide: unlock after Ephemeral Blight, follow loops 1–3 via red lady markers, and grab six chests and final treasure.",
+      "Where Winds Meet Mist-Shrouded Prison guide, also searched as Mistveil Prison: unlock after Ephemeral Blight, follow red lady loops, and grab six chests plus final treasure.",
     url: `${baseUrl}/guides/mist-shrouded-prison`,
     siteName: "Where Winds Meet Hub",
     images: [
@@ -202,9 +202,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Where Winds Meet: Mist-Shrouded Prison – 6 Chests & Final Treasure",
+    title: "Where Winds Meet Mist-Shrouded Prison / Mistveil Prison Guide",
     description:
-      "Where Winds Meet Mist-Shrouded Prison tomb guide: unlock after Ephemeral Blight, follow loops 1–3 via red lady markers, and grab six chests and final treasure.",
+      "Where Winds Meet Mist-Shrouded Prison guide, also searched as Mistveil Prison: unlock after Ephemeral Blight, follow red lady loops, and grab six chests plus final treasure.",
     images: [
       {
         url: heroImage,
@@ -223,7 +223,7 @@ const quickFacts = [
 ];
 
 const tlDr = [
-  "Finish The Ephemeral Blight: gather all Mistveil Forest Cures, hand them to Zhai Xu for the antidote, clear the mist, ride the elevator by Central Mistveil Forest, and burn the first blue bud to enter the Where Winds Meet Mist-Shrouded Prison tomb.",
+  "Mistveil Prison is the common short search name for the Where Winds Meet Mist-Shrouded Prison tomb. Finish The Ephemeral Blight, gather all Mistveil Forest Cures, hand them to Zhai Xu for the antidote, clear the mist, ride the elevator by Central Mistveil Forest, and burn the first blue bud to enter.",
   "Loop 1 in the Where Winds Meet tomb: ignore the veined door, climb the left ladder, and loot chest 1 in the red room with the red lady. Push through the poison corridor to burn the bud; chest 2 drops ceiling spikes, then ride the moving spikes to reach chest 3.",
   "Step on the plate above the spikes, trail the horizontal trap to grab chest 4, and drop past the gate—red lady by the ladder marks loop 2. Repeat the spike-room plate to drive the Mist-Shrouded Prison into loop 3.",
   "Loop 3: turn right to see the red lady in the blue-flower hall, take the poison to chest 5, burn the next bud, drop onto the moving spikes from the note room, clear the ambush for chest 6, then follow the drop path to clear the last bud and open the final treasure before pressing Rest in Peace.",
@@ -263,6 +263,10 @@ const steps = [
 ];
 
 const faq = [
+  {
+    q: "Is Mistveil Prison the same as Mist-Shrouded Prison?",
+    a: "Yes for most search intent. Players often type Mistveil Prison because the tomb unlocks through the Mistveil Forest / Ephemeral Blight route, but the guide target is the Mist-Shrouded Prison tomb with six loop chests and a final treasure.",
+  },
   {
     q: "How do I start Mist-Shrouded Prison?",
     a: "Finish The Ephemeral Blight, gather all Mistveil Forest Cures, deliver them to Zhai Xu for the antidote, clear the mist, ride the elevator near Central Mistveil Forest, and burn the first bud to enter.",
@@ -374,6 +378,16 @@ export default function MistShroudedPrisonPage() {
             <span className="rounded-full bg-slate-900/70 px-3 py-1 ring-1 ring-amber-400/40">Spikes & blue buds</span>
           </div>
         </div>
+      </section>
+
+      <section id="mistveil-prison" className="rounded-3xl border border-cyan-400/30 bg-cyan-500/10 p-5 shadow-lg shadow-cyan-950/30">
+        <p className="text-xs font-semibold uppercase tracking-wide text-cyan-200">Alias note</p>
+        <h2 className="mt-2 text-xl font-semibold text-slate-50">Mistveil Prison means Mist-Shrouded Prison for this route.</h2>
+        <p className="mt-2 text-sm leading-6 text-slate-200">
+          Players often search for &quot;mistveil prison&quot;. In-game, this route is the Mist-Shrouded Prison
+          tomb connected to Mistveil Forest, The Ephemeral Blight, Zhai Xu&apos;s antidote, red lady loop markers, six
+          chests, and the final treasure room.
+        </p>
       </section>
 
       <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg space-y-4">

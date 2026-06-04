@@ -44,6 +44,41 @@ const newsBlocks = [
   },
 ];
 
+const searchIntentWatchlist = [
+  {
+    title: "Future draw preview and reward previews",
+    query: "wwm future draw preview",
+    action:
+      "Check the official news list first, then route players into cosmetics, free outfits, codes, and event reward pages when the draw is confirmed.",
+    href: "/guides/cosmetics",
+    cta: "Cosmetics hub",
+  },
+  {
+    title: "Arena ranks and tier-list checks",
+    query: "wwm arena ranks",
+    action:
+      "Keep the main tier list, PVP tier list, weapon tier list, and patch notes linked together so rank climbers can move from search to build decisions quickly.",
+    href: "/guides/tier-list#arena-ranks",
+    cta: "Arena rank notes",
+  },
+  {
+    title: "Upcoming nerfs and balance watch",
+    query: "upcoming nerf wwm",
+    action:
+      "Do not call a change confirmed until it appears in official notes. Use this watchlist to point players to May 26 Path Balance, May 27 maintenance, and the latest patch-note impact cards.",
+    href: "/guides/patch-notes#upcoming-nerfs",
+    cta: "Balance watch",
+  },
+  {
+    title: "Mistveil / Mist-Shrouded Prison aliases",
+    query: "mistveil prison",
+    action:
+      "Treat Mistveil Prison as an alias intent for Mist-Shrouded Prison and send players to the chest route, loop markers, and final treasure steps.",
+    href: "/guides/mist-shrouded-prison#mistveil-prison",
+    cta: "Prison route",
+  },
+];
+
 export default function NewsPage() {
   const sortedNews = newsItems;
 
@@ -211,6 +246,37 @@ export default function NewsPage() {
                   </Link>
                 </li>
               </ul>
+            </div>
+          </div>
+
+          <div
+            id="organic-search-watch"
+            className="rounded-2xl border border-blue-400/30 bg-blue-500/10 p-4 text-sm text-blue-50 shadow-inner shadow-blue-950/40"
+          >
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <p className="font-semibold">Trending player questions</p>
+              <span className="rounded-full bg-blue-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-blue-100">
+                Current watch
+              </span>
+            </div>
+            <p className="mt-2 text-blue-100/90">
+              Players are currently looking for future draw previews, arena ranks, patch-note nerfs, codes,
+              Qinchuan routes, NPCs, map help, and Mist-Shrouded Prison answers. Use this section as a quick router
+              before digging through the full news archive.
+            </p>
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              {searchIntentWatchlist.map((item) => (
+                <Link
+                  key={item.query}
+                  href={item.href}
+                  className="rounded-xl border border-blue-300/30 bg-slate-950/70 p-3 transition hover:border-blue-200/70"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-wide text-blue-200">{item.query}</p>
+                  <p className="mt-1 text-sm font-semibold text-slate-50">{item.title}</p>
+                  <p className="mt-1 text-xs leading-5 text-slate-300">{item.action}</p>
+                  <p className="mt-2 text-xs font-semibold text-emerald-300">{item.cta}</p>
+                </Link>
+              ))}
             </div>
           </div>
 

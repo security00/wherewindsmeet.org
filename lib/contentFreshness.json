@@ -2,7 +2,7 @@
   {
     "basePath": "/",
     "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-06-03",
+    "lastChecked": "2026-06-04",
     "gameVersion": "Version 1.7 / The Imperial Palace",
     "priorityCluster": "week-1-rescue",
     "sourceUrls": [
@@ -14,7 +14,7 @@
   {
     "basePath": "/news",
     "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-06-03",
+    "lastChecked": "2026-06-04",
     "gameVersion": "Version 1.7 / The Imperial Palace",
     "priorityCluster": "week-1-rescue",
     "sourceUrls": [
@@ -26,7 +26,7 @@
   {
     "basePath": "/guides/patch-notes",
     "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-06-03",
+    "lastChecked": "2026-06-04",
     "gameVersion": "Version 1.7 / The Imperial Palace",
     "priorityCluster": "week-1-rescue",
     "sourceUrls": [
@@ -63,7 +63,7 @@
   {
     "basePath": "/guides/tier-list",
     "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-06-03",
+    "lastChecked": "2026-06-04",
     "gameVersion": "Version 1.7 / Path Balance",
     "priorityCluster": "week-2-meta-refresh",
     "sourceUrls": [
@@ -111,7 +111,19 @@
       "https://www.wherewindsmeetgame.com/news/official/TheImperialPalace.html",
       "https://game8.co/games/Where-Winds-Meet/archives/603080",
       "https://game8.co/games/Where-Winds-Meet/archives/603066",
-      "https://www.reddit.com/answers/68829f0f-b49d-4b3a-9f7a-1e782709e9d1/?q=Explain+Imperial+Decree+in+WhereWindsMeet&source=PDP&tl=en"
+      "https://www.reddit.com/answers/68829f0f-b49d-4b3a-9f7a-1e782709e9d1/?q=Explain+Imperial+Decree+in+WhereWindsMeet&source=PDP&tl=en",
+      "https://www.youtube.com/watch?v=yya5lX4KgOg"
+    ]
+  },
+  {
+    "basePath": "/guides/mist-shrouded-prison",
+    "languages": ["en", "vi", "de"],
+    "lastChecked": "2026-06-04",
+    "gameVersion": "Version 1.7 / Mistveil Prison alias watch",
+    "priorityCluster": "similarweb-top-landing-page",
+    "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/news/official/515update.html",
+      "https://www.youtube.com/watch?v=dHDy9nzQsd4"
     ]
   },
   {

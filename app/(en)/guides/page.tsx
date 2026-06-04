@@ -6,7 +6,7 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 export const metadata: Metadata = {
   title: "Where Winds Meet Guides for Beginners & Veterans",
   description:
-    "Focused Where Winds Meet guides with beginner tips, leveling routes, open world systems, tier lists, builds and codes so you always know what to do next.",
+    "Focused Where Winds Meet guides with news, patch notes, arena ranks, tier lists, builds, maps, codes, beginner tips, and quest routes so you always know what to do next.",
   alternates: buildHreflangAlternates("/guides"),
 };
 
@@ -30,6 +30,16 @@ const guideSections = [
     size: "medium",
     description:
       "Dominate duels with the current meta rankings. Updated for the latest patch.",
+  },
+  {
+    title: "Patch Notes / Upcoming Nerfs",
+    slug: "/guides/patch-notes",
+    label: "Balance",
+    icon: "!",
+    color: "text-red-300",
+    size: "medium",
+    description:
+      "Version 1.7 patch notes, Path Balance, upcoming nerf watch, arena-rank impact, and build reset checks.",
   },
   {
     title: "Best Builds",
@@ -383,6 +393,18 @@ export default function GuidesPage() {
             className="mt-4 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-400/60 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-200 transition hover:border-emerald-300/80 hover:text-emerald-100"
           >
             Trending: Imperial Decree Finance S answers
+          </Link>
+          <Link
+            href="/news#organic-search-watch"
+            className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-amber-400/60 bg-amber-500/10 px-4 py-2 text-sm font-semibold text-amber-100 transition hover:border-amber-300/80 hover:text-amber-50"
+          >
+            News: future draw previews and update watch
+          </Link>
+          <Link
+            href="/guides/tier-list#arena-ranks"
+            className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-red-400/60 bg-red-500/10 px-4 py-2 text-sm font-semibold text-red-100 transition hover:border-red-300/80 hover:text-red-50"
+          >
+            WWM arena ranks and upcoming nerf watch
           </Link>
           <Link
             href="/guides/weapons/tier-list"
