@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 import ZoomableGuideImage from "./ZoomableGuideImage";
@@ -285,6 +286,7 @@ export default function ImperialDecreeGuidePage() {
   return (
     <article className="space-y-10 bg-ink-wash min-h-screen pb-20">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+      <HomeHubBacklink language="en" />
 
       <section className="overflow-hidden rounded-3xl border border-amber-400/30 bg-slate-950/85 shadow-2xl shadow-slate-950/50">
         <div className="grid gap-0 lg:grid-cols-[0.58fr_0.42fr]">

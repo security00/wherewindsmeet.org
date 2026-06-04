@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import TierListClient from "./TierListClient";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 import Link from "next/link";
@@ -89,6 +90,7 @@ export default function TierListPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+      <HomeHubBacklink language="vi" />
       <section className="mb-6 rounded-2xl border border-slate-800 bg-slate-950/70 p-4 text-sm text-slate-200 shadow-sm shadow-slate-950/60">
         Muốn xem riêng phần vũ khí? Mở{" "}
         <Link href="/vn/guides/weapons/tier-list" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">

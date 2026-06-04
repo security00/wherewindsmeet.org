@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { HomeMainKeywordSections } from "@/components/HomeMainKeywordSections";
 import JianghuMapClient from "@/components/JianghuMapClient";
 import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
 import { getContentFreshness } from "@/lib/contentFreshness";
@@ -8,14 +9,14 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 const freshness = getContentFreshness("/");
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Version 1.7 Guides, Codes & Updates",
+  title: "Where Winds Meet Guide Hub - Version 1.7, Codes & Tier List",
   description:
-    "Updated Where Winds Meet hub for Version 1.7, The Imperial Palace, Palace codes, patch notes, arena ranks, tier lists, builds, bosses, and quest walkthroughs.",
+    "Where Winds Meet guide hub for Version 1.7: The Imperial Palace, codes, patch notes, tier list, builds, bosses, interactive map, platforms, and beginner tips.",
   alternates: buildHreflangAlternates("/"),
   openGraph: {
-    title: "Where Winds Meet Version 1.7 Guides, Codes & Updates",
+    title: "Where Winds Meet Guide Hub - Version 1.7, Codes & Tier List",
     description:
-      "Updated Where Winds Meet hub for Version 1.7, The Imperial Palace, Palace codes, patch notes, arena ranks, tier lists, builds, bosses, and quest walkthroughs.",
+      "Where Winds Meet guide hub for Version 1.7: The Imperial Palace, codes, patch notes, tier list, builds, bosses, interactive map, platforms, and beginner tips.",
     url: "https://wherewindsmeet.org/",
     images: [
       {
@@ -34,6 +35,8 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="space-y-10">
+      <HomeMainKeywordSections language="en" />
+
       <JianghuMapClient />
 
       <section className="card-wuxia rounded-3xl p-6 sm:p-8 min-h-[520px]">

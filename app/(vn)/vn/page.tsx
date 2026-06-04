@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { HomeMainKeywordSections } from "@/components/HomeMainKeywordSections";
 import JianghuMapClient from "@/components/JianghuMapClient";
 import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Version 1.7 Guide Hub Tiếng Việt",
+  title: "Where Winds Meet Guide Hub Tiếng Việt - Version 1.7",
   description:
-    "Trung tâm Tiếng Việt cho Where Winds Meet Version 1.7, The Imperial Palace, code Palace, tier list, build, boss và patch notes cho người chơi PC, console, mobile.",
+    "Hub Where Winds Meet tiếng Việt cho Version 1.7: The Imperial Palace, codes, patch notes, tier list, builds, boss, bản đồ tương tác và nền tảng PC, PS5, mobile.",
   alternates: buildHreflangAlternates("/", { canonicalLanguage: "vi" }),
   openGraph: {
-    title: "Where Winds Meet Version 1.7 Guide Hub Tiếng Việt",
+    title: "Where Winds Meet Guide Hub Tiếng Việt - Version 1.7",
     description:
-      "Trung tâm Tiếng Việt cho Where Winds Meet: Version 1.7, The Imperial Palace, code Palace, tier list, build, boss và patch notes.",
+      "Hub Where Winds Meet tiếng Việt cho Version 1.7: The Imperial Palace, codes, patch notes, tier list, builds, boss, bản đồ tương tác và nền tảng.",
     url: "https://wherewindsmeet.org/vn",
     images: [
       {
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Where Winds Meet Version 1.7 Guide Hub Tiếng Việt",
+    title: "Where Winds Meet Guide Hub Tiếng Việt - Version 1.7",
     description:
       "Hướng dẫn Version 1.7, code Palace, tier list và tin cập nhật mới nhất cho Where Winds Meet (Tiếng Việt).",
     images: ["https://static.wherewindsmeet.org/background/bg.jpg"],
@@ -40,6 +41,8 @@ export default function Home() {
 
   return (
     <div className="space-y-10">
+      <HomeMainKeywordSections language="vi" />
+
       <JianghuMapClient />
 
       <section className="card-wuxia rounded-3xl p-6 sm:p-8 min-h-[520px]">

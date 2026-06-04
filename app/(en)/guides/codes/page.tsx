@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
+import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import { getContentFreshness } from "@/lib/contentFreshness";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -118,6 +119,7 @@ const liveCodes = [
 export default function CodesPage() {
   return (
     <article className="space-y-10 bg-ink-wash min-h-screen">
+      <HomeHubBacklink language="en" />
       {/* Hero Section */}
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-8 shadow-2xl shadow-black/50">
         <div className="pointer-events-none absolute inset-0">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
+import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import Link from "next/link";
 import npcPins from "@/public/guides/npc-list/pins-old-friends.json";
 import NpcMapClient, { MapPin } from "@/app/(en)/guides/npc-list/NpcMapClient";
@@ -576,6 +577,7 @@ export default function NpcListPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+      <HomeHubBacklink language="vi" />
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-10 shadow-2xl shadow-black/40">
         <div className="pointer-events-none absolute inset-0">
           <CdnImage

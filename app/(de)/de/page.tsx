@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { HomeMainKeywordSections } from "@/components/HomeMainKeywordSections";
 import JianghuMapClient from "@/components/JianghuMapClient";
 import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Version 1.7 – Deutscher Guide-Hub",
+  title: "Where Winds Meet Guide-Hub Deutsch - Version 1.7",
   description:
-    "Deutscher Hub zu Where Winds Meet Version 1.7, The Imperial Palace, Palace-Codes, Patch Notes, Tierlisten, Builds und Boss-Guides für PC, Konsole und Mobile.",
+    "Deutscher Where Winds Meet Guide-Hub für Version 1.7: The Imperial Palace, Codes, Patch Notes, Tierliste, Builds, Bosse, interaktive Karte und Plattformen.",
   alternates: buildHreflangAlternates("/", { canonicalLanguage: "de" }),
   openGraph: {
-    title: "Where Winds Meet Version 1.7 – Deutscher Guide-Hub",
+    title: "Where Winds Meet Guide-Hub Deutsch - Version 1.7",
     description:
-      "Schau den Preview-Stream und finde die gefragtesten Where Winds Meet Guides: Tierlisten, Codes, Bosse, Roadmap und Quests wie An Unholy Prophecy, One Leaf One Life und Woven with Malice.",
+      "Deutscher Where Winds Meet Guide-Hub für Version 1.7: The Imperial Palace, Codes, Patch Notes, Tierliste, Builds, Bosse, interaktive Karte und Plattformen.",
     url: "https://wherewindsmeet.org/de",
     images: [
       {
@@ -31,6 +32,8 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="space-y-10">
+      <HomeMainKeywordSections language="de" />
+
       <JianghuMapClient />
 
       <section className="card-wuxia rounded-3xl p-6 sm:p-8 min-h-[520px]">

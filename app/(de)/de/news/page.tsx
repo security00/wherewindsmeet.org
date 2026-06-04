@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
+import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import Link from "next/link";
 import type { NewsType } from "@/lib/news";
 import { latestNewsDate, newsItems } from "@/lib/news.de";
@@ -118,6 +119,7 @@ export default function NewsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+      <HomeHubBacklink language="de" />
 
       <section className="relative overflow-hidden rounded-3xl border border-slate-800/60 bg-slate-950/40 p-8 shadow-2xl backdrop-blur-md bg-texture-noise">
         <div className="pointer-events-none absolute inset-0">
