@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 import ZoomableGuideImage from "./ZoomableGuideImage";
 
@@ -55,6 +56,12 @@ const images = {
 const heroImageUrl = images.hero.src;
 
 const imageCardClass = "overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/80";
+
+const financeVideo = {
+  id: "yya5lX4KgOg",
+  title: "Finance Imperial Decree Solution - Where Winds Meet",
+  url: "https://www.youtube.com/watch?v=yya5lX4KgOg",
+};
 
 const quickFacts = [
   { label: "Content type", value: "Exploration side quest and Palace Exploration activity" },
@@ -395,6 +402,34 @@ export default function ImperialDecreeGuidePage() {
             </figure>
           ))}
         </div>
+      </section>
+
+      <section id="finance-video" className="grid gap-5 rounded-3xl border border-amber-400/25 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/40 lg:grid-cols-[0.42fr_0.58fr] lg:items-center">
+        <div className="space-y-3">
+          <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">Video walkthrough</p>
+          <h2 className="text-2xl font-bold text-slate-50">Finance Imperial Decree solution video.</h2>
+          <p className="text-sm leading-6 text-slate-300">
+            Watch this route if you want to see the Finance volume flow before matching the answer meanings below.
+            It pairs well with the S-grade intent table because the video shows where the prompts appear in-game.
+          </p>
+          <a
+            href={financeVideo.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex w-fit rounded-full border border-amber-300/60 bg-amber-400/10 px-4 py-2 text-sm font-semibold text-amber-100 transition hover:border-amber-200 hover:text-white"
+          >
+            Open on YouTube
+          </a>
+        </div>
+        <LiteYouTubeEmbed
+          videoId={financeVideo.id}
+          title={financeVideo.title}
+          poster={images.financeVolume.src}
+          analytics={{
+            eventName: "video_play",
+            params: { page: "imperial_decree", placement: "finance_video", video_topic: "finance_solution" },
+          }}
+        />
       </section>
 
       <section className="space-y-5 rounded-3xl border border-emerald-500/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/40">
