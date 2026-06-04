@@ -22,6 +22,16 @@ const guideSections = [
       "Vom ersten Start bis zum ersten Wochen-Reset: clevere Einstellungen, sichere Story-Routen, Daily-Checklisten.",
   },
   {
+    title: "Platforms & Download",
+    slug: "/de/guides/platforms",
+    label: "PS5 / PC / Mobile",
+    icon: "PC",
+    color: "text-sky-300",
+    size: "medium",
+    description:
+      "Offizieller Where Winds Meet Plattformstatus fuer PS5, PC, iOS, Android, Mobile, Cross-Play und Account-Linking.",
+  },
+  {
     title: "PvP-Meta-Tierliste",
     slug: "/de/guides/pvp-tier-list",
     label: "PvP",

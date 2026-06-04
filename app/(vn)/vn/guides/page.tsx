@@ -22,6 +22,16 @@ const guideSections = [
       "Từ lúc mở game đến lần reset tuần đầu tiên: thiết lập tối ưu, tuyến cốt truyện an toàn, checklist hằng ngày.",
   },
   {
+    title: "Platforms & Download",
+    slug: "/vn/guides/platforms",
+    label: "PS5 / PC / Mobile",
+    icon: "PC",
+    color: "text-sky-300",
+    size: "medium",
+    description:
+      "Tinh trang nen tang Where Winds Meet cho PS5, PC, iOS, Android, mobile, cross-play va account linking.",
+  },
+  {
     title: "Bảng xếp hạng PvP (meta)",
     slug: "/vn/guides/pvp-tier-list",
     label: "Đấu hạng",

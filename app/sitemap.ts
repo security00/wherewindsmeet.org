@@ -19,6 +19,7 @@ const newsLastModified = new Date(latestNewsDate);
 const staticEntries: Entry[] = [
   { path: "/", changeFrequency: "daily", priority: 1 },
   { path: "/guides", changeFrequency: "daily", priority: 0.9 },
+  { path: "/guides/platforms", changeFrequency: "weekly", priority: 0.86 },
   { path: "/tools", changeFrequency: "weekly", priority: 0.8 },
   { path: "/tools/interactive-map", changeFrequency: "weekly", priority: 0.8 },
   { path: "/tools/reset-timer", changeFrequency: "weekly", priority: 0.75 },
@@ -78,6 +79,7 @@ const deEntries: Entry[] = staticEntries.map((entry) => ({
 const vnEntries: Entry[] = [
   { path: "/vn", changeFrequency: "daily", priority: 0.9 },
   { path: "/vn/guides", changeFrequency: "daily", priority: 0.85 },
+  { path: "/vn/guides/platforms", changeFrequency: "weekly", priority: 0.76 },
   { path: "/vn/tools", changeFrequency: "weekly", priority: 0.75 },
   { path: "/vn/tools/interactive-map", changeFrequency: "weekly", priority: 0.75 },
   { path: "/vn/tools/reset-timer", changeFrequency: "weekly", priority: 0.7 },

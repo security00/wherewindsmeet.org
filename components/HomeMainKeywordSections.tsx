@@ -58,6 +58,7 @@ const content: Record<ContentLanguage, HomeContent> = {
         links: [
           { href: "/guides/new-players", label: "Start as a new player" },
           { href: "/guides/weapons", label: "Compare weapons" },
+          { href: "/guides/platforms", label: "Check platforms" },
         ],
       },
       {
@@ -142,6 +143,7 @@ const content: Record<ContentLanguage, HomeContent> = {
         links: [
           { href: "/guides/new-players", label: "Bắt đầu cho người mới" },
           { href: "/guides/weapons", label: "So sánh vũ khí" },
+          { href: "/guides/platforms", label: "Nền tảng / PS5 / PC" },
         ],
       },
       {
@@ -225,6 +227,7 @@ const content: Record<ContentLanguage, HomeContent> = {
         links: [
           { href: "/guides/new-players", label: "Als Anfänger starten" },
           { href: "/guides/weapons", label: "Waffen vergleichen" },
+          { href: "/guides/platforms", label: "Plattformen prüfen" },
         ],
       },
       {
@@ -321,6 +324,7 @@ function buildStructuredData(entry: HomeContent) {
         "https://store.steampowered.com/app/3564740/Where_Winds_Meet/",
         "https://www.playstation.com/en-us/games/where-winds-meet/",
         "https://apps.apple.com/us/app/where-winds-meet/id6472396866",
+        "https://play.google.com/store/apps/details?id=com.netease.yysls",
       ],
     },
     {
