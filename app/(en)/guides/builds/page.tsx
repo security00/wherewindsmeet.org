@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
+import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
@@ -40,6 +41,27 @@ const archetypes = [
     role: "Ranged pressure and control",
     description:
       "A ranged configuration that emphasizes safe positioning, chip damage, and soft crowd control to keep dangerous foes pinned at comfortable distances.",
+  },
+];
+
+const postPatchChecks = [
+  {
+    title: "Keep the build",
+    detail:
+      "Keep your current setup if Path Balance only changed comfort or UI flow. Retest boss and arena matchups before paying for a full reset.",
+    href: "/guides/patch-notes#upcoming-nerfs",
+  },
+  {
+    title: "Adjust the weapon pair",
+    detail:
+      "Swap your second weapon first when the main loop still works but your counter matchup got worse after maintenance.",
+    href: "/guides/weapons/tier-list#weapon-meta-check",
+  },
+  {
+    title: "Reset the stat plan",
+    detail:
+      "Use cheaper Martial Art Reset and lower Inner Way Conversion costs when your core damage stat no longer matches your weapon pair.",
+    href: "/guides/pvp-tier-list#arena-rank-checklist",
   },
 ];
 
@@ -146,6 +168,39 @@ export default function BuildsPage() {
             tweak details without losing its identity.
           </p>
           <div className="divider-ink" />
+        </section>
+
+        <section id="post-patch-build-check" className="space-y-5 rounded-3xl border border-emerald-400/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/30">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Version 1.7 build decision</p>
+              <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+                Post-patch build check: keep, adjust, or reset.
+              </h2>
+            </div>
+            <Link
+              href="/guides/tier-list#arena-ranks"
+              className="rounded-full border border-emerald-300/50 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-100 hover:border-emerald-200/80"
+            >
+              Arena rank notes
+            </Link>
+          </div>
+          <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+            Use this check after Path Balance, upcoming nerf discussions, or live maintenance. Most players should not
+            rebuild instantly; first decide whether the patch changed your weapon, your stat plan, or only your comfort settings.
+          </p>
+          <div className="grid gap-4 md:grid-cols-3">
+            {postPatchChecks.map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 transition hover:border-emerald-300/60"
+              >
+                <p className="text-sm font-semibold text-slate-50">{item.title}</p>
+                <p className="mt-2 text-xs leading-5 text-slate-300">{item.detail}</p>
+              </Link>
+            ))}
+          </div>
         </section>
 
         {/* Core Principles - Organic Layout */}

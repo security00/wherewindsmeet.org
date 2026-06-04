@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
+import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
@@ -41,6 +42,27 @@ const archetypes = [
     role: "Tầm xa khống chế/ép góc",
     description:
       "Cấu hình tầm xa chú trọng vị trí an toàn, sát thương găm dần và khống chế mềm để giữ địch ở khoảng cách dễ chịu.",
+  },
+];
+
+const postPatchChecks = [
+  {
+    title: "Giu build hien tai",
+    detail:
+      "Giu setup cu neu Path Balance chi doi do thoai mai hoac UI flow. Test lai boss va arena matchup truoc khi tra gia reset.",
+    href: "/vn/guides/patch-notes#upcoming-nerfs",
+  },
+  {
+    title: "Doi cap vu khi",
+    detail:
+      "Doi vu khi phu truoc neu loop chinh van on nhung counter matchup xau hon sau maintenance.",
+    href: "/vn/guides/weapons/tier-list#weapon-meta-check",
+  },
+  {
+    title: "Reset stat plan",
+    detail:
+      "Dung Martial Art Reset re hon va Inner Way Conversion thap hon khi chi so damage chinh khong con hop voi cap vu khi.",
+    href: "/vn/guides/pvp-tier-list#arena-rank-checklist",
   },
 ];
 
@@ -136,6 +158,39 @@ export default function BuildsPage() {
             Các cấu hình ở đây ưu tiên tính linh hoạt và vẫn vui khi meta đổi patch. Mỗi build giải thích nguyên lý để bạn tùy biến mà không làm mất bản sắc.
           </p>
           <div className="divider-ink" />
+        </section>
+
+        <section id="post-patch-build-check" className="space-y-5 rounded-3xl border border-emerald-400/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/30">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Version 1.7 build decision</p>
+              <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+                Sau patch: giu build, chinh lai, hay reset?
+              </h2>
+            </div>
+            <Link
+              href="/vn/guides/tier-list#arena-ranks"
+              className="rounded-full border border-emerald-300/50 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-100 hover:border-emerald-200/80"
+            >
+              Arena rank notes
+            </Link>
+          </div>
+          <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+            Dung checklist nay sau Path Balance, upcoming nerf discussions hoac live maintenance. Da so nguoi choi khong nen reset ngay;
+            truoc het hay xem patch doi vu khi, stat plan, hay chi doi do thoai mai khi choi.
+          </p>
+          <div className="grid gap-4 md:grid-cols-3">
+            {postPatchChecks.map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 transition hover:border-emerald-300/60"
+              >
+                <p className="text-sm font-semibold text-slate-50">{item.title}</p>
+                <p className="mt-2 text-xs leading-5 text-slate-300">{item.detail}</p>
+              </Link>
+            ))}
+          </div>
         </section>
 
         <section className="bg-texture-noise relative overflow-hidden rounded-3xl border border-slate-800/60 bg-slate-950/40 p-8 shadow-2xl backdrop-blur-md">

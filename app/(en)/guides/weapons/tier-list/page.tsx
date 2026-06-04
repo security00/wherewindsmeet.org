@@ -16,6 +16,27 @@ const quickRankings = [
   { tier: "B", weapons: "Sword, Fan, Umbrella", bestFor: "Beginner comfort, support, counters, specialist builds" },
 ];
 
+const weaponMetaChecks = [
+  {
+    title: "Arena climbing",
+    detail:
+      "Prioritize weapons that can start or escape fights on demand. Rope Dart and Dual Blades should be tested first when you are stuck in arena ranks.",
+    href: "/guides/pvp-tier-list#arena-rank-checklist",
+  },
+  {
+    title: "Path Balance retest",
+    detail:
+      "After Path Balance or maintenance, retest your current weapon before pivoting. Some changes alter comfort more than raw damage.",
+    href: "/guides/patch-notes#upcoming-nerfs",
+  },
+  {
+    title: "Build compatibility",
+    detail:
+      "A weapon swap only works if your stat plan and second weapon support it. Check builds before spending materials.",
+    href: "/guides/builds#post-patch-build-check",
+  },
+];
+
 const faqs = [
   {
     question: "What is the best weapon in Where Winds Meet?",
@@ -244,6 +265,32 @@ export default function WeaponTierListPage() {
               Full WWM tier list →
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section id="weapon-meta-check" className="space-y-5 rounded-3xl border border-blue-400/30 bg-blue-500/10 p-6 shadow-lg shadow-blue-950/30">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wide text-blue-200">Search intent: best WWM weapon after patch</p>
+          <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+            Weapon meta check for arena ranks and Path Balance.
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+            Use this section when you are deciding whether to keep investing in your weapon, move to a faster PVP pick,
+            or wait for upcoming nerf confirmation. The answer is usually a combination of weapon tier, build fit, and
+            current patch notes.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {weaponMetaChecks.map((item) => (
+            <Link
+              key={item.title}
+              href={item.href}
+              className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 transition hover:border-blue-300/60"
+            >
+              <p className="text-sm font-semibold text-slate-50">{item.title}</p>
+              <p className="mt-2 text-xs leading-5 text-slate-300">{item.detail}</p>
+            </Link>
+          ))}
         </div>
       </section>
 

@@ -36,6 +36,30 @@ const pvpTiers = [
   },
 ];
 
+const arenaRankChecks = [
+  {
+    title: "Vor Reset-Material-Ausgaben",
+    detail:
+      "Pruefe zuerst Path Balance vom 26. Mai und Maintenance vom 27. Mai. Wenn deine Waffe nur Komfort, aber nicht Schaden verloren hat, teste den Build vor einem kompletten Rebuild.",
+    href: "/de/guides/patch-notes#upcoming-nerfs",
+    label: "Upcoming nerf watch",
+  },
+  {
+    title: "Wenn ein Waffenwechsel noetig wirkt",
+    detail:
+      "Nutze die Waffen-Tierliste, um Mobilitaet, Burst-Fenster, Reichweite und Counter-Tools zu vergleichen, bevor du deine Arena-Main-Waffe tauschst.",
+    href: "/de/guides/weapons/tier-list#weapon-meta-check",
+    label: "Weapon meta check",
+  },
+  {
+    title: "Wenn ein Top-Ranking trotzdem falsch wirkt",
+    detail:
+      "Eine Top-Waffe kann mit falschem Stat-Plan schwach wirken. Builds klaeren, ob ein Respec noetig ist oder nur Combo/Rotation angepasst werden muss.",
+    href: "/de/guides/builds#post-patch-build-check",
+    label: "Build reset check",
+  },
+];
+
 export default function PVPTierListPage() {
   const roleLabelMap: Record<string, string> = {
     Assassin: "Assassine",
@@ -76,6 +100,40 @@ export default function PVPTierListPage() {
               Diese Tierliste ordnet Waffen nach ihrer Performance in Duellen auf hohem Niveau und in kleinen Skirmishes ein.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section id="arena-rank-checklist" className="space-y-5 rounded-3xl border border-red-400/30 bg-red-500/10 p-6 shadow-lg shadow-red-950/30">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-red-200">Search intent: wwm arena ranks</p>
+            <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+              Arena-rank Checkliste nach Path Balance.
+            </h2>
+          </div>
+          <Link
+            href="/de/guides/tier-list#arena-ranks"
+            className="rounded-full border border-red-300/50 bg-red-500/10 px-3 py-1 text-xs font-semibold text-red-100 hover:border-red-200/80"
+          >
+            Main tier-list notes
+          </Link>
+        </div>
+        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+          Wenn du nach WWM arena ranks suchst, bleib nicht beim Tier-Buchstaben stehen. Pruefe, ob die neue Path Balance
+          deine Waffe betrifft, ob Counter-Matchups staerker wurden und ob guenstigere Reset-Kosten einen Post-Patch-Test lohnen.
+        </p>
+        <div className="grid gap-4 md:grid-cols-3">
+          {arenaRankChecks.map((item) => (
+            <Link
+              key={item.title}
+              href={item.href}
+              className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 transition hover:border-red-300/60"
+            >
+              <p className="text-sm font-semibold text-slate-50">{item.title}</p>
+              <p className="mt-2 text-xs leading-5 text-slate-300">{item.detail}</p>
+              <p className="mt-3 text-xs font-semibold text-red-200">{item.label}</p>
+            </Link>
+          ))}
         </div>
       </section>
 

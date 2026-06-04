@@ -73,7 +73,7 @@
   {
     "basePath": "/guides/builds",
     "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-06-03",
+    "lastChecked": "2026-06-04",
     "gameVersion": "Version 1.7 / Path Balance",
     "priorityCluster": "week-2-meta-refresh",
     "sourceUrls": [
@@ -81,9 +81,20 @@
     ]
   },
   {
+    "basePath": "/guides/pvp-tier-list",
+    "languages": ["en", "vi", "de"],
+    "lastChecked": "2026-06-04",
+    "gameVersion": "Version 1.7 / Arena ranks and Path Balance",
+    "priorityCluster": "week-2-meta-refresh",
+    "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/m/news/",
+      "https://www.wherewindsmeetgame.com/news/official/527update.html"
+    ]
+  },
+  {
     "basePath": "/guides/weapons/tier-list",
     "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-06-03",
+    "lastChecked": "2026-06-04",
     "gameVersion": "Version 1.7 / Path Balance",
     "priorityCluster": "week-2-meta-refresh",
     "sourceUrls": [

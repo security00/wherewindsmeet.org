@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
+import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
@@ -40,6 +41,27 @@ const archetypes = [
     role: "Fernkampf-Druck & Kontrolle",
     description:
       "Betont sicheres Positioning, Chip Damage und Soft-CC, damit gefährliche Ziele auf Abstand bleiben.",
+  },
+];
+
+const postPatchChecks = [
+  {
+    title: "Build behalten",
+    detail:
+      "Behalte dein Setup, wenn Path Balance nur Komfort oder UI-Flow geaendert hat. Boss- und Arena-Matchups erneut testen, bevor du voll resettest.",
+    href: "/de/guides/patch-notes#upcoming-nerfs",
+  },
+  {
+    title: "Waffenpaar anpassen",
+    detail:
+      "Tausche zuerst die Zweitwaffe, wenn der Haupt-Loop noch funktioniert, aber ein Counter-Matchup nach Maintenance schlechter wurde.",
+    href: "/de/guides/weapons/tier-list#weapon-meta-check",
+  },
+  {
+    title: "Stat-Plan resetten",
+    detail:
+      "Nutze guenstigeren Martial Art Reset und niedrigere Inner Way Conversion-Kosten, wenn dein Kern-Damage-Stat nicht mehr zur Waffenpaarung passt.",
+    href: "/de/guides/pvp-tier-list#arena-rank-checklist",
   },
 ];
 
@@ -139,6 +161,39 @@ export default function BuildsDePage() {
             Diese Seite bündelt flexible Setups, die auch dann Spaß machen, wenn Patches das Meta verschieben. Statt dich in eine Route zu zwingen, erklärt jeder Guide die Kernprinzipien, damit du Details anpassen kannst, ohne den Charakter zu „zerbrechen“.
           </p>
           <div className="divider-ink" />
+        </section>
+
+        <section id="post-patch-build-check" className="space-y-5 rounded-3xl border border-emerald-400/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/30">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Version 1.7 build decision</p>
+              <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+                Nach dem Patch: behalten, anpassen oder resetten?
+              </h2>
+            </div>
+            <Link
+              href="/de/guides/tier-list#arena-ranks"
+              className="rounded-full border border-emerald-300/50 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-100 hover:border-emerald-200/80"
+            >
+              Arena rank notes
+            </Link>
+          </div>
+          <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+            Nutze diesen Check nach Path Balance, upcoming-nerf-Diskussionen oder Live Maintenance. Die meisten Spieler sollten nicht sofort neu bauen:
+            zuerst klaeren, ob der Patch die Waffe, den Stat-Plan oder nur Komfort betrifft.
+          </p>
+          <div className="grid gap-4 md:grid-cols-3">
+            {postPatchChecks.map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 transition hover:border-emerald-300/60"
+              >
+                <p className="text-sm font-semibold text-slate-50">{item.title}</p>
+                <p className="mt-2 text-xs leading-5 text-slate-300">{item.detail}</p>
+              </Link>
+            ))}
+          </div>
         </section>
 
         {/* Core Principles */}

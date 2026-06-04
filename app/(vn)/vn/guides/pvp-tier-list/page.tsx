@@ -36,6 +36,30 @@ const pvpTiers = [
   },
 ];
 
+const arenaRankChecks = [
+  {
+    title: "Truoc khi dung nguyen lieu reset",
+    detail:
+      "Kiem tra Path Balance May 26 va maintenance May 27 truoc. Neu vu khi chi mat do thoai mai chu khong mat damage, hay test lai build cu truoc khi lam lai tu dau.",
+    href: "/vn/guides/patch-notes#upcoming-nerfs",
+    label: "Upcoming nerf watch",
+  },
+  {
+    title: "Khi can doi vu khi arena",
+    detail:
+      "Dung weapon tier list de so sanh do co dong, cua so burst, tam danh va cong cu counter truoc khi doi main weapon.",
+    href: "/vn/guides/weapons/tier-list#weapon-meta-check",
+    label: "Weapon meta check",
+  },
+  {
+    title: "Khi tier cao ma danh van sai",
+    detail:
+      "Vu khi top van co the yeu neu stat plan sai. Mo Builds de xem ban can respec hay chi can doi combo/rotation.",
+    href: "/vn/guides/builds#post-patch-build-check",
+    label: "Build reset check",
+  },
+];
+
 export default function PVPTierListPage() {
   const roleLabelMap: Record<string, string> = {
     Assassin: "Sát thủ",
@@ -76,6 +100,40 @@ export default function PVPTierListPage() {
               Danh sách này xếp hạng vũ khí theo hiệu quả trong đấu tay đôi cấp cao và giao tranh nhỏ.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section id="arena-rank-checklist" className="space-y-5 rounded-3xl border border-red-400/30 bg-red-500/10 p-6 shadow-lg shadow-red-950/30">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-red-200">Search intent: wwm arena ranks</p>
+            <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+              Checklist leo arena rank sau Path Balance.
+            </h2>
+          </div>
+          <Link
+            href="/vn/guides/tier-list#arena-ranks"
+            className="rounded-full border border-red-300/50 bg-red-500/10 px-3 py-1 text-xs font-semibold text-red-100 hover:border-red-200/80"
+          >
+            Main tier-list notes
+          </Link>
+        </div>
+        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+          Neu ban tim WWM arena ranks, dung dung lai o chu cai tier. Hay kiem tra Path Balance moi co cham toi vu khi cua ban khong,
+          keo counter co manh hon khong, va chi phi reset re hon co dang de test build sau patch khong.
+        </p>
+        <div className="grid gap-4 md:grid-cols-3">
+          {arenaRankChecks.map((item) => (
+            <Link
+              key={item.title}
+              href={item.href}
+              className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 transition hover:border-red-300/60"
+            >
+              <p className="text-sm font-semibold text-slate-50">{item.title}</p>
+              <p className="mt-2 text-xs leading-5 text-slate-300">{item.detail}</p>
+              <p className="mt-3 text-xs font-semibold text-red-200">{item.label}</p>
+            </Link>
+          ))}
         </div>
       </section>
 

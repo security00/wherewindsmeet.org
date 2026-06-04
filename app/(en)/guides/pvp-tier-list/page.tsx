@@ -36,6 +36,30 @@ const pvpTiers = [
   },
 ];
 
+const arenaRankChecks = [
+  {
+    title: "Before you spend reset materials",
+    detail:
+      "Check May 26 Path Balance and May 27 maintenance first. If your weapon only lost comfort rather than damage, test the same build before rebuilding from scratch.",
+    href: "/guides/patch-notes#upcoming-nerfs",
+    label: "Upcoming nerf watch",
+  },
+  {
+    title: "When you need a weapon pivot",
+    detail:
+      "Use the weapon-only tier list to compare mobility, burst windows, range, and counter tools before swapping your main arena weapon.",
+    href: "/guides/weapons/tier-list#weapon-meta-check",
+    label: "Weapon meta check",
+  },
+  {
+    title: "When the ranking still feels wrong",
+    detail:
+      "A top weapon can still underperform with the wrong stat plan. Use builds to decide whether you need a respec or only a combo/rotation change.",
+    href: "/guides/builds#post-patch-build-check",
+    label: "Build reset check",
+  },
+];
+
 export default function PVPTierListPage() {
   return (
     <article className="space-y-10 bg-ink-wash min-h-screen pb-20">
@@ -66,6 +90,41 @@ export default function PVPTierListPage() {
               This list ranks weapons based on their performance in high-level duels, small-scale skirmishes, WWM arena ranks, and PVP ranking climbs. Use it with the main tier list when checking whether your build still fits the 2026 meta.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section id="arena-rank-checklist" className="space-y-5 rounded-3xl border border-red-400/30 bg-red-500/10 p-6 shadow-lg shadow-red-950/30">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-red-200">Search intent: wwm arena ranks</p>
+            <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+              Arena rank checklist after Path Balance.
+            </h2>
+          </div>
+          <Link
+            href="/guides/tier-list#arena-ranks"
+            className="rounded-full border border-red-300/50 bg-red-500/10 px-3 py-1 text-xs font-semibold text-red-100 hover:border-red-200/80"
+          >
+            Main tier-list notes
+          </Link>
+        </div>
+        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+          If you searched for WWM arena ranks, do not stop at the tier letter. Check whether the latest Path Balance
+          changed your weapon, whether the counter matchup is now stronger, and whether cheaper reset costs make a
+          post-patch build test worth doing.
+        </p>
+        <div className="grid gap-4 md:grid-cols-3">
+          {arenaRankChecks.map((item) => (
+            <Link
+              key={item.title}
+              href={item.href}
+              className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 transition hover:border-red-300/60"
+            >
+              <p className="text-sm font-semibold text-slate-50">{item.title}</p>
+              <p className="mt-2 text-xs leading-5 text-slate-300">{item.detail}</p>
+              <p className="mt-3 text-xs font-semibold text-red-200">{item.label}</p>
+            </Link>
+          ))}
         </div>
       </section>
 

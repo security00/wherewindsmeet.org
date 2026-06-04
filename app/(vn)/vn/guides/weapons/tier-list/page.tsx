@@ -34,6 +34,27 @@ const tierSummaries = [
   },
 ];
 
+const weaponMetaChecks = [
+  {
+    title: "Leo arena rank",
+    detail:
+      "Uu tien vu khi co the mo giao tranh hoac thoat giao tranh theo y muon. Rope Dart va Dual Blades nen duoc test dau tien khi ban ket rank.",
+    href: "/vn/guides/pvp-tier-list#arena-rank-checklist",
+  },
+  {
+    title: "Test lai sau Path Balance",
+    detail:
+      "Sau Path Balance hoac maintenance, hay test lai vu khi hien tai truoc khi xoay truc. Mot so thay doi chi anh huong do thoai mai, khong phai damage thuan.",
+    href: "/vn/guides/patch-notes#upcoming-nerfs",
+  },
+  {
+    title: "Hop voi build hay khong",
+    detail:
+      "Doi vu khi chi hieu qua khi stat plan va vu khi phu cung ho tro. Xem Builds truoc khi tieu nguyen lieu.",
+    href: "/vn/guides/builds#post-patch-build-check",
+  },
+];
+
 const tierWeaponExamples = [
   {
     label: "Vũ khí S-Tier",
@@ -151,6 +172,31 @@ export default function WeaponTierListPage() {
             dùng trang này làm điểm tựa. Muốn cái nhìn rộng thì xem tier list tổng; muốn chọn vũ khí cụ thể thì đọc tại đây rồi qua trang builds để hoàn thiện
             cấu hình (setup).
           </p>
+        </div>
+      </section>
+
+      <section id="weapon-meta-check" className="space-y-5 rounded-3xl border border-blue-400/30 bg-blue-500/10 p-6 shadow-lg shadow-blue-950/30">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wide text-blue-200">Search intent: best WWM weapon after patch</p>
+          <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+            Kiem tra meta vu khi cho arena ranks va Path Balance.
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+            Dung phan nay khi ban phan van co nen tiep tuc dau tu vao vu khi hien tai, doi sang pick PvP nhanh hon,
+            hay cho xac nhan upcoming nerf. Cau tra loi thuong nam o tier vu khi, build co hop hay khong va patch notes hien tai.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {weaponMetaChecks.map((item) => (
+            <Link
+              key={item.title}
+              href={item.href}
+              className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 transition hover:border-blue-300/60"
+            >
+              <p className="text-sm font-semibold text-slate-50">{item.title}</p>
+              <p className="mt-2 text-xs leading-5 text-slate-300">{item.detail}</p>
+            </Link>
+          ))}
         </div>
       </section>
 

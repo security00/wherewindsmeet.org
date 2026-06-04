@@ -34,6 +34,27 @@ const tierSummaries = [
   },
 ];
 
+const weaponMetaChecks = [
+  {
+    title: "Arena rank climb",
+    detail:
+      "Priorisiere Waffen, die Kaempfe nach Bedarf starten oder verlassen koennen. Rope Dart und Dual Blades zuerst testen, wenn du in Arena ranks feststeckst.",
+    href: "/de/guides/pvp-tier-list#arena-rank-checklist",
+  },
+  {
+    title: "Path Balance erneut testen",
+    detail:
+      "Nach Path Balance oder Maintenance erst die aktuelle Waffe erneut testen. Manche Aenderungen betreffen Komfort staerker als rohen Schaden.",
+    href: "/de/guides/patch-notes#upcoming-nerfs",
+  },
+  {
+    title: "Build-Kompatibilitaet",
+    detail:
+      "Ein Waffenwechsel funktioniert nur, wenn Stat-Plan und Zweitwaffe mitziehen. Vor Materialeinsatz Builds pruefen.",
+    href: "/de/guides/builds#post-patch-build-check",
+  },
+];
+
 const tierWeaponExamples = [
   {
     label: "S-Tier Waffen",
@@ -153,6 +174,31 @@ export default function WeaponTierListPage() {
             Nutze die Tierliste als Referenz, wenn du unsicher bist, in welche Waffe du als Nächstes investieren solltest. Für den groben Überblick eignet
             sich die Haupt‑Tierliste; hier kannst du dann bei einzelnen Waffen tiefer einsteigen und anschließend im Builds-Guide das Setup sauber abrunden.
           </p>
+        </div>
+      </section>
+
+      <section id="weapon-meta-check" className="space-y-5 rounded-3xl border border-blue-400/30 bg-blue-500/10 p-6 shadow-lg shadow-blue-950/30">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wide text-blue-200">Search intent: best WWM weapon after patch</p>
+          <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+            Weapon-Meta-Check fuer Arena ranks und Path Balance.
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+            Nutze diesen Abschnitt, wenn du ueberlegst, ob du weiter in deine Waffe investieren, auf einen schnelleren PVP-Pick wechseln
+            oder auf bestaetigte upcoming nerfs warten solltest. Die Antwort liegt meist in Waffen-Tier, Build-Fit und aktuellen Patch Notes.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {weaponMetaChecks.map((item) => (
+            <Link
+              key={item.title}
+              href={item.href}
+              className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 transition hover:border-blue-300/60"
+            >
+              <p className="text-sm font-semibold text-slate-50">{item.title}</p>
+              <p className="mt-2 text-xs leading-5 text-slate-300">{item.detail}</p>
+            </Link>
+          ))}
         </div>
       </section>
 
