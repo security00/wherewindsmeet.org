@@ -9,6 +9,7 @@ type FooterLink = {
 };
 
 const defaultLinks: FooterLink[] = [
+  { href: "/", label: "Where Winds Meet" },
   { href: "/guides", label: "Guides" },
   { href: "/tools", label: "Tools" },
   { href: "/guides/bosses", label: "Bosses" },
@@ -21,6 +22,7 @@ const defaultLinks: FooterLink[] = [
 ];
 
 const vietnameseLinks: FooterLink[] = [
+  { href: "/vn", label: "Where Winds Meet" },
   { href: "/vn/guides", label: "Hướng dẫn" },
   { href: "/vn/tools", label: "Công cụ" },
   { href: "/vn/guides/bosses", label: "Boss" },
@@ -33,6 +35,7 @@ const vietnameseLinks: FooterLink[] = [
 ];
 
 const germanLinks: FooterLink[] = [
+  { href: "/de", label: "Where Winds Meet" },
   { href: "/de/guides", label: "Guides" },
   { href: "/de/tools", label: "Tools" },
   { href: "/de/guides/bosses", label: "Bosse" },

@@ -18,7 +18,7 @@ const copy: Record<
     href: "/",
     eyebrow: "Main hub",
     title: "Where Winds Meet guide hub",
-    body: "Need the latest Where Winds Meet overview, platforms, codes, patch notes, tier lists, builds, bosses, and map routes in one place?",
+    body: "Need the latest Where Winds Meet guide hub for platforms, codes, patch notes, tier lists, builds, bosses, and map routes in one place?",
     cta: "Back to latest guides",
   },
   vi: {
@@ -60,7 +60,7 @@ export function HomeHubBacklink({ language }: { language: ContentLanguage }) {
           href={entry.href}
           className="rounded-full border border-emerald-300/60 bg-slate-950/50 px-4 py-2 text-xs font-semibold text-emerald-100 transition hover:border-emerald-200 hover:text-emerald-50"
         >
-          {entry.cta}
+          {entry.title}
         </Link>
       </div>
     </aside>
