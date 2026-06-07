@@ -212,6 +212,11 @@ const faqs = [
       "No. The quest can progress without a perfect score, but S ratings unlock the best Finance-volume reward tier.",
   },
   {
+    question: "What are the Farming Affairs answers in Imperial Decree?",
+    answer:
+      "For the Finance / Farming Affairs prompts, aim for practical public-welfare remarks: support the Jinming Pool night market, protect farmland, avoid austerity-only policy, restore fields and food supplies, deny reckless death vows, and reject unnecessary market-opening paperwork.",
+  },
+  {
     question: "Why are people searching for Imperial Decree now?",
     answer:
       "It belongs to the new Imperial Palace update cycle, so players are looking for the unlock location, the Finance answers, reward thresholds, and whether the activity counts toward Palace exploration.",
@@ -219,14 +224,14 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Imperial Decree Where Winds Meet Guide - Finance S Answers",
+  title: "Where Winds Meet Imperial Decree Answers & S Rank Guide",
   description:
-    "Imperial Decree Where Winds Meet guide: what it is, how to unlock it in Kaifeng Imperial Palace, Finance S answer meanings, rewards, and common blockers.",
+    "Where Winds Meet Imperial Decree answers for Finance and Farming Affairs: start at Rear Garden, talk to Qu Chunqiu, choose S-rank remarks, and claim rewards.",
   alternates: buildHreflangAlternates(`/guides/${slug}`),
   openGraph: {
-    title: "Imperial Decree Where Winds Meet Guide - Finance S Answers",
+    title: "Where Winds Meet Imperial Decree Answers & S Rank Guide",
     description:
-      "Unlock Imperial Decree in the Imperial Palace, find Qu Chunqiu, review the Finance memorials, and understand the S-grade answer route.",
+      "Start Imperial Decree in the Imperial Palace, find Qu Chunqiu, review Finance and Farming Affairs memorials, and understand the S-rank answer route.",
     url: pageUrl,
     siteName: "Where Winds Meet Hub",
     images: [
@@ -241,9 +246,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Imperial Decree Where Winds Meet Guide",
+    title: "Where Winds Meet Imperial Decree Answers",
     description:
-      "What Imperial Decree is, where to start it, Finance S answer meanings, and rewards.",
+      "Start location, Finance and Farming Affairs answer meanings, S-rank route, and rewards.",
     images: [
       {
         url: heroImageUrl,
@@ -295,7 +300,7 @@ export default function ImperialDecreeGuidePage() {
               Version 1.7 Imperial Palace guide
             </p>
             <h1 className="mt-3 text-balance text-3xl font-bold tracking-tight text-slate-50 sm:text-5xl">
-              Imperial Decree Where Winds Meet guide: unlock location, Finance answers, and rewards.
+              Where Winds Meet Imperial Decree answers: Farming Affairs, Finance S rank, and location.
             </h1>
             <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">
               Imperial Decree is a Palace exploration activity in Where Winds Meet. Go to the Rear Garden in
@@ -365,7 +370,8 @@ export default function ImperialDecreeGuidePage() {
           <h2 className="text-xl font-bold text-slate-50">Quick answer</h2>
           <p className="text-sm leading-6 text-slate-200">
             If you only need the search answer: Imperial Decree starts in the Rear Garden of Kaifeng Imperial
-            Palace. It is not a combat dungeon; it is a scroll-review activity where your remarks are graded.
+            Palace. It is not a combat dungeon; it is a scroll-review activity where your Finance / Farming
+            Affairs remarks are graded for rewards.
           </p>
           <div className="rounded-2xl border border-amber-300/30 bg-slate-950/70 p-4">
             <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">Best use of this page</p>
