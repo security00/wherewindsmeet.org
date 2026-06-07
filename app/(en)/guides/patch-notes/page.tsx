@@ -10,13 +10,22 @@ const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
   {
-    title: "May 29 Version 1.7 fixes",
+    title: "June 5 Version 1.7 fixes",
+    date: "2026-06-05",
+    source: "https://www.wherewindsmeetgame.com/news/official/529update.html",
+    summary:
+      "Latest Version 1.7 fixes: Oceania, Middle East, and South America servers are fully available; Papercutting controller input, Imperial Palace quest descriptions, mobile scene loading, Palace Oddities, Hexi Familiar Faces NPCs, Jade Fish display, Skyward Bond UI text, PS5 Palace map snow visuals, Skill Theft access, chat bubbles, and Grand Nuo Ritual stability were addressed.",
+    playerAction:
+      "Re-test Palace exploration, Imperial Palace quests, Hexi NPC befriending, mobile loading, Papercutting, Skill Theft routes, PS5 map visuals, and A Warrior's Journey rewards before trusting older bug reports.",
+  },
+  {
+    title: "May 29 Version 1.7 historical fixes",
     date: "2026-05-29",
     source: "https://www.wherewindsmeetgame.com/news/official/529update.html",
     summary:
-      "Follow-up fixes after The Imperial Palace launch: Skyward Bond's Ghost Master preparation-area spawn issue, Palace map loading on mobile, Palace Unveiled check-in rewards, Guild Hero's Realm blank pages, Kaifeng model display, controller shop selection, and the Jadeware translation fix.",
+      "Earlier fixes on the same official patch-note page covered Soaring Record rewards, Skyward Bond's Ghost Master preparation-area spawn issue, Palace map loading on mobile, Guild Hero's Realm blank pages, Guild UI display errors, Kaifeng model display, controller shop selection, Jadeware translation, keybinds, Palace Unveiled rewards, and Development Shop inventory.",
     playerAction:
-      "Re-test Palace events, Skyward Bond, Guild Hero's Realm, and mobile map loading before assuming an older guide or bug report still applies.",
+      "Keep May 29 as the historical baseline for Palace launch bugs, but treat June 5 as the newest live-service state.",
   },
   {
     title: "May 27 / May 28 live maintenance",
@@ -48,7 +57,7 @@ const latestUpdateCards = [
 ];
 
 const impactChecklist = [
-  "Where Winds Meet patch notes today / new update: lead with May 29 and May 27 instead of older May 2026 summaries.",
+  "Where Winds Meet patch notes today / new update: lead with June 5, then May 29 and May 27 instead of older May 2026 summaries.",
   "Boss and dungeon searches: mention Ghost Master, Hero's Realm, Sword Trial, Sandstorm Tavern, Sunken City Lake, and Lunar Eidolon where relevant.",
   "Build searches: call out cheaper Martial Art Reset and lower Inner Way Conversion cost before telling players to respec.",
   "Tier-list searches: tie weapon and Path recommendations back to the May 26 Path Balance and May 27 live maintenance window.",
@@ -87,20 +96,20 @@ const upcomingNerfWatch = [
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Patch Notes Today - Version 1.7, Bosses & Roadmap",
+  title: "Where Winds Meet Patch Notes Today - June 5 Version 1.7 Fixes",
   description:
-    "Where Winds Meet patch notes tracker for Version 1.7: May 29 fixes, Ghost Master, The Imperial Palace, Sandstorm Tavern, Path Balance, bosses, builds, and roadmap checks.",
+    "Where Winds Meet patch notes tracker for Version 1.7: June 5 fixes, regional servers, Imperial Palace quests, mobile loading, Skill Theft, bosses, builds, and roadmap checks.",
   alternates: buildHreflangAlternates("/guides/patch-notes"),
   openGraph: {
-    title: "Where Winds Meet Patch Notes Today - Version 1.7, Bosses & Roadmap",
+    title: "Where Winds Meet Patch Notes Today - June 5 Version 1.7 Fixes",
     description:
-      "Where Winds Meet patch notes tracker: Version 1.7, May 29 fixes, Ghost Master, The Imperial Palace, Sandstorm Tavern, Path Balance, bosses, builds, and roadmap checks.",
+      "Where Winds Meet patch notes tracker: Version 1.7, June 5 fixes, regional servers, Imperial Palace quests, mobile loading, Skill Theft, bosses, builds, and roadmap checks.",
     url: `${baseUrl}/guides/patch-notes`,
   },
   twitter: {
-    title: "Where Winds Meet Patch Notes Today - Version 1.7",
+    title: "Where Winds Meet Patch Notes Today - June 5 Version 1.7",
     description:
-      "Version 1.7 patch notes tracker: May 29 fixes, Ghost Master, The Imperial Palace, Sandstorm Tavern, Path Balance, bosses, builds, and roadmap checks.",
+      "Version 1.7 patch notes tracker: June 5 fixes, regional servers, Imperial Palace quests, mobile loading, Skill Theft, bosses, builds, and roadmap checks.",
   },
 };
 
@@ -164,7 +173,7 @@ export default function PatchNotesPage() {
             Where Winds Meet patch notes today: Version 1.7, bosses, dungeons, and roadmap.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Updated {freshness?.lastChecked ?? "2026-06-03"}: Where Winds Meet has moved into {freshness?.gameVersion ?? "Version 1.7 / The Imperial Palace"}. The current live-service trail includes The Imperial Palace overview, May 29 fixes, the May 27 / May 28 live maintenance window, the May 26 Path Balance adjustment, and the Sandstorm Tavern release. Use this page to catch up before you trust older boss, tier-list, or build advice.
+            Updated {freshness?.lastChecked ?? "2026-06-05"}: Where Winds Meet has moved into {freshness?.gameVersion ?? "Version 1.7 / June 5 fixes"}. The current live-service trail includes the June 5 fixes, The Imperial Palace overview, May 29 historical fixes, the May 27 / May 28 live maintenance window, the May 26 Path Balance adjustment, and the Sandstorm Tavern release. Use this page to catch up before you trust older boss, tier-list, or build advice.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             We flag roadmap checkpoints, official news beats, and practical player impact so you know what to re-check: codes, quest bugs, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, boss guides, builds, and tier-list assumptions.
@@ -264,10 +273,10 @@ export default function PatchNotesPage() {
           Version 1.7 catch-up: what changed recently.
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          The most important freshness signal is that the official news feed now lists Version 1.7 updates: The Imperial Palace overview, May 29 follow-up patch notes, May 28 patch notes, and a May 26 Path Balance adjustment. If you last played around Version 1.2 or the Version 1.6 / Flows of Dreams period, treat this as your new catch-up checkpoint.
+          The most important freshness signal is that the official news feed now lists the June 5 Version 1.7 fixes above the older Palace launch notes: The Imperial Palace overview, May 29 historical fixes, May 28 patch notes, and a May 26 Path Balance adjustment. If you last played around Version 1.2 or the Version 1.6 / Flows of Dreams period, treat this as your new catch-up checkpoint.
         </p>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Start with practical checks: verify Palace-era code reports in-game, re-open blocked event or quest steps after the May 29 fixes, and compare your build against the May 26 Path Balance notes before spending scarce upgrade materials.
+          Start with practical checks: verify Palace-era code reports in-game, re-open blocked event or quest steps after the June 5 and May 29 fixes, and compare your build against the May 26 Path Balance notes before spending scarce upgrade materials.
         </p>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
           Also keep the May 3 exchange-code warning in mind: a leaked batch of exchange codes was disabled, so very large social-media code lists may include dead entries. Use the codes page here as a cleaner starting list, then verify every reward in-game.

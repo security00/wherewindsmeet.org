@@ -66,7 +66,7 @@ const searchIntentWatchlist = [
     title: "Upcoming nerfs and balance watch",
     query: "upcoming nerf wwm",
     action:
-      "Do not call a change confirmed until it appears in official notes. Use this watchlist to point players to May 26 Path Balance, May 27 maintenance, and the latest patch-note impact cards.",
+      "Do not call a change confirmed until it appears in official notes. Use this watchlist to point players to the June 5 fixes, May 26 Path Balance, May 27 maintenance, and the latest patch-note impact cards.",
     href: "/guides/patch-notes#upcoming-nerfs",
     cta: "Balance watch",
   },
@@ -116,7 +116,7 @@ export default function NewsPage() {
   const roadmapBlock = {
     title: "Roadmap / Next Updates (watchlist)",
     summary:
-      "Updated against the official desktop news index: the pinned unofficial-trading crackdown, May 29 Version 1.7 Patch Notes, May 27 Patch Notes, The Imperial Palace overview, and Version 1.7 Path Balance announcement now mirror the official list order.",
+      "Updated against the official mobile news index: the June 5 Version 1.7 fixes, pinned unofficial-trading crackdown, May 27 Patch Notes, The Imperial Palace overview, and Version 1.7 Path Balance announcement now mirror the current official trail.",
     updated: lastUpdatedLabel,
     links: [
       { href: "/guides/tier-list", label: "China tier list & balance notes" },
@@ -183,7 +183,7 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Latest official-news pass: {freshness?.gameVersion ?? "Version 1.7 / The Imperial Palace"} plus the pinned unofficial-trading crackdown, May 29 patch notes, May 27 Patch Notes, The Imperial Palace overview, and Version 1.7 Path Balance announcement. The list below follows the official news index order.
+              Latest official-news pass: {freshness?.gameVersion ?? "Version 1.7 / June 5 fixes"} plus the pinned unofficial-trading crackdown, May 27 Patch Notes, The Imperial Palace overview, and Version 1.7 Path Balance announcement. The list below follows the current official news trail.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link href="/guides/tier-list" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
@@ -233,7 +233,7 @@ export default function NewsPage() {
                   Version 1.7 / The Imperial Palace — current update anchor for roadmap, event, and returning-player searches.
                 </li>
                 <li>
-                  May 29 patch notes and May 26 Path Balance — re-check tier list, builds, weapon pages, and PVP advice against these notes before trusting older meta.
+                  June 5 patch notes, May 29 historical fixes, and May 26 Path Balance — re-check tier list, builds, weapon pages, and PVP advice against these notes before trusting older meta.
                 </li>
                 <li>
                   Feng Ruzhi boss (Silk Ball) — location + unlock + mechanic:

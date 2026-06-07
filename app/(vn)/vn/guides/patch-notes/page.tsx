@@ -10,13 +10,22 @@ const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
   {
-    title: "May 29 Version 1.7 fixes",
+    title: "June 5 Version 1.7 fixes",
+    date: "2026-06-05",
+    source: "https://www.wherewindsmeetgame.com/news/official/529update.html",
+    summary:
+      "Ban fix moi cho Version 1.7: server Oceania, Middle East va South America da mo day du; Papercutting controller input, quest text trong Imperial Palace, mobile loading, Palace Oddities, Hexi Familiar Faces NPCs, Jade Fish display, Skyward Bond UI text, PS5 Palace map snow, Skill Theft access va Grand Nuo Ritual da duoc sua.",
+    playerAction:
+      "Thu lai Palace exploration, Imperial Palace quests, Hexi NPC befriending, mobile loading, Papercutting, Skill Theft routes, PS5 map va event rewards truoc khi tin vao bug report cu.",
+  },
+  {
+    title: "May 29 Version 1.7 historical fixes",
     date: "2026-05-29",
     source: "https://www.wherewindsmeetgame.com/news/official/529update.html",
     summary:
-      "Ban fix sau khi The Imperial Palace ra mat: Ghost Master trong Skyward Bond, tai ban do Palace tren mobile, phan thuong Palace Unveiled, loi trang trong Guild Hero's Realm, hien thi model Kaifeng, chon item bang controller va ban dich Jadeware.",
+      "Cung trang official con luu cac fix May 29: Soaring Record rewards, Ghost Master trong Skyward Bond, Palace map tren mobile, Guild Hero's Realm, Guild UI, Kaifeng model, controller shop selection, Jadeware translation va Palace Unveiled rewards.",
     playerAction:
-      "Thu lai Palace event, Skyward Bond, Guild Hero's Realm va ban do mobile truoc khi tin vao bug report cu.",
+      "Dung May 29 lam moc lich su cho bug luc Palace moi ra, nhung xem June 5 la trang thai moi nhat.",
   },
   {
     title: "May 27 / May 28 live maintenance",
@@ -48,7 +57,7 @@ const latestUpdateCards = [
 ];
 
 const impactChecklist = [
-  "Patch notes today / new update: dua May 29 va May 27 len dau thay vi noi ve cac tom tat May cu.",
+  "Patch notes today / new update: dua June 5 len dau, sau do moi toi May 29 va May 27 thay vi noi ve cac tom tat May cu.",
   "Boss va dungeon search: nhac Ghost Master, Hero's Realm, Sword Trial, Sandstorm Tavern, Sunken City Lake va Lunar Eidolon khi co lien quan.",
   "Build search: nhac chi phi Martial Art Reset va Inner Way Conversion thap hon truoc khi khuyen respec.",
   "Tier-list search: noi khuyen weapon va Path voi May 26 Path Balance va May 27 maintenance.",
@@ -87,21 +96,21 @@ const upcomingNerfWatch = [
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Patch Notes Hom Nay - Version 1.7, Boss & Roadmap",
+  title: "Where Winds Meet Patch Notes Hom Nay - June 5 Version 1.7",
   description:
-    "Patch notes Where Winds Meet tieng Viet cho Version 1.7: May 29 fixes, Ghost Master, The Imperial Palace, Sandstorm Tavern, Path Balance, boss, build va roadmap.",
+    "Patch notes Where Winds Meet tieng Viet cho Version 1.7: June 5 fixes, regional servers, Imperial Palace quests, mobile loading, Skill Theft, boss, build va roadmap.",
   alternates: buildHreflangAlternates("/guides/patch-notes", { canonicalLanguage: "vi" }),
   openGraph: {
-    title: "Where Winds Meet Patch Notes Hom Nay - Version 1.7, Boss & Roadmap",
+    title: "Where Winds Meet Patch Notes Hom Nay - June 5 Version 1.7",
     description:
-      "Version 1.7 patch notes: May 29 fixes, Ghost Master, The Imperial Palace, Sandstorm Tavern, Path Balance, boss, build va roadmap.",
+      "Version 1.7 patch notes: June 5 fixes, regional servers, Imperial Palace quests, mobile loading, Skill Theft, boss, build va roadmap.",
     url: `${baseUrl}/vn/guides/patch-notes`,
     locale: "vi_VN",
   },
   twitter: {
-    title: "Where Winds Meet Patch Notes Hom Nay - Version 1.7",
+    title: "Where Winds Meet Patch Notes Hom Nay - June 5 Version 1.7",
     description:
-      "Version 1.7 patch notes: May 29 fixes, Ghost Master, The Imperial Palace, Sandstorm Tavern, Path Balance, boss va build.",
+      "Version 1.7 patch notes: June 5 fixes, regional servers, Imperial Palace quests, mobile loading, Skill Theft, boss va build.",
   },
 };
 
@@ -149,7 +158,7 @@ export default function PatchNotesViPage() {
             Where Winds Meet patch notes hom nay: Version 1.7, boss, dungeon va roadmap.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Cap nhat {freshness?.lastChecked ?? "2026-06-03"}: Where Winds Meet hien dang o boi canh {freshness?.gameVersion ?? "Version 1.7 / The Imperial Palace"}. Chuoi update moi gom The Imperial Palace, May 29 fixes, May 27 / May 28 maintenance, Path Balance va Sandstorm Tavern.
+            Cap nhat {freshness?.lastChecked ?? "2026-06-05"}: Where Winds Meet hien dang o boi canh {freshness?.gameVersion ?? "Version 1.7 / June 5 fixes"}. Chuoi update moi gom June 5 fixes, The Imperial Palace, May 29 historical fixes, May 27 / May 28 maintenance, Path Balance va Sandstorm Tavern.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Trang nay danh dau cac diem can kiem tra lai: codes, quest bug, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, boss guides, builds va tier-list.

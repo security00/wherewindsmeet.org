@@ -24,20 +24,20 @@ type OfficialNewsRow = [
 // site can pin items out of strict date order, so news pages should not sort it.
 const officialNewsRows: OfficialNewsRow[] = [
   [
+    "june-5-version-1-7-patch-notes",
+    "1.7 Version Patch Notes: Optimizations and Bug Fixes (June 5, 2026)",
+    "2026-06-05",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/529update.html",
+    "Official June 5 Version 1.7 fixes: regional server availability, controller responsiveness, Imperial Palace quest text, mobile scene loading, Palace Oddities, Hexi Familiar Faces NPCs, event rewards, PS5 map visuals, Skill Theft access, and Grand Nuo Ritual stability.",
+  ],
+  [
     "unofficial-trading-illegal-items",
     "Announcement on Crackdown Against Unofficial Trading and Recovery of Illegal Items",
     "2026-05-19",
     "announcement",
     "https://www.wherewindsmeetgame.com/news/official/519Announcement.html",
     "Pinned official notice warning players against unofficial trades, low-price gift scams, black-market activity, and item recovery tied to rule-breaking sellers.",
-  ],
-  [
-    "may-29-version-1-7-patch-notes",
-    "May 29 Version 1.7 Patch Notes",
-    "2026-05-29",
-    "announcement",
-    "https://www.wherewindsmeetgame.com/news/official/529update.html",
-    "Official May 29 Version 1.7 fixes and optimizations after The Imperial Palace launch.",
   ],
   [
     "may-27-patch-notes",

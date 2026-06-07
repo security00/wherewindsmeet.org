@@ -2,8 +2,8 @@
   {
     "basePath": "/",
     "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-06-04",
-    "gameVersion": "Version 1.7 / The Imperial Palace",
+    "lastChecked": "2026-06-05",
+    "gameVersion": "Version 1.7 / June 5 fixes",
     "priorityCluster": "main-keyword-recovery",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/",
@@ -34,8 +34,8 @@
   {
     "basePath": "/news",
     "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-06-04",
-    "gameVersion": "Version 1.7 / The Imperial Palace",
+    "lastChecked": "2026-06-05",
+    "gameVersion": "Version 1.7 / June 5 fixes",
     "priorityCluster": "week-1-rescue",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
@@ -46,8 +46,8 @@
   {
     "basePath": "/guides/patch-notes",
     "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-06-04",
-    "gameVersion": "Version 1.7 / The Imperial Palace",
+    "lastChecked": "2026-06-05",
+    "gameVersion": "Version 1.7 / June 5 fixes",
     "priorityCluster": "week-1-rescue",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
