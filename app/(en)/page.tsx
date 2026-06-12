@@ -9,14 +9,14 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 const freshness = getContentFreshness("/");
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Guide Hub - Version 1.7, Codes & Tier List",
+  title: "Where Winds Meet Guide Hub - Codes, Map, Tier List & Updates",
   description:
-    "Where Winds Meet guide hub for Version 1.7: The Imperial Palace, codes, patch notes, tier list, builds, bosses, interactive map, platforms, and beginner tips.",
+    "Where Winds Meet guide hub for codes, interactive map, tier list, builds, platforms, latest updates, patch notes, bosses, and beginner routes.",
   alternates: buildHreflangAlternates("/"),
   openGraph: {
-    title: "Where Winds Meet Guide Hub - Version 1.7, Codes & Tier List",
+    title: "Where Winds Meet Guide Hub - Codes, Map, Tier List & Updates",
     description:
-      "Where Winds Meet guide hub for Version 1.7: The Imperial Palace, codes, patch notes, tier list, builds, bosses, interactive map, platforms, and beginner tips.",
+      "Where Winds Meet guide hub for codes, interactive map, tier list, builds, platforms, latest updates, patch notes, bosses, and beginner routes.",
     url: "https://wherewindsmeet.org/",
     images: [
       {
@@ -38,6 +38,60 @@ export default function Home() {
       <HomeMainKeywordSections language="en" />
 
       <JianghuMapClient />
+
+      <section className="rounded-3xl border border-amber-400/25 bg-amber-500/10 p-6 shadow-xl shadow-slate-950/30 sm:p-8">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">High-volume search paths</p>
+            <h2 className="mt-2 text-2xl font-bold text-slate-50 sm:text-3xl">
+              Start with the Where Winds Meet pages that match broad search intent.
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-300">
+              Very specific quest pages can rank but stay quiet when demand fades. These hubs target the larger searches:
+              download and platforms, roadmap and upcoming updates, codes, tier lists, builds, map routes, and beginner setup.
+            </p>
+          </div>
+          <Link
+            href="/guides/platforms"
+            className="rounded-full border border-amber-300/60 bg-slate-950/60 px-4 py-2 text-sm font-semibold text-amber-100 transition hover:border-amber-200 hover:text-white"
+          >
+            Download / platform guide
+          </Link>
+        </div>
+        <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+          {[
+            {
+              title: "Download & platforms",
+              href: "/guides/platforms",
+              desc: "PC, PS5, iOS, Android, mobile, cross-play, account linking, and official download routes.",
+            },
+            {
+              title: "Roadmap & upcoming update",
+              href: "/news#roadmap",
+              desc: "Latest official news, roadmap watch, patch cadence, and what to check before the next update.",
+            },
+            {
+              title: "Codes & rewards",
+              href: "/guides/codes",
+              desc: "Current code candidates, expired-code warnings, redeem steps, and event reward notes.",
+            },
+            {
+              title: "PVE / PVP tier list",
+              href: "/guides/tier-list#pve-pvp-tier-list",
+              desc: "Broad tier-list entry for PVE, PVP, arena ranks, weapons, builds, and Path Balance checks.",
+            },
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="rounded-2xl border border-slate-800 bg-slate-950/75 p-4 transition hover:border-amber-300/60"
+            >
+              <h3 className="text-base font-semibold text-slate-50">{item.title}</h3>
+              <p className="mt-2 text-xs leading-5 text-slate-300">{item.desc}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       <section className="card-wuxia rounded-3xl p-6 sm:p-8 min-h-[520px]">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1.4fr)] lg:items-start">

@@ -31,20 +31,20 @@ const arenaRankNotes = [
 ];
 
 export const metadata: Metadata = {
-  title: "WWM Tier List – Where Winds Meet PVE & PVP Rankings",
+  title: "Where Winds Meet Tier List - PVE, PVP, Weapons & Arena Ranks",
   description:
-    "WWM tier list for 2026: Where Winds Meet PVE and PVP rankings, arena-rank links, weapon tiers, paths, dual-weapon combos, and internal arts.",
+    "Where Winds Meet tier list for PVE, PVP, weapons, arena ranks, builds, paths, dual-weapon combos, and Version 1.7 balance checks.",
   alternates: buildHreflangAlternates("/guides/tier-list"),
   openGraph: {
-    title: "WWM Tier List – Where Winds Meet PVE & PVP Rankings",
+    title: "Where Winds Meet Tier List - PVE, PVP, Weapons & Arena Ranks",
     description:
-      "WWM tier list for 2026: Where Winds Meet PVE and PVP rankings, arena-rank links, weapon tiers, paths, dual-weapon combos, and internal arts.",
+      "Where Winds Meet tier list for PVE, PVP, weapons, arena ranks, builds, paths, dual-weapon combos, and Version 1.7 balance checks.",
     url: `${baseUrl}/guides/tier-list`,
   },
   twitter: {
-    title: "WWM Tier List – Where Winds Meet PVE & PVP Rankings",
+    title: "Where Winds Meet Tier List - PVE, PVP, Weapons & Arena Ranks",
     description:
-      "WWM tier list for 2026: Where Winds Meet PVE and PVP rankings, arena-rank links, weapon tiers, paths, dual-weapon combos, and internal arts.",
+      "Where Winds Meet tier list for PVE, PVP, weapons, arena ranks, builds, paths, dual-weapon combos, and Version 1.7 balance checks.",
   },
 };
 
@@ -133,6 +133,57 @@ export default function TierListPage() {
               <p className="text-sm font-semibold text-slate-50">{item.title}</p>
               <p className="mt-2 text-xs leading-5 text-slate-300">{item.detail}</p>
               <p className="mt-3 text-xs font-semibold text-emerald-300">{item.label}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+      <section id="pve-pvp-tier-list" className="mb-6 rounded-2xl border border-amber-400/30 bg-amber-500/10 p-5 text-sm text-slate-200 shadow-sm shadow-amber-950/40">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">Search intent: wwm pve tier list</p>
+            <h2 className="mt-1 text-xl font-bold text-slate-50">PVE tier list vs PVP tier list: which ranking should you use?</h2>
+          </div>
+          <Link
+            href="/guides/builds"
+            className="rounded-full border border-amber-300/60 bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-100 hover:border-amber-200"
+          >
+            Build recommendations
+          </Link>
+        </div>
+        <p className="mt-3 leading-6 text-slate-300">
+          If you searched for Where Winds Meet tier list, start broad: PVE rewards stable damage, survival,
+          resource comfort, and boss uptime, while PVP rewards mobility, burst, crowd control, and safe reset windows.
+          Use this page as the shared ranking hub, then move into the PVP-only page or weapon tier list when your goal is narrower.
+        </p>
+        <div className="mt-4 grid gap-3 md:grid-cols-3">
+          {[
+            {
+              title: "PVE ranking lens",
+              detail: "Prefer weapons and paths that clear bosses, dungeons, daily routes, and exploration fights without demanding perfect duel timing.",
+              href: "/guides/builds",
+              label: "PVE builds",
+            },
+            {
+              title: "PVP ranking lens",
+              detail: "Check arena ranks separately because duel strength can shift faster after Path Balance and live maintenance updates.",
+              href: "/guides/pvp-tier-list",
+              label: "PVP tier list",
+            },
+            {
+              title: "Weapon-only lens",
+              detail: "Use the weapon tier list when you want a simpler answer before comparing paths, internal arts, and full loadouts.",
+              href: "/guides/weapons/tier-list",
+              label: "Weapon rankings",
+            },
+          ].map((item) => (
+            <Link
+              key={item.title}
+              href={item.href}
+              className="rounded-xl border border-slate-800 bg-slate-950/70 p-4 transition hover:border-amber-300/60"
+            >
+              <p className="text-sm font-semibold text-slate-50">{item.title}</p>
+              <p className="mt-2 text-xs leading-5 text-slate-300">{item.detail}</p>
+              <p className="mt-3 text-xs font-semibold text-amber-200">{item.label}</p>
             </Link>
           ))}
         </div>

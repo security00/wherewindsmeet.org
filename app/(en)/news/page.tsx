@@ -10,20 +10,20 @@ const baseUrl = "https://wherewindsmeet.org";
 const freshness = getContentFreshness("/news");
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet News, Roadmap Updates & Patch Notes",
+  title: "Where Winds Meet Roadmap, Upcoming Update & Patch Notes",
   description:
-    "Curated Where Winds Meet news with roadmap notes, balance updates, and patch notes so you quickly see what changed and why it matters.",
+    "Where Winds Meet roadmap and upcoming update tracker with official news, June 2026 patch notes, balance changes, codes, events, and guide impact.",
   alternates: buildHreflangAlternates("/news"),
   openGraph: {
-    title: "Where Winds Meet News, Roadmap Updates & Patch Notes",
+    title: "Where Winds Meet Roadmap, Upcoming Update & Patch Notes",
     description:
-      "Curated Where Winds Meet news with roadmap notes, balance updates, and patch notes so you quickly see what changed and why it matters.",
+      "Where Winds Meet roadmap and upcoming update tracker with official news, June 2026 patch notes, balance changes, codes, events, and guide impact.",
     url: `${baseUrl}/news`,
   },
   twitter: {
-    title: "Where Winds Meet News, Roadmap Updates & Patch Notes",
+    title: "Where Winds Meet Roadmap, Upcoming Update & Patch Notes",
     description:
-      "Curated Where Winds Meet news with roadmap notes, balance updates, and patch notes so you quickly see what changed and why it matters.",
+      "Where Winds Meet roadmap and upcoming update tracker with official news, June 2026 patch notes, balance changes, codes, events, and guide impact.",
   },
 };
 
@@ -114,9 +114,9 @@ export default function NewsPage() {
   ];
 
   const roadmapBlock = {
-    title: "Roadmap / Next Updates (watchlist)",
+    title: "Where Winds Meet roadmap / upcoming update tracker",
     summary:
-      "Updated against the official mobile news index: the June 5 Version 1.7 fixes, pinned unofficial-trading crackdown, May 27 Patch Notes, The Imperial Palace overview, and Version 1.7 Path Balance announcement now mirror the current official trail.",
+      "Use this as the broad WWM roadmap and upcoming update hub. It tracks official news first, then routes players to patch notes, codes, tier lists, builds, bosses, and event pages when a new update changes guide advice.",
     updated: lastUpdatedLabel,
     links: [
       { href: "/guides/tier-list", label: "China tier list & balance notes" },
@@ -153,7 +153,7 @@ export default function NewsPage() {
 
         <div className="relative space-y-6 z-10 max-w-3xl">
           <h1 className="text-balance text-4xl font-bold tracking-tight text-slate-50 sm:text-5xl font-serif">
-            Latest <span className="text-ink-gold">Where Winds Meet</span> news and official articles.
+            <span className="text-ink-gold">Where Winds Meet</span> roadmap, upcoming update, and patch notes.
           </h1>
           <div className="space-y-4 text-slate-200/90 font-sans text-lg leading-relaxed">
             <p>
@@ -209,6 +209,20 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-2 text-slate-300">{roadmapBlock.summary}</p>
+            <div className="mt-3 grid gap-2 text-xs text-slate-300 sm:grid-cols-3">
+              <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
+                <p className="font-semibold text-slate-100">Current update</p>
+                <p className="mt-1">Version 1.7 / June 5 fixes remain the current checked baseline for update searches.</p>
+              </div>
+              <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
+                <p className="font-semibold text-slate-100">Next watch</p>
+                <p className="mt-1">Watch official news before changing codes, tier lists, builds, boss notes, or event reward pages.</p>
+              </div>
+              <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
+                <p className="font-semibold text-slate-100">Player impact</p>
+                <p className="mt-1">Prioritize platform, patch-note, code, PVE/PVP tier-list, and roadmap queries over quiet quest tails.</p>
+              </div>
+            </div>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               {roadmapBlock.links.map((link) => (
                 <Link
