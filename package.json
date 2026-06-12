@@ -12,6 +12,8 @@
     "seo:check:freshness": "node ./scripts/seo-freshness-check.cjs",
     "seo:check:hreflang": "node ./scripts/seo-hreflang-regression.cjs --origin https://wherewindsmeet.org",
     "seo:gsc:prioritize": "node ./scripts/gsc-priority.cjs",
+    "seo:freshness:update": "node ./scripts/update-content-freshness.cjs",
+    "seo:freshness:update:dry": "node ./scripts/update-content-freshness.cjs --dry-run",
     "lint": "eslint"
   },
   "dependencies": {

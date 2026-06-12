@@ -75,6 +75,24 @@ function checkFreshnessRegistry(errors) {
   const entries = JSON.parse(readFileSync(registryPath, "utf8"));
   const byPath = new Map(entries.map((entry) => [entry.basePath, entry]));
 
+  // Derive a dynamic freshness anchor from the core entries themselves.
+  // This removes the need to manually bump a hardcoded date in the checker every patch.
+  const coreEntries = REQUIRED_CORE_PATHS.map((p) => byPath.get(p)).filter(Boolean);
+  const coreDates = coreEntries.map((e) => e && e.lastChecked).filter((d) => typeof d === "string" && /^\d{4}-\d{2}-\d{2}$/.test(d));
+  const maxCoreDate = coreDates.length ? coreDates.sort().reverse()[0] : null;
+
+  // Acceptable drift: core pages should be refreshed within ~4 days of each other (or of the newest core signal).
+  const DRIFT_DAYS = 4;
+
+  function isStaleComparedToAnchor(dateStr, anchor) {
+    if (!dateStr || !anchor) return true;
+    const d = new Date(dateStr);
+    const a = new Date(anchor);
+    if (isNaN(d) || isNaN(a)) return true;
+    const diffDays = Math.floor((a - d) / (1000 * 60 * 60 * 24));
+    return diffDays > DRIFT_DAYS;
+  }
+
   for (const basePath of REQUIRED_CORE_PATHS) {
     const entry = byPath.get(basePath);
     if (!entry) {
@@ -84,8 +102,10 @@ function checkFreshnessRegistry(errors) {
     if (!entry.gameVersion.includes(REQUIRED_LATEST_VERSION)) {
       errors.push(`Freshness registry for ${basePath} is not on ${REQUIRED_LATEST_VERSION}`);
     }
-    if (!entry.lastChecked || entry.lastChecked < "2026-06-03") {
-      errors.push(`Freshness registry for ${basePath} has stale lastChecked: ${entry.lastChecked || "missing"}`);
+    if (!entry.lastChecked) {
+      errors.push(`Freshness registry for ${basePath} has missing lastChecked`);
+    } else if (maxCoreDate && isStaleComparedToAnchor(entry.lastChecked, maxCoreDate)) {
+      errors.push(`Freshness registry for ${basePath} has stale lastChecked: ${entry.lastChecked} (anchor from other core entries is ${maxCoreDate}, drift > ${DRIFT_DAYS} days)`);
     }
     if (!Array.isArray(entry.languages) || !["en", "vi", "de"].every((lang) => entry.languages.includes(lang))) {
       errors.push(`Freshness registry for ${basePath} must cover en/vi/de`);

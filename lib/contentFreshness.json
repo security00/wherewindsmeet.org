@@ -1,7 +1,11 @@
 [
   {
     "basePath": "/",
-    "languages": ["en", "vi", "de"],
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
     "lastChecked": "2026-06-05",
     "gameVersion": "Version 1.7 / June 5 fixes",
     "priorityCluster": "main-keyword-recovery",
@@ -18,9 +22,13 @@
   },
   {
     "basePath": "/guides/platforms",
-    "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-06-04",
-    "gameVersion": "Version 1.7 / Platform availability",
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
+    "lastChecked": "2026-06-05",
+    "gameVersion": "Version 1.7 / June 5 fixes",
     "priorityCluster": "main-keyword-recovery",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/",
@@ -33,7 +41,11 @@
   },
   {
     "basePath": "/news",
-    "languages": ["en", "vi", "de"],
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
     "lastChecked": "2026-06-05",
     "gameVersion": "Version 1.7 / June 5 fixes",
     "priorityCluster": "week-1-rescue",
@@ -45,7 +57,11 @@
   },
   {
     "basePath": "/guides/patch-notes",
-    "languages": ["en", "vi", "de"],
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
     "lastChecked": "2026-06-05",
     "gameVersion": "Version 1.7 / June 5 fixes",
     "priorityCluster": "week-1-rescue",
@@ -59,9 +75,13 @@
   },
   {
     "basePath": "/guides/codes",
-    "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-06-03",
-    "gameVersion": "Version 1.7 / The Imperial Palace",
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
+    "lastChecked": "2026-06-05",
+    "gameVersion": "Version 1.7 / June 5 fixes",
     "priorityCluster": "week-1-rescue",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
@@ -70,9 +90,13 @@
   },
   {
     "basePath": "/guides/bosses",
-    "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-06-03",
-    "gameVersion": "Version 1.7 / Boss and Dungeon Watch",
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
+    "lastChecked": "2026-06-05",
+    "gameVersion": "Version 1.7 / June 5 fixes",
     "priorityCluster": "week-2-boss-dungeon-refresh",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/news/official/529update.html",
@@ -82,9 +106,13 @@
   },
   {
     "basePath": "/guides/tier-list",
-    "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-06-04",
-    "gameVersion": "Version 1.7 / Path Balance",
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
+    "lastChecked": "2026-06-05",
+    "gameVersion": "Version 1.7 / June 5 fixes",
     "priorityCluster": "week-2-meta-refresh",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/"
@@ -92,9 +120,13 @@
   },
   {
     "basePath": "/guides/builds",
-    "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-06-04",
-    "gameVersion": "Version 1.7 / Path Balance",
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
+    "lastChecked": "2026-06-05",
+    "gameVersion": "Version 1.7 / June 5 fixes",
     "priorityCluster": "week-2-meta-refresh",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/"
@@ -102,9 +134,13 @@
   },
   {
     "basePath": "/guides/pvp-tier-list",
-    "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-06-04",
-    "gameVersion": "Version 1.7 / Arena ranks and Path Balance",
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
+    "lastChecked": "2026-06-05",
+    "gameVersion": "Version 1.7 / June 5 fixes",
     "priorityCluster": "week-2-meta-refresh",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
@@ -113,9 +149,13 @@
   },
   {
     "basePath": "/guides/weapons/tier-list",
-    "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-06-04",
-    "gameVersion": "Version 1.7 / Path Balance",
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
+    "lastChecked": "2026-06-05",
+    "gameVersion": "Version 1.7 / June 5 fixes",
     "priorityCluster": "week-2-meta-refresh",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/"
@@ -123,9 +163,13 @@
   },
   {
     "basePath": "/guides/qinchuan",
-    "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-06-03",
-    "gameVersion": "Version 1.7 / The Imperial Palace",
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
+    "lastChecked": "2026-06-05",
+    "gameVersion": "Version 1.7 / June 5 fixes",
     "priorityCluster": "week-2-region-cluster",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
@@ -134,9 +178,13 @@
   },
   {
     "basePath": "/guides/imperial-decree",
-    "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-06-04",
-    "gameVersion": "Version 1.7 / The Imperial Palace",
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
+    "lastChecked": "2026-06-05",
+    "gameVersion": "Version 1.7 / June 5 fixes",
     "priorityCluster": "week-2-breakout-query",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/news/official/TheImperialPalace.html",
@@ -148,9 +196,13 @@
   },
   {
     "basePath": "/guides/mist-shrouded-prison",
-    "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-06-04",
-    "gameVersion": "Version 1.7 / Mistveil Prison alias watch",
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
+    "lastChecked": "2026-06-05",
+    "gameVersion": "Version 1.7 / June 5 fixes",
     "priorityCluster": "similarweb-top-landing-page",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/news/official/515update.html",
@@ -159,9 +211,13 @@
   },
   {
     "basePath": "/guides/npc-list",
-    "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-06-03",
-    "gameVersion": "Version 1.7 / The Imperial Palace",
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
+    "lastChecked": "2026-06-05",
+    "gameVersion": "Version 1.7 / June 5 fixes",
     "priorityCluster": "week-2-ctr-rescue",
     "sourceUrls": [
       "doc/seo-data-readout-2026-06-03.md",

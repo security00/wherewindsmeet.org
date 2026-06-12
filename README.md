@@ -158,6 +158,47 @@ The homepage uses the first entry as the main video; `/videos` renders all entri
 - The site consistently uses `support@wherewindsmeet.org` (footer, privacy, terms).  
 - To change it, search for the string across the repo and replace it.
 
+### SEO Content Freshness (reducing manual patch work)
+
+The `lib/contentFreshness.json` registry powers "last checked" badges, version labels, and SEO trust signals on the homepage, news, codes, patch-notes, bosses, tier lists, and several other high-traffic pages (via `getContentFreshness`).
+
+**Primary workflow after a new official patch/fix:**
+
+1. Update the curated news list in `lib/news.ts` (add the new row at the top of `officialNewsRows` with the official title/date/URL/summary). This is still a manual but high-value step — it also feeds the public `/news` page.
+
+2. Run the freshness updater (dry first):
+
+   ```bash
+   npm run seo:freshness:update:dry
+   # or with overrides
+   npm run seo:freshness:update:dry -- --date 2026-06-10 --version "Version 1.7 / June hotfixes" --only /,/news,/guides/patch-notes
+   ```
+
+3. Review the printed diff. If happy:
+
+   ```bash
+   npm run seo:freshness:update -- --apply
+   # optionally auto-run the checker afterwards
+   npm run seo:freshness:update -- --apply --check-after
+   ```
+
+4. `git diff lib/contentFreshness.json`, commit, and run full checks:
+
+   ```bash
+   npm run seo:check:freshness
+   # or the broader
+   npm run seo:check
+   ```
+
+The updater:
+- Derives `lastChecked` + a compact `gameVersion` label primarily from the latest entry you just added to `lib/news.ts` (no need to copy-paste dates/strings into the JSON by hand).
+- Can optionally `--fetch` against the `sourceUrls` to discover brand new `/news/official/…update.html` links.
+- Reports pages that still contain very old literal date fallbacks (e.g. `?? "2026-06-03"`) so you can clean the `??` defaults in page source.
+
+See `scripts/update-content-freshness.cjs --help` for all options.
+
+This eliminates most manual date/version churn in the SEO registry while keeping a human review gate.
+
 ---
 
 ## Deployment Notes
