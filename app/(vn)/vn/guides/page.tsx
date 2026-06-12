@@ -29,7 +29,7 @@ const guideSections = [
     color: "text-sky-300",
     size: "medium",
     description:
-      "Tinh trang nen tang Where Winds Meet cho PS5, PC, iOS, Android, mobile, cross-play va account linking.",
+      "Tinh trang nen tang Where Winds Meet cho Xbox, PS5, PC, iOS, Android, mobile, cross-play va account linking.",
   },
   {
     title: "Bảng xếp hạng PvP (meta)",

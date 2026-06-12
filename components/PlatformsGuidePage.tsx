@@ -66,6 +66,14 @@ const officialSources = [
     href: "https://www.playstation.com/en-us/games/where-winds-meet/",
   },
   {
+    label: "Xbox launch announcement",
+    href: "https://www.wherewindsmeetgame.com/news/official/607XBOX.html",
+  },
+  {
+    label: "Xbox launch FAQ",
+    href: "https://www.wherewindsmeetgame.com/news/official/607XBOX2.html",
+  },
+  {
     label: "Google Play page",
     href: "https://play.google.com/store/apps/details?id=com.netease.yysls",
   },
@@ -91,6 +99,13 @@ const sharedPlatforms: PlatformStatus[] = [
     href: "https://www.playstation.com/en-us/games/where-winds-meet/",
   },
   {
+    name: "Xbox Series X|S / Xbox on PC / Xbox Cloud",
+    status: "Officially available from June 8, 2026 through Microsoft Store routes, with Xbox Series X|S, Xbox on PC, and Xbox Cloud listed by the official announcement.",
+    bestFor: "Best for Xbox players, Game Pass reward claims, cloud play, and players moving between console, PC, and mobile accounts.",
+    action: "Read Xbox FAQ",
+    href: "https://www.wherewindsmeetgame.com/news/official/607XBOX2.html",
+  },
+  {
     name: "iOS",
     status: "The official website lists an iOS App Store route; use the official download page because Apple's web link can redirect by region.",
     bestFor: "Best for mobile check-ins, casual exploration, and playing away from your desk.",
@@ -111,16 +126,16 @@ const copy: Record<ContentLanguage, PageCopy> = {
     pathPrefix: "",
     inLanguage: "en-US",
     eyebrow: "Where Winds Meet platforms",
-    title: "Where Winds Meet Platforms: PS5, PC, iOS, Android, Cross-Play",
+    title: "Where Winds Meet Platforms: Xbox, PS5, PC, iOS, Android, Cross-Play",
     subtitle:
-      "A current platform guide for players searching where winds meet ps5, where winds meet pc, where winds meet mobile, where winds meet platforms, and whether cross-play or cross-progression matters before starting.",
-    checkedLabel: "Checked June 4, 2026",
+      "A current platform guide for players searching where winds meet xbox, where winds meet ps5, where winds meet pc, where winds meet mobile, where winds meet platforms, and whether cross-play or cross-progression matters before starting.",
+    checkedLabel: "Checked June 9, 2026",
     summaryTitle: "Short answer",
     summary:
-      "Where Winds Meet is positioned as a free-to-play wuxia RPG across PC, PlayStation 5, iOS, and Android. Steam lists cross-platform multiplayer, PlayStation lists the PS5 version as free-to-play, and the official download/mobile pages confirm iOS and Android routes.",
+      "Where Winds Meet is positioned as a free-to-play wuxia RPG across PC, PlayStation 5, Xbox Series X|S, Xbox on PC, Xbox Cloud, iOS, and Android. Steam lists cross-platform multiplayer, PlayStation lists the PS5 version as free-to-play, and the official Xbox FAQ says character data can be shared across Xbox, PC, PlayStation, and mobile when the same bound account is used.",
     quickFacts: [
       "Main keyword target: where winds meet platforms",
-      "High-intent variants: ps5, pc, mobile, ios, android",
+      "High-intent variants: xbox, ps5, pc, mobile, ios, android",
       "Use official store pages before downloading or linking accounts",
     ],
     platformHeading: "Official platform status",
@@ -152,8 +167,8 @@ const copy: Record<ContentLanguage, PageCopy> = {
     ],
     accountHeading: "Cross-play and account notes",
     accountNotes: [
-      "Steam lists cross-platform multiplayer, and official mobile pages confirm iOS and Android routes alongside PC and PS5 coverage.",
-      "Treat cross-progression and account-linking details as a pre-download check, because official availability does not always mean every store account behaves the same in every region.",
+      "Steam lists cross-platform multiplayer, and the official Xbox FAQ says character data is shared across Xbox, PC, PlayStation, and mobile when the same bound account is used.",
+      "Treat cross-progression and account-linking details as a pre-download check, because the Xbox FAQ warns players to bind an existing account before creating a first Xbox character if they want to keep existing progress.",
       "If you are moving between platforms, test with a low-risk login first and keep screenshots of account IDs, server, and character name.",
     ],
     iosNoteHeading: "iOS download note",
@@ -186,9 +201,9 @@ const copy: Record<ContentLanguage, PageCopy> = {
           "Official store copy says Where Winds Meet supports cross-play across PS5, PC, and mobile. Still verify account-linking details in your region before using paid items or rewards.",
       },
       {
-        question: "Is Where Winds Meet on Xbox or PS4?",
+        question: "Is Where Winds Meet on Xbox?",
         answer:
-          "This page only confirms PC, PS5, iOS, and Android/mobile routes from official sources. We are not listing Xbox or PS4 as confirmed platforms unless an official source changes.",
+          "Yes. The official June 8, 2026 announcement lists Where Winds Meet for Xbox Series X|S, Xbox on PC, and Xbox Cloud. Use the Microsoft Store route and read the Xbox FAQ before account binding.",
       },
     ],
   },
@@ -196,16 +211,16 @@ const copy: Record<ContentLanguage, PageCopy> = {
     pathPrefix: "/vn",
     inLanguage: "vi-VN",
     eyebrow: "Where Winds Meet platforms",
-    title: "Where Winds Meet Platforms: PS5, PC, iOS, Android, Cross-Play",
+    title: "Where Winds Meet Platforms: Xbox, PS5, PC, iOS, Android, Cross-Play",
     subtitle:
-      "Trang tom tat nen tang cho nguoi tim where winds meet ps5, where winds meet pc, where winds meet mobile, where winds meet platforms va cross-play truoc khi bat dau.",
-    checkedLabel: "Kiem tra ngay 2026-06-04",
+      "Trang tom tat nen tang cho nguoi tim where winds meet xbox, where winds meet ps5, where winds meet pc, where winds meet mobile, where winds meet platforms va cross-play truoc khi bat dau.",
+    checkedLabel: "Kiem tra ngay 2026-06-09",
     summaryTitle: "Cau tra loi ngan",
     summary:
-      "Where Winds Meet duoc dinh vi la game wuxia RPG mien phi tren PC, PlayStation 5, iOS va Android. Steam liet ke cross-platform multiplayer, PlayStation liet ke ban PS5 mien phi, va trang download/mobile chinh thuc xac nhan iOS/Android.",
+      "Where Winds Meet duoc dinh vi la game wuxia RPG mien phi tren PC, PlayStation 5, Xbox Series X|S, Xbox on PC, Xbox Cloud, iOS va Android. FAQ Xbox chinh thuc noi du lieu nhan vat co the dung chung giua Xbox, PC, PlayStation va mobile khi dung cung tai khoan da bind.",
     quickFacts: [
       "Tu khoa chinh: where winds meet platforms",
-      "Bien the quan trong: ps5, pc, mobile, ios, android",
+      "Bien the quan trong: xbox, ps5, pc, mobile, ios, android",
       "Nen kiem tra store chinh thuc truoc khi cai dat hoac link tai khoan",
     ],
     platformHeading: "Tinh trang nen tang chinh thuc",
@@ -237,8 +252,8 @@ const copy: Record<ContentLanguage, PageCopy> = {
     ],
     accountHeading: "Ghi chu cross-play va tai khoan",
     accountNotes: [
-      "Steam liet ke cross-platform multiplayer, va cac trang mobile chinh thuc xac nhan iOS/Android cung he nen tang PC/PS5.",
-      "Hay xem cross-progression/account linking la buoc can kiem tra truoc khi tai, vi moi khu vuc va store account co the khac nhau.",
+      "Steam liet ke cross-platform multiplayer, va FAQ Xbox chinh thuc noi du lieu nhan vat dung chung giua Xbox, PC, PlayStation va mobile khi dung cung tai khoan da bind.",
+      "Hay xem cross-progression/account linking la buoc can kiem tra truoc khi tai, vi FAQ Xbox canh bao nen bind tai khoan cu truoc khi tao nhan vat Xbox dau tien neu muon giu progress.",
       "Neu doi nen tang, hay thu login rui ro thap truoc va giu screenshot account ID, server, ten nhan vat.",
     ],
     iosNoteHeading: "Ghi chu tai iOS",
@@ -270,9 +285,9 @@ const copy: Record<ContentLanguage, PageCopy> = {
           "Copy store chinh thuc noi game ho tro cross-play tren PS5, PC va mobile. Van nen kiem tra account linking theo khu vuc truoc khi dung vat pham tra phi hoac reward.",
       },
       {
-        question: "Where Winds Meet co tren Xbox hoac PS4 khong?",
+        question: "Where Winds Meet co tren Xbox khong?",
         answer:
-          "Trang nay chi xac nhan PC, PS5, iOS va Android/mobile tu nguon chinh thuc. Khong liet ke Xbox hoac PS4 neu chua co nguon chinh thuc moi.",
+          "Co. Thong bao chinh thuc ngay 2026-06-08 liet ke Where Winds Meet cho Xbox Series X|S, Xbox on PC va Xbox Cloud. Hay dung Microsoft Store va doc FAQ Xbox truoc khi bind tai khoan.",
       },
     ],
   },
@@ -280,16 +295,16 @@ const copy: Record<ContentLanguage, PageCopy> = {
     pathPrefix: "/de",
     inLanguage: "de-DE",
     eyebrow: "Where Winds Meet platforms",
-    title: "Where Winds Meet Platforms: PS5, PC, iOS, Android, Cross-Play",
+    title: "Where Winds Meet Platforms: Xbox, PS5, PC, iOS, Android, Cross-Play",
     subtitle:
-      "Ein kompakter Plattform-Guide fuer Suchanfragen wie where winds meet ps5, where winds meet pc, where winds meet mobile, where winds meet platforms und Cross-Play.",
-    checkedLabel: "Geprueft am 2026-06-04",
+      "Ein kompakter Plattform-Guide fuer Suchanfragen wie where winds meet xbox, where winds meet ps5, where winds meet pc, where winds meet mobile, where winds meet platforms und Cross-Play.",
+    checkedLabel: "Geprueft am 2026-06-09",
     summaryTitle: "Kurzantwort",
     summary:
-      "Where Winds Meet ist als kostenloses Wuxia-RPG fuer PC, PlayStation 5, iOS und Android positioniert. Steam listet Cross-Platform Multiplayer, PlayStation listet die PS5-Version als kostenlos, und offizielle Download/Mobile-Seiten bestaetigen iOS und Android.",
+      "Where Winds Meet ist als kostenloses Wuxia-RPG fuer PC, PlayStation 5, Xbox Series X|S, Xbox on PC, Xbox Cloud, iOS und Android positioniert. Die offizielle Xbox FAQ sagt, dass Charakterdaten ueber Xbox, PC, PlayStation und Mobile geteilt werden koennen, wenn derselbe gebundene Account genutzt wird.",
     quickFacts: [
       "Hauptziel: where winds meet platforms",
-      "Wichtige Varianten: ps5, pc, mobile, ios, android",
+      "Wichtige Varianten: xbox, ps5, pc, mobile, ios, android",
       "Offizielle Store-Seiten vor Download und Account-Linking pruefen",
     ],
     platformHeading: "Offizieller Plattformstatus",
@@ -321,8 +336,8 @@ const copy: Record<ContentLanguage, PageCopy> = {
     ],
     accountHeading: "Cross-Play und Account-Hinweise",
     accountNotes: [
-      "Steam listet Cross-Platform Multiplayer, und offizielle Mobile-Seiten bestaetigen iOS/Android neben PC und PS5.",
-      "Behandle Cross-Progression und Account-Linking als Check vor dem Download, weil Store-Accounts je nach Region unterschiedlich funktionieren koennen.",
+      "Steam listet Cross-Platform Multiplayer, und die offizielle Xbox FAQ sagt, dass Charakterdaten ueber Xbox, PC, PlayStation und Mobile geteilt werden koennen, wenn derselbe gebundene Account genutzt wird.",
+      "Behandle Cross-Progression und Account-Linking als Check vor dem Download, weil die Xbox FAQ warnt: Wer bestehenden Fortschritt behalten will, sollte den bestehenden Account binden, bevor ein erster Xbox-Charakter erstellt wird.",
       "Wenn du die Plattform wechselst, teste erst einen sicheren Login und speichere Account-ID, Server und Charakternamen.",
     ],
     iosNoteHeading: "iOS Download Hinweis",
@@ -355,9 +370,9 @@ const copy: Record<ContentLanguage, PageCopy> = {
           "Offizieller Store-Text nennt Cross-Play auf PS5, PC und Mobile. Pruefe trotzdem Account-Linking in deiner Region, bevor du bezahlte Items oder Rewards nutzt.",
       },
       {
-        question: "Gibt es Where Winds Meet auf Xbox oder PS4?",
+        question: "Gibt es Where Winds Meet auf Xbox?",
         answer:
-          "Diese Seite bestaetigt nur PC, PS5, iOS und Android/mobile aus offiziellen Quellen. Xbox oder PS4 werden nicht als bestaetigt gelistet, solange es keine offizielle Quelle gibt.",
+          "Ja. Die offizielle Ankuendigung vom 2026-06-08 listet Where Winds Meet fuer Xbox Series X|S, Xbox on PC und Xbox Cloud. Nutze die Microsoft Store Route und lies die Xbox FAQ vor dem Account-Linking.",
       },
     ],
   },
@@ -383,7 +398,7 @@ function buildStructuredData(entry: PageCopy) {
       about: {
         "@type": "VideoGame",
         name: "Where Winds Meet",
-        gamePlatform: ["PC", "PlayStation 5", "iOS", "Android"],
+        gamePlatform: ["PC", "PlayStation 5", "Xbox Series X|S", "Xbox on PC", "Xbox Cloud", "iOS", "Android"],
         sameAs: officialSources.map((source) => source.href),
       },
     },

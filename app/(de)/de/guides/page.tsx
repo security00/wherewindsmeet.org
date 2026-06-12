@@ -29,7 +29,7 @@ const guideSections = [
     color: "text-sky-300",
     size: "medium",
     description:
-      "Offizieller Where Winds Meet Plattformstatus fuer PS5, PC, iOS, Android, Mobile, Cross-Play und Account-Linking.",
+      "Offizieller Where Winds Meet Plattformstatus fuer Xbox, PS5, PC, iOS, Android, Mobile, Cross-Play und Account-Linking.",
   },
   {
     title: "PvP-Meta-Tierliste",

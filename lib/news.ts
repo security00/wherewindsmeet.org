@@ -24,6 +24,30 @@ type OfficialNewsRow = [
 // site can pin items out of strict date order, so news pages should not sort it.
 const officialNewsRows: OfficialNewsRow[] = [
   [
+    "imperial-palace-version-1-7-overview-part-2",
+    "[The Imperial Palace] Version 1.7 Update Overview: Part 2",
+    "2026-06-09",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/609update.html",
+    "Official Version 1.7 overview follow-up for The Imperial Palace, continuing the June 2026 content trail players are using for update, roadmap, and returning-player searches.",
+  ],
+  [
+    "where-winds-meet-xbox-launch-faq",
+    "Where Winds Meet XBOX Launch FAQ",
+    "2026-06-08",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/607XBOX2.html",
+    "Official Xbox launch FAQ covering Microsoft Store download steps, cross-progression between Xbox, PC, PlayStation, and mobile, plus account-binding cautions before creating a first Xbox character.",
+  ],
+  [
+    "where-winds-meet-xbox-launch",
+    "Where Winds Meet is Officially Coming to XBOX Series X|S, XBOX on PC, and XBOX Cloud!",
+    "2026-06-08",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/607XBOX.html",
+    "Official announcement for Where Winds Meet arriving on Xbox Series X|S, Xbox on PC, and Xbox Cloud on June 8, 2026, including Microsoft Store access and a time-limited Xbox Game Pass member pack.",
+  ],
+  [
     "june-5-version-1-7-patch-notes",
     "1.7 Version Patch Notes: Optimizations and Bug Fixes (June 5, 2026)",
     "2026-06-05",

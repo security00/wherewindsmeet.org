@@ -39,9 +39,9 @@ const content: Record<ContentLanguage, HomeContent> = {
     eyebrow: "Main Where Winds Meet hub",
     h1: "Where Winds Meet",
     subtitle:
-      "The updated Where Winds Meet guide hub for the open-world wuxia RPG: Version 1.7, The Imperial Palace, codes, patch notes, tier lists, builds, bosses, interactive map routes, and platform help for PC, PS5, iOS, and Android players.",
-    updateLabel: "Version 1.7 / The Imperial Palace",
-    quickFacts: ["Free-to-play wuxia action RPG", "PC, PS5, iOS, and Android", "Guides updated for Version 1.7"],
+      "The updated Where Winds Meet guide hub for the open-world wuxia RPG: Version 1.7, The Imperial Palace, codes, patch notes, tier lists, builds, bosses, interactive map routes, and platform help for Xbox, PC, PS5, iOS, and Android players.",
+    updateLabel: "Version 1.7 / The Imperial Palace Part 2",
+    quickFacts: ["Free-to-play wuxia action RPG", "Xbox, PC, PS5, iOS, and Android", "Guides updated for Version 1.7"],
     ctas: [
       { href: "/news", label: "Latest News" },
       { href: "/guides/patch-notes", label: "Patch Notes" },
@@ -92,9 +92,9 @@ const content: Record<ContentLanguage, HomeContent> = {
           "Where Winds Meet is a free-to-play open-world wuxia action RPG about martial arts, exploration, quests, bosses, and player progression across a large Jianghu world.",
       },
       {
-        question: "Is Where Winds Meet on PS5, PC, and mobile?",
+        question: "Is Where Winds Meet on Xbox, PS5, PC, and mobile?",
         answer:
-          "Yes. Where Winds Meet is available across PC, PlayStation 5, iOS, and Android, with platform-specific store and account-linking details that players should check before purchasing or redeeming rewards.",
+          "Yes. Where Winds Meet is available across Xbox Series X|S, Xbox on PC, Xbox Cloud, PC, PlayStation 5, iOS, and Android, with platform-specific store and account-linking details that players should check before purchasing or redeeming rewards.",
       },
       {
         question: "What is the latest Where Winds Meet update?",
@@ -124,9 +124,9 @@ const content: Record<ContentLanguage, HomeContent> = {
     eyebrow: "Hub chính cho Where Winds Meet",
     h1: "Where Winds Meet",
     subtitle:
-      "Hub hướng dẫn Where Winds Meet cho game wuxia open-world RPG: Version 1.7, The Imperial Palace, code, patch notes, tier list, build, boss, bản đồ tương tác và thông tin nền tảng cho PC, PS5, iOS, Android.",
-    updateLabel: "Version 1.7 / The Imperial Palace",
-    quickFacts: ["Wuxia action RPG miễn phí", "PC, PS5, iOS, Android", "Guide đã cập nhật Version 1.7"],
+      "Hub hướng dẫn Where Winds Meet cho game wuxia open-world RPG: Version 1.7, The Imperial Palace, code, patch notes, tier list, build, boss, bản đồ tương tác và thông tin nền tảng cho Xbox, PC, PS5, iOS, Android.",
+    updateLabel: "Version 1.7 / The Imperial Palace Part 2",
+    quickFacts: ["Wuxia action RPG miễn phí", "Xbox, PC, PS5, iOS, Android", "Guide đã cập nhật Version 1.7"],
     ctas: [
       { href: "/news", label: "Tin mới" },
       { href: "/guides/patch-notes", label: "Patch Notes" },
@@ -176,9 +176,9 @@ const content: Record<ContentLanguage, HomeContent> = {
           "Where Winds Meet là game wuxia action RPG open-world miễn phí, tập trung vào võ học, khám phá, nhiệm vụ, boss và tiến trình nhân vật trong thế giới Jianghu rộng lớn.",
       },
       {
-        question: "Where Winds Meet có trên PS5, PC và mobile không?",
+        question: "Where Winds Meet có trên Xbox, PS5, PC và mobile không?",
         answer:
-          "Có. Where Winds Meet có trên PC, PlayStation 5, iOS và Android. Người chơi nên kiểm tra store và liên kết tài khoản trước khi mua vật phẩm hoặc đổi thưởng.",
+          "Có. Where Winds Meet có trên Xbox Series X|S, Xbox on PC, Xbox Cloud, PC, PlayStation 5, iOS và Android. Người chơi nên kiểm tra store và liên kết tài khoản trước khi mua vật phẩm hoặc đổi thưởng.",
       },
       {
         question: "Cập nhật mới nhất của Where Winds Meet là gì?",
@@ -208,9 +208,9 @@ const content: Record<ContentLanguage, HomeContent> = {
     eyebrow: "Zentraler Where Winds Meet Hub",
     h1: "Where Winds Meet",
     subtitle:
-      "Der aktualisierte Where Winds Meet Guide-Hub zum Open-World-Wuxia-RPG: Version 1.7, The Imperial Palace, Codes, Patch Notes, Tierlisten, Builds, Bosse, interaktive Karte und Plattformhilfe für PC, PS5, iOS und Android.",
-    updateLabel: "Version 1.7 / The Imperial Palace",
-    quickFacts: ["Free-to-play Wuxia Action-RPG", "PC, PS5, iOS und Android", "Guides für Version 1.7 aktualisiert"],
+      "Der aktualisierte Where Winds Meet Guide-Hub zum Open-World-Wuxia-RPG: Version 1.7, The Imperial Palace, Codes, Patch Notes, Tierlisten, Builds, Bosse, interaktive Karte und Plattformhilfe fuer Xbox, PC, PS5, iOS und Android.",
+    updateLabel: "Version 1.7 / The Imperial Palace Part 2",
+    quickFacts: ["Free-to-play Wuxia Action-RPG", "Xbox, PC, PS5, iOS und Android", "Guides fuer Version 1.7 aktualisiert"],
     ctas: [
       { href: "/news", label: "Aktuelle News" },
       { href: "/guides/patch-notes", label: "Patch Notes" },
@@ -260,9 +260,9 @@ const content: Record<ContentLanguage, HomeContent> = {
           "Where Winds Meet ist ein kostenloses Open-World-Wuxia-Action-RPG mit Kampfkünsten, Erkundung, Quests, Bossen und Charakterfortschritt in einer großen Jianghu-Welt.",
       },
       {
-        question: "Gibt es Where Winds Meet auf PS5, PC und Mobile?",
+        question: "Gibt es Where Winds Meet auf Xbox, PS5, PC und Mobile?",
         answer:
-          "Ja. Where Winds Meet ist für PC, PlayStation 5, iOS und Android verfügbar. Prüfe Store- und Account-Linking-Details, bevor du Käufe tätigst oder Belohnungen einlöst.",
+          "Ja. Where Winds Meet ist fuer Xbox Series X|S, Xbox on PC, Xbox Cloud, PC, PlayStation 5, iOS und Android verfuegbar. Pruefe Store- und Account-Linking-Details, bevor du Kaeufe taetigst oder Belohnungen einloest.",
       },
       {
         question: "Was ist das neueste Where Winds Meet Update?",
@@ -317,10 +317,12 @@ function buildStructuredData(entry: HomeContent) {
       alternateName: ["WWM", "Where The Winds Meet"],
       description: entry.subtitle,
       genre: ["Open-world", "Wuxia", "Action RPG"],
-      gamePlatform: ["PC", "PlayStation 5", "iOS", "Android"],
+      gamePlatform: ["PC", "PlayStation 5", "Xbox Series X|S", "Xbox on PC", "Xbox Cloud", "iOS", "Android"],
       url: "https://www.wherewindsmeetgame.com/",
       sameAs: [
         "https://www.wherewindsmeetgame.com/",
+        "https://www.wherewindsmeetgame.com/news/official/607XBOX.html",
+        "https://www.wherewindsmeetgame.com/news/official/607XBOX2.html",
         "https://store.steampowered.com/app/3564740/Where_Winds_Meet/",
         "https://www.playstation.com/en-us/games/where-winds-meet/",
         "https://play.google.com/store/apps/details?id=com.netease.yysls",

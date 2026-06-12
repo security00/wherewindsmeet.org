@@ -29,7 +29,7 @@ const guideSections = [
     color: "text-sky-300",
     size: "medium",
     description:
-      "Official Where Winds Meet platform status for PS5, PC, iOS, Android, mobile, cross-play, and account-linking checks.",
+      "Official Where Winds Meet platform status for Xbox, PS5, PC, iOS, Android, mobile, cross-play, and account-linking checks.",
   },
   {
     title: "PVP Meta Tier List",

@@ -10,20 +10,20 @@ const baseUrl = "https://wherewindsmeet.org";
 const freshness = getContentFreshness("/news");
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Roadmap, Upcoming Update & Patch Notes",
+  title: "Where Winds Meet Roadmap, Xbox Launch & Patch Notes",
   description:
-    "Where Winds Meet roadmap and upcoming update tracker with official news, June 2026 patch notes, balance changes, codes, events, and guide impact.",
+    "Where Winds Meet roadmap and upcoming update tracker with official Xbox launch news, Version 1.7 Imperial Palace updates, June 2026 patch notes, balance changes, codes, events, and guide impact.",
   alternates: buildHreflangAlternates("/news"),
   openGraph: {
-    title: "Where Winds Meet Roadmap, Upcoming Update & Patch Notes",
+    title: "Where Winds Meet Roadmap, Xbox Launch & Patch Notes",
     description:
-      "Where Winds Meet roadmap and upcoming update tracker with official news, June 2026 patch notes, balance changes, codes, events, and guide impact.",
+      "Where Winds Meet roadmap and upcoming update tracker with official Xbox launch news, Version 1.7 Imperial Palace updates, June 2026 patch notes, balance changes, codes, events, and guide impact.",
     url: `${baseUrl}/news`,
   },
   twitter: {
-    title: "Where Winds Meet Roadmap, Upcoming Update & Patch Notes",
+    title: "Where Winds Meet Roadmap, Xbox Launch & Patch Notes",
     description:
-      "Where Winds Meet roadmap and upcoming update tracker with official news, June 2026 patch notes, balance changes, codes, events, and guide impact.",
+      "Where Winds Meet roadmap and upcoming update tracker with official Xbox launch news, Version 1.7 Imperial Palace updates, June 2026 patch notes, balance changes, codes, events, and guide impact.",
   },
 };
 
@@ -183,7 +183,7 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Latest official-news pass: {freshness?.gameVersion ?? "Version 1.7 / June 5 fixes"} plus the pinned unofficial-trading crackdown, May 27 Patch Notes, The Imperial Palace overview, and Version 1.7 Path Balance announcement. The list below follows the current official news trail.
+              Latest official-news pass: {freshness?.gameVersion ?? "Version 1.7 / The Imperial Palace Part 2"} plus the June 8 Xbox launch, Xbox FAQ, June 5 patch notes, the pinned unofficial-trading crackdown, The Imperial Palace overview, and Version 1.7 Path Balance announcement. The list below follows the current official news trail.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link href="/guides/tier-list" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
@@ -212,7 +212,7 @@ export default function NewsPage() {
             <div className="mt-3 grid gap-2 text-xs text-slate-300 sm:grid-cols-3">
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
                 <p className="font-semibold text-slate-100">Current update</p>
-                <p className="mt-1">Version 1.7 / June 5 fixes remain the current checked baseline for update searches.</p>
+                <p className="mt-1">Version 1.7 / The Imperial Palace Part 2 and the June 8 Xbox launch are the current checked baseline for update searches.</p>
               </div>
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
                 <p className="font-semibold text-slate-100">Next watch</p>
@@ -244,7 +244,7 @@ export default function NewsPage() {
                   </Link>
                 </li>
                 <li>
-                  Version 1.7 / The Imperial Palace — current update anchor for roadmap, event, and returning-player searches.
+                  Version 1.7 / The Imperial Palace Part 2 — current update anchor for roadmap, event, and returning-player searches.
                 </li>
                 <li>
                   June 5 patch notes, May 29 historical fixes, and May 26 Path Balance — re-check tier list, builds, weapon pages, and PVP advice against these notes before trusting older meta.

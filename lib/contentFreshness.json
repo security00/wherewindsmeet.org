@@ -6,8 +6,8 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-06-05",
-    "gameVersion": "Version 1.7 / June 5 fixes",
+    "lastChecked": "2026-06-09",
+    "gameVersion": "Version 1.7 / The Imperial Palace Part 2",
     "priorityCluster": "main-keyword-recovery",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/",
@@ -17,6 +17,9 @@
       "https://play.google.com/store/apps/details?id=com.netease.yysls",
       "https://www.wherewindsmeetgame.com/m/news/",
       "https://www.wherewindsmeetgame.com/news/official/TheImperialPalace.html",
+      "https://www.wherewindsmeetgame.com/news/official/609update.html",
+      "https://www.wherewindsmeetgame.com/news/official/607XBOX.html",
+      "https://www.wherewindsmeetgame.com/news/official/607XBOX2.html",
       "https://www.wherewindsmeetgame.com/news/official/529update.html"
     ]
   },
@@ -27,14 +30,16 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-06-05",
-    "gameVersion": "Version 1.7 / June 5 fixes",
+    "lastChecked": "2026-06-09",
+    "gameVersion": "Version 1.7 / Xbox launch",
     "priorityCluster": "main-keyword-recovery",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/",
       "https://adl.easebar.com/d/g/wwm/c/officialwebsite?type=ios",
       "https://store.steampowered.com/app/3564740/Where_Winds_Meet/",
       "https://www.playstation.com/en-us/games/where-winds-meet/",
+      "https://www.wherewindsmeetgame.com/news/official/607XBOX.html",
+      "https://www.wherewindsmeetgame.com/news/official/607XBOX2.html",
       "https://play.google.com/store/apps/details?id=com.netease.yysls",
       "https://ir.netease.com/node/15196/pdf"
     ]
@@ -46,12 +51,15 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-06-05",
-    "gameVersion": "Version 1.7 / June 5 fixes",
+    "lastChecked": "2026-06-09",
+    "gameVersion": "Version 1.7 / The Imperial Palace Part 2",
     "priorityCluster": "week-1-rescue",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
       "https://www.wherewindsmeetgame.com/news/official/TheImperialPalace.html",
+      "https://www.wherewindsmeetgame.com/news/official/609update.html",
+      "https://www.wherewindsmeetgame.com/news/official/607XBOX.html",
+      "https://www.wherewindsmeetgame.com/news/official/607XBOX2.html",
       "https://www.wherewindsmeetgame.com/news/official/529update.html"
     ]
   },
