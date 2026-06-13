@@ -184,7 +184,7 @@ export default function TierListClient() {
               Where Winds Meet <span className="text-ink-gold">Tier List</span>
             </h1>
             <p className="mt-4 text-sm font-medium uppercase tracking-wide text-emerald-400/80">
-              PVE & PVP · Global Launch 1.0
+              PVE & PVP - Version 1.7 meta
             </p>
             <p className="mt-6 text-lg leading-relaxed text-slate-300">
               A practical guide for real players. We prioritize <span className="text-slate-100 font-semibold">comfort, consistency, and style</span> over theoretical spreadsheet numbers. Find the path that lets you master the Jianghu.
@@ -192,6 +192,17 @@ export default function TierListClient() {
             <p className="mt-3 text-sm leading-relaxed text-slate-300">
               Use this as your PVP tier list and PVE tier list reference across weapons, paths, and dual builds, then dive into the weapon guides linked inside each tab.
             </p>
+            <div className="mt-5 flex flex-wrap gap-2 text-xs">
+              <Link href="#tier-data" className="rounded-full border border-emerald-400/50 bg-emerald-500/10 px-3 py-1 font-semibold text-emerald-100 hover:border-emerald-300">
+                Ranking table
+              </Link>
+              <Link href="/guides/pvp-tier-list" className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-200 hover:border-emerald-300/70">
+                PVP arena ranks
+              </Link>
+              <Link href="/guides/weapons/tier-list" className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-200 hover:border-emerald-300/70">
+                Weapon-only tier list
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -202,7 +213,7 @@ export default function TierListClient() {
           <h2 className="text-2xl font-bold tracking-tight text-slate-50 border-brush inline-block pb-1">
             Quick Tier Snapshot
           </h2>
-          <span className="text-xs text-slate-400">Updated for Patch 1.0</span>
+          <span className="text-xs text-slate-400">Updated for Version 1.7</span>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-2">
@@ -369,7 +380,7 @@ export default function TierListClient() {
         </div>
 
         {/* Community Video and Local Tier Data */}
-        <div className="lg:col-span-3">
+        <div id="tier-data" className="lg:col-span-3 scroll-mt-24">
           <div className="card-wuxia rounded-3xl p-5 md:p-8 space-y-4">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <div>

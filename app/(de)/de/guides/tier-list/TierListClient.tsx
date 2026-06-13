@@ -184,7 +184,7 @@ export default function TierListClient() {
               Where Winds Meet <span className="text-ink-gold">Tierliste</span>
             </h1>
             <p className="mt-4 text-sm font-medium uppercase tracking-wide text-emerald-400/80">
-              PvE & PvP · Global Launch 1.0
+              PvE & PvP - Version 1.7 meta
             </p>
             <p className="mt-6 text-lg leading-relaxed text-slate-300">
               Praktischer Leitfaden für echte Spieler. Wir priorisieren <span className="text-slate-100 font-semibold">Komfort, Konstanz und Stil</span> statt reiner Tabellenwerte. Finde den Pfad, der dir das Jianghu wirklich erschließt.
@@ -202,7 +202,7 @@ export default function TierListClient() {
           <h2 className="text-2xl font-bold tracking-tight text-slate-50 border-brush inline-block pb-1">
             Tier-Überblick auf einen Blick
           </h2>
-          <span className="text-xs text-slate-400">Aktualisiert für Patch 1.0</span>
+          <span className="text-xs text-slate-400">Aktualisiert fuer Version 1.7</span>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-2">

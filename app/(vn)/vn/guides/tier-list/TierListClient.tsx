@@ -184,7 +184,7 @@ export default function TierListClient() {
               Where Winds Meet <span className="text-ink-gold">Bảng xếp hạng (Tier list)</span>
             </h1>
             <p className="mt-4 text-sm font-medium uppercase tracking-wide text-emerald-400/80">
-              PvE & PvP · Ra mắt toàn cầu 1.0
+              PvE & PvP - Version 1.7 meta
             </p>
             <p className="mt-6 text-lg leading-relaxed text-slate-300">
               Đây là tier list dành cho <span className="text-slate-100 font-semibold">người chơi thực chiến</span>. Chúng tôi ưu tiên <span className="text-slate-100 font-semibold">dễ chơi, ổn định và đúng chất</span> hơn những con số “đẹp trên bảng tính”. Hãy chọn tuyến giúp bạn làm chủ giang hồ.
@@ -202,7 +202,7 @@ export default function TierListClient() {
           <h2 className="text-2xl font-bold tracking-tight text-slate-50 border-brush inline-block pb-1">
             Ảnh chụp tier nhanh
           </h2>
-          <span className="text-xs text-slate-400">Cập nhật theo Patch 1.0</span>
+          <span className="text-xs text-slate-400">Cap nhat theo Version 1.7</span>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-2">
