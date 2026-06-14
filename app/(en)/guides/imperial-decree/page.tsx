@@ -8,7 +8,7 @@ import ZoomableGuideImage from "./ZoomableGuideImage";
 const baseUrl = "https://wherewindsmeet.org";
 const slug = "imperial-decree";
 const pageUrl = `${baseUrl}/guides/${slug}`;
-const updated = "2026-06-04";
+const updated = "2026-06-14";
 const cdnBaseUrl = "https://static.wherewindsmeet.org";
 const imageBaseUrl = `${cdnBaseUrl}/guides/${slug}`;
 
@@ -223,13 +223,51 @@ const faqs = [
   },
 ];
 
+const farmingAffairsAnswers = [
+  {
+    prompt: "Petition for Land Reclamation",
+    answer:
+      "Use a balanced development answer: land can create profit, but account for security, clearing time, and market pressure. Specialty crops are safer than flooding the market.",
+  },
+  {
+    prompt: "Plea for Waterwork",
+    answer:
+      "Favor long-term public gains, but acknowledge that profit may slump while construction is ongoing and that water diversion must not harm nearby people.",
+  },
+  {
+    prompt: "On New Rice",
+    answer:
+      "Treat the proposal as low priority rather than urgent court business. Food specialists can evaluate it, but this kind of memorial can clog the queue.",
+  },
+  {
+    prompt: "Refuting the Proposal",
+    answer:
+      "Ask for a proper report with data and evidence. New farmland may be difficult at first, but it can expand profit and population when planned carefully.",
+  },
+  {
+    prompt: "Ode to Great Harvest",
+    answer:
+      "Credit the harvest to capable workers and lessons learned from difficult years. Do not let one smooth season become an excuse for complacency.",
+  },
+  {
+    prompt: "On Refugees",
+    answer:
+      "Prepare enough food and set realistic expectations. Farming takes skill, so new refugees need time before yields improve.",
+  },
+  {
+    prompt: "General Farming Affairs rule",
+    answer:
+      "Imperial Decree grades usually reward practical governance: protect food supply, avoid reckless pledges, and choose policies that balance revenue with public stability.",
+  },
+];
+
 export const metadata: Metadata = {
-  title: "Where Winds Meet Imperial Decree Answers & S Rank Guide",
+  title: "Where Winds Meet Imperial Decree Guide - Farming Affairs Answers & S Rank",
   description:
-    "Where Winds Meet Imperial Decree answers for Finance and Farming Affairs: start at Rear Garden, talk to Qu Chunqiu, choose S-rank remarks, and claim rewards.",
+    "Where Winds Meet Imperial Decree guide with Farming Affairs answers, Finance S-rank remarks, Rear Garden start location, Qu Chunqiu walkthrough, and rewards.",
   alternates: buildHreflangAlternates(`/guides/${slug}`),
   openGraph: {
-    title: "Where Winds Meet Imperial Decree Answers & S Rank Guide",
+    title: "Where Winds Meet Imperial Decree Guide - Farming Affairs Answers & S Rank",
     description:
       "Start Imperial Decree in the Imperial Palace, find Qu Chunqiu, review Finance and Farming Affairs memorials, and understand the S-rank answer route.",
     url: pageUrl,
@@ -246,7 +284,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Where Winds Meet Imperial Decree Answers",
+    title: "Where Winds Meet Imperial Decree Farming Affairs Answers",
     description:
       "Start location, Finance and Farming Affairs answer meanings, S-rank route, and rewards.",
     images: [
@@ -279,6 +317,17 @@ export default function ImperialDecreeGuidePage() {
     },
     {
       "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: "Imperial Decree Farming Affairs answer notes",
+      itemListElement: farmingAffairsAnswers.map((row, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: row.prompt,
+        description: row.answer,
+      })),
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: baseUrl },
@@ -300,7 +349,7 @@ export default function ImperialDecreeGuidePage() {
               Version 1.7 Imperial Palace guide
             </p>
             <h1 className="mt-3 text-balance text-3xl font-bold tracking-tight text-slate-50 sm:text-5xl">
-              Where Winds Meet Imperial Decree answers: Farming Affairs, Finance S rank, and location.
+              Where Winds Meet Imperial Decree guide: Farming Affairs answers, Finance S rank, and walkthrough.
             </h1>
             <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">
               Imperial Decree is a Palace exploration activity in Where Winds Meet. Go to the Rear Garden in
@@ -316,6 +365,17 @@ export default function ImperialDecreeGuidePage() {
                   <p className="mt-1 text-sm font-semibold text-slate-100">{fact.value}</p>
                 </div>
               ))}
+            </div>
+            <div className="mt-5 flex flex-wrap gap-2 text-xs">
+              <Link href="#farming-affairs-answers" className="rounded-full border border-amber-300/60 px-3 py-1 font-semibold text-amber-100 hover:border-amber-200">
+                Farming Affairs answers
+              </Link>
+              <Link href="#finance-answers" className="rounded-full border border-amber-300/60 px-3 py-1 font-semibold text-amber-100 hover:border-amber-200">
+                Finance S-rank table
+              </Link>
+              <Link href="#imperial-decree-walkthrough" className="rounded-full border border-amber-300/60 px-3 py-1 font-semibold text-amber-100 hover:border-amber-200">
+                Walkthrough steps
+              </Link>
             </div>
           </div>
           <figure className="flex flex-col justify-center border-t border-slate-800 bg-slate-900/60 lg:border-l lg:border-t-0">
@@ -335,7 +395,35 @@ export default function ImperialDecreeGuidePage() {
         </div>
       </section>
 
-      <section className="grid gap-6 lg:grid-cols-[0.66fr_0.34fr]">
+      <section id="farming-affairs-answers" className="rounded-3xl border border-cyan-400/30 bg-cyan-500/10 p-6 shadow-lg shadow-cyan-950/30">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-wide text-cyan-200">
+              Search intent: Imperial Decree Farming Affairs
+            </p>
+            <h2 className="mt-1 text-2xl font-bold text-slate-50">Farming Affairs S-rank answer notes.</h2>
+            <p className="mt-3 text-sm leading-6 text-slate-300">
+              Players searching this query usually want the exact governance logic behind Farming Affairs prompts:
+              protect food supply, approve long-term public works when they are realistic, request evidence for risky
+              proposals, and avoid short-term choices that damage stability. Treat these notes as in-game answer
+              meanings, because prompt wording can rotate by volume.
+            </p>
+          </div>
+          <span className="rounded-full border border-cyan-300/50 px-3 py-1 text-xs font-semibold text-cyan-100">
+            Updated {updated}
+          </span>
+        </div>
+        <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          {farmingAffairsAnswers.map((row) => (
+            <div key={row.prompt} className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4">
+              <h3 className="text-sm font-semibold text-slate-50">{row.prompt}</h3>
+              <p className="mt-2 text-xs leading-5 text-slate-300">{row.answer}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="imperial-decree-walkthrough" className="grid gap-6 lg:grid-cols-[0.66fr_0.34fr]">
         <div className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/40">
           <div>
             <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">Answer-first route</p>
@@ -440,7 +528,7 @@ export default function ImperialDecreeGuidePage() {
         />
       </section>
 
-      <section className="space-y-5 rounded-3xl border border-emerald-500/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/40">
+      <section id="finance-answers" className="space-y-5 rounded-3xl border border-emerald-500/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/40">
         <div>
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Finance volume</p>
           <h2 className="mt-2 text-2xl font-bold text-slate-50">Imperial Decree Finance S answer meanings.</h2>

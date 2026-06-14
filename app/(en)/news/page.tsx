@@ -10,22 +10,46 @@ const baseUrl = "https://wherewindsmeet.org";
 const freshness = getContentFreshness("/news");
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Roadmap, Xbox Launch & Patch Notes",
+  title: "Where Winds Meet Update Today - Latest News, Patch Notes & Roadmap",
   description:
-    "Where Winds Meet roadmap and upcoming update tracker with official Xbox launch news, Version 1.7 Imperial Palace updates, June 2026 patch notes, balance changes, codes, events, and guide impact.",
+    "Where Winds Meet update today tracker for latest official news, Version 1.7 Imperial Palace Part 2, Xbox launch, patch notes, roadmap, codes, events, and guide impact.",
   alternates: buildHreflangAlternates("/news"),
   openGraph: {
-    title: "Where Winds Meet Roadmap, Xbox Launch & Patch Notes",
+    title: "Where Winds Meet Update Today - Latest News, Patch Notes & Roadmap",
     description:
-      "Where Winds Meet roadmap and upcoming update tracker with official Xbox launch news, Version 1.7 Imperial Palace updates, June 2026 patch notes, balance changes, codes, events, and guide impact.",
+      "Where Winds Meet update today tracker for latest official news, Version 1.7 Imperial Palace Part 2, Xbox launch, patch notes, roadmap, codes, events, and guide impact.",
     url: `${baseUrl}/news`,
   },
   twitter: {
-    title: "Where Winds Meet Roadmap, Xbox Launch & Patch Notes",
+    title: "Where Winds Meet Update Today - Latest News, Patch Notes & Roadmap",
     description:
-      "Where Winds Meet roadmap and upcoming update tracker with official Xbox launch news, Version 1.7 Imperial Palace updates, June 2026 patch notes, balance changes, codes, events, and guide impact.",
+      "Where Winds Meet update today tracker for latest official news, Version 1.7 Imperial Palace Part 2, Xbox launch, patch notes, roadmap, codes, events, and guide impact.",
   },
 };
+
+const todayStatusCards = [
+  {
+    title: "Latest official update",
+    detail:
+      "Version 1.7 / The Imperial Palace Part 2 is the newest official news anchor we have checked, followed by the June 8 Xbox launch and Xbox FAQ.",
+    href: "https://www.wherewindsmeetgame.com/m/news/",
+    label: "Official news list",
+  },
+  {
+    title: "Today patch-note answer",
+    detail:
+      "No newer patch note has replaced the June 5 Version 1.7 fixes in our checked sources. Use the patch-note tracker before changing builds or tier-list advice.",
+    href: "/guides/patch-notes",
+    label: "Patch notes",
+  },
+  {
+    title: "Roadmap watch",
+    detail:
+      "Xbox Wire has teased Hidden Mountain after Hexi and Imperial Palace; treat it as roadmap watch until a full official game-site update lands.",
+    href: "https://news.xbox.com/en-us/2026/06/09/where-winds-meet-new-expansion-game-pass-xbox-games-showcase-2026/",
+    label: "Xbox roadmap note",
+  },
+];
 
 const newsBlocks = [
   {
@@ -153,7 +177,7 @@ export default function NewsPage() {
 
         <div className="relative space-y-6 z-10 max-w-3xl">
           <h1 className="text-balance text-4xl font-bold tracking-tight text-slate-50 sm:text-5xl font-serif">
-            <span className="text-ink-gold">Where Winds Meet</span> roadmap, upcoming update, and patch notes.
+            <span className="text-ink-gold">Where Winds Meet</span> update today, roadmap, and patch notes.
           </h1>
           <div className="space-y-4 text-slate-200/90 font-sans text-lg leading-relaxed">
             <p>
@@ -170,6 +194,42 @@ export default function NewsPage() {
               <span className="font-semibold text-emerald-400">Where Winds Meet roadmap</span>{" "}
               updates without reading every bullet, start here.
             </p>
+          </div>
+
+          <div
+            id="update-today"
+            className="rounded-2xl border border-cyan-400/40 bg-cyan-500/10 p-4 text-sm text-cyan-50 shadow-inner shadow-cyan-950/40"
+          >
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-cyan-200">Answer first: update today</p>
+                <h2 className="mt-1 text-xl font-bold text-slate-50">What is the latest Where Winds Meet update today?</h2>
+              </div>
+              <span className="rounded-full bg-cyan-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-cyan-100">
+                {lastUpdatedLabel}
+              </span>
+            </div>
+            <p className="mt-3 leading-6 text-cyan-50/90">
+              The current checked update baseline is <strong>Version 1.7 / The Imperial Palace Part 2</strong>,
+              with the June 8 Xbox launch and Xbox FAQ as the latest platform news. If you searched for
+              <span className="font-semibold"> where winds meet update today</span>, use the cards below to jump straight
+              to official news, patch notes, and roadmap watch items.
+            </p>
+            <div className="mt-4 grid gap-3 md:grid-cols-3">
+              {todayStatusCards.map((card) => (
+                <Link
+                  key={card.title}
+                  href={card.href}
+                  target={card.href.startsWith("http") ? "_blank" : undefined}
+                  rel={card.href.startsWith("http") ? "noreferrer" : undefined}
+                  className="rounded-xl border border-cyan-300/30 bg-slate-950/70 p-3 transition hover:border-cyan-200/70"
+                >
+                  <p className="text-sm font-semibold text-slate-50">{card.title}</p>
+                  <p className="mt-2 text-xs leading-5 text-slate-300">{card.detail}</p>
+                  <p className="mt-3 text-xs font-semibold text-cyan-200">{card.label}</p>
+                </Link>
+              ))}
+            </div>
           </div>
 
           <div

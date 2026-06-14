@@ -6,7 +6,7 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-06-09",
+    "lastChecked": "2026-06-14",
     "gameVersion": "Version 1.7 / The Imperial Palace Part 2",
     "priorityCluster": "main-keyword-recovery",
     "sourceUrls": [
@@ -45,22 +45,39 @@
     ]
   },
   {
+    "basePath": "/tools/interactive-map",
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
+    "lastChecked": "2026-06-14",
+    "gameVersion": "Version 1.7 / map CTR refresh",
+    "priorityCluster": "main-keyword-recovery",
+    "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/map/en/",
+      "https://mapgenie.io/where-winds-meet/maps/world",
+      "https://yysls-map.6fast.com/yysls/maps/qinghe?lang=en"
+    ]
+  },
+  {
     "basePath": "/news",
     "languages": [
       "en",
       "vi",
       "de"
     ],
-    "lastChecked": "2026-06-09",
-    "gameVersion": "Version 1.7 / The Imperial Palace Part 2",
-    "priorityCluster": "week-1-rescue",
+    "lastChecked": "2026-06-14",
+    "gameVersion": "Version 1.7 / update today tracker",
+    "priorityCluster": "main-keyword-recovery",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
       "https://www.wherewindsmeetgame.com/news/official/TheImperialPalace.html",
       "https://www.wherewindsmeetgame.com/news/official/609update.html",
       "https://www.wherewindsmeetgame.com/news/official/607XBOX.html",
       "https://www.wherewindsmeetgame.com/news/official/607XBOX2.html",
-      "https://www.wherewindsmeetgame.com/news/official/529update.html"
+      "https://www.wherewindsmeetgame.com/news/official/529update.html",
+      "https://news.xbox.com/en-us/2026/06/09/where-winds-meet-new-expansion-game-pass-xbox-games-showcase-2026/"
     ]
   },
   {
@@ -70,7 +87,7 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-06-05",
+    "lastChecked": "2026-06-14",
     "gameVersion": "Version 1.7 / June 5 fixes",
     "priorityCluster": "week-1-rescue",
     "sourceUrls": [
@@ -88,8 +105,8 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-06-05",
-    "gameVersion": "Version 1.7 / June 5 fixes",
+    "lastChecked": "2026-06-14",
+    "gameVersion": "Version 1.7 / code status check",
     "priorityCluster": "week-1-rescue",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
@@ -193,14 +210,15 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-06-05",
-    "gameVersion": "Version 1.7 / June 5 fixes",
+    "lastChecked": "2026-06-14",
+    "gameVersion": "Version 1.7 / Imperial Decree Farming Affairs",
     "priorityCluster": "week-2-breakout-query",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/news/official/TheImperialPalace.html",
       "https://game8.co/games/Where-Winds-Meet/archives/603080",
       "https://game8.co/games/Where-Winds-Meet/archives/603066",
       "https://www.reddit.com/answers/68829f0f-b49d-4b3a-9f7a-1e782709e9d1/?q=Explain+Imperial+Decree+in+WhereWindsMeet&source=PDP&tl=en",
+      "https://www.reddit.com/r/wherewindsmeet_/comments/1trhlyh/imperial_decree_farming_affairs_srank_answers/",
       "https://www.youtube.com/watch?v=yya5lX4KgOg"
     ]
   },
