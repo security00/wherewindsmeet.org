@@ -2,63 +2,45 @@ export type FeaturedVideo = {
   id: string;
   title: string;
   description: string;
+  publishedAt: string;
 };
 
-// German-localized titles/descriptions for the embedded video list.
+// German-localized descriptions for the user-curated embedded video list.
 // Video IDs stay identical to the English list for parity.
 export const featuredVideos: FeaturedVideo[] = [
   {
-    id: "rcbFUMjrIW4",
-    title: "Where Winds Meet – Gameplay-Highlight I",
+    id: "S7u9JuVHIyM",
+    title: "Now's a Great Time to Jump into Where Winds Meet (Huge Updates)",
     description:
-      "Kuratiertes Gameplay-Highlight mit Fokus auf Tempo, Erkundung und Combat-Flow – ideal als Einstieg, wenn du gerade erst loslegst.",
+      "Rueckkehrer-freundlicher Ueberblick fuer breite Suchanfragen wie where winds meet, where the winds meet und ob sich der Einstieg in Version 1.7 lohnt.",
+    publishedAt: "2026-06-10",
   },
   {
-    id: "OkISCNb-E9U",
-    title: "Where Winds Meet – Gameplay-Highlight II",
+    id: "5_FI471ah5A",
+    title: "Where Winds Meet - Hidden Mountain - Official Announce Trailer",
     description:
-      "Noch ein Clip, der zeigt, wie sich typische Sessions anfühlen: Moment-zu-Moment-Action, Kamera, Encounter-Design und Rhythmus.",
+      "Offizieller Xbox Games Showcase 2026 Trailer zur Hidden-Mountain-Erweiterung, passend fuer Roadmap-, Xbox- und Upcoming-Update-Suchen.",
+    publishedAt: "2026-06-08",
   },
   {
-    id: "Yy_uyzdAxc4",
-    title: "Where Winds Meet – Combat-Showcase I",
+    id: "Dmp0G0JFPGA",
+    title: "This Where Winds Meet Update Is WILD (HUGE New Map!)",
     description:
-      "Combat-Fokus: Wie unterschiedliche Waffen, Pfade und Builds deine Kämpfe verändern – gut zum Vergleichen von Tierlist-Picks.",
+      "Creator-Coverage zur neuen Karte und zum Imperial-Palace-Update, ideal fuer Spieler, die wissen wollen, ob sich die Rueckkehr lohnt.",
+    publishedAt: "2026-05-28",
   },
   {
-    id: "Bh9iAGnsMxc",
-    title: "Where Winds Meet – Combat-Showcase II",
+    id: "0xhVPMCk5H0",
+    title: "Where Winds Meet Had A HUGE Expansion",
     description:
-      "Zusätzliche Kampfaufnahmen als Kontext zur Tierlist und zu Builds: Wie starke Setups mit Drucksituationen umgehen.",
+      "Expansion-Eindruck eines bekannten MMO-Creators, nuetzlich fuer Spieler, die grosse Updates vergleichen und eine Rueckkehr abwaegen.",
+    publishedAt: "2026-04-02",
   },
   {
-    id: "ez5BEvGGQio",
-    title: "Where Winds Meet – Erkundung & Welt",
+    id: "ozHJ-Pd_mBo",
+    title: "Where Winds Meet",
     description:
-      "Erkundung, Traversal und das Gefühl, durchs Jianghu zu wandern – zwischen Story-Beats und großen Encountern.",
-  },
-  {
-    id: "3CObY80jK68",
-    title: "Where Winds Meet – Boss & Challenge Run",
-    description:
-      "Fokus auf anspruchsvolle Encounters: hilfreich, wenn du Boss-Mechaniken einordnen oder Endgame-Builds vergleichen willst.",
-  },
-  {
-    id: "ImGcZ7vtI_g",
-    title: "Where Winds Meet – Feng Ruzhi Guide (Legend/Abyss) · Silk Ball",
-    description:
-      "Fokussierter Boss-Guide: Silk-Ball-Diebstahl als Fail-Bedingung, sichere Punish-Fenster und wie saubere Runs den Druck auf hoher Schwierigkeit managen.",
-  },
-  {
-    id: "dlisDRSIBME",
-    title: "Where Winds Meet – Cinematic Moments",
-    description:
-      "Cinematic-Momente und visuelles Storytelling – als Ergänzung, wie sich verschiedene Spielstile atmosphärisch anfühlen.",
-  },
-  {
-    id: "sAKW3u3JDC4",
-    title: "Where Winds Meet – Style & Customization",
-    description:
-      "Community-Style-Showcase mit Fokus auf Outfits, Looks und Ausdruck – passt gut zu Cosmetics- und Sammel-Guides.",
+      "Breit erkennbare Commentary-Perspektive fuer allgemeine Where-Winds-Meet-Discovery-Suchen und Mainstream-Neugier.",
+    publishedAt: "2025-12-01",
   },
 ];

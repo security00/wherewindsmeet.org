@@ -94,9 +94,9 @@ export default function Home() {
           </div>
 
           <LiteYouTubeEmbed
-            videoId="2cxhuAwDFl4"
-            start={5}
-            title="Where Winds Meet - Global Launch Preview Stream"
+            videoId="S7u9JuVHIyM"
+            start={0}
+            title="Now's a Great Time to Jump into Where Winds Meet"
             poster="/background/bg4.webp"
           />
         </div>

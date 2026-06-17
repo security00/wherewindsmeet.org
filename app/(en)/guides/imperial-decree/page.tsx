@@ -8,7 +8,7 @@ import ZoomableGuideImage from "./ZoomableGuideImage";
 const baseUrl = "https://wherewindsmeet.org";
 const slug = "imperial-decree";
 const pageUrl = `${baseUrl}/guides/${slug}`;
-const updated = "2026-06-14";
+const updated = "2026-06-17";
 const cdnBaseUrl = "https://static.wherewindsmeet.org";
 const imageBaseUrl = `${cdnBaseUrl}/guides/${slug}`;
 
@@ -262,12 +262,12 @@ const farmingAffairsAnswers = [
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Imperial Decree Guide - Farming Affairs Answers & S Rank",
+  title: "Imperial Decree Where Winds Meet: All S Answers, Location & Rewards",
   description:
-    "Where Winds Meet Imperial Decree guide with Farming Affairs answers, Finance S-rank remarks, Rear Garden start location, Qu Chunqiu walkthrough, and rewards.",
+    "Imperial Decree Where Winds Meet guide with all S answer meanings, Finance and Farming Affairs solutions, Rear Garden location, Qu Chunqiu steps, and rewards.",
   alternates: buildHreflangAlternates(`/guides/${slug}`),
   openGraph: {
-    title: "Where Winds Meet Imperial Decree Guide - Farming Affairs Answers & S Rank",
+    title: "Imperial Decree Where Winds Meet: All S Answers, Location & Rewards",
     description:
       "Start Imperial Decree in the Imperial Palace, find Qu Chunqiu, review Finance and Farming Affairs memorials, and understand the S-rank answer route.",
     url: pageUrl,
@@ -284,7 +284,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Where Winds Meet Imperial Decree Farming Affairs Answers",
+    title: "Imperial Decree Where Winds Meet: S Answers & Rewards",
     description:
       "Start location, Finance and Farming Affairs answer meanings, S-rank route, and rewards.",
     images: [
@@ -392,6 +392,48 @@ export default function ImperialDecreeGuidePage() {
               Review the Imperial Decree memorials on the Palace table, then tune your remarks for a better grade.
             </figcaption>
           </figure>
+        </div>
+      </section>
+
+      <section id="all-s-answers" className="space-y-5 rounded-3xl border border-amber-400/30 bg-amber-500/10 p-6 shadow-lg shadow-amber-950/30">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">
+              Answer first: Imperial Decree Where Winds Meet
+            </p>
+            <h2 className="mt-1 text-2xl font-bold text-slate-50">
+              Imperial Decree Where Winds Meet S answers, location, and rewards.
+            </h2>
+            <p className="mt-3 text-sm leading-6 text-slate-300">
+              For the best Imperial Decree grades, answer like a practical court official: protect food supply,
+              support public welfare, avoid reckless austerity, ask for evidence on risky projects, and reject
+              unnecessary paperwork. Start in the Rear Garden of Kaifeng Imperial Palace, then review the memorials
+              on the table after speaking with Qu Chunqiu.
+            </p>
+          </div>
+          <span className="rounded-full border border-amber-300/60 bg-slate-950/70 px-3 py-1 text-xs font-semibold text-amber-100">
+            Checked {updated}
+          </span>
+        </div>
+        <div className="grid gap-3 md:grid-cols-3">
+          <Link href="#finance-answers" className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4 transition hover:border-amber-300/60">
+            <h3 className="text-sm font-semibold text-slate-50">Finance S answers</h3>
+            <p className="mt-2 text-xs leading-5 text-slate-300">
+              Night market, farmland, austerity, seeds, death-vow, and market-opening decisions.
+            </p>
+          </Link>
+          <Link href="#farming-affairs-answers" className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4 transition hover:border-amber-300/60">
+            <h3 className="text-sm font-semibold text-slate-50">Farming Affairs answers</h3>
+            <p className="mt-2 text-xs leading-5 text-slate-300">
+              Land reclamation, waterwork, new rice, evidence checks, harvest, and refugee farming logic.
+            </p>
+          </Link>
+          <Link href="#imperial-decree-walkthrough" className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4 transition hover:border-amber-300/60">
+            <h3 className="text-sm font-semibold text-slate-50">Start location</h3>
+            <p className="mt-2 text-xs leading-5 text-slate-300">
+              Qu Chunqiu, Rear Garden, Inner Chambers, and the Palace scroll table route.
+            </p>
+          </Link>
         </div>
       </section>
 

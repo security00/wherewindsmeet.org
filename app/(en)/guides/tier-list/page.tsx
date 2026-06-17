@@ -77,6 +77,30 @@ const tierListFaqs = [
   },
 ];
 
+const juneChangeNotes = [
+  {
+    title: "Version 1.7 freshness check",
+    detail:
+      "This Where Winds Meet tier list is framed around the Imperial Palace update window, June 2026 searches, and current Path Balance assumptions.",
+    href: "/news#hidden-mountain-watch",
+    label: "Latest update watch",
+  },
+  {
+    title: "PvE and PvP split",
+    detail:
+      "Broad tier-list searches need separate PvE comfort, PvP arena pressure, and weapon-only comparisons instead of one flat ranking.",
+    href: "/guides/pvp-tier-list",
+    label: "PvP tier list",
+  },
+  {
+    title: "Video freshness support",
+    detail:
+      "Use the fresh video page to see current update coverage and creator reactions before treating older launch-era rankings as final.",
+    href: "/videos",
+    label: "2026 videos",
+  },
+];
+
 export const metadata: Metadata = {
   title: "Where Winds Meet Tier List 2026 - Best PVE/PVP Weapons & Arena Ranks",
   description:
@@ -198,6 +222,30 @@ export default function TierListPage() {
           <Link href="#tier-data" className="rounded-full border border-cyan-300/50 px-3 py-1 font-semibold text-cyan-100 hover:border-cyan-200">
             Ranking table
           </Link>
+        </div>
+      </section>
+      <section id="what-changed" className="mb-6 rounded-2xl border border-violet-400/30 bg-violet-500/10 p-5 text-sm text-slate-200 shadow-sm shadow-violet-950/40">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-wide text-violet-200">Updated for June 2026</p>
+            <h2 className="mt-1 text-xl font-bold text-slate-50">What changed in this Where Winds Meet tier list?</h2>
+            <p className="mt-3 leading-6 text-slate-300">
+              The goal is to help players who search Where Winds Meet tier list, WWM tier list, PvP ranks,
+              and weapon rankings move quickly from a broad answer into the right specialist page.
+            </p>
+          </div>
+          <span className="rounded-full border border-violet-300/50 px-3 py-1 text-xs font-semibold text-violet-100">
+            Ranking context, not patch notes
+          </span>
+        </div>
+        <div className="mt-4 grid gap-3 md:grid-cols-3">
+          {juneChangeNotes.map((item) => (
+            <Link key={item.title} href={item.href} className="rounded-xl border border-slate-800 bg-slate-950/70 p-4 transition hover:border-violet-300/60">
+              <p className="text-sm font-semibold text-slate-50">{item.title}</p>
+              <p className="mt-2 text-xs leading-5 text-slate-300">{item.detail}</p>
+              <p className="mt-3 text-xs font-semibold text-violet-200">{item.label}</p>
+            </Link>
+          ))}
         </div>
       </section>
       <section className="mb-6 rounded-2xl border border-slate-800 bg-slate-950/70 p-4 text-sm text-slate-200 shadow-sm shadow-slate-950/60">

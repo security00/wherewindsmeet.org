@@ -6,20 +6,20 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 const baseUrl = "https://wherewindsmeet.org";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Gameplay Videos & Highlights",
+  title: "Where Winds Meet Videos - 2026 Updates, Tier Lists & Xbox Gameplay",
   description:
-    "Watch curated Where Winds Meet gameplay videos, combat highlights, exploration moments, and community style clips in one place without leaving the guides hub.",
+    "Watch fresh Where Winds Meet videos for 2026 updates, Version 1.7 Imperial Palace, Xbox gameplay, PvP tier lists, events, builds, and guide checks.",
   alternates: buildHreflangAlternates("/videos"),
   openGraph: {
-    title: "Where Winds Meet Gameplay Videos & Highlights",
+    title: "Where Winds Meet Videos - 2026 Updates, Tier Lists & Xbox Gameplay",
     description:
-      "Watch curated Where Winds Meet gameplay videos, combat highlights, exploration moments, and community style clips in one place without leaving the guides hub.",
+      "Fresh Where Winds Meet videos for Version 1.7, Xbox gameplay, PvP tier lists, Imperial Palace events, builds, and update checks.",
     url: `${baseUrl}/videos`,
   },
   twitter: {
-    title: "Where Winds Meet Gameplay Videos & Highlights",
+    title: "Where Winds Meet Videos - 2026 Updates, Tier Lists & Xbox Gameplay",
     description:
-      "Watch curated Where Winds Meet gameplay videos, combat highlights, exploration moments, and community style clips in one place without leaving the guides hub.",
+      "Fresh Where Winds Meet videos for Version 1.7, Xbox gameplay, PvP tier lists, Imperial Palace events, builds, and update checks.",
   },
 };
 
@@ -56,7 +56,7 @@ export default function VideosPage() {
       name: video.title,
       description: video.description,
       thumbnailUrl: `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`,
-      uploadDate: "2024-01-01",
+      uploadDate: video.publishedAt,
       embedUrl: `https://www.youtube-nocookie.com/embed/${video.id}`,
       contentUrl: `https://www.youtube.com/watch?v=${video.id}`,
     })),
@@ -82,34 +82,30 @@ export default function VideosPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Watch Where Winds Meet gameplay videos and highlights.
+            Watch fresh Where Winds Meet videos, updates, tier lists, and Xbox gameplay.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            This page gathers hand-picked Where Winds Meet videos in one quiet
-            place so you can see how builds, tier list picks, and exploration
-            routes actually feel in motion. Instead of bouncing out to another
-            platform, you can stay inside the guides hub while watching gameplay
-            that connects directly to the articles you are reading.
+            This page gathers recently refreshed Where Winds Meet videos in one quiet
+            place: Version 1.7 Imperial Palace coverage, Xbox launch gameplay, PvP
+            tier lists, event guides, build showcases, and returner-friendly update
+            checks.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Scroll through the playlist below to watch multiple perspectives on
-            Where Winds Meet in a single visit. Combat showcases, exploration
-            clips, boss runs, and community style videos are all embedded here
-            so you can hit play and keep browsing guides without losing your
-            place.
+            It is built for broad searches like where winds meet and where the winds
+            meet, then nudges visitors into the site&apos;s codes, maps, tier lists,
+            builds, and patch-note pages after they see what is current.
           </p>
         </div>
       </section>
 
       <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          All curated Where Winds Meet videos.
+          Fresh curated Where Winds Meet videos.
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Each card embeds a different Where Winds Meet video directly on this
-          page. You can move down the list at your own pace, pausing or
-          replaying clips that connect with the builds, tier lists, and guides
-          you are exploring elsewhere on the site.
+          Each card embeds a recent or update-relevant Where Winds Meet video directly
+          on this page. Use them as freshness support for Version 1.7, Xbox launch,
+          PvP tier lists, Imperial Palace events, and build research.
         </p>
         <div className="grid gap-6 md:grid-cols-2">
           {featuredVideos.map((video) => (
@@ -132,6 +128,9 @@ export default function VideosPage() {
               </div>
               <p className="text-sm font-medium text-slate-100">
                 {video.title}
+              </p>
+              <p className="text-[11px] font-semibold uppercase tracking-wide text-emerald-300">
+                Refreshed pick - {video.publishedAt}
               </p>
               <p className="text-xs leading-relaxed text-slate-300">
                 {video.description}

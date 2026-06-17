@@ -2,62 +2,45 @@ export type FeaturedVideo = {
   id: string;
   title: string;
   description: string;
+  publishedAt: string;
 };
 
-// Update this list with real YouTube video IDs when available.
+// User-curated video set for broad "where winds meet" searches.
+// Keep the list short so every embed has a clear reason to be on the videos page.
 export const featuredVideos: FeaturedVideo[] = [
   {
-    id: "rcbFUMjrIW4",
-    title: "Where Winds Meet gameplay highlight I",
+    id: "S7u9JuVHIyM",
+    title: "Now's a Great Time to Jump into Where Winds Meet (Huge Updates)",
     description:
-      "A curated Where Winds Meet gameplay highlight focused on overall pacing, exploration, and combat flow that pairs well with the beginner friendly guides.",
+      "Returner-friendly overview tied to the current update cycle, useful for broad searches like where winds meet, where the winds meet, and whether the game is worth starting now.",
+    publishedAt: "2026-06-10",
   },
   {
-    id: "OkISCNb-E9U",
-    title: "Where Winds Meet gameplay highlight II",
+    id: "5_FI471ah5A",
+    title: "Where Winds Meet - Hidden Mountain - Official Announce Trailer",
     description:
-      "Another slice of Where Winds Meet gameplay that emphasizes how moment to moment action, camera work, and encounter design feel during typical sessions.",
+      "Official Xbox Games Showcase 2026 trailer for the Hidden Mountain expansion, useful for roadmap, Xbox, and upcoming update searches.",
+    publishedAt: "2026-06-08",
   },
   {
-    id: "Yy_uyzdAxc4",
-    title: "Where Winds Meet combat showcase I",
+    id: "Dmp0G0JFPGA",
+    title: "This Where Winds Meet Update Is WILD (HUGE New Map!)",
     description:
-      "A Where Winds Meet combat focused clip that helps illustrate how different weapons, paths, and builds can change your experience in battles.",
+      "Recent creator coverage of the new map and Imperial Palace update, matching users who want to see whether the latest Where Winds Meet content is worth returning for.",
+    publishedAt: "2026-05-28",
   },
   {
-    id: "Bh9iAGnsMxc",
-    title: "Where Winds Meet combat showcase II",
+    id: "0xhVPMCk5H0",
+    title: "Where Winds Meet Had A HUGE Expansion",
     description:
-      "Additional Where Winds Meet combat footage that complements the tier list and builds pages by showing how strong setups handle pressure.",
+      "Long-form expansion impressions from a high-recognition MMO creator, useful for players comparing major updates and deciding whether to come back.",
+    publishedAt: "2026-04-02",
   },
   {
-    id: "ez5BEvGGQio",
-    title: "Where Winds Meet exploration & world",
+    id: "ozHJ-Pd_mBo",
+    title: "Where Winds Meet",
     description:
-      "A Where Winds Meet video that highlights exploration, traversal, and the feel of wandering Jianghu between story beats and major encounters.",
-  },
-  {
-    id: "3CObY80jK68",
-    title: "Where Winds Meet boss and challenge run",
-    description:
-      "Footage centered on challenging encounters in Where Winds Meet, useful context for players reviewing tier lists and late game builds.",
-  },
-  {
-    id: "ImGcZ7vtI_g",
-    title: "Where Winds Meet Feng Ruzhi guide (Legend/Abyss) – Silk Ball mechanic",
-    description:
-      "A focused Feng Ruzhi boss guide showing the Silk Ball steal fail condition, safe punish windows, and how clean runs manage pressure on high difficulty.",
-  },
-  {
-    id: "dlisDRSIBME",
-    title: "Where Winds Meet cinematic moments",
-    description:
-      "A video that draws attention to cinematic moments in Where Winds Meet, tying the visual storytelling to the feel of different playstyles.",
-  },
-  {
-    id: "sAKW3u3JDC4",
-    title: "Where Winds Meet community style showcase",
-    description:
-      "A Where Winds Meet clip that focuses on style, customization, and expression, connecting nicely with collectors and photo mode enjoyers.",
+      "Broad-audience commentary video with strong recognition value for general Where Winds Meet discovery traffic and mainstream curiosity.",
+    publishedAt: "2025-12-01",
   },
 ];

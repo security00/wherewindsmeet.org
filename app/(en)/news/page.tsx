@@ -259,6 +259,39 @@ export default function NewsPage() {
           </div>
 
           <div
+            id="hidden-mountain-watch"
+            className="rounded-2xl border border-violet-400/40 bg-violet-500/10 p-4 text-sm text-violet-50 shadow-inner shadow-violet-950/40"
+          >
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-violet-200">Roadmap video watch</p>
+                <h2 className="mt-1 text-xl font-bold text-slate-50">
+                  Hidden Mountain and fresh Where Winds Meet videos.
+                </h2>
+              </div>
+              <span className="rounded-full bg-violet-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-violet-100">
+                Xbox Showcase 2026
+              </span>
+            </div>
+            <p className="mt-3 leading-6 text-violet-50/90">
+              Hidden Mountain is now a roadmap watch item after the Xbox Games Showcase trailer. Treat it as upcoming
+              expansion interest until the official game-site news page publishes deeper details, then update guides,
+              tier lists, map pages, and platform notes if the new area changes player routes.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2 text-xs">
+              <Link href="/videos" className="rounded-full border border-violet-300/60 px-3 py-1 font-semibold text-violet-50 hover:border-violet-200">
+                Watch fresh Where Winds Meet videos
+              </Link>
+              <Link href="/guides/tier-list#what-changed" className="rounded-full border border-violet-300/60 px-3 py-1 font-semibold text-violet-50 hover:border-violet-200">
+                Tier list freshness notes
+              </Link>
+              <Link href="/tools/interactive-map" className="rounded-full border border-violet-300/60 px-3 py-1 font-semibold text-violet-50 hover:border-violet-200">
+                Map route checks
+              </Link>
+            </div>
+          </div>
+
+          <div
             id="roadmap"
             className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4 text-sm text-slate-100 shadow-inner shadow-slate-900/40"
           >

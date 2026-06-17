@@ -10,12 +10,12 @@ const mapgenieUrl = "https://mapgenie.io/where-winds-meet/maps/world";
 const sixFastUrl = "https://yysls-map.6fast.com/yysls/maps/qinghe?lang=en";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Interactive Map - Official Map, CN Map & Boss Locations",
+  title: "Where Winds Meet Interactive Map: Bosses, NPCs, Chests & CN Map",
   description:
-    "Use a Where Winds Meet interactive map to find official map pins, CN map routes, NPCs, bosses, chests, oddities, teleport points, collectibles, and farming routes.",
+    "Open a Where Winds Meet interactive map for bosses, NPCs, chests, oddities, collectibles, teleport points, official map pins, CN map routes, and MapGenie.",
   alternates: buildHreflangAlternates("/tools/interactive-map"),
   openGraph: {
-    title: "Where Winds Meet Interactive Map - Official Map, CN Map & Boss Locations",
+    title: "Where Winds Meet Interactive Map: Bosses, NPCs, Chests & CN Map",
     description:
       "Choose the official Where Winds Meet map, an English MapGenie view, or the 6Fast CN map for bosses, NPCs, chests, oddities, and route planning.",
     url: pageUrl,
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Where Winds Meet Interactive Map - Official Map, CN Map & Boss Locations",
+    title: "Where Winds Meet Interactive Map: Bosses, NPCs, Chests & CN Map",
     description:
       "Official map, CN map alternative, MapGenie, bosses, NPCs, chests, oddities, and farming routes.",
   },
@@ -51,6 +51,24 @@ const mapChoiceCards = [
       "Good for an English-first interface when you need chests, NPCs, teleport points, and collectible route planning.",
     href: mapgenieUrl,
     label: "Open MapGenie",
+  },
+];
+
+const mapComparisonRows = [
+  {
+    map: "Official map",
+    bestFor: "Official pins, broad world reference, and safest first check",
+    watchFor: "May be lighter on route notes or community comments",
+  },
+  {
+    map: "CN map",
+    bestFor: "Dense route references, alternate pins, Qinghe / Kaifeng cross-checking",
+    watchFor: "Names can differ from global English terminology",
+  },
+  {
+    map: "MapGenie",
+    bestFor: "English labels, chests, NPCs, teleport points, and checklist planning",
+    watchFor: "Third-party coverage can lag behind new patches",
   },
 ];
 
@@ -149,6 +167,26 @@ export default function InteractiveMapPage() {
               <span className="mt-3 inline-flex text-xs font-semibold text-emerald-200">{card.label}</span>
             </a>
           ))}
+        </div>
+        <div className="mt-6 overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/75">
+          <table className="w-full text-left text-sm">
+            <thead className="bg-slate-900/90 text-xs uppercase tracking-wide text-slate-400">
+              <tr>
+                <th className="px-4 py-3">Map</th>
+                <th className="px-4 py-3">Best for</th>
+                <th className="px-4 py-3">Watch for</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-800 text-slate-200">
+              {mapComparisonRows.map((row) => (
+                <tr key={row.map}>
+                  <td className="px-4 py-3 font-semibold text-slate-50">{row.map}</td>
+                  <td className="px-4 py-3 leading-6">{row.bestFor}</td>
+                  <td className="px-4 py-3 leading-6 text-slate-300">{row.watchFor}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </section>
 

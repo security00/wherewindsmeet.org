@@ -39,7 +39,7 @@ const content: Record<ContentLanguage, HomeContent> = {
     eyebrow: "Main Where Winds Meet hub",
     h1: "Where Winds Meet",
     subtitle:
-      "The updated Where Winds Meet guide hub for the open-world wuxia RPG: Version 1.7, The Imperial Palace, codes, patch notes, tier lists, builds, bosses, interactive map routes, and platform help for Xbox, PC, PS5, iOS, and Android players.",
+      "The updated Where Winds Meet guide hub for the open-world wuxia RPG, also searched as Where the Winds Meet: Version 1.7, The Imperial Palace, Hidden Mountain watch, codes, patch notes, tier lists, builds, bosses, interactive map routes, videos, and platform help for Xbox, PC, PS5, iOS, and Android players.",
     updateLabel: "Version 1.7 / The Imperial Palace Part 2",
     quickFacts: ["Free-to-play wuxia action RPG", "Xbox, PC, PS5, iOS, and Android", "Guides updated for Version 1.7"],
     ctas: [
@@ -49,12 +49,13 @@ const content: Record<ContentLanguage, HomeContent> = {
       { href: "/guides/new-players", label: "Beginner Guide" },
       { href: "/guides/tier-list", label: "Tier List" },
       { href: "/tools/interactive-map", label: "Interactive Map" },
+      { href: "/videos", label: "2026 Videos" },
     ],
     entityCards: [
       {
         title: "What is Where Winds Meet?",
         body:
-          "Where Winds Meet is a free-to-play open-world wuxia action RPG set in ancient China. This hub gives new players a plain-English starting point before they choose weapons, factions, bosses, quests, or daily routes.",
+          "Where Winds Meet is a free-to-play open-world wuxia action RPG set in ancient China. This hub gives new players a plain-English starting point for Where Winds Meet before they choose weapons, factions, bosses, quests, or daily routes.",
         links: [
           { href: "/guides/new-players", label: "Start as a new player" },
           { href: "/guides/weapons", label: "Compare weapons" },
@@ -64,7 +65,7 @@ const content: Record<ContentLanguage, HomeContent> = {
       {
         title: "Latest update",
         body:
-          "The current content pass tracks Version 1.7, The Imperial Palace, May patch notes, Path Balance changes, Palace-era code reports, and the newest boss, dungeon, and arena-rank questions.",
+          "The current Where Winds Meet content pass tracks Version 1.7, The Imperial Palace, Hidden Mountain watch, Xbox launch notes, Path Balance changes, Palace-era code reports, and the newest boss, dungeon, and arena-rank questions.",
         links: [
           { href: "/news#next-update", label: "News watch" },
           { href: "/guides/patch-notes#upcoming-nerfs", label: "Balance watch" },
@@ -79,6 +80,16 @@ const content: Record<ContentLanguage, HomeContent> = {
           { href: "/guides/tier-list", label: "Tier list" },
           { href: "/guides/builds", label: "Builds" },
           { href: "/guides/bosses", label: "Bosses" },
+        ],
+      },
+      {
+        title: "Watch current gameplay",
+        body:
+          "Use the Where Winds Meet video page when you want to see recent 2026 update coverage, Hidden Mountain trailers, Imperial Palace impressions, and broad creator reactions before reading deeper guides.",
+        links: [
+          { href: "/videos", label: "Fresh videos" },
+          { href: "/news#hidden-mountain-watch", label: "Hidden Mountain watch" },
+          { href: "/guides/platforms", label: "Xbox and platforms" },
         ],
       },
     ],
@@ -99,7 +110,7 @@ const content: Record<ContentLanguage, HomeContent> = {
       {
         question: "What is the latest Where Winds Meet update?",
         answer:
-          "This hub is checked for Version 1.7 / The Imperial Palace, including recent patch notes, Path Balance changes, Palace activity guides, boss and dungeon updates, and code reports.",
+          "This Where Winds Meet hub is checked for Version 1.7 / The Imperial Palace, the June Xbox launch, Hidden Mountain watch, recent patch notes, Path Balance changes, Palace activity guides, boss and dungeon updates, and code reports.",
       },
       {
         question: "Where can I find Where Winds Meet codes?",
@@ -115,6 +126,11 @@ const content: Record<ContentLanguage, HomeContent> = {
         question: "Where should new Where Winds Meet players start?",
         answer:
           "New players should start with the beginner guide, interactive map, codes page, weapons overview, tier list, and current patch notes before following older quest or boss guides.",
+      },
+      {
+        question: "Why do some people search Where the Winds Meet?",
+        answer:
+          "Where the Winds Meet is a common search variation for Where Winds Meet. This page uses both phrases naturally so players who remember the title slightly differently still land on the right Where Winds Meet guides, videos, news, and tools.",
       },
     ],
   },

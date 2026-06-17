@@ -6,20 +6,20 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 const baseUrl = "https://wherewindsmeet.org";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Videos & Highlights (DE)",
+  title: "Where Winds Meet Videos - 2026 Updates, Tierlisten & Xbox",
   description:
-    "Kuratiertes Where Winds Meet Video-Archiv: Builds in Aktion, Boss-Runs, Erkundung und Community-Style – ohne den Hub zu verlassen.",
+    "Frische Where Winds Meet Videos fuer Version 1.7, Imperial Palace, Xbox Gameplay, PvP Tierlisten, Events, Builds und Guide-Checks.",
   alternates: buildHreflangAlternates("/videos", { canonicalLanguage: "de" }),
   openGraph: {
-    title: "Where Winds Meet Videos & Highlights (DE)",
+    title: "Where Winds Meet Videos - 2026 Updates, Tierlisten & Xbox",
     description:
-      "Ausgewählte Where Winds Meet Videos: Kampf-Highlights, Erkundung, Boss-Runs und Community-Clips – eingebettet im Guide-Hub.",
+      "Frische Where Winds Meet Videos fuer Version 1.7, Imperial Palace, Xbox Gameplay, PvP Tierlisten, Events, Builds und Guide-Checks.",
     url: `${baseUrl}/de/videos`,
   },
   twitter: {
-    title: "Where Winds Meet Videos & Highlights (DE)",
+    title: "Where Winds Meet Videos - 2026 Updates, Tierlisten & Xbox",
     description:
-      "Schau Builds, Tierlisten-Picks und Routen in Bewegung, ohne den Hub zu verlassen.",
+      "Frische Where Winds Meet Videos fuer Version 1.7, Imperial Palace, Xbox Gameplay, PvP Tierlisten, Events, Builds und Guide-Checks.",
   },
 };
 
@@ -46,7 +46,7 @@ export default function VideosPage() {
       name: video.title,
       description: video.description,
       thumbnailUrl: `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`,
-      uploadDate: "2024-01-01",
+      uploadDate: video.publishedAt,
       embedUrl: `https://www.youtube-nocookie.com/embed/${video.id}`,
       contentUrl: `https://www.youtube.com/watch?v=${video.id}`,
     })),
@@ -62,7 +62,7 @@ export default function VideosPage() {
         <div className="pointer-events-none absolute inset-0">
           <CdnImage
             src="/background/bg4.webp"
-            alt="Where Winds Meet Gameplay Hintergrund"
+            alt="Where Winds Meet video background"
             fill
             className="object-cover opacity-35"
             priority={false}
@@ -72,23 +72,25 @@ export default function VideosPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Sieh dir Where Winds Meet Gameplay & Highlights an.
+            Frische Where Winds Meet Videos, Updates, Tierlisten und Xbox Gameplay.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Eine ruhige Sammlung handverlesener Videos: So fühlen sich Builds, Tierlisten-Picks und Erkundungsrouten in Bewegung an – ohne den Hub zu verlassen.
+            Diese Auswahl wurde fuer Version 1.7 aktualisiert: Imperial Palace, Xbox Launch, PvP Tierlisten,
+            Event-Guides, Builds und Rueckkehrer-Checks.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Blättere durch die Playlist und sieh Combat-Showcases, Erkundungs-Clips, Boss-Runs und Community-Style-Videos, während du weiter in den Guides liest.
+            Sie hilft bei breiten Suchen wie where winds meet und where the winds meet, bevor Besucher zu Codes,
+            Karte, Tierlisten und Patch Notes weitergehen.
           </p>
         </div>
       </section>
 
       <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          Alle kuratierten Where Winds Meet Videos
+          Frisch kuratierte Where Winds Meet Videos
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Jede Karte bettet ein Video direkt hier ein. Spiele sie nacheinander ab und bleib im Hub, während du Builds, Tierlisten und Guides parallel offen hast.
+          Jede Karte bettet ein aktuelles oder update-relevantes Video direkt hier ein.
         </p>
         <div className="grid gap-6 md:grid-cols-2">
           {featuredVideos.map((video) => (
@@ -109,12 +111,11 @@ export default function VideosPage() {
                   />
                 </div>
               </div>
-              <p className="text-sm font-medium text-slate-100">
-                {video.title}
+              <p className="text-sm font-medium text-slate-100">{video.title}</p>
+              <p className="text-[11px] font-semibold uppercase tracking-wide text-emerald-300">
+                Refreshed pick - {video.publishedAt}
               </p>
-              <p className="text-xs leading-relaxed text-slate-300">
-                {video.description}
-              </p>
+              <p className="text-xs leading-relaxed text-slate-300">{video.description}</p>
             </article>
           ))}
         </div>

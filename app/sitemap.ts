@@ -15,6 +15,7 @@ type Entry = {
 };
 
 const newsLastModified = new Date(latestNewsDate);
+const videosLastModified = new Date("2026-06-17");
 
 const staticEntries: Entry[] = [
   { path: "/", changeFrequency: "daily", priority: 1 },
@@ -66,7 +67,7 @@ const staticEntries: Entry[] = [
   { path: "/guides/desktop-widget", changeFrequency: "weekly", priority: 0.78 },
   { path: "/guides/xiangqi", changeFrequency: "weekly", priority: 0.7 },
   { path: "/news", changeFrequency: "daily", priority: 0.7, lastModified: newsLastModified },
-  { path: "/videos", changeFrequency: "weekly", priority: 0.65 },
+  { path: "/videos", changeFrequency: "weekly", priority: 0.65, lastModified: videosLastModified },
   { path: "/privacy", changeFrequency: "yearly", priority: 0.4 },
   { path: "/terms", changeFrequency: "yearly", priority: 0.4 },
 ];
@@ -128,7 +129,7 @@ const vnEntries: Entry[] = [
   { path: "/vn/news", changeFrequency: "daily", priority: 0.6, lastModified: newsLastModified },
   { path: "/vn/privacy", changeFrequency: "yearly", priority: 0.35 },
   { path: "/vn/terms", changeFrequency: "yearly", priority: 0.35 },
-  { path: "/vn/videos", changeFrequency: "weekly", priority: 0.55 },
+  { path: "/vn/videos", changeFrequency: "weekly", priority: 0.55, lastModified: videosLastModified },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

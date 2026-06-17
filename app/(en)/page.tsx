@@ -9,14 +9,14 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 const freshness = getContentFreshness("/");
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Guide Hub - Codes, Map, Tier List & Updates",
+  title: "Where Winds Meet Guide 2026 - Codes, Map, Tier List & Updates",
   description:
-    "Where Winds Meet guide hub for codes, interactive map, tier list, builds, platforms, latest updates, patch notes, bosses, and beginner routes.",
+    "Where Winds Meet guide hub for 2026: codes, interactive map, tier list, builds, platforms, latest updates, patch notes, bosses, videos, and beginner routes.",
   alternates: buildHreflangAlternates("/"),
   openGraph: {
-    title: "Where Winds Meet Guide Hub - Codes, Map, Tier List & Updates",
+    title: "Where Winds Meet Guide 2026 - Codes, Map, Tier List & Updates",
     description:
-      "Where Winds Meet guide hub for codes, interactive map, tier list, builds, platforms, latest updates, patch notes, bosses, and beginner routes.",
+      "Where Winds Meet guide hub for 2026: codes, interactive map, tier list, builds, platforms, latest updates, patch notes, bosses, videos, and beginner routes.",
     url: "https://wherewindsmeet.org/",
     images: [
       {
@@ -49,6 +49,7 @@ export default function Home() {
             <p className="mt-3 text-sm leading-relaxed text-slate-300">
               Very specific quest pages can rank but stay quiet when demand fades. These hubs target the larger searches:
               download and platforms, roadmap and upcoming updates, codes, tier lists, builds, map routes, and beginner setup.
+              Use the fresh Where Winds Meet videos page when you want to see current update footage before choosing a guide.
             </p>
           </div>
           <Link
@@ -58,7 +59,7 @@ export default function Home() {
             Download / platform guide
           </Link>
         </div>
-        <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
           {[
             {
               title: "Download & platforms",
@@ -79,6 +80,11 @@ export default function Home() {
               title: "PVE / PVP tier list",
               href: "/guides/tier-list#pve-pvp-tier-list",
               desc: "Broad tier-list entry for PVE, PVP, arena ranks, weapons, builds, and Path Balance checks.",
+            },
+            {
+              title: "Fresh 2026 videos",
+              href: "/videos",
+              desc: "Current Where Winds Meet videos for Hidden Mountain, Imperial Palace, Xbox, update reactions, and creator coverage.",
             },
           ].map((item) => (
             <Link
@@ -108,9 +114,9 @@ export default function Home() {
               and free exploration.
             </p>
             <p>
-              This refresh is checked for {freshness?.gameVersion ?? "Version 1.7"} and collects
-              guides, builds, latest patch notes, and reported Palace-era codes to help returning
-              players catch up from older Hexi, Liangzhou, and Qinchuan assumptions.
+              This Where Winds Meet refresh is checked for {freshness?.gameVersion ?? "Version 1.7"} and collects
+              guides, builds, latest patch notes, fresh videos, and reported Palace-era codes to help returning
+              players catch up from older Hexi, Liangzhou, and Qinchuan assumptions without guessing from outdated pages.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
               <Link
@@ -148,9 +154,9 @@ export default function Home() {
           </div>
 
           <LiteYouTubeEmbed
-            videoId="2cxhuAwDFl4"
-            start={5}
-            title="Where Winds Meet - Global Launch Preview Stream"
+            videoId="S7u9JuVHIyM"
+            start={0}
+            title="Now's a Great Time to Jump into Where Winds Meet"
             poster="/background/bg4.webp"
           />
         </div>
