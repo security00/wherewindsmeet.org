@@ -4,9 +4,9 @@ import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "WWM Weapon Tier List – Best Where Winds Meet Weapons",
+  title: "WWM Weapon Tier List - Best Where Winds Meet Weapons",
   description:
-    "WWM weapon tier list for Where Winds Meet: best weapons ranked for PVE, PVP, arena climbing, beginners, and endgame builds after the latest updates.",
+    "WWM weapon tier list for Where Winds Meet: best weapons ranked for PVE, PVP, arena climbing, beginners, Version 1.7 builds, and June 2026 meta checks.",
   alternates: buildHreflangAlternates("/guides/weapons/tier-list"),
 };
 
@@ -34,6 +34,34 @@ const weaponMetaChecks = [
     detail:
       "A weapon swap only works if your stat plan and second weapon support it. Check builds before spending materials.",
     href: "/guides/builds#post-patch-build-check",
+  },
+];
+
+const weaponFreshPicks = [
+  {
+    title: "Best PvP weapons",
+    picks: "Rope Dart, Dual Blades",
+    note:
+      "Start here if you searched WWM weapon tier list from arena or duel results. Mobility, engage control, and burst windows matter most.",
+  },
+  {
+    title: "Best safe PvE weapons",
+    picks: "Spear, Mo Blade",
+    note:
+      "These are the easiest picks to recommend for bosses, story cleanup, and players who want power without constant weapon swapping.",
+  },
+  {
+    title: "Best beginner weapons",
+    picks: "Spear, Sword, Umbrella",
+    note:
+      "Use these when learning parry timing, spacing, and survival. They are not always the ceiling, but they reduce early mistakes.",
+  },
+  {
+    title: "Best page to compare all ranks",
+    picks: "Main tier list",
+    note:
+      "Use the broader tier list when you need paths, builds, PvP notes, and weapons in one ranking view.",
+    href: "/guides/tier-list",
   },
 ];
 
@@ -168,7 +196,7 @@ export default function WeaponTierListPage() {
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      name: "WWM Weapon Tier List – Best Where Winds Meet Weapons",
+      name: "WWM Weapon Tier List - Best Where Winds Meet Weapons",
       description: metadata.description,
       url: "https://wherewindsmeet.org/guides/weapons/tier-list",
     },
@@ -205,7 +233,7 @@ export default function WeaponTierListPage() {
 
         <div className="relative">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-300">
-            WWM weapon tier list · PVE · PVP · Arena
+            WWM weapon tier list / PVE / PVP / Arena
           </p>
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
             WWM Weapon Tier List: Best Where Winds Meet Weapons Ranked
@@ -256,15 +284,50 @@ export default function WeaponTierListPage() {
               href="/guides/pvp-tier-list"
               className="inline-flex items-center rounded-full border border-red-400/40 bg-red-500/10 px-4 py-2 text-sm font-semibold text-red-100 transition hover:border-red-300/70"
             >
-              PVP tier list & arena ranks →
+              PVP tier list & arena ranks
             </Link>
             <Link
               href="/guides/tier-list"
               className="inline-flex items-center rounded-full border border-emerald-400/40 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-100 transition hover:border-emerald-300/70"
             >
-              Full WWM tier list →
+              Full WWM tier list
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section id="wwm-weapon-tier-list" className="space-y-5 rounded-3xl border border-emerald-400/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/30">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Search intent: wwm weapon tier list</p>
+          <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+            WWM Weapon Tier List June 2026: PvE, PvP, and arena picks.
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+            The short answer for the current WWM weapon tier list is simple: Rope Dart and Dual Blades are the
+            most aggressive PvP checks, Spear and Mo Blade are the safest PvE investments, and Umbrella remains
+            useful when you need defensive counterplay. Use the cards below before you spend reset materials.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {weaponFreshPicks.map((item) => {
+            const content = (
+              <>
+                <h3 className="text-sm font-semibold text-slate-50">{item.title}</h3>
+                <p className="mt-2 text-sm font-semibold text-emerald-100">{item.picks}</p>
+                <p className="mt-2 text-xs leading-5 text-slate-300">{item.note}</p>
+              </>
+            );
+
+            return item.href ? (
+              <Link key={item.title} href={item.href} className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4 transition hover:border-emerald-300/60">
+                {content}
+              </Link>
+            ) : (
+              <div key={item.title} className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4">
+                {content}
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -465,7 +528,7 @@ export default function WeaponTierListPage() {
                 {tier.weapons.map((weapon) => (
                   <li key={weapon.name}>
                     <span className="font-semibold">{weapon.name}</span>
-                    <span className="text-slate-400"> – {weapon.note}</span>
+                    <span className="text-slate-400"> - {weapon.note}</span>
                   </li>
                 ))}
               </ul>

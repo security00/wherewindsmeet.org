@@ -182,6 +182,27 @@ const searchIntentAnswers = [
   },
 ];
 
+const npcLongTailFocus = [
+  {
+    name: "Zhou Yihang",
+    query: "zhou yihang where winds meet",
+    region: "Moonveil Mountain",
+    area: "Palace of Annals",
+    route:
+      "Look around the docks on the lower-left side of the Stillwind Slope Marker. If the pin feels missing, sweep the dock edge before moving inland.",
+    image: "https://static.wherewindsmeet.org/guides/npc-list/zhou-yihang.png",
+  },
+  {
+    name: "Feng Rusong",
+    query: "feng rusong where winds meet",
+    region: "Sundara Land",
+    area: "Mercyheart Monastery",
+    route:
+      "Go to the entrance of Divinecraft Dungeon near Mercyheart Monastery. Check the doorway and nearby path before restarting the Old Friends scan.",
+    image: "https://static.wherewindsmeet.org/guides/npc-list/feng-rusong.png",
+  },
+];
+
 const npcFaqs = [
   {
     q: "Where do I find NPCs in Where Winds Meet?",
@@ -202,6 +223,10 @@ const npcFaqs = [
   {
     q: "Are Qi Sheng and Yao Yaoyao Old Friends NPCs?",
     a: "No. They appear in the world and provide services, but they do not open Old Friends or AI Chat. They are listed separately as non-interactable NPCs.",
+  },
+  {
+    q: "Where are Zhou Yihang and Feng Rusong?",
+    a: "Zhou Yihang is at Palace of Annals in Moonveil Mountain near the docks by Stillwind Slope. Feng Rusong is near the Divinecraft Dungeon entrance at Mercyheart Monastery in Sundara Land.",
   },
 ];
 
@@ -389,7 +414,7 @@ export default function NpcListPage() {
       name: metadata.title,
       description: metadata.description,
       url: `${baseUrl}/guides/npc-list`,
-      dateModified: "2026-06-03",
+      dateModified: "2026-06-24",
     },
     {
       "@context": "https://schema.org",
@@ -482,6 +507,44 @@ export default function NpcListPage() {
             <div key={item.title} className="rounded-2xl border border-emerald-400/30 bg-slate-950/60 p-4">
               <h3 className="text-sm font-semibold text-emerald-100">{item.title}</h3>
               <p className="mt-2 text-xs leading-relaxed text-slate-300">{item.summary}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="npc-long-tail-answers" className="space-y-5 rounded-3xl border border-cyan-400/30 bg-cyan-500/10 p-6 shadow-lg shadow-cyan-950/30">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wide text-cyan-200">
+            Search intent: NPC name locations
+          </p>
+          <h2 className="text-2xl font-bold text-slate-50">
+            Zhou Yihang and Feng Rusong locations in Where Winds Meet.
+          </h2>
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-slate-300">
+            GSC is starting to show individual NPC name searches. These two answers keep the exact long-tail terms
+            near the top of the NPC guide while still linking back into the full Old Friends list and map flow.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2">
+          {npcLongTailFocus.map((npc) => (
+            <div key={npc.name} className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4 shadow-md">
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <h3 className="text-lg font-semibold text-slate-50">{npc.name}</h3>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-cyan-200">{npc.query}</p>
+                </div>
+                <span className="rounded-full border border-cyan-300/40 px-2 py-0.5 text-[11px] font-semibold text-cyan-100">
+                  Old Friend
+                </span>
+              </div>
+              <div className="mt-3 grid gap-3 sm:grid-cols-[0.42fr_0.58fr]">
+                <NpcImagePreview src={npc.image} alt={`${npc.name} NPC portrait in Where Winds Meet`} thumbnailClassName="h-32" />
+                <div className="space-y-2 text-xs leading-relaxed text-slate-300">
+                  <p><span className="font-semibold text-emerald-200">Region:</span> {npc.region}</p>
+                  <p><span className="font-semibold text-emerald-200">Area:</span> {npc.area}</p>
+                  <p><span className="font-semibold text-emerald-200">Route:</span> {npc.route}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>

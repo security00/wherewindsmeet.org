@@ -8,7 +8,7 @@ import ZoomableGuideImage from "./ZoomableGuideImage";
 const baseUrl = "https://wherewindsmeet.org";
 const slug = "imperial-decree";
 const pageUrl = `${baseUrl}/guides/${slug}`;
-const updated = "2026-06-17";
+const updated = "2026-06-24";
 const cdnBaseUrl = "https://static.wherewindsmeet.org";
 const imageBaseUrl = `${cdnBaseUrl}/guides/${slug}`;
 
@@ -165,6 +165,39 @@ const financeAnswers = [
   },
 ];
 
+const penalLawAnswers = [
+  {
+    prompt: "General Penal Law rule",
+    answer:
+      "Choose fair, evidence-based rulings: investigate before punishment, avoid collective blame, protect civilians, and keep penalties proportional.",
+  },
+  {
+    prompt: "Unclear accusation",
+    answer:
+      "Ask for testimony and evidence before sentencing. Do not punish someone based only on rumor or pressure.",
+  },
+  {
+    prompt: "Minor offense or first mistake",
+    answer:
+      "Favor correction, restitution, or a measured penalty over harsh punishment when the damage is limited.",
+  },
+  {
+    prompt: "Official abuse or corruption",
+    answer:
+      "Investigate the official, protect the people affected, and do not shield rank or office from accountability.",
+  },
+  {
+    prompt: "Banditry or violent crime",
+    answer:
+      "Punish serious harm firmly, but separate ringleaders from coerced helpers before deciding the final sentence.",
+  },
+  {
+    prompt: "Emergency public order",
+    answer:
+      "Stabilize the people first, then handle legal responsibility with evidence instead of panic sentencing.",
+  },
+];
+
 const rewardRows = [
   { target: "A rating for 1 memorial", reward: "Exploration Points x20" },
   { target: "A rating for 3 memorials", reward: "Echo Jade x5" },
@@ -215,6 +248,11 @@ const faqs = [
     question: "What are the Farming Affairs answers in Imperial Decree?",
     answer:
       "For the Finance / Farming Affairs prompts, aim for practical public-welfare remarks: support the Jinming Pool night market, protect farmland, avoid austerity-only policy, restore fields and food supplies, deny reckless death vows, and reject unnecessary market-opening paperwork.",
+  },
+  {
+    question: "How do I get S rank in Imperial Decree Penal Law?",
+    answer:
+      "For Penal Law prompts, pick a fair-ruling answer: investigate accusations, match penalties to evidence, protect civilians, punish official abuse, and avoid collective or emotional sentencing.",
   },
   {
     question: "Why are people searching for Imperial Decree now?",
@@ -328,6 +366,17 @@ export default function ImperialDecreeGuidePage() {
     },
     {
       "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: "Imperial Decree Penal Law answer notes",
+      itemListElement: penalLawAnswers.map((row, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: row.prompt,
+        description: row.answer,
+      })),
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: baseUrl },
@@ -369,6 +418,9 @@ export default function ImperialDecreeGuidePage() {
             <div className="mt-5 flex flex-wrap gap-2 text-xs">
               <Link href="#farming-affairs-answers" className="rounded-full border border-amber-300/60 px-3 py-1 font-semibold text-amber-100 hover:border-amber-200">
                 Farming Affairs answers
+              </Link>
+              <Link href="#penal-law-answers" className="rounded-full border border-amber-300/60 px-3 py-1 font-semibold text-amber-100 hover:border-amber-200">
+                Penal Law answers
               </Link>
               <Link href="#finance-answers" className="rounded-full border border-amber-300/60 px-3 py-1 font-semibold text-amber-100 hover:border-amber-200">
                 Finance S-rank table
@@ -415,7 +467,7 @@ export default function ImperialDecreeGuidePage() {
             Checked {updated}
           </span>
         </div>
-        <div className="grid gap-3 md:grid-cols-3">
+        <div className="grid gap-3 md:grid-cols-4">
           <Link href="#finance-answers" className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4 transition hover:border-amber-300/60">
             <h3 className="text-sm font-semibold text-slate-50">Finance S answers</h3>
             <p className="mt-2 text-xs leading-5 text-slate-300">
@@ -428,12 +480,47 @@ export default function ImperialDecreeGuidePage() {
               Land reclamation, waterwork, new rice, evidence checks, harvest, and refugee farming logic.
             </p>
           </Link>
+          <Link href="#penal-law-answers" className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4 transition hover:border-amber-300/60">
+            <h3 className="text-sm font-semibold text-slate-50">Penal Law answers</h3>
+            <p className="mt-2 text-xs leading-5 text-slate-300">
+              Fair-ruling logic for evidence, sentencing, corruption, and public-order prompts.
+            </p>
+          </Link>
           <Link href="#imperial-decree-walkthrough" className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4 transition hover:border-amber-300/60">
             <h3 className="text-sm font-semibold text-slate-50">Start location</h3>
             <p className="mt-2 text-xs leading-5 text-slate-300">
               Qu Chunqiu, Rear Garden, Inner Chambers, and the Palace scroll table route.
             </p>
           </Link>
+        </div>
+      </section>
+
+      <section id="penal-law-answers" className="rounded-3xl border border-red-400/30 bg-red-500/10 p-6 shadow-lg shadow-red-950/30">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-wide text-red-200">
+              Search intent: Imperial Decree Penal Law
+            </p>
+            <h2 className="mt-1 text-2xl font-bold text-slate-50">
+              Imperial Decree Penal Law answers in Where Winds Meet.
+            </h2>
+            <p className="mt-3 text-sm leading-6 text-slate-300">
+              Penal Law searches usually come from players who already rank around the top results but need the
+              missing legal-volume logic. Treat these as answer meanings: the game rewards balanced justice,
+              evidence, civilian protection, and proportional sentencing more than harsh or emotional rulings.
+            </p>
+          </div>
+          <span className="rounded-full border border-red-300/50 px-3 py-1 text-xs font-semibold text-red-100">
+            Updated {updated}
+          </span>
+        </div>
+        <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          {penalLawAnswers.map((row) => (
+            <div key={row.prompt} className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4">
+              <h3 className="text-sm font-semibold text-slate-50">{row.prompt}</h3>
+              <p className="mt-2 text-xs leading-5 text-slate-300">{row.answer}</p>
+            </div>
+          ))}
         </div>
       </section>
 

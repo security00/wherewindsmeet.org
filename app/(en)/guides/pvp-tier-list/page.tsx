@@ -60,6 +60,27 @@ const arenaRankChecks = [
   },
 ];
 
+const pvpRankRows = [
+  {
+    focus: "Arena climb / duel focus",
+    meaning:
+      "Use mobility, burst, and crowd control to force mistakes before the opponent can reset the fight.",
+    firstChecks: "Rope Dart, Dual Blades, Umbrella counters",
+  },
+  {
+    focus: "Safe PvP learning",
+    meaning:
+      "Pick weapons that recover after missed pressure and let you practice spacing without losing every trade.",
+    firstChecks: "Spear, Sword, Mo Blade",
+  },
+  {
+    focus: "Counter-pick setup",
+    meaning:
+      "When burst-heavy opponents dominate your rank band, add defensive tools and range checks before changing your whole build.",
+    firstChecks: "Umbrella, Fan control, weapon swaps",
+  },
+];
+
 export default function PVPTierListPage() {
   return (
     <article className="space-y-10 bg-ink-wash min-h-screen pb-20">
@@ -128,6 +149,50 @@ export default function PVPTierListPage() {
         </div>
       </section>
 
+      <section id="pvp-rank-list" className="space-y-5 rounded-3xl border border-orange-400/30 bg-orange-500/10 p-6 shadow-lg shadow-orange-950/30">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-wide text-orange-200">
+              Search intent: where winds meet pvp rank list
+            </p>
+            <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+              Where Winds Meet PvP Rank List and Arena Ranks.
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+              If you searched for where winds meet pvp rank list or where winds meet arena ranks, use this quick
+              matrix before reading the full weapon grid. The best climb setup is not always the highest damage
+              weapon; it is the weapon and build pair that wins your current rank band consistently.
+            </p>
+          </div>
+          <Link
+            href="/guides/weapons/tier-list#wwm-weapon-tier-list"
+            className="rounded-full border border-orange-300/50 bg-orange-500/10 px-3 py-1 text-xs font-semibold text-orange-100 hover:border-orange-200/80"
+          >
+            Weapon rank picks
+          </Link>
+        </div>
+        <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/80">
+          <table className="w-full text-left text-sm">
+            <thead className="bg-slate-900/90 text-xs uppercase tracking-wide text-slate-400">
+              <tr>
+                <th className="px-4 py-3">Rank goal</th>
+                <th className="px-4 py-3">What matters</th>
+                <th className="px-4 py-3">First checks</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-800 text-slate-200">
+              {pvpRankRows.map((row) => (
+                <tr key={row.focus}>
+                  <td className="px-4 py-3 font-semibold text-slate-50">{row.focus}</td>
+                  <td className="px-4 py-3 leading-6">{row.meaning}</td>
+                  <td className="px-4 py-3 leading-6 text-orange-100">{row.firstChecks}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       {/* Tier List Grid */}
       <section className="space-y-8">
         <div className="flex items-center justify-between border-b border-slate-800 pb-4">
@@ -192,7 +257,7 @@ export default function PVPTierListPage() {
                         </span>
                       </div>
                       <div className="absolute right-3 top-1/2 -translate-y-1/2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">
-                        <span className="text-slate-400">→</span>
+                        <span className="text-slate-400">View</span>
                       </div>
                     </Link>
                   ))}
@@ -232,7 +297,7 @@ export default function PVPTierListPage() {
             href="/tools/pvp-combos"
             className="inline-flex items-center justify-center rounded-full border border-emerald-500/40 bg-emerald-500/10 px-6 py-3 text-sm font-bold text-emerald-100 shadow-lg shadow-emerald-900/20 transition-all hover:border-emerald-400/70 hover:text-emerald-50 hover:scale-105"
           >
-            PVP combos tool →
+            PVP combos tool
           </Link>
         <Link
           href="/guides/builds"
