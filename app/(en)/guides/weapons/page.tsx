@@ -3,25 +3,57 @@ import CdnImage from "@/components/CdnImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import Link from "next/link";
 import { weapons } from "@/lib/weapons";
+import { getContentFreshness } from "@/lib/contentFreshness";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
+const freshness = getContentFreshness("/guides/weapons");
+
+const weaponIntentAnswers = [
+  {
+    title: "All weapons",
+    body: "Current roster: Dual Blades, Sword, Spear, Mo Blade, Fan, Umbrella, and Rope Dart. Use the cards below to compare role, tier, and full detail pages.",
+  },
+  {
+    title: "Weapon tier list",
+    body: "Use this page for weapon roles and play feel, then open the weapons tier list when you need direct S, A, and B tier ranking context.",
+  },
+  {
+    title: "Best first picks",
+    body: "Sword is the safest first weapon. Spear is the best early pick if you want more reach, cleaner spacing, and boss-friendly frontline control.",
+  },
+];
+
+const weaponFaqs = [
+  {
+    q: "How many weapons are in Where Winds Meet?",
+    a: "This guide tracks seven main weapons: Dual Blades, Sword, Spear, Mo Blade, Fan, Umbrella, and Rope Dart.",
+  },
+  {
+    q: "What is the best weapon for new players?",
+    a: "Sword is the safest first pick, while Spear is strong if you want more reach and easier spacing during bosses or packs.",
+  },
+  {
+    q: "Where is the Where Winds Meet weapon tier list?",
+    a: "Use the dedicated weapons tier list linked from this page for ranking context, then return here to compare roles, strengths, and play feel.",
+  },
+];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Weapons Guide – Overview & Roles",
+  title: "Where Winds Meet Weapons Guide - All Weapons, Roles & Tier Links",
   description:
-    "Where Winds Meet weapons guide covering every weapon with roles, official showcase art, and notes on how they connect to tier lists and builds.",
+    "All Where Winds Meet weapons in one guide: Spear, Sword, Dual Blades, Mo Blade, Fan, Umbrella, Rope Dart, roles, builds, tier-list links, and playstyle picks.",
   alternates: buildHreflangAlternates("/guides/weapons"),
   openGraph: {
-    title: "Where Winds Meet Weapons Guide – Overview & Roles",
+    title: "Where Winds Meet Weapons Guide - All Weapons, Roles & Tier Links",
     description:
-      "Where Winds Meet weapons guide covering every weapon with roles, official showcase art, and notes on how they connect to tier lists and builds.",
+      "All Where Winds Meet weapons in one guide: roles, builds, tier-list links, and playstyle picks.",
     url: `${baseUrl}/guides/weapons`,
   },
   twitter: {
-    title: "Where Winds Meet Weapons Guide – Overview & Roles",
+    title: "Where Winds Meet Weapons Guide - All Weapons, Roles & Tier Links",
     description:
-      "Where Winds Meet weapons guide covering every weapon with roles, official showcase art, and notes on how they connect to tier lists and builds.",
+      "Compare every Where Winds Meet weapon by role, build fit, and tier-list context.",
   },
 };
 
@@ -58,6 +90,18 @@ export default function WeaponsPage() {
         },
       ],
     },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: weaponFaqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.a,
+        },
+      })),
+    },
   ];
 
   return (
@@ -80,13 +124,11 @@ export default function WeaponsPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet <span className="text-ink-gold">Weapons Guide</span>
+            Where Winds Meet weapons guide: all weapons, roles, and build links.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            This weapons guide collects every current Where Winds Meet weapon in
-            one place. Instead of only listing raw damage or patch notes, it
-            focuses on how each weapon actually feels to play—its reach, rhythm,
-            and ideal matchups.
+            Updated {freshness?.lastChecked ?? "2026-06-24"} for{" "}
+            {freshness?.gameVersion ?? "Version 1.7"}: this guide collects every current Where Winds Meet weapon in one place. Use it to compare Spear, Sword, Dual Blades, Mo Blade, Fan, Umbrella, and Rope Dart by role, tier-list context, build fit, and how each weapon actually feels to play.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             If you need a quick ranking snapshot, open the dedicated{" "}
@@ -117,16 +159,9 @@ export default function WeaponsPage() {
             meta.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Players looking for a{" "}
-            <span className="font-semibold">
-              Where Winds Meet weapon tier list
-            </span>{" "}
-            or{" "}
-            <span className="font-semibold">
-              Where Winds Meet weapons tier list
-            </span>{" "}
-            can use this gallery plus the tier list together to judge where each
-            choice sits in the overall power curve.
+            If you searched for <span className="font-semibold">where winds meet weapons</span>,{" "}
+            <span className="font-semibold">where winds meet all weapons</span>, or{" "}
+            <span className="font-semibold">wwm weapon tier list</span>, start here first: the cards below explain what each weapon is for, then the linked tier list covers current ranking pressure.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             If you want the unlock steps and skill names for every martial art
@@ -140,6 +175,15 @@ export default function WeaponsPage() {
             which mirrors the illustrated wiki layout.
           </p>
         </div>
+      </section>
+
+      <section className="grid gap-4 rounded-3xl border border-emerald-500/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/30 md:grid-cols-3">
+        {weaponIntentAnswers.map((item) => (
+          <div key={item.title} className="rounded-2xl border border-emerald-400/30 bg-slate-950/70 p-4">
+            <h2 className="text-sm font-semibold text-emerald-100">{item.title}</h2>
+            <p className="mt-2 text-xs leading-relaxed text-slate-300">{item.body}</p>
+          </div>
+        ))}
       </section>
 
       <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">

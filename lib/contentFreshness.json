@@ -120,13 +120,59 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-06-05",
-    "gameVersion": "Version 1.7 / June 5 fixes",
-    "priorityCluster": "week-2-boss-dungeon-refresh",
+    "lastChecked": "2026-06-24",
+    "gameVersion": "Version 1.7 / June 24 GSC boss-list refresh",
+    "priorityCluster": "week-2-ctr-rescue",
     "sourceUrls": [
+      "doc/seo-data-readout-2026-06-03.md",
       "https://www.wherewindsmeetgame.com/news/official/529update.html",
       "https://www.wherewindsmeetgame.com/news/official/527update.html",
       "https://www.wherewindsmeetgame.com/news/official/515update.html"
+    ]
+  },
+  {
+    "basePath": "/guides/weapons",
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
+    "lastChecked": "2026-06-24",
+    "gameVersion": "Version 1.7 / June 24 GSC weapons refresh",
+    "priorityCluster": "week-2-ctr-rescue",
+    "sourceUrls": [
+      "doc/seo-data-readout-2026-06-03.md",
+      "https://www.wherewindsmeetgame.com/m/news/"
+    ]
+  },
+  {
+    "basePath": "/guides/weapons/spear",
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
+    "lastChecked": "2026-06-24",
+    "gameVersion": "Version 1.7 / June 24 spear CTR refresh",
+    "priorityCluster": "week-2-ctr-rescue",
+    "sourceUrls": [
+      "doc/seo-data-readout-2026-06-03.md",
+      "https://www.wherewindsmeetgame.com/m/news/"
+    ]
+  },
+  {
+    "basePath": "/guides/free-morph",
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
+    "lastChecked": "2026-06-24",
+    "gameVersion": "Version 1.7 / June 24 Free Morph CTR refresh",
+    "priorityCluster": "week-2-ctr-rescue",
+    "sourceUrls": [
+      "doc/seo-data-readout-2026-06-03.md",
+      "https://www.wherewindsmeetgame.com/m/news/"
     ]
   },
   {

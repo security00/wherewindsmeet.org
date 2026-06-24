@@ -4,14 +4,14 @@ import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "Free Morph (2025) – Where Winds Meet Mystic Skill",
+  title: "Where Winds Meet Free Morph - Unlock Tian Ying Mystic Skill",
   description:
-    "How to unlock Free Morph in Where Winds Meet by deflecting Challenge Tian Ying's spinning kicks. Updated Jan 2025: quick unlock steps, cost, cooldown, tier bonuses, and best builds.",
+    "How to unlock Free Morph in Where Winds Meet: Challenge Tian Ying, deflect Phase 2 spinning kicks, then use cost, cooldown, tier bonuses, and build tips.",
   alternates: buildHreflangAlternates("/guides/free-morph"),
   openGraph: {
-    title: "Free Morph Mystic Skill (2025) – Where Winds Meet",
+    title: "Where Winds Meet Free Morph - Unlock Tian Ying Mystic Skill",
     description:
-      "Free Morph unlock guide (Jan 2025): deflect Challenge Tian Ying spinning kicks, quick unlock TL;DR, tier bonuses, cost/cooldown, and best use cases.",
+      "Free Morph unlock guide: deflect Challenge Tian Ying spinning kicks, quick unlock TL;DR, tier bonuses, cost/cooldown, and best use cases.",
     url: "https://wherewindsmeet.org/guides/free-morph",
     siteName: "Where Winds Meet Hub",
     images: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Free Morph Mystic Skill (2025) – Where Winds Meet",
+    title: "Where Winds Meet Free Morph - Unlock Tian Ying Mystic Skill",
     description:
       "How to unlock Free Morph fast, with cost/cooldown, tier bonuses, and PvE/PvP uses.",
     images: ["https://static.wherewindsmeet.org/guides/free-morph/free-morph-icon.webp"],
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
 };
 
 const quickFacts = [
-  { label: "Type", value: "Offensive Mystic – Single-Target Control" },
-  { label: "Cost / CD", value: "35 Vitality • 3s cooldown (Tier 4: -5 Vitality)" },
+  { label: "Type", value: "Offensive Mystic - Single-Target Control" },
+  { label: "Cost / CD", value: "35 Vitality - 3s cooldown (Tier 4: -5 Vitality)" },
   { label: "Core effect", value: "Launch + midair kick flurry, keeps target juggled, small AoE finisher" },
   { label: "Tier bonus", value: "Tier 3: +20% dmg vs HP Shield | Tier 4: -5 Vitality cost" },
 ];
@@ -48,7 +48,7 @@ const unlockSteps = [
   },
   {
     title: "Deflect spinning kicks",
-    desc: "Time deflects on Tian Ying’s spinning kicks in Phase 2. Successful deflects unlock Free Morph.",
+    desc: "Time deflects on Tian Ying's spinning kicks in Phase 2. Successful deflects unlock Free Morph.",
   },
   {
     title: "Claim Free Morph",
@@ -98,17 +98,16 @@ export default function FreeMorphPage() {
             <p className="text-xs uppercase tracking-wide text-emerald-300">Mystic Skill</p>
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-              Updated Jan 2025 · Quick unlock TL;DR below
+              Updated June 2026 - Quick unlock TL;DR below
             </div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-slate-50">Free Morph – How to Unlock & Use</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold text-slate-50">Where Winds Meet Free Morph - how to unlock and use it</h1>
             <p className="max-w-3xl text-sm sm:text-base text-slate-300 leading-relaxed">
-              Learn Free Morph by deflecting Tian Ying’s spinning kicks in the Challenge encounter. Understand its juggle-focused
-              effect, tier bonuses, and how to slot it into PvE/PvP builds.
+              Learn Free Morph by deflecting Tian Ying&apos;s spinning kicks in the Challenge encounter. GSC shows players searching for where winds meet free morph and how to get free morph where winds meet, so this page starts with the exact unlock path before moving into cost, cooldown, tier bonuses, and PvE/PvP build use.
             </p>
             <ul className="text-xs text-emerald-200 space-y-1">
-              <li>• TL;DR: Challenge Tian Ying → parry spinning kicks in Phase 2 → claim Free Morph drop.</li>
-              <li>• Cast cost 35 Vitality (Tier 4: -5) · 3s CD · bonus damage vs HP Shield.</li>
-              <li>• Best for single-target control; weave between Mo Blade/Spear posture breaks or Dual Blades flurries.</li>
+              <li>- TL;DR: Challenge Tian Ying, parry spinning kicks in Phase 2, then claim the Free Morph drop.</li>
+              <li>- Cast cost 35 Vitality (Tier 4: -5), 3s CD, bonus damage vs HP Shield.</li>
+              <li>- Best for single-target control; weave between Mo Blade/Spear posture breaks or Dual Blades flurries.</li>
             </ul>
           </div>
 
@@ -122,7 +121,7 @@ export default function FreeMorphPage() {
             />
             <div className="text-sm text-slate-200">
               <p className="font-semibold text-slate-50">Free Morph</p>
-              <p className="text-xs text-slate-400">Offensive Mystic • Single-Target Control</p>
+              <p className="text-xs text-slate-400">Offensive Mystic - Single-Target Control</p>
             </div>
           </div>
           <div className="flex flex-wrap gap-2 text-xs">
@@ -169,7 +168,7 @@ export default function FreeMorphPage() {
         </ol>
         <div className="rounded-2xl border border-amber-500/30 bg-amber-900/20 p-4 text-xs text-amber-100">
           Tip: If you miss the deflect window, restart the encounter and focus on parrying only the spinning kick strings. The skill
-          unlocks once you’ve deflected enough of these attacks in Phase 2.
+          unlocks once you&apos;ve deflected enough of these attacks in Phase 2.
         </div>
       </section>
 
@@ -193,7 +192,7 @@ export default function FreeMorphPage() {
         <h2 className="text-2xl font-bold text-slate-50">How to Use Free Morph in Builds</h2>
         <ul className="space-y-2 text-sm text-slate-300">
           {usageTips.map((tip) => (
-            <li key={tip}>• {tip}</li>
+            <li key={tip}> - {tip}</li>
           ))}
         </ul>
         <div className="rounded-2xl border border-emerald-600/30 bg-emerald-950/30 p-4 text-sm text-emerald-100">
@@ -207,17 +206,17 @@ export default function FreeMorphPage() {
         <ul className="space-y-2 text-sm text-emerald-200">
           <li>
             <Link href="/guides/gift-of-gab" className="underline underline-offset-4 hover:text-emerald-100">
-              Gift of Gab – Scholar mastery & dialogue skill farming
+              Gift of Gab - Scholar mastery & dialogue skill farming
             </Link>
           </li>
           <li>
             <Link href="/guides/weapons" className="underline underline-offset-4 hover:text-emerald-100">
-              Weapons encyclopedia – find single-target control synergies
+              Weapons encyclopedia - find single-target control synergies
             </Link>
           </li>
           <li>
             <Link href="/guides/builds" className="underline underline-offset-4 hover:text-emerald-100">
-              Builds – PvE/PvP archetypes updated for recent patches
+              Builds - PvE/PvP archetypes updated for recent patches
             </Link>
           </li>
         </ul>

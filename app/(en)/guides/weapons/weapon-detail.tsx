@@ -7,14 +7,38 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 
+const spearFaqs = [
+  {
+    q: "Is Spear good in Where Winds Meet?",
+    a: "Yes. Spear is a strong comfort weapon because its reach, control, and steady rhythm make boss learning and frontline play more forgiving than short-range melee.",
+  },
+  {
+    q: "What Spear build should I start with?",
+    a: "Start with Nameless Spear basics for safety, then try Nine Swords Nine Spears for bleed and burn damage or Bafang Thunder Spear for a sturdier tank route.",
+  },
+  {
+    q: "Is Spear a tier-list weapon or a beginner weapon?",
+    a: "It can be both. Spear has enough ranking value to compare in tier lists, but its bigger practical value is safe spacing, boss prep, and reliable control.",
+  },
+];
+
 export function generateWeaponMetadata(id: WeaponId): Metadata {
   const weapon = weapons.find((w) => w.id === id);
   if (!weapon) {
     return {};
   }
 
+  if (id === "spear") {
+    return {
+      title: "Where Winds Meet Spear Guide - Builds, Bleed, Tank & Tier Role",
+      description:
+        "Where Winds Meet Spear guide for Nameless Spear, Nine Swords Nine Spears, Bafang Thunder Spear, bleed/burn builds, tank routes, tier role, and boss prep.",
+      alternates: buildHreflangAlternates(`/guides/weapons/${weapon.id}`),
+    };
+  }
+
   return {
-    title: `${weapon.name} Weapon Guide – Where Winds Meet`,
+    title: `${weapon.name} Weapon Guide - Where Winds Meet`,
     description: `How ${weapon.name} tends to feel in Where Winds Meet, its typical strengths and tradeoffs, and how it can connect to common builds and tier list thinking.`,
     alternates: buildHreflangAlternates(`/guides/weapons/${weapon.id}`),
   };
@@ -46,6 +70,22 @@ export function WeaponDetail({ weaponId }: { weaponId: WeaponId }) {
         { "@type": "ListItem", position: 4, name: weapon.name, item: `${baseUrl}/guides/weapons/${weapon.id}` },
       ],
     },
+    ...(weapon.id === "spear"
+      ? [
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: spearFaqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.a,
+              },
+            })),
+          },
+        ]
+      : []),
   ];
 
   return (
@@ -76,6 +116,16 @@ export function WeaponDetail({ weaponId }: { weaponId: WeaponId }) {
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
             {weapon.description}
           </p>
+          {weapon.id === "spear" && (
+            <div className="rounded-2xl border border-emerald-400/30 bg-emerald-500/10 p-4 text-sm leading-relaxed text-emerald-50">
+              <p className="font-semibold text-emerald-100">
+                Looking for a Where Winds Meet Spear build?
+              </p>
+              <p className="mt-1">
+                Start with Nameless Spear if you want reach and safety, Nine Swords Nine Spears if you want a high-APM bleed/burn route, or Bafang Thunder Spear if you want a sturdier boss and Bloodbath setup. The sections below compare all three before you jump into the broader weapons tier list.
+              </p>
+            </div>
+          )}
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
             Treat this page as a practical companion to the{" "}
             <Link

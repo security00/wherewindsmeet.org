@@ -53,10 +53,25 @@ const versionBossWatch = [
   },
 ];
 
+const bossFaqs = [
+  {
+    q: "Where can I find a Where Winds Meet boss list?",
+    a: "Use the boss gallery on this page as the current boss list hub, then open individual encounter pages for fight-specific prep. Start with Ghost Master, Hero's Realm, Sword Trial, Sandstorm Tavern, and Sunken City Lake if you are checking recent patch-cycle bosses.",
+  },
+  {
+    q: "Which bosses should new players prepare for first?",
+    a: "Start with story bosses in your current region, then move into dungeon and Bloodbath variants once your weapon pair, inner arts, and recovery tools feel stable.",
+  },
+  {
+    q: "What builds help against bosses in Where Winds Meet?",
+    a: "Spear, Mo Blade, Fan, and Umbrella setups are strong comfort picks for learning bosses because they give reach, mitigation, healing, or counterplay. Use the builds and weapons pages to choose a setup before pushing harder encounters.",
+  },
+];
+
 export const metadata: Metadata = {
-  title: "Where Winds Meet Bosses - Ghost Master, Dungeon Bosses & Boss List",
+  title: "Where Winds Meet Bosses - Boss List, Ghost Master & Dungeon Prep",
   description:
-    "Version 1.7 Where Winds Meet boss guide hub: Ghost Master, Hero's Realm, Sword Trial, Sandstorm Tavern, Sunken City Lake, boss list, builds, and weapon prep.",
+    "Where Winds Meet bosses hub with a current boss list, Ghost Master notes, dungeon boss prep, Hero's Realm, Sword Trial, Sandstorm Tavern, builds, and weapons.",
   alternates: buildHreflangAlternates("/guides/bosses"),
 };
 
@@ -92,6 +107,18 @@ export default function BossesPage() {
         url: `${baseUrl}/guides/bosses/${boss.id}`,
       })),
     },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: bossFaqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.a,
+        },
+      })),
+    },
   ];
 
   return (
@@ -118,10 +145,10 @@ export default function BossesPage() {
             Version 1.7 boss and dungeon guide hub
           </div>
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet bosses: Ghost Master watch, dungeon bosses, and major encounters.
+            Where Winds Meet boss list, Ghost Master watch, and dungeon boss prep.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Updated {freshness?.lastChecked ?? "2026-06-03"} for {freshness?.gameVersion ?? "Version 1.7 / The Imperial Palace"}: this page tracks both the established Where Winds Meet boss list and the newest boss or dungeon searches from the current patch cycle. Start with Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, and Sunken City Lake notes before using older boss advice.
+            Updated {freshness?.lastChecked ?? "2026-06-24"} for {freshness?.gameVersion ?? "Version 1.7 / GSC boss-list refresh"}: this page answers the high-demand Where Winds Meet boss, bosses, and all bosses searches with a practical boss list, current patch watch, and links into builds and weapon prep. Start with Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, and Sunken City Lake notes before using older boss advice.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Use it alongside the{" "}
@@ -164,6 +191,15 @@ export default function BossesPage() {
             Boss information changes quickly after live-service patches. Official notes and in-game reward previews come first; this page helps you decide which encounter guide or build page to check next.
           </p>
         </div>
+      </section>
+
+      <section className="grid gap-4 rounded-3xl border border-emerald-500/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/30 md:grid-cols-3">
+        {bossFaqs.map((faq) => (
+          <div key={faq.q} className="rounded-2xl border border-emerald-400/30 bg-slate-950/70 p-4">
+            <h2 className="text-sm font-semibold text-emerald-100">{faq.q}</h2>
+            <p className="mt-2 text-xs leading-relaxed text-slate-300">{faq.a}</p>
+          </div>
+        ))}
       </section>
 
       <section className="space-y-6 rounded-3xl border border-amber-400/30 bg-amber-500/10 p-6 shadow-lg shadow-amber-950/30">
