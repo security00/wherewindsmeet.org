@@ -24,6 +24,38 @@ type OfficialNewsRow = [
 // site can pin items out of strict date order, so news pages should not sort it.
 const officialNewsRows: OfficialNewsRow[] = [
   [
+    "homestead-companions-keepsake-cards",
+    "Homestead & Companions Chapter Is Here! Collect Keepsake Cards to Unlock Limited Rewards",
+    "2026-06-25",
+    "event",
+    "https://www.wherewindsmeetgame.com/jm/activity/3sSSr3/3NddQA?lang=en&jm_track=web_en",
+    "Official Version 1.8 Homestead & Companions chapter activity page for collecting Keepsake Cards and unlocking limited rewards during the companion-focused update window.",
+  ],
+  [
+    "june-25-version-1-8-patch-notes",
+    "1.8 Version Patch Notes: Optimizations and Bug Fixes",
+    "2026-06-25",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/625update.html",
+    "Official Version 1.8 patch notes for the Companions Make Home update window, covering optimization and bug-fix follow-up after the new homestead and companion feature rollout.",
+  ],
+  [
+    "companions-make-home-version-1-8-overview",
+    "[Companions Make Home] Version 1.8 Update Overview",
+    "2026-06-24",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/CompanionsMakeHome.html",
+    "Official Version 1.8 overview introducing the Companions Make Home update, with the new homestead direction and companion-focused player goals now replacing Version 1.7 as the latest roadmap anchor.",
+  ],
+  [
+    "version-1-8-dev-qa-a-place-to-call-home",
+    "Version 1.8 Dev Q&A: A Place to Call Home",
+    "2026-06-23",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/623faq.html",
+    "Official Version 1.8 developer Q&A for A Place to Call Home, setting expectations for the homestead update and the companion systems players should watch before changing guides or routes.",
+  ],
+  [
     "imperial-palace-version-1-7-overview-part-2",
     "[The Imperial Palace] Version 1.7 Update Overview: Part 2",
     "2026-06-09",

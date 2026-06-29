@@ -7,12 +7,12 @@ const baseUrl = "https://wherewindsmeet.org";
 const ogImage = `${baseUrl}/guides/qin-caiwei/hero.jpg`;
 
 export const metadata: Metadata = {
-  title: "Qin Caiwei Where Winds Meet Guide 2026 | AI Chat",
+  title: "Qin Caiwei Where Winds Meet: Friend Task Script & Location",
   description:
-    "Qin Caiwei Where Winds Meet guide: AI Chat script, Old Friends location, loop fixes, reset tips, and the farewell lines that trigger friendship rewards.",
+    "Qin Caiwei Where Winds Meet guide for the Old Friends task: AI Chat script, Qinghe location, loop fixes, reset tips, and farewell lines that trigger friendship rewards.",
   alternates: buildHreflangAlternates("/guides/qin-caiwei"),
   openGraph: {
-    title: "Qin Caiwei Where Winds Meet Guide 2026 | AI Chat",
+    title: "Qin Caiwei Where Winds Meet: Friend Task Script & Location",
     description:
       "Stuck on Qin Caiwei in Where Winds Meet? Use the updated 2026 AI Chat script, bracketed resolution lines, reset tips, and Old Friends reward checklist.",
     url: `${baseUrl}/guides/qin-caiwei`,
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Qin Caiwei Where Winds Meet Guide 2026 | AI Chat",
+    title: "Qin Caiwei Where Winds Meet: AI Chat Script",
     description:
       "Copy-paste script to finish the WWM Qin Caiwei friend task, fix the AI Chat loop, and collect Old Friends rewards quickly.",
     images: [
@@ -213,6 +213,10 @@ const faq = [
     a: "Use one empathy line, one bracketed resolution that mirrors her hint, then a clear farewell. Example: Go on, what is troubling you? -> (helps her face the past) -> (we become close friends) -> Farewell (bows and leaves). If it loops, reset and vary the bracket wording.",
   },
   {
+    q: "Where is Qin Caiwei in Where Winds Meet?",
+    a: "Qin Caiwei is tied to the Qinghe Old Friends flow. After you meet her, open the Old Friends list, choose Qin Caiwei, and use AI Chat rather than normal dialogue to progress the friendship task.",
+  },
+  {
     q: "Do I need Gift of Gab cards to befriend Qin Caiwei?",
     a: "No. She is an AI Chat NPC; bracketed narration and polite farewells are enough.",
   },
@@ -245,8 +249,31 @@ const supportLinks = [
 ];
 
 export default function QinCaiweiPage() {
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: metadata.title,
+      description: metadata.description,
+      url: `${baseUrl}/guides/qin-caiwei`,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faq.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.a,
+        },
+      })),
+    },
+  ];
+
   return (
     <article className="space-y-12">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <section className="mb-6 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-sm text-emerald-50 shadow-sm shadow-emerald-950/50">
         <p className="font-semibold">Updated for current searches: Qin Caiwei Where Winds Meet</p>
         <ul className="mt-2 list-disc space-y-1 pl-5 text-emerald-50/90">
@@ -268,7 +295,7 @@ export default function QinCaiweiPage() {
               Updated Jan 2025 · 3-line script inside
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-50">
-              WWM Qin Caiwei Friend Task Guide (AI Chat)
+              Qin Caiwei Where Winds Meet Friend Task Script
             </h1>
             <p className="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
               Qin Caiwei is one of the toughest AI Chat NPCs to win over. If your Where Winds Meet / WWM Qin Caiwei friend mission is stuck or the befriend task will not progress, use this guide: she loops if you rush, rejects blunt &quot;we are friends&quot; lines, and only moves when you listen, summarize her story, and describe a specific resolution. Use this five-step playbook and the copy-paste lines below to push her to Friend status quickly.

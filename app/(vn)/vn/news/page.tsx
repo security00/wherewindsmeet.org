@@ -9,21 +9,21 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 const baseUrl = "https://wherewindsmeet.org";
 
 export const metadata: Metadata = {
-  title: "Tin tức Where Winds Meet, roadmap & patch notes",
+  title: "Tin t峄ヽ Where Winds Meet, roadmap & patch notes",
   description:
-    "Tin tức Where Winds Meet chọn lọc: roadmap, cân bằng, patch notes để bạn nắm nhanh thay đổi quan trọng.",
+    "Tin t峄ヽ Where Winds Meet ch峄峮 l峄峜: roadmap, c芒n b岷眓g, patch notes 膽峄?b岷 n岷痬 nhanh thay 膽峄昳 quan tr峄峮g.",
   alternates: buildHreflangAlternates("/news", { canonicalLanguage: "vi" }),
   openGraph: {
-    title: "Tin tức Where Winds Meet, roadmap & patch notes",
+    title: "Tin t峄ヽ Where Winds Meet, roadmap & patch notes",
     description:
-      "Tin tức Where Winds Meet chọn lọc: roadmap, cân bằng, patch notes để bạn nắm nhanh thay đổi quan trọng.",
+      "Tin t峄ヽ Where Winds Meet ch峄峮 l峄峜: roadmap, c芒n b岷眓g, patch notes 膽峄?b岷 n岷痬 nhanh thay 膽峄昳 quan tr峄峮g.",
     url: `${baseUrl}/vn/news`,
     locale: "vi_VN",
   },
   twitter: {
-    title: "Tin tức Where Winds Meet, roadmap & patch notes",
+    title: "Tin t峄ヽ Where Winds Meet, roadmap & patch notes",
     description:
-      "Tin tức Where Winds Meet chọn lọc: roadmap, cân bằng, patch notes để bạn nắm nhanh thay đổi quan trọng.",
+      "Tin t峄ヽ Where Winds Meet ch峄峮 l峄峜: roadmap, c芒n b岷眓g, patch notes 膽峄?b岷 n岷痬 nhanh thay 膽峄昳 quan tr峄峮g.",
   },
 };
 
@@ -64,9 +64,9 @@ const searchIntentWatchlist = [
 
 export default function NewsPage() {
   const typeLabel: Record<NewsType, string> = {
-    announcement: "Thông báo",
-    event: "Sự kiện",
-    guide: "Hướng dẫn",
+    announcement: "Th么ng b谩o",
+    event: "S峄?ki峄噉",
+    guide: "H瓢峄沶g d岷玭",
     beta: "Beta",
   };
 
@@ -80,7 +80,7 @@ export default function NewsPage() {
 
   const sortedNews = newsItems;
 
-  const lastUpdatedLabel = `Cập nhật: ${formatDateVi(latestNewsDate)}`;
+  const lastUpdatedLabel = `C岷璸 nh岷璽: ${formatDateVi(latestNewsDate)}`;
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -94,8 +94,8 @@ export default function NewsPage() {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Trang chủ", item: `${baseUrl}/vn` },
-        { "@type": "ListItem", position: 2, name: "Tin tức", item: `${baseUrl}/vn/news` },
+        { "@type": "ListItem", position: 1, name: "Trang chu", item: `${baseUrl}/vn` },
+        { "@type": "ListItem", position: 2, name: "Tin t峄ヽ", item: `${baseUrl}/vn/news` },
       ],
     },
   ];
@@ -111,7 +111,7 @@ export default function NewsPage() {
         <div className="pointer-events-none absolute inset-0">
           <CdnImage
             src="/background/6.webp"
-            alt="Nền tin tức Where Winds Meet"
+            alt="N峄乶 tin t峄ヽ Where Winds Meet"
             fill
             className="object-cover opacity-40"
           />
@@ -119,20 +119,20 @@ export default function NewsPage() {
         </div>
 
         <div className="absolute right-8 top-8 hidden text-vertical text-3xl font-bold text-slate-50/10 lg:block font-serif select-none">
-          江湖风云
+          姹熸箹椋庝簯
         </div>
 
         <div className="relative space-y-6 z-10 max-w-3xl">
           <h1 className="text-balance text-4xl font-bold tracking-tight text-slate-50 sm:text-5xl font-serif">
-            Tin tức <span className="text-ink-gold">Where Winds Meet</span> mới nhất.
+            Tin t峄ヽ <span className="text-ink-gold">Where Winds Meet</span> m峄沬 nh岷.
           </h1>
           <div className="space-y-4 text-slate-200/90 font-sans text-lg leading-relaxed">
             <p>
-              Tóm tắt thông báo chính thức, roadmap, hướng dẫn launch, patch notes và ghi chú beta. Mỗi thẻ liên kết về nguồn gốc để bạn kiểm chứng chi tiết khi cần.
+              T贸m t岷痶 th么ng b谩o ch铆nh th峄ヽ, roadmap, h瓢峄沶g d岷玭 launch, patch notes v脿 ghi ch煤 beta. M峄梚 th岷?li锚n k岷縯 v峄?ngu峄搉 g峄慶 膽峄?b岷 ki峄僲 ch峄﹏g chi ti岷縯 khi c岷.
             </p>
             <p>
-              Muốn lướt nhanh <span className="font-semibold text-emerald-400">patch notes</span> hoặc cập nhật{" "}
-              <span className="font-semibold text-emerald-400">roadmap</span> mà không phải đọc mọi dòng? Bắt đầu tại đây.
+              Mu峄憂 l瓢峄泃 nhanh <span className="font-semibold text-emerald-400">patch notes</span> ho岷穋 c岷璸 nh岷璽{" "}
+              <span className="font-semibold text-emerald-400">roadmap</span> m脿 kh么ng ph岷 膽峄峜 m峄峣 d貌ng? B岷痶 膽岷 t岷 膽芒y.
             </p>
           </div>
 
@@ -147,32 +147,32 @@ export default function NewsPage() {
             className="rounded-2xl border border-emerald-500/40 bg-emerald-500/10 p-4 text-sm text-emerald-50 shadow-inner shadow-emerald-900/40"
           >
             <div className="flex items-center justify-between gap-2">
-              <p className="font-semibold">Theo dõi Version 1.7 / The Imperial Palace</p>
+              <p className="font-semibold">Theo doi Version 1.8 / Companions Make Home</p>
               <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
                 {lastUpdatedLabel}
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Latest pass hiện theo The Imperial Palace, patch notes 29/05, hotfix 28/05 và Path Balance 26/05. Các tin anti-cheat, code warning, Hexi, Qinchuan và Version 1.6 cũ vẫn nằm bên dưới để người chơi quay lại bắt kịp.
+              Latest pass hien theo Version 1.8 / Companions Make Home, patch notes 25/06 va Dev Q&A 23/06. Cac tin Version 1.7, Xbox, anti-cheat, code warning, Hexi va Qinchuan cu van nam ben duoi de nguoi choi quay lai bat kip.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link
                 href="/vn/guides/tier-list"
                 className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80"
               >
-                Tier list (góc nhìn CN)
+                Tier list (g贸c nh矛n CN)
               </Link>
               <Link
                 href="/vn/guides/bosses"
                 className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80"
               >
-                Thay đổi boss
+                Thay 膽峄昳 boss
               </Link>
               <Link
                 href="/vn/guides/codes"
                 className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80"
               >
-                Code mới nhất
+                Code m峄沬 nh岷
               </Link>
             </div>
           </div>
@@ -227,7 +227,7 @@ export default function NewsPage() {
                     {item.tags && item.tags.length > 0 && (
                       <>
                         <span className="mx-2 text-slate-700">|</span>
-                        {item.tags.join(" · ")}
+                        {item.tags.join(" 路 ")}
                       </>
                     )}
                   </p>
@@ -243,7 +243,7 @@ export default function NewsPage() {
                       rel="noreferrer"
                       className="btn-seal text-[10px] py-1 px-3"
                     >
-                      Đọc nguồn
+                      膼峄峜 ngu峄搉
                     </Link>
                   </div>
                 )}
@@ -255,17 +255,17 @@ export default function NewsPage() {
 
       <section className="rounded-3xl border border-slate-800/60 bg-slate-950/40 p-8 shadow-lg backdrop-blur-sm bg-texture-noise">
         <h2 className="text-balance text-2xl font-bold tracking-tight text-slate-50 sm:text-3xl font-serif border-brush inline-block pb-2 mb-4">
-          Trang này kết nối với phần còn lại của hub
+          Trang n脿y k岷縯 n峄慽 v峄沬 ph岷 c貌n l岷 c峄 hub
         </h2>
         <div className="space-y-4 text-slate-300 font-sans leading-relaxed">
           <p>
-            Mục tiêu: tập trung tin quan trọng ảnh hưởng trải nghiệm. Nếu patch chỉnh camera/aim/UI hay thêm hoạt động giới hạn, bạn sẽ thấy tóm tắt rõ ràng kèm nhắc lịch.
+            M峄 ti锚u: t岷璸 trung tin quan tr峄峮g 岷h h瓢峄焠g tr岷 nghi峄噈. N岷縰 patch ch峄塶h camera/aim/UI hay th锚m ho岷 膽峄檔g gi峄沬 h岷, b岷 s岷?th岷 t贸m t岷痶 r玫 r脿ng k猫m nh岷痗 l峄媍h.
           </p>
           <p>
-            Tin nào ảnh hưởng build sẽ được phản ánh ở trang builds/tier list. Sự kiện có code hay lợi ích lâu dài sẽ được gắn nhãn và liên kết sang trang rewards/codes.
+            Tin n脿o 岷h h瓢峄焠g build s岷?膽瓢峄 ph岷 谩nh 峄?trang builds/tier list. S峄?ki峄噉 c贸 code hay l峄 铆ch l芒u d脿i s岷?膽瓢峄 g岷痭 nh茫n v脿 li锚n k岷縯 sang trang rewards/codes.
           </p>
           <p>
-            Nếu có thay đổi lớn mà bạn muốn cập nhật cụ thể (PvP, boss, chất lượng sống), hãy nhắn — chúng tôi sẽ ưu tiên cập nhật sớm.
+            N岷縰 c贸 thay 膽峄昳 l峄沶 m脿 b岷 mu峄憂 c岷璸 nh岷璽 c峄?th峄?(PvP, boss, ch岷 l瓢峄g s峄憂g), h茫y nh岷痭 鈥?ch煤ng t么i s岷?瓢u ti锚n c岷璸 nh岷璽 s峄沵.
           </p>
         </div>
       </section>

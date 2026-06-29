@@ -210,7 +210,7 @@ export function SiteHeader({
   }, [isLangMenuOpen]);
 
   return (
-    <header className="relative z-50 border-b border-slate-800/80 bg-slate-950/85 backdrop-blur">
+    <header className="relative z-50 border-b border-slate-700/45 bg-slate-950/42 shadow-sm shadow-slate-950/20 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href={resolvedHomeHref} className="flex items-center gap-2" aria-label={uiText.homeAria}>
           <CdnImage
@@ -262,7 +262,7 @@ export function SiteHeader({
               />
             </button>
             {isLangMenuOpen ? (
-              <div className="absolute right-0 mt-2 w-44 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/95 shadow-xl shadow-slate-950/70">
+              <div className="absolute right-0 mt-2 w-44 overflow-hidden rounded-2xl border border-slate-700/70 bg-slate-900/82 shadow-xl shadow-slate-950/50 backdrop-blur-md">
                 <div className="divide-y divide-slate-800/80">
                   {languageTargets.map((lang) => (
                     <Link
@@ -291,7 +291,7 @@ export function SiteHeader({
         <button
           type="button"
           onClick={() => setIsOpen(true)}
-          className="inline-flex items-center rounded-lg border border-slate-800 bg-slate-900 px-3 py-2 text-sm font-semibold text-slate-100 shadow-sm shadow-slate-900/50 transition sm:hidden"
+          className="inline-flex items-center rounded-lg border border-slate-700/60 bg-slate-900/55 px-3 py-2 text-sm font-semibold text-slate-100 shadow-sm shadow-slate-900/35 backdrop-blur-md transition sm:hidden"
           aria-label={uiText.openMenuAria}
         >
           <span className="sr-only">{uiText.openMenuSr}</span>
@@ -307,20 +307,20 @@ export function SiteHeader({
         <div className="fixed inset-0 z-[60] sm:hidden">
           <button
             aria-label={uiText.closeMenuAria}
-            className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm"
+            className="absolute inset-0 bg-slate-950/60 backdrop-blur-sm"
             onClick={() => setIsOpen(false)}
           />
           <div className="absolute right-3 top-3 z-10">
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="rounded-full border border-slate-700/80 bg-slate-900/90 p-2 text-slate-100 shadow-lg shadow-slate-950/60"
+              className="rounded-full border border-slate-700/70 bg-slate-900/75 p-2 text-slate-100 shadow-lg shadow-slate-950/45 backdrop-blur-md"
               aria-label={uiText.closeNavigationAria}
             >
               ✕
             </button>
           </div>
-          <div className="absolute inset-x-3 top-16 z-10 rounded-2xl border border-slate-800/80 bg-slate-900/95 p-4 shadow-2xl shadow-slate-950/70">
+          <div className="absolute inset-x-3 top-16 z-10 rounded-2xl border border-slate-700/70 bg-slate-900/82 p-4 shadow-2xl shadow-slate-950/55 backdrop-blur-md">
             <nav className="flex flex-col divide-y divide-slate-800/80">
               {navWithActive.map((link) => (
                 <Link
@@ -338,7 +338,7 @@ export function SiteHeader({
                 </Link>
               ))}
             </nav>
-            <div className="mt-4 rounded-2xl border border-slate-800/80 bg-slate-900/80 p-3">
+            <div className="mt-4 rounded-2xl border border-slate-700/70 bg-slate-900/62 p-3 backdrop-blur-md">
               <div className="space-y-2">
                 {languageTargets.map((lang) => (
                   <Link

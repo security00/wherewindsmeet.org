@@ -10,20 +10,20 @@ const baseUrl = "https://wherewindsmeet.org";
 const freshness = getContentFreshness("/news");
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Update Today - Latest News, Patch Notes & Roadmap",
+  title: "Where Winds Meet Update Today - Version 1.8 News & Patch Notes",
   description:
-    "Where Winds Meet update today tracker for latest official news, Version 1.7 Imperial Palace Part 2, Xbox launch, patch notes, roadmap, codes, events, and guide impact.",
+    "Where Winds Meet update today tracker for latest official news, Version 1.8 Companions Make Home, homestead updates, patch notes, roadmap, codes, events, and guide impact.",
   alternates: buildHreflangAlternates("/news"),
   openGraph: {
-    title: "Where Winds Meet Update Today - Latest News, Patch Notes & Roadmap",
+    title: "Where Winds Meet Update Today - Version 1.8 News & Patch Notes",
     description:
-      "Where Winds Meet update today tracker for latest official news, Version 1.7 Imperial Palace Part 2, Xbox launch, patch notes, roadmap, codes, events, and guide impact.",
+      "Where Winds Meet update today tracker for latest official news, Version 1.8 Companions Make Home, homestead updates, patch notes, roadmap, codes, events, and guide impact.",
     url: `${baseUrl}/news`,
   },
   twitter: {
-    title: "Where Winds Meet Update Today - Latest News, Patch Notes & Roadmap",
+    title: "Where Winds Meet Update Today - Version 1.8 News & Patch Notes",
     description:
-      "Where Winds Meet update today tracker for latest official news, Version 1.7 Imperial Palace Part 2, Xbox launch, patch notes, roadmap, codes, events, and guide impact.",
+      "Where Winds Meet update today tracker for latest official news, Version 1.8 Companions Make Home, homestead updates, patch notes, roadmap, codes, events, and guide impact.",
   },
 };
 
@@ -31,23 +31,23 @@ const todayStatusCards = [
   {
     title: "Latest official update",
     detail:
-      "Version 1.7 / The Imperial Palace Part 2 is the newest official news anchor we have checked, followed by the June 8 Xbox launch and Xbox FAQ.",
+      "Version 1.8 / Companions Make Home is the newest official news anchor we have checked, with two June 25 items: the Homestead & Companions Keepsake Cards event and the Version 1.8 optimization and bug-fix patch notes.",
     href: "https://www.wherewindsmeetgame.com/m/news/",
     label: "Official news list",
   },
   {
     title: "Today patch-note answer",
     detail:
-      "No newer patch note has replaced the June 5 Version 1.7 fixes in our checked sources. Use the patch-note tracker before changing builds or tier-list advice.",
+      "The latest checked patch-note page is the June 25 Version 1.8 optimization and bug-fix update. Use the patch-note tracker before changing builds or tier-list advice.",
     href: "/guides/patch-notes",
     label: "Patch notes",
   },
   {
     title: "Roadmap watch",
     detail:
-      "Xbox Wire has teased Hidden Mountain after Hexi and Imperial Palace; treat it as roadmap watch until a full official game-site update lands.",
-    href: "https://news.xbox.com/en-us/2026/06/09/where-winds-meet-new-expansion-game-pass-xbox-games-showcase-2026/",
-    label: "Xbox roadmap note",
+      "A Place to Call Home and Companions Make Home are the active Version 1.8 roadmap signals; keep homestead, companions, and reward pages on watch.",
+    href: "https://www.wherewindsmeetgame.com/news/official/CompanionsMakeHome.html",
+    label: "Version 1.8 overview",
   },
 ];
 
@@ -210,8 +210,8 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-3 leading-6 text-cyan-50/90">
-              The current checked update baseline is <strong>Version 1.7 / The Imperial Palace Part 2</strong>,
-              with the June 8 Xbox launch and Xbox FAQ as the latest platform news. If you searched for
+              The current checked update baseline is <strong>Version 1.8 / Companions Make Home</strong>,
+              with two June 25 official items: the Homestead & Companions Keepsake Cards event and the Version 1.8 patch notes. If you searched for
               <span className="font-semibold"> where winds meet update today</span>, use the cards below to jump straight
               to official news, patch notes, and roadmap watch items.
             </p>
@@ -243,7 +243,7 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Latest official-news pass: {freshness?.gameVersion ?? "Version 1.7 / The Imperial Palace Part 2"} plus the June 8 Xbox launch, Xbox FAQ, June 5 patch notes, the pinned unofficial-trading crackdown, The Imperial Palace overview, and Version 1.7 Path Balance announcement. The list below follows the current official news trail.
+              Latest official-news pass: {freshness?.gameVersion ?? "Version 1.8 / Companions Make Home"} plus the June 25 Homestead & Companions Keepsake Cards event, June 25 Version 1.8 patch notes, June 23 Dev Q&A, June 8 Xbox launch, June 5 Version 1.7 fixes, The Imperial Palace overview, and Version 1.7 Path Balance announcement. The list below follows the current official news trail.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link href="/guides/tier-list" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
@@ -305,7 +305,7 @@ export default function NewsPage() {
             <div className="mt-3 grid gap-2 text-xs text-slate-300 sm:grid-cols-3">
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
                 <p className="font-semibold text-slate-100">Current update</p>
-                <p className="mt-1">Version 1.7 / The Imperial Palace Part 2 and the June 8 Xbox launch are the current checked baseline for update searches.</p>
+                <p className="mt-1">Version 1.8 / Companions Make Home, the June 25 Keepsake Cards event, and the June 25 patch notes are the current checked baseline for update searches.</p>
               </div>
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
                 <p className="font-semibold text-slate-100">Next watch</p>
@@ -337,7 +337,7 @@ export default function NewsPage() {
                   </Link>
                 </li>
                 <li>
-                  Version 1.7 / The Imperial Palace Part 2 — current update anchor for roadmap, event, and returning-player searches.
+                  Version 1.8 / Companions Make Home — current update anchor for homestead, companion, roadmap, event, and returning-player searches.
                 </li>
                 <li>
                   June 5 patch notes, May 29 historical fixes, and May 26 Path Balance — re-check tier list, builds, weapon pages, and PVP advice against these notes before trusting older meta.

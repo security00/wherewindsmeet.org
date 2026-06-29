@@ -16,7 +16,7 @@ const weaponIntentAnswers = [
   },
   {
     title: "Weapon tier list",
-    body: "Use this page for weapon roles and play feel, then open the weapons tier list when you need direct S, A, and B tier ranking context.",
+    body: "Use this page for weapon roles and play feel, then open the WWM weapon tier list when you need direct S, A, and B tier ranking context.",
   },
   {
     title: "Best first picks",
@@ -40,18 +40,18 @@ const weaponFaqs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Weapons Guide - All Weapons, Roles & Tier Links",
+  title: "Where Winds Meet Weapons Guide: Best Weapons, Roles & Tier List",
   description:
-    "All Where Winds Meet weapons in one guide: Spear, Sword, Dual Blades, Mo Blade, Fan, Umbrella, Rope Dart, roles, builds, tier-list links, and playstyle picks.",
+    "All Where Winds Meet weapons in one guide: best weapons, Spear, Sword, Dual Blades, Mo Blade, Fan, Umbrella, Rope Dart, roles, builds, tier-list links, and playstyle picks.",
   alternates: buildHreflangAlternates("/guides/weapons"),
   openGraph: {
-    title: "Where Winds Meet Weapons Guide - All Weapons, Roles & Tier Links",
+    title: "Where Winds Meet Weapons Guide: Best Weapons, Roles & Tier List",
     description:
       "All Where Winds Meet weapons in one guide: roles, builds, tier-list links, and playstyle picks.",
     url: `${baseUrl}/guides/weapons`,
   },
   twitter: {
-    title: "Where Winds Meet Weapons Guide - All Weapons, Roles & Tier Links",
+    title: "Where Winds Meet Weapons Guide: Best Weapons & Roles",
     description:
       "Compare every Where Winds Meet weapon by role, build fit, and tier-list context.",
   },
@@ -124,7 +124,7 @@ export default function WeaponsPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet weapons guide: all weapons, roles, and build links.
+            Where Winds Meet weapons guide: best weapons, roles, and tier-list links.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
             Updated {freshness?.lastChecked ?? "2026-06-24"} for{" "}
@@ -161,7 +161,7 @@ export default function WeaponsPage() {
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             If you searched for <span className="font-semibold">where winds meet weapons</span>,{" "}
             <span className="font-semibold">where winds meet all weapons</span>, or{" "}
-            <span className="font-semibold">wwm weapon tier list</span>, start here first: the cards below explain what each weapon is for, then the linked tier list covers current ranking pressure.
+            <span className="font-semibold">where winds meet best weapons</span>, start here first: the cards below explain what each weapon is for, then the linked WWM weapon tier list covers current ranking pressure.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             If you want the unlock steps and skill names for every martial art

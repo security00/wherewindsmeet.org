@@ -32,6 +32,49 @@ a[class*="rounded-3xl"][class*="border"]:hover {
   background: radial-gradient(circle, var(--tw-gradient-stops));
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .immersive-video-background {
+    display: none;
+  }
+}
+
+main :where(section, article, div)[class*="rounded-3xl"][class*="border"][class*="bg-slate-950"],
+main :where(section, article, div)[class*="rounded-2xl"][class*="border"][class*="bg-slate-950"] {
+  background-color: rgba(2, 6, 23, 0.3);
+  backdrop-filter: blur(5px) saturate(1.06);
+}
+
+main :where(section, article, div)[class*="rounded-3xl"][class*="border"][class*="bg-slate-900"],
+main :where(section, article, div)[class*="rounded-2xl"][class*="border"][class*="bg-slate-900"] {
+  background-color: rgba(15, 23, 42, 0.26);
+  backdrop-filter: blur(4px) saturate(1.06);
+}
+
+main :where(section, article, div)[class*="rounded-3xl"][class*="bg-emerald-500/10"],
+main :where(section, article, div)[class*="rounded-3xl"][class*="bg-amber-500/10"],
+main :where(section, article, div)[class*="rounded-3xl"][class*="bg-blue-500/10"],
+main :where(section, article, div)[class*="rounded-3xl"][class*="bg-red-500/10"],
+main :where(section, article, div)[class*="rounded-3xl"][class*="bg-cyan-500/10"],
+main :where(section, article, div)[class*="rounded-3xl"][class*="bg-violet-500/10"] {
+  backdrop-filter: blur(4px) saturate(1.08);
+}
+
+main :where(section, article, div)[class*="shadow-2xl"],
+main :where(section, article, div)[class*="shadow-lg"] {
+  box-shadow: 0 16px 50px rgba(2, 6, 23, 0.32);
+}
+
+main :where(section, article, div)[class*="min-h-[600px]"][class*="rounded-3xl"],
+main :where(section, article, div)[class*="min-h-[620px]"][class*="rounded-3xl"],
+main :where(section, article, div)[class*="min-h-[700px]"][class*="rounded-3xl"] {
+  background-color: rgba(2, 6, 23, 0.24);
+}
+
+main :where(h1, h2, h3, p, li, span)[class*="text-slate"],
+main :where(h1, h2, h3, p, li, span)[class*="text-white"] {
+  text-shadow: 0 1px 12px rgba(2, 6, 23, 0.55);
+}
+
 /* 滚动条样式 */
 ::-webkit-scrollbar {
   width: 10px;

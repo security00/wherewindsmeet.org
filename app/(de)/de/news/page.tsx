@@ -11,25 +11,25 @@ const baseUrl = "https://wherewindsmeet.org";
 export const metadata: Metadata = {
   title: "Where Winds Meet Nachrichten, Roadmap & Patch Notes (DE)",
   description:
-    "Kuratiertes Where Winds Meet News-Feed: Roadmap-Updates, Balance-Patches, Bugfixes und Events – schnell verständlich auf Deutsch.",
+    "Kuratiertes Where Winds Meet News-Feed: Roadmap-Updates, Balance-Patches, Bugfixes und Events 鈥?schnell verst盲ndlich auf Deutsch.",
   alternates: buildHreflangAlternates("/news", { canonicalLanguage: "de" }),
   openGraph: {
     title: "Where Winds Meet Nachrichten & Updates (DE)",
     description:
-      "Roadmap, Balance-Patches, Bugfixes und Events – kompakt zusammengefasst, mit Link zur offiziellen Quelle.",
+      "Roadmap, Balance-Patches, Bugfixes und Events 鈥?kompakt zusammengefasst, mit Link zur offiziellen Quelle.",
     url: `${baseUrl}/de/news`,
     locale: "de_DE",
   },
   twitter: {
     title: "Where Winds Meet News (DE)",
     description:
-      "Deutscher Überblick zu aktuellen Where Winds Meet Ankündigungen, Patch Notes und Roadmap.",
+      "Deutscher 脺berblick zu aktuellen Where Winds Meet Ank眉ndigungen, Patch Notes und Roadmap.",
   },
 };
 
 export default function NewsPage() {
   const typeLabel: Record<NewsType, string> = {
-    announcement: "Ankündigung",
+    announcement: "Ank眉ndigung",
     event: "Event",
     guide: "Guide",
     beta: "Beta",
@@ -66,13 +66,13 @@ export default function NewsPage() {
   ];
 
   const roadmapBlock = {
-    title: "Roadmap / Nächste Updates (Watchlist)",
+    title: "Roadmap / N盲chste Updates (Watchlist)",
     summary:
-      "Aktualisiert auf Version 1.7: The Imperial Palace, Patch Notes vom 29. Mai, Hotfix-Fenster vom 28. Mai und Path Balance vom 26. Mai stehen jetzt vor älteren Anti-Cheat-, Code-, Hexi-, Qinchuan- und Version-1.6-Notizen.",
+      "Aktualisiert auf Version 1.8: Companions Make Home, Patch Notes vom 25. Juni und das Dev Q&A A Place to Call Home stehen jetzt vor aelteren Version-1.7-, Xbox-, Anti-Cheat-, Code-, Hexi- und Qinchuan-Notizen.",
     updated: lastUpdatedLabel,
     links: [
       { href: "/de/guides/tier-list", label: "China-Tierliste & Balance-Notizen" },
-      { href: "/de/guides/bosses", label: "Bossliste & Änderungen" },
+      { href: "/de/guides/bosses", label: "Bossliste & 脛nderungen" },
       { href: "/de/guides/unholy-prophecy", label: "An Unholy Prophecy (Quest-Fixes)" },
       { href: "/de/guides/woven-with-malice", label: "Woven with Malice (Zeitschranken)" },
     ],
@@ -133,7 +133,7 @@ export default function NewsPage() {
         </div>
 
         <div className="absolute right-8 top-8 hidden text-vertical text-3xl font-bold text-slate-50/10 lg:block font-serif select-none">
-          江湖风云
+          姹熸箹椋庝簯
         </div>
 
         <div className="relative space-y-6 z-10 max-w-3xl">
@@ -142,11 +142,11 @@ export default function NewsPage() {
           </h1>
           <div className="space-y-4 text-slate-200/90 font-sans text-lg leading-relaxed">
             <p>
-              Hier fassen wir offizielle Ankündigungen, Roadmap-Beiträge, Launch-Guides, Systemhinweise und Beta-Notizen kompakt auf Deutsch zusammen.
+              Hier fassen wir offizielle Ank眉ndigungen, Roadmap-Beitr盲ge, Launch-Guides, Systemhinweise und Beta-Notizen kompakt auf Deutsch zusammen.
               Jede Karte verlinkt zur Originalquelle, damit du Details bei Bedarf nachlesen kannst.
             </p>
             <p>
-              Wenn du nur schnell <span className="font-semibold text-emerald-400">Patch Notes</span> überfliegen oder die
+              Wenn du nur schnell <span className="font-semibold text-emerald-400">Patch Notes</span> 眉berfliegen oder die
               <span className="font-semibold text-emerald-400"> Roadmap</span> checken willst, bekommst du hier die Kernpunkte auf einen Blick.
             </p>
           </div>
@@ -156,20 +156,20 @@ export default function NewsPage() {
             className="rounded-2xl border border-emerald-500/40 bg-emerald-500/10 p-4 text-sm text-emerald-50 shadow-inner shadow-emerald-900/40"
           >
             <div className="flex items-center justify-between gap-2">
-              <p className="font-semibold">Version 1.7 / The Imperial Palace (laufend aktualisiert)</p>
+              <p className="font-semibold">Version 1.8 / Companions Make Home (laufend aktualisiert)</p>
               <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
                 {lastUpdatedLabel}
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Latest pass: The Imperial Palace, Patch Notes vom 29. Mai, Hotfix vom 28. Mai und Path Balance vom 26. Mai. Ältere Anti-Cheat-, Code-Warnungs-, Hexi-, Qinchuan- und Version-1.6-Posts bleiben darunter als Catch-up.
+              Latest pass: Version 1.8 / Companions Make Home, Patch Notes vom 25. Juni und Dev Q&A vom 23. Juni. Aeltere Version-1.7-, Xbox-, Anti-Cheat-, Code-Warnungs-, Hexi- und Qinchuan-Posts bleiben darunter als Catch-up.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link href="/de/guides/tier-list" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
                 Tierliste (China-Perspektive)
               </Link>
               <Link href="/de/guides/bosses" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
-                Boss-Änderungen
+                Boss-脛nderungen
               </Link>
               <Link href="/de/guides/codes" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
                 Neueste Codes
@@ -251,7 +251,7 @@ export default function NewsPage() {
                     {item.tags && item.tags.length > 0 && (
                       <>
                         <span className="mx-2 text-slate-700">|</span>
-                        {item.tags.join(" · ")}
+                        {item.tags.join(" 路 ")}
                       </>
                     )}
                   </p>
@@ -283,13 +283,13 @@ export default function NewsPage() {
         </h2>
         <div className="space-y-4 text-slate-300 font-sans leading-relaxed">
           <p>
-            Wir sammeln die wichtigsten Where Winds Meet Meldungen in einem ruhigen, lesbaren Stream. Statt jede Patch Note zu wühlen oder Social Feeds zu durchsuchen, bekommst du kurze Zusammenfassungen, warum die Änderung wichtig ist und wen sie betrifft.
+            Wir sammeln die wichtigsten Where Winds Meet Meldungen in einem ruhigen, lesbaren Stream. Statt jede Patch Note zu w眉hlen oder Social Feeds zu durchsuchen, bekommst du kurze Zusammenfassungen, warum die 脛nderung wichtig ist und wen sie betrifft.
           </p>
           <p>
-            Schwerpunkt sind Updates, die dein tägliches Spielgefühl ändern – Steuerung, Performance, Events, Balance. Saison-Events mit Ablaufdatum werden deutlich markiert.
+            Schwerpunkt sind Updates, die dein t盲gliches Spielgef眉hl 盲ndern 鈥?Steuerung, Performance, Events, Balance. Saison-Events mit Ablaufdatum werden deutlich markiert.
           </p>
           <p>
-            Jede News verknüpfen wir mit relevanten Guides (z. B. Boss-Änderungen → Boss-Guide, Codes → Belohnungs-Guide), damit du direkt weiterklicken kannst.
+            Jede News verkn眉pfen wir mit relevanten Guides (z. B. Boss-脛nderungen 鈫?Boss-Guide, Codes 鈫?Belohnungs-Guide), damit du direkt weiterklicken kannst.
           </p>
         </div>
       </section>

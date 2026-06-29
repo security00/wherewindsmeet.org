@@ -10,11 +10,38 @@ const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
   {
+    title: "June 25 Version 1.8 optimizations and bug fixes",
+    date: "2026-06-25",
+    source: "https://www.wherewindsmeetgame.com/news/official/625update.html",
+    summary:
+      "Latest Version 1.8 patch-note anchor after the Companions Make Home rollout. Treat this as the newest official optimization and bug-fix baseline before updating homestead, companion, build, tier-list, and returning-player advice.",
+    playerAction:
+      "Re-check homestead and companion workflows first, then verify whether older Version 1.7 bug notes still apply before repeating them in guides.",
+  },
+  {
+    title: "Version 1.8 / Companions Make Home overview",
+    date: "2026-06-24",
+    source: "https://www.wherewindsmeetgame.com/news/official/CompanionsMakeHome.html",
+    summary:
+      "Official Version 1.8 overview for Companions Make Home, replacing The Imperial Palace Part 2 as the latest roadmap and update-search anchor.",
+    playerAction:
+      "Move update-today, roadmap, homestead, companion, and returning-player links to Version 1.8 context before older Palace-era summaries.",
+  },
+  {
+    title: "Version 1.8 Dev Q&A: A Place to Call Home",
+    date: "2026-06-23",
+    source: "https://www.wherewindsmeetgame.com/news/official/623faq.html",
+    summary:
+      "Official developer Q&A setting expectations for the A Place to Call Home / homestead update window and companion-system questions.",
+    playerAction:
+      "Use the Q&A as support context for player questions about homestead intent, companion priorities, and what to watch after the update lands.",
+  },
+  {
     title: "June 5 Version 1.7 fixes",
     date: "2026-06-05",
     source: "https://www.wherewindsmeetgame.com/news/official/529update.html",
     summary:
-      "Latest Version 1.7 fixes: Oceania, Middle East, and South America servers are fully available; Papercutting controller input, Imperial Palace quest descriptions, mobile scene loading, Palace Oddities, Hexi Familiar Faces NPCs, Jade Fish display, Skyward Bond UI text, PS5 Palace map snow visuals, Skill Theft access, chat bubbles, and Grand Nuo Ritual stability were addressed.",
+      "Historical Version 1.7 fixes: Oceania, Middle East, and South America servers are fully available; Papercutting controller input, Imperial Palace quest descriptions, mobile scene loading, Palace Oddities, Hexi Familiar Faces NPCs, Jade Fish display, Skyward Bond UI text, PS5 Palace map snow visuals, Skill Theft access, chat bubbles, and Grand Nuo Ritual stability were addressed.",
     playerAction:
       "Re-test Palace exploration, Imperial Palace quests, Hexi NPC befriending, mobile loading, Papercutting, Skill Theft routes, PS5 map visuals, and A Warrior's Journey rewards before trusting older bug reports.",
   },
@@ -25,7 +52,7 @@ const latestUpdateCards = [
     summary:
       "Earlier fixes on the same official patch-note page covered Soaring Record rewards, Skyward Bond's Ghost Master preparation-area spawn issue, Palace map loading on mobile, Guild Hero's Realm blank pages, Guild UI display errors, Kaifeng model display, controller shop selection, Jadeware translation, keybinds, Palace Unveiled rewards, and Development Shop inventory.",
     playerAction:
-      "Keep May 29 as the historical baseline for Palace launch bugs, but treat June 5 as the newest live-service state.",
+      "Keep May 29 as the historical baseline for Palace launch bugs, then check June 25 Version 1.8 notes before treating any old bug report as current.",
   },
   {
     title: "May 27 / May 28 live maintenance",
@@ -96,20 +123,20 @@ const upcomingNerfWatch = [
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Patch Notes Today - June 5 Version 1.7 Fixes",
+  title: "Where Winds Meet Patch Notes Today - Version 1.8 June 25 Fixes",
   description:
-    "Where Winds Meet patch notes tracker for Version 1.7: June 5 fixes, regional servers, Imperial Palace quests, mobile loading, Skill Theft, bosses, builds, and roadmap checks.",
+    "Where Winds Meet patch notes tracker for Version 1.8: June 25 fixes, Companions Make Home, homestead updates, companion systems, builds, tier lists, and roadmap checks.",
   alternates: buildHreflangAlternates("/guides/patch-notes"),
   openGraph: {
-    title: "Where Winds Meet Patch Notes Today - June 5 Version 1.7 Fixes",
+    title: "Where Winds Meet Patch Notes Today - Version 1.8 June 25 Fixes",
     description:
-      "Where Winds Meet patch notes tracker: Version 1.7, June 5 fixes, regional servers, Imperial Palace quests, mobile loading, Skill Theft, bosses, builds, and roadmap checks.",
+      "Where Winds Meet patch notes tracker: Version 1.8, June 25 fixes, Companions Make Home, homestead updates, companion systems, builds, tier lists, and roadmap checks.",
     url: `${baseUrl}/guides/patch-notes`,
   },
   twitter: {
-    title: "Where Winds Meet Patch Notes Today - June 5 Version 1.7",
+    title: "Where Winds Meet Patch Notes Today - Version 1.8 June 25",
     description:
-      "Version 1.7 patch notes tracker: June 5 fixes, regional servers, Imperial Palace quests, mobile loading, Skill Theft, bosses, builds, and roadmap checks.",
+      "Version 1.8 patch notes tracker: June 25 fixes, Companions Make Home, homestead updates, companion systems, builds, tier lists, and roadmap checks.",
   },
 };
 
@@ -170,10 +197,10 @@ export default function PatchNotesPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet patch notes today: Version 1.7, bosses, dungeons, and roadmap.
+            Where Winds Meet patch notes today: Version 1.8, homestead, companions, and roadmap.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Updated {freshness?.lastChecked ?? "2026-06-05"}: Where Winds Meet has moved into {freshness?.gameVersion ?? "Version 1.7 / June 5 fixes"}. The current live-service trail includes the June 5 fixes, The Imperial Palace overview, May 29 historical fixes, the May 27 / May 28 live maintenance window, the May 26 Path Balance adjustment, and the Sandstorm Tavern release. Use this page to catch up before you trust older boss, tier-list, or build advice.
+            Updated {freshness?.lastChecked ?? "2026-06-29"}: Where Winds Meet has moved into {freshness?.gameVersion ?? "Version 1.8 / June 25 fixes"}. The current live-service trail includes the June 25 Version 1.8 patch notes, the Companions Make Home overview, the June 23 A Place to Call Home Dev Q&A, June 5 Version 1.7 fixes, The Imperial Palace overview, and the May 26 Path Balance adjustment. Use this page to catch up before you trust older homestead, companion, boss, tier-list, or build advice.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             We flag roadmap checkpoints, official news beats, and practical player impact so you know what to re-check: codes, quest bugs, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, boss guides, builds, and tier-list assumptions.
@@ -273,7 +300,7 @@ export default function PatchNotesPage() {
           Version 1.7 catch-up: what changed recently.
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          The most important freshness signal is that the official news feed now lists the June 5 Version 1.7 fixes above the older Palace launch notes: The Imperial Palace overview, May 29 historical fixes, May 28 patch notes, and a May 26 Path Balance adjustment. If you last played around Version 1.2 or the Version 1.6 / Flows of Dreams period, treat this as your new catch-up checkpoint.
+          The most important freshness signal is that the official news feed now lists Version 1.8 / Companions Make Home and the June 25 Version 1.8 fixes above the older Palace launch notes. If you last played around Version 1.7, Version 1.6 / Flows of Dreams, or earlier, treat this as your new catch-up checkpoint.
         </p>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
           Start with practical checks: verify Palace-era code reports in-game, re-open blocked event or quest steps after the June 5 and May 29 fixes, and compare your build against the May 26 Path Balance notes before spending scarce upgrade materials.

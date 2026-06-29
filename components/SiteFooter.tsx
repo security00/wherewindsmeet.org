@@ -59,7 +59,7 @@ export function SiteFooter() {
       : "Unofficial Where Winds Meet fan hub. All trademarks are the property of their respective owners.";
 
   return (
-    <footer className="border-t border-slate-800/80 bg-slate-950/90 py-6 text-xs text-slate-400">
+    <footer className="border-t border-slate-700/45 bg-slate-950/38 py-6 text-xs text-slate-300 shadow-sm shadow-slate-950/20 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl flex-col justify-between gap-3 px-4 sm:flex-row sm:px-6 lg:px-8">
         <p>{description}</p>
         <div className="flex flex-wrap items-center gap-3">

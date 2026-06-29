@@ -4,9 +4,9 @@ import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "WWM Weapon Tier List - Best Where Winds Meet Weapons",
+  title: "Where Winds Meet Weapon Tier List: Best WWM Weapons",
   description:
-    "WWM weapon tier list for Where Winds Meet: best weapons ranked for PVE, PVP, arena climbing, beginners, Version 1.7 builds, and June 2026 meta checks.",
+    "Where Winds Meet weapon tier list for WWM: best weapons ranked for PVE, PVP, arena climbing, beginners, Version 1.7 builds, and June 2026 meta checks.",
   alternates: buildHreflangAlternates("/guides/weapons/tier-list"),
 };
 
@@ -70,6 +70,11 @@ const faqs = [
     question: "What is the best weapon in Where Winds Meet?",
     answer:
       "For most players, Rope Dart and Dual Blades are the strongest aggressive picks right now because they combine mobility, pressure, and burst. Spear and Mo Blade are safer if you care more about stable PVE clears.",
+  },
+  {
+    question: "What is the current Where Winds Meet weapon tier list?",
+    answer:
+      "Use Rope Dart and Dual Blades as the highest-pressure PVP checks, Spear and Mo Blade as safer PVE investments, and Sword, Fan, or Umbrella when you value comfort, support, or counterplay over raw burst.",
   },
   {
     question: "What is the best PVP weapon in WWM?",
@@ -196,7 +201,7 @@ export default function WeaponTierListPage() {
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      name: "WWM Weapon Tier List - Best Where Winds Meet Weapons",
+      name: "Where Winds Meet Weapon Tier List: Best WWM Weapons",
       description: metadata.description,
       url: "https://wherewindsmeet.org/guides/weapons/tier-list",
     },
@@ -236,7 +241,7 @@ export default function WeaponTierListPage() {
             WWM weapon tier list / PVE / PVP / Arena
           </p>
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            WWM Weapon Tier List: Best Where Winds Meet Weapons Ranked
+            Where Winds Meet Weapon Tier List: Best WWM Weapons Ranked
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
             This WWM weapon tier list answers the search directly: which Where

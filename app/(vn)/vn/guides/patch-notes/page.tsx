@@ -10,6 +10,33 @@ const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
   {
+    title: "June 25 Version 1.8 optimizations and bug fixes",
+    date: "2026-06-25",
+    source: "https://www.wherewindsmeetgame.com/news/official/625update.html",
+    summary:
+      "Moc patch notes moi nhat cho Version 1.8 sau Companions Make Home. Dung day lam baseline official cho bug fix va optimization lien quan homestead, companion, build, tier list va nguoi choi quay lai.",
+    playerAction:
+      "Kiem tra homestead va companion workflows truoc, roi moi lap lai cac bug note cu cua Version 1.7.",
+  },
+  {
+    title: "Version 1.8 / Companions Make Home overview",
+    date: "2026-06-24",
+    source: "https://www.wherewindsmeetgame.com/news/official/CompanionsMakeHome.html",
+    summary:
+      "Tong quan official cho Version 1.8 Companions Make Home; day la moc moi cho roadmap va update searches.",
+    playerAction:
+      "Chuyen update-today, roadmap, homestead, companion va returning-player links sang boi canh Version 1.8.",
+  },
+  {
+    title: "Version 1.8 Dev Q&A: A Place to Call Home",
+    date: "2026-06-23",
+    source: "https://www.wherewindsmeetgame.com/news/official/623faq.html",
+    summary:
+      "Dev Q&A official cho A Place to Call Home / homestead update va cac cau hoi ve companion systems.",
+    playerAction:
+      "Dung Q&A lam context cho cau hoi ve homestead, companion va nhung dieu can theo doi sau update.",
+  },
+  {
     title: "June 5 Version 1.7 fixes",
     date: "2026-06-05",
     source: "https://www.wherewindsmeetgame.com/news/official/529update.html",
@@ -96,21 +123,21 @@ const upcomingNerfWatch = [
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Patch Notes Hom Nay - June 5 Version 1.7",
+  title: "Where Winds Meet Patch Notes Hom Nay - Version 1.8 June 25",
   description:
-    "Patch notes Where Winds Meet tieng Viet cho Version 1.7: June 5 fixes, regional servers, Imperial Palace quests, mobile loading, Skill Theft, boss, build va roadmap.",
+    "Patch notes Where Winds Meet tieng Viet cho Version 1.8: June 25 fixes, Companions Make Home, homestead, companion, build, tier list va roadmap.",
   alternates: buildHreflangAlternates("/guides/patch-notes", { canonicalLanguage: "vi" }),
   openGraph: {
-    title: "Where Winds Meet Patch Notes Hom Nay - June 5 Version 1.7",
+    title: "Where Winds Meet Patch Notes Hom Nay - Version 1.8 June 25",
     description:
-      "Version 1.7 patch notes: June 5 fixes, regional servers, Imperial Palace quests, mobile loading, Skill Theft, boss, build va roadmap.",
+      "Version 1.8 patch notes: June 25 fixes, Companions Make Home, homestead, companion, build, tier list va roadmap.",
     url: `${baseUrl}/vn/guides/patch-notes`,
     locale: "vi_VN",
   },
   twitter: {
-    title: "Where Winds Meet Patch Notes Hom Nay - June 5 Version 1.7",
+    title: "Where Winds Meet Patch Notes Hom Nay - Version 1.8 June 25",
     description:
-      "Version 1.7 patch notes: June 5 fixes, regional servers, Imperial Palace quests, mobile loading, Skill Theft, boss va build.",
+      "Version 1.8 patch notes: June 25 fixes, Companions Make Home, homestead, companion, build va tier list.",
   },
 };
 
@@ -155,10 +182,10 @@ export default function PatchNotesViPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet patch notes hom nay: Version 1.7, boss, dungeon va roadmap.
+            Where Winds Meet patch notes hom nay: Version 1.8, homestead, companion va roadmap.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Cap nhat {freshness?.lastChecked ?? "2026-06-05"}: Where Winds Meet hien dang o boi canh {freshness?.gameVersion ?? "Version 1.7 / June 5 fixes"}. Chuoi update moi gom June 5 fixes, The Imperial Palace, May 29 historical fixes, May 27 / May 28 maintenance, Path Balance va Sandstorm Tavern.
+            Cap nhat {freshness?.lastChecked ?? "2026-06-29"}: Where Winds Meet hien dang o boi canh {freshness?.gameVersion ?? "Version 1.8 / June 25 fixes"}. Chuoi update moi gom June 25 Version 1.8 fixes, Companions Make Home, June 23 Dev Q&A, June 5 Version 1.7 fixes, The Imperial Palace va Path Balance.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Trang nay danh dau cac diem can kiem tra lai: codes, quest bug, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, boss guides, builds va tier-list.

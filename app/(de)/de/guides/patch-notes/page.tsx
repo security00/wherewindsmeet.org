@@ -10,6 +10,33 @@ const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
   {
+    title: "June 25 Version 1.8 optimizations and bug fixes",
+    date: "2026-06-25",
+    source: "https://www.wherewindsmeetgame.com/news/official/625update.html",
+    summary:
+      "Neuester Version-1.8-Patch-Note-Anker nach Companions Make Home. Nutze ihn als aktuelle offizielle Bugfix- und Optimierungsbasis fuer Homestead, Companions, Builds, Tierlisten und Rueckkehrer.",
+    playerAction:
+      "Pruefe Homestead- und Companion-Workflows zuerst, bevor du aeltere Version-1.7-Bugnotizen weiterverwendest.",
+  },
+  {
+    title: "Version 1.8 / Companions Make Home overview",
+    date: "2026-06-24",
+    source: "https://www.wherewindsmeetgame.com/news/official/CompanionsMakeHome.html",
+    summary:
+      "Offizielle Version-1.8-Uebersicht fuer Companions Make Home; das ist jetzt der aktuelle Roadmap- und Update-Suchanker.",
+    playerAction:
+      "Setze Update-today, Roadmap, Homestead, Companion und Returning-player Links in Version-1.8-Kontext.",
+  },
+  {
+    title: "Version 1.8 Dev Q&A: A Place to Call Home",
+    date: "2026-06-23",
+    source: "https://www.wherewindsmeetgame.com/news/official/623faq.html",
+    summary:
+      "Offizielles Dev-Q&A zur A Place to Call Home / Homestead-Update-Phase und zu Companion-System-Fragen.",
+    playerAction:
+      "Nutze das Q&A als Kontext fuer Fragen zu Homestead, Companions und Erwartungen nach dem Update.",
+  },
+  {
     title: "June 5 Version 1.7 fixes",
     date: "2026-06-05",
     source: "https://www.wherewindsmeetgame.com/news/official/529update.html",
@@ -96,21 +123,21 @@ const upcomingNerfWatch = [
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Patch Notes Heute - June 5 Version 1.7",
+  title: "Where Winds Meet Patch Notes Heute - Version 1.8 June 25",
   description:
-    "Deutscher Where Winds Meet Patch-Notes-Tracker fuer Version 1.7: June 5 fixes, regional servers, Imperial Palace quests, mobile loading, Skill Theft, Bosse, Builds und Roadmap.",
+    "Deutscher Where Winds Meet Patch-Notes-Tracker fuer Version 1.8: June 25 fixes, Companions Make Home, Homestead, Companions, Builds, Tierlisten und Roadmap.",
   alternates: buildHreflangAlternates("/guides/patch-notes", { canonicalLanguage: "de" }),
   openGraph: {
-    title: "Where Winds Meet Patch Notes Heute - June 5 Version 1.7",
+    title: "Where Winds Meet Patch Notes Heute - Version 1.8 June 25",
     description:
-      "Version 1.7 Patch Notes: June 5 fixes, regional servers, Imperial Palace quests, mobile loading, Skill Theft, Bosse, Builds und Roadmap.",
+      "Version 1.8 Patch Notes: June 25 fixes, Companions Make Home, Homestead, Companions, Builds, Tierlisten und Roadmap.",
     url: `${baseUrl}/de/guides/patch-notes`,
     locale: "de_DE",
   },
   twitter: {
-    title: "Where Winds Meet Patch Notes Heute - June 5 Version 1.7",
+    title: "Where Winds Meet Patch Notes Heute - Version 1.8 June 25",
     description:
-      "Version 1.7 Patch Notes: June 5 fixes, regional servers, Imperial Palace quests, mobile loading, Skill Theft, Bosse und Builds.",
+      "Version 1.8 Patch Notes: June 25 fixes, Companions Make Home, Homestead, Companions, Builds und Tierlisten.",
   },
 };
 
@@ -155,10 +182,10 @@ export default function PatchNotesDePage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet Patch Notes heute: Version 1.7, Bosse, Dungeons und Roadmap.
+            Where Winds Meet Patch Notes heute: Version 1.8, Homestead, Companions und Roadmap.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Aktualisiert {freshness?.lastChecked ?? "2026-06-05"}: Where Winds Meet steht jetzt im Kontext von {freshness?.gameVersion ?? "Version 1.7 / June 5 fixes"}. Die aktuelle Update-Spur umfasst June 5 fixes, The Imperial Palace, May 29 historical fixes, May 27 / May 28 maintenance, Path Balance und Sandstorm Tavern.
+            Aktualisiert {freshness?.lastChecked ?? "2026-06-29"}: Where Winds Meet steht jetzt im Kontext von {freshness?.gameVersion ?? "Version 1.8 / June 25 fixes"}. Die aktuelle Update-Spur umfasst June 25 Version 1.8 fixes, Companions Make Home, June 23 Dev Q&A, June 5 Version 1.7 fixes, The Imperial Palace und Path Balance.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Diese Seite markiert die Punkte, die du neu pruefen solltest: Codes, Quest-Bugs, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, Boss-Guides, Builds und Tier-List-Annahmen.

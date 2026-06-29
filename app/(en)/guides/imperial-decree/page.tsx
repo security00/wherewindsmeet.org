@@ -8,7 +8,7 @@ import ZoomableGuideImage from "./ZoomableGuideImage";
 const baseUrl = "https://wherewindsmeet.org";
 const slug = "imperial-decree";
 const pageUrl = `${baseUrl}/guides/${slug}`;
-const updated = "2026-06-24";
+const updated = "2026-06-29";
 const cdnBaseUrl = "https://static.wherewindsmeet.org";
 const imageBaseUrl = `${cdnBaseUrl}/guides/${slug}`;
 
@@ -300,12 +300,12 @@ const farmingAffairsAnswers = [
 ];
 
 export const metadata: Metadata = {
-  title: "Imperial Decree Where Winds Meet: All S Answers, Location & Rewards",
+  title: "Imperial Decree WWM Guide: S Answers, Location & Rewards",
   description:
-    "Imperial Decree Where Winds Meet guide with all S answer meanings, Finance and Farming Affairs solutions, Rear Garden location, Qu Chunqiu steps, and rewards.",
+    "Imperial Decree WWM guide with all S answer meanings, Finance, Farming Affairs and Penal Law solutions, Rear Garden location, Qu Chunqiu steps, and rewards.",
   alternates: buildHreflangAlternates(`/guides/${slug}`),
   openGraph: {
-    title: "Imperial Decree Where Winds Meet: All S Answers, Location & Rewards",
+    title: "Imperial Decree WWM Guide: S Answers, Location & Rewards",
     description:
       "Start Imperial Decree in the Imperial Palace, find Qu Chunqiu, review Finance and Farming Affairs memorials, and understand the S-rank answer route.",
     url: pageUrl,
@@ -322,7 +322,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Imperial Decree Where Winds Meet: S Answers & Rewards",
+    title: "Imperial Decree WWM: S Answers & Rewards",
     description:
       "Start location, Finance and Farming Affairs answer meanings, S-rank route, and rewards.",
     images: [
@@ -398,7 +398,7 @@ export default function ImperialDecreeGuidePage() {
               Version 1.7 Imperial Palace guide
             </p>
             <h1 className="mt-3 text-balance text-3xl font-bold tracking-tight text-slate-50 sm:text-5xl">
-              Where Winds Meet Imperial Decree guide: Farming Affairs answers, Finance S rank, and walkthrough.
+              Imperial Decree WWM guide: S answers, Finance route, and Rear Garden location.
             </h1>
             <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">
               Imperial Decree is a Palace exploration activity in Where Winds Meet. Go to the Rear Garden in
