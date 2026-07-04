@@ -31,14 +31,14 @@ const todayStatusCards = [
   {
     title: "Latest official update",
     detail:
-      "Version 1.8 / Companions Make Home is the newest official news anchor we have checked, with two June 25 items: the Homestead & Companions Keepsake Cards event and the Version 1.8 optimization and bug-fix patch notes.",
+      "Version 1.8 / July 2 patch notes is the newest official news anchor we have checked, following the June 29 account-suspension notice, Homestead & Companions Keepsake Cards event, and Version 1.8 Companions Make Home rollout.",
     href: "https://www.wherewindsmeetgame.com/m/news/",
     label: "Official news list",
   },
   {
     title: "Today patch-note answer",
     detail:
-      "The latest checked patch-note page is the June 25 Version 1.8 optimization and bug-fix update. Use the patch-note tracker before changing builds or tier-list advice.",
+      "The latest checked patch-note page is the July 2 Version 1.8 optimization and bug-fix update. Use the patch-note tracker before changing builds, tier-list advice, Arena notes, or Homestead guidance.",
     href: "/guides/patch-notes",
     label: "Patch notes",
   },
@@ -106,6 +106,10 @@ const searchIntentWatchlist = [
 
 export default function NewsPage() {
   const sortedNews = newsItems;
+  const latestNews = sortedNews.slice(0, 10);
+  const olderNews = sortedNews.slice(10);
+  const older2026News = olderNews.filter((item) => item.date.startsWith("2026"));
+  const archive2025News = olderNews.filter((item) => item.date.startsWith("2025"));
 
   const lastUpdatedLabel = `Updated ${latestNewsDate}`;
   const structuredData = [
@@ -149,6 +153,48 @@ export default function NewsPage() {
       { href: "/guides/woven-with-malice", label: "Woven with Malice (time gates)" },
     ],
   };
+
+  const renderNewsCard = (item: (typeof sortedNews)[number]) => (
+    <div
+      key={item.id}
+      className="card-tablet group flex flex-col gap-4 rounded-xl p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-900/10 sm:flex-row sm:items-start sm:justify-between"
+    >
+      <div className="space-y-2">
+        <div className="flex flex-wrap items-center gap-3">
+          <h2 className="text-lg font-bold text-slate-50 group-hover:text-ink-jade transition-colors font-serif">
+            {item.title}
+          </h2>
+          <span className="rounded-full border border-emerald-500/30 bg-emerald-950/30 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.1)]">
+            {item.type}
+          </span>
+        </div>
+        <p className="text-xs font-medium text-slate-500 font-mono">
+          {item.date}
+          {item.tags && item.tags.length > 0 && (
+            <>
+              <span className="mx-2 text-slate-700">|</span>
+              {item.tags.join(" / ")}
+            </>
+          )}
+        </p>
+        <p className="text-sm leading-relaxed text-slate-300/90 font-sans max-w-2xl">
+          {item.summary}
+        </p>
+      </div>
+      {item.officialUrl && (
+        <div className="mt-2 flex shrink-0 sm:mt-0 sm:pl-4 self-start">
+          <Link
+            href={item.officialUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="btn-seal text-[10px] py-1 px-3"
+          >
+            Read Official
+          </Link>
+        </div>
+      )}
+    </div>
+  );
 
   return (
     <article className="space-y-12 bg-ink-wash min-h-screen pb-20">
@@ -210,8 +256,8 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-3 leading-6 text-cyan-50/90">
-              The current checked update baseline is <strong>Version 1.8 / Companions Make Home</strong>,
-              with two June 25 official items: the Homestead & Companions Keepsake Cards event and the Version 1.8 patch notes. If you searched for
+              The current checked update baseline is <strong>Version 1.8 / July 2 patch notes</strong>,
+              with the June 29 account-suspension notice, Homestead & Companions rollout, June 25 event notes, and July 2 fixes now above older Palace-era updates. If you searched for
               <span className="font-semibold"> where winds meet update today</span>, use the cards below to jump straight
               to official news, patch notes, and roadmap watch items.
             </p>
@@ -243,7 +289,7 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Latest official-news pass: {freshness?.gameVersion ?? "Version 1.8 / Companions Make Home"} plus the June 25 Homestead & Companions Keepsake Cards event, June 25 Version 1.8 patch notes, June 23 Dev Q&A, June 8 Xbox launch, June 5 Version 1.7 fixes, The Imperial Palace overview, and Version 1.7 Path Balance announcement. The list below follows the current official news trail.
+              Latest official-news pass: {freshness?.gameVersion ?? "Version 1.8 / July 2 patch notes"}, plus the June 29 account-suspension notice, June 25 Homestead & Companions Keepsake Cards event, June 23 Dev Q&A, June 8 Xbox launch, June 5 Version 1.7 fixes, The Imperial Palace overview, and Version 1.7 Path Balance announcement. The list below follows the current official news trail.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link href="/guides/tier-list" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
@@ -305,7 +351,7 @@ export default function NewsPage() {
             <div className="mt-3 grid gap-2 text-xs text-slate-300 sm:grid-cols-3">
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
                 <p className="font-semibold text-slate-100">Current update</p>
-                <p className="mt-1">Version 1.8 / Companions Make Home, the June 25 Keepsake Cards event, and the June 25 patch notes are the current checked baseline for update searches.</p>
+                <p className="mt-1">Version 1.8 / July 2 patch notes, the June 29 account-suspension notice, the June 25 Keepsake Cards event, and Companions Make Home are the current checked baseline for update searches.</p>
               </div>
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
                 <p className="font-semibold text-slate-100">Next watch</p>
@@ -331,19 +377,25 @@ export default function NewsPage() {
               <p className="font-semibold text-slate-200">New hot searches to watch</p>
               <ul className="mt-2 space-y-1">
                 <li>
-                  Where Winds Meet codes June 2026 — Palace-era reports plus older Qinchuan/Hexi codes and the disabled leaked-code warning:
+                  Where Winds Meet codes June 2026 - Palace-era reports plus older Qinchuan/Hexi codes and the disabled leaked-code warning:
                   <Link href="/guides/codes" className="ml-1 text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
                     active codes page
                   </Link>
                 </li>
                 <li>
-                  Version 1.8 / Companions Make Home — current update anchor for homestead, companion, roadmap, event, and returning-player searches.
+                  June 29 account-suspension notice - fair-play enforcement, cheating, speed hacks, macros, leaderboard removal, gameplay restrictions, and ban reports:
+                  <Link href="https://www.wherewindsmeetgame.com/news/official/Banreport629.html" target="_blank" rel="noreferrer" className="ml-1 text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
+                    official notice
+                  </Link>
                 </li>
                 <li>
-                  June 5 patch notes, May 29 historical fixes, and May 26 Path Balance — re-check tier list, builds, weapon pages, and PVP advice against these notes before trusting older meta.
+                  Version 1.8 / July 2 patch notes - current update anchor for Homestead, companion, Arena, roadmap, event, and returning-player searches.
                 </li>
                 <li>
-                  Feng Ruzhi boss (Silk Ball) — location + unlock + mechanic:
+                  July 2 patch notes, June 25 fixes, June 5 patch notes, May 29 historical fixes, and May 26 Path Balance - re-check tier list, builds, weapon pages, and PVP advice against these notes before trusting older meta.
+                </li>
+                <li>
+                  Feng Ruzhi boss (Silk Ball) - location + unlock + mechanic:
                   <Link href="/guides/bosses/feng-ruzhi" className="ml-1 text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
                     Feng Ruzhi guide
                   </Link>
@@ -390,47 +442,27 @@ export default function NewsPage() {
           </div>
 
           <div className="mt-8 space-y-4">
-            {sortedNews.map((item) => (
-              <div
-                key={item.id}
-                className="card-tablet group flex flex-col gap-4 rounded-xl p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-900/10 sm:flex-row sm:items-start sm:justify-between"
-              >
-                <div className="space-y-2">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <h2 className="text-lg font-bold text-slate-50 group-hover:text-ink-jade transition-colors font-serif">
-                      {item.title}
-                    </h2>
-                    <span className="rounded-full border border-emerald-500/30 bg-emerald-950/30 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.1)]">
-                      {item.type}
-                    </span>
-                  </div>
-                  <p className="text-xs font-medium text-slate-500 font-mono">
-                    {item.date}
-                    {item.tags && item.tags.length > 0 && (
-                      <>
-                        <span className="mx-2 text-slate-700">|</span>
-                        {item.tags.join(" · ")}
-                      </>
-                    )}
-                  </p>
-                  <p className="text-sm leading-relaxed text-slate-300/90 font-sans max-w-2xl">
-                    {item.summary}
-                  </p>
-                </div>
-                {item.officialUrl && (
-                  <div className="mt-2 flex shrink-0 sm:mt-0 sm:pl-4 self-start">
-                    <Link
-                      href={item.officialUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="btn-seal text-[10px] py-1 px-3"
-                    >
-                      Read Official
-                    </Link>
-                  </div>
-                )}
-              </div>
-            ))}
+            {latestNews.map(renderNewsCard)}
+
+            {older2026News.length > 0 && (
+              <details className="group rounded-2xl border border-slate-800/80 bg-slate-950/70 p-4">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-slate-100 marker:hidden">
+                  <span>Older 2026 official news ({older2026News.length})</span>
+                  <span className="text-xs text-emerald-300 transition group-open:rotate-180">v</span>
+                </summary>
+                <div className="mt-4 space-y-4">{older2026News.map(renderNewsCard)}</div>
+              </details>
+            )}
+
+            {archive2025News.length > 0 && (
+              <details className="group rounded-2xl border border-slate-800/80 bg-slate-950/70 p-4">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-slate-100 marker:hidden">
+                  <span>2025 launch and beta archive ({archive2025News.length})</span>
+                  <span className="text-xs text-emerald-300 transition group-open:rotate-180">v</span>
+                </summary>
+                <div className="mt-4 space-y-4">{archive2025News.map(renderNewsCard)}</div>
+              </details>
+            )}
           </div>
         </div>
       </section>

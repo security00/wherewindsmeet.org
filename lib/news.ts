@@ -24,6 +24,22 @@ type OfficialNewsRow = [
 // site can pin items out of strict date order, so news pages should not sort it.
 const officialNewsRows: OfficialNewsRow[] = [
   [
+    "july-2-version-1-8-patch-notes",
+    "1.8 Version Patch Notes: Optimizations and Bug Fixes (July 2, 2026)",
+    "2026-07-02",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/625update.html",
+    "Official July 2 Version 1.8 patch-note update covering Dreamscape: Blissful Retreat entry changes, Familiar Faces NPC interaction fixes, Arena matchmaking and leaderboard fixes, Homestead fixes, path balance adjustments, Nameless Spear, Strategic Sword, Vernal Umbrella, Panacea Fan, Infernal Twinblades, Arena endurance rules, and related bug fixes.",
+  ],
+  [
+    "account-suspension-may25-june25-2026",
+    "Where Winds Meet - Account Suspension Notice (May 25-June 25)",
+    "2026-06-29",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/Banreport629.html",
+    "Official fair-play notice covering account suspensions from May 25 to June 25, including cheating, speed hacks, macros, abnormal behavior, leaderboard removal, gameplay restrictions, temporary/permanent bans, and character-creation issues tied to unauthorized third-party software.",
+  ],
+  [
     "homestead-companions-keepsake-cards",
     "Homestead & Companions Chapter Is Here! Collect Keepsake Cards to Unlock Limited Rewards",
     "2026-06-25",
