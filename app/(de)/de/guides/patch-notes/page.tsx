@@ -10,13 +10,13 @@ const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
   {
-    title: "June 25 Version 1.8 optimizations and bug fixes",
-    date: "2026-06-25",
+    title: "July 9 Version 1.8 optimizations and bug fixes",
+    date: "2026-07-09",
     source: "https://www.wherewindsmeetgame.com/news/official/625update.html",
     summary:
-      "Neuester Version-1.8-Patch-Note-Anker nach Companions Make Home. Nutze ihn als aktuelle offizielle Bugfix- und Optimierungsbasis fuer Homestead, Companions, Builds, Tierlisten und Rueckkehrer.",
+      "Neuester Version-1.8-Patch-Note-Anker: Training Terrace Preliminary, leichtere Taiping-Mausoleum-Etagen 10-12, Skyward-Bond- und Homestead-Fixes sowie 450 Sekunden fuer Sleeping Daoist.",
     playerAction:
-      "Pruefe Homestead- und Companion-Workflows zuerst, bevor du aeltere Version-1.7-Bugnotizen weiterverwendest.",
+      "Pruefe Arena, Taiping Mausoleum, Sleeping Daoist, Homestead und Skyward Bond, bevor du aeltere Hinweise weiterverwendest.",
   },
   {
     title: "Version 1.8 / Companions Make Home overview",
@@ -185,7 +185,7 @@ export default function PatchNotesDePage() {
             Where Winds Meet Patch Notes heute: Version 1.8, Homestead, Companions und Roadmap.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Aktualisiert {freshness?.lastChecked ?? "2026-06-29"}: Where Winds Meet steht jetzt im Kontext von {freshness?.gameVersion ?? "Version 1.8 / June 25 fixes"}. Die aktuelle Update-Spur umfasst June 25 Version 1.8 fixes, Companions Make Home, June 23 Dev Q&A, June 5 Version 1.7 fixes, The Imperial Palace und Path Balance.
+            Aktualisiert {freshness?.lastChecked ?? "2026-07-12"}: Where Winds Meet steht jetzt im Kontext von {freshness?.gameVersion ?? "Version 1.8 / July 9 fixes"}. Die aktuelle Update-Spur beginnt mit den July 9 fixes fuer Training Terrace, Taiping Mausoleum, Skyward Bond und Homestead, gefolgt von Companions Make Home und dem June 23 Dev Q&A.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Diese Seite markiert die Punkte, die du neu pruefen solltest: Codes, Quest-Bugs, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, Boss-Guides, Builds und Tier-List-Annahmen.

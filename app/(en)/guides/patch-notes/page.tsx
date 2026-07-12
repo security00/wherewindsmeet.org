@@ -10,13 +10,13 @@ const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
   {
-    title: "July 2 Version 1.8 optimizations and bug fixes",
-    date: "2026-07-02",
+    title: "July 9 Version 1.8 optimizations and bug fixes",
+    date: "2026-07-09",
     source: "https://www.wherewindsmeetgame.com/news/official/625update.html",
     summary:
-      "Latest Version 1.8 patch-note anchor after the Companions Make Home rollout. Treat this as the newest official optimization and bug-fix baseline before updating Dreamscape, Familiar Faces, Arena, Homestead, build, tier-list, and returning-player advice.",
+      "Latest Version 1.8 patch-note anchor after the Companions Make Home rollout. It adds Training Terrace Preliminary testing, lowers Taiping Mausoleum floor 10-12 difficulty, fixes Homestead, NPC, Skyward Bond, and mobile weapon-reforging issues, and extends the Sleeping Daoist limit from 360 to 450 seconds.",
     playerAction:
-      "Re-check Dreamscape: Blissful Retreat entry guidance, Familiar Faces NPC interactions, Arena server and leaderboard notes, Homestead workflows, and path balance advice before repeating older guide assumptions.",
+      "Re-check Arena and Training Terrace advice, Taiping Mausoleum difficulty, Sleeping Daoist strategy, Homestead quest guidance, Phantom Thief Goose NPC notes, and Skyward Bond mechanics before repeating older assumptions.",
   },
   {
     title: "June 29 account suspension and fair-play notice",
@@ -61,7 +61,7 @@ const latestUpdateCards = [
     summary:
       "Earlier fixes on the same official patch-note page covered Soaring Record rewards, Skyward Bond's Ghost Master preparation-area spawn issue, Palace map loading on mobile, Guild Hero's Realm blank pages, Guild UI display errors, Kaifeng model display, controller shop selection, Jadeware translation, keybinds, Palace Unveiled rewards, and Development Shop inventory.",
     playerAction:
-      "Keep May 29 as the historical baseline for Palace launch bugs, then check the July 2 Version 1.8 notes before treating any old bug report as current.",
+      "Keep May 29 as the historical baseline for Palace launch bugs, then check the July 9 Version 1.8 notes before treating any old bug report as current.",
   },
   {
     title: "May 27 / May 28 live maintenance",
@@ -93,7 +93,7 @@ const latestUpdateCards = [
 ];
 
 const impactChecklist = [
-  "Where Winds Meet patch notes today / new update: lead with July 2, then June 29 enforcement, June 25, June 5, May 29, and May 27 instead of older May 2026 summaries.",
+  "Where Winds Meet patch notes today / new update: lead with July 9, then June 29 enforcement, June 25, June 5, May 29, and May 27 instead of older May 2026 summaries.",
   "Boss and dungeon searches: mention Ghost Master, Hero's Realm, Sword Trial, Sandstorm Tavern, Sunken City Lake, and Lunar Eidolon where relevant.",
   "Build searches: call out cheaper Martial Art Reset and lower Inner Way Conversion cost before telling players to respec.",
   "Tier-list searches: tie weapon and Path recommendations back to the May 26 Path Balance and May 27 live maintenance window.",
@@ -132,20 +132,20 @@ const upcomingNerfWatch = [
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Patch Notes Today - Version 1.8 July 2 Fixes",
+  title: "Where Winds Meet Patch Notes Today - Version 1.8 July 9 Fixes",
   description:
-    "Where Winds Meet patch notes tracker for Version 1.8: July 2 fixes, Companions Make Home, homestead updates, companion systems, builds, tier lists, and roadmap checks.",
+    "Where Winds Meet patch notes tracker for Version 1.8: July 9 fixes, Training Terrace, Taiping Mausoleum, Skyward Bond, Homestead, builds, tier lists, and roadmap checks.",
   alternates: buildHreflangAlternates("/guides/patch-notes"),
   openGraph: {
-    title: "Where Winds Meet Patch Notes Today - Version 1.8 July 2 Fixes",
+    title: "Where Winds Meet Patch Notes Today - Version 1.8 July 9 Fixes",
     description:
-      "Where Winds Meet patch notes tracker: Version 1.8, July 2 fixes, Companions Make Home, homestead updates, companion systems, builds, tier lists, and roadmap checks.",
+      "Where Winds Meet patch notes tracker: Version 1.8, July 9 fixes, Training Terrace, Taiping Mausoleum, Skyward Bond, Homestead, builds, tier lists, and roadmap checks.",
     url: `${baseUrl}/guides/patch-notes`,
   },
   twitter: {
-    title: "Where Winds Meet Patch Notes Today - Version 1.8 July 2",
+    title: "Where Winds Meet Patch Notes Today - Version 1.8 July 9",
     description:
-      "Version 1.8 patch notes tracker: July 2 fixes, Companions Make Home, homestead updates, companion systems, builds, tier lists, and roadmap checks.",
+      "Version 1.8 patch notes tracker: July 9 fixes, Training Terrace, Taiping Mausoleum, Skyward Bond, Homestead, builds, tier lists, and roadmap checks.",
   },
 };
 
@@ -209,7 +209,7 @@ export default function PatchNotesPage() {
             Where Winds Meet patch notes today: Version 1.8, homestead, companions, and roadmap.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Updated {freshness?.lastChecked ?? "2026-07-05"}: Where Winds Meet has moved into {freshness?.gameVersion ?? "Version 1.8 / July 2 fixes"}. The current live-service trail includes the July 2 Version 1.8 patch notes, the June 29 account-suspension notice, the June 25 Version 1.8 fixes, the Companions Make Home overview, the June 23 A Place to Call Home Dev Q&A, June 5 Version 1.7 fixes, The Imperial Palace overview, and the May 26 Path Balance adjustment. Use this page to catch up before you trust older homestead, companion, boss, tier-list, or build advice.
+            Updated {freshness?.lastChecked ?? "2026-07-12"}: Where Winds Meet is on {freshness?.gameVersion ?? "Version 1.8 / July 9 fixes"}. The current live-service trail starts with the July 9 Version 1.8 patch notes, followed by the June 29 account-suspension notice, June 25 Version 1.8 fixes, Companions Make Home, and the June 23 Dev Q&A. Use this page before trusting older Arena, Homestead, boss, tier-list, or build advice.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             We flag roadmap checkpoints, official news beats, and practical player impact so you know what to re-check: codes, quest bugs, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, boss guides, builds, and tier-list assumptions.
@@ -309,7 +309,7 @@ export default function PatchNotesPage() {
           Version 1.7 catch-up: what changed recently.
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          The most important freshness signal is that the official news feed now lists the July 2 Version 1.8 patch notes, the June 29 account-suspension notice, Companions Make Home, and the June 25 Version 1.8 fixes above the older Palace launch notes. If you last played around Version 1.7, Version 1.6 / Flows of Dreams, or earlier, treat this as your new catch-up checkpoint.
+          The most important freshness signal is that the official news feed now lists the July 9 Version 1.8 patch notes above the June 29 account-suspension notice, Companions Make Home, and June 25 fixes. If you last played around Version 1.7, Version 1.6 / Flows of Dreams, or earlier, treat July 9 as your new catch-up checkpoint.
         </p>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
           Start with practical checks: verify Palace-era code reports in-game, re-open blocked event or quest steps after the June 5 and May 29 fixes, and compare your build against the May 26 Path Balance notes before spending scarce upgrade materials.

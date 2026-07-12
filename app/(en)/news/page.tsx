@@ -31,14 +31,14 @@ const todayStatusCards = [
   {
     title: "Latest official update",
     detail:
-      "Version 1.8 / July 2 patch notes is the newest official news anchor we have checked, following the June 29 account-suspension notice, Homestead & Companions Keepsake Cards event, and Version 1.8 Companions Make Home rollout.",
+      "Version 1.8 / July 9 patch notes is the newest official news anchor we have checked, followed by the June 29 account-suspension notice, Homestead & Companions Keepsake Cards event, and Version 1.8 Companions Make Home rollout.",
     href: "https://www.wherewindsmeetgame.com/m/news/",
     label: "Official news list",
   },
   {
     title: "Today patch-note answer",
     detail:
-      "The latest checked patch-note page is the July 2 Version 1.8 optimization and bug-fix update. Use the patch-note tracker before changing builds, tier-list advice, Arena notes, or Homestead guidance.",
+      "The latest checked patch-note page is the July 9 Version 1.8 optimization and bug-fix update. Use the patch-note tracker before changing builds, tier-list advice, Arena notes, boss strategy, or Homestead guidance.",
     href: "/guides/patch-notes",
     label: "Patch notes",
   },
@@ -256,8 +256,8 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-3 leading-6 text-cyan-50/90">
-              The current checked update baseline is <strong>Version 1.8 / July 2 patch notes</strong>,
-              with the June 29 account-suspension notice, Homestead & Companions rollout, June 25 event notes, and July 2 fixes now above older Palace-era updates. If you searched for
+              The current checked update baseline is <strong>Version 1.8 / July 9 patch notes</strong>,
+              with the June 29 account-suspension notice, Homestead & Companions rollout, and June 25 event notes now below the latest fixes. If you searched for
               <span className="font-semibold"> where winds meet update today</span>, use the cards below to jump straight
               to official news, patch notes, and roadmap watch items.
             </p>
@@ -289,7 +289,7 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Latest official-news pass: {freshness?.gameVersion ?? "Version 1.8 / July 2 patch notes"}, plus the June 29 account-suspension notice, June 25 Homestead & Companions Keepsake Cards event, June 23 Dev Q&A, June 8 Xbox launch, June 5 Version 1.7 fixes, The Imperial Palace overview, and Version 1.7 Path Balance announcement. The list below follows the current official news trail.
+              Latest official-news pass: {freshness?.gameVersion ?? "Version 1.8 / July 9 patch notes"}, plus the June 29 account-suspension notice, June 25 Homestead & Companions Keepsake Cards event, June 23 Dev Q&A, June 8 Xbox launch, June 5 Version 1.7 fixes, The Imperial Palace overview, and Version 1.7 Path Balance announcement. The list below follows the current official news trail.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link href="/guides/tier-list" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
@@ -351,7 +351,7 @@ export default function NewsPage() {
             <div className="mt-3 grid gap-2 text-xs text-slate-300 sm:grid-cols-3">
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
                 <p className="font-semibold text-slate-100">Current update</p>
-                <p className="mt-1">Version 1.8 / July 2 patch notes, the June 29 account-suspension notice, the June 25 Keepsake Cards event, and Companions Make Home are the current checked baseline for update searches.</p>
+                <p className="mt-1">Version 1.8 / July 9 patch notes, the June 29 account-suspension notice, the June 25 Keepsake Cards event, and Companions Make Home are the current checked baseline for update searches.</p>
               </div>
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
                 <p className="font-semibold text-slate-100">Next watch</p>
@@ -389,10 +389,10 @@ export default function NewsPage() {
                   </Link>
                 </li>
                 <li>
-                  Version 1.8 / July 2 patch notes - current update anchor for Homestead, companion, Arena, roadmap, event, and returning-player searches.
+                  Version 1.8 / July 9 patch notes - current update anchor for Training Terrace, Taiping Mausoleum, Skyward Bond, Homestead, Arena, roadmap, and returning-player searches.
                 </li>
                 <li>
-                  July 2 patch notes, June 25 fixes, June 5 patch notes, May 29 historical fixes, and May 26 Path Balance - re-check tier list, builds, weapon pages, and PVP advice against these notes before trusting older meta.
+                  July 9 patch notes, June 25 fixes, June 5 patch notes, May 29 historical fixes, and May 26 Path Balance - re-check tier list, builds, weapon pages, and PVP advice against these notes before trusting older meta.
                 </li>
                 <li>
                   Feng Ruzhi boss (Silk Ball) - location + unlock + mechanic:

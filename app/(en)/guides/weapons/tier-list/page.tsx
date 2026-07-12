@@ -2,11 +2,14 @@ import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import { getContentFreshness } from "@/lib/contentFreshness";
+
+const freshness = getContentFreshness("/guides/weapons/tier-list");
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Weapon Tier List: Best WWM Weapons",
   description:
-    "Where Winds Meet weapon tier list for WWM: best weapons ranked for PVE, PVP, arena climbing, beginners, Version 1.7 builds, and June 2026 meta checks.",
+    "Where Winds Meet weapon tier list for July 2026: best WWM weapons ranked for PVE, PVP, arena climbing, beginners, Version 1.8 builds, and meta checks.",
   alternates: buildHreflangAlternates("/guides/weapons/tier-list"),
 };
 
@@ -204,6 +207,7 @@ export default function WeaponTierListPage() {
       name: "Where Winds Meet Weapon Tier List: Best WWM Weapons",
       description: metadata.description,
       url: "https://wherewindsmeet.org/guides/weapons/tier-list",
+      dateModified: freshness?.lastChecked ?? "2026-07-12",
     },
     {
       "@context": "https://schema.org",
@@ -244,6 +248,7 @@ export default function WeaponTierListPage() {
             Where Winds Meet Weapon Tier List: Best WWM Weapons Ranked
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
+            Updated {freshness?.lastChecked ?? "2026-07-12"} for {freshness?.gameVersion ?? "Version 1.8 / July 2026 GSC refresh"}.{" "}
             This WWM weapon tier list answers the search directly: which Where
             Winds Meet weapons are worth investing in for PVE, PVP, arena ranks,
             and endgame builds. Choosing the right weapon is foundational to your Where Winds Meet
@@ -305,7 +310,7 @@ export default function WeaponTierListPage() {
         <div>
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Search intent: wwm weapon tier list</p>
           <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-            WWM Weapon Tier List June 2026: PvE, PvP, and arena picks.
+            WWM Weapon Tier List July 2026: PvE, PvP, and arena picks.
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-200 sm:text-base">
             The short answer for the current WWM weapon tier list is simple: Rope Dart and Dual Blades are the

@@ -24,12 +24,12 @@ type OfficialNewsRow = [
 // site can pin items out of strict date order, so news pages should not sort it.
 const officialNewsRows: OfficialNewsRow[] = [
   [
-    "july-2-version-1-8-patch-notes",
-    "1.8 Version Patch Notes: Optimizations and Bug Fixes (July 2, 2026)",
-    "2026-07-02",
+    "july-9-version-1-8-patch-notes",
+    "1.8 Version Patch Notes: Optimizations and Bug Fixes (July 9, 2026)",
+    "2026-07-09",
     "announcement",
     "https://www.wherewindsmeetgame.com/news/official/625update.html",
-    "Official July 2 Version 1.8 patch-note update covering Dreamscape: Blissful Retreat entry changes, Familiar Faces NPC interaction fixes, Arena matchmaking and leaderboard fixes, Homestead fixes, path balance adjustments, Nameless Spear, Strategic Sword, Vernal Umbrella, Panacea Fan, Infernal Twinblades, Arena endurance rules, and related bug fixes.",
+    "Official July 9 Version 1.8 patch-note update covering Training Terrace Preliminary testing, lower Taiping Mausoleum floor 10-12 difficulty, Homestead and NPC fixes, Skyward Bond fixes, a longer Sleeping Daoist timer, mobile weapon-reforging visuals, plus the July 2 and June 25 fixes on the same official page.",
   ],
   [
     "account-suspension-may25-june25-2026",

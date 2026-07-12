@@ -10,13 +10,13 @@ const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
   {
-    title: "June 25 Version 1.8 optimizations and bug fixes",
-    date: "2026-06-25",
+    title: "July 9 Version 1.8 optimizations and bug fixes",
+    date: "2026-07-09",
     source: "https://www.wherewindsmeetgame.com/news/official/625update.html",
     summary:
-      "Moc patch notes moi nhat cho Version 1.8 sau Companions Make Home. Dung day lam baseline official cho bug fix va optimization lien quan homestead, companion, build, tier list va nguoi choi quay lai.",
+      "Moc patch notes moi nhat cho Version 1.8: Training Terrace Preliminary, giam do kho Taiping Mausoleum tang 10-12, sua Skyward Bond va Homestead, va tang gioi han Sleeping Daoist len 450 giay.",
     playerAction:
-      "Kiem tra homestead va companion workflows truoc, roi moi lap lai cac bug note cu cua Version 1.7.",
+      "Kiem tra Arena, Taiping Mausoleum, Sleeping Daoist, Homestead va Skyward Bond truoc khi dung huong dan cu.",
   },
   {
     title: "Version 1.8 / Companions Make Home overview",
@@ -185,7 +185,7 @@ export default function PatchNotesViPage() {
             Where Winds Meet patch notes hom nay: Version 1.8, homestead, companion va roadmap.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Cap nhat {freshness?.lastChecked ?? "2026-06-29"}: Where Winds Meet hien dang o boi canh {freshness?.gameVersion ?? "Version 1.8 / June 25 fixes"}. Chuoi update moi gom June 25 Version 1.8 fixes, Companions Make Home, June 23 Dev Q&A, June 5 Version 1.7 fixes, The Imperial Palace va Path Balance.
+            Cap nhat {freshness?.lastChecked ?? "2026-07-12"}: Where Winds Meet hien dang o boi canh {freshness?.gameVersion ?? "Version 1.8 / July 9 fixes"}. Chuoi update moi bat dau voi Training Terrace, Taiping Mausoleum, Skyward Bond va Homestead fixes ngay July 9, sau do la Companions Make Home va Dev Q&A ngay June 23.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Trang nay danh dau cac diem can kiem tra lai: codes, quest bug, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, boss guides, builds va tier-list.
