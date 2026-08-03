@@ -10,6 +10,33 @@ const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
   {
+    title: "August 2 Version 2.0 optimizations and bug fixes",
+    date: "2026-08-02",
+    source: "https://www.wherewindsmeetgame.com/news/official/723update.html",
+    summary:
+      "Newest official patch-note anchor. It fixes Stonesplit - Might Arena Attunement, clarifies Stormbreaker Spear and Thundercry Blade interaction text, updates Hidden Mountain activities, and carries the full July 23 Version 2.0 Path Balance and Arena change log.",
+    playerAction:
+      "Re-test Arena builds and tier placements before spending reset materials, especially Stonesplit - Might, Stormbreaker Spear plus Thundercry Blade, Bellstrike - Umbra, Silkbind - Jade, Bamboocut paths, and the new Gauntlets ecosystem.",
+  },
+  {
+    title: "Unseen Approach Version 2.0 and Hidden Mountain",
+    date: "2026-08-02",
+    source: "https://www.wherewindsmeetgame.com/news/official/UnseenApproach.html",
+    summary:
+      "Official Version 2.0 overview and current roadmap anchor for Hidden Mountain, replacing Version 1.8 as the first context returning players should see.",
+    playerAction:
+      "Use Version 2.0 context first for update-today, roadmap, map, boss, weapon, tier-list, and returning-player searches.",
+  },
+  {
+    title: "Hidden Mountain dev letter and Wuxia 2.0 baseline",
+    date: "2026-07-19",
+    source: "https://www.wherewindsmeetgame.com/news/official/719devletter.html",
+    summary:
+      "Hidden Mountain adds four main areas, fourteen sub-regions, more than ten bosses, Gauntlets, Bamboocut - Kite, Mohist Hill, vertical exploration, and broad visual and progression upgrades.",
+    playerAction:
+      "Treat launch-era map, boss, weapon-count, progression, and platform summaries as stale until they are checked against Version 2.0.",
+  },
+  {
     title: "July 9 Version 1.8 optimizations and bug fixes",
     date: "2026-07-09",
     source: "https://www.wherewindsmeetgame.com/news/official/625update.html",
@@ -93,10 +120,10 @@ const latestUpdateCards = [
 ];
 
 const impactChecklist = [
-  "Where Winds Meet patch notes today / new update: lead with July 9, then June 29 enforcement, June 25, June 5, May 29, and May 27 instead of older May 2026 summaries.",
+  "Where Winds Meet patch notes today / new update: lead with August 2 Version 2.0, the July 23 Path Balance and Arena changes, Hidden Mountain, then older Version 1.8 history.",
   "Boss and dungeon searches: mention Ghost Master, Hero's Realm, Sword Trial, Sandstorm Tavern, Sunken City Lake, and Lunar Eidolon where relevant.",
   "Build searches: call out cheaper Martial Art Reset and lower Inner Way Conversion cost before telling players to respec.",
-  "Tier-list searches: tie weapon and Path recommendations back to the May 26 Path Balance and May 27 live maintenance window.",
+  "Tier-list searches: tie weapon and Path recommendations to the July 23 Version 2.0 Path Balance and August 2 Arena fixes.",
   "Mobile and controller searches: Palace map loading and Season Shop controller selection were official May 29 fixes.",
 ];
 
@@ -105,7 +132,7 @@ const upcomingNerfWatch = [
     topic: "Path Balance",
     status: "Official baseline",
     action:
-      "Use the May 26 Path Balance announcement as the starting point before calling any build or weapon newly nerfed.",
+      "Use the July 23 Version 2.0 Path Balance section in the August 2 official notes before calling any build or weapon newly nerfed.",
     href: "/guides/tier-list#arena-ranks",
   },
   {
@@ -132,20 +159,20 @@ const upcomingNerfWatch = [
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Patch Notes Today - Version 1.8 July 9 Fixes",
+  title: "Where Winds Meet Patch Notes Today - Version 2.0 August 2",
   description:
-    "Where Winds Meet patch notes tracker for Version 1.8: July 9 fixes, Training Terrace, Taiping Mausoleum, Skyward Bond, Homestead, builds, tier lists, and roadmap checks.",
+    "Where Winds Meet Version 2.0 patch notes for August 2: Hidden Mountain, Path Balance, Arena changes, Gauntlets, weapons, builds, fixes, and meta checks.",
   alternates: buildHreflangAlternates("/guides/patch-notes"),
   openGraph: {
-    title: "Where Winds Meet Patch Notes Today - Version 1.8 July 9 Fixes",
+    title: "Where Winds Meet Patch Notes Today - Version 2.0 August 2",
     description:
-      "Where Winds Meet patch notes tracker: Version 1.8, July 9 fixes, Training Terrace, Taiping Mausoleum, Skyward Bond, Homestead, builds, tier lists, and roadmap checks.",
+      "Where Winds Meet Version 2.0 patch notes: August 2 fixes, Hidden Mountain, Path Balance, Arena changes, Gauntlets, weapons, builds, and meta checks.",
     url: `${baseUrl}/guides/patch-notes`,
   },
   twitter: {
-    title: "Where Winds Meet Patch Notes Today - Version 1.8 July 9",
+    title: "Where Winds Meet Patch Notes Today - Version 2.0 August 2",
     description:
-      "Version 1.8 patch notes tracker: July 9 fixes, Training Terrace, Taiping Mausoleum, Skyward Bond, Homestead, builds, tier lists, and roadmap checks.",
+      "Version 2.0 patch notes tracker: August 2 fixes, Hidden Mountain, Path Balance, Arena changes, Gauntlets, weapons, builds, and meta checks.",
   },
 };
 
@@ -206,10 +233,10 @@ export default function PatchNotesPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet patch notes today: Version 1.8, homestead, companions, and roadmap.
+            Where Winds Meet patch notes today: Version 2.0, Hidden Mountain, Path Balance, and Arena.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Updated {freshness?.lastChecked ?? "2026-07-12"}: Where Winds Meet is on {freshness?.gameVersion ?? "Version 1.8 / July 9 fixes"}. The current live-service trail starts with the July 9 Version 1.8 patch notes, followed by the June 29 account-suspension notice, June 25 Version 1.8 fixes, Companions Make Home, and the June 23 Dev Q&A. Use this page before trusting older Arena, Homestead, boss, tier-list, or build advice.
+            Updated {freshness?.lastChecked ?? "2026-08-03"}: Where Winds Meet is on {freshness?.gameVersion ?? "Version 2.0 / August 2 fixes"}. The current live-service trail starts with the August 2 Version 2.0 notes and Unseen Approach overview, including the July 23 Path Balance and Arena changes. Use this page before trusting older Arena, weapon, boss, tier-list, or build advice.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             We flag roadmap checkpoints, official news beats, and practical player impact so you know what to re-check: codes, quest bugs, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, boss guides, builds, and tier-list assumptions.
@@ -306,10 +333,10 @@ export default function PatchNotesPage() {
 
       <section className="space-y-6 rounded-3xl border border-emerald-500/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/40">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          Version 1.7 catch-up: what changed recently.
+          Version 2.0 catch-up: what changed recently.
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          The most important freshness signal is that the official news feed now lists the July 9 Version 1.8 patch notes above the June 29 account-suspension notice, Companions Make Home, and June 25 fixes. If you last played around Version 1.7, Version 1.6 / Flows of Dreams, or earlier, treat July 9 as your new catch-up checkpoint.
+          The most important freshness signal is that the official news feed now lists the August 2 Version 2.0 overview and patch notes first. If you last played around Version 1.8, Version 1.7, or earlier, treat Hidden Mountain and the July 23 balance pass as your new catch-up checkpoint.
         </p>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
           Start with practical checks: verify Palace-era code reports in-game, re-open blocked event or quest steps after the June 5 and May 29 fixes, and compare your build against the May 26 Path Balance notes before spending scarce upgrade materials.
@@ -350,7 +377,7 @@ export default function PatchNotesPage() {
 
       <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          SEO guide checklist after Version 1.7.
+          SEO guide checklist after Version 2.0.
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
           The highest-value pages should not only say &quot;latest patch.&quot; They should answer the specific searches players make right after an update lands.

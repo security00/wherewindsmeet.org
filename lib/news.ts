@@ -24,6 +24,38 @@ type OfficialNewsRow = [
 // site can pin items out of strict date order, so news pages should not sort it.
 const officialNewsRows: OfficialNewsRow[] = [
   [
+    "august-2-version-2-0-update-overview",
+    "[Unseen Approach] Version 2.0 Update Overview",
+    "2026-08-02",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/UnseenApproach.html",
+    "Official Version 2.0 update overview for Unseen Approach and the Hidden Mountain era, now the primary update and returning-player freshness anchor.",
+  ],
+  [
+    "august-2-version-2-0-patch-notes",
+    "Version 2.0 Patch Notes: Optimizations and Bug Fixes (August 2, 2026)",
+    "2026-08-02",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/723update.html",
+    "Official Version 2.0 fixes plus the July 23 Path Balance and Arena changes: weapon and Path tuning, Arena networking, Stonesplit - Might Attunement, Stormbreaker Spear and Thundercry Blade behavior, Gauntlets, Hidden Mountain, and progression fixes.",
+  ],
+  [
+    "account-suspension-june26-july26-2026",
+    "Where Winds Meet - Account Suspension Notice (June 26-July 26)",
+    "2026-07-27",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/m/news/",
+    "Official fair-play notice covering unauthorized third-party tools and abnormal behavior during the June 26 to July 26 period.",
+  ],
+  [
+    "hidden-mountain-version-2-0-dev-letter",
+    "Dev Letter: Into Hidden Mountain, Into the New Wuxia Era",
+    "2026-07-19",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/719devletter.html",
+    "Official Version 2.0 roadmap letter introducing Hidden Mountain, Gauntlets, Bamboocut - Kite, Mohist Hill, large exploration and visual upgrades, and ongoing balance testing through Training Terrace.",
+  ],
+  [
     "july-9-version-1-8-patch-notes",
     "1.8 Version Patch Notes: Optimizations and Bug Fixes (July 9, 2026)",
     "2026-07-09",

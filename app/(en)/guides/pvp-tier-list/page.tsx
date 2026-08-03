@@ -3,12 +3,15 @@ import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import { getContentFreshness } from "@/lib/contentFreshness";
 import { weapons } from "@/lib/weapons";
 
+const freshness = getContentFreshness("/guides/pvp-tier-list");
+
 export const metadata: Metadata = {
-  title: "Where Winds Meet PVP Tier List & Arena Ranks 2026",
+  title: "Where Winds Meet PVP Tier List & Arena Ranks (2.0)",
   description:
-    "Where Winds Meet PVP tier list for arena ranks, duel ranking, WWM PVP ranks, weapons, roles, and competitive build checks after 2026 updates.",
+    "Where Winds Meet PVP tier list and Arena ranks for Version 2.0, with August 2026 weapon, Path Balance, matchmaking, and competitive build checks.",
   alternates: buildHreflangAlternates("/guides/pvp-tier-list"),
 };
 
@@ -40,7 +43,7 @@ const arenaRankChecks = [
   {
     title: "Before you spend reset materials",
     detail:
-      "Check May 26 Path Balance and May 27 maintenance first. If your weapon only lost comfort rather than damage, test the same build before rebuilding from scratch.",
+      "Check the July 23 Version 2.0 Path Balance and Arena changes plus the August 2 fixes first. Test the same build before rebuilding from scratch.",
     href: "/guides/patch-notes#upcoming-nerfs",
     label: "Upcoming nerf watch",
   },
@@ -108,7 +111,7 @@ export default function PVPTierListPage() {
               Static defenses struggle against the speed of top-tier assassins.
             </p>
             <p>
-              This list ranks weapons based on their performance in high-level duels, small-scale skirmishes, WWM arena ranks, and PVP ranking climbs. Use it with the main tier list when checking whether your build still fits the 2026 meta.
+              This list ranks weapons based on their performance in high-level duels, small-scale skirmishes, WWM arena ranks, and PVP ranking climbs. It was rechecked on {freshness?.lastChecked ?? "2026-08-03"} for {freshness?.gameVersion ?? "Version 2.0"}; use it with the main tier list before changing your build.
             </p>
           </div>
         </div>
@@ -119,7 +122,7 @@ export default function PVPTierListPage() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-wide text-red-200">Search intent: wwm arena ranks</p>
             <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-              Arena rank checklist after Path Balance.
+              Arena rank checklist after Version 2.0 Path Balance.
             </h2>
           </div>
           <Link
@@ -199,7 +202,7 @@ export default function PVPTierListPage() {
           <h2 className="text-2xl font-bold text-slate-100 font-serif">
             Weapon Tier List
           </h2>
-          <span className="text-xs text-slate-500 font-mono">Updated for 2026 arena-rank searches</span>
+          <span className="text-xs text-slate-500 font-mono">Updated for Version 2.0 / August 2026</span>
         </div>
 
         <div className="grid gap-8">

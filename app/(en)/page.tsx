@@ -103,7 +103,7 @@ export default function Home() {
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1.4fr)] lg:items-start">
           <div className="space-y-6">
             <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-              Version 1.7 <span className="text-ink-gold">Guides Hub</span>
+              Version 2.0 <span className="text-ink-gold">Guides Hub</span>
             </h2>
             <div className="space-y-4 text-slate-300 leading-relaxed">
             <p>
@@ -114,7 +114,7 @@ export default function Home() {
               and free exploration.
             </p>
             <p>
-              This Where Winds Meet refresh is checked for {freshness?.gameVersion ?? "Version 1.7"} and collects
+              This Where Winds Meet refresh is checked for {freshness?.gameVersion ?? "Version 2.0"} and collects
               guides, builds, latest patch notes, fresh videos, and reported Palace-era codes to help returning
               players catch up from older Hexi, Liangzhou, and Qinchuan assumptions without guessing from outdated pages.
             </p>
@@ -165,7 +165,7 @@ export default function Home() {
       <section className="rounded-3xl border border-emerald-500/20 bg-emerald-500/5 p-5 shadow-lg shadow-emerald-900/30">
         <div className="flex flex-wrap items-center gap-3">
           <p className="text-sm font-semibold text-emerald-100">
-            Quick picks ({freshness?.gameVersion ?? "Version 1.7"} refresh)
+              Quick picks ({freshness?.gameVersion ?? "Version 2.0"} refresh)
           </p>
           <div className="flex flex-wrap gap-2 text-xs">
             <Link
@@ -248,7 +248,7 @@ export default function Home() {
             </Link>
           </div>
           <p className="mt-3 w-full text-xs text-emerald-50/80">
-            Fast path for active searches: Where Winds Meet news, future draw previews, WWM arena ranks, upcoming nerfs, codes June 2026, Version 1.7 patch notes, The Imperial Palace update, Path Balance changes, Qinchuan and Hexi catch-up, bosses list, Feng Ruzhi location, Imperial Decree, and Mistveil Prison aliases.
+            Fast path for active searches: Where Winds Meet Version 2.0 news, Hidden Mountain, Gauntlets, WWM arena ranks, Path Balance changes, weapon tier lists, active codes, Qinchuan and Hexi catch-up, bosses, Imperial Decree, and Mistveil Prison aliases.
           </p>
         </div>
       </section>
@@ -320,7 +320,7 @@ export default function Home() {
           <div>
             <p className="text-xs uppercase tracking-wide text-emerald-300">Trending now</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-50">Where Winds Meet guides players search for</h2>
-            <p className="text-xs text-amber-200 mt-1">Freshness pass: Version 1.7, The Imperial Palace, Palace-era code reports, Path Balance, Qinchuan/Hexi catch-up, plus existing quest guides.</p>
+            <p className="text-xs text-amber-200 mt-1">Freshness pass: Version 2.0, Hidden Mountain, Gauntlets, August 2 fixes, Path Balance, Arena changes, and existing quest guides.</p>
           </div>
           <span className="text-xs text-slate-400">Updated with Google Trends keywords</span>
         </div>
@@ -402,7 +402,7 @@ export default function Home() {
             {
               title: "Tier Lists",
               href: "/guides/tier-list",
-              desc: "WWM arena ranks, PVP/PVE rankings, and weapon tiers to re-check after Version 1.7 Path Balance.",
+                desc: "WWM arena ranks, PVP/PVE rankings, and weapon tiers rechecked after Version 2.0 Path Balance.",
               tag: "Meta",
             },
           ].map((item) => (

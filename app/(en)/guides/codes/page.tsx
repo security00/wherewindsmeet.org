@@ -7,9 +7,9 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 const freshness = getContentFreshness("/guides/codes");
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Codes June 2026 – Palace Rewards",
+  title: "Where Winds Meet Codes (August 2026) - Active WWM Codes",
   description:
-    "Updated Where Winds Meet codes tracker for Version 1.7, Palace-era reported rewards, disabled leaked exchange code warnings, redemption steps, and expired launch codes.",
+    "Updated Where Winds Meet codes tracker for Version 2.0 and August 2026, with active-code checks, redemption steps, expired codes, and leaked-code warnings.",
   alternates: buildHreflangAlternates("/guides/codes"),
 };
 
@@ -138,7 +138,7 @@ export default function CodesPage() {
           </h1>
           <div className="max-w-3xl space-y-4 text-slate-300 leading-relaxed">
             <p>
-              Updated {lastChecked}: this page refreshes the Where Winds Meet codes list for {freshness?.gameVersion ?? "Version 1.7 / The Imperial Palace"} instead of leaving old launch-only codes at the top. Start with Palace-era reported codes, then try Qinchuan/Hexi and older launch rewards only if your account has never claimed them.
+              Updated {lastChecked}: this page refreshes the Where Winds Meet codes list for {freshness?.gameVersion ?? "Version 2.0 / August 2026"} instead of leaving old launch-only codes at the top. Start with the most recently verified entries, then try Palace, Qinchuan/Hexi, and older launch rewards only if your account has never claimed them.
             </p>
             <p>
               Important: the official news feed also reported that a leaked batch of 30 exchange codes was disabled in early May 2026. If a code from social media fails, it may simply be one of those disabled leak codes rather than a problem with your account.

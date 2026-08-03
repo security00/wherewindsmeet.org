@@ -79,9 +79,9 @@ const tierListFaqs = [
 
 const julyChangeNotes = [
   {
-    title: "Version 1.8 freshness check",
+    title: "Version 2.0 freshness check",
     detail:
-      "This Where Winds Meet tier list was rechecked for July 2026 searches after the Version 1.8 update, while keeping the latest confirmed Path Balance baseline.",
+      "This Where Winds Meet tier list was rechecked for August 2026 after the Version 2.0 update. July 23 Path Balance and Arena changes mean older placements are a baseline to retest, not a permanent verdict.",
     href: "/news#hidden-mountain-watch",
     label: "Latest update watch",
   },
@@ -104,18 +104,18 @@ const julyChangeNotes = [
 export const metadata: Metadata = {
   title: "Where Winds Meet Tier List 2026 - Best PVE/PVP Weapons & Arena Ranks",
   description:
-    "Where Winds Meet tier list for July 2026 and Version 1.8: best PVE weapons, PVP arena ranks, builds, paths, dual-weapon combos, and balance checks.",
+    "Where Winds Meet tier list for August 2026 and Version 2.0: best PVE weapons, PVP arena ranks, builds, paths, Gauntlets, and balance checks.",
   alternates: buildHreflangAlternates("/guides/tier-list"),
   openGraph: {
     title: "Where Winds Meet Tier List 2026 - Best PVE/PVP Weapons & Arena Ranks",
     description:
-      "Where Winds Meet tier list for July 2026 and Version 1.8: best PVE weapons, PVP arena ranks, builds, paths, dual-weapon combos, and balance checks.",
+      "Where Winds Meet tier list for August 2026 and Version 2.0: best PVE weapons, PVP arena ranks, builds, paths, Gauntlets, and balance checks.",
     url: `${baseUrl}/guides/tier-list`,
   },
   twitter: {
     title: "Where Winds Meet Tier List 2026 - Best PVE/PVP Weapons & Arena Ranks",
     description:
-      "Where Winds Meet tier list for July 2026 and Version 1.8: best PVE weapons, PVP arena ranks, builds, paths, dual-weapon combos, and balance checks.",
+      "Where Winds Meet tier list for August 2026 and Version 2.0: best PVE weapons, PVP arena ranks, builds, paths, Gauntlets, and balance checks.",
   },
 };
 
@@ -192,11 +192,11 @@ export default function TierListPage() {
             <h2 className="mt-1 text-2xl font-bold text-slate-50">Best Where Winds Meet tier list picks for PVE, PVP, and arena ranks.</h2>
             <p className="mt-3 leading-6 text-slate-300">
               If you landed here from Google, start with this short answer before scrolling into the full ranking table.
-              The current recommendation is rechecked for Version 1.8, the latest confirmed Path Balance notes, PVE comfort, and PVP arena-rank pressure.
+              The current recommendation is rechecked for Version 2.0, the July 23 Path Balance and Arena notes, August 2 fixes, PVE comfort, and PVP arena-rank pressure.
             </p>
           </div>
           <span className="rounded-full border border-cyan-300/60 bg-cyan-500/10 px-3 py-1 text-xs font-semibold text-cyan-100">
-            Updated July 2026
+              Updated August 2026
           </span>
         </div>
         <div className="mt-4 grid gap-3 md:grid-cols-3">
@@ -227,7 +227,7 @@ export default function TierListPage() {
       <section id="what-changed" className="mb-6 rounded-2xl border border-violet-400/30 bg-violet-500/10 p-5 text-sm text-slate-200 shadow-sm shadow-violet-950/40">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-wide text-violet-200">Updated for July 2026</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-violet-200">Updated for August 2026</p>
             <h2 className="mt-1 text-xl font-bold text-slate-50">What changed in this Where Winds Meet tier list?</h2>
             <p className="mt-3 leading-6 text-slate-300">
               The goal is to help players who search Where Winds Meet tier list, WWM tier list, PvP ranks,
@@ -279,7 +279,7 @@ export default function TierListPage() {
         <p className="mt-3 leading-6 text-slate-300">
           Players are clustering around WWM arena ranks, PVP ranking, and upcoming nerfs. Treat this page as
           the broad meta view, then use the PVP, weapon, and patch-note links below to verify whether a ranking still
-          fits the Version 1.8 live environment and the latest confirmed Path Balance baseline.
+          fits the Version 2.0 live environment and the latest confirmed Path Balance baseline. Because the July 23 pass changed multiple Paths and Arena interactions, retest any older ranking before a costly respec.
         </p>
         <div className="mt-4 grid gap-3 md:grid-cols-3">
           {arenaRankNotes.map((item) => (

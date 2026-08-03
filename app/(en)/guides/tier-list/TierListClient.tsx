@@ -184,7 +184,7 @@ export default function TierListClient() {
               Where Winds Meet <span className="text-ink-gold">Tier List</span>
             </h1>
             <p className="mt-4 text-sm font-medium uppercase tracking-wide text-emerald-400/80">
-              PVE & PVP - Version 1.7 meta
+              PVE & PVP - Version 2.0 meta watch
             </p>
             <p className="mt-6 text-lg leading-relaxed text-slate-300">
               A practical guide for real players. We prioritize <span className="text-slate-100 font-semibold">comfort, consistency, and style</span> over theoretical spreadsheet numbers. Find the path that lets you master the Jianghu.
@@ -213,7 +213,7 @@ export default function TierListClient() {
           <h2 className="text-2xl font-bold tracking-tight text-slate-50 border-brush inline-block pb-1">
             Quick Tier Snapshot
           </h2>
-          <span className="text-xs text-slate-400">Updated for Version 1.7</span>
+              <span className="text-xs text-slate-400">Rechecked for Version 2.0 / August 2026</span>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-2">

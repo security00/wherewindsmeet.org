@@ -7,9 +7,9 @@ import { getContentFreshness } from "@/lib/contentFreshness";
 const freshness = getContentFreshness("/guides/weapons/tier-list");
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Weapon Tier List: Best WWM Weapons",
+  title: "Where Winds Meet Weapon Tier List (August 2026)",
   description:
-    "Where Winds Meet weapon tier list for July 2026: best WWM weapons ranked for PVE, PVP, arena climbing, beginners, Version 1.8 builds, and meta checks.",
+    "Where Winds Meet weapon tier list for Version 2.0: best WWM weapons for PVE, PVP and Arena, with August 2026 Path Balance and Gauntlets checks.",
   alternates: buildHreflangAlternates("/guides/weapons/tier-list"),
 };
 
@@ -204,10 +204,10 @@ export default function WeaponTierListPage() {
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      name: "Where Winds Meet Weapon Tier List: Best WWM Weapons",
+      name: "Where Winds Meet Weapon Tier List (August 2026)",
       description: metadata.description,
       url: "https://wherewindsmeet.org/guides/weapons/tier-list",
-      dateModified: freshness?.lastChecked ?? "2026-07-12",
+      dateModified: freshness?.lastChecked ?? "2026-08-03",
     },
     {
       "@context": "https://schema.org",
@@ -245,10 +245,10 @@ export default function WeaponTierListPage() {
             WWM weapon tier list / PVE / PVP / Arena
           </p>
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet Weapon Tier List: Best WWM Weapons Ranked
+            Where Winds Meet Weapon Tier List (August 2026)
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Updated {freshness?.lastChecked ?? "2026-07-12"} for {freshness?.gameVersion ?? "Version 1.8 / July 2026 GSC refresh"}.{" "}
+            Updated {freshness?.lastChecked ?? "2026-08-03"} for {freshness?.gameVersion ?? "Version 2.0 / August 2026 GSC refresh"}.{" "}
             This WWM weapon tier list answers the search directly: which Where
             Winds Meet weapons are worth investing in for PVE, PVP, arena ranks,
             and endgame builds. Choosing the right weapon is foundational to your Where Winds Meet
@@ -310,12 +310,14 @@ export default function WeaponTierListPage() {
         <div>
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Search intent: wwm weapon tier list</p>
           <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-            WWM Weapon Tier List July 2026: PvE, PvP, and arena picks.
+            WWM Weapon Tier List August 2026: PvE, PvP, and Arena picks.
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-200 sm:text-base">
             The short answer for the current WWM weapon tier list is simple: Rope Dart and Dual Blades are the
             most aggressive PvP checks, Spear and Mo Blade are the safest PvE investments, and Umbrella remains
-            useful when you need defensive counterplay. Use the cards below before you spend reset materials.
+            useful when you need defensive counterplay. Version 2.0 added Gauntlets and changed multiple Paths and
+            Arena interactions on July 23, so treat these placements as a practical starting point and retest your
+            exact build before you spend reset materials.
           </p>
         </div>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">

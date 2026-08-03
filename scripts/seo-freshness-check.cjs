@@ -7,7 +7,7 @@ const { extname, join, relative } = require("node:path");
 const ROOTS_TO_SCAN = ["app", "lib"];
 const TEXT_EXTENSIONS = new Set([".ts", ".tsx"]);
 const REQUIRED_CORE_PATHS = ["/", "/news", "/guides/patch-notes", "/guides/codes"];
-const REQUIRED_LATEST_VERSION = "Version 1.8";
+const REQUIRED_LATEST_VERSION = "Version 2.0";
 
 const staleRules = [
   { pattern: /Quick picks \(May 2026 refresh\)/i, reason: "homepage still advertises May 2026 refresh" },
