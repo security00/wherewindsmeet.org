@@ -192,7 +192,7 @@ export default function TierListPage() {
             <h2 className="mt-1 text-2xl font-bold text-slate-50">Best Where Winds Meet tier list picks for PVE, PVP, and arena ranks.</h2>
             <p className="mt-3 leading-6 text-slate-300">
               If you landed here from Google, start with this short answer before scrolling into the full ranking table.
-              The current recommendation is rechecked for Version 2.0, the July 23 Path Balance and Arena notes, August 2 fixes, PVE comfort, and PVP arena-rank pressure.
+              The current recommendation is rechecked for Version 2.0, the July 23 Path Balance baseline, and the August 7 network and matchmaking update. Connection changes should not be mistaken for weapon buffs or nerfs.
             </p>
           </div>
           <span className="rounded-full border border-cyan-300/60 bg-cyan-500/10 px-3 py-1 text-xs font-semibold text-cyan-100">

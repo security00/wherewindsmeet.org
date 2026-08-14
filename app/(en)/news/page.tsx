@@ -12,18 +12,18 @@ const freshness = getContentFreshness("/news");
 export const metadata: Metadata = {
   title: "Where Winds Meet Update Today - Version 2.0 News & Patch Notes",
   description:
-    "Where Winds Meet update today tracker for Version 2.0, August 2 patch notes, Hidden Mountain, Path Balance, Arena changes, Gauntlets, events, and guide impact.",
+    "Where Winds Meet update today tracker for Version 2.0, August 7 patch notes, network and matchmaking updates, Hidden Mountain, events, and guide impact.",
   alternates: buildHreflangAlternates("/news"),
   openGraph: {
     title: "Where Winds Meet Update Today - Version 2.0 News & Patch Notes",
     description:
-      "Where Winds Meet update today tracker for Version 2.0, August 2 patch notes, Hidden Mountain, Path Balance, Arena changes, Gauntlets, events, and guide impact.",
+      "Where Winds Meet update today tracker for Version 2.0, August 7 patch notes, network and matchmaking updates, Hidden Mountain, events, and guide impact.",
     url: `${baseUrl}/news`,
   },
   twitter: {
     title: "Where Winds Meet Update Today - Version 2.0 News & Patch Notes",
     description:
-      "Where Winds Meet update today tracker for Version 2.0, August 2 patch notes, Hidden Mountain, Path Balance, Arena changes, Gauntlets, events, and guide impact.",
+      "Where Winds Meet update today tracker for Version 2.0, August 7 patch notes, network and matchmaking updates, Hidden Mountain, events, and guide impact.",
   },
 };
 
@@ -31,14 +31,14 @@ const todayStatusCards = [
   {
     title: "Latest official update",
     detail:
-      "Version 2.0 / August 2 is the newest official news anchor checked: Unseen Approach, Hidden Mountain, Path Balance, Arena changes, Gauntlets, and same-day fixes now sit above the July 27 fair-play notice.",
+      "Version 2.0 / August 7 is the newest official anchor checked: cross-region network and matchmaking improvements, Hidden Mountain fixes, and Cutie Clash adjustments now lead the update trail.",
     href: "https://www.wherewindsmeetgame.com/m/news/",
     label: "Official news list",
   },
   {
     title: "Today patch-note answer",
     detail:
-      "The latest checked patch-note page is the August 2 Version 2.0 update. It includes July 23 Path and Arena changes plus August 2 fixes, so re-check builds, tier lists, Arena notes, and weapon advice.",
+      "The latest checked patch-note page is the August 7 Version 2.0 update. Re-check cross-region multiplayer, matchmaking, Hidden Mountain blockers, and Cutie Clash guides; core weapon tiers still use the July 23 balance baseline.",
     href: "/guides/patch-notes",
     label: "Patch notes",
   },
@@ -90,7 +90,7 @@ const searchIntentWatchlist = [
     title: "Upcoming nerfs and balance watch",
     query: "upcoming nerf wwm",
     action:
-      "Do not call a change confirmed until it appears in official notes. Start with the July 23 Version 2.0 Path Balance and Arena changes, then check the August 2 fixes before updating rankings.",
+      "Do not call a change confirmed until it appears in official notes. Use July 23 for weapon balance and August 7 for network and matchmaking behavior before updating Arena guidance.",
     href: "/guides/patch-notes#upcoming-nerfs",
     cta: "Balance watch",
   },
@@ -256,8 +256,8 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-3 leading-6 text-cyan-50/90">
-              The current checked update baseline is <strong>Version 2.0 / August 2 patch notes</strong>,
-              with the June 29 account-suspension notice, Homestead & Companions rollout, and June 25 event notes now below the latest fixes. If you searched for
+              The current checked update baseline is <strong>Version 2.0 / August 7 patch notes</strong>,
+              followed by the August 2 Cologne meetup announcement, July 27 fair-play notice, and older Version 1.8 history. If you searched for
               <span className="font-semibold"> where winds meet update today</span>, use the cards below to jump straight
               to official news, patch notes, and roadmap watch items.
             </p>
@@ -289,7 +289,7 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Latest official-news pass: {freshness?.gameVersion ?? "Version 2.0 / August 2 patch notes"}, including Unseen Approach, Hidden Mountain, the July 23 Path Balance and Arena changes, Gauntlets, and the July 27 fair-play notice. The list below follows the current official news trail.
+              Latest official-news pass: {freshness?.gameVersion ?? "Version 2.0 / August 7 patch notes"}, including network and matchmaking work, Hidden Mountain fixes, Cutie Clash adjustments, the Cologne meetup, and the July 23 Path Balance history. The list below follows the current official news trail.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link href="/guides/tier-list" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
@@ -351,7 +351,7 @@ export default function NewsPage() {
             <div className="mt-3 grid gap-2 text-xs text-slate-300 sm:grid-cols-3">
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
                 <p className="font-semibold text-slate-100">Current update</p>
-                <p className="mt-1">Version 2.0 / August 2 patch notes, Unseen Approach, Hidden Mountain, the July 23 balance pass, and the July 27 fair-play notice are the current checked baseline for update searches.</p>
+                <p className="mt-1">Version 2.0 / August 7 patch notes, Unseen Approach, Hidden Mountain, network and matchmaking work, Cutie Clash adjustments, and the Cologne meetup are the current checked baseline.</p>
               </div>
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
                 <p className="font-semibold text-slate-100">Next watch</p>
@@ -389,10 +389,10 @@ export default function NewsPage() {
                   </Link>
                 </li>
                 <li>
-                  Version 2.0 / August 2 patch notes - current update anchor for Hidden Mountain, Gauntlets, Path Balance, Arena, weapons, progression, roadmap, and returning-player searches.
+                  Version 2.0 / August 7 patch notes - current anchor for network, matchmaking, Hidden Mountain fixes, Cutie Clash, Arena, roadmap, and returning-player searches.
                 </li>
                 <li>
-                  August 2 fixes, July 23 Version 2.0 Path Balance and Arena changes, then July 17 Version 1.8 notes - re-check tier lists, builds, weapon pages, and PVP advice before trusting older meta.
+                  August 7 network and matchmaking updates, then July 23 Version 2.0 Path Balance and Arena changes - separate connection-quality changes from actual weapon balance before revising tier lists.
                 </li>
                 <li>
                   Feng Ruzhi boss (Silk Ball) - location + unlock + mechanic:

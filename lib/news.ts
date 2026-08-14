@@ -24,20 +24,28 @@ type OfficialNewsRow = [
 // site can pin items out of strict date order, so news pages should not sort it.
 const officialNewsRows: OfficialNewsRow[] = [
   [
-    "august-2-version-2-0-update-overview",
+    "august-7-version-2-0-update-overview",
     "[Unseen Approach] Version 2.0 Update Overview",
-    "2026-08-02",
+    "2026-08-07",
     "announcement",
     "https://www.wherewindsmeetgame.com/news/official/UnseenApproach.html",
     "Official Version 2.0 update overview for Unseen Approach and the Hidden Mountain era, now the primary update and returning-player freshness anchor.",
   ],
   [
-    "august-2-version-2-0-patch-notes",
-    "Version 2.0 Patch Notes: Optimizations and Bug Fixes (August 2, 2026)",
-    "2026-08-02",
+    "august-7-version-2-0-patch-notes",
+    "Version 2.0 Patch Notes: Optimizations and Bug Fixes (August 7, 2026)",
+    "2026-08-07",
     "announcement",
     "https://www.wherewindsmeetgame.com/news/official/723update.html",
-    "Official Version 2.0 fixes plus the July 23 Path Balance and Arena changes: weapon and Path tuning, Arena networking, Stonesplit - Might Attunement, Stormbreaker Spear and Thundercry Blade behavior, Gauntlets, Hidden Mountain, and progression fixes.",
+    "Official Version 2.0 update covering cross-region network and matchmaking improvements, Hidden Mountain and quest fixes, Cutie Clash balance changes, plus the earlier July 23 Path Balance and Arena changes on the same page.",
+  ],
+  [
+    "cologne-post-gamescom-community-meetup-2026",
+    "WWM Community Meetup - Cologne (Post-Gamescom 2026)",
+    "2026-08-02",
+    "event",
+    "https://www.wherewindsmeetgame.com/news/official/2026GamescomMeetup.html",
+    "Official community meetup scheduled for August 31 near Koelnmesse in Cologne, with Hidden Mountain discussions, early previews, developer conversations, and limited registration.",
   ],
   [
     "account-suspension-june26-july26-2026",
@@ -93,7 +101,7 @@ const officialNewsRows: OfficialNewsRow[] = [
     "2026-06-24",
     "announcement",
     "https://www.wherewindsmeetgame.com/news/official/CompanionsMakeHome.html",
-    "Official Version 1.8 overview introducing the Companions Make Home update, with the new homestead direction and companion-focused player goals now replacing Version 1.7 as the latest roadmap anchor.",
+    "Historical Version 1.8 overview introducing Companions Make Home, the homestead direction, and companion-focused goals before Version 2.0 became the current roadmap anchor.",
   ],
   [
     "version-1-8-dev-qa-a-place-to-call-home",

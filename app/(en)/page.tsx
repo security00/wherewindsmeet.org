@@ -320,7 +320,7 @@ export default function Home() {
           <div>
             <p className="text-xs uppercase tracking-wide text-emerald-300">Trending now</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-50">Where Winds Meet guides players search for</h2>
-            <p className="text-xs text-amber-200 mt-1">Freshness pass: Version 2.0, Hidden Mountain, Gauntlets, August 2 fixes, Path Balance, Arena changes, and existing quest guides.</p>
+            <p className="text-xs text-amber-200 mt-1">Freshness pass: Version 2.0, Hidden Mountain, August 7 network and matchmaking updates, Cutie Clash fixes, Path Balance, Arena, and existing quest guides.</p>
           </div>
           <span className="text-xs text-slate-400">Updated with Google Trends keywords</span>
         </div>

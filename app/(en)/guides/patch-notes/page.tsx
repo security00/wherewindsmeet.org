@@ -10,6 +10,15 @@ const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
   {
+    title: "August 7 Version 2.0 network, matchmaking, and fixes",
+    date: "2026-08-07",
+    source: "https://www.wherewindsmeetgame.com/news/official/723update.html",
+    summary:
+      "Newest official patch-note anchor. It improves cross-region network routing and matchmaking, fixes Hidden Mountain and quest blockers, and adjusts Cutie Clash tiles and combat mechanics. HK/MO/TW server work is scheduled to roll out from late August through September updates.",
+    playerAction:
+      "Re-test cross-region Arena and multiplayer latency before blaming a build, retry No Words Between and Martial Art Mastery III if they were blocked, and use the in-game Cutie Clash values instead of older tile guides.",
+  },
+  {
     title: "August 2 Version 2.0 optimizations and bug fixes",
     date: "2026-08-02",
     source: "https://www.wherewindsmeetgame.com/news/official/723update.html",
@@ -59,9 +68,9 @@ const latestUpdateCards = [
     date: "2026-06-24",
     source: "https://www.wherewindsmeetgame.com/news/official/CompanionsMakeHome.html",
     summary:
-      "Official Version 1.8 overview for Companions Make Home, replacing The Imperial Palace Part 2 as the latest roadmap and update-search anchor.",
+      "Historical Version 1.8 overview for Companions Make Home, which replaced The Imperial Palace Part 2 before Version 2.0 and Hidden Mountain launched.",
     playerAction:
-      "Move update-today, roadmap, homestead, companion, and returning-player links to Version 1.8 context before older Palace-era summaries.",
+      "Use this for homestead and companion history, but lead current update and returning-player searches with Version 2.0.",
   },
   {
     title: "Version 1.8 Dev Q&A: A Place to Call Home",
@@ -104,9 +113,9 @@ const latestUpdateCards = [
     date: "2026-05-27",
     source: "https://www.wherewindsmeetgame.com/news/official/TheImperialPalace.html",
     summary:
-      "Official Version 1.7 overview anchor for The Imperial Palace. Treat it as the current update context for Palace content, new event searches, returning-player catch-up, and guide freshness checks.",
+      "Historical Version 1.7 overview anchor for The Imperial Palace and Palace-specific content.",
     playerAction:
-      "Use Version 1.7 as the baseline when reading patch notes, codes, boss notes, tier lists, and builds.",
+      "Use this only for Palace-era context, then check Version 2.0 before applying old code, boss, tier-list, or build assumptions.",
   },
   {
     title: "Sandstorm Tavern and older boss fixes",
@@ -120,10 +129,10 @@ const latestUpdateCards = [
 ];
 
 const impactChecklist = [
-  "Where Winds Meet patch notes today / new update: lead with August 2 Version 2.0, the July 23 Path Balance and Arena changes, Hidden Mountain, then older Version 1.8 history.",
+  "Where Winds Meet patch notes today / new update: lead with August 7 Version 2.0 network, matchmaking, Hidden Mountain, and Cutie Clash fixes, then the July 23 Path Balance history.",
   "Boss and dungeon searches: mention Ghost Master, Hero's Realm, Sword Trial, Sandstorm Tavern, Sunken City Lake, and Lunar Eidolon where relevant.",
   "Build searches: call out cheaper Martial Art Reset and lower Inner Way Conversion cost before telling players to respec.",
-  "Tier-list searches: tie weapon and Path recommendations to the July 23 Version 2.0 Path Balance and August 2 Arena fixes.",
+  "Tier-list searches: keep weapon recommendations tied to the July 23 Path Balance; the August 7 update changes network and matchmaking quality rather than the core weapon tier order.",
   "Mobile and controller searches: Palace map loading and Season Shop controller selection were official May 29 fixes.",
 ];
 
@@ -132,7 +141,7 @@ const upcomingNerfWatch = [
     topic: "Path Balance",
     status: "Official baseline",
     action:
-      "Use the July 23 Version 2.0 Path Balance section in the August 2 official notes before calling any build or weapon newly nerfed.",
+      "Use the July 23 Version 2.0 Path Balance section on the current August 7 official patch page before calling any build or weapon newly nerfed.",
     href: "/guides/tier-list#arena-ranks",
   },
   {
@@ -159,20 +168,20 @@ const upcomingNerfWatch = [
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Patch Notes Today - Version 2.0 August 2",
+  title: "Where Winds Meet Patch Notes Today - Version 2.0 August 7",
   description:
-    "Where Winds Meet Version 2.0 patch notes for August 2: Hidden Mountain, Path Balance, Arena changes, Gauntlets, weapons, builds, fixes, and meta checks.",
+    "Where Winds Meet Version 2.0 patch notes for August 7: network, matchmaking, Hidden Mountain fixes, Cutie Clash balance, Arena, and meta checks.",
   alternates: buildHreflangAlternates("/guides/patch-notes"),
   openGraph: {
-    title: "Where Winds Meet Patch Notes Today - Version 2.0 August 2",
+    title: "Where Winds Meet Patch Notes Today - Version 2.0 August 7",
     description:
-      "Where Winds Meet Version 2.0 patch notes: August 2 fixes, Hidden Mountain, Path Balance, Arena changes, Gauntlets, weapons, builds, and meta checks.",
+      "Where Winds Meet Version 2.0 patch notes: August 7 network and matchmaking updates, Hidden Mountain fixes, Cutie Clash balance, Arena, and meta checks.",
     url: `${baseUrl}/guides/patch-notes`,
   },
   twitter: {
-    title: "Where Winds Meet Patch Notes Today - Version 2.0 August 2",
+    title: "Where Winds Meet Patch Notes Today - Version 2.0 August 7",
     description:
-      "Version 2.0 patch notes tracker: August 2 fixes, Hidden Mountain, Path Balance, Arena changes, Gauntlets, weapons, builds, and meta checks.",
+      "Version 2.0 patch notes tracker: August 7 network and matchmaking updates, Hidden Mountain fixes, Cutie Clash balance, Arena, and meta checks.",
   },
 };
 
@@ -236,7 +245,7 @@ export default function PatchNotesPage() {
             Where Winds Meet patch notes today: Version 2.0, Hidden Mountain, Path Balance, and Arena.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Updated {freshness?.lastChecked ?? "2026-08-03"}: Where Winds Meet is on {freshness?.gameVersion ?? "Version 2.0 / August 2 fixes"}. The current live-service trail starts with the August 2 Version 2.0 notes and Unseen Approach overview, including the July 23 Path Balance and Arena changes. Use this page before trusting older Arena, weapon, boss, tier-list, or build advice.
+            Updated {freshness?.lastChecked ?? "2026-08-14"}: Where Winds Meet is on {freshness?.gameVersion ?? "Version 2.0 / August 7 fixes"}. The current trail starts with August 7 network, matchmaking, Hidden Mountain, quest, and Cutie Clash updates; the same official page retains the July 23 Path Balance and Arena history. Use this page before trusting older multiplayer, Arena, event, or build advice.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             We flag roadmap checkpoints, official news beats, and practical player impact so you know what to re-check: codes, quest bugs, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, boss guides, builds, and tier-list assumptions.
@@ -336,7 +345,7 @@ export default function PatchNotesPage() {
           Version 2.0 catch-up: what changed recently.
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          The most important freshness signal is that the official news feed now lists the August 2 Version 2.0 overview and patch notes first. If you last played around Version 1.8, Version 1.7, or earlier, treat Hidden Mountain and the July 23 balance pass as your new catch-up checkpoint.
+          The official news feed now lists the August 7 Version 2.0 overview and patch notes first. If you last played around Version 1.8 or earlier, treat Hidden Mountain and the July 23 balance pass as the content checkpoint, then apply the August 7 network, matchmaking, quest, and Cutie Clash fixes.
         </p>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
           Start with practical checks: verify Palace-era code reports in-game, re-open blocked event or quest steps after the June 5 and May 29 fixes, and compare your build against the May 26 Path Balance notes before spending scarce upgrade materials.

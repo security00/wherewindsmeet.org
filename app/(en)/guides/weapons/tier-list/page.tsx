@@ -207,7 +207,7 @@ export default function WeaponTierListPage() {
       name: "Where Winds Meet Weapon Tier List (August 2026)",
       description: metadata.description,
       url: "https://wherewindsmeet.org/guides/weapons/tier-list",
-      dateModified: freshness?.lastChecked ?? "2026-08-03",
+      dateModified: freshness?.lastChecked ?? "2026-08-14",
     },
     {
       "@context": "https://schema.org",
@@ -248,7 +248,7 @@ export default function WeaponTierListPage() {
             Where Winds Meet Weapon Tier List (August 2026)
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Updated {freshness?.lastChecked ?? "2026-08-03"} for {freshness?.gameVersion ?? "Version 2.0 / August 2026 GSC refresh"}.{" "}
+            Updated {freshness?.lastChecked ?? "2026-08-14"} for {freshness?.gameVersion ?? "Version 2.0 / August 2026 balance recheck"}.{" "}
             This WWM weapon tier list answers the search directly: which Where
             Winds Meet weapons are worth investing in for PVE, PVP, arena ranks,
             and endgame builds. Choosing the right weapon is foundational to your Where Winds Meet

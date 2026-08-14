@@ -43,7 +43,7 @@ const arenaRankChecks = [
   {
     title: "Before you spend reset materials",
     detail:
-      "Check the July 23 Version 2.0 Path Balance and Arena changes plus the August 2 fixes first. Test the same build before rebuilding from scratch.",
+      "Check the July 23 Path Balance, then the August 7 network and matchmaking update. Rule out latency or match-quality changes before rebuilding from scratch.",
     href: "/guides/patch-notes#upcoming-nerfs",
     label: "Upcoming nerf watch",
   },
@@ -111,7 +111,7 @@ export default function PVPTierListPage() {
               Static defenses struggle against the speed of top-tier assassins.
             </p>
             <p>
-              This list ranks weapons based on their performance in high-level duels, small-scale skirmishes, WWM arena ranks, and PVP ranking climbs. It was rechecked on {freshness?.lastChecked ?? "2026-08-03"} for {freshness?.gameVersion ?? "Version 2.0"}; use it with the main tier list before changing your build.
+              This list ranks weapons based on high-level duels, small-scale skirmishes, WWM arena ranks, and PVP climbs. It was rechecked on {freshness?.lastChecked ?? "2026-08-14"} for {freshness?.gameVersion ?? "Version 2.0"}; the August 7 update changes network and matchmaking quality, not the July 23 weapon-tier baseline.
             </p>
           </div>
         </div>
