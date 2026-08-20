@@ -51,6 +51,7 @@ const staticEntries: Entry[] = [
   { path: "/guides/the-great-faceologist", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/flicker-of-faces", changeFrequency: "weekly", priority: 0.78 },
   { path: "/guides/patch-notes", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/guides/clouded-revelation", changeFrequency: "daily", priority: 0.84 },
   { path: "/guides/codes", changeFrequency: "daily", priority: 0.8 },
   { path: "/guides/free-outfits", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/cosmetics", changeFrequency: "weekly", priority: 0.75 },
@@ -77,10 +78,6 @@ const deEntries: Entry[] = staticEntries.map((entry) => ({
   path: entry.path === "/" ? "/de" : `/de${entry.path}`,
 }));
 
-const englishOnlyEntries: Entry[] = [
-  { path: "/guides/clouded-revelation", changeFrequency: "daily", priority: 0.84 },
-];
-
 const vnEntries: Entry[] = [
   { path: "/vn", changeFrequency: "daily", priority: 0.9 },
   { path: "/vn/guides", changeFrequency: "daily", priority: 0.85 },
@@ -105,6 +102,7 @@ const vnEntries: Entry[] = [
   { path: "/vn/guides/skill-theft", changeFrequency: "weekly", priority: 0.73 },
   { path: "/vn/guides/new-players", changeFrequency: "weekly", priority: 0.73 },
   { path: "/vn/guides/patch-notes", changeFrequency: "weekly", priority: 0.72 },
+  { path: "/vn/guides/clouded-revelation", changeFrequency: "daily", priority: 0.76 },
   { path: "/vn/guides/one-leaf-one-life", changeFrequency: "weekly", priority: 0.72 },
   { path: "/vn/guides/the-great-faceologist", changeFrequency: "weekly", priority: 0.72 },
   { path: "/vn/guides/flicker-of-faces", changeFrequency: "weekly", priority: 0.7 },
@@ -168,7 +166,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const entries = [
     ...staticEntries,
-    ...englishOnlyEntries,
     ...deEntries,
     ...vnEntries,
     ...bossEntries,

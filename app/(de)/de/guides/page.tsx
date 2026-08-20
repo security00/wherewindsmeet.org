@@ -50,6 +50,15 @@ const guideSections = [
     description: "Version 1.7, Path Balance, upcoming nerfs und Impact auf Arena ranks, Builds und Bosse.",
   },
   {
+    title: "Clouded Revelation Version 2.1",
+    slug: "/de/guides/clouded-revelation",
+    label: "Neuestes Update",
+    icon: "☁️",
+    color: "text-sky-300",
+    size: "medium",
+    description: "Patch vom 20. August: A Flourishing Legacy, Rising Beyond, Vernal Umbrella, Arena und Homestead.",
+  },
+  {
     title: "Beste Builds",
     slug: "/de/guides/builds",
     label: "PvE & PvP",

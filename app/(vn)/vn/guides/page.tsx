@@ -50,6 +50,15 @@ const guideSections = [
     description: "Version 1.7, Path Balance, upcoming nerfs va tac dong toi arena ranks, build, boss.",
   },
   {
+    title: "Clouded Revelation Version 2.1",
+    slug: "/vn/guides/clouded-revelation",
+    label: "Cập nhật mới",
+    icon: "☁️",
+    color: "text-sky-300",
+    size: "medium",
+    description: "Bản vá 20/8: A Flourishing Legacy, Rising Beyond, Vernal Umbrella, Arena và Homestead.",
+  },
+  {
     title: "Bộ build mạnh",
     slug: "/vn/guides/builds",
     label: "PvE & PvP",

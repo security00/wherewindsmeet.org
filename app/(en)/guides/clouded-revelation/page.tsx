@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
+import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 const pageUrl = `${baseUrl}/guides/clouded-revelation`;
@@ -12,13 +13,7 @@ export const metadata: Metadata = {
   title: "Where Winds Meet Clouded Revelation Guide (Version 2.1)",
   description:
     "Where Winds Meet Version 2.1 Clouded Revelation guide: August 20 patch changes, A Flourishing Legacy and Rising Beyond fixes, Vernal Umbrella impact, and what to retry.",
-  alternates: {
-    canonical: pageUrl,
-    languages: {
-      "en-US": pageUrl,
-      "x-default": pageUrl,
-    },
-  },
+  alternates: buildHreflangAlternates("/guides/clouded-revelation"),
   openGraph: {
     title: "Where Winds Meet Clouded Revelation Guide (Version 2.1)",
     description:

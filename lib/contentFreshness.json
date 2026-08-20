@@ -317,7 +317,9 @@
   {
     "basePath": "/guides/clouded-revelation",
     "languages": [
-      "en"
+      "en",
+      "vi",
+      "de"
     ],
     "lastChecked": "2026-08-21",
     "gameVersion": "Version 2.1 / Clouded Revelation",
