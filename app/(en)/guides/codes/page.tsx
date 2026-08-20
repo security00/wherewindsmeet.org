@@ -3,13 +3,14 @@ import CdnImage from "@/components/CdnImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import { getContentFreshness } from "@/lib/contentFreshness";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import Link from "next/link";
 
 const freshness = getContentFreshness("/guides/codes");
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Codes (August 2026) - Active WWM Codes",
+  title: "WWM Codes August 2026: Active Where Winds Meet Codes",
   description:
-    "Updated Where Winds Meet codes tracker for Version 2.0 and August 2026, with active-code checks, redemption steps, expired codes, and leaked-code warnings.",
+    "WWM codes checked August 2026: reported active Where Winds Meet redeem codes, redemption steps, expired-code warnings, and links for outfit or character codes.",
   alternates: buildHreflangAlternates("/guides/codes"),
 };
 
@@ -134,11 +135,11 @@ export default function CodesPage() {
 
         <div className="relative z-10 space-y-6">
           <h1 className="text-balance text-4xl font-bold tracking-tight text-ink sm:text-5xl">
-            Where Winds Meet <span className="text-ink-gold">Codes June 2026</span>
+            WWM Codes <span className="text-ink-gold">August 2026</span>
           </h1>
           <div className="max-w-3xl space-y-4 text-slate-300 leading-relaxed">
             <p>
-              Updated {lastChecked}: this page refreshes the Where Winds Meet codes list for {freshness?.gameVersion ?? "Version 2.0 / August 2026"} instead of leaving old launch-only codes at the top. Start with the most recently verified entries, then try Palace, Qinchuan/Hexi, and older launch rewards only if your account has never claimed them.
+              Updated {lastChecked}: this page refreshes the Where Winds Meet codes list for {freshness?.gameVersion ?? "Version 2.1 / August 2026"} instead of leaving old launch-only codes at the top. Start with the most recently verified entries, then try Palace, Qinchuan/Hexi, and older launch rewards only if your account has never claimed them.
             </p>
             <p>
               Important: the official news feed also reported that a leaked batch of 30 exchange codes was disabled in early May 2026. If a code from social media fails, it may simply be one of those disabled leak codes rather than a problem with your account.
@@ -185,6 +186,19 @@ export default function CodesPage() {
         </p>
       </section>
 
+      <section className="rounded-3xl border border-cyan-400/30 bg-cyan-500/10 p-6 shadow-lg shadow-cyan-950/30">
+        <p className="text-xs font-semibold uppercase tracking-wide text-cyan-200">Choose the right code type</p>
+        <h2 className="mt-2 text-2xl font-bold text-slate-50">Redeem codes, outfit codes, or character appearance codes?</h2>
+        <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-200">
+          Google mixes three different WWM code intents. This page tracks exchange/redeem codes entered for account rewards. If you want a free outfit route, use the cosmetics guide instead. Character appearance codes are player-made face presets and are imported through appearance editing—not redeemed in the rewards menu.
+        </p>
+        <div className="mt-4 flex flex-wrap gap-3 text-sm">
+          <Link href="#how-to-redeem" className="rounded-full border border-cyan-300/60 px-4 py-2 font-semibold text-cyan-100 hover:border-cyan-200">Redeem reward codes</Link>
+          <Link href="/guides/free-outfits" className="rounded-full border border-amber-300/60 px-4 py-2 font-semibold text-amber-100 hover:border-amber-200">Free outfits and cosmetics</Link>
+          <Link href="/guides/cosmetics" className="rounded-full border border-rose-300/60 px-4 py-2 font-semibold text-rose-100 hover:border-rose-200">Appearance and customization</Link>
+        </div>
+      </section>
+
       <section className="rounded-3xl border border-amber-500/30 bg-amber-500/10 p-6 text-sm text-amber-50 shadow-lg shadow-amber-950/30">
         <h2 className="text-xl font-bold text-amber-100">Exchange-code warning</h2>
         <p className="mt-3 leading-relaxed text-amber-50/90">
@@ -193,7 +207,7 @@ export default function CodesPage() {
       </section>
 
       {/* Distribution Pattern */}
-      <section className="card-wuxia rounded-3xl p-8 space-y-6">
+      <section id="how-to-redeem" className="card-wuxia rounded-3xl p-8 space-y-6">
         <h2 className="text-2xl font-bold text-slate-100 border-brush inline-block pb-2">
           How Codes Work
         </h2>

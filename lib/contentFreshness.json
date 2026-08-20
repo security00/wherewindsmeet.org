@@ -6,8 +6,8 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-08-14",
-    "gameVersion": "Version 2.0 / August 7 patch notes",
+    "lastChecked": "2026-08-21",
+    "gameVersion": "Version 2.1 / August 20 patch notes",
     "priorityCluster": "main-keyword-recovery",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/",
@@ -16,6 +16,8 @@
       "https://www.playstation.com/en-us/games/where-winds-meet/",
       "https://play.google.com/store/apps/details?id=com.netease.yysls",
       "https://www.wherewindsmeetgame.com/m/news/",
+      "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
+      "https://www.wherewindsmeetgame.com/news/official/CloudedRevelation.html",
       "https://www.wherewindsmeetgame.com/jm/activity/3sSSr3/3NddQA?lang=en&jm_track=web_en",
       "https://www.wherewindsmeetgame.com/news/official/UnseenApproach.html",
       "https://www.wherewindsmeetgame.com/news/official/723update.html",
@@ -76,11 +78,13 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-08-14",
-    "gameVersion": "Version 2.0 / August 7 update tracker",
+    "lastChecked": "2026-08-21",
+    "gameVersion": "Version 2.1 / August 20 update tracker",
     "priorityCluster": "main-keyword-recovery",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
+      "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
+      "https://www.wherewindsmeetgame.com/news/official/CloudedRevelation.html",
       "https://www.wherewindsmeetgame.com/jm/activity/3sSSr3/3NddQA?lang=en&jm_track=web_en",
       "https://www.wherewindsmeetgame.com/news/official/UnseenApproach.html",
       "https://www.wherewindsmeetgame.com/news/official/723update.html",
@@ -105,11 +109,13 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-08-14",
-    "gameVersion": "Version 2.0 / August 7 network, matchmaking, and fixes",
+    "lastChecked": "2026-08-21",
+    "gameVersion": "Version 2.1 / August 20 Clouded Revelation fixes",
     "priorityCluster": "week-1-rescue",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
+      "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
+      "https://www.wherewindsmeetgame.com/news/official/CloudedRevelation.html",
       "https://www.wherewindsmeetgame.com/jm/activity/3sSSr3/3NddQA?lang=en&jm_track=web_en",
       "https://www.wherewindsmeetgame.com/news/official/UnseenApproach.html",
       "https://www.wherewindsmeetgame.com/news/official/723update.html",
@@ -131,8 +137,8 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-08-14",
-    "gameVersion": "Version 2.0 / August 14 code status check",
+    "lastChecked": "2026-08-21",
+    "gameVersion": "Version 2.1 / August 21 code status check",
     "priorityCluster": "week-1-rescue",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
@@ -217,8 +223,8 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-08-14",
-    "gameVersion": "Version 2.0 / August 7 balance recheck",
+    "lastChecked": "2026-08-21",
+    "gameVersion": "Version 2.1 / August 20 targeted balance recheck",
     "priorityCluster": "week-2-meta-refresh",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
@@ -258,11 +264,12 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-08-14",
-    "gameVersion": "Version 2.0 / August 7 Arena matchmaking watch",
+    "lastChecked": "2026-08-21",
+    "gameVersion": "Version 2.1 / August 20 Arena and combat fix watch",
     "priorityCluster": "week-2-meta-refresh",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
+      "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
       "https://www.wherewindsmeetgame.com/jm/activity/3sSSr3/3NddQA?lang=en&jm_track=web_en",
       "https://www.wherewindsmeetgame.com/news/official/723update.html",
       "https://www.wherewindsmeetgame.com/news/official/719devletter.html",
@@ -279,11 +286,12 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-08-14",
-    "gameVersion": "Version 2.0 / August 7 weapon balance recheck",
+    "lastChecked": "2026-08-21",
+    "gameVersion": "Version 2.1 / August 20 Vernal Umbrella recheck",
     "priorityCluster": "week-2-meta-refresh",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
+      "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
       "https://www.wherewindsmeetgame.com/jm/activity/3sSSr3/3NddQA?lang=en&jm_track=web_en",
       "https://www.wherewindsmeetgame.com/news/official/723update.html",
       "https://www.wherewindsmeetgame.com/news/official/719devletter.html",
@@ -307,14 +315,27 @@
     ]
   },
   {
+    "basePath": "/guides/clouded-revelation",
+    "languages": [
+      "en"
+    ],
+    "lastChecked": "2026-08-21",
+    "gameVersion": "Version 2.1 / Clouded Revelation",
+    "priorityCluster": "emerging-update-intent",
+    "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
+      "https://www.wherewindsmeetgame.com/news/official/CloudedRevelation.html"
+    ]
+  },
+  {
     "basePath": "/guides/qin-caiwei",
     "languages": [
       "en",
       "vi",
       "de"
     ],
-    "lastChecked": "2026-06-29",
-    "gameVersion": "Version 1.7 / June 29 GSC Qin Caiwei position-2 CTR refresh",
+    "lastChecked": "2026-08-21",
+    "gameVersion": "Version 2.1 / August 21 GSC Qin Caiwei CTR refresh",
     "priorityCluster": "week-2-breakout-query",
     "sourceUrls": [
       "doc/seo-data-readout-2026-06-03.md"
@@ -327,8 +348,8 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-06-29",
-    "gameVersion": "Version 1.7 / June 29 GSC Imperial Decree CTR refresh",
+    "lastChecked": "2026-08-21",
+    "gameVersion": "Version 2.1 / August 21 Imperial Decree recheck",
     "priorityCluster": "week-2-breakout-query",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/news/official/TheImperialPalace.html",

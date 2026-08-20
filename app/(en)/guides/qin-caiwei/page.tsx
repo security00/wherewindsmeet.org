@@ -292,7 +292,7 @@ export default function QinCaiweiPage() {
           <div className="space-y-5 relative z-10">
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/50 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-              Updated Jan 2025 · 3-line script inside
+              Rechecked Aug 2026 · copy-paste script inside
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-50">
               Qin Caiwei Where Winds Meet Friend Task Script

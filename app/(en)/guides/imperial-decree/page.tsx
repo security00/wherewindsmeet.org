@@ -8,7 +8,7 @@ import ZoomableGuideImage from "./ZoomableGuideImage";
 const baseUrl = "https://wherewindsmeet.org";
 const slug = "imperial-decree";
 const pageUrl = `${baseUrl}/guides/${slug}`;
-const updated = "2026-06-29";
+const updated = "2026-08-21";
 const cdnBaseUrl = "https://static.wherewindsmeet.org";
 const imageBaseUrl = `${cdnBaseUrl}/guides/${slug}`;
 
@@ -395,7 +395,7 @@ export default function ImperialDecreeGuidePage() {
         <div className="grid gap-0 lg:grid-cols-[0.58fr_0.42fr]">
           <div className="p-6 sm:p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-amber-200">
-              Version 1.7 Imperial Palace guide
+              Imperial Palace guide · rechecked for Version 2.1
             </p>
             <h1 className="mt-3 text-balance text-3xl font-bold tracking-tight text-slate-50 sm:text-5xl">
               Imperial Decree WWM guide: S answers, Finance route, and Rear Garden location.

@@ -24,6 +24,22 @@ type OfficialNewsRow = [
 // site can pin items out of strict date order, so news pages should not sort it.
 const officialNewsRows: OfficialNewsRow[] = [
   [
+    "august-20-version-2-1-patch-notes",
+    "Version 2.1 Patch Notes: Clouded Revelation (August 20, 2026)",
+    "2026-08-20",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
+    "Official Version 2.1 fixes for A Flourishing Legacy and Rising Beyond, Vernal Umbrella attunement, Arena and combat behavior, Homestead controls, cosmetics, and other live issues.",
+  ],
+  [
+    "august-19-version-2-1-update-overview",
+    "[Clouded Revelation] Version 2.1 Update Overview",
+    "2026-08-19",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/CloudedRevelation.html",
+    "Official Clouded Revelation overview and the current Version 2.1 freshness anchor.",
+  ],
+  [
     "august-7-version-2-0-update-overview",
     "[Unseen Approach] Version 2.0 Update Overview",
     "2026-08-07",

@@ -10,20 +10,20 @@ const baseUrl = "https://wherewindsmeet.org";
 const freshness = getContentFreshness("/news");
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Update Today - Version 2.0 News & Patch Notes",
+  title: "Where Winds Meet Update Today - Version 2.1 News & Patch Notes",
   description:
-    "Where Winds Meet update today tracker for Version 2.0, August 7 patch notes, network and matchmaking updates, Hidden Mountain, events, and guide impact.",
+    "Where Winds Meet update today tracker for Version 2.1 Clouded Revelation, August 20 patch notes, A Flourishing Legacy fixes, Vernal Umbrella, and guide impact.",
   alternates: buildHreflangAlternates("/news"),
   openGraph: {
-    title: "Where Winds Meet Update Today - Version 2.0 News & Patch Notes",
+    title: "Where Winds Meet Update Today - Version 2.1 News & Patch Notes",
     description:
-      "Where Winds Meet update today tracker for Version 2.0, August 7 patch notes, network and matchmaking updates, Hidden Mountain, events, and guide impact.",
+      "Where Winds Meet update today tracker for Version 2.1 Clouded Revelation, August 20 patch notes, quest fixes, Vernal Umbrella, and guide impact.",
     url: `${baseUrl}/news`,
   },
   twitter: {
-    title: "Where Winds Meet Update Today - Version 2.0 News & Patch Notes",
+    title: "Where Winds Meet Update Today - Version 2.1 News & Patch Notes",
     description:
-      "Where Winds Meet update today tracker for Version 2.0, August 7 patch notes, network and matchmaking updates, Hidden Mountain, events, and guide impact.",
+      "Where Winds Meet update today tracker for Version 2.1 Clouded Revelation and the official August 20 patch-note impact.",
   },
 };
 
@@ -31,23 +31,23 @@ const todayStatusCards = [
   {
     title: "Latest official update",
     detail:
-      "Version 2.0 / August 7 is the newest official anchor checked: cross-region network and matchmaking improvements, Hidden Mountain fixes, and Cutie Clash adjustments now lead the update trail.",
-    href: "https://www.wherewindsmeetgame.com/m/news/",
-    label: "Official news list",
+      "Version 2.1 / August 20 is the newest official anchor checked: Clouded Revelation, A Flourishing Legacy and Rising Beyond fixes, Vernal Umbrella attunement, and combat/UI fixes lead the update trail.",
+    href: "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
+    label: "Official Version 2.1 notes",
   },
   {
     title: "Today patch-note answer",
     detail:
-      "The latest checked patch-note page is the August 7 Version 2.0 update. Re-check cross-region multiplayer, matchmaking, Hidden Mountain blockers, and Cutie Clash guides; core weapon tiers still use the July 23 balance baseline.",
-    href: "/guides/patch-notes",
-    label: "Patch notes",
+      "The latest checked patch is Version 2.1 on August 20. Re-test the affected quest triggers, high-tier Vernal Umbrella rolls, Arena edge behavior, Homestead controls, and Heaven's Plea makeup before relying on older workaround advice.",
+    href: "/guides/clouded-revelation",
+    label: "Version 2.1 impact guide",
   },
   {
     title: "Roadmap watch",
     detail:
-      "Hidden Mountain is live as the Version 2.0 roadmap anchor, adding Gauntlets, Bamboocut - Kite, Mohist Hill, deeper exploration, new bosses, and ongoing Training Terrace balance testing.",
-    href: "https://www.wherewindsmeetgame.com/news/official/719devletter.html",
-    label: "Version 2.0 overview",
+      "Clouded Revelation is now the current Version 2.1 update. Hidden Mountain remains the major Version 2.0 expansion baseline underneath the new fixes and quest follow-up.",
+    href: "https://www.wherewindsmeetgame.com/news/official/CloudedRevelation.html",
+    label: "Version 2.1 overview",
   },
 ];
 
@@ -90,7 +90,7 @@ const searchIntentWatchlist = [
     title: "Upcoming nerfs and balance watch",
     query: "upcoming nerf wwm",
     action:
-      "Do not call a change confirmed until it appears in official notes. Use July 23 for weapon balance and August 7 for network and matchmaking behavior before updating Arena guidance.",
+      "Do not call a change confirmed until it appears in official notes. Use August 20 for the targeted Version 2.1 umbrella and combat changes, then July 23 for the wider Path Balance baseline.",
     href: "/guides/patch-notes#upcoming-nerfs",
     cta: "Balance watch",
   },
@@ -148,6 +148,7 @@ export default function NewsPage() {
     updated: lastUpdatedLabel,
     links: [
       { href: "/guides/tier-list", label: "China tier list & balance notes" },
+      { href: "/guides/clouded-revelation", label: "Version 2.1 Clouded Revelation" },
       { href: "/guides/bosses", label: "Boss list & changes" },
       { href: "/guides/unholy-prophecy", label: "An Unholy Prophecy (quest fixes)" },
       { href: "/guides/woven-with-malice", label: "Woven with Malice (time gates)" },
@@ -256,8 +257,8 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-3 leading-6 text-cyan-50/90">
-              The current checked update baseline is <strong>Version 2.0 / August 7 patch notes</strong>,
-              followed by the August 2 Cologne meetup announcement, July 27 fair-play notice, and older Version 1.8 history. If you searched for
+              The current checked update baseline is <strong>Version 2.1 / August 20 Clouded Revelation patch notes</strong>,
+              followed by the August 19 overview, Version 2.0 history, and the Cologne meetup announcement. If you searched for
               <span className="font-semibold"> where winds meet update today</span>, use the cards below to jump straight
               to official news, patch notes, and roadmap watch items.
             </p>
@@ -289,7 +290,7 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Latest official-news pass: {freshness?.gameVersion ?? "Version 2.0 / August 7 patch notes"}, including network and matchmaking work, Hidden Mountain fixes, Cutie Clash adjustments, the Cologne meetup, and the July 23 Path Balance history. The list below follows the current official news trail.
+              Latest official-news pass: {freshness?.gameVersion ?? "Version 2.1 / August 20 patch notes"}, including Clouded Revelation, quest-trigger fixes, Vernal Umbrella attunement, Arena/combat fixes, and Homestead controls. The list below follows the current official news trail.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link href="/guides/tier-list" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
@@ -320,9 +321,7 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-3 leading-6 text-violet-50/90">
-            Hidden Mountain is now live as the Version 2.0 roadmap anchor. Treat it as current
-              expansion interest until the official game-site news page publishes deeper details, then update guides,
-              tier lists, map pages, and platform notes if the new area changes player routes.
+              Clouded Revelation is now the current Version 2.1 update, while Hidden Mountain remains the major Version 2.0 expansion baseline. Use the Version 2.1 guide for current quest, weapon, Arena, Homestead, and cosmetic fixes, then use the video hub for visual route context.
             </p>
             <div className="mt-4 flex flex-wrap gap-2 text-xs">
               <Link href="/videos" className="rounded-full border border-violet-300/60 px-3 py-1 font-semibold text-violet-50 hover:border-violet-200">
@@ -351,7 +350,7 @@ export default function NewsPage() {
             <div className="mt-3 grid gap-2 text-xs text-slate-300 sm:grid-cols-3">
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
                 <p className="font-semibold text-slate-100">Current update</p>
-                <p className="mt-1">Version 2.0 / August 7 patch notes, Unseen Approach, Hidden Mountain, network and matchmaking work, Cutie Clash adjustments, and the Cologne meetup are the current checked baseline.</p>
+                <p className="mt-1">Version 2.1 / August 20 Clouded Revelation patch notes are the current baseline; Version 2.0 Hidden Mountain, network, matchmaking, and Path Balance notes remain the historical foundation.</p>
               </div>
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
                 <p className="font-semibold text-slate-100">Next watch</p>
@@ -377,7 +376,7 @@ export default function NewsPage() {
               <p className="font-semibold text-slate-200">New hot searches to watch</p>
               <ul className="mt-2 space-y-1">
                 <li>
-                  Where Winds Meet codes June 2026 - Palace-era reports plus older Qinchuan/Hexi codes and the disabled leaked-code warning:
+                  Where Winds Meet codes August 2026 - reported Palace-era entries plus older Qinchuan/Hexi codes and the disabled leaked-code warning:
                   <Link href="/guides/codes" className="ml-1 text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
                     active codes page
                   </Link>
@@ -389,10 +388,10 @@ export default function NewsPage() {
                   </Link>
                 </li>
                 <li>
-                  Version 2.0 / August 7 patch notes - current anchor for network, matchmaking, Hidden Mountain fixes, Cutie Clash, Arena, roadmap, and returning-player searches.
+                  Version 2.1 / August 20 patch notes - current anchor for Clouded Revelation, A Flourishing Legacy and Rising Beyond fixes, Vernal Umbrella, Arena, Homestead, and cosmetic searches.
                 </li>
                 <li>
-                  August 7 network and matchmaking updates, then July 23 Version 2.0 Path Balance and Arena changes - separate connection-quality changes from actual weapon balance before revising tier lists.
+                  August 20 targeted weapon/combat fixes, then August 7 network updates and July 23 Path Balance - separate targeted fixes from the wider weapon baseline before revising tier lists.
                 </li>
                 <li>
                   Feng Ruzhi boss (Silk Ball) - location + unlock + mechanic:

@@ -9,7 +9,7 @@ const freshness = getContentFreshness("/guides/weapons/tier-list");
 export const metadata: Metadata = {
   title: "Where Winds Meet Weapon Tier List (August 2026)",
   description:
-    "Where Winds Meet weapon tier list for Version 2.0: best WWM weapons for PVE, PVP and Arena, with August 2026 Path Balance and Gauntlets checks.",
+    "Where Winds Meet weapon tier list for Version 2.1: best WWM weapons for PVE, PVP and Arena, with August 2026 Path Balance, Gauntlets, and Vernal Umbrella checks.",
   alternates: buildHreflangAlternates("/guides/weapons/tier-list"),
 };
 
@@ -207,7 +207,7 @@ export default function WeaponTierListPage() {
       name: "Where Winds Meet Weapon Tier List (August 2026)",
       description: metadata.description,
       url: "https://wherewindsmeet.org/guides/weapons/tier-list",
-      dateModified: freshness?.lastChecked ?? "2026-08-14",
+      dateModified: freshness?.lastChecked ?? "2026-08-21",
     },
     {
       "@context": "https://schema.org",
@@ -248,7 +248,7 @@ export default function WeaponTierListPage() {
             Where Winds Meet Weapon Tier List (August 2026)
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Updated {freshness?.lastChecked ?? "2026-08-14"} for {freshness?.gameVersion ?? "Version 2.0 / August 2026 balance recheck"}.{" "}
+            Updated {freshness?.lastChecked ?? "2026-08-21"} for {freshness?.gameVersion ?? "Version 2.1 / August 2026 balance recheck"}.{" "}
             This WWM weapon tier list answers the search directly: which Where
             Winds Meet weapons are worth investing in for PVE, PVP, arena ranks,
             and endgame builds. Choosing the right weapon is foundational to your Where Winds Meet
@@ -318,6 +318,9 @@ export default function WeaponTierListPage() {
             useful when you need defensive counterplay. Version 2.0 added Gauntlets and changed multiple Paths and
             Arena interactions on July 23, so treat these placements as a practical starting point and retest your
             exact build before you spend reset materials.
+          </p>
+          <p className="mt-3 rounded-2xl border border-sky-400/30 bg-sky-500/10 p-4 text-sm leading-6 text-sky-50">
+            <strong>Version 2.1 check:</strong> the August 20 patch consolidates Tier 96+ Vernal Umbrella attunement affixes into Frequent Projectile DMG Boost, adds a Light/Heavy/Varied Combo affix, and applies the attunement change to Silkbind Jade. Re-test high-tier umbrella rolls, but do not treat this targeted change as a full tier-list reset. <Link href="/guides/clouded-revelation" className="font-semibold underline underline-offset-4">See the Clouded Revelation impact guide.</Link>
           </p>
         </div>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">

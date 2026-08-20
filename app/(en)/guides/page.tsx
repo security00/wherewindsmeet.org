@@ -326,6 +326,16 @@ const guideSections = [
       "Flicker of Faces shop appearance (Dec 2025): preview images, price, listing time, and voucher stacking (10% × up to 5).",
   },
   {
+    title: "Clouded Revelation Version 2.1",
+    slug: "/guides/clouded-revelation",
+    label: "Latest Update",
+    icon: "☁️",
+    color: "text-sky-300",
+    size: "wide",
+    description:
+      "August 20 patch impact: A Flourishing Legacy and Rising Beyond fixes, Vernal Umbrella attunement, Arena, Homestead, and cosmetics.",
+  },
+  {
     title: "Active Codes",
     slug: "/guides/codes",
     label: "Free Rewards",

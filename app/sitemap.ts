@@ -77,6 +77,10 @@ const deEntries: Entry[] = staticEntries.map((entry) => ({
   path: entry.path === "/" ? "/de" : `/de${entry.path}`,
 }));
 
+const englishOnlyEntries: Entry[] = [
+  { path: "/guides/clouded-revelation", changeFrequency: "daily", priority: 0.84 },
+];
+
 const vnEntries: Entry[] = [
   { path: "/vn", changeFrequency: "daily", priority: 0.9 },
   { path: "/vn/guides", changeFrequency: "daily", priority: 0.85 },
@@ -164,6 +168,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const entries = [
     ...staticEntries,
+    ...englishOnlyEntries,
     ...deEntries,
     ...vnEntries,
     ...bossEntries,
