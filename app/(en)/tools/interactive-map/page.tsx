@@ -8,6 +8,7 @@ const pageUrl = `${baseUrl}/tools/interactive-map`;
 const officialMapUrl = "https://www.wherewindsmeetgame.com/map/en/";
 const mapgenieUrl = "https://mapgenie.io/where-winds-meet/maps/world";
 const sixFastUrl = "https://yysls-map.6fast.com/yysls/maps/qinghe?lang=en";
+const map17173Url = "https://map.17173.com/yysls/maps/qinchuan";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Interactive Map: Bosses, NPCs, Chests & CN Map",
@@ -51,6 +52,13 @@ const mapChoiceCards = [
       "Good for an English-first interface when you need chests, NPCs, teleport points, and collectible route planning.",
     href: mapgenieUrl,
     label: "Open MapGenie",
+  },
+  {
+    title: "17173 CN map reference",
+    detail:
+      "A dense official-partner CN reference for existing regions. The linked page is Qinchuan, not Jiangnan or Hangzhou; no Hangzhou region was listed when checked August 23.",
+    href: map17173Url,
+    label: "Open 17173 Qinchuan map",
   },
 ];
 
@@ -188,6 +196,11 @@ export default function InteractiveMapPage() {
             </tbody>
           </table>
         </div>
+        <p className="mt-4 text-xs leading-5 text-amber-100/80">
+          Looking for the new CN Jiangnan region? Hangzhou is live in China but not announced for Global. Read the{" "}
+          <Link href="/guides/jiangnan-hangzhou" className="font-semibold text-amber-200 hover:text-amber-100">Jiangnan &amp; Hangzhou status guide</Link>{" "}
+          before treating a Qinchuan map link as Hangzhou coverage.
+        </p>
       </section>
 
       <section className="space-y-4">

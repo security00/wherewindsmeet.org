@@ -162,6 +162,15 @@ const guideSections = [
     description: "Qinchuan Path hub: unlocks, Sunken City Lake, Travel Permit, To Friends to the End, and exploration priorities.",
   },
   {
+    title: "Jiangnan & Hangzhou Map",
+    slug: "/guides/jiangnan-hangzhou",
+    label: "CN Live · Global Watch",
+    icon: "🌧️",
+    color: "text-cyan-300",
+    size: "large",
+    description: "Hangzhou is live as Jiangnan's first CN region. Track the Global release, official footage, future areas, and verified interactive-map coverage.",
+  },
+  {
     title: "Imperial Decree",
     slug: "/guides/imperial-decree",
     label: "Breakout",

@@ -49,6 +49,13 @@ const todayStatusCards = [
     href: "/guides/hidden-mountain",
     label: "Hidden Mountain guide",
   },
+  {
+    title: "Jiangnan / Hangzhou watch",
+    detail:
+      "Jiangnan launched on the China server with Hangzhou as its first region on June 26. It is not yet announced as live on Global, so the new visual guide separates confirmed CN content from Global expectations.",
+    href: "/guides/jiangnan-hangzhou",
+    label: "Jiangnan & Hangzhou status",
+  },
 ];
 
 const newsBlocks = [
@@ -149,6 +156,7 @@ export default function NewsPage() {
     links: [
       { href: "/guides/tier-list", label: "China tier list & balance notes" },
       { href: "/guides/clouded-revelation", label: "Version 2.1 Clouded Revelation" },
+      { href: "/guides/jiangnan-hangzhou", label: "Jiangnan / Hangzhou Global watch" },
       { href: "/guides/bosses", label: "Boss list & changes" },
       { href: "/guides/unholy-prophecy", label: "An Unholy Prophecy (quest fixes)" },
       { href: "/guides/woven-with-malice", label: "Woven with Malice (time gates)" },
