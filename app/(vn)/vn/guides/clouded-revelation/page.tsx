@@ -51,7 +51,7 @@ export default function CloudedRevelationViPage() {
       <section className="overflow-hidden rounded-3xl border border-sky-400/30 bg-slate-950/85 p-6 shadow-2xl sm:p-10">
         <div className="grid gap-8 lg:grid-cols-[1fr_260px] lg:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-200">Đã kiểm tra nguồn chính thức · 21/08/2026</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-200">Đã kiểm tra nguồn chính thức · 23/08/2026</p>
             <h1 className="mt-3 text-balance text-4xl font-bold text-slate-50 sm:text-5xl">Where Winds Meet Clouded Revelation: hướng dẫn Version 2.1</h1>
             <p className="mt-5 max-w-3xl leading-7 text-slate-300">
               Clouded Revelation là bản cập nhật Version 2.1 hiện tại. Trang này chuyển nội dung bản vá chính thức ngày 20/8 thành checklist thực tế cho nhiệm vụ, Vernal Umbrella, Arena, Homestead và ngoại hình.
@@ -59,6 +59,7 @@ export default function CloudedRevelationViPage() {
             <div className="mt-6 flex flex-wrap gap-3">
               <a href={patchUrl} target="_blank" rel="noreferrer" className="rounded-full border border-sky-300/60 px-4 py-2 text-sm font-semibold text-sky-100">Patch notes chính thức ↗</a>
               <a href={overviewUrl} target="_blank" rel="noreferrer" className="rounded-full border border-slate-600 px-4 py-2 text-sm font-semibold text-slate-200">Tổng quan Version 2.1 ↗</a>
+              <Link href="/vn/guides/hidden-mountain" className="rounded-full border border-emerald-400/60 px-4 py-2 text-sm font-semibold text-emerald-100">Hướng dẫn Hidden Mountain →</Link>
             </div>
           </div>
           <div className="mx-auto rounded-3xl border border-sky-400/20 bg-sky-500/10 p-8">

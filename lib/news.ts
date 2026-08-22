@@ -24,6 +24,14 @@ type OfficialNewsRow = [
 // site can pin items out of strict date order, so news pages should not sort it.
 const officialNewsRows: OfficialNewsRow[] = [
   [
+    "august-21-version-2-1-dev-letter",
+    "Version 2.1 Dev Letter: One Step Closer to the Sky",
+    "2026-08-21",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/821devletter.html",
+    "Official Version 2.1 developer letter covering repaired water rails, the server-wide Cloudstair construction project, streamlined Celestial Seize and building tools, and the August 26-30 Gamescom booth in Cologne.",
+  ],
+  [
     "august-20-version-2-1-patch-notes",
     "Version 2.1 Patch Notes: Clouded Revelation (August 20, 2026)",
     "2026-08-20",

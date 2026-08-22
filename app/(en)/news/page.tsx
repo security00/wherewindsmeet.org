@@ -12,18 +12,18 @@ const freshness = getContentFreshness("/news");
 export const metadata: Metadata = {
   title: "Where Winds Meet Update Today - Version 2.1 News & Patch Notes",
   description:
-    "Where Winds Meet update today tracker for Version 2.1 Clouded Revelation, August 20 patch notes, A Flourishing Legacy fixes, Vernal Umbrella, and guide impact.",
+    "Where Winds Meet update today tracker for the August 21 Version 2.1 dev letter, Cloudstair, water rails, Clouded Revelation patch notes, and guide impact.",
   alternates: buildHreflangAlternates("/news"),
   openGraph: {
     title: "Where Winds Meet Update Today - Version 2.1 News & Patch Notes",
     description:
-      "Where Winds Meet update today tracker for Version 2.1 Clouded Revelation, August 20 patch notes, quest fixes, Vernal Umbrella, and guide impact.",
+      "Where Winds Meet update today tracker for the August 21 Version 2.1 dev letter, Cloudstair, water rails, and Clouded Revelation patch impact.",
     url: `${baseUrl}/news`,
   },
   twitter: {
     title: "Where Winds Meet Update Today - Version 2.1 News & Patch Notes",
     description:
-      "Where Winds Meet update today tracker for Version 2.1 Clouded Revelation and the official August 20 patch-note impact.",
+      "Where Winds Meet update today tracker for the official August 21 Version 2.1 developer letter and current patch impact.",
   },
 };
 
@@ -31,9 +31,9 @@ const todayStatusCards = [
   {
     title: "Latest official update",
     detail:
-      "Version 2.1 / August 20 is the newest official anchor checked: Clouded Revelation, A Flourishing Legacy and Rising Beyond fixes, Vernal Umbrella attunement, and combat/UI fixes lead the update trail.",
-    href: "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
-    label: "Official Version 2.1 notes",
+      "The August 21 developer letter is the newest official anchor checked: repaired water rails, the server-wide Cloudstair project, streamlined Celestial Seize and Gamescom plans extend the Version 2.1 trail.",
+    href: "https://www.wherewindsmeetgame.com/news/official/821devletter.html",
+    label: "Official August 21 dev letter",
   },
   {
     title: "Today patch-note answer",
@@ -45,9 +45,9 @@ const todayStatusCards = [
   {
     title: "Roadmap watch",
     detail:
-      "Clouded Revelation is now the current Version 2.1 update. Hidden Mountain remains the major Version 2.0 expansion baseline underneath the new fixes and quest follow-up.",
-    href: "https://www.wherewindsmeetgame.com/news/official/CloudedRevelation.html",
-    label: "Version 2.1 overview",
+      "Hidden Mountain remains the region baseline, while Version 2.1 adds shared construction and traversal follow-up. Use the visual region guide for the unlock route and current systems.",
+    href: "/guides/hidden-mountain",
+    label: "Hidden Mountain guide",
   },
 ];
 

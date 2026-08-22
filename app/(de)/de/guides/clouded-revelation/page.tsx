@@ -51,7 +51,7 @@ export default function CloudedRevelationDePage() {
       <section className="overflow-hidden rounded-3xl border border-sky-400/30 bg-slate-950/85 p-6 shadow-2xl sm:p-10">
         <div className="grid gap-8 lg:grid-cols-[1fr_260px] lg:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-200">Offizielle Quellen geprüft · 21.08.2026</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-200">Offizielle Quellen geprüft · 23.08.2026</p>
             <h1 className="mt-3 text-balance text-4xl font-bold text-slate-50 sm:text-5xl">Where Winds Meet Clouded Revelation: Version 2.1 Guide</h1>
             <p className="mt-5 max-w-3xl leading-7 text-slate-300">
               Clouded Revelation ist das aktuelle Version-2.1-Update. Dieser Guide übersetzt die offiziellen Patch Notes vom 20. August in konkrete Prüfungen für Quests, Vernal Umbrella, Arena, Homestead und Kosmetik.
@@ -59,6 +59,7 @@ export default function CloudedRevelationDePage() {
             <div className="mt-6 flex flex-wrap gap-3">
               <a href={patchUrl} target="_blank" rel="noreferrer" className="rounded-full border border-sky-300/60 px-4 py-2 text-sm font-semibold text-sky-100">Offizielle Patch Notes ↗</a>
               <a href={overviewUrl} target="_blank" rel="noreferrer" className="rounded-full border border-slate-600 px-4 py-2 text-sm font-semibold text-slate-200">Version-2.1-Übersicht ↗</a>
+              <Link href="/de/guides/hidden-mountain" className="rounded-full border border-emerald-400/60 px-4 py-2 text-sm font-semibold text-emerald-100">Hidden-Mountain-Guide →</Link>
             </div>
           </div>
           <div className="mx-auto rounded-3xl border border-sky-400/20 bg-sky-500/10 p-8">

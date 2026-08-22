@@ -78,11 +78,12 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-08-21",
-    "gameVersion": "Version 2.1 / August 20 update tracker",
+    "lastChecked": "2026-08-23",
+    "gameVersion": "Version 2.1 / August 21 developer letter",
     "priorityCluster": "main-keyword-recovery",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
+      "https://www.wherewindsmeetgame.com/news/official/821devletter.html",
       "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
       "https://www.wherewindsmeetgame.com/news/official/CloudedRevelation.html",
       "https://www.wherewindsmeetgame.com/jm/activity/3sSSr3/3NddQA?lang=en&jm_track=web_en",
@@ -321,12 +322,13 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-08-21",
-    "gameVersion": "Version 2.1 / Clouded Revelation",
+    "lastChecked": "2026-08-23",
+    "gameVersion": "Version 2.1 / August 21 developer letter",
     "priorityCluster": "emerging-update-intent",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
-      "https://www.wherewindsmeetgame.com/news/official/CloudedRevelation.html"
+      "https://www.wherewindsmeetgame.com/news/official/CloudedRevelation.html",
+      "https://www.wherewindsmeetgame.com/news/official/821devletter.html"
     ]
   },
   {
@@ -392,6 +394,40 @@
       "https://www.wherewindsmeetgame.com/news/index.html",
       "https://game8.co/games/Where-Winds-Meet/archives/565812",
       "public/guides/npc-list/603.json"
+    ]
+  },
+  {
+    "basePath": "/guides/character-creation-codes",
+    "languages": ["en", "vi", "de"],
+    "lastChecked": "2026-08-23",
+    "gameVersion": "Version 2.1 / August 23 search-demand pass",
+    "priorityCluster": "rising-character-customization-intent",
+    "sourceUrls": [
+      "https://allthings.how/where-winds-meet-how-to-import-character-customization-data/",
+      "https://www.pcgamer.com/games/rpg/where-winds-meet-customization-codes/"
+    ]
+  },
+  {
+    "basePath": "/guides/commerce-coins",
+    "languages": ["en", "vi", "de"],
+    "lastChecked": "2026-08-23",
+    "gameVersion": "Version 2.1 / August 23 search-demand pass",
+    "priorityCluster": "rising-commerce-intent",
+    "sourceUrls": [
+      "https://www.gamerguides.com/where-winds-meet/guide/getting-started/currencies/commerce-coins",
+      "https://www.youtube.com/watch?v=XCfdIFQjIKI"
+    ]
+  },
+  {
+    "basePath": "/guides/hidden-mountain",
+    "languages": ["en", "vi", "de"],
+    "lastChecked": "2026-08-23",
+    "gameVersion": "Version 2.1 / One Step Closer to the Sky",
+    "priorityCluster": "official-freshness-and-rising-region-intent",
+    "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/news/official/719devletter.html",
+      "https://www.wherewindsmeetgame.com/news/official/821devletter.html",
+      "https://www.altchar.com/guides/where-winds-meet-hidden-mountain-how-to-unlock-the-new-region-aC5T63k6437t"
     ]
   }
 ]

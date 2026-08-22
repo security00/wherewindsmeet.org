@@ -8,6 +8,7 @@ const baseUrl = "https://wherewindsmeet.org";
 const pageUrl = `${baseUrl}/guides/clouded-revelation`;
 const patchUrl = "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html";
 const overviewUrl = "https://www.wherewindsmeetgame.com/news/official/CloudedRevelation.html";
+const devLetterUrl = "https://www.wherewindsmeetgame.com/news/official/821devletter.html";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Clouded Revelation Guide (Version 2.1)",
@@ -103,7 +104,7 @@ export default function CloudedRevelationPage() {
       <section className="overflow-hidden rounded-3xl border border-sky-400/30 bg-slate-950/85 p-6 shadow-2xl shadow-sky-950/30 sm:p-10">
         <div className="grid gap-8 lg:grid-cols-[1fr_280px] lg:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sky-200">Official update checked · August 21, 2026</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sky-200">Official update checked · August 23, 2026</p>
             <h1 className="mt-3 text-balance text-4xl font-bold text-slate-50 sm:text-5xl">Where Winds Meet Clouded Revelation: Version 2.1 guide</h1>
             <p className="mt-5 max-w-3xl leading-7 text-slate-300">
               Clouded Revelation is the current Version 2.1 update. This page turns the official August 20 patch notes into a short retry list for the changes most likely to affect guides: A Flourishing Legacy and Rising Beyond, Vernal Umbrella attunement, Arena behavior, Homestead controls, and the Heaven&apos;s Plea cosmetic fix.
@@ -111,6 +112,8 @@ export default function CloudedRevelationPage() {
             <div className="mt-6 flex flex-wrap gap-3">
               <a href={patchUrl} target="_blank" rel="noreferrer" className="rounded-full border border-sky-300/60 bg-sky-500/10 px-4 py-2 text-sm font-semibold text-sky-100 hover:border-sky-200">Official Version 2.1 patch notes ↗</a>
               <a href={overviewUrl} target="_blank" rel="noreferrer" className="rounded-full border border-slate-600 px-4 py-2 text-sm font-semibold text-slate-200 hover:border-slate-400">Official update overview ↗</a>
+              <a href={devLetterUrl} target="_blank" rel="noreferrer" className="rounded-full border border-violet-400/60 px-4 py-2 text-sm font-semibold text-violet-100 hover:border-violet-300">August 21 dev letter ↗</a>
+              <Link href="/guides/hidden-mountain" className="rounded-full border border-emerald-400/60 px-4 py-2 text-sm font-semibold text-emerald-100 hover:border-emerald-300">Hidden Mountain guide →</Link>
             </div>
           </div>
           <div className="mx-auto rounded-3xl border border-sky-400/20 bg-sky-500/10 p-8">

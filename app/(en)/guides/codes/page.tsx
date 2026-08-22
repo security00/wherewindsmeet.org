@@ -194,6 +194,7 @@ export default function CodesPage() {
         </p>
         <div className="mt-4 flex flex-wrap gap-3 text-sm">
           <Link href="#how-to-redeem" className="rounded-full border border-cyan-300/60 px-4 py-2 font-semibold text-cyan-100 hover:border-cyan-200">Redeem reward codes</Link>
+          <Link href="/guides/character-creation-codes" className="rounded-full border border-emerald-300/60 px-4 py-2 font-semibold text-emerald-100 hover:border-emerald-200">Import character creation codes</Link>
           <Link href="/guides/free-outfits" className="rounded-full border border-amber-300/60 px-4 py-2 font-semibold text-amber-100 hover:border-amber-200">Free outfits and cosmetics</Link>
           <Link href="/guides/cosmetics" className="rounded-full border border-rose-300/60 px-4 py-2 font-semibold text-rose-100 hover:border-rose-200">Appearance and customization</Link>
         </div>
