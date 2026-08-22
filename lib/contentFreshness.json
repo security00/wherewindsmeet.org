@@ -429,5 +429,29 @@
       "https://www.wherewindsmeetgame.com/news/official/821devletter.html",
       "https://www.altchar.com/guides/where-winds-meet-hidden-mountain-how-to-unlock-the-new-region-aC5T63k6437t"
     ]
+  },
+  {
+    "basePath": "/guides/heavens-threshold-cloudstair",
+    "languages": ["en", "vi", "de"],
+    "lastChecked": "2026-08-23",
+    "gameVersion": "Version 2.1 / Heaven's Threshold Chapter 2",
+    "priorityCluster": "fresh-server-unlock-task-intent",
+    "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/news/official/821devletter.html",
+      "https://allthings.how/where-winds-meet-how-to-get-2-free-lingering-melody-in-cloudtop-ascent/",
+      "https://www.youtube.com/watch?v=rh6vQU8nacg"
+    ]
+  },
+  {
+    "basePath": "/guides/evershift-labyrinth",
+    "languages": ["en", "vi", "de"],
+    "lastChecked": "2026-08-23",
+    "gameVersion": "Version 2.1 / Heaven's Threshold Chapter 2",
+    "priorityCluster": "fresh-puzzle-blocker-intent",
+    "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/news/official/821devletter.html",
+      "https://allthings.how/where-winds-meet-pass-through-the-rotating-mechanism-in-evershift-labyrinth/",
+      "https://www.reddit.com/r/WhereWindsMeet/comments/1vt8z84/evershift_labyrinth_lost_chapter_quest_where/"
+    ]
   }
 ]

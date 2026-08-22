@@ -42,4 +42,15 @@
 
 ## Deployment state
 
-Implementation and local verification only. Deployment requires a separate explicit approval.
+The first three-cluster batch was deployed in commit c080def on 2026-08-23.
+
+## Same-day Chapter 2 intent expansion
+
+- **SERP observed:** fresh exact-task results appeared for “Cloudtop Ascent Foundation,” “Build the Cloudstair,” “Heaven’s Threshold unlock,” “Evershift Labyrinth full guide,” and “pass through the rotating mechanism.”
+- **Community demand signal:** recent guide posts include players asking why the next region still says “wait for development” after the labyrinth.
+- **Decision:** strong enough for two standalone task pages rather than adding more sections to the already broad Hidden Mountain page.
+- **Targets:** /guides/heavens-threshold-cloudstair and /guides/evershift-labyrinth, each with EN/VI/DE routes.
+- **Primary hypotheses:** server-gate explanations will satisfy unlock/blocker intent; a four-step rotating-mechanism answer will satisfy exact puzzle intent.
+- **Media:** official Heaven’s Threshold Chapter 2 trailer, loaded through the lightweight privacy-enhanced video component.
+- **Current state:** local reviewable diff only; this second expansion is not yet deployed.
+- **Review window after any deployment:** crawl check after 7 days and query/page decision review after 21 days.
