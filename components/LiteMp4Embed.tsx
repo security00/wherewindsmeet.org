@@ -9,6 +9,7 @@ type LiteMp4EmbedProps = {
   src: string;
   title: string;
   poster: string;
+  posterReferrerPolicy?: React.ImgHTMLAttributes<HTMLImageElement>["referrerPolicy"];
   analytics?: {
     eventName: string;
     params?: Record<string, string | number | boolean>;
@@ -24,7 +25,7 @@ function safeTrack(eventName: string, params?: Record<string, string | number | 
   gtag("event", eventName, params || {});
 }
 
-export default function LiteMp4Embed({ src, title, poster, analytics }: LiteMp4EmbedProps) {
+export default function LiteMp4Embed({ src, title, poster, posterReferrerPolicy, analytics }: LiteMp4EmbedProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const pathname = usePathname();
   const language = pathname?.startsWith("/vn") ? "vi" : pathname?.startsWith("/de") ? "de" : "en";
@@ -92,6 +93,7 @@ export default function LiteMp4Embed({ src, title, poster, analytics }: LiteMp4E
           src={resolvedPoster.src}
           fallbackSrc={resolvedPoster.fallbackSrc}
           alt={title}
+          referrerPolicy={posterReferrerPolicy}
           fill
           sizes="(max-width: 1024px) 100vw, 560px"
           className="object-cover"

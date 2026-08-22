@@ -182,7 +182,7 @@ export function JiangnanHangzhouGuidePage({ locale }: { locale: Locale }) {
 
       <header className="overflow-hidden rounded-3xl border border-emerald-400/30 bg-slate-950/85 shadow-2xl shadow-emerald-950/30">
         <div className="relative aspect-video min-h-[360px]">
-          <FallbackImage src={heroImage} alt="Official Where Winds Meet Jiangnan and Hangzhou announcement artwork" fill sizes="100vw" className="object-cover" priority />
+          <FallbackImage src={heroImage} alt="Official Where Winds Meet Jiangnan and Hangzhou announcement artwork" referrerPolicy="no-referrer" fill sizes="100vw" className="object-cover" priority />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/65 to-slate-950/10" />
           <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200">{t.eyebrow}</p>
@@ -218,7 +218,7 @@ export function JiangnanHangzhouGuidePage({ locale }: { locale: Locale }) {
         </div>
         <figure className="overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/75">
           <div className="relative aspect-[2.28/1]">
-            <FallbackImage src={harborImage} alt="Official preview of the Hangzhou harbor district in Where Winds Meet Jiangnan" fill sizes="(max-width: 1024px) 100vw, 48vw" className="object-cover" />
+            <FallbackImage src={harborImage} alt="Official preview of the Hangzhou harbor district in Where Winds Meet Jiangnan" referrerPolicy="no-referrer" fill sizes="(max-width: 1024px) 100vw, 48vw" className="object-cover" />
           </div>
           <figcaption className="p-4 text-xs leading-5 text-slate-400">Official CN preview artwork showing Hangzhou&apos;s waterways and harbor direction.</figcaption>
         </figure>
@@ -228,7 +228,7 @@ export function JiangnanHangzhouGuidePage({ locale }: { locale: Locale }) {
         <h2 className="text-2xl font-bold text-slate-50">{t.videoTitle}</h2>
         <p className="mt-2 text-sm leading-6 text-slate-300">{t.videoNote}</p>
         <div className="mt-5">
-          <LiteMp4Embed src={officialVideo} poster={heroImage} title={t.videoTitle} analytics={{ eventName: "jiangnan_official_video_play", params: { locale } }} />
+          <LiteMp4Embed src={officialVideo} poster={heroImage} posterReferrerPolicy="no-referrer" title={t.videoTitle} analytics={{ eventName: "jiangnan_official_video_play", params: { locale } }} />
         </div>
         <a href={cnVideoUrl} target="_blank" rel="noreferrer" className="mt-4 inline-flex text-xs font-semibold text-sky-200 hover:text-sky-100">View the original official post ↗</a>
       </section>
