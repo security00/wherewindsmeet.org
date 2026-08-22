@@ -1,7 +1,6 @@
 import Link from "next/link";
 import FallbackImage from "@/components/FallbackImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
-import LiteBilibiliEmbed from "@/components/LiteBilibiliEmbed";
 import LiteMp4Embed from "@/components/LiteMp4Embed";
 import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
 
@@ -20,6 +19,8 @@ const officialVideo = "https://yysls.fp.ps.netease.com/file/6a43374e41c0861366f0
 const showcaseBvid = "BV1RP7g6wEYt";
 const showcaseUrl = `https://www.bilibili.com/video/${showcaseBvid}/`;
 const showcasePoster = "https://i2.hdslb.com/bfs/archive/2059451a11051280ca6b13e8b9a28b94d8c9bd1b.jpg";
+const showcaseYoutubeId = "f_-Zg835Zxw";
+const showcaseYoutubeUrl = `https://www.youtube.com/watch?v=${showcaseYoutubeId}`;
 const communityVideos = [
   {
     videoId: "0eiyH697f8M",
@@ -68,11 +69,11 @@ const copy = {
     videoNote: "Official CN promotional video. It shows the visual direction of Jiangnan; it is not evidence of a Global release date.",
     showcaseTitle: "Wind and Water Rise: the official Jiangnan version showcase",
     showcaseNote:
-      "Published by the official Where Winds Meet Bilibili account on June 23, this 3-minute showcase presents Hangzhou, the new region, story direction, and gameplay upgrades ahead of the June 26 CN launch. We found an official launch-day West Lake livestream announcement, but no stable full conference replay, so this is labeled as a version showcase rather than a press conference.",
+      "Published by the official Where Winds Meet Bilibili account on June 23, this 3-minute showcase presents Hangzhou, the new region, story direction, and gameplay upgrades ahead of the June 26 CN launch. The YouTube player is a matching mirror from a third-party channel, not an official Global upload; the official Bilibili source remains linked below.",
     communityVideosTitle: "Jiangnan map tours from players",
     communityVideosNote: "These are third-party gameplay videos, selected because they add map coverage rather than repeating the official trailer. Load only the view you need.",
     showcaseEyebrow: "Official version showcase · June 23, 2026",
-    showcaseLink: "Open on the official Bilibili channel ↗",
+    showcaseLink: "View the official source on Bilibili ↗",
     mapTitle: "Can you use a Hangzhou interactive map yet?",
     mapBody:
       "Not reliably. The 17173 page linked by players is a useful China-server map reference, but this exact URL is the Qinchuan map. We found no Hangzhou entry in its current region list. Use it for its existing regions only, and avoid calling it a Jiangnan map until the provider adds and labels Hangzhou.",
@@ -119,11 +120,11 @@ const copy = {
     videoNote: "Video quảng bá chính thức của CN; không phải xác nhận ngày phát hành Global.",
     showcaseTitle: "Phong sinh thủy khởi: video giới thiệu phiên bản Jiangnan chính thức",
     showcaseNote:
-      "Được tài khoản Bilibili chính thức đăng ngày 23/06, video dài hơn 3 phút giới thiệu Hangzhou, khu vực mới, hướng cốt truyện và nâng cấp gameplay trước ngày mở CN 26/06. Chưa tìm thấy bản phát lại đầy đủ, ổn định của buổi livestream nên nội dung này được ghi đúng là video giới thiệu phiên bản.",
+      "Được tài khoản Bilibili chính thức đăng ngày 23/06, video dài hơn 3 phút giới thiệu Hangzhou, khu vực mới, hướng cốt truyện và nâng cấp gameplay trước ngày mở CN 26/06. Trình phát YouTube là bản sao tương ứng từ một kênh bên thứ ba, không phải bản đăng Global chính thức; liên kết nguồn Bilibili chính thức vẫn được giữ bên dưới.",
     communityVideosTitle: "Video khám phá bản đồ Jiangnan từ người chơi",
     communityVideosNote: "Đây là video gameplay bên thứ ba được chọn vì bổ sung góc nhìn bản đồ, không chỉ đăng lại trailer. Trình phát chỉ tải sau khi bạn nhấn.",
     showcaseEyebrow: "Video giới thiệu phiên bản chính thức · 23/06/2026",
-    showcaseLink: "Mở trên kênh Bilibili chính thức ↗",
+    showcaseLink: "Xem nguồn chính thức trên Bilibili ↗",
     mapTitle: "Đã có thể dùng bản đồ tương tác Hangzhou chưa?",
     mapBody:
       "Chưa thể tin cậy. Trang 17173 là nguồn tham khảo CN hữu ích, nhưng URL này là bản đồ Qinchuan. Danh sách khu vực hiện chưa có Hangzhou. Chỉ dùng nó cho các khu vực đang được ghi nhãn và không gọi đây là bản đồ Jiangnan.",
@@ -170,11 +171,11 @@ const copy = {
     videoNote: "Offizielles CN-Werbevideo; es bestätigt keinen Global-Termin.",
     showcaseTitle: "Wind und Wasser steigen: offizielle Jiangnan-Versionsschau",
     showcaseNote:
-      "Das offizielle Bilibili-Konto veröffentlichte diese gut dreiminütige Vorschau am 23. Juni. Sie zeigt Hangzhou, Regions-, Story- und Gameplay-Inhalte vor dem CN-Start am 26. Juni. Da kein stabiler vollständiger Mitschnitt der Launch-Liveübertragung auffindbar ist, wird das Video korrekt als Versionsschau bezeichnet.",
+      "Das offizielle Bilibili-Konto veröffentlichte diese gut dreiminütige Vorschau am 23. Juni. Sie zeigt Hangzhou, Regions-, Story- und Gameplay-Inhalte vor dem CN-Start am 26. Juni. Der YouTube-Player ist ein inhaltlich entsprechender Mirror eines Drittanbieterkanals und kein offizieller Global-Upload; die offizielle Bilibili-Quelle bleibt unten verlinkt.",
     communityVideosTitle: "Jiangnan-Kartentouren von Spielern",
     communityVideosNote: "Diese Drittanbieter-Gameplayvideos ergänzen die offizielle Vorschau um echte Kartenrundgänge. Der Player lädt erst nach dem Klick.",
     showcaseEyebrow: "Offizielle Versionsschau · 23. Juni 2026",
-    showcaseLink: "Auf dem offiziellen Bilibili-Kanal öffnen ↗",
+    showcaseLink: "Offizielle Quelle auf Bilibili ansehen ↗",
     mapTitle: "Gibt es schon eine nutzbare Hangzhou-Interaktivkarte?",
     mapBody:
       "Noch nicht verlässlich. 17173 ist eine nützliche CN-Referenz, doch diese URL führt zur Qinchuan-Karte. In der aktuellen Gebietsauswahl fehlt Hangzhou. Nutze sie nur für bereits gekennzeichnete Regionen.",
@@ -228,8 +229,9 @@ export function JiangnanHangzhouGuidePage({ locale }: { locale: Locale }) {
       description: t.showcaseNote,
       thumbnailUrl: [showcasePoster],
       uploadDate: "2026-06-23",
-      embedUrl: `https://player.bilibili.com/player.html?bvid=${showcaseBvid}`,
-      contentUrl: showcaseUrl,
+      embedUrl: `https://www.youtube-nocookie.com/embed/${showcaseYoutubeId}`,
+      url: showcaseUrl,
+      sameAs: showcaseYoutubeUrl,
     },
   ];
 
@@ -287,7 +289,12 @@ export function JiangnanHangzhouGuidePage({ locale }: { locale: Locale }) {
         <h2 className="mt-2 text-2xl font-bold text-slate-50">{t.showcaseTitle}</h2>
         <p className="mt-3 text-sm leading-6 text-slate-300">{t.showcaseNote}</p>
         <div className="mt-5">
-          <LiteBilibiliEmbed bvid={showcaseBvid} poster={showcasePoster} title={t.showcaseTitle} />
+          <LiteYouTubeEmbed
+            videoId={showcaseYoutubeId}
+            title={t.showcaseTitle}
+            poster={`https://i.ytimg.com/vi/${showcaseYoutubeId}/hqdefault.jpg`}
+            analytics={{ eventName: "jiangnan_showcase_video_play", params: { locale, source: "youtube_mirror" } }}
+          />
         </div>
         <a href={showcaseUrl} target="_blank" rel="noreferrer" className="mt-4 inline-flex text-xs font-semibold text-sky-200 hover:text-sky-100">{t.showcaseLink}</a>
       </section>
