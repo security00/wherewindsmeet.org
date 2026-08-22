@@ -1,7 +1,9 @@
 import Link from "next/link";
 import FallbackImage from "@/components/FallbackImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
+import LiteBilibiliEmbed from "@/components/LiteBilibiliEmbed";
 import LiteMp4Embed from "@/components/LiteMp4Embed";
+import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
 
 type Locale = "en" | "vi" | "de";
 
@@ -15,6 +17,31 @@ const officialMapUrl = "https://www.wherewindsmeetgame.com/map/en/";
 const heroImage = "https://nie.res.netease.com/r/pic/20260630/04ad5efa-1c74-43aa-9d73-e35177e520e4.png";
 const harborImage = "https://nie.res.netease.com/r/pic/20260522/bf4b7e7e-65cf-4737-90b1-6ff438662d2a.jpg";
 const officialVideo = "https://yysls.fp.ps.netease.com/file/6a43374e41c0861366f00c667Sy2C1bg07.mp4";
+const showcaseBvid = "BV1RP7g6wEYt";
+const showcaseUrl = `https://www.bilibili.com/video/${showcaseBvid}/`;
+const showcasePoster = "https://i2.hdslb.com/bfs/archive/2059451a11051280ca6b13e8b9a28b94d8c9bd1b.jpg";
+const communityVideos = [
+  {
+    videoId: "0eiyH697f8M",
+    title: "Where Winds Meet #177 | Jiangnan New Region - Full Map Exploration",
+    author: "Drvisage Nguyen",
+    purpose: {
+      en: "Long-form map exploration for players who want to see how the first Jiangnan release connects in practice.",
+      vi: "Video khám phá dài giúp người chơi xem các khu vực trong bản phát hành Jiangnan đầu tiên kết nối với nhau như thế nào.",
+      de: "Eine ausführliche Kartenerkundung, die zeigt, wie die Gebiete der ersten Jiangnan-Veröffentlichung praktisch zusammenhängen.",
+    },
+  },
+  {
+    videoId: "zY1zZQMqYd8",
+    title: "Where Winds Meet — Relaxing Walk in the New Jiangnan Region (Hangzhou) | 4K 60FPS No HUD",
+    author: "RoamPixel",
+    purpose: {
+      en: "A clean, no-HUD Hangzhou walk that shows streets, waterways, scale, lighting, and atmosphere without guide overlays.",
+      vi: "Chuyến đi bộ Hangzhou không HUD, cho thấy đường phố, kênh rạch, quy mô, ánh sáng và không khí mà không bị lớp hướng dẫn che khuất.",
+      de: "Ein ruhiger Hangzhou-Rundgang ohne HUD, der Straßen, Wasserwege, Maßstab, Licht und Atmosphäre ohne Guide-Einblendungen zeigt.",
+    },
+  },
+];
 
 const copy = {
   en: {
@@ -39,6 +66,13 @@ const copy = {
     ],
     videoTitle: "Official Jiangnan / Hangzhou preview",
     videoNote: "Official CN promotional video. It shows the visual direction of Jiangnan; it is not evidence of a Global release date.",
+    showcaseTitle: "Wind and Water Rise: the official Jiangnan version showcase",
+    showcaseNote:
+      "Published by the official Where Winds Meet Bilibili account on June 23, this 3-minute showcase presents Hangzhou, the new region, story direction, and gameplay upgrades ahead of the June 26 CN launch. We found an official launch-day West Lake livestream announcement, but no stable full conference replay, so this is labeled as a version showcase rather than a press conference.",
+    communityVideosTitle: "Jiangnan map tours from players",
+    communityVideosNote: "These are third-party gameplay videos, selected because they add map coverage rather than repeating the official trailer. Load only the view you need.",
+    showcaseEyebrow: "Official version showcase · June 23, 2026",
+    showcaseLink: "Open on the official Bilibili channel ↗",
     mapTitle: "Can you use a Hangzhou interactive map yet?",
     mapBody:
       "Not reliably. The 17173 page linked by players is a useful China-server map reference, but this exact URL is the Qinchuan map. We found no Hangzhou entry in its current region list. Use it for its existing regions only, and avoid calling it a Jiangnan map until the provider adds and labels Hangzhou.",
@@ -83,6 +117,13 @@ const copy = {
     ],
     videoTitle: "Video chính thức Jiangnan / Hangzhou",
     videoNote: "Video quảng bá chính thức của CN; không phải xác nhận ngày phát hành Global.",
+    showcaseTitle: "Phong sinh thủy khởi: video giới thiệu phiên bản Jiangnan chính thức",
+    showcaseNote:
+      "Được tài khoản Bilibili chính thức đăng ngày 23/06, video dài hơn 3 phút giới thiệu Hangzhou, khu vực mới, hướng cốt truyện và nâng cấp gameplay trước ngày mở CN 26/06. Chưa tìm thấy bản phát lại đầy đủ, ổn định của buổi livestream nên nội dung này được ghi đúng là video giới thiệu phiên bản.",
+    communityVideosTitle: "Video khám phá bản đồ Jiangnan từ người chơi",
+    communityVideosNote: "Đây là video gameplay bên thứ ba được chọn vì bổ sung góc nhìn bản đồ, không chỉ đăng lại trailer. Trình phát chỉ tải sau khi bạn nhấn.",
+    showcaseEyebrow: "Video giới thiệu phiên bản chính thức · 23/06/2026",
+    showcaseLink: "Mở trên kênh Bilibili chính thức ↗",
     mapTitle: "Đã có thể dùng bản đồ tương tác Hangzhou chưa?",
     mapBody:
       "Chưa thể tin cậy. Trang 17173 là nguồn tham khảo CN hữu ích, nhưng URL này là bản đồ Qinchuan. Danh sách khu vực hiện chưa có Hangzhou. Chỉ dùng nó cho các khu vực đang được ghi nhãn và không gọi đây là bản đồ Jiangnan.",
@@ -127,6 +168,13 @@ const copy = {
     ],
     videoTitle: "Offizielle Jiangnan-/Hangzhou-Vorschau",
     videoNote: "Offizielles CN-Werbevideo; es bestätigt keinen Global-Termin.",
+    showcaseTitle: "Wind und Wasser steigen: offizielle Jiangnan-Versionsschau",
+    showcaseNote:
+      "Das offizielle Bilibili-Konto veröffentlichte diese gut dreiminütige Vorschau am 23. Juni. Sie zeigt Hangzhou, Regions-, Story- und Gameplay-Inhalte vor dem CN-Start am 26. Juni. Da kein stabiler vollständiger Mitschnitt der Launch-Liveübertragung auffindbar ist, wird das Video korrekt als Versionsschau bezeichnet.",
+    communityVideosTitle: "Jiangnan-Kartentouren von Spielern",
+    communityVideosNote: "Diese Drittanbieter-Gameplayvideos ergänzen die offizielle Vorschau um echte Kartenrundgänge. Der Player lädt erst nach dem Klick.",
+    showcaseEyebrow: "Offizielle Versionsschau · 23. Juni 2026",
+    showcaseLink: "Auf dem offiziellen Bilibili-Kanal öffnen ↗",
     mapTitle: "Gibt es schon eine nutzbare Hangzhou-Interaktivkarte?",
     mapBody:
       "Noch nicht verlässlich. 17173 ist eine nützliche CN-Referenz, doch diese URL führt zur Qinchuan-Karte. In der aktuellen Gebietsauswahl fehlt Hangzhou. Nutze sie nur für bereits gekennzeichnete Regionen.",
@@ -172,6 +220,16 @@ export function JiangnanHangzhouGuidePage({ locale }: { locale: Locale }) {
         name: question,
         acceptedAnswer: { "@type": "Answer", text: answer },
       })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      name: t.showcaseTitle,
+      description: t.showcaseNote,
+      thumbnailUrl: [showcasePoster],
+      uploadDate: "2026-06-23",
+      embedUrl: `https://player.bilibili.com/player.html?bvid=${showcaseBvid}`,
+      contentUrl: showcaseUrl,
     },
   ];
 
@@ -224,7 +282,37 @@ export function JiangnanHangzhouGuidePage({ locale }: { locale: Locale }) {
         </figure>
       </section>
 
-      <section className="rounded-3xl border border-sky-400/25 bg-slate-950/80 p-5 sm:p-7">
+      <section className="rounded-3xl border border-sky-400/30 bg-sky-500/10 p-5 sm:p-7">
+        <p className="text-xs font-semibold uppercase tracking-wide text-sky-200">{t.showcaseEyebrow}</p>
+        <h2 className="mt-2 text-2xl font-bold text-slate-50">{t.showcaseTitle}</h2>
+        <p className="mt-3 text-sm leading-6 text-slate-300">{t.showcaseNote}</p>
+        <div className="mt-5">
+          <LiteBilibiliEmbed bvid={showcaseBvid} poster={showcasePoster} title={t.showcaseTitle} />
+        </div>
+        <a href={showcaseUrl} target="_blank" rel="noreferrer" className="mt-4 inline-flex text-xs font-semibold text-sky-200 hover:text-sky-100">{t.showcaseLink}</a>
+      </section>
+
+      <section className="rounded-3xl border border-slate-700 bg-slate-950/80 p-5 sm:p-7">
+        <h2 className="text-2xl font-bold text-slate-50">{t.communityVideosTitle}</h2>
+        <p className="mt-2 text-sm leading-6 text-slate-300">{t.communityVideosNote}</p>
+        <div className="mt-5 grid gap-5 lg:grid-cols-2">
+          {communityVideos.map((video) => (
+            <div key={video.videoId} className="rounded-2xl border border-slate-800 bg-slate-900/50 p-4">
+              <LiteYouTubeEmbed
+                videoId={video.videoId}
+                title={video.title}
+                poster={`https://i.ytimg.com/vi/${video.videoId}/hqdefault.jpg`}
+                analytics={{ eventName: "jiangnan_map_video_play", params: { video_id: video.videoId, locale } }}
+              />
+              <h3 className="mt-4 font-semibold leading-6 text-slate-100">{video.title}</h3>
+              <p className="mt-1 text-xs text-slate-400">{video.author}</p>
+              <p className="mt-3 text-sm leading-6 text-slate-300">{video.purpose[locale]}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="rounded-3xl border border-slate-700 bg-slate-950/80 p-5 sm:p-7">
         <h2 className="text-2xl font-bold text-slate-50">{t.videoTitle}</h2>
         <p className="mt-2 text-sm leading-6 text-slate-300">{t.videoNote}</p>
         <div className="mt-5">

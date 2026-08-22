@@ -204,17 +204,21 @@ export default function InteractiveMapPage() {
       </section>
 
       <section className="space-y-4">
+        <div className="flex flex-col gap-3 rounded-2xl border border-amber-400/30 bg-amber-500/10 p-5 text-sm sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="font-semibold text-amber-100">The official map opens in a new tab</p>
+            <p className="mt-1 text-xs leading-5 text-slate-300">
+              The official site sends X-Frame-Options: SAMEORIGIN, so browsers correctly refuse to display it inside this page. MapGenie is now the default embedded map.
+            </p>
+          </div>
+          <a href={officialMapUrl} target="_blank" rel="noopener noreferrer" className="shrink-0 rounded-full border border-amber-300/60 px-4 py-2 text-center text-sm font-semibold text-amber-100 hover:border-amber-200">
+            Open official map ↗
+          </a>
+        </div>
         <InteractiveMapEmbed
           deferLoad
           deferMs={2500}
           options={[
-            {
-              id: "official",
-              label: "Official Map",
-              src: officialMapUrl,
-              title: "Where Winds Meet Official Interactive Map",
-              referrerPolicy: "no-referrer",
-            },
             {
               id: "mapgenie",
               label: "MapGenie (Global)",

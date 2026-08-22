@@ -5,6 +5,7 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const mapgenieUrl = "https://mapgenie.io/where-winds-meet/maps/world";
 const sixFastUrl = "https://yysls-map.6fast.com/yysls/maps/qinghe?lang=en";
+const officialMapUrl = "https://www.wherewindsmeetgame.com/map/en/";
 
 export const metadata: Metadata = {
   title: "Bản đồ tương tác Where Winds Meet (MapGenie + lựa chọn CN)",
@@ -33,6 +34,13 @@ export default function InteractiveMapPage() {
       </header>
 
       <section className="space-y-4">
+        <div className="flex flex-col gap-3 rounded-2xl border border-amber-400/30 bg-amber-500/10 p-5 text-sm sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="font-semibold text-amber-100">Bản đồ chính thức mở trong tab mới</p>
+            <p className="mt-1 text-xs leading-5 text-slate-300">Trang chính thức chặn iframe bằng SAMEORIGIN, vì vậy MapGenie được dùng làm bản đồ nhúng mặc định.</p>
+          </div>
+          <a href={officialMapUrl} target="_blank" rel="noopener noreferrer" className="shrink-0 rounded-full border border-amber-300/60 px-4 py-2 text-center text-sm font-semibold text-amber-100">Mở bản đồ chính thức ↗</a>
+        </div>
         <InteractiveMapEmbed
           deferLoad
           deferMs={2500}
