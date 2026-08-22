@@ -37,6 +37,7 @@ const content = {
     official: "Official Version 2.1 developer letter",
     serp: "Current step-by-step reference",
     video: "Official Heaven’s Threshold Chapter 2 trailer",
+    labyrinthVideo: "Evershift Labyrinth full quest walkthrough",
     related: "Continue through Hidden Mountain",
   },
   vi: {
@@ -63,6 +64,7 @@ const content = {
     official: "Thư nhà phát triển Version 2.1",
     serp: "Hướng dẫn từng bước hiện tại",
     video: "Trailer chính thức Heaven’s Threshold Chapter 2",
+    labyrinthVideo: "Video toàn bộ nhiệm vụ Evershift Labyrinth",
     related: "Tiếp tục Hidden Mountain",
   },
   de: {
@@ -89,6 +91,7 @@ const content = {
     official: "Offizieller Version-2.1-Entwicklerbrief",
     serp: "Aktuelle Schrittanleitung",
     video: "Offizieller Heaven’s-Threshold-Chapter-2-Trailer",
+    labyrinthVideo: "Kompletter Evershift-Labyrinth-Quest-Walkthrough",
     related: "Weiter durch Hidden Mountain",
   },
 } as const;
@@ -100,6 +103,8 @@ export default function HiddenMountainChapterTwoGuidePage({ language, kind }: { 
   const secondaryUrl = kind === "cloudtop"
     ? "https://allthings.how/where-winds-meet-how-to-get-2-free-lingering-melody-in-cloudtop-ascent/"
     : "https://allthings.how/where-winds-meet-pass-through-the-rotating-mechanism-in-evershift-labyrinth/";
+  const videoId = kind === "cloudtop" ? "rh6vQU8nacg" : "aqZ1F_PS5rQ";
+  const videoTitle = kind === "cloudtop" ? ui.video : ui.labyrinthVideo;
 
   return (
     <article className="min-h-screen space-y-10 bg-ink-wash pb-20">
@@ -123,8 +128,8 @@ export default function HiddenMountainChapterTwoGuidePage({ language, kind }: { 
           </ol>
         </div>
         <div>
-          <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-emerald-300">{ui.video}</p>
-          <LiteYouTubeEmbed videoId="rh6vQU8nacg" title={ui.video} poster="https://i.ytimg.com/vi/rh6vQU8nacg/hqdefault.jpg" analytics={{ eventName: "guide_video_play", params: { guide: kind } }} />
+          <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-emerald-300">{videoTitle}</p>
+          <LiteYouTubeEmbed videoId={videoId} title={videoTitle} poster={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`} analytics={{ eventName: "guide_video_play", params: { guide: kind } }} />
         </div>
       </section>
 

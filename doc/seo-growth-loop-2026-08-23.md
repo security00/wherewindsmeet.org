@@ -54,3 +54,4 @@ The first three-cluster batch was deployed in commit c080def on 2026-08-23.
 - **Media:** official Heaven’s Threshold Chapter 2 trailer, loaded through the lightweight privacy-enhanced video component.
 - **Current state:** local reviewable diff only; this second expansion is not yet deployed.
 - **Review window after any deployment:** crawl check after 7 days and query/page decision review after 21 days.
+- **Media correction:** Evershift Labyrinth now embeds the dedicated 13:58 full quest walkthrough (aqZ1F_PS5rQ); the official Chapter 2 trailer remains exclusive to the Heaven’s Threshold / Cloudstair page.
