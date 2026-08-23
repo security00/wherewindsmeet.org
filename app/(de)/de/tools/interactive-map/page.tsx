@@ -44,9 +44,8 @@ export default function InteractiveMapPage() {
         </div>
         <InteractiveMapEmbed
           deferLoad
-          deferMs={2500}
           loadingTitle="Interaktive Karte wird geladen…"
-          loadingDescription="Das Embed wird im Idle geladen, damit die Seite reaktionsschnell bleibt. Du kannst es auch sofort laden."
+          loadingDescription="Lade die Drittanbieter-Karte erst bei Bedarf, damit ihre Skripte und Anzeigen den ersten Seitenaufruf nicht verlangsamen."
           loadNowLabel="Karte jetzt laden"
           options={[
             {

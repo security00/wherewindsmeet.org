@@ -38,6 +38,11 @@ a[class*="rounded-3xl"][class*="border"]:hover {
   }
 }
 
+.deferred-news-card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 180px;
+}
+
 main :where(section, article, div)[class*="rounded-3xl"][class*="border"][class*="bg-slate-950"],
 main :where(section, article, div)[class*="rounded-2xl"][class*="border"][class*="bg-slate-950"] {
   background-color: rgba(2, 6, 23, 0.3);

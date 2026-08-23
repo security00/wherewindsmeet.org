@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import CdnImage from "@/components/CdnImageClient";
+import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 
@@ -213,11 +213,12 @@ export function SiteHeader({
     <header className="relative z-50 border-b border-slate-700/45 bg-slate-950/42 shadow-sm shadow-slate-950/20 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href={resolvedHomeHref} className="flex items-center gap-2" aria-label={uiText.homeAria}>
-          <CdnImage
-            src="/design/logo.png"
+          <Image
+            src="/design/logo.webp"
             alt="Where Winds Meet logo"
             width={32}
             height={32}
+            unoptimized
             className="h-8 w-8 rounded-full shadow-lg shadow-emerald-500/40"
           />
           <div className="flex flex-col leading-tight">

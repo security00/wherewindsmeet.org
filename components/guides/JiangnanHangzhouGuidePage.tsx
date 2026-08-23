@@ -13,7 +13,7 @@ const cnVideoUrl = "https://www.yysls.cn/news/official/20260630/37780_1306022.ht
 const globalNewsUrl = "https://www.wherewindsmeetgame.com/news/index.html";
 const map17173Url = "https://map.17173.com/yysls/maps/qinchuan";
 const officialMapUrl = "https://www.wherewindsmeetgame.com/map/en/";
-const heroImage = "https://nie.res.netease.com/r/pic/20260630/04ad5efa-1c74-43aa-9d73-e35177e520e4.png";
+const heroImage = `${baseUrl}/guides/jiangnan-hangzhou/hero-1440.webp`;
 const harborImage = "https://nie.res.netease.com/r/pic/20260522/bf4b7e7e-65cf-4737-90b1-6ff438662d2a.jpg";
 const officialVideo = "https://yysls.fp.ps.netease.com/file/6a43374e41c0861366f00c667Sy2C1bg07.mp4";
 const showcaseBvid = "BV1RP7g6wEYt";
@@ -252,7 +252,23 @@ export function JiangnanHangzhouGuidePage({ locale }: { locale: Locale }) {
 
       <header className="overflow-hidden rounded-3xl border border-emerald-400/30 bg-slate-950/85 shadow-2xl shadow-emerald-950/30">
         <div className="relative aspect-video min-h-[360px]">
-          <FallbackImage src={heroImage} alt="Official Where Winds Meet Jiangnan and Hangzhou announcement artwork" referrerPolicy="no-referrer" fill sizes="100vw" className="object-cover" priority />
+          <picture>
+            <source
+              type="image/webp"
+              srcSet="/guides/jiangnan-hangzhou/hero-640.webp 640w, /guides/jiangnan-hangzhou/hero-960.webp 960w, /guides/jiangnan-hangzhou/hero-1440.webp 1440w"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 92vw, 1280px"
+            />
+            {/* The local responsive source avoids a 2.9 MB cross-origin PNG in the LCP path. */}
+            <img
+              src="/guides/jiangnan-hangzhou/hero-960.webp"
+              alt="Official Where Winds Meet Jiangnan and Hangzhou announcement artwork"
+              width={1920}
+              height={1080}
+              fetchPriority="high"
+              decoding="async"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/65 to-slate-950/10" />
           <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200">{t.eyebrow}</p>

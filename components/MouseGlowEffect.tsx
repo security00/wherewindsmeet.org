@@ -26,6 +26,7 @@ export default function MouseGlowEffect({
 
   useEffect(() => {
     if (prefersReducedMotion) return;
+    if (!window.matchMedia('(min-width: 1024px) and (pointer: fine)').matches) return;
 
     const handleMouseMove = (e: MouseEvent) => {
       pendingRef.current = { x: e.clientX, y: e.clientY };

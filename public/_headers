@@ -1,0 +1,8 @@
+/_next/static/*
+  Cache-Control: public, max-age=31556952, immutable
+
+/design/logo.webp
+  Cache-Control: public, max-age=31556952, immutable
+
+/guides/jiangnan-hangzhou/hero-*
+  Cache-Control: public, max-age=31556952, immutable

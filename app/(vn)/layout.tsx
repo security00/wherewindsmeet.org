@@ -22,7 +22,6 @@ export default function VnRootLayout({
   return (
     <html lang="vi-VN">
       <head>
-        <link rel="preconnect" href="https://www.youtube-nocookie.com" />
         <link rel="preconnect" href="https://static.wherewindsmeet.org" crossOrigin="anonymous" />
         <Script
           id="cdn-image-fallback"
@@ -73,4 +72,3 @@ export default function VnRootLayout({
     </html>
   );
 }
-

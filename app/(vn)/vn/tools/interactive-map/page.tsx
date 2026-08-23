@@ -43,9 +43,8 @@ export default function InteractiveMapPage() {
         </div>
         <InteractiveMapEmbed
           deferLoad
-          deferMs={2500}
           loadingTitle="Đang tải bản đồ tương tác…"
-          loadingDescription="Iframe được tải khi trình duyệt rảnh để trang mượt hơn. Bạn cũng có thể tải ngay."
+          loadingDescription="Chỉ tải bản đồ bên thứ ba khi bạn sẵn sàng để các script và quảng cáo không làm chậm lần tải trang đầu tiên."
           loadNowLabel="Tải bản đồ ngay"
           options={[
             {

@@ -166,7 +166,7 @@ export default function NewsPage() {
   const renderNewsCard = (item: (typeof sortedNews)[number]) => (
     <div
       key={item.id}
-      className="card-tablet group flex flex-col gap-4 rounded-xl p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-900/10 sm:flex-row sm:items-start sm:justify-between"
+      className="card-tablet deferred-news-card group flex flex-col gap-4 rounded-xl p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-900/10 sm:flex-row sm:items-start sm:justify-between"
     >
       <div className="space-y-2">
         <div className="flex flex-wrap items-center gap-3">

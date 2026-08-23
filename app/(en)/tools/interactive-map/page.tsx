@@ -217,7 +217,6 @@ export default function InteractiveMapPage() {
         </div>
         <InteractiveMapEmbed
           deferLoad
-          deferMs={2500}
           options={[
             {
               id: "mapgenie",

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 export type InteractiveMapOption = {
   id: string;
@@ -14,7 +14,6 @@ type InteractiveMapEmbedProps = {
   options: InteractiveMapOption[];
   initialId?: string;
   deferLoad?: boolean;
-  deferMs?: number;
   loadingTitle?: string;
   loadingDescription?: string;
   loadNowLabel?: string;
@@ -24,9 +23,8 @@ export function InteractiveMapEmbed({
   options,
   initialId,
   deferLoad = false,
-  deferMs = 2500,
   loadingTitle = "Loading interactive map…",
-  loadingDescription = "This embed is loaded on idle to keep the page responsive. You can also load it immediately.",
+  loadingDescription = "Load the third-party map when you are ready. This keeps its scripts and ads out of the initial page load.",
   loadNowLabel = "Load map now",
 }: InteractiveMapEmbedProps) {
   const safeInitialId = initialId ?? options[0]?.id;
@@ -37,38 +35,6 @@ export function InteractiveMapEmbed({
     if (!options.length) return undefined;
     return options.find((option) => option.id === activeId) ?? options[0];
   }, [activeId, options]);
-
-  useEffect(() => {
-    if (isLoaded) return;
-    if (!deferLoad) return;
-
-    let cancelled = false;
-
-    const enable = () => {
-      if (cancelled) return;
-      setIsLoaded(true);
-    };
-
-    const timeoutId = window.setTimeout(enable, deferMs);
-    const idleId =
-      typeof window.requestIdleCallback === "function"
-        ? window.requestIdleCallback(
-            () => {
-              window.clearTimeout(timeoutId);
-              enable();
-            },
-            { timeout: deferMs + 1500 }
-          )
-        : null;
-
-    return () => {
-      cancelled = true;
-      window.clearTimeout(timeoutId);
-      if (idleId && typeof window.cancelIdleCallback === "function") {
-        window.cancelIdleCallback(idleId);
-      }
-    };
-  }, [deferLoad, deferMs, isLoaded]);
 
   if (!active) return null;
 
