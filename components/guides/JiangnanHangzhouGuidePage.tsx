@@ -42,6 +42,16 @@ const communityVideos = [
       de: "Ein ruhiger Hangzhou-Rundgang ohne HUD, der Straßen, Wasserwege, Maßstab, Licht und Atmosphäre ohne Guide-Einblendungen zeigt.",
     },
   },
+  {
+    videoId: "OwTmLRNcPoI",
+    title: "Jiangnan New Map: Virtual Tour of Hangzhou (CN Server Livestream Replay)",
+    author: "桃苒小桃花",
+    purpose: {
+      en: "A 4-hour 42-minute CN-server livestream replay for viewers who want extended, real-play context: travel routes, exploration pacing, encounters, and the lived-in feel of Hangzhou beyond a short trailer.",
+      vi: "Bản phát lại livestream máy chủ CN dài 4 giờ 42 phút, phù hợp để xem tuyến di chuyển, nhịp khám phá, các cuộc chạm trán và trải nghiệm Hangzhou thực tế ngoài trailer ngắn.",
+      de: "Eine 4 Stunden 42 Minuten lange CN-Server-Livestream-Aufzeichnung mit ausführlichen Reiserouten, Erkundungstempo, Begegnungen und einem realistischen Eindruck von Hangzhou jenseits kurzer Trailer.",
+    },
+  },
 ];
 
 const copy = {
