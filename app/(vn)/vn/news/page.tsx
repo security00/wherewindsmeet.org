@@ -9,64 +9,64 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 const baseUrl = "https://wherewindsmeet.org";
 
 export const metadata: Metadata = {
-  title: "Tin t峄ヽ Where Winds Meet, roadmap & patch notes",
+  title: "Tin tức Where Winds Meet, roadmap & patch notes",
   description:
-    "Tin t峄ヽ Where Winds Meet ch峄峮 l峄峜: roadmap, c芒n b岷眓g, patch notes 膽峄?b岷 n岷痬 nhanh thay 膽峄昳 quan tr峄峮g.",
+    "Tin tức Where Winds Meet chọn lọc: roadmap, cân bằng và patch notes để bạn nắm nhanh những thay đổi quan trọng.",
   alternates: buildHreflangAlternates("/news", { canonicalLanguage: "vi" }),
   openGraph: {
-    title: "Tin t峄ヽ Where Winds Meet, roadmap & patch notes",
+    title: "Tin tức Where Winds Meet, roadmap & patch notes",
     description:
-      "Tin t峄ヽ Where Winds Meet ch峄峮 l峄峜: roadmap, c芒n b岷眓g, patch notes 膽峄?b岷 n岷痬 nhanh thay 膽峄昳 quan tr峄峮g.",
+      "Tin tức Where Winds Meet chọn lọc: roadmap, cân bằng và patch notes để bạn nắm nhanh những thay đổi quan trọng.",
     url: `${baseUrl}/vn/news`,
     locale: "vi_VN",
   },
   twitter: {
-    title: "Tin t峄ヽ Where Winds Meet, roadmap & patch notes",
+    title: "Tin tức Where Winds Meet, roadmap & patch notes",
     description:
-      "Tin t峄ヽ Where Winds Meet ch峄峮 l峄峜: roadmap, c芒n b岷眓g, patch notes 膽峄?b岷 n岷痬 nhanh thay 膽峄昳 quan tr峄峮g.",
+      "Tin tức Where Winds Meet chọn lọc: roadmap, cân bằng và patch notes để bạn nắm nhanh những thay đổi quan trọng.",
   },
 };
 
 const searchIntentWatchlist = [
   {
-    title: "Future draw preview va reward preview",
+    title: "Xem trước lượt quay và phần thưởng sắp tới",
     query: "wwm future draw preview",
     action:
-      "Kiem tra official news truoc, sau do dua nguoi choi toi cosmetics, free outfits, codes va event reward khi draw duoc xac nhan.",
+      "Kiểm tra tin chính thức trước, sau đó dẫn người chơi tới mỹ phẩm, trang phục miễn phí, code và phần thưởng sự kiện khi lượt quay được xác nhận.",
     href: "/vn/guides/cosmetics",
-    cta: "Cosmetics hub",
+    cta: "Trung tâm mỹ phẩm",
   },
   {
-    title: "Arena ranks va tier-list checks",
+    title: "Xếp hạng Đấu trường và kiểm tra tier list",
     query: "wwm arena ranks",
     action:
-      "Giu main tier list, PVP tier list, weapon tier list va patch notes lien ket voi nhau de nguoi leo rank ra quyet dinh nhanh.",
+      "Liên kết tier list chính, PvP tier list, weapon tier list và patch notes để người leo hạng đưa ra quyết định nhanh.",
     href: "/vn/guides/tier-list#arena-ranks",
-    cta: "Arena rank notes",
+    cta: "Ghi chú xếp hạng Đấu trường",
   },
   {
-    title: "Upcoming nerfs va balance watch",
+    title: "Theo dõi cân bằng và các đợt giảm sức mạnh sắp tới",
     query: "upcoming nerf wwm",
     action:
-      "Dung official notes lam nguon dung. Phan nay dua nguoi choi toi Path Balance, maintenance moi va impact cards trong patch notes.",
+      "Dùng ghi chú chính thức làm nguồn chuẩn. Phần này dẫn người chơi tới Path Balance, bảo trì mới và các thẻ tác động trong patch notes.",
     href: "/vn/guides/patch-notes#upcoming-nerfs",
-    cta: "Balance watch",
+    cta: "Theo dõi cân bằng",
   },
   {
-    title: "Mistveil / Mist-Shrouded Prison aliases",
+    title: "Tên gọi Mistveil / Mist-Shrouded Prison",
     query: "mistveil prison",
     action:
-      "Xem Mistveil Prison la search intent cho Mist-Shrouded Prison va dua nguoi choi toi route 6 ruong, loop markers va kho bau cuoi.",
+      "Xem Mistveil Prison là một ý định tìm kiếm của Mist-Shrouded Prison và dẫn người chơi tới lộ trình 6 rương, điểm vòng lặp và kho báu cuối.",
     href: "/vn/guides/mist-shrouded-prison#mistveil-prison",
-    cta: "Prison route",
+    cta: "Lộ trình nhà ngục",
   },
 ];
 
 export default function NewsPage() {
   const typeLabel: Record<NewsType, string> = {
-    announcement: "Th么ng b谩o",
-    event: "S峄?ki峄噉",
-    guide: "H瓢峄沶g d岷玭",
+    announcement: "Thông báo",
+    event: "Sự kiện",
+    guide: "Hướng dẫn",
     beta: "Beta",
   };
 
@@ -80,7 +80,7 @@ export default function NewsPage() {
 
   const sortedNews = newsItems;
 
-  const lastUpdatedLabel = `C岷璸 nh岷璽: ${formatDateVi(latestNewsDate)}`;
+  const lastUpdatedLabel = `Cập nhật: ${formatDateVi(latestNewsDate)}`;
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -94,8 +94,8 @@ export default function NewsPage() {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Trang chu", item: `${baseUrl}/vn` },
-        { "@type": "ListItem", position: 2, name: "Tin t峄ヽ", item: `${baseUrl}/vn/news` },
+        { "@type": "ListItem", position: 1, name: "Trang chủ", item: `${baseUrl}/vn` },
+        { "@type": "ListItem", position: 2, name: "Tin tức", item: `${baseUrl}/vn/news` },
       ],
     },
   ];
@@ -111,7 +111,7 @@ export default function NewsPage() {
         <div className="pointer-events-none absolute inset-0">
           <CdnImage
             src="/background/6.webp"
-            alt="N峄乶 tin t峄ヽ Where Winds Meet"
+            alt="Nền tin tức Where Winds Meet"
             fill
             className="object-cover opacity-40"
           />
@@ -119,20 +119,20 @@ export default function NewsPage() {
         </div>
 
         <div className="absolute right-8 top-8 hidden text-vertical text-3xl font-bold text-slate-50/10 lg:block font-serif select-none">
-          姹熸箹椋庝簯
+          江湖风云
         </div>
 
         <div className="relative space-y-6 z-10 max-w-3xl">
           <h1 className="text-balance text-4xl font-bold tracking-tight text-slate-50 sm:text-5xl font-serif">
-            Tin t峄ヽ <span className="text-ink-gold">Where Winds Meet</span> m峄沬 nh岷.
+            Tin tức <span className="text-ink-gold">Where Winds Meet</span> mới nhất.
           </h1>
           <div className="space-y-4 text-slate-200/90 font-sans text-lg leading-relaxed">
             <p>
-              T贸m t岷痶 th么ng b谩o ch铆nh th峄ヽ, roadmap, h瓢峄沶g d岷玭 launch, patch notes v脿 ghi ch煤 beta. M峄梚 th岷?li锚n k岷縯 v峄?ngu峄搉 g峄慶 膽峄?b岷 ki峄僲 ch峄﹏g chi ti岷縯 khi c岷.
+              Tóm tắt thông báo chính thức, roadmap, hướng dẫn ra mắt, patch notes và ghi chú beta. Mỗi thẻ liên kết về nguồn gốc để bạn kiểm chứng chi tiết khi cần.
             </p>
             <p>
-              Mu峄憂 l瓢峄泃 nhanh <span className="font-semibold text-emerald-400">patch notes</span> ho岷穋 c岷璸 nh岷璽{" "}
-              <span className="font-semibold text-emerald-400">roadmap</span> m脿 kh么ng ph岷 膽峄峜 m峄峣 d貌ng? B岷痶 膽岷 t岷 膽芒y.
+              Muốn lướt nhanh <span className="font-semibold text-emerald-400">patch notes</span> hoặc cập nhật{" "}
+              <span className="font-semibold text-emerald-400">roadmap</span> mà không phải đọc mọi dòng? Bắt đầu tại đây.
             </p>
           </div>
 
@@ -147,32 +147,32 @@ export default function NewsPage() {
             className="rounded-2xl border border-emerald-500/40 bg-emerald-500/10 p-4 text-sm text-emerald-50 shadow-inner shadow-emerald-900/40"
           >
             <div className="flex items-center justify-between gap-2">
-              <p className="font-semibold">Theo doi Version 1.8 / Companions Make Home</p>
+              <p className="font-semibold">Theo dõi Version 1.8 / Companions Make Home</p>
               <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
                 {lastUpdatedLabel}
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Latest pass hien theo Version 1.8 / Companions Make Home, patch notes 25/06 va Dev Q&A 23/06. Cac tin Version 1.7, Xbox, anti-cheat, code warning, Hexi va Qinchuan cu van nam ben duoi de nguoi choi quay lai bat kip.
+              Đợt rà soát mới nhất theo Version 1.8 / Companions Make Home, patch notes ngày 25/06 và Dev Q&amp;A ngày 23/06. Tin về Version 1.7, Xbox, chống gian lận, cảnh báo code, Hexi và Qinchuan vẫn nằm bên dưới để người chơi quay lại bắt kịp.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link
                 href="/vn/guides/tier-list"
                 className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80"
               >
-                Tier list (g贸c nh矛n CN)
+                Tier list (góc nhìn CN)
               </Link>
               <Link
                 href="/vn/guides/bosses"
                 className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80"
               >
-                Thay 膽峄昳 boss
+                Thay đổi boss
               </Link>
               <Link
                 href="/vn/guides/codes"
                 className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80"
               >
-                Code m峄沬 nh岷
+                Code mới nhất
               </Link>
             </div>
           </div>
@@ -182,14 +182,14 @@ export default function NewsPage() {
             className="rounded-2xl border border-blue-400/30 bg-blue-500/10 p-4 text-sm text-blue-50 shadow-inner shadow-blue-950/40"
           >
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <p className="font-semibold">Cau hoi nguoi choi dang tim</p>
+              <p className="font-semibold">Câu hỏi người chơi đang tìm</p>
               <span className="rounded-full bg-blue-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-blue-100">
-                Current watch
+                Đang theo dõi
               </span>
             </div>
             <p className="mt-2 text-blue-100/90">
-              Nguoi choi dang tim future draw preview, arena ranks, patch-note nerfs, codes, Qinchuan routes, NPCs, map help va Mist-Shrouded Prison answers.
-              Dung phan nay nhu shortcut truoc khi doc toan bo archive.
+              Người chơi đang tìm thông tin về lượt quay sắp tới, xếp hạng Đấu trường, giảm sức mạnh trong patch notes, code, lộ trình Qinchuan, NPC, trợ giúp bản đồ và lời giải Mist-Shrouded Prison.
+              Dùng phần này như lối tắt trước khi đọc toàn bộ kho tin.
             </p>
             <div className="mt-4 grid gap-3 md:grid-cols-2">
               {searchIntentWatchlist.map((item) => (
@@ -227,7 +227,7 @@ export default function NewsPage() {
                     {item.tags && item.tags.length > 0 && (
                       <>
                         <span className="mx-2 text-slate-700">|</span>
-                        {item.tags.join(" 路 ")}
+                        {item.tags.join(" · ")}
                       </>
                     )}
                   </p>
@@ -243,7 +243,7 @@ export default function NewsPage() {
                       rel="noreferrer"
                       className="btn-seal text-[10px] py-1 px-3"
                     >
-                      膼峄峜 ngu峄搉
+                      Đọc nguồn
                     </Link>
                   </div>
                 )}
@@ -255,17 +255,17 @@ export default function NewsPage() {
 
       <section className="rounded-3xl border border-slate-800/60 bg-slate-950/40 p-8 shadow-lg backdrop-blur-sm bg-texture-noise">
         <h2 className="text-balance text-2xl font-bold tracking-tight text-slate-50 sm:text-3xl font-serif border-brush inline-block pb-2 mb-4">
-          Trang n脿y k岷縯 n峄慽 v峄沬 ph岷 c貌n l岷 c峄 hub
+          Trang này kết nối với phần còn lại của hub
         </h2>
         <div className="space-y-4 text-slate-300 font-sans leading-relaxed">
           <p>
-            M峄 ti锚u: t岷璸 trung tin quan tr峄峮g 岷h h瓢峄焠g tr岷 nghi峄噈. N岷縰 patch ch峄塶h camera/aim/UI hay th锚m ho岷 膽峄檔g gi峄沬 h岷, b岷 s岷?th岷 t贸m t岷痶 r玫 r脿ng k猫m nh岷痗 l峄媍h.
+            Mục tiêu: tập trung tin quan trọng ảnh hưởng trải nghiệm. Nếu patch chỉnh camera, ngắm bắn, giao diện hoặc thêm hoạt động giới hạn, bạn sẽ thấy bản tóm tắt rõ ràng kèm nhắc lịch.
           </p>
           <p>
-            Tin n脿o 岷h h瓢峄焠g build s岷?膽瓢峄 ph岷 谩nh 峄?trang builds/tier list. S峄?ki峄噉 c贸 code hay l峄 铆ch l芒u d脿i s岷?膽瓢峄 g岷痭 nh茫n v脿 li锚n k岷縯 sang trang rewards/codes.
+            Tin nào ảnh hưởng build sẽ được phản ánh ở trang builds và tier list. Sự kiện có code hoặc lợi ích lâu dài sẽ được gắn nhãn và liên kết sang trang phần thưởng và code.
           </p>
           <p>
-            N岷縰 c贸 thay 膽峄昳 l峄沶 m脿 b岷 mu峄憂 c岷璸 nh岷璽 c峄?th峄?(PvP, boss, ch岷 l瓢峄g s峄憂g), h茫y nh岷痭 鈥?ch煤ng t么i s岷?瓢u ti锚n c岷璸 nh岷璽 s峄沵.
+            Nếu có thay đổi lớn mà bạn muốn cập nhật cụ thể về PvP, boss hoặc chất lượng trải nghiệm, hãy nhắn — chúng tôi sẽ ưu tiên cập nhật sớm.
           </p>
         </div>
       </section>
