@@ -10,6 +10,15 @@ const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
   {
+    title: "August 27 Clouded Revelation Version 2.1 update overview",
+    date: "2026-08-26",
+    source: "https://www.wherewindsmeetgame.com/news/official/827update.html",
+    summary:
+      "Newest verified official update overview. The official page labels the release window August 27 and publishes it on August 26.",
+    playerAction:
+      "Use this as the current release anchor, then use the August 20 patch notes below for the confirmed fix list instead of inferring mechanics from an older overview.",
+  },
+  {
     title: "August 20 Version 2.1 Clouded Revelation patch notes",
     date: "2026-08-20",
     source: "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
@@ -22,36 +31,27 @@ const latestUpdateCards = [
     title: "August 19 Clouded Revelation Version 2.1 overview",
     date: "2026-08-19",
     source: "https://www.wherewindsmeetgame.com/news/official/CloudedRevelation.html",
-    summary: "Official Version 2.1 overview and the current update-freshness anchor.",
+    summary: "Earlier Version 2.1 overview retained as dated Clouded Revelation context.",
     playerAction:
       "Start with the Clouded Revelation impact guide, then use the full patch history below when a current issue depends on Version 2.0 or an older change.",
   },
   {
-    title: "August 7 Version 2.0 network, matchmaking, and fixes",
-    date: "2026-08-07",
+    title: "August 14 Version 2.0 optimizations and bug fixes",
+    date: "2026-08-14",
     source: "https://www.wherewindsmeetgame.com/news/official/723update.html",
     summary:
-      "Newest official patch-note anchor. It improves cross-region network routing and matchmaking, fixes Hidden Mountain and quest blockers, and adjusts Cutie Clash tiles and combat mechanics. HK/MO/TW server work is scheduled to roll out from late August through September updates.",
+      "Official aggregate Version 2.0 patch page headed by the August 14 Cutie Clash adjustments. It also retains the August 7 network, matchmaking, Hidden Mountain, and quest fixes plus the July 23 Path Balance history.",
     playerAction:
-      "Re-test cross-region Arena and multiplayer latency before blaming a build, retry No Words Between and Martial Art Mastery III if they were blocked, and use the in-game Cutie Clash values instead of older tile guides.",
+      "Use the latest in-game Cutie Clash values, and consult the dated August 7 and July 23 sections on that page when troubleshooting network, quest, Arena, or Path Balance history.",
   },
   {
-    title: "August 2 Version 2.0 optimizations and bug fixes",
-    date: "2026-08-02",
-    source: "https://www.wherewindsmeetgame.com/news/official/723update.html",
-    summary:
-      "Newest official patch-note anchor. It fixes Stonesplit - Might Arena Attunement, clarifies Stormbreaker Spear and Thundercry Blade interaction text, updates Hidden Mountain activities, and carries the full July 23 Version 2.0 Path Balance and Arena change log.",
-    playerAction:
-      "Re-test Arena builds and tier placements before spending reset materials, especially Stonesplit - Might, Stormbreaker Spear plus Thundercry Blade, Bellstrike - Umbra, Silkbind - Jade, Bamboocut paths, and the new Gauntlets ecosystem.",
-  },
-  {
-    title: "Unseen Approach Version 2.0 and Hidden Mountain",
-    date: "2026-08-02",
+    title: "August 14 Unseen Approach Version 2.0 overview",
+    date: "2026-08-14",
     source: "https://www.wherewindsmeetgame.com/news/official/UnseenApproach.html",
     summary:
-      "Official Version 2.0 overview and current roadmap anchor for Hidden Mountain, replacing Version 1.8 as the first context returning players should see.",
+      "Official Version 2.0 overview retained as the historical Hidden Mountain expansion baseline behind Version 2.1.",
     playerAction:
-      "Use Version 2.0 context first for update-today, roadmap, map, boss, weapon, tier-list, and returning-player searches.",
+      "Use the current Version 2.1 overview first, then this Version 2.0 page for Hidden Mountain, Gauntlets, map, boss, weapon, and returning-player context.",
   },
   {
     title: "Hidden Mountain dev letter and Wuxia 2.0 baseline",
@@ -63,11 +63,11 @@ const latestUpdateCards = [
       "Treat launch-era map, boss, weapon-count, progression, and platform summaries as stale until they are checked against Version 2.0.",
   },
   {
-    title: "July 9 Version 1.8 optimizations and bug fixes",
-    date: "2026-07-09",
+    title: "July 17 Version 1.8 optimizations and bug fixes",
+    date: "2026-07-17",
     source: "https://www.wherewindsmeetgame.com/news/official/625update.html",
     summary:
-      "Latest Version 1.8 patch-note anchor after the Companions Make Home rollout. It adds Training Terrace Preliminary testing, lowers Taiping Mausoleum floor 10-12 difficulty, fixes Homestead, NPC, Skyward Bond, and mobile weapon-reforging issues, and extends the Sleeping Daoist limit from 360 to 450 seconds.",
+      "Official aggregate Version 1.8 patch page headed by the July 17 update, with earlier July 9, July 2, and June 25 fixes retained on the same source.",
     playerAction:
       "Re-check Arena and Training Terrace advice, Taiping Mausoleum difficulty, Sleeping Daoist strategy, Homestead quest guidance, Phantom Thief Goose NPC notes, and Skyward Bond mechanics before repeating older assumptions.",
   },
@@ -87,7 +87,7 @@ const latestUpdateCards = [
     summary:
       "Historical Version 1.8 overview for Companions Make Home, which replaced The Imperial Palace Part 2 before Version 2.0 and Hidden Mountain launched.",
     playerAction:
-      "Use this for homestead and companion history, but lead current update and returning-player searches with Version 2.0.",
+      "Use this for homestead and companion history, but lead current update searches with Version 2.1 and use Version 2.0 as the Hidden Mountain baseline.",
   },
   {
     title: "Version 1.8 Dev Q&A: A Place to Call Home",
@@ -114,7 +114,7 @@ const latestUpdateCards = [
     summary:
       "Earlier fixes on the same official patch-note page covered Soaring Record rewards, Skyward Bond's Ghost Master preparation-area spawn issue, Palace map loading on mobile, Guild Hero's Realm blank pages, Guild UI display errors, Kaifeng model display, controller shop selection, Jadeware translation, keybinds, Palace Unveiled rewards, and Development Shop inventory.",
     playerAction:
-      "Keep May 29 as the historical baseline for Palace launch bugs, then check the July 9 Version 1.8 notes before treating any old bug report as current.",
+      "Keep May 29 as the historical baseline for Palace launch bugs, then check the July 17 aggregate Version 1.8 notes before treating any old bug report as current.",
   },
   {
     title: "May 27 / May 28 live maintenance",
@@ -132,7 +132,7 @@ const latestUpdateCards = [
     summary:
       "Historical Version 1.7 overview anchor for The Imperial Palace and Palace-specific content.",
     playerAction:
-      "Use this only for Palace-era context, then check Version 2.0 before applying old code, boss, tier-list, or build assumptions.",
+      "Use this only for Palace-era context, then check Version 2.1 and the Version 2.0 baseline before applying old code, boss, tier-list, or build assumptions.",
   },
   {
     title: "Sandstorm Tavern and older boss fixes",
@@ -146,7 +146,7 @@ const latestUpdateCards = [
 ];
 
 const impactChecklist = [
-  "Where Winds Meet patch notes today / new update: lead with August 20 Version 2.1 Clouded Revelation fixes, then the August 7 network update and July 23 Path Balance history.",
+  "Where Winds Meet patch notes today / new update: lead with the August 27 Version 2.1 overview, use August 20 for confirmed fixes, then the August 14 aggregate page and July 23 Path Balance history.",
   "Boss and dungeon searches: mention Ghost Master, Hero's Realm, Sword Trial, Sandstorm Tavern, Sunken City Lake, and Lunar Eidolon where relevant.",
   "Build searches: call out cheaper Martial Art Reset and lower Inner Way Conversion cost before telling players to respec.",
   "Tier-list searches: re-test Version 2.1 Vernal Umbrella and Silkbind Jade attunement, while keeping the wider weapon baseline tied to the July 23 Path Balance.",
@@ -158,7 +158,7 @@ const upcomingNerfWatch = [
     topic: "Path Balance",
     status: "Official baseline",
     action:
-      "Use the July 23 Version 2.0 Path Balance section on the current August 7 official patch page before calling any build or weapon newly nerfed.",
+      "Use the July 23 Version 2.0 Path Balance section on the official aggregate page now headed August 14 before calling any build or weapon newly nerfed.",
     href: "/guides/tier-list#arena-ranks",
   },
   {
@@ -262,7 +262,7 @@ export default function PatchNotesPage() {
             Where Winds Meet patch notes today: Version 2.1 Clouded Revelation, quests, weapons, and Arena.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Updated {freshness?.lastChecked ?? "2026-08-21"}: Where Winds Meet is on {freshness?.gameVersion ?? "Version 2.1 / August 20 fixes"}. The current trail starts with Clouded Revelation quest, Vernal Umbrella, Arena/combat, Homestead, and cosmetic fixes, then continues into the August 7 network update and July 23 Path Balance history. Use this page before trusting older quest, Arena, event, or build advice.
+            Updated {freshness?.lastChecked ?? "2026-08-26"}: Where Winds Meet is on {freshness?.gameVersion ?? "Version 2.1 / August 27 update overview"}. Use the August 27 overview as the current release anchor, August 20 for confirmed Clouded Revelation fixes, and the aggregate August 14 Version 2.0 page for its earlier network and Path Balance history.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             We flag roadmap checkpoints, official news beats, and practical player impact so you know what to re-check: codes, quest bugs, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, boss guides, builds, and tier-list assumptions.
@@ -362,7 +362,7 @@ export default function PatchNotesPage() {
           Version 2.1 catch-up: what changed recently.
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          The official news feed now leads with the August 19-20 Clouded Revelation overview and Version 2.1 patch notes. If you last played around Version 1.8 or earlier, treat Hidden Mountain and the July 23 balance pass as the content checkpoint, apply the August 7 network update, then finish with the targeted Version 2.1 quest, weapon, Arena, Homestead, and cosmetic fixes.
+          The official news feed now leads with the August 27 Clouded Revelation overview, followed by the August 20 Version 2.1 patch notes. If you last played around Version 1.8 or earlier, use Hidden Mountain and the July 23 balance pass as historical checkpoints, review the August 7 network section on the aggregate August 14 page, then finish with the confirmed Version 2.1 fixes.
         </p>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
           Start with practical checks: verify Palace-era code reports in-game, re-open blocked event or quest steps after the June 5 and May 29 fixes, and compare your build against the May 26 Path Balance notes before spending scarce upgrade materials.

@@ -127,7 +127,7 @@ export default function EndgameDePage() {
         </p>
         <div className="mt-4">
           <Link
-            href="/de/guides/tier-list"
+            href="/guides/tier-list"
             className="inline-flex items-center rounded-lg border border-slate-700 bg-slate-900/40 px-4 py-2 text-sm font-medium text-slate-100 transition-colors hover:border-slate-600 hover:bg-slate-900/60"
           >
             PvE/PvP‑Tierliste

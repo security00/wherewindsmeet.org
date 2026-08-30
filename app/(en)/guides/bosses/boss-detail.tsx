@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
+import LiteMp4Embed from "@/components/LiteMp4Embed";
 import Link from "next/link";
 import type { BossId } from "@/lib/bosses";
 import { bosses } from "@/lib/bosses";
 import { buildHreflangAlternates } from "@/lib/hreflang";
-import { resolveCdnAssetSrc } from "@/lib/image-utils";
 
 const baseUrl = "https://wherewindsmeet.org";
 
@@ -18,6 +18,7 @@ export function generateBossMetadata(id: BossId, canonicalLanguage: "en" | "de" 
     title: `${boss.name} Boss Overview – Where Winds Meet`,
     description: `Spoiler-light overview for ${boss.name}: story tone, encounter feel, and links to weapons/builds for prep.`,
     alternates: buildHreflangAlternates(`/guides/bosses/${boss.id}`, { canonicalLanguage }),
+    robots: { index: false, follow: true },
   };
 }
 
@@ -87,17 +88,17 @@ export function BossDetail({ bossId, localePrefix = "" }: { bossId: BossId; loca
             . Patch notes can change {boss.name}&apos;s mechanics, but the story tone and atmosphere usually remain recognizable.
           </p>
           <p className="text-xs text-slate-400">
-            Notes: This page is based on official Where Winds Meet material and general ARPG experience. It aims to set expectations for vibe and pacing, not to claim exact mechanics. In-game experience and patch notes come first.
+            Notes: This is an editorial atmosphere overview, not a sourced mechanics, unlock, or rewards guide. It remains out of search indexes until those encounter facts and current-build evidence are verified. In-game experience and patch notes come first.
           </p>
-        </div>
-        <div className="space-y-4">
-          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
-            <video
-              src={resolveCdnAssetSrc(boss.backgroundVideo).src}
-              muted
-              playsInline
-              preload="metadata"
-              className="h-full w-full object-cover opacity-75"
+          </div>
+          <div className="space-y-4">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
+            <CdnImage
+              src="/background/bg4.webp"
+              alt=""
+              fill
+              sizes="(max-width: 640px) 100vw, 40vw"
+              className="object-cover opacity-75"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
             <div className="pointer-events-none absolute bottom-3 left-3 h-10 w-40 sm:h-12 sm:w-48">
@@ -111,8 +112,7 @@ export function BossDetail({ bossId, localePrefix = "" }: { bossId: BossId; loca
             </div>
           </div>
           <p className="text-xs text-slate-400">
-            The thumbnail above uses boss showcase footage and title art (official when available). Exact visuals may change over time as the
-            game evolves.
+            The background above is generic site artwork, not boss-fight evidence. The overlaid title art identifies the encounter when available.
           </p>
         </div>
       </section>
@@ -172,7 +172,7 @@ export function BossDetail({ bossId, localePrefix = "" }: { bossId: BossId; loca
         </p>
       </section>
 
-      <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+      {boss.backgroundVideo ? <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
           Watching {boss.name} in motion.
         </h2>
@@ -182,15 +182,20 @@ export function BossDetail({ bossId, localePrefix = "" }: { bossId: BossId; loca
           full clear. Instead of trying to memorize every swing, focus on what
           it feels like to share an arena with them.
         </p>
-        <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
-          <video
-            src={resolveCdnAssetSrc(boss.backgroundVideo).src}
-            controls
-            muted
-            loop
-            className="h-full w-full"
-          />
-        </div>
+        <LiteMp4Embed
+          src={boss.backgroundVideo}
+          title={`${boss.name} showcase clip`}
+          poster="/background/bg4.webp"
+          analytics={{ eventName: "boss_detail_video_play", params: { boss: boss.id, locale: "en" } }}
+        />
+        <a
+          href={boss.backgroundVideo}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex text-xs font-semibold text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+        >
+          Open the showcase source directly
+        </a>
         <div className="space-y-2 text-xs leading-relaxed text-slate-400 sm:text-sm">
           <p>
             As you watch, you might pay attention to details like how the arena
@@ -203,7 +208,7 @@ export function BossDetail({ bossId, localePrefix = "" }: { bossId: BossId; loca
             since this page was last updated (or the original source has moved).
           </p>
         </div>
-      </section>
+      </section> : null}
 
       <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">

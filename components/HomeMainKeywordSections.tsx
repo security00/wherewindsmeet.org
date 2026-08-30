@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { buildLocalizedPath } from "@/i18n/routing.mjs";
 import type { ContentLanguage } from "@/lib/contentFreshness";
 import { getContentFreshness } from "@/lib/contentFreshness";
 
@@ -39,9 +40,9 @@ const content: Record<ContentLanguage, HomeContent> = {
     eyebrow: "Main Where Winds Meet hub",
     h1: "Where Winds Meet",
     subtitle:
-      "The updated Where Winds Meet guide hub for the open-world wuxia RPG, also searched as Where the Winds Meet: Version 1.7, The Imperial Palace, Hidden Mountain watch, codes, patch notes, tier lists, builds, bosses, interactive map routes, videos, and platform help for Xbox, PC, PS5, iOS, and Android players.",
-    updateLabel: "Version 1.7 / The Imperial Palace Part 2",
-    quickFacts: ["Free-to-play wuxia action RPG", "Xbox, PC, PS5, iOS, and Android", "Guides updated for Version 1.7"],
+      "The updated Where Winds Meet guide hub for the open-world wuxia RPG, also searched as Where the Winds Meet: Version 2.1, Clouded Revelation, Hidden Mountain, codes, patch notes, tier lists, builds, bosses, interactive map routes, videos, and platform help for Xbox, PC, PS5, iOS, and Android players.",
+    updateLabel: "Version 2.1 / Clouded Revelation (August 27)",
+    quickFacts: ["Free-to-play wuxia action RPG", "Xbox, PC, PS5, iOS, and Android", "Guides reviewed for Version 2.1"],
     ctas: [
       { href: "/news", label: "Latest News" },
       { href: "/guides/patch-notes", label: "Patch Notes" },
@@ -65,7 +66,7 @@ const content: Record<ContentLanguage, HomeContent> = {
       {
         title: "Latest update",
         body:
-          "The current Where Winds Meet content pass tracks Version 1.7, The Imperial Palace, Hidden Mountain watch, Xbox launch notes, Path Balance changes, Palace-era code reports, and the newest boss, dungeon, and arena-rank questions.",
+          "The current Where Winds Meet content pass tracks Version 2.1, the August 27 Clouded Revelation overview, the August 20 fixes, Hidden Mountain, and the earlier Path Balance history without treating an older release as current.",
         links: [
           { href: "/news#next-update", label: "News watch" },
           { href: "/guides/patch-notes#upcoming-nerfs", label: "Balance watch" },
@@ -85,9 +86,9 @@ const content: Record<ContentLanguage, HomeContent> = {
       {
         title: "Watch current gameplay",
         body:
-          "Use the Where Winds Meet video page when you want to see recent 2026 update coverage, Hidden Mountain trailers, Imperial Palace impressions, and broad creator reactions before reading deeper guides.",
+          "Use the Where Winds Meet video page for dated 2026 update coverage, Hidden Mountain trailers, Imperial Palace impressions, and creator reactions, then verify current changes against official news.",
         links: [
-          { href: "/videos", label: "Fresh videos" },
+          { href: "/videos", label: "Curated videos" },
           { href: "/news#hidden-mountain-watch", label: "Hidden Mountain watch" },
           { href: "/guides/platforms", label: "Xbox and platforms" },
         ],
@@ -110,7 +111,7 @@ const content: Record<ContentLanguage, HomeContent> = {
       {
         question: "What is the latest Where Winds Meet update?",
         answer:
-          "This Where Winds Meet hub is checked for Version 1.7 / The Imperial Palace, the June Xbox launch, Hidden Mountain watch, recent patch notes, Path Balance changes, Palace activity guides, boss and dungeon updates, and code reports.",
+          "This Where Winds Meet hub is checked for Version 2.1 / Clouded Revelation, including the August 27 overview and August 20 patch notes; older Hidden Mountain and Path Balance entries remain clearly marked as history.",
       },
       {
         question: "Where can I find Where Winds Meet codes?",
@@ -140,9 +141,9 @@ const content: Record<ContentLanguage, HomeContent> = {
     eyebrow: "Hub chính cho Where Winds Meet",
     h1: "Where Winds Meet",
     subtitle:
-      "Hub hướng dẫn Where Winds Meet cho game wuxia open-world RPG: Version 1.7, The Imperial Palace, code, patch notes, tier list, build, boss, bản đồ tương tác và thông tin nền tảng cho Xbox, PC, PS5, iOS, Android.",
-    updateLabel: "Version 1.7 / The Imperial Palace Part 2",
-    quickFacts: ["Wuxia action RPG miễn phí", "Xbox, PC, PS5, iOS, Android", "Guide đã cập nhật Version 1.7"],
+      "Hub hướng dẫn Where Winds Meet cho game wuxia open-world RPG: Version 2.1, Clouded Revelation, Hidden Mountain, code, patch notes, tier list, build, boss, bản đồ tương tác và thông tin nền tảng cho Xbox, PC, PS5, iOS, Android.",
+    updateLabel: "Version 2.1 / Clouded Revelation (27/8)",
+    quickFacts: ["Wuxia action RPG miễn phí", "Xbox, PC, PS5, iOS, Android", "Guide đã được rà soát cho Version 2.1"],
     ctas: [
       { href: "/news", label: "Tin mới" },
       { href: "/guides/patch-notes", label: "Patch Notes" },
@@ -165,7 +166,7 @@ const content: Record<ContentLanguage, HomeContent> = {
       {
         title: "Cập nhật mới nhất",
         body:
-          "Nội dung hiện theo Version 1.7, The Imperial Palace, patch notes tháng 5, Path Balance, code Palace được báo cáo, cùng các truy vấn boss, dungeon và arena rank mới.",
+          "Nội dung hiện theo Version 2.1 và Clouded Revelation, gồm tổng quan ngày 27/8, patch notes ngày 20/8, Hidden Mountain và lịch sử Path Balance cũ hơn.",
         links: [
           { href: "/news#next-update", label: "Theo dõi tin mới" },
           { href: "/guides/patch-notes#upcoming-nerfs", label: "Theo dõi cân bằng" },
@@ -199,7 +200,7 @@ const content: Record<ContentLanguage, HomeContent> = {
       {
         question: "Cập nhật mới nhất của Where Winds Meet là gì?",
         answer:
-          "Hub này đang được kiểm tra theo Version 1.7 / The Imperial Palace, gồm patch notes mới, Path Balance, hoạt động Palace, boss/dungeon và code được báo cáo.",
+          "Hub này đã được kiểm tra theo Version 2.1 / Clouded Revelation, gồm tổng quan ngày 27/8 và patch notes ngày 20/8; Hidden Mountain và Path Balance được giữ làm lịch sử.",
       },
       {
         question: "Tìm Where Winds Meet codes ở đâu?",
@@ -224,9 +225,9 @@ const content: Record<ContentLanguage, HomeContent> = {
     eyebrow: "Zentraler Where Winds Meet Hub",
     h1: "Where Winds Meet",
     subtitle:
-      "Der aktualisierte Where Winds Meet Guide-Hub zum Open-World-Wuxia-RPG: Version 1.7, The Imperial Palace, Codes, Patch Notes, Tierlisten, Builds, Bosse, interaktive Karte und Plattformhilfe fuer Xbox, PC, PS5, iOS und Android.",
-    updateLabel: "Version 1.7 / The Imperial Palace Part 2",
-    quickFacts: ["Free-to-play Wuxia Action-RPG", "Xbox, PC, PS5, iOS und Android", "Guides fuer Version 1.7 aktualisiert"],
+      "Der aktualisierte Where Winds Meet Guide-Hub zum Open-World-Wuxia-RPG: Version 2.1, Clouded Revelation, Hidden Mountain, Codes, Patch Notes, Tierlisten, Builds, Bosse, interaktive Karte und Plattformhilfe fuer Xbox, PC, PS5, iOS und Android.",
+    updateLabel: "Version 2.1 / Clouded Revelation (27. August)",
+    quickFacts: ["Free-to-play Wuxia Action-RPG", "Xbox, PC, PS5, iOS und Android", "Guides fuer Version 2.1 geprueft"],
     ctas: [
       { href: "/news", label: "Aktuelle News" },
       { href: "/guides/patch-notes", label: "Patch Notes" },
@@ -249,7 +250,7 @@ const content: Record<ContentLanguage, HomeContent> = {
       {
         title: "Neuestes Update",
         body:
-          "Der aktuelle Inhaltsstand verfolgt Version 1.7, The Imperial Palace, Mai-Patch-Notes, Path Balance, gemeldete Palace-Codes und neue Fragen zu Bossen, Dungeons und Arena-ranks.",
+          "Der aktuelle Inhaltsstand folgt Version 2.1 und Clouded Revelation: dem Ueberblick vom 27. August, den Patch Notes vom 20. August, Hidden Mountain und der aelteren Path-Balance-Historie.",
         links: [
           { href: "/news#next-update", label: "News beobachten" },
           { href: "/guides/patch-notes#upcoming-nerfs", label: "Balance beobachten" },
@@ -283,7 +284,7 @@ const content: Record<ContentLanguage, HomeContent> = {
       {
         question: "Was ist das neueste Where Winds Meet Update?",
         answer:
-          "Dieser Hub ist auf Version 1.7 / The Imperial Palace geprüft, inklusive aktueller Patch Notes, Path Balance, Palace-Aktivitäten, Boss- und Dungeon-Updates sowie Code-Berichten.",
+          "Dieser Hub ist auf Version 2.1 / Clouded Revelation geprueft, einschliesslich des Ueberblicks vom 27. August und der Patch Notes vom 20. August; Hidden Mountain und Path Balance bleiben als Historie erhalten.",
       },
       {
         question: "Wo finde ich Where Winds Meet Codes?",
@@ -306,8 +307,8 @@ const content: Record<ContentLanguage, HomeContent> = {
 
 function localizedHref(language: ContentLanguage, href: string) {
   if (language === "en") return href;
-  const prefix = language === "vi" ? "/vn" : "/de";
-  return href.startsWith(prefix) ? href : `${prefix}${href}`;
+  const locale = language === "vi" ? "vi" : "de";
+  return buildLocalizedPath(href, locale) ?? href;
 }
 
 function buildStructuredData(entry: HomeContent) {

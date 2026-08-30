@@ -70,7 +70,7 @@ export function WeaponDetail({ weaponId }: { weaponId: WeaponId }) {
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
             Hãy dùng trang này như “tài liệu thực chiến” đi kèm{" "}
             <Link
-              href="/vn/guides/tier-list"
+              href="/guides/tier-list"
               className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
             >
               tier list tổng
@@ -180,7 +180,7 @@ export function WeaponDetail({ weaponId }: { weaponId: WeaponId }) {
               Tất cả vũ khí →
             </Link>
             <Link
-              href={`${base}/guides/weapons/tier-list`}
+              href="/guides/weapons/tier-list"
               className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
             >
               Tier list vũ khí →

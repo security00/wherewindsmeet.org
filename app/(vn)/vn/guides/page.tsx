@@ -32,22 +32,24 @@ const guideSections = [
       "Tinh trang nen tang Where Winds Meet cho Xbox, PS5, PC, iOS, Android, mobile, cross-play va account linking.",
   },
   {
-    title: "Bảng xếp hạng PvP (meta)",
-    slug: "/vn/guides/pvp-tier-list",
-    label: "Đấu hạng",
+    title: "Rà soát bằng chứng PvP",
+    slug: "/guides/pvp-tier-list",
+    label: "Version 2.1",
     icon: "⚔️",
     color: "text-red-400",
     size: "medium",
-    description: "Leo rank với meta mới nhất sau patch.",
+    description:
+      "Bằng chứng Version 2.1 theo từng chế độ và matchup; không gán hạng chữ khi chưa có mẫu tái lập.",
   },
   {
-    title: "Patch Notes / Upcoming Nerfs",
+    title: "Patch Notes / mốc hiện tại",
     slug: "/vn/guides/patch-notes",
     label: "Cap nhat",
     icon: "🧭",
     color: "text-red-300",
     size: "small",
-    description: "Version 1.7, Path Balance, upcoming nerfs va tac dong toi arena ranks, build, boss.",
+    description:
+      "Update chính thức Version 2.1, lịch sử patch có ngày, bằng chứng cân bằng và bước kiểm tra lại build.",
   },
   {
     title: "Heaven’s Threshold & Cloudstair",
@@ -119,7 +121,8 @@ const guideSections = [
     icon: "🗡️",
     color: "text-blue-400",
     size: "small",
-    description: "Chỉ số và mô tả cho mọi loại vũ khí.",
+    description:
+      "Trạng thái nguồn, vai trò, ghép cặp và tuyến mở cho danh sách tám vũ khí hiện tại.",
   },
   {
     title: "Vũ khí Võ học",
@@ -169,7 +172,7 @@ const guideSections = [
   },
   {
     title: "Tà Khúc",
-    slug: "/vn/guides/unholy-prophecy",
+    slug: "/guides/unholy-prophecy",
     label: "Jianghu Legacy",
     icon: "🔮",
     color: "text-purple-300",
@@ -201,7 +204,8 @@ const guideSections = [
     icon: "🏙️",
     color: "text-cyan-300",
     size: "small",
-    description: "Vì sao Mistveil City bị khóa (Jan 22 vs Jan 26, 2026) + việc nên làm: Ephemeral Blight và 3 cure.",
+    description:
+      "Dòng thời gian mở khóa lịch sử, điều kiện hiện tại, tuyến đi, Ephemeral Blight và cách xử lý blocker.",
   },
   {
     title: "Gift of Gab",
@@ -306,7 +310,7 @@ const guideSections = [
   },
   {
     title: "Code đang hoạt động",
-    slug: "/vn/guides/codes",
+    slug: "/guides/codes",
     label: "Quà miễn phí",
     icon: "🎁",
     color: "text-yellow-400",
@@ -376,10 +380,10 @@ export default function GuidesPage() {
             Người đồng hành của bạn trên hành trình giang hồ: từ bước di chuyển cơ bản đến tuyệt kỹ đại tông sư, mọi đường đi đều ở đây.
           </p>
           <Link
-            href="/vn/guides/one-leaf-one-life"
+            href="/guides/one-leaf-one-life"
             className="mt-4 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-400/60 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-200 transition hover:border-emerald-300/80 hover:text-emerald-100"
           >
-            🍂 Lost Chapter mới nhất: One Leaf, One Life
+            🍂 Lost Chapter mới nhất: One Leaf, One Life (English)
           </Link>
           <Link
             href="/vn/guides/murong-yuan-adoptive-father"
@@ -391,13 +395,13 @@ export default function GuidesPage() {
             href="/vn/news#organic-search-watch"
             className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-blue-400/60 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-200 transition hover:border-blue-300/80 hover:text-blue-100"
           >
-            News: future draw, arena ranks, upcoming nerfs
+            News: Version 2.1, bằng chứng cân bằng và lịch sử update
           </Link>
           <Link
-            href="/vn/guides/tier-list#arena-ranks"
+            href="/guides/tier-list#arena-ranks"
             className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-400/60 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-200 transition hover:border-emerald-300/80 hover:text-emerald-100"
           >
-            WWM arena ranks va tier-list checks
+            Bằng chứng PvP Version 2.1 và rà soát tier list
           </Link>
         </div>
 

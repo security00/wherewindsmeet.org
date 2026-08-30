@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { DeferredYouTubeGallery } from "@/components/DeferredYouTubeGallery";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
@@ -389,27 +390,12 @@ export default function MurongYuanAdoptiveFatherPage() {
           The current SERP often shows YouTube first for <span className="font-semibold text-slate-100">“where winds meet murong yuan adoptive father”</span>.
           These embeds let players confirm the quiz answer fast, then continue reading the lore clarification on the same page.
         </p>
-        <div className="grid gap-6 md:grid-cols-2">
-          {videos.map((video) => (
-            <article key={video.id} className="space-y-3 rounded-3xl border border-slate-800 bg-slate-950/80 p-4 shadow-sm shadow-slate-950/60">
-              <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
-                <div className="aspect-video bg-slate-950/80">
-                  <iframe
-                    title={video.title}
-                    src={`https://www.youtube-nocookie.com/embed/${video.id}?rel=0&modestbranding=1&playsinline=1`}
-                    className="h-full w-full border-0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                  />
-                </div>
-              </div>
-              <p className="text-sm font-medium text-slate-100">{video.title}</p>
-              <p className="text-xs leading-relaxed text-slate-300">{video.note}</p>
-            </article>
-          ))}
-        </div>
+        <DeferredYouTubeGallery
+          videos={videos.map(({ id, title, note }) => ({ id, title, caption: note }))}
+          locale="en"
+          sourceLabel="Open source video on YouTube"
+          analyticsContext="murong-yuan-adoptive-father"
+        />
       </section>
 
       <section className="rounded-3xl border border-slate-800/70 bg-slate-950/70 p-6 shadow-lg space-y-4">

@@ -5,10 +5,9 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 const cdnBase = process.env.NEXT_PUBLIC_CDN_URL || "https://static.wherewindsmeet.org";
-const cdn = (path: string) => `${cdnBase}${path}`;
 const guidePath = "/guides/find-officer-nan";
 const heroImagePath = `${guidePath}/hero.webp`;
-const ogImage = cdn(heroImagePath);
+const heroImage = `${cdnBase}${heroImagePath}`;
 
 const metaTitle = "Find Officer Nan Where Winds Meet - The Gilded Chase";
 const metaDescription =
@@ -25,20 +24,7 @@ export const metadata: Metadata = {
     description: metaDescription,
     url: `${baseUrl}${guidePath}`,
     siteName: "Where Winds Meet Hub",
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 675,
-        alt: "Officer Nan on the Mirage Boat (Where Winds Meet)",
-      },
-      {
-        url: `${baseUrl}${heroImagePath}`,
-        width: 1200,
-        height: 675,
-        alt: "Officer Nan on the Mirage Boat (Where Winds Meet) (fallback)",
-      },
-    ],
+    images: [{ url: heroImage, width: 1200, height: 675, alt: "Officer Nan on the Mirage Boat deck" }],
     locale: "en_US",
     type: "article",
   },
@@ -46,16 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: metaTitle,
     description: metaDescription,
-    images: [
-      {
-        url: ogImage,
-        alt: "Find Officer Nan in Where Winds Meet",
-      },
-      {
-        url: `${baseUrl}${heroImagePath}`,
-        alt: "Find Officer Nan in Where Winds Meet (fallback)",
-      },
-    ],
+    images: [{ url: heroImage, alt: "Find Officer Nan in Where Winds Meet" }],
   },
 };
 
@@ -82,126 +59,60 @@ const locations = [
   {
     title: "Harvestfall Village dock (first time you meet him)",
     text: "Head to the dock and speak with the Zither Keeper. She tells you an invitation is required, then sends you to Officer Nan. He is inside the building across from her and gives you the job posting after you help with the swarm of fish.",
-    image: `${guidePath}/prove-your-skill.webp`,
-    alt: "Officer Nan location in Harvestfall Village (building across from the Zither Keeper)",
-    caption: "Harvestfall Village docks: Officer Nan’s building across from the Zither Keeper.",
   },
   {
     title: "Mirage Boat deck (Find Nan objective)",
     text: "After the meeting, go down to the deck and look by the railing on the left side of the mahjong area if you are facing the boat.",
-    image: `${guidePath}/find-nan.webp`,
-    alt: "Officer Nan standing by the railing on the Mirage Boat",
-    caption: "Mirage Boat deck: Officer Nan stands by the left-side railing.",
   },
 ];
 
-const game8Steps = [
-  {
-    title: "Map location",
-    image: `${guidePath}/map-location.webp`,
-    alt: "The Gilded Chase map location (Game8)",
-  },
-  {
-    title: "Examine the bounty board",
-    image: `${guidePath}/examine-the-bounty-board.webp`,
-    alt: "Examine the bounty board (Game8)",
-  },
-  {
-    title: "Talk to Old Jin",
-    image: `${guidePath}/talk-to-old-jin.webp`,
-    alt: "Talk to Old Jin (Game8)",
-  },
-  {
-    title: "Talk to the Zither Keeper",
-    image: `${guidePath}/talk-to-the-zither-keeper.webp`,
-    alt: "Talk to the Zither Keeper (Game8)",
-  },
-  {
-    title: "Prove your skill",
-    image: `${guidePath}/prove-your-skill.webp`,
-    alt: "Prove your skill (Game8)",
-  },
-  {
-    title: "Investigate the dock",
-    image: `${guidePath}/investigate-the-dock.webp`,
-    alt: "Investigate the dock (Game8)",
-  },
-  {
-    title: "Find out the old man",
-    image: `${guidePath}/find-out-the-old-man.webp`,
-    alt: "Find out the old man (Game8)",
-  },
-  {
-    title: "Board the Mirage Boat",
-    image: `${guidePath}/board-the-mirage-boat.webp`,
-    alt: "Board the Mirage Boat (Game8)",
-  },
-  {
-    title: "Find Nan",
-    image: `${guidePath}/find-nan.webp`,
-    alt: "Find Nan on the Mirage Boat (Game8)",
-  },
-  {
-    title: "Get intel",
-    image: `${guidePath}/get-intel.webp`,
-    alt: "Get intel (Game8)",
-  },
-  {
-    title: "Eavesdrop on the maids",
-    image: `${guidePath}/eavesdrop-on-the-maids.webp`,
-    alt: "Eavesdrop on the maids (Game8)",
-  },
-  {
-    title: "Report to Officer Nan",
-    image: `${guidePath}/report-to-officer-nan.webp`,
-    alt: "Report to Officer Nan (Game8)",
-  },
-  {
-    title: "Old Jin confesses",
-    image: `${guidePath}/old-jin-confesses.webp`,
-    alt: "Old Jin confesses (Game8)",
-  },
-  {
-    title: "Chase Old Jin",
-    image: `${guidePath}/chase-old-jin.webp`,
-    alt: "Chase Old Jin (Game8)",
-  },
-  {
-    title: "Defeat Old Jin",
-    image: `${guidePath}/defeat-old-jin.webp`,
-    alt: "Defeat Old Jin (Game8)",
-  },
-  {
-    title: "Look for clues",
-    image: `${guidePath}/look-for-clues.webp`,
-    alt: "Look for clues (Game8)",
-  },
-  {
-    title: "The fake boat",
-    image: `${guidePath}/the-fake-boat.webp`,
-    alt: "The fake boat (Game8)",
-  },
-  {
-    title: "Follow the voice",
-    image: `${guidePath}/follow-the-voice.webp`,
-    alt: "Follow the voice (Game8)",
-  },
-  {
-    title: "Nan at the dock",
-    image: `${guidePath}/nan-at-the-dock.webp`,
-    alt: "Nan at the dock (Game8)",
-  },
-  {
-    title: "Defeat the Phantom Thief",
-    image: `${guidePath}/defeat-the-phantom-thief.webp`,
-    alt: "Defeat the Phantom Thief (Game8)",
-  },
-  {
-    title: "The End",
-    image: `${guidePath}/the-end.webp`,
-    alt: "The Gilded Chase ending (Game8)",
-  },
+const walkthroughSteps = [
+  "Map location",
+  "Examine the bounty board",
+  "Talk to Old Jin",
+  "Talk to the Zither Keeper",
+  "Prove your skill",
+  "Investigate the dock",
+  "Find out the old man",
+  "Board the Mirage Boat",
+  "Find Nan",
+  "Get intel",
+  "Eavesdrop on the maids",
+  "Report to Officer Nan",
+  "Old Jin confesses",
+  "Chase Old Jin",
+  "Defeat Old Jin",
+  "Look for clues",
+  "The fake boat",
+  "Follow the voice",
+  "Nan at the dock",
+  "Defeat the Phantom Thief",
+  "The End",
 ];
+
+const walkthroughImageFiles = [
+  "map-location.webp",
+  "examine-the-bounty-board.webp",
+  "talk-to-old-jin.webp",
+  "talk-to-the-zither-keeper.webp",
+  "prove-your-skill.webp",
+  "investigate-the-dock.webp",
+  "find-out-the-old-man.webp",
+  "board-the-mirage-boat.webp",
+  "find-nan.webp",
+  "get-intel.webp",
+  "eavesdrop-on-the-maids.webp",
+  "report-to-officer-nan.webp",
+  "old-jin-confesses.webp",
+  "chase-old-jin.webp",
+  "defeat-old-jin.webp",
+  "look-for-clues.webp",
+  "the-fake-boat.webp",
+  "follow-the-voice.webp",
+  "nan-at-the-dock.webp",
+  "defeat-the-phantom-thief.webp",
+  "the-end.webp",
+] as const;
 
 const faq = [
   {
@@ -256,7 +167,7 @@ export default function FindOfficerNanPage() {
       description: metaDescription,
       url: `${baseUrl}${guidePath}`,
       mainEntityOfPage: { "@type": "WebPage", "@id": `${baseUrl}${guidePath}` },
-      image: [ogImage, `${baseUrl}${heroImagePath}`],
+      image: heroImage,
       datePublished: publishedDate,
       dateModified: publishedDate,
       author: { "@type": "Organization", name: "Where Winds Meet Hub" },
@@ -295,16 +206,9 @@ export default function FindOfficerNanPage() {
 
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-10">
         <div className="pointer-events-none absolute inset-0">
-          <CdnImage
-            src={heroImagePath}
-            alt="Officer Nan on the Mirage Boat deck (Where Winds Meet)"
-            fill
-            className="object-cover opacity-35"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/30" />
+          <CdnImage src={heroImagePath} alt="Officer Nan on the Mirage Boat deck" fill className="object-cover opacity-30" priority />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/45" />
         </div>
-
         <div className="relative grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
           <div className="space-y-5">
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
@@ -335,13 +239,13 @@ export default function FindOfficerNanPage() {
                 href="#locations"
                 className="rounded-full border border-blue-500/40 bg-blue-500/10 px-3 py-1 text-blue-200 hover:border-blue-400 hover:text-blue-50"
               >
-                Location screenshots
+                Officer Nan locations
               </Link>
               <Link
                 href="#steps"
                 className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 hover:border-emerald-400 hover:text-emerald-50"
               >
-                Full walkthrough images
+                Quest sequence
               </Link>
               <Link
                 href="#fixes"
@@ -378,7 +282,7 @@ export default function FindOfficerNanPage() {
           <h2 className="text-2xl font-bold text-slate-50">Two places to find Officer Nan</h2>
         </div>
         <div className="grid gap-5 md:grid-cols-2">
-          {locations.map((location) => (
+          {locations.map((location, index) => (
             <article
               key={location.title}
               className="overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/60 shadow-lg"
@@ -389,10 +293,15 @@ export default function FindOfficerNanPage() {
               </div>
               <figure className="border-t border-slate-800/80">
                 <div className="relative aspect-video">
-                  <CdnImage src={location.image} alt={location.alt} fill className="object-cover" />
+                  <CdnImage
+                    src={`${guidePath}/${index === 0 ? "prove-your-skill.webp" : "find-nan.webp"}`}
+                    alt={`${location.title} location screenshot in Where Winds Meet`}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <figcaption className="px-4 py-3 text-xs text-slate-300/90 border-t border-slate-800/80">
-                  {location.caption}
+                <figcaption className="border-t border-slate-800/80 px-4 py-3 text-xs text-slate-300">
+                  {location.title}. Source publisher: Game8.
                 </figcaption>
               </figure>
             </article>
@@ -413,27 +322,37 @@ export default function FindOfficerNanPage() {
 
       <section id="steps" className="space-y-6 rounded-3xl border border-slate-800/70 bg-slate-950/70 p-6 shadow-lg">
         <div className="flex items-center gap-2">
-          <span className="text-xl">📷</span>
-          <h2 className="text-2xl font-bold text-slate-50">Game8 walkthrough images (full set)</h2>
+          <span className="text-xl">🧭</span>
+          <h2 className="text-2xl font-bold text-slate-50">Quest sequence</h2>
         </div>
+        <p className="rounded-2xl border border-emerald-400/30 bg-emerald-500/10 p-4 text-sm leading-6 text-emerald-100">
+          Source publisher: Game8. Reuse authorization confirmed by site owner 2026-08-29. Screenshots are provided as visual
+          checkpoints; verify objective wording in the current game build.
+        </p>
         <div className="grid gap-5 md:grid-cols-2">
-          {game8Steps.map((step, idx) => (
+          {walkthroughSteps.map((step, idx) => (
             <article
-              key={step.title}
+              key={step}
               className="overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/60 shadow-lg"
             >
               <div className="p-4 flex items-start justify-between gap-3">
                 <div className="space-y-1">
                   <p className="text-xs uppercase tracking-wide text-slate-500">Step {idx + 1}</p>
-                  <h3 className="text-base font-semibold text-slate-50">{step.title}</h3>
+                  <h3 className="text-base font-semibold text-slate-50">{step}</h3>
                 </div>
               </div>
               <figure className="border-t border-slate-800/80">
                 <div className="relative aspect-video">
-                  <CdnImage src={step.image} alt={step.alt} fill className="object-cover" />
+                  <CdnImage
+                    src={`${guidePath}/${walkthroughImageFiles[idx]}`}
+                    alt={`${step} walkthrough screenshot for The Gilded Chase`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
-                <figcaption className="px-4 py-3 text-xs text-slate-300/90 border-t border-slate-800/80">
-                  {step.title} (Game8 reference)
+                <figcaption className="border-t border-slate-800/80 px-4 py-3 text-xs text-slate-300">
+                  Step {idx + 1}: {step}. Source publisher: Game8.
                 </figcaption>
               </figure>
             </article>

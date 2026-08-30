@@ -1,8 +1,15 @@
 import { latestNewsDate, newsItems as officialNewsItems } from "./news";
 
-// Keep the German news feed in exact source parity with the official English
-// news index. Page chrome remains localized; article titles and links stay
-// official so cross-language news freshness does not drift.
-export const newsItems = officialNewsItems;
+const formatDateDe = (iso: string) => {
+  const [year, month, day] = iso.split("-");
+  return year && month && day ? `${day}.${month}.${year}` : iso;
+};
+
+// Preserve the official English title and source record, but do not present
+// the English editorial summary as though it were a German translation.
+export const newsItems = officialNewsItems.map((item) => ({
+  ...item,
+  summary: `Offizielle englischsprachige Meldung vom ${formatDateDe(item.date)}. Der englische Titel bleibt unverändert; öffne die Originalquelle, um Inhalt und Änderungen vollständig zu prüfen.`,
+}));
 
 export { latestNewsDate };

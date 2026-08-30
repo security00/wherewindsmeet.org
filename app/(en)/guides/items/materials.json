@@ -36,12 +36,6 @@
     "location": "Gathering/Hunting/Merchant/Commission (details pending)"
   },
   {
-    "name": "Bark Paper",
-    "image": "/items/materials/bark-paper-rawmaterial-wherewindsmeet-wiki-guide.png",
-    "use": "Crafting/Breakthrough material (details pending)",
-    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
-  },
-  {
     "name": "Bear Pelt",
     "image": "/items/materials/bear-pelt-rawmaterial-wherewindsmeet-wiki-guide.png",
     "use": "Crafting/Breakthrough material (details pending)",
@@ -50,12 +44,6 @@
   {
     "name": "Beauty's Garment",
     "image": "/items/materials/beauty's-garment-rawmaterial-wherewindsmeet-wiki-guide.png",
-    "use": "Crafting/Breakthrough material (details pending)",
-    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
-  },
-  {
-    "name": "Beef Tendon",
-    "image": "/items/materials/beef-tendon-develop-wherewindsmeet-wiki-guide.png",
     "use": "Crafting/Breakthrough material (details pending)",
     "location": "Gathering/Hunting/Merchant/Commission (details pending)"
   },
@@ -168,12 +156,6 @@
     "location": "Gathering/Hunting/Merchant/Commission (details pending)"
   },
   {
-    "name": "Dried Dogwood Berry",
-    "image": "/items/materials/dried-dogwood-berry-rawmaterial-wherewindsmeet-wiki-guide.png",
-    "use": "Crafting/Breakthrough material (details pending)",
-    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
-  },
-  {
     "name": "Eagle Feathers",
     "image": "/items/materials/eagle-feathers-rawmaterial-wherewindsmeet-wiki-guide.png",
     "use": "Crafting/Breakthrough material (details pending)",
@@ -246,18 +228,6 @@
     "location": "Gathering/Hunting/Merchant/Commission (details pending)"
   },
   {
-    "name": "Herbs",
-    "image": "/items/materials/herbs-rawmaterial-wherewindsmeet-wiki-guide.png",
-    "use": "Crafting/Breakthrough material (details pending)",
-    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
-  },
-  {
-    "name": "Hollyhock",
-    "image": "/items/materials/hollyhock-rawmaterial-wherewindsmeet-wiki-guide.png",
-    "use": "Crafting/Breakthrough material (details pending)",
-    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
-  },
-  {
     "name": "Hollyhock",
     "image": "/items/materials/hollyhock-rawmaterial-wherewindsmeet-wiki-guide.png",
     "use": "Crafting/Breakthrough material (details pending)",
@@ -284,12 +254,6 @@
   {
     "name": "Jasmine",
     "image": "/items/materials/jasmine-rawmaterial-wherewindsmeet-wiki-guide.png",
-    "use": "Crafting/Breakthrough material (details pending)",
-    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
-  },
-  {
-    "name": "Jute Paper",
-    "image": "/items/materials/jute-paper-rawmaterial-wherewindsmeet-wiki-guide.png",
     "use": "Crafting/Breakthrough material (details pending)",
     "location": "Gathering/Hunting/Merchant/Commission (details pending)"
   },
@@ -332,12 +296,6 @@
   {
     "name": "Meat Scraps",
     "image": "/items/materials/meat-scraps-rawmaterial-wherewindsmeet-wiki-guide.png",
-    "use": "Crafting/Breakthrough material (details pending)",
-    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
-  },
-  {
-    "name": "Milu Deer Meat",
-    "image": "/items/materials/milu-deer-meat-rawmaterial-wherewindsmeet-wiki-guide.png",
     "use": "Crafting/Breakthrough material (details pending)",
     "location": "Gathering/Hunting/Merchant/Commission (details pending)"
   },
@@ -456,12 +414,6 @@
     "location": "Gathering/Hunting/Merchant/Commission (details pending)"
   },
   {
-    "name": "Vicious Flower",
-    "image": "/items/materials/vicious-flower-rawmaterial-wherewindsmeet-wiki-guide.png",
-    "use": "Crafting/Breakthrough material (details pending)",
-    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
-  },
-  {
     "name": "Venison",
     "image": "/items/materials/venison-rawmaterial-wherewindsmeet-wiki-guide.png",
     "use": "Crafting/Breakthrough material (details pending)",
@@ -482,12 +434,6 @@
   {
     "name": "Wild Fruits",
     "image": "/items/materials/wild-fruits-rawmaterial-wherewindsmeet-wiki-guide.png",
-    "use": "Crafting/Breakthrough material (details pending)",
-    "location": "Gathering/Hunting/Merchant/Commission (details pending)"
-  },
-  {
-    "name": "Wild Ginseng",
-    "image": "/items/materials/wild-ginseng-rawmaterial-wherewindsmeet-wiki-guide.png",
     "use": "Crafting/Breakthrough material (details pending)",
     "location": "Gathering/Hunting/Merchant/Commission (details pending)"
   },

@@ -3,17 +3,21 @@ import Link from "next/link";
 import { HomeMainKeywordSections } from "@/components/HomeMainKeywordSections";
 import JianghuMapClient from "@/components/JianghuMapClient";
 import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
+import { buildLocalizedPath } from "@/i18n/routing.mjs";
+import { getContentFreshness } from "@/lib/contentFreshness";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
+const freshness = getContentFreshness("/");
+
 export const metadata: Metadata = {
-  title: "Where Winds Meet Guide Hub Tiếng Việt - Version 1.7",
+  title: "Where Winds Meet Guide Hub Tiếng Việt - Version 2.1",
   description:
-    "Hub Where Winds Meet tiếng Việt cho Version 1.7: The Imperial Palace, codes, patch notes, tier list, builds, boss, bản đồ tương tác và nền tảng PC, PS5, mobile.",
+    "Hub Where Winds Meet tiếng Việt cho Version 2.1: codes, patch notes, tier list, builds, boss, bản đồ tương tác và nền tảng PC, PS5, mobile.",
   alternates: buildHreflangAlternates("/", { canonicalLanguage: "vi" }),
   openGraph: {
-    title: "Where Winds Meet Guide Hub Tiếng Việt - Version 1.7",
+    title: "Where Winds Meet Guide Hub Tiếng Việt - Version 2.1",
     description:
-      "Hub Where Winds Meet tiếng Việt cho Version 1.7: The Imperial Palace, codes, patch notes, tier list, builds, boss, bản đồ tương tác và nền tảng.",
+      "Hub Where Winds Meet tiếng Việt cho Version 2.1: codes, patch notes, tier list, builds, boss, bản đồ tương tác và nền tảng.",
     url: "https://wherewindsmeet.org/vn",
     images: [
       {
@@ -29,15 +33,15 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Where Winds Meet Guide Hub Tiếng Việt - Version 1.7",
+    title: "Where Winds Meet Guide Hub Tiếng Việt - Version 2.1",
     description:
-      "Hướng dẫn Version 1.7, code Palace, tier list và tin cập nhật mới nhất cho Where Winds Meet (Tiếng Việt).",
+      "Hướng dẫn Version 2.1, code, tier list và tin cập nhật mới nhất cho Where Winds Meet (Tiếng Việt).",
     images: ["https://static.wherewindsmeet.org/background/bg.jpg"],
   },
 };
 
 export default function Home() {
-  const vnHref = (path: string) => (path.startsWith("/vn") ? path : `/vn${path}`);
+  const vnHref = (path: string) => buildLocalizedPath(path, "vi") ?? path;
 
   return (
     <div className="space-y-10">
@@ -49,14 +53,16 @@ export default function Home() {
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1.4fr)] lg:items-start">
           <div className="space-y-6">
             <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-              Version 1.7 <span className="text-ink-gold">The Imperial Palace</span>
+              Version 2.1 <span className="text-ink-gold">Guide Hub</span>
             </h2>
             <div className="space-y-4 text-slate-300 leading-relaxed">
               <p>
                 Where Winds Meet là game hành động nhập vai thế giới mở lấy bối cảnh một thời kỳ hỗn loạn của Trung Hoa cổ. Bạn chu du giang hồ sống động, luyện võ học, khinh công, nội công và chọn con đường riêng giữa vai trò hiệp khách, cuốn vào tranh đấu triều đình hay tự do khám phá.
               </p>
               <p>
-                Trung tâm này đã được làm mới cho Version 1.7 / The Imperial Palace: code Palace dạng reported, patch notes 29/05, Path Balance, build, tier list và các hướng dẫn Qinchuan/Hexi cũ để người chơi quay lại bắt kịp nhanh.
+                Trung tâm này đã được rà soát theo {freshness?.gameVersion ?? "Version 2.1 / August 27"}. Patch notes,
+                build và tier list hiện tại được tách khỏi các hướng dẫn Palace, Qinchuan và Hexi có ghi mốc lịch sử,
+                để nội dung cũ không bị hiểu là trạng thái patch hôm nay.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Link
@@ -112,7 +118,7 @@ export default function Home() {
               href={vnHref("/news#next-update")}
               className="rounded-full border border-emerald-500/50 bg-emerald-500/10 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/70"
             >
-              Version 1.7 / Palace
+              {freshness?.gameVersion ?? "Version 2.1"} refresh
             </Link>
             <Link
               href={vnHref("/news#organic-search-watch")}

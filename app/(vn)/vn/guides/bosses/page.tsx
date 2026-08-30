@@ -1,54 +1,60 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
+import LiteMp4Embed from "@/components/LiteMp4Embed";
 import Link from "next/link";
 import { bosses } from "@/lib/bosses.vi";
+import { buildLocalizedPath } from "@/i18n/routing.mjs";
 import { getContentFreshness } from "@/lib/contentFreshness";
 import { buildHreflangAlternates } from "@/lib/hreflang";
-import { resolveCdnAssetSrc } from "@/lib/image-utils";
 
 const baseUrl = "https://wherewindsmeet.org";
 const freshness = getContentFreshness("/guides/bosses");
 
+const bossHref = (id: string) => {
+  const bossPath = `/guides/bosses/${id}`;
+  return buildLocalizedPath(bossPath, "vi") ?? bossPath;
+};
+
 const versionBossWatch = [
   {
     label: "Ghost Master",
-    status: "May 29 fix",
+    status: "Bản sửa lỗi May 29",
     searchIntent: "where winds meet ghost master / skyward bond boss",
     detail:
-      "Patch notes May 29 da fix loi Skyward Bond khi Ghost Master co the xuat hien trong khu chuan bi. Cac bug report cu sau moc nay can duoc xem lai.",
+      "Patch notes May 29 đã sửa lỗi Skyward Bond khiến Ghost Master có thể xuất hiện trong khu chuẩn bị. Các báo cáo lỗi cũ sau mốc này cần được xem lại.",
     source: "https://www.wherewindsmeetgame.com/news/official/529update.html",
   },
   {
     label: "Hero's Realm bosses",
-    status: "May 27 tuning",
+    status: "Điều chỉnh May 27",
     searchIntent: "where winds meet hero's realm boss guide",
     detail:
-      "May 27 live update them boss guidance marks, lock-on camera tot hon, combat assist thong minh hon, item-dropping rules va prompt enemy-flash attack cho Hero's Realm.",
+      "Bản cập nhật trực tiếp May 27 thêm dấu chỉ dẫn boss, cải thiện camera khóa mục tiêu, hỗ trợ chiến đấu thông minh hơn, quy tắc rơi vật phẩm và lời nhắc đòn tấn công lóe sáng của địch cho Hero's Realm.",
     source: "https://www.wherewindsmeetgame.com/news/official/527update.html",
   },
   {
     label: "Sword Trial bosses",
-    status: "May 27 tuning",
+    status: "Điều chỉnh May 27",
     searchIntent: "where winds meet sword trial boss guide",
     detail:
-      "Sword Trial cung nhan boss guidance marks, lock-on/camera improvements va combat assist tot hon. Nguoi choi quay lai nen thu lai truoc khi tin vao nhan xet do kho cu.",
+      "Sword Trial cũng nhận dấu chỉ dẫn boss, cải thiện khóa mục tiêu và camera, cùng hỗ trợ chiến đấu tốt hơn. Người chơi quay lại nên thử lại trước khi tin vào nhận xét độ khó cũ.",
     source: "https://www.wherewindsmeetgame.com/news/official/527update.html",
   },
   {
     label: "Sandstorm Tavern",
-    status: "May 15 release",
+    status: "Phát hành May 15",
     searchIntent: "where winds meet sandstorm tavern guide",
     detail:
-      "Sandstorm Tavern ra mat trong May 15 update cho cua so su kien May 15 den June 5 va van mo vinh vien sau do. Day la muc guide dang lam hon la chi de trong news.",
+      "Sandstorm Tavern ra mắt trong bản cập nhật May 15, ở thời gian sự kiện từ May 15 đến June 5, và vẫn mở vĩnh viễn sau đó. Đây là một chủ đề guide đáng làm hơn là chỉ để trong mục tin tức.",
     source: "https://www.wherewindsmeetgame.com/news/official/515update.html",
   },
   {
     label: "Sunken City Lake / Lunar Eidolon",
-    status: "May 15 fix",
+    status: "Bản sửa lỗi May 15",
     searchIntent: "where winds meet sunken city lake boss lunar eidolon",
     detail:
-      "May 15 patch fix loi Lunar Eidolon o Sunken City Lake doi khi khong vao phase cuoi. Loi khuyen cu ve blocker nay nen duoc lam moi.",
+      "Patch May 15 sửa lỗi Lunar Eidolon ở Sunken City Lake đôi khi không chuyển sang giai đoạn cuối. Lời khuyên cũ về lỗi chặn tiến trình này nên được làm mới.",
     source: "https://www.wherewindsmeetgame.com/news/official/515update.html",
   },
 ];
@@ -56,7 +62,7 @@ const versionBossWatch = [
 export const metadata: Metadata = {
   title: "Where Winds Meet Bosses - Ghost Master, Dungeon Boss & Boss List",
   description:
-    "Hub boss Where Winds Meet Version 1.7 tieng Viet: Ghost Master, Hero's Realm, Sword Trial, Sandstorm Tavern, Sunken City Lake, boss list, builds va weapon prep.",
+    "Hub boss Where Winds Meet Version 2.1 tiếng Việt: danh sách boss được tuyển chọn, lịch sử patch đã kiểm tra, build và chuẩn bị vũ khí.",
   alternates: buildHreflangAlternates("/guides/bosses", { canonicalLanguage: "vi" }),
 };
 
@@ -74,7 +80,7 @@ export default function BossesPage() {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Trang chu", item: `${baseUrl}/vn` },
+        { "@type": "ListItem", position: 1, name: "Trang chủ", item: `${baseUrl}/vn` },
         { "@type": "ListItem", position: 2, name: "Guides", item: `${baseUrl}/vn/guides` },
         { "@type": "ListItem", position: 3, name: "Bosses", item: `${baseUrl}/vn/guides/bosses` },
       ],
@@ -89,7 +95,7 @@ export default function BossesPage() {
         "@type": "ListItem",
         position: index + 1,
         name: boss.name,
-        url: `${baseUrl}/vn/guides/bosses/${boss.id}`,
+        url: `${baseUrl}${bossHref(boss.id)}`,
       })),
     },
   ];
@@ -105,7 +111,7 @@ export default function BossesPage() {
         <div className="pointer-events-none absolute inset-0">
           <CdnImage
             src="/background/bg4.webp"
-            alt="Where Winds Meet boss background"
+            alt="Phông nền boss Where Winds Meet"
             fill
             className="object-cover opacity-40"
           />
@@ -115,22 +121,22 @@ export default function BossesPage() {
         <div className="relative">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-200">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            Version 1.7 boss va dungeon hub
+            Đánh giá boss và dungeon Version 2.1
           </div>
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet bosses: Ghost Master, dungeon boss va cac tran quan trong.
+            Boss trong Where Winds Meet: Ghost Master, boss dungeon và các trận quan trọng.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Cap nhat {freshness?.lastChecked ?? "2026-06-03"} cho {freshness?.gameVersion ?? "Version 1.7 / The Imperial Palace"}: trang nay ket noi boss list hien co voi cac tim kiem boss va dungeon moi trong patch hien tai.
+            Cập nhật {freshness?.lastChecked ?? "2026-08-26"} cho {freshness?.gameVersion ?? "Version 2.1 / August 27"}: trang này kết nối danh sách boss được tuyển chọn với ghi chú patch lịch sử đã kiểm tra và hướng dẫn chuẩn bị vũ khí, build. Trang không tự nhận là danh sách đầy đủ boss Hidden Mountain.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Bat dau tu Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern va Sunken City Lake truoc khi dung loi khuyen boss cu. Ket hop voi{" "}
+            Bắt đầu từ Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern và Sunken City Lake trước khi dùng lời khuyên boss cũ. Kết hợp với{" "}
             <Link href="/vn/guides/weapons" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
-              weapon guides
+              guide vũ khí
             </Link>{" "}
-            va{" "}
+            và{" "}
             <Link href="/vn/guides/builds" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
-              builds
+              guide build
             </Link>
             .
           </p>
@@ -145,29 +151,29 @@ export default function BossesPage() {
               href="/vn/guides/patch-notes"
               className="rounded-full border border-slate-700 px-4 py-2 text-xs font-semibold text-slate-100 hover:border-emerald-300/60"
             >
-              Patch notes moi
+              Patch notes mới
             </Link>
             <Link
-              href="/vn/guides/tier-list"
+              href="/guides/tier-list"
               className="rounded-full border border-slate-700 px-4 py-2 text-xs font-semibold text-slate-100 hover:border-emerald-300/60"
             >
               Tier list
             </Link>
           </div>
           <p className="mt-3 text-xs text-slate-400 sm:text-sm">
-            Thong tin boss co the doi nhanh sau patch live-service. Official notes va in-game reward preview nen duoc uu tien.
+            Thông tin boss có thể thay đổi nhanh sau patch live-service. Patch notes chính thức và phần xem trước phần thưởng trong game nên được ưu tiên.
           </p>
         </div>
       </section>
 
       <section className="space-y-6 rounded-3xl border border-amber-400/30 bg-amber-500/10 p-6 shadow-lg shadow-amber-950/30">
         <div className="space-y-2">
-          <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">Version 1.7 watchlist</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">Lịch sử patch đã xác minh</p>
           <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-            Boss va dungeon search nen duoc cap nhat truoc.
+            Các tìm kiếm về boss và dungeon nên được cập nhật trước.
           </h2>
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-            Khong phai muc nao cung da la trang boss rieng. Day la cac ung vien guide uu tien khi co mechanics, screenshot va reward on dinh.
+            Không phải mục nào cũng đã có trang boss riêng. Đây là các ứng viên guide ưu tiên khi có cơ chế, ảnh chụp màn hình và phần thưởng ổn định.
           </p>
         </div>
         <div className="grid gap-4 lg:grid-cols-2">
@@ -183,7 +189,7 @@ export default function BossesPage() {
                   rel="noopener noreferrer"
                   className="text-[11px] font-semibold text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
                 >
-                  Nguon chinh thuc
+                  Nguồn chính thức
                 </a>
               </div>
               <h3 className="mt-3 text-base font-semibold text-slate-50">{item.label}</h3>
@@ -196,7 +202,7 @@ export default function BossesPage() {
 
       <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          Boss gallery va chu de nhanh.
+          Thư viện boss và chủ đề nhanh.
         </h2>
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {bosses.map((boss) => (
@@ -204,19 +210,7 @@ export default function BossesPage() {
               key={boss.id}
               className="group flex flex-col overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 shadow-sm shadow-slate-950/60 transition hover:border-emerald-400/80 hover:shadow-emerald-500/30"
             >
-              <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-900/80">
-                <video
-                  src={resolveCdnAssetSrc(boss.backgroundVideo).src}
-                  muted
-                  autoPlay
-                  loop
-                  playsInline
-                  preload="metadata"
-                  poster="/background/bg4.webp"
-                  className="h-full w-full object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-95"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
-              </div>
+              {boss.backgroundVideo ? <LiteMp4Embed src={boss.backgroundVideo} title={`${boss.name} clip giới thiệu từ nhà phát hành`} poster="/background/bg4.webp" analytics={{ eventName: "boss_gallery_video_play", params: { boss: boss.id, locale: "vi" } }} /> : <div className="relative aspect-video bg-slate-900"><CdnImage src={boss.titleImage} alt={`Ảnh nhận diện chính thức của ${boss.name}`} fill className="object-contain p-4" /></div>}
               <div className="flex flex-1 flex-col gap-2 p-4">
                 <div className="flex items-center justify-between gap-2">
                   <h3 className="text-sm font-semibold text-slate-50">{boss.name}</h3>
@@ -225,20 +219,21 @@ export default function BossesPage() {
                   </span>
                 </div>
                 <p className="text-xs text-slate-300">{boss.tagline}</p>
-                <p className="text-[11px] text-slate-400">Theme: {boss.theme}</p>
+                <p className="text-[11px] text-slate-400">Chủ đề: {boss.theme}</p>
                 <div className="mt-3 flex flex-wrap gap-2 text-[11px]">
                   <Link
-                    href={`/vn/guides/bosses/${boss.id}`}
+                    href={bossHref(boss.id)}
                     className="rounded-full bg-slate-900/80 px-3 py-1 text-emerald-300 ring-1 ring-emerald-400/60 hover:bg-emerald-500/10"
                   >
-                    Xem encounter
+                    Xem trận đấu
                   </Link>
                   <Link
                     href="/vn/guides/builds"
                     className="rounded-full bg-slate-900/80 px-3 py-1 text-slate-200 ring-1 ring-slate-700/70 hover:ring-emerald-400/60"
                   >
-                    Xem builds
+                    Xem build
                   </Link>
+                  {boss.backgroundVideo ? <a href={boss.backgroundVideo} target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-900/80 px-3 py-1 text-slate-200 ring-1 ring-slate-700/70 hover:ring-emerald-400/60">Mở nguồn CDN của nhà phát hành</a> : <span className="rounded-full bg-slate-900/80 px-3 py-1 text-slate-400 ring-1 ring-slate-700/70">Chưa đăng clip có quyền sử dụng rõ ràng</span>}
                 </div>
               </div>
             </article>
@@ -251,19 +246,19 @@ export default function BossesPage() {
         className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-900/50"
       >
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          Boss FAQ nhanh.
+          Hỏi đáp nhanh về boss.
         </h2>
         <div className="space-y-3 text-sm leading-relaxed text-slate-200">
           <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
-            <p className="font-semibold text-slate-50">Nen bat dau voi boss nao?</p>
+            <p className="font-semibold text-slate-50">Nên bắt đầu với boss nào?</p>
             <p className="mt-1 text-slate-300">
-              Bat dau voi story boss o region hien tai. Sau do thu Hero&apos;s Realm, Sword Trial va Bloodbath khi ban da co weapon pair on dinh.
+              Bắt đầu với boss cốt truyện ở khu vực hiện tại. Sau đó thử Hero&apos;s Realm, Sword Trial và Bloodbath khi bạn đã có cặp vũ khí ổn định.
             </p>
           </div>
           <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
-            <p className="font-semibold text-slate-50">Boss nao can theo doi sau update?</p>
+            <p className="font-semibold text-slate-50">Cần theo dõi boss nào sau bản cập nhật?</p>
             <p className="mt-1 text-slate-300">
-              Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern va Sunken City Lake la cac tim kiem boss/dungeon dang uu tien.
+              Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern và Sunken City Lake là các tìm kiếm boss, dungeon đang được ưu tiên.
             </p>
           </div>
         </div>

@@ -12,7 +12,7 @@ export const featuredVideos: FeaturedVideo[] = [
     id: "S7u9JuVHIyM",
     title: "Now's a Great Time to Jump into Where Winds Meet (Huge Updates)",
     description:
-      "Returner-friendly overview tied to the current update cycle, useful for broad searches like where winds meet, where the winds meet, and whether the game is worth starting now.",
+      "June 2026 returner overview preserved as dated context for broad searches like where winds meet, where the winds meet, and whether the game is worth starting.",
     publishedAt: "2026-06-10",
   },
   {
@@ -26,7 +26,7 @@ export const featuredVideos: FeaturedVideo[] = [
     id: "Dmp0G0JFPGA",
     title: "This Where Winds Meet Update Is WILD (HUGE New Map!)",
     description:
-      "Recent creator coverage of the new map and Imperial Palace update, matching users who want to see whether the latest Where Winds Meet content is worth returning for.",
+      "May 2026 creator coverage of the Imperial Palace map update, useful as historical visual context rather than a current patch reference.",
     publishedAt: "2026-05-28",
   },
   {

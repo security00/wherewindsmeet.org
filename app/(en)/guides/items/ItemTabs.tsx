@@ -7,18 +7,35 @@ import type { ItemCategory, ItemCategoryId } from "./data";
 
 export type ItemTabsUiText = {
   heading: string;
-  imagePending: string;
+  imageUnavailable: string;
   acquisitionLabel: string;
+  verificationSourceLabel: string;
   scrollToItems: string;
   itemsSuffix: string;
+  verifiedBadge: string;
+  verifiedSuffix: string;
+  pendingSuffix: string;
+  cataloguedSuffix: string;
+  emptyHeading: string;
+  emptyBody: string;
+  pendingRetentionTemplate: string;
 };
 
 const DEFAULT_UI_TEXT: ItemTabsUiText = {
-  heading: "Click to Switch Item Categories",
-  imagePending: "Image Pending",
+  heading: "Verified item categories",
+  imageUnavailable: "No verified image",
   acquisitionLabel: "Acquisition:",
+  verificationSourceLabel: "Verification source",
   scrollToItems: "Scroll to items ↓",
   itemsSuffix: "items",
+  verifiedBadge: "Verified",
+  verifiedSuffix: "verified",
+  pendingSuffix: "pending",
+  cataloguedSuffix: "catalogued",
+  emptyHeading: "No verified high-value entries yet",
+  emptyBody:
+    "Catalog records without a reliable source and concrete gameplay details remain hidden from the main index.",
+  pendingRetentionTemplate: "{count} {status} records are retained for editorial verification.",
 };
 
 export default function ItemTabs({
@@ -28,7 +45,9 @@ export default function ItemTabs({
   categories: ItemCategory[];
   uiText?: Partial<ItemTabsUiText>;
 }) {
-  const [activeTab, setActiveTab] = useState<ItemCategoryId>("materials");
+  const [activeTab, setActiveTab] = useState<ItemCategoryId>(
+    () => categories.find((category) => category.coverage.published > 0)?.id ?? categories[0]?.id ?? "materials",
+  );
   const resolvedUiText = useMemo(() => ({ ...DEFAULT_UI_TEXT, ...uiText }), [uiText]);
 
   const activeCategory = useMemo(
@@ -43,14 +62,16 @@ export default function ItemTabs({
           key={item.name}
           className="flex flex-col gap-3 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 shadow-sm shadow-slate-950/50"
         >
-          <div
-            className={`relative h-36 w-full overflow-hidden rounded-xl border border-slate-800 ${
-              item.image.includes("placeholder.svg")
-                ? "bg-gradient-to-br from-slate-950 via-emerald-950/60 to-slate-900"
-                : "bg-slate-900/70"
-            }`}
-          >
-            {item.image.includes("placeholder.svg") ? (
+          <div className="relative h-36 w-full overflow-hidden rounded-xl border border-slate-800 bg-slate-900/70">
+            {"src" in item.media ? (
+              <CdnImage
+                src={item.media.src}
+                alt={item.name}
+                fill
+                sizes="320px"
+                className="object-contain p-4"
+              />
+            ) : (
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-1">
                 <span className="sr-only">{item.name}</span>
                 <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(16,185,129,0.16),transparent_55%),radial-gradient(circle_at_20%_20%,rgba(148,163,184,0.12),transparent_35%),radial-gradient(circle_at_80%_80%,rgba(5,150,105,0.18),transparent_45%)]" />
@@ -59,29 +80,36 @@ export default function ItemTabs({
                     Wuxia
                   </p>
                   <p className="text-sm font-semibold text-emerald-100">
-                    {resolvedUiText.imagePending}
+                    {resolvedUiText.imageUnavailable}
                   </p>
                 </div>
               </div>
-            ) : (
-              <CdnImage
-                src={item.image}
-                alt={item.name}
-                fill
-                sizes="320px"
-                className="object-contain p-4"
-              />
             )}
           </div>
           <div className="space-y-2">
-            <h3 className="text-sm font-semibold text-slate-50">
-              {item.name}
-            </h3>
-            <p className="text-sm text-slate-200">{item.use}</p>
-            <p className="text-xs text-slate-400">
-              <span className="font-semibold text-emerald-200">{resolvedUiText.acquisitionLabel} </span>{" "}
-              {item.location}
-            </p>
+            <div className="flex items-start justify-between gap-3">
+              <h3 className="text-sm font-semibold text-slate-50">{item.name}</h3>
+              <span className="shrink-0 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-emerald-200">
+                {resolvedUiText.verifiedBadge}
+              </span>
+            </div>
+            {item.use ? <p className="text-sm text-slate-200">{item.use}</p> : null}
+            {item.location ? (
+              <p className="text-xs text-slate-400">
+                <span className="font-semibold text-emerald-200">
+                  {resolvedUiText.acquisitionLabel}{" "}
+                </span>
+                {item.location}
+              </p>
+            ) : null}
+            <a
+              href={item.sourceUrl}
+              target="_blank"
+              rel="noreferrer nofollow"
+              className="inline-flex text-xs font-semibold text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+            >
+              {resolvedUiText.verificationSourceLabel}
+            </a>
           </div>
         </article>
       ))}
@@ -119,6 +147,11 @@ export default function ItemTabs({
               {activeCategory.title}
             </p>
             <p className="text-sm text-slate-200">{activeCategory.blurb}</p>
+            <p className="mt-2 text-xs text-slate-400">
+              {activeCategory.coverage.published} {resolvedUiText.verifiedSuffix} ·{" "}
+              {activeCategory.coverage.pending} {resolvedUiText.pendingSuffix} ·{" "}
+              {activeCategory.coverage.catalogued} {resolvedUiText.cataloguedSuffix}
+            </p>
           </div>
           <Link
             href="#items-grid"
@@ -129,7 +162,7 @@ export default function ItemTabs({
         </div>
       </div>
 
-      {activeCategory.groups ? (
+      {activeCategory.groups && activeCategory.groups.length > 0 ? (
         <div className="space-y-8" id="items-grid">
           {activeCategory.groups.map((group) => (
             <div key={group.id} className="space-y-3">
@@ -146,7 +179,23 @@ export default function ItemTabs({
           ))}
         </div>
       ) : (
-        <div id="items-grid">{renderGrid(activeCategory.items)}</div>
+        <div id="items-grid">
+          {activeCategory.items.length > 0 ? (
+            renderGrid(activeCategory.items)
+          ) : (
+            <div className="rounded-2xl border border-dashed border-slate-700 bg-slate-900/40 p-8 text-center">
+              <h3 className="text-base font-semibold text-slate-100">
+                {resolvedUiText.emptyHeading}
+              </h3>
+              <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-slate-400">
+                {resolvedUiText.emptyBody}{" "}
+                {resolvedUiText.pendingRetentionTemplate
+                  .replace("{count}", String(activeCategory.coverage.pending))
+                  .replace("{status}", resolvedUiText.pendingSuffix)}
+              </p>
+            </div>
+          )}
+        </div>
       )}
     </section>
   );

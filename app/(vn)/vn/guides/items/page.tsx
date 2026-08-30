@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import ItemTabs from "@/app/(en)/guides/items/ItemTabs";
-import { itemCategories } from "@/app/(en)/guides/items/data";
+import { itemCategories, itemCoverage } from "@/app/(en)/guides/items/data";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "Chỉ mục vật phẩm Where Winds Meet – nguyên liệu, tiêu hao, hiếm",
+  title: "Vật phẩm Where Winds Meet – công dụng và nguồn đã xác minh",
   description:
-    "Chỉ mục vật phẩm Where Winds Meet với tab danh mục, hình ảnh, công dụng và cách kiếm nhanh, bám theo bố cục wiki.",
+    "Hướng dẫn vật phẩm Where Winds Meet dựa trên nguồn. Chỉ công dụng và cách kiếm đã kiểm chứng mới được xuất bản; mục chưa xác minh vẫn ở trạng thái chờ.",
   alternates: buildHreflangAlternates("/guides/items", { canonicalLanguage: "vi" }),
 };
 
@@ -36,55 +36,44 @@ export default function ItemsPage() {
     "inner-way-passives": "Nội công thụ động",
     "martial-arts-upgrades": "Nâng cấp võ học",
     miscellaneous: "Khác",
+    "verified-systems-and-tuning": "Hệ thống & tinh chỉnh đã xác minh",
     "mystic-arts-upgrades": "Nâng cấp bí thuật (Mystic)",
     "gear-tuning": "Tinh chỉnh trang bị",
   };
 
-  const localizeUse = (value: string) => {
-    switch (value) {
-      case "Crafting/Breakthrough material (details pending)":
-        return "Nguyên liệu chế tạo/đột phá (đang cập nhật chi tiết)";
-      case "Weapon/Martial Arts/Mechanism development material (details pending)":
-        return "Nguyên liệu phát triển vũ khí/võ học/cơ quan (đang cập nhật chi tiết)";
-      case "Consumable: effect details pending":
-        return "Vật phẩm tiêu hao: hiệu ứng đang cập nhật";
-      case "Common item: effect details pending":
-        return "Vật phẩm thường: hiệu ứng đang cập nhật";
-      default:
-        return value;
-    }
+  const verifiedItemText: Record<string, { use: string; location: string }> = {
+    "Oscillating Jade": {
+      use: "Trang sự kiện Echoes Across the World chính thức xác nhận đây là phần thưởng, nhưng không mô tả công dụng lâu dài trong game. Vì vậy mục này không suy đoán thêm về chức năng.",
+      location: "Chỉ là nguồn lịch sử: sự kiện Echoes Across the World tháng 4/2026 liệt kê Oscillating Jade ở nhiều mốc cộng hưởng và phần thưởng cho lần tải lên hoặc phát hành bản ghi chính thức đầu tiên. Đây không phải bằng chứng về nguồn farm thường trực hiện nay.",
+    },
+    "Modulating Stone": {
+      use: "Ghi chú Version 2.0 cho biết vật phẩm có thể đặt lại trang bị Epic hoặc Legendary Tier 100 đủ điều kiện để chỉ giữ thuộc tính ban đầu trước khi tinh chỉnh lại. Nguyên liệu cũ không được hoàn trả, thao tác không thể đảo ngược và chịu giới hạn/hồi chiêu theo từng món.",
+      location: "Ghi chú chính thức ngày 23/7/2026 nêu nguồn là tái chế hoặc tiêu thụ Fully Tuned Legendary Gear, ngoại trừ Archery Arts. Hãy kiểm tra xác nhận hiện tại trong game trước khi dùng trang bị.",
+    },
+    "Retuning Stone: Mirage": {
+      use: "Bản sửa lỗi chính thức ngày 7/8 xác định đây là vật phẩm retuning tại Hidden Mountain và ghi nhận sửa giới hạn mua; nguồn không công bố giá hay bảo đảm luôn bán vĩnh viễn.",
+      location: "Bản sửa lỗi chính thức ngày 7/8/2026 liệt kê Retuning Stone: Mirage tại Pangolin Stand ở Hidden Mountain. Tình trạng bán và giới hạn mua có thể thay đổi sau build đó.",
+    },
+    "Horse Gallop Tactic": {
+      use: "Bản cập nhật ngày 28/5 cho biết khi dùng, vật phẩm tăng giới hạn trang bị Spirit Gift Skill và cho phép gắn hoặc tháo kỹ năng mà thú cưỡi đã sở hữu. Số ô khác nhau tùy thú cưỡi.",
+      location: "Bản cập nhật chính thức ngày 28/5/2026 nêu Shop và phần thưởng Divine Steed Level là nguồn nhận. Nguồn không công bố giá, tỷ lệ hay lịch tồn tại vĩnh viễn hiện tại.",
+    },
   };
 
-  const localizeLocation = (value: string) => {
-    switch (value) {
-      case "Gathering/Hunting/Merchant/Commission (details pending)":
-        return "Hái lượm/Săn bắt/Thương nhân/Ủy thác (đang cập nhật chi tiết)";
-      case "Secret Realm/Commission/Merchant/Task Drop (details pending)":
-        return "Bí cảnh (Secret Realm)/Ủy thác/Thương nhân/Rơi từ nhiệm vụ (đang cập nhật chi tiết)";
-      case "Acquisition method pending":
-        return "Đang cập nhật cách kiếm";
-      default:
-        return value;
-    }
+  const localizeItem = <T extends { name: string; use: string; location: string }>(item: T): T => {
+    const text = verifiedItemText[item.name];
+    return text ? { ...item, ...text } : item;
   };
 
   const localizedCategories = itemCategories.map((category) => ({
     ...category,
     title: categoryText[category.id]?.title ?? category.title,
     blurb: categoryText[category.id]?.blurb ?? category.blurb,
-    items: category.items.map((item) => ({
-      ...item,
-      use: localizeUse(item.use),
-      location: localizeLocation(item.location),
-    })),
+    items: category.items.map(localizeItem),
     groups: category.groups?.map((group) => ({
       ...group,
       title: groupTitle[group.id] ?? group.title,
-      items: group.items.map((item) => ({
-        ...item,
-        use: localizeUse(item.use),
-        location: localizeLocation(item.location),
-      })),
+      items: group.items.map(localizeItem),
     })),
   }));
 
@@ -107,10 +96,12 @@ export default function ItemsPage() {
             Vật phẩm & danh mục
           </p>
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Chỉ mục vật phẩm Where Winds Meet với tab tra nhanh.
+            Chỉ mục vật phẩm Where Winds Meet dựa trên nguồn kiểm chứng.
           </h1>
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-            Theo bố cục wiki, vật phẩm được chia theo tab bấm nhanh. Mỗi tab hiển thị vật phẩm tiêu biểu, công dụng và cách lấy. Kết hợp với{" "}
+            Chỉ mục tách các mục hướng dẫn đã xác minh khỏi những tên vật phẩm còn chờ biên tập. Một vật phẩm
+            chỉ xuất hiện khi có nguồn đáng tin cậy cùng công dụng hoặc cách kiếm cụ thể. Media chỉ được hiển thị khi nguồn gốc rõ ràng.
+            Các mục đang chờ vẫn được thống kê nhưng không được trình bày như địa điểm farm đã xác nhận. Kết hợp mục đã kiểm chứng với{" "}
             <Link
               href="/vn/guides/martial-arts-weapons"
               className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
@@ -124,29 +115,52 @@ export default function ItemsPage() {
             >
               hướng dẫn Trộm chiêu
             </Link>{" "}
-            để lên lộ trình farm tài nguyên.
+            để lập kế hoạch.
           </p>
         </div>
+      </section>
+
+      <section className="space-y-4 rounded-3xl border border-amber-500/25 bg-amber-950/20 p-6 shadow-lg shadow-slate-950/40">
+        <div className="space-y-2">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">Trạng thái kiểm chứng</p>
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-50">Không đoán thông tin còn thiếu.</h2>
+          <p className="max-w-3xl text-sm leading-relaxed text-slate-300">
+            Tên trùng lặp đã được loại bỏ. Bản ghi chưa có thông tin gameplay và nguồn đáng tin cậy sẽ không xuất hiện trong chỉ mục chính.
+          </p>
+        </div>
+        <dl className="grid gap-3 sm:grid-cols-3">
+          <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4"><dt className="text-xs uppercase tracking-wide text-slate-400">Tên duy nhất đã ghi nhận</dt><dd className="mt-1 text-2xl font-semibold text-slate-100">{itemCoverage.catalogued}</dd></div>
+          <div className="rounded-2xl border border-emerald-500/25 bg-emerald-950/20 p-4"><dt className="text-xs uppercase tracking-wide text-emerald-300">Đã xuất bản và có nguồn</dt><dd className="mt-1 text-2xl font-semibold text-emerald-100">{itemCoverage.published}</dd></div>
+          <div className="rounded-2xl border border-amber-500/25 bg-amber-950/20 p-4"><dt className="text-xs uppercase tracking-wide text-amber-300">Chờ xác minh</dt><dd className="mt-1 text-2xl font-semibold text-amber-100">{itemCoverage.pending}</dd></div>
+        </dl>
       </section>
 
       <ItemTabs
         categories={localizedCategories}
         uiText={{
-          heading: "Chọn danh mục vật phẩm",
-          imagePending: "Chưa có ảnh",
+          heading: "Danh mục vật phẩm đã xác minh",
+          imageUnavailable: "Chưa có ảnh đã xác minh",
           acquisitionLabel: "Cách kiếm:",
+          verificationSourceLabel: "Nguồn xác minh",
           scrollToItems: "Cuộn xuống danh sách ↓",
           itemsSuffix: "món",
+          verifiedBadge: "Đã xác minh",
+          verifiedSuffix: "đã xác minh",
+          pendingSuffix: "chờ xác minh",
+          cataloguedSuffix: "đã ghi nhận",
+          emptyHeading: "Chưa có mục quan trọng nào được xác minh",
+          emptyBody: "Bản ghi thiếu nguồn đáng tin cậy và chi tiết gameplay cụ thể vẫn được ẩn khỏi chỉ mục chính.",
+          pendingRetentionTemplate: "{count} bản ghi {status} được giữ lại để biên tập xác minh.",
         }}
       />
 
       <section className="grid gap-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 md:grid-cols-2">
         <div className="space-y-2">
-          <h3 className="text-lg font-semibold text-slate-50">Mẹo dùng</h3>
+          <h3 className="text-lg font-semibold text-slate-50">Tiêu chuẩn xuất bản</h3>
           <ul className="space-y-2 text-sm text-slate-300">
-            <li>Ưu tiên gom nguyên liệu và nguyên liệu phát triển trước—chúng khóa tiến độ vũ khí và tâm pháp.</li>
-            <li>Chuẩn bị 2-3 món ăn nhóm; ăn trước khi party để tăng độ “tha thứ” khi sai sót.</li>
-            <li>Dùng vật phẩm thường làm quà/thiện cảm để mở encounter bất ngờ và giảm giá.</li>
+            <li>Mọi tuyên bố gameplay phải có nguồn kiểm chứng đáng tin cậy.</li>
+            <li>Cần ít nhất một công dụng hoặc cách kiếm cụ thể.</li>
+            <li>Chỉ hiển thị ảnh tự chụp hoặc media chính thức có nguồn rõ ràng.</li>
           </ul>
         </div>
         <div className="space-y-2">

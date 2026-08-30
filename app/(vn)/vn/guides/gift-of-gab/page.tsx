@@ -330,7 +330,8 @@ export default function GiftOfGabPage() {
               "Xem gameplay thực tế để nắm nhịp dùng thẻ, cách bắt QTE và cách xoay Inspiration theo từng style.",
             privacyTitle: "Quyền riêng tư",
             privacyText:
-              "Video dùng chế độ bảo mật nâng cao của YouTube (nocookie). Thông thường không đặt cookie/lưu lịch sử xem cho đến khi bạn bấm mở trên YouTube.",
+              "YouTube chỉ được liên hệ sau khi bạn bấm vào bản xem trước. Khi phát, video dùng chế độ bảo mật nâng cao (youtube-nocookie.com).",
+            sourceLabel: "Mo video nguon tren YouTube",
           }}
         />
       </section>
@@ -344,7 +345,7 @@ export default function GiftOfGabPage() {
             </Link>
           </li>
           <li>
-            <Link href="/vn/guides/pvp-tier-list" className="underline underline-offset-4 hover:text-emerald-100">
+            <Link href="/guides/pvp-tier-list" className="underline underline-offset-4 hover:text-emerald-100">
               Tier list PvP – vũ khí mạnh hiện tại
             </Link>
           </li>

@@ -3,8 +3,55 @@ import FallbackImage from "@/components/FallbackImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import LiteMp4Embed from "@/components/LiteMp4Embed";
 import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
+import { buildLocalizedPath } from "@/i18n/routing.mjs";
+import { getContentFreshness } from "@/lib/contentFreshness";
 
 type Locale = "en" | "vi" | "de";
+
+type GuideCopy = {
+  language: Locale;
+  inLanguage: "en-US" | "vi-VN" | "de-DE";
+  eyebrow: string;
+  title: string;
+  intro: string;
+  statusTitle: string;
+  statuses: [string, string, string][];
+  evidenceTitle: string;
+  evidence: string[];
+  videoTitle: string;
+  videoNote: string;
+  showcaseTitle: string;
+  showcaseNote: string;
+  communityVideosTitle: string;
+  communityVideosNote: string;
+  showcaseEyebrow: string;
+  showcaseLink: string;
+  mapTitle: string;
+  mapBody: string;
+  mapPoints: string[];
+  expectationTitle: string;
+  expectationBody: string;
+  faqTitle: string;
+  faq: [string, string][];
+  related: string;
+  sources: string;
+  heroAlt: string;
+  harborAlt: string;
+  harborCaption: string;
+  cnLaunchLink: string;
+  regionPreviewLink: string;
+  showcaseMirrorLink: string;
+  communitySourceLink: (author: string) => string;
+  officialPostLink: string;
+  map17173Link: string;
+  officialMapLink: string;
+  compareMapsLink: string;
+  globalNewsLink: string;
+  relatedHiddenMountain: string;
+  relatedQinchuan: string;
+  relatedUpdates: string;
+  sourcesNote: string;
+};
 
 const baseUrl = "https://wherewindsmeet.org";
 const cnLaunchUrl = "https://www.yysls.cn/news/official/20260629/37780_1305936.html";
@@ -14,11 +61,10 @@ const globalNewsUrl = "https://www.wherewindsmeetgame.com/news/index.html";
 const map17173Url = "https://map.17173.com/yysls/maps/qinchuan";
 const officialMapUrl = "https://www.wherewindsmeetgame.com/map/en/";
 const heroImage = `${baseUrl}/guides/jiangnan-hangzhou/hero-1440.webp`;
-const harborImage = "https://nie.res.netease.com/r/pic/20260522/bf4b7e7e-65cf-4737-90b1-6ff438662d2a.jpg";
+const harborImage = "/guides/jiangnan-hangzhou/hero-1440.webp";
 const officialVideo = "https://yysls.fp.ps.netease.com/file/6a43374e41c0861366f00c667Sy2C1bg07.mp4";
 const showcaseBvid = "BV1RP7g6wEYt";
 const showcaseUrl = `https://www.bilibili.com/video/${showcaseBvid}/`;
-const showcasePoster = "https://i2.hdslb.com/bfs/archive/2059451a11051280ca6b13e8b9a28b94d8c9bd1b.jpg";
 const showcaseYoutubeId = "f_-Zg835Zxw";
 const showcaseYoutubeUrl = `https://www.youtube.com/watch?v=${showcaseYoutubeId}`;
 const communityVideos = [
@@ -56,8 +102,8 @@ const communityVideos = [
 
 const copy = {
   en: {
-    language: "en" as const,
-    prefix: "",
+    language: "en",
+    inLanguage: "en-US",
     eyebrow: "CN live · Global release watch · Checked August 23, 2026",
     title: "Where Winds Meet Jiangnan & Hangzhou map: CN release and Global status",
     intro:
@@ -105,10 +151,27 @@ const copy = {
     ],
     related: "Keep exploring",
     sources: "Primary sources and map checks",
+    heroAlt: "Official Where Winds Meet Jiangnan and Hangzhou announcement artwork",
+    harborAlt: "Official Where Winds Meet Jiangnan and Hangzhou announcement artwork",
+    harborCaption: "A local, responsive copy of the official Jiangnan announcement artwork; the linked CN sources provide the region details.",
+    cnLaunchLink: "CN launch announcement ↗",
+    regionPreviewLink: "Official region preview ↗",
+    showcaseMirrorLink: "YouTube mirror source ↗",
+    communitySourceLink: (author: string) => `Open ${author} source ↗`,
+    officialPostLink: "View the original official post ↗",
+    map17173Link: "Open 17173 Qinchuan map ↗",
+    officialMapLink: "Open official Global map ↗",
+    compareMapsLink: "Compare interactive maps →",
+    globalNewsLink: "Check official Global news ↗",
+    relatedHiddenMountain: "Hidden Mountain →",
+    relatedQinchuan: "Qinchuan guide (English) →",
+    relatedUpdates: "Update tracker →",
+    sourcesNote:
+      "CN launch and region details are sourced from official yysls.cn announcements. Global status is checked against the official Global news feed. The 17173 map status was checked directly on August 23, 2026.",
   },
   vi: {
-    language: "vi" as const,
-    prefix: "/vn",
+    language: "vi",
+    inLanguage: "vi-VN",
     eyebrow: "CN đã mở · Theo dõi Global · Kiểm tra 23/08/2026",
     title: "Bản đồ Jiangnan & Hangzhou trong Where Winds Meet: CN và trạng thái Global",
     intro:
@@ -156,10 +219,27 @@ const copy = {
     ],
     related: "Xem tiếp",
     sources: "Nguồn chính thức và kiểm tra bản đồ",
+    heroAlt: "Ảnh công bố chính thức Jiangnan và Hangzhou của Where Winds Meet",
+    harborAlt: "Ảnh công bố chính thức Jiangnan và Hangzhou của Where Winds Meet",
+    harborCaption: "Bản sao cục bộ, tối ưu theo màn hình của ảnh công bố Jiangnan chính thức; các nguồn CN được liên kết cung cấp chi tiết về khu vực.",
+    cnLaunchLink: "Thông báo mở CN ↗",
+    regionPreviewLink: "Bản xem trước khu vực chính thức ↗",
+    showcaseMirrorLink: "Nguồn bản sao YouTube ↗",
+    communitySourceLink: (author: string) => `Mở nguồn của ${author} ↗`,
+    officialPostLink: "Xem bài đăng chính thức gốc ↗",
+    map17173Link: "Mở bản đồ Qinchuan của 17173 ↗",
+    officialMapLink: "Mở bản đồ Global chính thức ↗",
+    compareMapsLink: "So sánh bản đồ tương tác →",
+    globalNewsLink: "Kiểm tra tin Global chính thức ↗",
+    relatedHiddenMountain: "Hidden Mountain →",
+    relatedQinchuan: "Hướng dẫn Qinchuan (tiếng Anh) →",
+    relatedUpdates: "Theo dõi cập nhật →",
+    sourcesNote:
+      "Thông tin mở máy chủ CN và khu vực được lấy từ các thông báo chính thức trên yysls.cn. Trạng thái Global được đối chiếu với nguồn tin Global chính thức. Trạng thái bản đồ 17173 được kiểm tra trực tiếp ngày 23/08/2026.",
   },
   de: {
-    language: "de" as const,
-    prefix: "/de",
+    language: "de",
+    inLanguage: "de-DE",
     eyebrow: "CN live · Global-Beobachtung · Geprüft am 23.08.2026",
     title: "Where Winds Meet Jiangnan- & Hangzhou-Karte: CN-Release und Global-Status",
     intro:
@@ -207,21 +287,50 @@ const copy = {
     ],
     related: "Weiterführende Seiten",
     sources: "Primärquellen und Kartenprüfung",
+    heroAlt: "Offizielles Ankündigungsbild zu Jiangnan und Hangzhou in Where Winds Meet",
+    harborAlt: "Offizielles Ankündigungsbild zu Jiangnan und Hangzhou in Where Winds Meet",
+    harborCaption: "Eine lokale, responsive Kopie des offiziellen Jiangnan-Ankündigungsbilds; die verlinkten CN-Quellen enthalten die Regionsdetails.",
+    cnLaunchLink: "CN-Startankündigung ↗",
+    regionPreviewLink: "Offizielle Regionsvorschau ↗",
+    showcaseMirrorLink: "Quelle des YouTube-Mirrors ↗",
+    communitySourceLink: (author: string) => `Quelle von ${author} öffnen ↗`,
+    officialPostLink: "Ursprünglichen offiziellen Beitrag ansehen ↗",
+    map17173Link: "17173-Qinchuan-Karte öffnen ↗",
+    officialMapLink: "Offizielle Global-Karte öffnen ↗",
+    compareMapsLink: "Interaktivkarten vergleichen →",
+    globalNewsLink: "Offizielle Global-News prüfen ↗",
+    relatedHiddenMountain: "Hidden Mountain →",
+    relatedQinchuan: "Qinchuan-Guide (Englisch) →",
+    relatedUpdates: "Update-Tracker →",
+    sourcesNote:
+      "Angaben zum CN-Start und zur Region stammen aus offiziellen Ankündigungen auf yysls.cn. Der Global-Status wird mit dem offiziellen Global-Newsfeed abgeglichen. Der Status der 17173-Karte wurde am 23.08.2026 direkt geprüft.",
   },
-};
+} satisfies Record<Locale, GuideCopy>;
 
 export function JiangnanHangzhouGuidePage({ locale }: { locale: Locale }) {
   const t = copy[locale];
-  const pageUrl = `${baseUrl}${t.prefix}/guides/jiangnan-hangzhou`;
+  const localizedPath = (path: string) => buildLocalizedPath(path, locale) ?? path;
+  const pageUrl = `${baseUrl}${localizedPath("/guides/jiangnan-hangzhou")}`;
+  const freshness = getContentFreshness("/guides/jiangnan-hangzhou", locale);
+  const siteIdentity = {
+    "@type": "Organization",
+    "@id": `${baseUrl}/#organization`,
+    name: "Where Winds Meet Hub",
+    url: baseUrl,
+    logo: { "@type": "ImageObject", url: `${baseUrl}/favicon.ico` },
+  };
   const structuredData = [
     {
       "@context": "https://schema.org",
       "@type": "Article",
       headline: t.title,
       datePublished: "2026-08-23",
-      dateModified: "2026-08-23",
+      dateModified: freshness?.lastChecked ?? "2026-08-23",
       mainEntityOfPage: pageUrl,
-      image: [heroImage, harborImage],
+      image: [heroImage],
+      author: siteIdentity,
+      publisher: siteIdentity,
+      inLanguage: t.inLanguage,
     },
     {
       "@context": "https://schema.org",
@@ -231,17 +340,19 @@ export function JiangnanHangzhouGuidePage({ locale }: { locale: Locale }) {
         name: question,
         acceptedAnswer: { "@type": "Answer", text: answer },
       })),
+      inLanguage: t.inLanguage,
     },
     {
       "@context": "https://schema.org",
       "@type": "VideoObject",
       name: t.showcaseTitle,
       description: t.showcaseNote,
-      thumbnailUrl: [showcasePoster],
+      thumbnailUrl: [heroImage],
       uploadDate: "2026-06-23",
       embedUrl: `https://www.youtube-nocookie.com/embed/${showcaseYoutubeId}`,
       url: showcaseUrl,
       sameAs: showcaseYoutubeUrl,
+      inLanguage: t.inLanguage,
     },
   ];
 
@@ -261,7 +372,7 @@ export function JiangnanHangzhouGuidePage({ locale }: { locale: Locale }) {
             {/* The local responsive source avoids a 2.9 MB cross-origin PNG in the LCP path. */}
             <img
               src="/guides/jiangnan-hangzhou/hero-960.webp"
-              alt="Official Where Winds Meet Jiangnan and Hangzhou announcement artwork"
+              alt={t.heroAlt}
               width={1920}
               height={1080}
               fetchPriority="high"
@@ -298,15 +409,15 @@ export function JiangnanHangzhouGuidePage({ locale }: { locale: Locale }) {
             {t.evidence.map((item) => <li key={item} className="flex gap-3"><span className="text-emerald-300">◆</span><span>{item}</span></li>)}
           </ul>
           <div className="mt-6 flex flex-wrap gap-3">
-            <a href={cnLaunchUrl} target="_blank" rel="noreferrer" className="rounded-full border border-emerald-400/60 px-4 py-2 text-sm font-semibold text-emerald-100">CN launch announcement ↗</a>
-            <a href={cnPreviewUrl} target="_blank" rel="noreferrer" className="rounded-full border border-slate-600 px-4 py-2 text-sm font-semibold text-slate-200">Official region preview ↗</a>
+            <a href={cnLaunchUrl} target="_blank" rel="noreferrer" className="rounded-full border border-emerald-400/60 px-4 py-2 text-sm font-semibold text-emerald-100">{t.cnLaunchLink}</a>
+            <a href={cnPreviewUrl} target="_blank" rel="noreferrer" className="rounded-full border border-slate-600 px-4 py-2 text-sm font-semibold text-slate-200">{t.regionPreviewLink}</a>
           </div>
         </div>
         <figure className="overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/75">
           <div className="relative aspect-[2.28/1]">
-            <FallbackImage src={harborImage} alt="Official preview of the Hangzhou harbor district in Where Winds Meet Jiangnan" referrerPolicy="no-referrer" fill sizes="(max-width: 1024px) 100vw, 48vw" className="object-cover" />
+            <FallbackImage src={harborImage} alt={t.harborAlt} referrerPolicy="no-referrer" fill sizes="(max-width: 1024px) 100vw, 48vw" className="object-cover" />
           </div>
-          <figcaption className="p-4 text-xs leading-5 text-slate-400">Official CN preview artwork showing Hangzhou&apos;s waterways and harbor direction.</figcaption>
+          <figcaption className="p-4 text-xs leading-5 text-slate-400">{t.harborCaption}</figcaption>
         </figure>
       </section>
 
@@ -318,11 +429,11 @@ export function JiangnanHangzhouGuidePage({ locale }: { locale: Locale }) {
           <LiteYouTubeEmbed
             videoId={showcaseYoutubeId}
             title={t.showcaseTitle}
-            poster={`https://i.ytimg.com/vi/${showcaseYoutubeId}/hqdefault.jpg`}
+            poster="/background/bg4.webp"
             analytics={{ eventName: "jiangnan_showcase_video_play", params: { locale, source: "youtube_mirror" } }}
           />
         </div>
-        <a href={showcaseUrl} target="_blank" rel="noreferrer" className="mt-4 inline-flex text-xs font-semibold text-sky-200 hover:text-sky-100">{t.showcaseLink}</a>
+        <div className="mt-4 flex flex-wrap gap-4 text-xs font-semibold text-sky-200"><a href={showcaseUrl} target="_blank" rel="noreferrer" className="hover:text-sky-100">{t.showcaseLink}</a><a href={showcaseYoutubeUrl} target="_blank" rel="noreferrer" className="hover:text-sky-100">{t.showcaseMirrorLink}</a></div>
       </section>
 
       <section className="rounded-3xl border border-slate-700 bg-slate-950/80 p-5 sm:p-7">
@@ -334,12 +445,13 @@ export function JiangnanHangzhouGuidePage({ locale }: { locale: Locale }) {
               <LiteYouTubeEmbed
                 videoId={video.videoId}
                 title={video.title}
-                poster={`https://i.ytimg.com/vi/${video.videoId}/hqdefault.jpg`}
+                poster="/background/bg4.webp"
                 analytics={{ eventName: "jiangnan_map_video_play", params: { video_id: video.videoId, locale } }}
               />
               <h3 className="mt-4 font-semibold leading-6 text-slate-100">{video.title}</h3>
               <p className="mt-1 text-xs text-slate-400">{video.author}</p>
               <p className="mt-3 text-sm leading-6 text-slate-300">{video.purpose[locale]}</p>
+              <a href={`https://www.youtube.com/watch?v=${video.videoId}`} target="_blank" rel="noreferrer" className="mt-3 inline-flex text-xs font-semibold text-sky-200 hover:text-sky-100">{t.communitySourceLink(video.author)}</a>
             </div>
           ))}
         </div>
@@ -351,7 +463,7 @@ export function JiangnanHangzhouGuidePage({ locale }: { locale: Locale }) {
         <div className="mt-5">
           <LiteMp4Embed src={officialVideo} poster={heroImage} posterReferrerPolicy="no-referrer" title={t.videoTitle} analytics={{ eventName: "jiangnan_official_video_play", params: { locale } }} />
         </div>
-        <a href={cnVideoUrl} target="_blank" rel="noreferrer" className="mt-4 inline-flex text-xs font-semibold text-sky-200 hover:text-sky-100">View the original official post ↗</a>
+        <a href={cnVideoUrl} target="_blank" rel="noreferrer" className="mt-4 inline-flex text-xs font-semibold text-sky-200 hover:text-sky-100">{t.officialPostLink}</a>
       </section>
 
       <section className="rounded-3xl border border-violet-400/25 bg-violet-500/10 p-6 sm:p-8">
@@ -361,16 +473,16 @@ export function JiangnanHangzhouGuidePage({ locale }: { locale: Locale }) {
           {t.mapPoints.map((item) => <li key={item} className="rounded-2xl border border-violet-300/20 bg-slate-950/65 p-4 text-sm leading-6 text-slate-300">{item}</li>)}
         </ul>
         <div className="mt-6 flex flex-wrap gap-3">
-          <a href={map17173Url} target="_blank" rel="noreferrer" className="rounded-full border border-violet-300/60 px-4 py-2 text-sm font-semibold text-violet-100">Open 17173 Qinchuan map ↗</a>
-          <a href={officialMapUrl} target="_blank" rel="noreferrer" className="rounded-full border border-emerald-400/60 px-4 py-2 text-sm font-semibold text-emerald-100">Open official Global map ↗</a>
-          <Link href={`${t.prefix}/tools/interactive-map`} className="rounded-full border border-slate-600 px-4 py-2 text-sm font-semibold text-slate-200">Compare interactive maps →</Link>
+          <a href={map17173Url} target="_blank" rel="noreferrer" className="rounded-full border border-violet-300/60 px-4 py-2 text-sm font-semibold text-violet-100">{t.map17173Link}</a>
+          <a href={officialMapUrl} target="_blank" rel="noreferrer" className="rounded-full border border-emerald-400/60 px-4 py-2 text-sm font-semibold text-emerald-100">{t.officialMapLink}</a>
+          <Link href={localizedPath("/tools/interactive-map")} className="rounded-full border border-slate-600 px-4 py-2 text-sm font-semibold text-slate-200">{t.compareMapsLink}</Link>
         </div>
       </section>
 
       <section className="rounded-3xl border border-slate-800 bg-slate-950/75 p-6 sm:p-8">
         <h2 className="text-3xl font-bold text-slate-50">{t.expectationTitle}</h2>
         <p className="mt-4 max-w-4xl leading-7 text-slate-300">{t.expectationBody}</p>
-        <a href={globalNewsUrl} target="_blank" rel="noreferrer" className="mt-5 inline-flex rounded-full border border-sky-400/60 px-4 py-2 text-sm font-semibold text-sky-100">Check official Global news ↗</a>
+        <a href={globalNewsUrl} target="_blank" rel="noreferrer" className="mt-5 inline-flex rounded-full border border-sky-400/60 px-4 py-2 text-sm font-semibold text-sky-100">{t.globalNewsLink}</a>
       </section>
 
       <section className="rounded-3xl border border-slate-800 bg-slate-950/75 p-6 sm:p-8">
@@ -389,14 +501,14 @@ export function JiangnanHangzhouGuidePage({ locale }: { locale: Locale }) {
         <div className="rounded-3xl border border-slate-800 bg-slate-950/75 p-6">
           <h2 className="text-xl font-bold text-slate-50">{t.related}</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href={`${t.prefix}/guides/hidden-mountain`} className="text-sm font-semibold text-emerald-200 hover:text-emerald-100">Hidden Mountain →</Link>
-            <Link href={`${t.prefix}/guides/qinchuan`} className="text-sm font-semibold text-emerald-200 hover:text-emerald-100">Qinchuan guide →</Link>
-            <Link href={`${t.prefix}/news`} className="text-sm font-semibold text-emerald-200 hover:text-emerald-100">Update tracker →</Link>
+            <Link href={localizedPath("/guides/hidden-mountain")} className="text-sm font-semibold text-emerald-200 hover:text-emerald-100">{t.relatedHiddenMountain}</Link>
+            <Link href={localizedPath("/guides/qinchuan")} className="text-sm font-semibold text-emerald-200 hover:text-emerald-100">{t.relatedQinchuan}</Link>
+            <Link href={localizedPath("/news")} className="text-sm font-semibold text-emerald-200 hover:text-emerald-100">{t.relatedUpdates}</Link>
           </div>
         </div>
         <div className="rounded-3xl border border-slate-800 bg-slate-950/75 p-6">
           <h2 className="text-xl font-bold text-slate-50">{t.sources}</h2>
-          <p className="mt-3 text-xs leading-5 text-slate-400">CN launch and region details are sourced from official yysls.cn announcements. Global status is checked against the official Global news feed. The 17173 map status was checked directly on August 23, 2026.</p>
+          <p className="mt-3 text-xs leading-5 text-slate-400">{t.sourcesNote}</p>
         </div>
       </section>
     </article>

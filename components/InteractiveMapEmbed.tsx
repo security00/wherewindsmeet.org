@@ -24,7 +24,7 @@ export function InteractiveMapEmbed({
   initialId,
   deferLoad = false,
   loadingTitle = "Loading interactive map…",
-  loadingDescription = "Load the third-party map when you are ready. This keeps its scripts and ads out of the initial page load.",
+  loadingDescription = "Load the third-party map when you are ready. After you click, that provider may receive your IP address and use cookies or other data; its scripts and ads stay out of the initial page load.",
   loadNowLabel = "Load map now",
 }: InteractiveMapEmbedProps) {
   const safeInitialId = initialId ?? options[0]?.id;
@@ -70,7 +70,7 @@ export function InteractiveMapEmbed({
             title={active.title}
             className="absolute inset-0 h-full w-full border-0"
             sandbox="allow-scripts allow-same-origin allow-forms allow-modals"
-            referrerPolicy={active.referrerPolicy}
+            referrerPolicy={active.referrerPolicy ?? "no-referrer"}
             loading="lazy"
           />
         ) : (

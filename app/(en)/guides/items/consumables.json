@@ -174,12 +174,6 @@
     "location": "Acquisition method pending"
   },
   {
-    "name": "Savory Roast",
-    "image": "/items/consumables/savory-roast-consumables-wherewindsmeet-wiki-guide.png",
-    "use": "Consumable: effect details pending",
-    "location": "Acquisition method pending"
-  },
-  {
     "name": "Sliced Fish",
     "image": "/items/consumables/placeholder.svg",
     "use": "Consumable: effect details pending",

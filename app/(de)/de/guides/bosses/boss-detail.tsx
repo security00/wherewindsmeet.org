@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
+import LiteMp4Embed from "@/components/LiteMp4Embed";
 import Link from "next/link";
 import type { BossId } from "@/lib/bosses";
 import { bosses } from "@/lib/bosses.de";
 import { buildHreflangAlternates } from "@/lib/hreflang";
-import { resolveCdnAssetSrc } from "@/lib/image-utils";
+import { buildLocalizedPath } from "@/i18n/routing.mjs";
 
 export function generateBossMetadata(id: BossId): Metadata {
   const boss = bosses.find((b) => b.id === id);
@@ -16,6 +17,7 @@ export function generateBossMetadata(id: BossId): Metadata {
     title: `${boss.name} Boss-Übersicht – Where Winds Meet`,
     description: `Spoilerarme Übersicht zu ${boss.name}: Story-Ton, Encounter-Gefühl und Links zu Waffen/Builds.`,
     alternates: buildHreflangAlternates(`/guides/bosses/${boss.id}`, { canonicalLanguage: "de" }),
+    robots: { index: false, follow: true },
   };
 }
 
@@ -26,7 +28,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
     return null;
   }
 
-  const base = "/de";
+  const localizedPath = (path: string) => buildLocalizedPath(path, "de") ?? path;
 
   return (
     <article className="space-y-10">
@@ -47,14 +49,14 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
             Diese Seite ist eine spoilerarme Ergänzung zur{" "}
             <Link
-              href={`${base}/guides/weapons`}
+              href={localizedPath("/guides/weapons")}
               className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
             >
               Waffen-Übersicht
             </Link>{" "}
             und zu den{" "}
             <Link
-              href={`${base}/guides/builds`}
+              href={localizedPath("/guides/builds")}
               className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
             >
               Build-Guides
@@ -64,15 +66,15 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
           <p className="text-xs text-slate-400">
             Hinweis: Grundlage sind offizielle Materialien und ARPG-Erfahrung. Fokus auf Stimmung/Erwartung, nicht auf exakte Frames. In-Game-Erfahrung und Patch Notes haben Vorrang.
           </p>
-        </div>
-        <div className="space-y-4">
-          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
-            <video
-              src={resolveCdnAssetSrc(boss.backgroundVideo).src}
-              muted
-              playsInline
-              preload="metadata"
-              className="h-full w-full object-cover opacity-75"
+          </div>
+          <div className="space-y-4">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
+            <CdnImage
+              src="/background/bg4.webp"
+              alt=""
+              fill
+              sizes="(max-width: 640px) 100vw, 40vw"
+              className="object-cover opacity-75"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
             <div className="pointer-events-none absolute bottom-3 left-3 h-10 w-40 sm:h-12 sm:w-48">
@@ -86,7 +88,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
             </div>
           </div>
           <p className="text-xs text-slate-400">
-            Vorschaubild basiert auf Boss-Showcase-Clips und Titel-Art (wenn verfügbar offiziell). Die Optik kann sich mit Updates im Laufe der Zeit ändern.
+            Der Hintergrund oben ist generisches Website-Artwork und kein Beleg fuer den Bosskampf. Die eingeblendete Titelgrafik kennzeichnet den Encounter, sofern verfuegbar.
           </p>
         </div>
       </section>
@@ -113,7 +115,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
             <span>
               Schau dir die{" "}
               <Link
-                href={`${base}/guides/weapons`}
+                href={localizedPath("/guides/weapons")}
                 className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
               >
                 Waffen-Übersicht
@@ -126,7 +128,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
             <span>
               In den{" "}
               <Link
-                href={`${base}/guides/builds`}
+                href={localizedPath("/guides/builds")}
                 className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
               >
                 Build-Guides
@@ -146,22 +148,27 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
         </p>
       </section>
 
-      <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+      {boss.backgroundVideo ? <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
           {boss.name} in Bewegung sehen
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
           Offizielles Material zu {boss.name} ist ideal, um Tempo und Stimmung zu erfassen, ohne dich durch einen kompletten Clear zu spulen. Versuch nicht, jeden einzelnen Swing auswendig zu lernen – achte darauf, wie es sich anfühlt, die Arena mit diesem Boss zu teilen.
         </p>
-        <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
-          <video
-            src={resolveCdnAssetSrc(boss.backgroundVideo).src}
-            controls
-            muted
-            loop
-            className="h-full w-full"
-          />
-        </div>
+        <LiteMp4Embed
+          src={boss.backgroundVideo}
+          title={`${boss.name} Showcase-Clip`}
+          poster="/background/bg4.webp"
+          analytics={{ eventName: "boss_detail_video_play", params: { boss: boss.id, locale: "de" } }}
+        />
+        <a
+          href={boss.backgroundVideo}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex text-xs font-semibold text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+        >
+          Showcase-Quelle direkt öffnen
+        </a>
         <div className="space-y-2 text-xs leading-relaxed text-slate-400 sm:text-sm">
           <p>
             Beim Zuschauen lohnt es sich, auf Details wie Bildausschnitt, Angriffsketten und Kameradistanzen zu achten. Solche Hinweise sagen oft mehr darüber aus, ob ein Encounter Geduld, Aggression oder präzises Movement belohnt, als jede einzelne Zahlenangabe.
@@ -170,7 +177,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
             Videolinks verweisen meist auf offizielles Showcase-Material. Wenn ein Clip nicht lädt, hat sich vermutlich die Hosting-URL geändert (oder die Quelle wurde verschoben), seit diese Seite zuletzt aktualisiert wurde.
           </p>
         </div>
-      </section>
+      </section> : null}
 
       <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
@@ -178,7 +185,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
             Weitere Bosse entdecken.
           </h2>
           <Link
-            href={`${base}/guides/bosses`}
+            href={localizedPath("/guides/bosses")}
             className="text-sm font-semibold text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
           >
             Alle Bosse ansehen →
@@ -193,7 +200,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
             .map((other) => (
               <Link
                 key={other.id}
-                href={`${base}/guides/bosses/${other.id}`}
+                href={localizedPath(`/guides/bosses/${other.id}`)}
                 className="group rounded-2xl border border-slate-800 bg-slate-950/70 p-4 shadow-sm shadow-slate-950/60 transition hover:border-slate-700 hover:bg-slate-900/70"
               >
                 <p className="text-sm font-semibold text-slate-50 group-hover:text-ink-gold transition-colors">

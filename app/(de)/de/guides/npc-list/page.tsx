@@ -1,23 +1,22 @@
 import type { Metadata } from "next";
-import CdnImage from "@/components/CdnImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import Link from "next/link";
-import npcPins from "@/public/guides/npc-list/pins-old-friends.json";
-import NpcMapClient, { MapPin } from "@/app/(en)/guides/npc-list/NpcMapClient";
-import NpcImagePreview from "@/app/(en)/guides/npc-list/NpcImagePreview";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import npcPins from "@/public/guides/npc-list/pins-old-friends.json";
+import NpcMapClient, { type MapPin } from "@/app/(en)/guides/npc-list/NpcMapClient";
+import { npcMapPath, npcPortraitPath } from "@/lib/npc-media";
 
 const baseUrl = "https://wherewindsmeet.org";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet NPC-Liste - Old Friends Orte & Rewards",
   description:
-    "Finde Where Winds Meet NPC-Orte, Old-Friends-Belohnungen, AI-Chat-Zeilen, Qin Caiwei, nicht interaktive NPCs und Karten-Pins.",
+    "Durchsuche eine datierte redaktionelle Momentaufnahme mit NPC-Ortshinweisen, Old-Friends-Kontext und AI-Chat-Zeilen.",
   alternates: buildHreflangAlternates("/guides/npc-list", { canonicalLanguage: "de" }),
   openGraph: {
     title: "Where Winds Meet NPC-Liste - Old Friends Orte & Rewards",
     description:
-      "Finde Old-Friends-NPC-Orte, Belohnungen, AI-Chat-Tipps, Qin Caiwei, nicht interaktive NPCs und Karten-Pins.",
+      "Datierte redaktionelle Momentaufnahme mit NPC-Ortshinweisen und AI-Chat-Tipps.",
     url: `${baseUrl}/de/guides/npc-list`,
     siteName: "Where Winds Meet Hub",
     images: [
@@ -25,7 +24,7 @@ export const metadata: Metadata = {
         url: `${baseUrl}/guides/npc-list/hero.png`,
         width: 1200,
         height: 675,
-        alt: "Old Friends NPC Collage (Where Winds Meet)",
+        alt: "Where Winds Meet Old-Friends-NPC-Verzeichnis, datierte Momentaufnahme",
       },
     ],
     locale: "de_DE",
@@ -35,13 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Where Winds Meet NPC-Liste - Old Friends",
     description:
-      "Finde Old-Friends-NPC-Orte, Rewards, AI Chat, Qin Caiwei und Karten-Pins.",
-    images: [
-      {
-        url: `${baseUrl}/guides/npc-list/hero.png`,
-        alt: "Old Friends NPC Collage",
-      },
-    ],
+      "Datierte redaktionelle Momentaufnahme mit NPC-Ortshinweisen und AI-Chat-Tipps.",
   },
 };
 
@@ -49,99 +42,7 @@ const quickFacts = [
   { label: "Umfang", value: "Old Friends / AI-Chat-NPCs", icon: "💬" },
   { label: "Regionen", value: "Qinghe und darüber hinaus", icon: "🧭" },
   { label: "Grundmuster", value: "Zuhören, Empathie, (Klammern) Lösung, Abschied", icon: "🧩" },
-  { label: "Belohnungen", value: "Wöchentliche Geschenke, Einmal-Items, Fortschritt", icon: "🎁" },
-];
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const npcHighlights = [
-  {
-    name: "Qin Caiwei",
-    region: "Qinghe",
-    rewards: "Wöchentliches Old-Friends-Geschenk + Story-Flair",
-    chatTip: "Zuhören, Lösung in Klammern, höflicher Abschied",
-    difficulty: "Schwer",
-    href: "/de/guides/qin-caiwei",
-  },
-  {
-    name: "Li Laizuo",
-    region: "Qinghe",
-    rewards: "Story-Fortschritt + kleines Geschenk",
-    chatTip: "Bedauern spiegeln, dann freundlich verabschieden",
-    difficulty: "Mittel",
-    image: "https://static.wherewindsmeet.org/guides/npc-list/li-laizuo.png",
-  },
-  {
-    name: "Fang Xu",
-    region: "Qinghe (Umland)",
-    rewards: "Münzen, Zusatzdialog",
-    chatTip: "Sorge spiegeln, dann (in Klammern) lösen",
-    difficulty: "Mittel",
-    image: "https://static.wherewindsmeet.org/guides/npc-list/fang-xu.png",
-  },
-  {
-    name: "Lie Buxi",
-    region: "Qinghe",
-    rewards: "Old-Friends-Fortschritt",
-    chatTip: "Erst Empathie, dann klar abschließen",
-    difficulty: "Mittel",
-    image: "https://static.wherewindsmeet.org/guides/npc-list/lie-buxi.png",
-  },
-  {
-    name: "Zhao Weiye",
-    region: "Qinghe",
-    rewards: "Kleines Geschenk, Listen-Eintrag",
-    chatTip: "Zustimmen, höflich beenden",
-    difficulty: "Leicht",
-  },
-  {
-    name: "Liu der Holzfäller",
-    region: "Wildnis",
-    rewards: "Materialien, Zusatzdialog",
-    chatTip: "Bitte in Klammern auflösen",
-    difficulty: "Leicht",
-  },
-  {
-    name: "Zhou Yihang",
-    region: "Qinghe",
-    rewards: "Münzen, Listen-Eintrag",
-    chatTip: "Hinweis wiederholen, dann verabschieden",
-    difficulty: "Leicht",
-  },
-  {
-    name: "Ren Shuiliu",
-    region: "Sumpf",
-    rewards: "Story-Flair",
-    chatTip: "Ruhiger Ton + einfache Zusage",
-    difficulty: "Mittel",
-  },
-  {
-    name: "Hong Yang",
-    region: "Außenposten",
-    rewards: "Materialien",
-    chatTip: "Hilfe anbieten und sauber verabschieden",
-    difficulty: "Leicht",
-  },
-  {
-    name: "Jiang Yulang",
-    region: "Qinghe-Wildnis",
-    rewards: "Listen-Eintrag",
-    chatTip: "Kurze Empathie + Ergebnis in Klammern",
-    difficulty: "Leicht",
-  },
-  {
-    name: "Yueniang",
-    region: "Dorf",
-    rewards: "Kleines Geschenk",
-    chatTip: "Ermutigen und höflich beenden",
-    difficulty: "Leicht",
-  },
-  {
-    name: "Tian Heng",
-    region: "Grenzland",
-    rewards: "Story-Fortschritt",
-    chatTip: "Haltung spiegeln, dann verabschieden",
-    difficulty: "Mittel",
-  },
+  { label: "Belohnungen", value: "Im aktuellen Beziehungsmenü prüfen", icon: "🎁" },
 ];
 
 const aiChatBasics = [
@@ -163,12 +64,12 @@ const searchIntentAnswers = [
   {
     title: "NPC-Orte",
     summary:
-      "Nutze die Old-Friends-Karte und die Kartenliste, um NPCs nach Region, Gebiet oder Name zu finden. Starte mit Verdant Wilds, Sundara Land und Moonveil Mountain, wenn ein Completion-Zähler noch fehlt.",
+      "Nutze das datierte Textverzeichnis, um NPC-Hinweise nach Region, Gebiet oder Name zu durchsuchen. Prüfe jede Route im aktuellen Spielclient.",
   },
   {
     title: "Old-Friends-Belohnungen",
     summary:
-      "Viele Old Friends bringen wöchentliche Geschenke, einmalige Kleinigkeiten, regionale Completion und kleine Story-Szenen. Früh abschließen lohnt sich, weil die Wochenbelohnungen früher starten.",
+      "Die redaktionellen Notizen nennen teils Geschenke, regionale Completion oder kleine Story-Szenen. Prüfe das aktuelle Beziehungsmenü, bevor du mit wiederkehrenden Belohnungen planst.",
   },
   {
     title: "AI-Chat-Skript",
@@ -185,11 +86,11 @@ const searchIntentAnswers = [
 const npcFaqs = [
   {
     q: "Wo finde ich NPCs in Where Winds Meet?",
-    a: "Nutze die interaktive Old-Friends-Karte auf dieser Seite und filtere nach Region oder NPC-Name. Jede Karte nennt außerdem Gebiet und kurzen Routenhinweis.",
+    a: "Durchsuche das datierte redaktionelle Verzeichnis nach Region oder NPC-Name. Jeder Routenhinweis muss im aktuellen Spielclient geprüft werden.",
   },
   {
     q: "Was sind Old Friends in Where Winds Meet?",
-    a: "Old Friends sind interaktive NPC-Beziehungen mit Gespräch, AI Chat, kleineren Belohnungen, wöchentlichen Geschenken und regionalem Completion-Fortschritt.",
+    a: "Old Friends sind NPC-Beziehungen rund um Gespräche und AI Chat. Belohnungen und Completion können sich ändern; das aktuelle Beziehungsmenü ist maßgeblich.",
   },
   {
     q: "Wie befreunde ich NPCs per AI Chat?",
@@ -214,151 +115,152 @@ type NpcEntry = {
 };
 
 const npcDetails: NpcEntry[] = [
-  { name: "Li Laizuo", region: "Verdant Wilds", area: "General's Shrine", hint: "Im Lager beim General's Shrine: bei einer Gruppe Untergebener neben dem Schrein.", image: "https://static.wherewindsmeet.org/guides/npc-list/li-laizuo.png" },
-  { name: "Fang Xu", region: "Verdant Wilds", area: "General's Shrine", hint: "Oben auf einem Gerüst neben der Arena. Ein paar Mal mit ihm sparren, dann ansprechen.", image: "https://static.wherewindsmeet.org/guides/npc-list/fang-xu.png" },
-  { name: "Lie Buxi", region: "Verdant Wilds", area: "General's Shrine", hint: "Am Fluss südlich des General's Shrine. Sie bittet um Hilfe bei der Suche nach ihren Brüdern.", image: "https://static.wherewindsmeet.org/guides/npc-list/lie-buxi.png" },
-  { name: "Zhao Dali", region: "Verdant Wilds", area: "General's Shrine", hint: "Nahe dem Hauptschrein im General's Shrine, beim Training.", image: "https://static.wherewindsmeet.org/guides/npc-list/zhao-dali.png" },
-  { name: "Chai Bakun", region: "Verdant Wilds", area: "General's Shrine", hint: "Südlich des General's Shrine beim Baumfällen.", image: "https://static.wherewindsmeet.org/guides/npc-list/chai-bakun.png" },
-  { name: "Fu Lushou", region: "Verdant Wilds", area: "General's Shrine", hint: "Vom Eingang des General's Shrine ins rechte Gebäude. Je nach Tag auch draußen beim Schrein.", image: "https://static.wherewindsmeet.org/guides/npc-list/fu-lushou.png" },
-  { name: "Jin Xiaobao", region: "Verdant Wilds", area: "Bamboo Abode", hint: "Auf dem Schlickfeld südlich des Verdant Wilds Wayfarer.", image: "https://static.wherewindsmeet.org/guides/npc-list/jin-xiaobao.png" },
-  { name: "Fu Lubao", region: "Verdant Wilds", area: "General's Shrine", hint: "Oben links, neben einer Steinsäule.", image: "https://static.wherewindsmeet.org/guides/npc-list/fu-lubao.png" },
-  { name: "Wang Duobao", region: "Verdant Wilds", area: "Stonewash Strand", hint: "Sitzend beim Angeln am Flussrand links vom General's Shrine, nördlich des Stonewash Strand Boundary Stone.", image: "https://static.wherewindsmeet.org/guides/npc-list/wang-duobao.png" },
-  { name: "Jin Chunniang", region: "Verdant Wilds", area: "Bamboo Abode", hint: "Auf dem Schlickfeld südlich des Verdant Wilds Wayfarer.", image: "https://static.wherewindsmeet.org/guides/npc-list/jin-chunniang.png" },
-  { name: "Wang Duolu", region: "Verdant Wilds", area: "General's Shrine", hint: "Am See gegenüber vom General's Shrine Boundary Stone beim Angeln.", image: "https://static.wherewindsmeet.org/guides/npc-list/wang-duolu.png" },
-  { name: "Daozheng", region: "Sundara Land", area: "Halo Peak", hint: "Neben einem Tisch vor einem Haus zu finden.", image: "https://static.wherewindsmeet.org/guides/npc-list/daozheng.png" },
-  { name: "Miaojue", region: "Sundara Land", area: "Halo Peak", hint: "Auf einem Berg nahe eines Tempels.", image: "https://static.wherewindsmeet.org/guides/npc-list/miaojue.png" },
-  { name: "Li Daniu", region: "Verdant Wilds", area: "Battlecrest Slope", hint: "Nördlich des Starfall Spring Boundary Stone, nahe der Straße bei Battlecrest Slope – beim Holzfällen.", image: "https://static.wherewindsmeet.org/guides/npc-list/li-daniu.png" },
-  { name: "Li Shaokui", region: "Verdant Wilds", area: "Battlecrest Slope", hint: "Vor einer zerstörten Hütte nordöstlich des Starfall Spring Boundary Stone.", image: "https://static.wherewindsmeet.org/guides/npc-list/li-shaokui.png" },
-  { name: "Zhou Yizhou", region: "Sundara Land", area: "Mercyheart Town", hint: "Ganz links an den Docks.", image: "https://static.wherewindsmeet.org/guides/npc-list/zhou-yizhou.png" },
-  { name: "Rafter Rat", region: "Sundara Land", area: "Mercyheart Town", hint: "Nahe der Brücke, hinter hohem Gras.", image: "https://static.wherewindsmeet.org/guides/npc-list/rafter-rat.png" },
-  { name: "Wobbly Tang", region: "Verdant Wilds", area: "Battlecrest Slope", hint: "Am Straßenrand südlich des Tiger Fort (Battlecrest Slope).", image: "https://static.wherewindsmeet.org/guides/npc-list/tang-lubao.png" },
-  { name: "Embroidered Rat", region: "Sundara Land", area: "Mercyheart Town", hint: "Im Haus (drinnen leicht zu sehen).", image: "https://static.wherewindsmeet.org/guides/npc-list/embroidered-rat.png" },
-  { name: "Tang Lubao", region: "Verdant Wilds", area: "Battlecrest Slope", hint: "Am Straßenrand südlich des Tiger Fort (Battlecrest Slope).", image: "https://static.wherewindsmeet.org/guides/npc-list/tang-lubao.png" },
-  { name: "Pan Faxin", region: "Sundara Land", area: "Mercyheart Town", hint: "Auf den Stufen am Fluss sitzend.", image: "https://static.wherewindsmeet.org/guides/npc-list/pan-faxin.png" },
-  { name: "Zhou Miaoxin", region: "Sundara Land", area: "Mercyheart Town", hint: "Tanzend hinter einer Statue.", image: "https://static.wherewindsmeet.org/guides/npc-list/zhou-miaoxin.png" },
-  { name: "Barn Rat", region: "Sundara Land", area: "Mercyheart Town", hint: "Im Haus (drinnen).", image: "https://static.wherewindsmeet.org/guides/npc-list/barn-rat.png" },
-  { name: "Burrowing Rat", region: "Sundara Land", area: "Mercyheart Town", hint: "Im Norden des Dorfes beim Hacken, nahe eines zerstörten Hauses.", image: "https://static.wherewindsmeet.org/guides/npc-list/burrowing-rat.png" },
-  { name: "Small Chisel", region: "Sundara Land", area: "Mercyheart Town", hint: "Draußen vor seinem Haus.", image: "https://static.wherewindsmeet.org/guides/npc-list/small-chisel.png" },
-  { name: "Pip Rat", region: "Sundara Land", area: "Mercyheart Town", hint: "Im Norden der Stadt am Boden spielend, nahe des Wegs zum Mercyheart Monastery.", image: "https://static.wherewindsmeet.org/guides/npc-list/pip-rat.png" },
-  { name: "Chai Jiudui", region: "Verdant Wilds", area: "Stonewash Strand", hint: "Auf Stonewash Strand südlich des Boundary Stone beim Holzfällen.", image: "https://static.wherewindsmeet.org/guides/npc-list/chai-jiudui.png" },
-  { name: "Feng Rusong", region: "Sundara Land", area: "Mercyheart Monastery", hint: "Nahe dem Eingang des Divinecraft Dungeon.", image: "https://static.wherewindsmeet.org/guides/npc-list/feng-rusong.png" },
-  { name: "Zhu Bawan", region: "Verdant Wilds", area: "Stonewash Strand", hint: "Auf dem Canopy/Vordach am Stonewash Strand östlich des Moonveil Mountain Wayfarer.", image: "https://static.wherewindsmeet.org/guides/npc-list/zhu-bawan.png" },
-  { name: "Pan Xinniang", region: "Sundara Land", area: "Mercyheart Town", hint: "Beim Pflücken von Buddhist Flowers zu sehen.", image: "https://static.wherewindsmeet.org/guides/npc-list/pan-xinniang.png" },
-  { name: "Jingyi", region: "Sundara Land", area: "Halo Peak", hint: "Am Weg nördlich des Halo Peak Landmark.", image: "https://static.wherewindsmeet.org/guides/npc-list/jingyi.png" },
-  { name: "Wu Jingming", region: "Sundara Land", area: "Halo Peak", hint: "Entlang des Wegs Richtung Halo Peak.", image: "https://static.wherewindsmeet.org/guides/npc-list/wu-jingming.png" },
-  { name: "Chai Sansheng", region: "Sundara Land", area: "Jadebrook Mountain", hint: "Beim Holzfällen nahe dem Path of Karma Landmark.", image: "https://static.wherewindsmeet.org/guides/npc-list/chai-sansheng.png" },
-  { name: "Bodhi", region: "Sundara Land", area: "Jadebrook Mountain", hint: "Steht zwischen mehreren Katzen.", image: "https://static.wherewindsmeet.org/guides/npc-list/bodhi.png" },
-  { name: "Shi the Boatman", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "In der Nähe des Heaven's Pier Landmark.", image: "https://static.wherewindsmeet.org/guides/npc-list/shi-the-boatman.png" },
-  { name: "Zhao Weiye", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "Beim Trinken aus einem großen Behälter.", image: "https://static.wherewindsmeet.org/guides/npc-list/zhao-weiye.png" },
-  { name: "Lu Sheng", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "Vor dem Stand von Yuan Tiantian.", image: "https://static.wherewindsmeet.org/guides/npc-list/lu-sheng.png" },
-  { name: "Xiang the Greedy", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "Neben mehreren großen Behältern.", image: "https://static.wherewindsmeet.org/guides/npc-list/xiang-the-greedy.png" },
-  { name: "Song Wu", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "Im Wirtshaus beim Fegen.", image: "https://static.wherewindsmeet.org/guides/npc-list/song-wu.png" },
-  { name: "Yueniang", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "Am Fluss beim Wäschewaschen.", image: "https://static.wherewindsmeet.org/guides/npc-list/yueniang.png" },
-  { name: "Auntie Tian", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "Im Haus hinter Yuan Tiantians Stand.", image: "https://static.wherewindsmeet.org/guides/npc-list/auntie-tian.png" },
-  { name: "Zhang Dazhuang", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "Vor der Feuerbrauerei (Fire-forced brewing).", image: "https://static.wherewindsmeet.org/guides/npc-list/zhang-dazhuang.png" },
-  { name: "Uncle Mi", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "Unter einem weißen Blütenbaum.", image: "https://static.wherewindsmeet.org/guides/npc-list/uncle-mi.png" },
-  { name: "Fluffy Cat", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "Hinter einem Haus, bei dem Blütenblätter zum Trocknen ausgelegt sind.", image: "https://static.wherewindsmeet.org/guides/npc-list/fluffy-cat.png" },
-  { name: "Beggar Liu", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "Unter einem Baum am Rand des Gebiets.", image: "https://static.wherewindsmeet.org/guides/npc-list/beggar-liu.png" },
-  { name: "Liu the Woodcutter", region: "Moonveil Mountain", area: "Peace Bell Tower", hint: "Vom Moonveil Peak Landmark nach rechts; er hackt Holz unterhalb des Berges.", image: "https://static.wherewindsmeet.org/guides/npc-list/liu-the-woodcutter.png" },
-  { name: "Shi Jingtian", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "Auf dem Weg zwischen Peacebell Tower und Crimson Cliff.", image: "https://static.wherewindsmeet.org/guides/npc-list/shi-jingtian.png" },
-  { name: "Chai Shipi", region: "Moonveil Mountain", area: "Crimson Cliff", hint: "Ganz rechts bei Heaven Pier beim Holzfällen.", image: "https://static.wherewindsmeet.org/guides/npc-list/chai-shipi.png" },
-  { name: "Yan Momo", region: "Moonveil Mountain", area: "Crimson Cliff", hint: "Nahe dem Crimson Cliff Landmark, sammelt Blätter von einem einsamen roten Baum.", image: "https://static.wherewindsmeet.org/guides/npc-list/yan-momo.png" },
-  { name: "Wu Qiwan", region: "Moonveil Mountain", area: "Crimson Cliff", hint: "Hinter hohem Gras nahe der Klippenkante.", image: "https://static.wherewindsmeet.org/guides/npc-list/wu-qiwan.png" },
-  { name: "Mr. Qiao", region: "Moonveil Mountain", area: "Crimson Cliff", hint: "Neben Wagen, nahe den Docks.", image: "https://static.wherewindsmeet.org/guides/npc-list/mr-qiao.png" },
-  { name: "Mu Laosan", region: "Moonveil Mountain", area: "Crimson Cliff", hint: "Vom Stillwind Slope Landmark nach Norden; dort beim Baumfällen.", image: "https://static.wherewindsmeet.org/guides/npc-list/mu-laosan.png" },
-  { name: "Niu Sanqi", region: "Moonveil Mountain", area: "Crimson Cliff", hint: "Etwas nördlich der Stillwind Slope zusammen mit anderen Flüchtlingen.", image: "https://static.wherewindsmeet.org/guides/npc-list/niu-sanqi.png" },
-  { name: "Zhu Jiuba", region: "Moonveil Mountain", area: "Crimson Cliff", hint: "Etwas nördlich der Stillwind Slope zusammen mit anderen Flüchtlingen.", image: "https://static.wherewindsmeet.org/guides/npc-list/zhu-jiuba.png" },
-  { name: "Ma Zhongwu", region: "Moonveil Mountain", area: "Crimson Cliff", hint: "Etwas nördlich der Stillwind Slope zusammen mit anderen Flüchtlingen.", image: "https://static.wherewindsmeet.org/guides/npc-list/ma-zhongwu.png" },
-  { name: "Lan Huahua", region: "Moonveil Mountain", area: "Crimson Cliff", hint: "Vom Stillslope Landmark nach rechts; sie tanzt nahe eines Felsens.", image: "https://static.wherewindsmeet.org/guides/npc-list/lan-huahua.png" },
-  { name: "Zhou Yihang", region: "Moonveil Mountain", area: "Palace of Annals", hint: "An den Docks unten links beim Stillwind Slope Marker.", image: "https://static.wherewindsmeet.org/guides/npc-list/zhou-yihang.png" },
-  { name: "Zhang the Diviner", region: "Moonveil Mountain", area: "Palace of Annals", hint: "Südlich vom Back Mountain Landmark, im Lager mit Boss Qian.", image: "https://static.wherewindsmeet.org/guides/npc-list/zhang-the-diviner.png" },
-  { name: "Boss Qian", region: "Moonveil Mountain", area: "Palace of Annals", hint: "Südlich vom Back Mountain Landmark, im Lager mit Zhang the Diviner.", image: "https://static.wherewindsmeet.org/guides/npc-list/boss-qian.png" },
-  { name: "Tao Wang", region: "Moonveil Mountain", area: "Palace of Annals", hint: "Vom Back Mountain Landmark nach Norden, die Felswand hochklettern; oben zu finden.", image: "https://static.wherewindsmeet.org/guides/npc-list/tao-wang.png" },
-  { name: "Mountain Dweller", region: "Moonveil Mountain", area: "Sage's Knoll", hint: "In der Nähe des Deer Pond Landmark.", image: "https://static.wherewindsmeet.org/guides/npc-list/mountain-dweller.png" },
-  { name: "Hai Changchong", region: "Moonveil Mountain", area: "Twinbeast Ridge", hint: "Nahe einer Klippe zu sehen.", image: "https://static.wherewindsmeet.org/guides/npc-list/hai-changchong.png" },
-  { name: "Dog", region: "Moonveil Mountain", area: "Twinbeast Ridge", hint: "Gräbt nahe einem Holzstapel.", image: "https://static.wherewindsmeet.org/guides/npc-list/dog.png" },
-  { name: "Shui Changliu", region: "Moonveil Mountain", area: "Twinbeast Ridge", hint: "Steht nahe dem Fluss.", image: "https://static.wherewindsmeet.org/guides/npc-list/shui-changliu.png" },
-  { name: "Hunter", region: "Moonveil Mountain", area: "Twinbeast Ridge", hint: "Hinter einem Bambuscluster nahe dem Fluss.", image: "https://static.wherewindsmeet.org/guides/npc-list/hunter.png" },
-  { name: "Liu Heiqui", region: "Moonveil Mountain", area: "Encircling Lake", hint: "Am Straßenrand zu finden.", image: "https://static.wherewindsmeet.org/guides/npc-list/liu-heiqui.png" },
-  { name: "Feng Shishi", region: "Moonveil Mountain", area: "Twinbeast Ridge", hint: "Am Straßenrand zusammen mit ihrem Begleiter Xie Changgong.", image: "https://static.wherewindsmeet.org/guides/npc-list/feng-shishi.png" },
-  { name: "Shan Yinjiang", region: "Moonveil Mountain", area: "Twinbeast Ridge", hint: "Nahe etwas Bambus zu finden.", image: "https://static.wherewindsmeet.org/guides/npc-list/shan-yinjiang.png" },
-  { name: "Wu Dayong", region: "Moonveil Mountain", area: "Encircling Lake", hint: "Nahe einem Banditenlager zu finden.", image: "https://static.wherewindsmeet.org/guides/npc-list/wu-dayong.png" },
-  { name: "Wenwu", region: "Moonveil Mountain", area: "Encircling Lake", hint: "Nahe einem einsamen Baum zu finden.", image: "https://static.wherewindsmeet.org/guides/npc-list/wenwu.png" },
-  { name: "Shen Weiqing", region: "Moonveil Mountain", area: "Twinbeast Ridge", hint: "Entlang der Straße zusammen mit ihrem Sword Servant.", image: "https://static.wherewindsmeet.org/guides/npc-list/shen-weiqing.png" },
-  { name: "Hong Yang", region: "Moonveil Mountain", area: "Encircling Lake", hint: "Nahe einem See zusammen mit Lu Ke.", image: "https://static.wherewindsmeet.org/guides/npc-list/hong-yang.png" },
-  { name: "Wen Gao", region: "Moonveil Mountain", area: "Encircling Lake", hint: "Zwischen einem Baum und einem Wagen.", image: "https://static.wherewindsmeet.org/guides/npc-list/wen-gao.png" },
-  { name: "Ya Zhou", region: "Moonveil Mountain", area: "Encircling Lake", hint: "An den Docks zu finden.", image: "https://static.wherewindsmeet.org/guides/npc-list/ya-zhou.png" },
-  { name: "Hu Da", region: "Moonveil Mountain", area: "Encircling Lake", hint: "Vom Encircling Lake Landmark dem Weg nach links folgen; er steht links beim Outdoor-Sitzbereich.", image: "https://static.wherewindsmeet.org/guides/npc-list/hu-da.png" },
-  { name: "Elder Zhou", region: "Moonveil Mountain", area: "Encircling Lake", hint: "An den Docks unten rechts vom Back Mountain Landmark.", image: "https://static.wherewindsmeet.org/guides/npc-list/elder-zhou.png" },
-  { name: "Meng Da", region: "Moonveil Mountain", area: "Harvestfall Village", hint: "Nordöstlich vom Harvest Village Landmark.", image: "https://static.wherewindsmeet.org/guides/npc-list/meng-da.png" },
-  { name: "Hao Jiu", region: "Moonveil Mountain", area: "Harvestfall Village", hint: "Nahe dem Zaun.", image: "https://static.wherewindsmeet.org/guides/npc-list/hao-jiu.png" },
-  { name: "Lu Kangge", region: "Moonveil Mountain", area: "Blissful Retreat", hint: "Südwestlich vom Source of Still Shore Landmark.", image: "https://static.wherewindsmeet.org/guides/npc-list/lu-kangge.png" },
-  { name: "Jin Nanshou", region: "Moonveil Mountain", area: "Peace Bell Tower", hint: "Beim Deerforage Grove Landmark starten, der Straße nach Norden bis zur Gabelung folgen, dann rechts. Er steht am Straßenrand.", image: "https://static.wherewindsmeet.org/guides/npc-list/jin-nanshou.png" },
-  { name: "Jing'an", region: "Moonveil Mountain", area: "Peace Bell Tower", hint: "An der Gabelung in der Mitte der Straße. Erreichbar: südlich vom Porcelain Kiln Landmark oder nördlich vom Deerforage Grove Landmark.", image: "https://static.wherewindsmeet.org/guides/npc-list/jing-an.png" },
-  { name: "Lin Jin", region: "Moonveil Mountain", area: "Witherwilds", hint: "Vom Porcelain Kiln Landmark die südliche Straße nehmen; er hackt Holz am Straßenrand.", image: "https://static.wherewindsmeet.org/guides/npc-list/lin-jin.png" },
-  { name: "Sun Mang", region: "Moonveil Mountain", area: "Witherwilds", hint: "Vom Porcelain Kiln Boundary Stone der südlichen Straße folgen; er steht am Rand der Weggabelung.", image: "https://static.wherewindsmeet.org/guides/npc-list/sun-mang.png" },
-  { name: "Li Yueniang", region: "Moonveil Mountain", area: "Riverside Station", hint: "Zusammen mit Yu Songfeng nahe dem Eingang der Fährstation.", image: "https://static.wherewindsmeet.org/guides/npc-list/li-yueniang.png" },
-  { name: "Yu Songfeng", region: "Moonveil Mountain", area: "Riverside Station", hint: "Zusammen mit Li Yueniang nahe dem Eingang der Fährstation.", image: "https://static.wherewindsmeet.org/guides/npc-list/yu-songfeng.png" },
-  { name: "Wang Duoli", region: "Verdant Wilds", area: "Battlecrest Slope", hint: "Südlich des Sees nahe dem Starfall Spring Boundary Stone.", image: "https://static.wherewindsmeet.org/guides/npc-list/wang-duoli.png" },
-  { name: "Ren Shuiliu", region: "Moonveil Mountain", area: "Riverside Station", hint: "Im roten Gebäude neben Meng Zhixia.", image: "https://static.wherewindsmeet.org/guides/npc-list/ren-shuiliu.png" },
-  { name: "Meng Zhixia", region: "Moonveil Mountain", area: "Riverside Station", hint: "Im roten Gebäude neben Ren Shuiliu.", image: "https://static.wherewindsmeet.org/guides/npc-list/meng-zhixia.png" },
-  { name: "Yu Nu", region: "Moonveil Mountain", area: "Riverside Station", hint: "Im roten Gebäude mit Blick aufs Meer.", image: "https://static.wherewindsmeet.org/guides/npc-list/yu-nu.png" },
-  { name: "Jiang Nanyi", region: "Moonveil Mountain", area: "Riverside Station", hint: "Unter einem weißen Blütenbaum an den Docks, hinter einigen Damen.", image: "https://static.wherewindsmeet.org/guides/npc-list/jiang-nanyi.png" },
-  { name: "Zhou Canying", region: "Moonveil Mountain", area: "Riverside Station", hint: "An einem der Tische im roten Gebäude sitzend.", image: "https://static.wherewindsmeet.org/guides/npc-list/zhou-canying.png" },
-  { name: "Tian Heng", region: "Moonveil Mountain", area: "Riverside Station", hint: "An einem der Tische im roten Gebäude sitzend.", image: "https://static.wherewindsmeet.org/guides/npc-list/tian-heng.png" },
-  { name: "Wu Cezhi", region: "Moonveil Mountain", area: "Harvestfall Village", hint: "In der linken Toilette/Latreine zu finden.", image: "https://static.wherewindsmeet.org/guides/npc-list/wu-cezhi.png" },
-  { name: "Angler", region: "Moonveil Mountain", area: "Harvestfall Village", hint: "Sitzend am Ufer im Nordosten des Dorfes.", image: "https://static.wherewindsmeet.org/guides/npc-list/angler.png" },
-  { name: "Cao Jinyang", region: "Kaifeng City", area: "Velvet Shade", hint: "Neben Tao Jingjing im Erdgeschoss der Revelry Hall, an der Nordseite des Gebaeudes.", image: "https://static.wherewindsmeet.org/guides/npc-list/cao-jinyang.png" },
-  { name: "Chu Yuan", region: "Kaifeng City", area: "Velvet Shade", hint: "Oestlich des Velvet Shade Landmark, auf der Strasse stehend.", image: "https://static.wherewindsmeet.org/guides/npc-list/chu-yuan.png" },
-  { name: "He Ruiyang", region: "Kaifeng City", area: "Velvet Shade", hint: "Neben Li Yushan im Erdgeschoss der Revelry Hall, an der Suedwestseite des Gebaeudes.", image: "https://static.wherewindsmeet.org/guides/npc-list/he-ruiyang.png" },
-  { name: "Jiang Li", region: "Kaifeng City", area: "Velvet Shade", hint: "Von Springwave Pavilion nach Sueden gehen, dann rechts; hinter dem Haus, in dem Yiluo (Graceful Memory) wohnt.", image: "https://static.wherewindsmeet.org/guides/npc-list/jiang-li.png" },
-  { name: "Jiang Yulang", region: "Kaifeng City", area: "Velvet Shade", hint: "Noerdlich von Springwave Pavilion, im Blumenladen mit Rong Xiaoxiao.", image: "https://static.wherewindsmeet.org/guides/npc-list/jiang-yulang.png" },
-  { name: "Jing Chaoyang", region: "Kaifeng City", area: "Velvet Shade", hint: "Im zweiten Stock der Revelry Hall, am Fenster.", image: "https://static.wherewindsmeet.org/guides/npc-list/jing-chaoyang.png" },
-  { name: "Leng Daculi", region: "Kaifeng City", area: "Velvet Shade", hint: "Im zweiten Stock der Revelry Hall, beim Essen in einem Privatraum.", image: "https://static.wherewindsmeet.org/guides/npc-list/leng-daculi.png" },
-  { name: "Li Youxin", region: "Kaifeng City", area: "Velvet Shade", hint: "Nahe dem Velvet Shade Landmark bei den Docks.", image: "https://static.wherewindsmeet.org/guides/npc-list/li-youxin.png" },
-  { name: "Li Yuerong", region: "Kaifeng City", area: "Velvet Shade", hint: "Nahe dem Velvet Shade Landmark, vor einem Antiquitaetengeschaeft.", image: "https://static.wherewindsmeet.org/guides/npc-list/li-yuerong.png" },
-  { name: "Lu Zhuo", region: "Kaifeng City", area: "Velvet Shade", hint: "Im zweiten Stock der Revelry Hall neben Wu Peng, nahe der Osttreppe zum dritten Stock.", image: "https://static.wherewindsmeet.org/guides/npc-list/lu-zhuo.png" },
-  { name: "Mu Huaishan", region: "Kaifeng City", area: "Velvet Shade", hint: "Suedlich von Springwave Pavilion, im Gespraech mit Huo Tinglan.", image: "https://static.wherewindsmeet.org/guides/npc-list/mu-huaishan.png" },
-  { name: "Murong Chan", region: "Kaifeng City", area: "Velvet Shade", hint: "Nahe einigen Blumenarrangements.", image: "https://static.wherewindsmeet.org/guides/npc-list/murong-chan.png" },
-  { name: "Qi Wuyu", region: "Kaifeng City", area: "Velvet Shade", hint: "Im Erdgeschoss der Revelry Hall, vorne in der Mitte bei der Auffuehrung.", image: "https://static.wherewindsmeet.org/guides/npc-list/qi-wuyu.png" },
-  { name: "Qin Zhu", region: "Kaifeng City", area: "Velvet Shade", hint: "Im Erdgeschoss der Revelry Hall, an der Suedseite des Gebaeudes.", image: "https://static.wherewindsmeet.org/guides/npc-list/qin-zhu.png" },
-  { name: "Qiu Fengxi", region: "Kaifeng City", area: "Velvet Shade", hint: "Im Erdgeschoss der Revelry Hall, an der Westseite des Gebaeudes.", image: "https://static.wherewindsmeet.org/guides/npc-list/qiu-fengxi.png" },
-  { name: "Ruan Sese", region: "Kaifeng City", area: "Velvet Shade", hint: "Nahe dem Velvet Shade Landmark, vor dem Laden einen Drachen betrachtend.", image: "https://static.wherewindsmeet.org/guides/npc-list/ruan-sese.png" },
-  { name: "Shen Moxuan", region: "Kaifeng City", area: "Velvet Shade", hint: "Auf der anderen Seite der Bruecke oestlich des Velvet Shade Landmark.", image: "https://static.wherewindsmeet.org/guides/npc-list/shen-moxuan.png" },
-  { name: "Song Shiheng", region: "Kaifeng City", area: "Velvet Shade", hint: "Auf der Bruecke oestlich des Velvet Shade Landmark, im Gespraech mit Yan Chuchu.", image: "https://static.wherewindsmeet.org/guides/npc-list/song-shiheng.png" },
-  { name: "Su Xinlu", region: "Kaifeng City", area: "Velvet Shade", hint: "Suedlich von Springwave Pavilion, im Gespraech mit Yang Chunnuan und drei weiteren NPCs.", image: "https://static.wherewindsmeet.org/guides/npc-list/su-xinlu.png" },
-  { name: "Tan Xiangchen", region: "Kaifeng City", area: "Velvet Shade", hint: "Im zweiten Stock der Revelry Hall neben Yin Yan, nahe der Westtreppe zum ersten Stock.", image: "https://static.wherewindsmeet.org/guides/npc-list/tan-xiangchen.png" },
-  { name: "Tao Jingjing", region: "Kaifeng City", area: "Velvet Shade", hint: "Neben Cao Jinyang im Erdgeschoss der Revelry Hall, an der Nordseite des Gebaeudes.", image: "https://static.wherewindsmeet.org/guides/npc-list/tao-jingjing.png" },
-  { name: "Tu Er", region: "Kaifeng City", area: "Velvet Shade", hint: "Noerdlich von Springwave Pavilion, im Gespraech mit Tu Dakuan.", image: "https://static.wherewindsmeet.org/guides/npc-list/tu-er.png" },
-  { name: "Xu Lijun", region: "Kaifeng City", area: "Velvet Shade", hint: "Neben Ye Zhiqiu im Erdgeschoss der Revelry Hall, an der Ostseite des Gebaeudes.", image: "https://static.wherewindsmeet.org/guides/npc-list/xu-lijun.png" },
-  { name: "Xu Yingyu", region: "Kaifeng City", area: "Velvet Shade", hint: "Im Erdgeschoss der Revelry Hall, an der Westseite des Gebaeudes.", image: "https://static.wherewindsmeet.org/guides/npc-list/xu-yingyu.png" },
-  { name: "Xue Li", region: "Kaifeng City", area: "Velvet Shade", hint: "Im zweiten Stock der Revelry Hall, beim Essen mit Zhuang Zhengzhi.", image: "https://static.wherewindsmeet.org/guides/npc-list/xue-li.png" },
-  { name: "Yan Chuchu", region: "Kaifeng City", area: "Velvet Shade", hint: "Auf der Bruecke rechts vom Velvet Shade Landmark, im Gespraech mit Song Shiheng.", image: "https://static.wherewindsmeet.org/guides/npc-list/yan-chuchu.png" },
-  { name: "Yan Ziyan", region: "Kaifeng City", area: "Velvet Shade", hint: "Im Erdgeschoss der Revelry Hall, an der Suedseite des Gebaeudes.", image: "https://static.wherewindsmeet.org/guides/npc-list/yan-ziyan.png" },
-  { name: "Yang Chunnuan", region: "Kaifeng City", area: "Velvet Shade", hint: "Suedlich von Springwave Pavilion, im Gespraech mit Su Xinlu und drei weiteren NPCs.", image: "https://static.wherewindsmeet.org/guides/npc-list/yang-chunnuan.png" },
-  { name: "Ye Zhiqiu", region: "Kaifeng City", area: "Velvet Shade", hint: "Neben Xu Lijun im Erdgeschoss der Revelry Hall, an der Ostseite des Gebaeudes.", image: "https://static.wherewindsmeet.org/guides/npc-list/ye-zhiqiu.png" },
-  { name: "Yi Xi", region: "Kaifeng City", area: "Velvet Shade", hint: "Im zweiten Stock der Revelry Hall, beim Essen mit Guo Zhixiang.", image: "https://static.wherewindsmeet.org/guides/npc-list/yi-xi.png" },
-  { name: "Yu Hui", region: "Kaifeng City", area: "Velvet Shade", hint: "Am Ende der Strasse, westlich des Velvet Shade Landmark.", image: "https://static.wherewindsmeet.org/guides/npc-list/yu-hui.png" },
-  { name: "Zhen Huo", region: "Kaifeng City", area: "Velvet Shade", hint: "Im Erdgeschoss der Revelry Hall, an der Suedseite des Gebaeudes.", image: "https://static.wherewindsmeet.org/guides/npc-list/zhen-huo.png" },
-  { name: "Zhuang Zhengzhi", region: "Kaifeng City", area: "Velvet Shade", hint: "Im zweiten Stock der Revelry Hall, beim Essen mit Xue Li.", image: "https://static.wherewindsmeet.org/guides/npc-list/zhuang-zhengzhi.png" },
+  { name: "Li Laizuo", region: "Verdant Wilds", area: "General's Shrine", hint: "Im Lager beim General's Shrine: bei einer Gruppe Untergebener neben dem Schrein." },
+  { name: "Fang Xu", region: "Verdant Wilds", area: "General's Shrine", hint: "Oben auf einem Gerüst neben der Arena. Ein paar Mal mit ihm sparren, dann ansprechen." },
+  { name: "Lie Buxi", region: "Verdant Wilds", area: "General's Shrine", hint: "Am Fluss südlich des General's Shrine. Sie bittet um Hilfe bei der Suche nach ihren Brüdern." },
+  { name: "Zhao Dali", region: "Verdant Wilds", area: "General's Shrine", hint: "Nahe dem Hauptschrein im General's Shrine, beim Training." },
+  { name: "Chai Bakun", region: "Verdant Wilds", area: "General's Shrine", hint: "Südlich des General's Shrine beim Baumfällen." },
+  { name: "Fu Lushou", region: "Verdant Wilds", area: "General's Shrine", hint: "Vom Eingang des General's Shrine ins rechte Gebäude. Je nach Tag auch draußen beim Schrein." },
+  { name: "Jin Xiaobao", region: "Verdant Wilds", area: "Bamboo Abode", hint: "Auf dem Schlickfeld südlich des Verdant Wilds Wayfarer." },
+  { name: "Fu Lubao", region: "Verdant Wilds", area: "General's Shrine", hint: "Oben links, neben einer Steinsäule." },
+  { name: "Wang Duobao", region: "Verdant Wilds", area: "Stonewash Strand", hint: "Sitzend beim Angeln am Flussrand links vom General's Shrine, nördlich des Stonewash Strand Boundary Stone." },
+  { name: "Jin Chunniang", region: "Verdant Wilds", area: "Bamboo Abode", hint: "Auf dem Schlickfeld südlich des Verdant Wilds Wayfarer." },
+  { name: "Wang Duolu", region: "Verdant Wilds", area: "General's Shrine", hint: "Am See gegenüber vom General's Shrine Boundary Stone beim Angeln." },
+  { name: "Daozheng", region: "Sundara Land", area: "Halo Peak", hint: "Neben einem Tisch vor einem Haus zu finden." },
+  { name: "Miaojue", region: "Sundara Land", area: "Halo Peak", hint: "Auf einem Berg nahe eines Tempels." },
+  { name: "Li Daniu", region: "Verdant Wilds", area: "Battlecrest Slope", hint: "Nördlich des Starfall Spring Boundary Stone, nahe der Straße bei Battlecrest Slope – beim Holzfällen." },
+  { name: "Li Shaokui", region: "Verdant Wilds", area: "Battlecrest Slope", hint: "Vor einer zerstörten Hütte nordöstlich des Starfall Spring Boundary Stone." },
+  { name: "Zhou Yizhou", region: "Sundara Land", area: "Mercyheart Town", hint: "Ganz links an den Docks." },
+  { name: "Rafter Rat", region: "Sundara Land", area: "Mercyheart Town", hint: "Nahe der Brücke, hinter hohem Gras." },
+  { name: "Wobbly Tang", region: "Verdant Wilds", area: "Battlecrest Slope", hint: "Am Straßenrand südlich des Tiger Fort (Battlecrest Slope)." },
+  { name: "Embroidered Rat", region: "Sundara Land", area: "Mercyheart Town", hint: "Im Haus (drinnen leicht zu sehen)." },
+  { name: "Tang Lubao", region: "Verdant Wilds", area: "Battlecrest Slope", hint: "Am Straßenrand südlich des Tiger Fort (Battlecrest Slope)." },
+  { name: "Pan Faxin", region: "Sundara Land", area: "Mercyheart Town", hint: "Auf den Stufen am Fluss sitzend." },
+  { name: "Zhou Miaoxin", region: "Sundara Land", area: "Mercyheart Town", hint: "Tanzend hinter einer Statue." },
+  { name: "Barn Rat", region: "Sundara Land", area: "Mercyheart Town", hint: "Im Haus (drinnen)." },
+  { name: "Burrowing Rat", region: "Sundara Land", area: "Mercyheart Town", hint: "Im Norden des Dorfes beim Hacken, nahe eines zerstörten Hauses." },
+  { name: "Small Chisel", region: "Sundara Land", area: "Mercyheart Town", hint: "Draußen vor seinem Haus." },
+  { name: "Pip Rat", region: "Sundara Land", area: "Mercyheart Town", hint: "Im Norden der Stadt am Boden spielend, nahe des Wegs zum Mercyheart Monastery." },
+  { name: "Chai Jiudui", region: "Verdant Wilds", area: "Stonewash Strand", hint: "Auf Stonewash Strand südlich des Boundary Stone beim Holzfällen." },
+  { name: "Feng Rusong", region: "Sundara Land", area: "Mercyheart Monastery", hint: "Nahe dem Eingang des Divinecraft Dungeon." },
+  { name: "Zhu Bawan", region: "Verdant Wilds", area: "Stonewash Strand", hint: "Auf dem Canopy/Vordach am Stonewash Strand östlich des Moonveil Mountain Wayfarer." },
+  { name: "Pan Xinniang", region: "Sundara Land", area: "Mercyheart Town", hint: "Beim Pflücken von Buddhist Flowers zu sehen." },
+  { name: "Jingyi", region: "Sundara Land", area: "Halo Peak", hint: "Am Weg nördlich des Halo Peak Landmark." },
+  { name: "Wu Jingming", region: "Sundara Land", area: "Halo Peak", hint: "Entlang des Wegs Richtung Halo Peak." },
+  { name: "Chai Sansheng", region: "Sundara Land", area: "Jadebrook Mountain", hint: "Beim Holzfällen nahe dem Path of Karma Landmark." },
+  { name: "Bodhi", region: "Sundara Land", area: "Jadebrook Mountain", hint: "Steht zwischen mehreren Katzen." },
+  { name: "Shi the Boatman", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "In der Nähe des Heaven's Pier Landmark." },
+  { name: "Zhao Weiye", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "Beim Trinken aus einem großen Behälter." },
+  { name: "Lu Sheng", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "Vor dem Stand von Yuan Tiantian." },
+  { name: "Xiang the Greedy", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "Neben mehreren großen Behältern." },
+  { name: "Song Wu", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "Im Wirtshaus beim Fegen." },
+  { name: "Yueniang", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "Am Fluss beim Wäschewaschen." },
+  { name: "Auntie Tian", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "Im Haus hinter Yuan Tiantians Stand." },
+  { name: "Zhang Dazhuang", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "Vor der Feuerbrauerei (Fire-forced brewing)." },
+  { name: "Uncle Mi", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "Unter einem weißen Blütenbaum." },
+  { name: "Fluffy Cat", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "Hinter einem Haus, bei dem Blütenblätter zum Trocknen ausgelegt sind." },
+  { name: "Beggar Liu", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "Unter einem Baum am Rand des Gebiets." },
+  { name: "Liu the Woodcutter", region: "Moonveil Mountain", area: "Peace Bell Tower", hint: "Vom Moonveil Peak Landmark nach rechts; er hackt Holz unterhalb des Berges." },
+  { name: "Shi Jingtian", region: "Moonveil Mountain", area: "Heaven's Pier", hint: "Auf dem Weg zwischen Peacebell Tower und Crimson Cliff." },
+  { name: "Chai Shipi", region: "Moonveil Mountain", area: "Crimson Cliff", hint: "Ganz rechts bei Heaven Pier beim Holzfällen." },
+  { name: "Yan Momo", region: "Moonveil Mountain", area: "Crimson Cliff", hint: "Nahe dem Crimson Cliff Landmark, sammelt Blätter von einem einsamen roten Baum." },
+  { name: "Wu Qiwan", region: "Moonveil Mountain", area: "Crimson Cliff", hint: "Hinter hohem Gras nahe der Klippenkante." },
+  { name: "Mr. Qiao", region: "Moonveil Mountain", area: "Crimson Cliff", hint: "Neben Wagen, nahe den Docks." },
+  { name: "Mu Laosan", region: "Moonveil Mountain", area: "Crimson Cliff", hint: "Vom Stillwind Slope Landmark nach Norden; dort beim Baumfällen." },
+  { name: "Niu Sanqi", region: "Moonveil Mountain", area: "Crimson Cliff", hint: "Etwas nördlich der Stillwind Slope zusammen mit anderen Flüchtlingen." },
+  { name: "Zhu Jiuba", region: "Moonveil Mountain", area: "Crimson Cliff", hint: "Etwas nördlich der Stillwind Slope zusammen mit anderen Flüchtlingen." },
+  { name: "Ma Zhongwu", region: "Moonveil Mountain", area: "Crimson Cliff", hint: "Etwas nördlich der Stillwind Slope zusammen mit anderen Flüchtlingen." },
+  { name: "Lan Huahua", region: "Moonveil Mountain", area: "Crimson Cliff", hint: "Vom Stillslope Landmark nach rechts; sie tanzt nahe eines Felsens." },
+  { name: "Zhou Yihang", region: "Moonveil Mountain", area: "Palace of Annals", hint: "An den Docks unten links beim Stillwind Slope Marker." },
+  { name: "Zhang the Diviner", region: "Moonveil Mountain", area: "Palace of Annals", hint: "Südlich vom Back Mountain Landmark, im Lager mit Boss Qian." },
+  { name: "Boss Qian", region: "Moonveil Mountain", area: "Palace of Annals", hint: "Südlich vom Back Mountain Landmark, im Lager mit Zhang the Diviner." },
+  { name: "Tao Wang", region: "Moonveil Mountain", area: "Palace of Annals", hint: "Vom Back Mountain Landmark nach Norden, die Felswand hochklettern; oben zu finden." },
+  { name: "Mountain Dweller", region: "Moonveil Mountain", area: "Sage's Knoll", hint: "In der Nähe des Deer Pond Landmark." },
+  { name: "Hai Changchong", region: "Moonveil Mountain", area: "Twinbeast Ridge", hint: "Nahe einer Klippe zu sehen." },
+  { name: "Dog", region: "Moonveil Mountain", area: "Twinbeast Ridge", hint: "Gräbt nahe einem Holzstapel." },
+  { name: "Shui Changliu", region: "Moonveil Mountain", area: "Twinbeast Ridge", hint: "Steht nahe dem Fluss." },
+  { name: "Hunter", region: "Moonveil Mountain", area: "Twinbeast Ridge", hint: "Hinter einem Bambuscluster nahe dem Fluss." },
+  { name: "Liu Heiqui", region: "Moonveil Mountain", area: "Encircling Lake", hint: "Am Straßenrand zu finden." },
+  { name: "Feng Shishi", region: "Moonveil Mountain", area: "Twinbeast Ridge", hint: "Am Straßenrand zusammen mit ihrem Begleiter Xie Changgong." },
+  { name: "Shan Yinjiang", region: "Moonveil Mountain", area: "Twinbeast Ridge", hint: "Nahe etwas Bambus zu finden." },
+  { name: "Wu Dayong", region: "Moonveil Mountain", area: "Encircling Lake", hint: "Nahe einem Banditenlager zu finden." },
+  { name: "Wenwu", region: "Moonveil Mountain", area: "Encircling Lake", hint: "Nahe einem einsamen Baum zu finden." },
+  { name: "Shen Weiqing", region: "Moonveil Mountain", area: "Twinbeast Ridge", hint: "Entlang der Straße zusammen mit ihrem Sword Servant." },
+  { name: "Hong Yang", region: "Moonveil Mountain", area: "Encircling Lake", hint: "Nahe einem See zusammen mit Lu Ke." },
+  { name: "Wen Gao", region: "Moonveil Mountain", area: "Encircling Lake", hint: "Zwischen einem Baum und einem Wagen." },
+  { name: "Ya Zhou", region: "Moonveil Mountain", area: "Encircling Lake", hint: "An den Docks zu finden." },
+  { name: "Hu Da", region: "Moonveil Mountain", area: "Encircling Lake", hint: "Vom Encircling Lake Landmark dem Weg nach links folgen; er steht links beim Outdoor-Sitzbereich." },
+  { name: "Elder Zhou", region: "Moonveil Mountain", area: "Encircling Lake", hint: "An den Docks unten rechts vom Back Mountain Landmark." },
+  { name: "Meng Da", region: "Moonveil Mountain", area: "Harvestfall Village", hint: "Nordöstlich vom Harvest Village Landmark." },
+  { name: "Hao Jiu", region: "Moonveil Mountain", area: "Harvestfall Village", hint: "Nahe dem Zaun." },
+  { name: "Lu Kangge", region: "Moonveil Mountain", area: "Blissful Retreat", hint: "Südwestlich vom Source of Still Shore Landmark." },
+  { name: "Jin Nanshou", region: "Moonveil Mountain", area: "Peace Bell Tower", hint: "Beim Deerforage Grove Landmark starten, der Straße nach Norden bis zur Gabelung folgen, dann rechts. Er steht am Straßenrand." },
+  { name: "Jing'an", region: "Moonveil Mountain", area: "Peace Bell Tower", hint: "An der Gabelung in der Mitte der Straße. Erreichbar: südlich vom Porcelain Kiln Landmark oder nördlich vom Deerforage Grove Landmark." },
+  { name: "Lin Jin", region: "Moonveil Mountain", area: "Witherwilds", hint: "Vom Porcelain Kiln Landmark die südliche Straße nehmen; er hackt Holz am Straßenrand." },
+  { name: "Sun Mang", region: "Moonveil Mountain", area: "Witherwilds", hint: "Vom Porcelain Kiln Boundary Stone der südlichen Straße folgen; er steht am Rand der Weggabelung." },
+  { name: "Li Yueniang", region: "Moonveil Mountain", area: "Riverside Station", hint: "Zusammen mit Yu Songfeng nahe dem Eingang der Fährstation." },
+  { name: "Yu Songfeng", region: "Moonveil Mountain", area: "Riverside Station", hint: "Zusammen mit Li Yueniang nahe dem Eingang der Fährstation." },
+  { name: "Wang Duoli", region: "Verdant Wilds", area: "Battlecrest Slope", hint: "Südlich des Sees nahe dem Starfall Spring Boundary Stone." },
+  { name: "Ren Shuiliu", region: "Moonveil Mountain", area: "Riverside Station", hint: "Im roten Gebäude neben Meng Zhixia." },
+  { name: "Meng Zhixia", region: "Moonveil Mountain", area: "Riverside Station", hint: "Im roten Gebäude neben Ren Shuiliu." },
+  { name: "Yu Nu", region: "Moonveil Mountain", area: "Riverside Station", hint: "Im roten Gebäude mit Blick aufs Meer." },
+  { name: "Jiang Nanyi", region: "Moonveil Mountain", area: "Riverside Station", hint: "Unter einem weißen Blütenbaum an den Docks, hinter einigen Damen." },
+  { name: "Zhou Canying", region: "Moonveil Mountain", area: "Riverside Station", hint: "An einem der Tische im roten Gebäude sitzend." },
+  { name: "Tian Heng", region: "Moonveil Mountain", area: "Riverside Station", hint: "An einem der Tische im roten Gebäude sitzend." },
+  { name: "Wu Cezhi", region: "Moonveil Mountain", area: "Harvestfall Village", hint: "In der linken Toilette/Latreine zu finden." },
+  { name: "Angler", region: "Moonveil Mountain", area: "Harvestfall Village", hint: "Sitzend am Ufer im Nordosten des Dorfes." },
+  { name: "Cao Jinyang", region: "Kaifeng City", area: "Velvet Shade", hint: "Neben Tao Jingjing im Erdgeschoss der Revelry Hall, an der Nordseite des Gebaeudes." },
+  { name: "Chu Yuan", region: "Kaifeng City", area: "Velvet Shade", hint: "Oestlich des Velvet Shade Landmark, auf der Strasse stehend." },
+  { name: "He Ruiyang", region: "Kaifeng City", area: "Velvet Shade", hint: "Neben Li Yushan im Erdgeschoss der Revelry Hall, an der Suedwestseite des Gebaeudes." },
+  { name: "Jiang Li", region: "Kaifeng City", area: "Velvet Shade", hint: "Von Springwave Pavilion nach Sueden gehen, dann rechts; hinter dem Haus, in dem Yiluo (Graceful Memory) wohnt." },
+  { name: "Jiang Yulang", region: "Kaifeng City", area: "Velvet Shade", hint: "Noerdlich von Springwave Pavilion, im Blumenladen mit Rong Xiaoxiao." },
+  { name: "Jing Chaoyang", region: "Kaifeng City", area: "Velvet Shade", hint: "Im zweiten Stock der Revelry Hall, am Fenster." },
+  { name: "Leng Daculi", region: "Kaifeng City", area: "Velvet Shade", hint: "Im zweiten Stock der Revelry Hall, beim Essen in einem Privatraum." },
+  { name: "Li Youxin", region: "Kaifeng City", area: "Velvet Shade", hint: "Nahe dem Velvet Shade Landmark bei den Docks." },
+  { name: "Li Yuerong", region: "Kaifeng City", area: "Velvet Shade", hint: "Nahe dem Velvet Shade Landmark, vor einem Antiquitaetengeschaeft." },
+  { name: "Lu Zhuo", region: "Kaifeng City", area: "Velvet Shade", hint: "Im zweiten Stock der Revelry Hall neben Wu Peng, nahe der Osttreppe zum dritten Stock." },
+  { name: "Mu Huaishan", region: "Kaifeng City", area: "Velvet Shade", hint: "Suedlich von Springwave Pavilion, im Gespraech mit Huo Tinglan." },
+  { name: "Murong Chan", region: "Kaifeng City", area: "Velvet Shade", hint: "Nahe einigen Blumenarrangements." },
+  { name: "Qi Wuyu", region: "Kaifeng City", area: "Velvet Shade", hint: "Im Erdgeschoss der Revelry Hall, vorne in der Mitte bei der Auffuehrung." },
+  { name: "Qin Zhu", region: "Kaifeng City", area: "Velvet Shade", hint: "Im Erdgeschoss der Revelry Hall, an der Suedseite des Gebaeudes." },
+  { name: "Qiu Fengxi", region: "Kaifeng City", area: "Velvet Shade", hint: "Im Erdgeschoss der Revelry Hall, an der Westseite des Gebaeudes." },
+  { name: "Ruan Sese", region: "Kaifeng City", area: "Velvet Shade", hint: "Nahe dem Velvet Shade Landmark, vor dem Laden einen Drachen betrachtend." },
+  { name: "Shen Moxuan", region: "Kaifeng City", area: "Velvet Shade", hint: "Auf der anderen Seite der Bruecke oestlich des Velvet Shade Landmark." },
+  { name: "Song Shiheng", region: "Kaifeng City", area: "Velvet Shade", hint: "Auf der Bruecke oestlich des Velvet Shade Landmark, im Gespraech mit Yan Chuchu." },
+  { name: "Su Xinlu", region: "Kaifeng City", area: "Velvet Shade", hint: "Suedlich von Springwave Pavilion, im Gespraech mit Yang Chunnuan und drei weiteren NPCs." },
+  { name: "Tan Xiangchen", region: "Kaifeng City", area: "Velvet Shade", hint: "Im zweiten Stock der Revelry Hall neben Yin Yan, nahe der Westtreppe zum ersten Stock." },
+  { name: "Tao Jingjing", region: "Kaifeng City", area: "Velvet Shade", hint: "Neben Cao Jinyang im Erdgeschoss der Revelry Hall, an der Nordseite des Gebaeudes." },
+  { name: "Tu Er", region: "Kaifeng City", area: "Velvet Shade", hint: "Noerdlich von Springwave Pavilion, im Gespraech mit Tu Dakuan." },
+  { name: "Xu Lijun", region: "Kaifeng City", area: "Velvet Shade", hint: "Neben Ye Zhiqiu im Erdgeschoss der Revelry Hall, an der Ostseite des Gebaeudes." },
+  { name: "Xu Yingyu", region: "Kaifeng City", area: "Velvet Shade", hint: "Im Erdgeschoss der Revelry Hall, an der Westseite des Gebaeudes." },
+  { name: "Xue Li", region: "Kaifeng City", area: "Velvet Shade", hint: "Im zweiten Stock der Revelry Hall, beim Essen mit Zhuang Zhengzhi." },
+  { name: "Yan Chuchu", region: "Kaifeng City", area: "Velvet Shade", hint: "Auf der Bruecke rechts vom Velvet Shade Landmark, im Gespraech mit Song Shiheng." },
+  { name: "Yan Ziyan", region: "Kaifeng City", area: "Velvet Shade", hint: "Im Erdgeschoss der Revelry Hall, an der Suedseite des Gebaeudes." },
+  { name: "Yang Chunnuan", region: "Kaifeng City", area: "Velvet Shade", hint: "Suedlich von Springwave Pavilion, im Gespraech mit Su Xinlu und drei weiteren NPCs." },
+  { name: "Ye Zhiqiu", region: "Kaifeng City", area: "Velvet Shade", hint: "Neben Xu Lijun im Erdgeschoss der Revelry Hall, an der Ostseite des Gebaeudes." },
+  { name: "Yi Xi", region: "Kaifeng City", area: "Velvet Shade", hint: "Im zweiten Stock der Revelry Hall, beim Essen mit Guo Zhixiang." },
+  { name: "Yu Hui", region: "Kaifeng City", area: "Velvet Shade", hint: "Am Ende der Strasse, westlich des Velvet Shade Landmark." },
+  { name: "Zhen Huo", region: "Kaifeng City", area: "Velvet Shade", hint: "Im Erdgeschoss der Revelry Hall, an der Suedseite des Gebaeudes." },
+  { name: "Zhuang Zhengzhi", region: "Kaifeng City", area: "Velvet Shade", hint: "Im zweiten Stock der Revelry Hall, beim Essen mit Xue Li." },
 ];
 
-const npcPinsArray = npcPins as unknown as Partial<MapPin>[];
+const npcDetailsSorted = npcDetails
+  .map((npc) => ({ ...npc, image: npcPortraitPath(npc.name) }))
+  .sort((a, b) => a.name.localeCompare(b.name));
 
-const allPins: MapPin[] = npcPinsArray.map((p) => {
-  const detail = npcDetails.find((d) => d.name === p.name);
+const npcDetailsByName = new Map(npcDetailsSorted.map((npc) => [npc.name, npc]));
+const allPins: MapPin[] = (npcPins as unknown as Array<Partial<MapPin>>).map((pin) => {
+  const detail = pin.name ? npcDetailsByName.get(pin.name) : undefined;
   return {
-    name: p.name ?? detail?.name ?? "Unbekannter NPC",
-    x: p.x ?? 0,
-    y: p.y ?? 0,
-    region: detail?.region ?? p.region ?? undefined,
-    area: detail?.area ?? p.area ?? undefined,
-    hint: detail?.hint ?? p.hint ?? undefined,
-    image: detail?.image ?? p.image ?? undefined,
+    name: pin.name ?? detail?.name ?? "Unbekannter NPC",
+    x: pin.x ?? 0,
+    y: pin.y ?? 0,
+    region: detail?.region ?? pin.region,
+    area: detail?.area ?? pin.area,
+    hint: detail?.hint ?? pin.hint,
+    image: detail?.image ?? (pin.name ? npcPortraitPath(pin.name) : undefined),
   };
 });
-
-const allPinsSorted: MapPin[] = [...allPins].sort((a, b) => a.name.localeCompare(b.name));
 
 const nonInteractableNpcs = [
   {
@@ -368,7 +270,6 @@ const nonInteractableNpcs = [
     area: "Südöstlich vom General's Shrine, westlich vom Wayfarer",
     details:
       "Oddities bei Qi Sheng tauschen, um Melodies of Peace zu verbessern. NPC ist vorhanden, löst aber kein Old Friends / AI Chat aus.",
-    image: "https://static.wherewindsmeet.org/guides/npc-list/qi-sheng.png",
   },
   {
     name: "Yao Yaoyao",
@@ -377,34 +278,10 @@ const nonInteractableNpcs = [
     area: "Evercare Clinic, nördlich von Moonveil Mountain und südlich von Blissful Retreat",
     details:
       "Heilt gegen Gebühr und kann die Medizinkapazität erweitern (über Medicinal Tales). Kein Old Friends / AI Chat verfügbar.",
-    image: "https://static.wherewindsmeet.org/guides/npc-list/yao-yaoyao.png",
   },
 ];
 
 export default function NpcListPage() {
-  const mapUiText = {
-    regionLabel: "Region",
-    allOption: "Alle",
-    searchPlaceholder: "NPC suchen…",
-    showingPrefix: "Angezeigt",
-    showingSuffix: "Pins",
-    mapAlt: "Old Friends Karte (Where Winds Meet)",
-    closeAriaLabel: "Schließen",
-    regionPrefix: "Region:",
-    areaPrefix: "Gebiet:",
-    unknownValue: "Unbekannt",
-    portraitAltSuffix: "Porträt",
-    defaultHint: "Nutze das Chat-Muster oben, sobald du diesen NPC erreicht hast.",
-  } as const;
-
-  const imagePreviewUiText = {
-    instruction: "Scrollen oder Buttons zum Zoomen; Hintergrund anklicken zum Schließen",
-    zoomIn: "Zoom +",
-    zoomOut: "Zoom -",
-    reset: "1x",
-    close: "Schließen",
-  } as const;
-
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -412,7 +289,7 @@ export default function NpcListPage() {
       name: metadata.title,
       description: metadata.description,
       url: `${baseUrl}/de/guides/npc-list`,
-      dateModified: "2026-06-03",
+      dateModified: "2026-08-29",
     },
     {
       "@context": "https://schema.org",
@@ -436,31 +313,25 @@ export default function NpcListPage() {
       />
       <HomeHubBacklink language="de" />
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-10 shadow-2xl shadow-black/40">
-        <div className="pointer-events-none absolute inset-0">
-          <CdnImage
-            src="/guides/npc-list/hero.png"
-            alt="Old Friends NPC-Liste (Where Winds Meet) – Titelbild"
-            fill
-            className="object-cover opacity-40"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/40" />
-        </div>
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-emerald-950/40 via-slate-950 to-slate-950" />
 
         <div className="relative grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
           <div className="space-y-4">
+            <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-sm text-emerald-50">
+              Redaktionelle Momentaufnahme, zuletzt am 2026-06-24 geprüft. Dies ist keine vollständige Live-Spiel-Datenbank; Namen, Wege, Interaktionen und Belohnungen müssen im aktuellen Client geprüft werden.
+            </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-50">
               Where Winds Meet NPC-Liste: Old Friends Orte, Rewards und AI Chat.
             </h1>
             <p className="text-sm sm:text-base text-slate-200 leading-relaxed max-w-2xl">
-              Suchst du eine Where Winds Meet NPC-Liste? Starte hier. Dieser Guide bündelt Old-Friends-NPC-Orte, Regionen, Belohnungen, Karten-Vorschau, nicht interaktive NPCs und Copy-Paste-AI-Chat-Zeilen für schwierige Freunde wie Qin Caiwei.
+              Suchst du eine Where Winds Meet NPC-Liste? Dieses datierte visuelle Verzeichnis bündelt redaktionelle Ortshinweise, Old-Friends-Kontext, nicht interaktive NPCs und AI-Chat-Zeilen für Freunde wie Qin Caiwei.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
-                href="#npc-map"
+                href="#npc-directory"
                 className="inline-flex items-center gap-2 rounded-full border border-emerald-400/50 bg-emerald-500/10 px-4 py-2 text-xs font-semibold text-emerald-100 transition hover:border-emerald-300/80 hover:text-emerald-50"
               >
-                🗺️ Interaktive Karte öffnen
+                🗂️ Datiertes NPC-Verzeichnis öffnen
               </Link>
               <Link
                 href="/de/guides/qin-caiwei"
@@ -491,7 +362,7 @@ export default function NpcListPage() {
             Schnelle Antwort fur Suchende
           </p>
           <h2 className="text-2xl font-bold text-slate-50">
-            Nutze diese Seite, wenn du einen NPC-Ort, Old-Friends-Reward, AI-Chat-Satz oder Karten-Pin brauchst.
+            Nutze diese Seite als Ausgangspunkt für NPC-Ortshinweise, Old-Friends-Kontext oder AI-Chat-Zeilen.
           </h2>
           <p className="max-w-3xl text-sm leading-relaxed text-emerald-50/90">
             Die Seite ist auf die wichtigsten Where Winds Meet NPC-Suchen ausgerichtet: wo ein NPC steht, ob er als Old Friend zählt, welche Belohnung oder Completion er bringt und was du schreiben kannst, wenn AI Chat eine kurze Antwort ablehnt.
@@ -507,22 +378,21 @@ export default function NpcListPage() {
         </div>
       </section>
 
-      <section id="npc-map" className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+      <section className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="space-y-4 rounded-3xl border border-slate-800/80 bg-slate-950/70 p-6 shadow-lg">
           <div className="flex items-center gap-2">
             <span className="text-xl">🧭</span>
-            <h2 className="text-2xl font-bold text-slate-50">NPC-Karte (Vorschau)</h2>
-        </div>
-        <p className="text-sm text-slate-300 leading-relaxed">
-          Nutze die Karte, um Old-Friends-Pins nach Region oder Name zu filtern. Danach den NPC ansprechen und das Muster rechts verwenden.
-        </p>
-        <NpcMapClient pins={allPins} uiText={mapUiText} imagePreviewUiText={imagePreviewUiText} />
+            <h2 className="text-2xl font-bold text-slate-50">So nutzt du das redaktionelle Verzeichnis</h2>
+          </div>
+          <p className="text-sm text-slate-300 leading-relaxed">
+            Durchsuche die Karten nach Name, Region oder Gebiet oder nutze die importierte Karten-Momentaufnahme. Game8-Medien in genau diesem Verzeichnis haben eine vom Seiteninhaber bestätigte autorisierte Wiederverwendung; dadurch werden die Daten weder aktuell noch offiziell oder vollständig.
+          </p>
           <div className="flex flex-wrap gap-3">
             <Link
-            href="#npc-map"
-            className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-4 py-2 text-xs font-semibold text-emerald-100 hover:border-emerald-300/70 hover:text-emerald-50"
+              href="#npc-directory"
+              className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-4 py-2 text-xs font-semibold text-emerald-100 hover:border-emerald-300/70 hover:text-emerald-50"
             >
-              Karte öffnen
+              Visuelles Verzeichnis öffnen
             </Link>
             <Link
               href="/de/guides/gift-of-gab"
@@ -536,7 +406,7 @@ export default function NpcListPage() {
         <div className="space-y-4 rounded-3xl border border-slate-800/80 bg-slate-950/70 p-6 shadow-lg">
           <div className="flex items-center gap-2">
             <span className="text-xl">📌</span>
-            <h2 className="text-2xl font-bold text-slate-50">NPC schnell befreunden (Muster)</h2>
+            <h2 className="text-2xl font-bold text-slate-50">Praktisches AI-Chat-Muster zum Ausprobieren</h2>
           </div>
           <ul className="space-y-2 text-sm text-slate-300">
             {aiChatBasics.map((tip) => (
@@ -556,37 +426,82 @@ export default function NpcListPage() {
               ))}
             </ol>
             <p className="text-xs text-slate-400">
-              Funktioniert bei den meisten Old Friends. Wenn ein NPC „stur“ ist: kurz resetten und dasselbe Muster mit leicht anderer Formulierung erneut nutzen.
+              Dieses redaktionelle Muster kann bei einigen Old Friends helfen. Wenn ein NPC es ablehnt, folge dem aktuellen In-Game-Hinweis, statt ein universelles Skript anzunehmen.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="space-y-4 rounded-3xl border border-slate-800/70 bg-slate-950/70 p-6 shadow-lg">
+      <section id="npc-map" className="space-y-4 rounded-3xl border border-cyan-400/30 bg-slate-950/70 p-6 shadow-lg">
+        <div className="space-y-2">
+          <p className="text-xs font-semibold uppercase tracking-wide text-cyan-200">Autorisierte Bildreferenz · datierte Momentaufnahme</p>
+          <h2 className="text-2xl font-bold text-slate-50">Durchsuchbare visuelle Old-Friends-Referenz</h2>
+          <p className="text-sm leading-relaxed text-slate-300">
+            Einträge und Porträts gehören zur redaktionellen Momentaufnahme vom 2026-06-24. Die große Übersichtskarte wird nur auf Wunsch geladen und zeigt absichtlich keine Pin-Überlagerung, weil die importierten Koordinaten nicht auf dieses Bild kalibriert sind.
+          </p>
+        </div>
+        <NpcMapClient
+          pins={allPins}
+          mapSrc={npcMapPath}
+          uiText={{
+            regionLabel: "Region",
+            allOption: "Alle",
+            searchLabel: "NPC-Namen durchsuchen",
+            searchPlaceholder: "NPC suchen …",
+            showingPrefix: "Angezeigt",
+            showingSuffix: "Einträge",
+            mapAlt: "Datierte Where Winds Meet Old-Friends-Karten-Momentaufnahme",
+            closeAriaLabel: "Schließen",
+            regionPrefix: "Region:",
+            areaPrefix: "Gebiet:",
+            unknownValue: "Unbekannt",
+            portraitAltSuffix: "NPC-Referenzbild",
+            defaultHint: "Hinweis im aktuellen Client prüfen.",
+            loadMap: "2,5-MB-Kartenreferenz laden",
+            hideMap: "Kartenreferenz ausblenden",
+            mapDisclosure: "Die Übersichtskarte ist eine datierte visuelle Referenz. NPC-Pins werden nicht darübergelegt, weil die importierten Koordinaten für dieses Bild nicht kalibriert sind.",
+            selectPrompt: "Wähle einen Treffer, um genau ein Porträt zu laden.",
+            resultLimitSuffix: "Die ersten 24 Treffer werden angezeigt; grenze die Suche für weitere NPCs ein.",
+          }}
+          imagePreviewUiText={{
+            instruction: "Scrollen oder Tasten zum Zoomen; Hintergrund schließt die Ansicht",
+            zoomIn: "Vergrößern",
+            zoomOut: "Verkleinern",
+            reset: "1×",
+            close: "Schließen",
+          }}
+        />
+        <p className="text-xs leading-relaxed text-slate-400">
+          Datensatz und Medien: {" "}
+          <a
+            href="https://game8.co/games/Where-Winds-Meet/archives/565812"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-cyan-200 underline decoration-cyan-400/50 underline-offset-4"
+          >
+            Game8 NPC-Guide
+          </a>
+          . Die Bestätigung des Seiteninhabers zur autorisierten Wiederverwendung ist im Repository mit Datum 2026-08-29 dokumentiert.
+        </p>
+      </section>
+
+      <section id="npc-directory" className="space-y-4 rounded-3xl border border-slate-800/70 bg-slate-950/70 p-6 shadow-lg">
         <div className="flex items-center gap-2">
           <span className="text-xl">🗂️</span>
-          <h2 className="text-2xl font-bold text-slate-50">Alle interaktiven NPCs (Old Friends)</h2>
+          <h2 className="text-2xl font-bold text-slate-50">Redaktionell erfasste interaktive NPCs (Old Friends)</h2>
         </div>
         <p className="text-sm text-slate-300 leading-relaxed">
-          NPC-Liste aus allen aktuellen Karten-Pins. Einträge mit Portrait zeigen ein Bild; Einträge ohne Portrait bleiben als Textkarten sichtbar, damit Kaifeng City und andere Map-only NPCs nicht fehlen.
+          Momentaufnahme, zuletzt am 2026-06-24 geprüft. Dieses visuelle Verzeichnis bewahrt redaktionelle NPC-Notizen und autorisierte Game8-Porträts, ist aber keine vollständige Live-Spiel-Datenbank. Prüfe Namen, Wege, Interaktionen und Belohnungen im aktuellen Client.
         </p>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {allPinsSorted.map((npc) => (
+          {npcDetailsSorted.map((npc) => (
             <div key={npc.name} className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 shadow-md space-y-2">
                 <div className="flex items-center justify-between gap-2">
                   <p className="text-base font-semibold text-slate-100">{npc.name}</p>
                   <span className="text-[11px] uppercase tracking-wide text-slate-400">{npc.region || "Region unbekannt"}</span>
                 </div>
-                {npc.image ? (
-                  <NpcImagePreview
-                    src={npc.image}
-                    alt={`${npc.name} NPC-Porträt (Where Winds Meet)`}
-                    thumbnailClassName="h-32"
-                    uiText={imagePreviewUiText}
-                  />
-                ) : null}
               <p className="text-xs text-emerald-200">Gebiet: {npc.area || "Nicht angegeben"}</p>
-              <p className="text-xs text-slate-300 leading-relaxed">Hinweis: {npc.hint || "Karte prüfen und empathisch ansprechen."}</p>
+              <p className="text-xs text-slate-300 leading-relaxed">Hinweis: {npc.hint || "Im aktuellen Client prüfen und empathisch ansprechen."}</p>
             </div>
           ))}
         </div>
@@ -600,7 +515,7 @@ export default function NpcListPage() {
         <ul className="space-y-2 text-sm text-slate-300">
           <li className="flex gap-2">
             <span className="text-emerald-300">-</span>
-            <span>Wöchentliche Geschenke sammeln sich an – früh fertig = maximaler Nutzen.</span>
+            <span>Prüfe wiederkehrende oder einmalige Belohnungen im aktuellen Beziehungsmenü, bevor du einen NPC priorisierst.</span>
           </li>
           <li className="flex gap-2">
             <span className="text-emerald-300">-</span>
@@ -633,16 +548,6 @@ export default function NpcListPage() {
                   Kein AI-Chat
                 </span>
               </div>
-              {npc.image ? (
-                <div className="relative h-32 w-full overflow-hidden rounded-xl border border-slate-800 bg-slate-900/80">
-                  <NpcImagePreview
-                    src={npc.image}
-                    alt={`${npc.name} NPC-Porträt`}
-                    thumbnailClassName="h-32"
-                    uiText={imagePreviewUiText}
-                  />
-                </div>
-              ) : null}
               <p className="text-xs text-emerald-200">Region: {npc.region}</p>
               <p className="text-xs text-slate-200">Gebiet: {npc.area}</p>
               <p className="text-xs text-slate-300 leading-relaxed">{npc.details}</p>

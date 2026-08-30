@@ -1,43 +1,33 @@
 import type { Metadata } from "next";
+import {
+  buildLocaleUrls,
+  buildLocalizedPath,
+  SITE_URL,
+} from "@/i18n/routing.mjs";
 
-const SITE_URL = "https://wherewindsmeet.org";
-
-const SUPPORTED_LANGUAGES = [
-  { code: "en", hrefLang: "en-US", prefix: "" },
-  { code: "vi", hrefLang: "vi-VN", prefix: "/vn" },
-  { code: "de", hrefLang: "de-DE", prefix: "/de" },
-] as const;
-
-export type SupportedLanguageCode = (typeof SUPPORTED_LANGUAGES)[number]["code"];
+export type SupportedLanguageCode = "en" | "vi" | "de";
 
 type BuildHreflangOptions = {
   canonicalLanguage?: SupportedLanguageCode;
   includeXDefault?: boolean;
 };
 
-const normalizePath = (path: string) => {
-  if (!path || path === "/") return "";
-  return path.startsWith("/") ? path : `/${path}`;
-};
-
 export const buildHreflangAlternates = (
   path: string,
   options: BuildHreflangOptions = {}
 ): Metadata["alternates"] => {
-  const normalizedPath = normalizePath(path);
   const canonicalCode = options.canonicalLanguage || "en";
-  const canonicalLang = SUPPORTED_LANGUAGES.find((lang) => lang.code === canonicalCode) || SUPPORTED_LANGUAGES[0];
+  const languages: Record<string, string> = Object.fromEntries(
+    Object.entries(buildLocaleUrls(path)),
+  );
 
-  const languages = SUPPORTED_LANGUAGES.reduce<Record<string, string>>((acc, lang) => {
-    acc[lang.hrefLang] = `${SITE_URL}${lang.prefix}${normalizedPath}`;
-    return acc;
-  }, {});
-
-  if (options.includeXDefault !== false) {
-    languages["x-default"] = `${SITE_URL}${normalizedPath}`;
+  if (options.includeXDefault === false) {
+    delete languages["x-default"];
   }
 
-  const canonical = `${SITE_URL}${canonicalLang.prefix}${normalizedPath}`;
+  const canonicalPath =
+    buildLocalizedPath(path, canonicalCode) || buildLocalizedPath(path, "en") || "/";
+  const canonical = `${SITE_URL}${canonicalPath === "/" ? "" : canonicalPath}`;
 
   return {
     canonical,

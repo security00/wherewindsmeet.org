@@ -3,27 +3,29 @@ import CdnImage from "@/components/CdnImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import Link from "next/link";
 import type { NewsType } from "@/lib/news";
+import { getContentFreshness } from "@/lib/contentFreshness";
 import { latestNewsDate, newsItems } from "@/lib/news.vi";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
+const freshness = getContentFreshness("/news");
 
 export const metadata: Metadata = {
   title: "Tin tức Where Winds Meet, roadmap & patch notes",
   description:
-    "Tin tức Where Winds Meet chọn lọc: roadmap, cân bằng và patch notes để bạn nắm nhanh những thay đổi quan trọng.",
+    "Danh mục tin Where Winds Meet có ngày, loại tin và liên kết nguồn; tiêu đề tiếng Anh chính thức được giữ nguyên và ghi nhãn rõ ràng.",
   alternates: buildHreflangAlternates("/news", { canonicalLanguage: "vi" }),
   openGraph: {
     title: "Tin tức Where Winds Meet, roadmap & patch notes",
     description:
-      "Tin tức Where Winds Meet chọn lọc: roadmap, cân bằng và patch notes để bạn nắm nhanh những thay đổi quan trọng.",
+      "Danh mục roadmap, cân bằng và patch notes với tiêu đề tiếng Anh chính thức, ngày đăng và liên kết nguồn rõ ràng.",
     url: `${baseUrl}/vn/news`,
     locale: "vi_VN",
   },
   twitter: {
     title: "Tin tức Where Winds Meet, roadmap & patch notes",
     description:
-      "Tin tức Where Winds Meet chọn lọc: roadmap, cân bằng và patch notes để bạn nắm nhanh những thay đổi quan trọng.",
+      "Danh mục tin Where Winds Meet với tiêu đề tiếng Anh chính thức, ngày đăng và liên kết nguồn rõ ràng.",
   },
 };
 
@@ -41,7 +43,7 @@ const searchIntentWatchlist = [
     query: "wwm arena ranks",
     action:
       "Liên kết tier list chính, PvP tier list, weapon tier list và patch notes để người leo hạng đưa ra quyết định nhanh.",
-    href: "/vn/guides/tier-list#arena-ranks",
+    href: "/guides/tier-list#arena-ranks",
     cta: "Ghi chú xếp hạng Đấu trường",
   },
   {
@@ -128,11 +130,11 @@ export default function NewsPage() {
           </h1>
           <div className="space-y-4 text-slate-200/90 font-sans text-lg leading-relaxed">
             <p>
-              Tóm tắt thông báo chính thức, roadmap, hướng dẫn ra mắt, patch notes và ghi chú beta. Mỗi thẻ liên kết về nguồn gốc để bạn kiểm chứng chi tiết khi cần.
+              Đây là danh mục thông báo chính thức, roadmap, hướng dẫn ra mắt, patch notes và ghi chú beta. Tiêu đề tiếng Anh gốc được giữ nguyên và mỗi thẻ liên kết về nguồn chính thức.
             </p>
             <p>
-              Muốn lướt nhanh <span className="font-semibold text-emerald-400">patch notes</span> hoặc cập nhật{" "}
-              <span className="font-semibold text-emerald-400">roadmap</span> mà không phải đọc mọi dòng? Bắt đầu tại đây.
+              Phần mô tả tiếng Việt chỉ nêu ngôn ngữ và nguồn của bài, không giả định là bản dịch đầy đủ. Hãy mở nguồn gốc để kiểm tra chi tiết về{" "}
+              <span className="font-semibold text-emerald-400">patch notes</span> hoặc <span className="font-semibold text-emerald-400">roadmap</span>.
             </p>
           </div>
 
@@ -147,17 +149,19 @@ export default function NewsPage() {
             className="rounded-2xl border border-emerald-500/40 bg-emerald-500/10 p-4 text-sm text-emerald-50 shadow-inner shadow-emerald-900/40"
           >
             <div className="flex items-center justify-between gap-2">
-              <p className="font-semibold">Theo dõi Version 1.8 / Companions Make Home</p>
+              <p className="font-semibold">Version 2.1 / Clouded Revelation — mốc đã kiểm tra gần nhất</p>
               <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
                 {lastUpdatedLabel}
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Đợt rà soát mới nhất theo Version 1.8 / Companions Make Home, patch notes ngày 25/06 và Dev Q&amp;A ngày 23/06. Tin về Version 1.7, Xbox, chống gian lận, cảnh báo code, Hexi và Qinchuan vẫn nằm bên dưới để người chơi quay lại bắt kịp.
+              Đã rà soát theo {freshness?.gameVersion ?? "Version 2.1 / August 27"}: tổng quan chính thức ngày
+              27/08 và patch notes ngày 20/08 là mốc hiện tại. Version 2.0, Version 1.8, Palace, Xbox, Hexi và
+              Qinchuan vẫn nằm bên dưới dưới dạng nội dung lịch sử có ngày.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link
-                href="/vn/guides/tier-list"
+                href="/guides/tier-list"
                 className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80"
               >
                 Tier list (góc nhìn CN)
@@ -169,7 +173,7 @@ export default function NewsPage() {
                 Thay đổi boss
               </Link>
               <Link
-                href="/vn/guides/codes"
+                href="/guides/codes"
                 className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80"
               >
                 Code mới nhất
@@ -215,6 +219,9 @@ export default function NewsPage() {
               >
                 <div className="space-y-2">
                   <div className="flex flex-wrap items-center gap-3">
+                    <span className="w-full text-[10px] font-semibold uppercase tracking-wide text-slate-400">
+                      Tiêu đề tiếng Anh chính thức
+                    </span>
                     <h2 className="text-lg font-bold text-slate-50 group-hover:text-ink-jade transition-colors font-serif">
                       {item.title}
                     </h2>
@@ -259,13 +266,13 @@ export default function NewsPage() {
         </h2>
         <div className="space-y-4 text-slate-300 font-sans leading-relaxed">
           <p>
-            Mục tiêu: tập trung tin quan trọng ảnh hưởng trải nghiệm. Nếu patch chỉnh camera, ngắm bắn, giao diện hoặc thêm hoạt động giới hạn, bạn sẽ thấy bản tóm tắt rõ ràng kèm nhắc lịch.
+            Mục tiêu của trang là giúp bạn tìm đúng thông báo chính thức theo ngày và loại tin. Mỗi thẻ giữ nguyên tiêu đề tiếng Anh để tránh biến một bản diễn giải ngắn thành bản dịch không được kiểm chứng.
           </p>
           <p>
-            Tin nào ảnh hưởng build sẽ được phản ánh ở trang builds và tier list. Sự kiện có code hoặc lợi ích lâu dài sẽ được gắn nhãn và liên kết sang trang phần thưởng và code.
+            Phần mô tả cho biết bài gốc dùng tiếng Anh và dẫn thẳng tới nguồn. Nội dung, phạm vi thay đổi và điều kiện sự kiện phải được kiểm tra trên trang chính thức.
           </p>
           <p>
-            Nếu có thay đổi lớn mà bạn muốn cập nhật cụ thể về PvP, boss hoặc chất lượng trải nghiệm, hãy nhắn — chúng tôi sẽ ưu tiên cập nhật sớm.
+            Các trang hướng dẫn liên quan chỉ được cập nhật sau khi thông tin có thể đối chiếu với nguồn chính thức; mốc hiện tại của trang tin là Version 2.1, ngày 27/08.
           </p>
         </div>
       </section>

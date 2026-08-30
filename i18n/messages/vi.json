@@ -1,0 +1,78 @@
+{
+  "siteHeader": {
+    "brandSubtitle": "Hướng dẫn · Xếp hạng · Mã quà",
+    "homeAria": "Trang chủ Where Winds Meet",
+    "switchLanguageAria": "Đổi ngôn ngữ",
+    "activeLabel": "Đang dùng",
+    "openMenuAria": "Mở menu",
+    "openMenuSr": "Mở menu",
+    "closeMenuAria": "Đóng menu",
+    "closeNavigationAria": "Đóng điều hướng",
+    "nav": {
+      "home": "Trang chủ",
+      "guides": "Hướng dẫn",
+      "tools": "Công cụ",
+      "bosses": "Boss",
+      "weapons": "Vũ khí",
+      "martialArts": "Võ học",
+      "tierList": "Xếp hạng",
+      "builds": "Bộ build",
+      "codes": "Mã quà",
+      "items": "Vật phẩm",
+      "news": "Tin tức",
+      "videos": "Video"
+    }
+  },
+  "siteFooter": {
+    "description": "Fan hub không chính thức về Where Winds Meet. Mọi nhãn hiệu thuộc về chủ sở hữu tương ứng.",
+    "links": {
+      "home": "Where Winds Meet",
+      "guides": "Hướng dẫn",
+      "tools": "Công cụ",
+      "bosses": "Boss",
+      "weapons": "Vũ khí",
+      "news": "Tin tức",
+      "videos": "Video",
+      "privacy": "Riêng tư",
+      "terms": "Điều khoản"
+    }
+  },
+  "languagePrompt": {
+    "dialogAria": "Gợi ý ngôn ngữ",
+    "suggestions": {
+      "vi": {
+        "label": "Tiếng Việt",
+        "available": "Đã hỗ trợ:",
+        "message": "Hiện đã có phiên bản tiếng Việt.",
+        "cta": "Chuyển sang Tiếng Việt",
+        "stayCta": "Tiếp tục dùng bản hiện tại"
+      },
+      "de": {
+        "label": "Deutsch",
+        "available": "Đã hỗ trợ:",
+        "message": "Hiện đã có phiên bản tiếng Đức.",
+        "cta": "Chuyển sang tiếng Đức",
+        "stayCta": "Tiếp tục dùng bản hiện tại"
+      }
+    }
+  },
+  "consent": {
+    "title": "Lựa chọn quyền riêng tư",
+    "summary": "Dịch vụ phân tích và quảng cáo tùy chọn sẽ không được tải cho đến khi bạn cho phép. Bộ nhớ cục bộ cần thiết lưu lựa chọn của bạn.",
+    "acceptAll": "Chấp nhận tất cả",
+    "rejectOptional": "Từ chối tùy chọn",
+    "customize": "Tùy chỉnh",
+    "settingsTitle": "Cài đặt quyền riêng tư",
+    "settingsDescription": "Chọn dịch vụ tùy chọn mà fan hub được phép tải. Bạn có thể quay lại đây để đổi hoặc rút lại lựa chọn bất cứ lúc nào.",
+    "necessaryLabel": "Cần thiết",
+    "necessaryDescription": "Luôn hoạt động. Lưu lựa chọn quyền riêng tư trên thiết bị để chúng tôi không hỏi lại ở mỗi lần truy cập.",
+    "analyticsLabel": "Phân tích",
+    "analyticsDescription": "Cho phép Google Analytics, Microsoft Clarity và Plausible đo lường việc sử dụng trang và cải thiện hướng dẫn.",
+    "adsLabel": "Quảng cáo",
+    "adsDescription": "Cho phép Google AdSense tải quảng cáo sau khi bạn đồng ý rõ ràng và xử lý dữ liệu trang, thiết bị theo chính sách của Google.",
+    "save": "Lưu lựa chọn",
+    "cancel": "Hủy",
+    "openSettings": "Cài đặt quyền riêng tư",
+    "privacyLink": "Đọc chính sách quyền riêng tư"
+  }
+}

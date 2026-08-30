@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         url: "https://static.wherewindsmeet.org/guides/wall-puzzle/wall-tiles-right.webp",
         width: 1650,
         height: 928,
-        alt: "Nhấn 移 và 百 trên bức tường bên phải trong câu đố",
+        alt: "Tường phải của câu đố với hai khối Yi và Bai",
       },
     ],
     locale: "vi_VN",
@@ -65,26 +65,34 @@ const quickAnswers = [
 const heroImages = [
   {
     src: "/guides/wall-puzzle/fire-contraptions-map.webp",
-    alt: "Vị trí hỏa cụ quanh tàn tích lâu đài ở Qinghe",
-    caption: "Bản đồ hỏa cụ: đốt cả bốn để mở đường hầm.",
+    alt: "Bản đồ bốn hỏa cụ quanh tàn tích Qinghe",
+    caption: "Đốt đủ bốn hỏa cụ được đánh dấu trước khi quay lại sân tập.",
   },
   {
     src: "/guides/wall-puzzle/pose-yanyun-oath.webp",
-    alt: "Dùng động tác Yanyun Oath để khởi động câu đố tường",
-    caption: "Kích hoạt: dùng tư thế Yanyun Oath trước tượng lớn.",
+    alt: "Nhân vật dùng động tác Yanyun Oath trước tượng khổng lồ",
+    caption: "Dùng Yanyun Oath trước tượng để kích hoạt cơ quan tường.",
   },
   {
     src: "/guides/wall-puzzle/wall-tiles-right.webp",
-    alt: "Nhấn khối đá 移 và 百 trên tường bên phải",
-    caption: "Lời giải: tường phải nhấn 移 + 百, tường trái nhấn 漂.",
+    alt: "Tường phải với hai ký tự Yi và Bai đã được chọn",
+    caption: "Đáp án tường phải: nhấn 移 và 百.",
+  },
+  {
+    src: "/guides/wall-puzzle/wall-tiles-left.webp",
+    alt: "Tường trái với ký tự Piao đã được chọn",
+    caption: "Đáp án tường trái: nhấn 漂.",
   },
 ];
 
-const zoomUiText = {
-  openAriaLabelTemplate: "Mở ảnh phóng to: {alt}",
-  closeLabel: "Đóng",
-  hintTemplate: "Cuộn hoặc dùng +/- để zoom; kéo/cuộn để di chuyển. Hiện tại: {pct}%",
-} as const;
+const ignReferenceImages = [
+  { src: "/guides/wall-puzzle/ign/1.webp", alt: "Phòng đố tường với bức tượng ở giữa", caption: "Bố cục phòng trước khi kích hoạt bức tượng." },
+  { src: "/guides/wall-puzzle/ign/2.webp", alt: "Gợi ý ký tự gần tượng của câu đố tường", caption: "Gợi ý chỉ về các ký tự tương ứng trên tường." },
+  { src: "/guides/wall-puzzle/ign/3.webp", alt: "Tường phải trước khi chọn các khối", caption: "Tường phải trước khi giải: chọn khối thứ nhất và thứ ba." },
+  { src: "/guides/wall-puzzle/ign/4.webp", alt: "Tường trái trước khi chọn khối", caption: "Tường trái trước khi giải: chọn khối thứ hai." },
+  { src: "/guides/wall-puzzle/ign/5.webp", alt: "Tường phải sau khi chọn đúng", caption: "Trạng thái đã giải của tường phải." },
+  { src: "/guides/wall-puzzle/ign/6.webp", alt: "Tường trái sau khi chọn đúng", caption: "Trạng thái đã giải của tường trái." },
+] as const;
 
 const fireContraptions = [
   {
@@ -132,109 +140,47 @@ const unlockSteps = [
   {
     title: "Bắt đầu nhiệm vụ tại tàn tích Qinghe",
     text: "Nói chuyện với Lie Bujin ở cổng tàn tích để nhận Echoes of Old Battles (Verdant Wilds).",
-    image: {
-      src: "/guides/wall-puzzle/game8/4331081-57e94f6bf21d69927689e378eb0358fd.webp",
-      alt: "Mốc nhiệm vụ Echoes of Old Battles trên bản đồ",
-      caption: "Mốc nhiệm vụ: tàn tích Qinghe, Verdant Wilds.",
-    },
   },
   {
     title: "Nghe lén, nổ thùng, dọn quái",
     text: "Nghe lén gần thùng nổ, bắn mũi tên lửa để quét đợt quái, rồi hạ Zhang Bao và nhặt bản đồ hỏa cụ từ rương sân tập.",
-    image: {
-      src: "/guides/wall-puzzle/game8/4331075-caa01c4ee0d88da905e52717793aa762.webp",
-      alt: "Vị trí nghe lén và thùng nổ",
-      caption: "Nghe lén rồi bắn thùng nổ để dọn đợt đầu.",
-    },
   },
   {
     title: "Đốt đủ bốn hỏa cụ",
     text: "Dùng bản đồ để đốt bốn hỏa cụ (thứ tự tùy ý): trái cổng, tường gãy trên, nền thấp phía đông, và trong sân tập.",
-    image: {
-      src: "/guides/wall-puzzle/game8/4331076-f79e5957d1551183859b4e5d3e86d414.webp",
-      alt: "Đốt đúng hỏa cụ",
-      caption: "Phải đốt đúng bốn hỏa cụ, nếu thiếu cửa ngầm sẽ không mở.",
-    },
   },
   {
     title: "Dậm bàn áp lực, xuống ngầm",
     text: "Sau khi đốt đủ, một bàn áp lực xuất hiện ở sân; dùng Mighty Drop để mở đường hầm.",
-    image: {
-      src: "/guides/wall-puzzle/game8/4331077-e5a535c018ecb105709d9d47994d8b12.webp",
-      alt: "Lối vào hầm",
-      caption: "Dậm bàn áp lực để lộ lối xuống ngầm.",
-    },
   },
   {
     title: "Mượn động tác Yanyun Oath",
     text: "Sao chép động tác từ tượng lính, rồi dùng trước tượng lớn để kích hoạt câu đố tường.",
-    image: {
-      src: "/guides/wall-puzzle/game8/4331078-7e11bf6db03c83463d137fe7e8d188aa.webp",
-      alt: "Dùng động tác Yanyun Oath để kích hoạt cơ quan",
-      caption: "Phải dùng động tác trước khi tương tác; nếu không tường sẽ không phản hồi.",
-    },
   },
   {
     title: "Nhấn khối tường (bước lõi)",
     text: "Tường phải: nhấn 移 và 百. Tường trái: nhấn 漂. Thứ tự linh hoạt—chỉ cần đủ ba ký tự để mở cửa.",
-    image: {
-      src: "/guides/wall-puzzle/wall-tiles-right.webp",
-      alt: "Nhấn 移 và 百 trên tường bên phải",
-      caption: "Tường phải: 移 + 百; tường trái: 漂.",
-    },
   },
   {
     title: "Kéo cần sau thác nước",
     text: "Cửa mở, nhảy qua và kéo cần sau thác để tiến tiếp.",
-    image: {
-      src: "/guides/wall-puzzle/game8/4331080-4a13e0a7c62d5ea365fce67df363dbe1.webp",
-      alt: "Cần gạt sau thác nước",
-      caption: "Cần gạt mở lối vào phòng kho báu.",
-    },
   },
   {
     title: "Mở rương lấy Touch of Death",
     text: "Phòng cuối cho Mystic Skill Touch of Death và thêm loot; hoàn tất nhiệm vụ.",
-    image: {
-      src: "/guides/wall-puzzle/game8/4331079-8c8f3f163d873516d57b4e93078f2a7b.webp",
-      alt: "Rương thưởng Touch of Death",
-      caption: "Nhận Mystic Skill: Touch of Death.",
-    },
   },
 ];
 
-const ignReferences = [
-  {
-    src: "/guides/wall-puzzle/ign/1.webp",
-    alt: "Toàn cảnh phòng câu đố với tượng trung tâm",
-    caption: "Ảnh IGN: bố cục phòng trước khi tương tác.",
-  },
-  {
-    src: "/guides/wall-puzzle/ign/2.webp",
-    alt: "Gợi ý ký tự trên nền gần tượng",
-    caption: "Ảnh IGN: bia gợi ý ký tự cần nhấn.",
-  },
-  {
-    src: "/guides/wall-puzzle/ign/3.webp",
-    alt: "Tường phải với bốn khối có thể tương tác",
-    caption: "Ảnh IGN: tường phải—nhấn khối 1 và 3 (移, 百).",
-  },
-  {
-    src: "/guides/wall-puzzle/ign/4.webp",
-    alt: "Tường trái với hai khối có thể tương tác",
-    caption: "Ảnh IGN: tường trái—nhấn khối 2 (漂).",
-  },
-  {
-    src: "/guides/wall-puzzle/ign/5.webp",
-    alt: "Tường phải sau khi nhấn đúng",
-    caption: "Ảnh IGN: trạng thái tường phải sau khi giải.",
-  },
-  {
-    src: "/guides/wall-puzzle/ign/6.webp",
-    alt: "Tường trái sau khi nhấn đúng",
-    caption: "Ảnh IGN: trạng thái tường trái sau khi giải.",
-  },
-];
+const unlockImages = [
+  "/guides/wall-puzzle/game8/4331081-57e94f6bf21d69927689e378eb0358fd.webp",
+  "/guides/wall-puzzle/game8/4331075-caa01c4ee0d88da905e52717793aa762.webp",
+  "/guides/wall-puzzle/game8/4331076-f79e5957d1551183859b4e5d3e86d414.webp",
+  "/guides/wall-puzzle/game8/4331077-e5a535c018ecb105709d9d47994d8b12.webp",
+  "/guides/wall-puzzle/game8/4331078-7e11bf6db03c83463d137fe7e8d188aa.webp",
+  "/guides/wall-puzzle/wall-tiles-right.webp",
+  "/guides/wall-puzzle/game8/4331080-4a13e0a7c62d5ea365fce67df363dbe1.webp",
+  "/guides/wall-puzzle/game8/4331079-8c8f3f163d873516d57b4e93078f2a7b.webp",
+] as const;
 
 export default function WallPuzzleGuidePage() {
   return (
@@ -297,29 +243,48 @@ export default function WallPuzzleGuidePage() {
         </div>
       </section>
 
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-4 sm:p-6 shadow-lg">
-        <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
-          <h2 className="text-xl font-bold text-slate-50">Hình ảnh cần xem</h2>
-          <p className="text-xs text-slate-500">Nguồn: GameRant (lưu local)</p>
+      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-4 shadow-lg sm:p-6">
+        <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h2 className="text-xl font-bold text-slate-50">Ảnh quan trọng cần xem</h2>
+            <p className="mt-1 text-xs text-slate-400">Source publisher: Game8 and GameRant.</p>
+          </div>
+          <p className="text-xs text-emerald-200">Reuse authorization confirmed by site owner 2026-08-29.</p>
         </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          {heroImages.map((img) => (
-            <figure
-              key={img.src}
-              className="overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/60 shadow-inner shadow-slate-950/40"
-            >
+        <div className="grid gap-4 md:grid-cols-2">
+          {heroImages.map((image, index) => (
+            <figure key={image.src} className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
               <ZoomableImage
-                src={img.src}
-                alt={img.alt}
+                src={image.src}
+                alt={image.alt}
                 width={1650}
                 height={928}
-                sizes="(max-width: 768px) 100vw, 33vw"
-                priority
-                uiText={zoomUiText}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority={index === 0}
               />
-              <figcaption className="px-3 py-2 text-xs text-slate-300/90 border-t border-slate-800/80">
-                {img.caption} (nhấn để phóng to)
+              <figcaption className="border-t border-slate-800 px-4 py-3 text-xs leading-5 text-slate-300">
+                {image.caption}
               </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/70 p-4 shadow-lg sm:p-6">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h2 className="text-xl font-bold text-slate-50">Thư viện tham chiếu phòng đố tường</h2>
+            <p className="mt-1 text-xs text-slate-400">Source publisher: IGN.</p>
+          </div>
+          <p className="max-w-xl text-xs leading-5 text-amber-200">
+            Reuse authorization confirmed by site owner 2026-08-29. Third-party walkthrough screenshots are not official or current-build evidence.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {ignReferenceImages.map((image) => (
+            <figure key={image.src} className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
+              <ZoomableImage src={image.src} alt={image.alt} width={1650} height={928} sizes="(max-width: 768px) 100vw, 33vw" />
+              <figcaption className="border-t border-slate-800 px-4 py-3 text-xs leading-5 text-slate-300">{image.caption}</figcaption>
             </figure>
           ))}
         </div>
@@ -406,8 +371,8 @@ export default function WallPuzzleGuidePage() {
 
       <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-6">
         <div className="flex items-center justify-between gap-3 flex-wrap">
-          <h3 className="text-xl font-bold text-slate-50">Các bước + ảnh minh họa</h3>
-          <p className="text-xs text-slate-500">Ảnh từ Game8 và GameRant, lưu local cho rõ nét.</p>
+          <h3 className="text-xl font-bold text-slate-50">Các bước mở khóa kèm ảnh</h3>
+          <p className="text-xs text-slate-400">Source publisher: Game8 and GameRant.</p>
         </div>
         <div className="grid gap-5 md:grid-cols-2">
           {unlockSteps.map((step, idx) => (
@@ -427,45 +392,17 @@ export default function WallPuzzleGuidePage() {
               </div>
               <figure className="border-t border-slate-800/80">
                 <ZoomableImage
-                  src={step.image.src}
-                  alt={step.image.alt}
+                  src={unlockImages[idx]}
+                  alt={`${step.title} – ảnh hướng dẫn nhiệm vụ Where Winds Meet`}
                   width={1650}
                   height={928}
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  uiText={zoomUiText}
                 />
-                <figcaption className="px-4 py-3 text-xs text-slate-300/90 border-t border-slate-800/80">
-                  {step.image.caption} (nhấn để phóng to)
+                <figcaption className="border-t border-slate-800/80 px-4 py-3 text-xs leading-5 text-slate-300">
+                  Bước {idx + 1}: {step.title}. Source publisher: {idx === 5 ? "GameRant" : "Game8"}.
                 </figcaption>
               </figure>
             </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
-        <div className="flex items-center justify-between flex-wrap gap-3">
-          <h3 className="text-xl font-bold text-slate-50">Ảnh tham chiếu IGN (local)</h3>
-          <p className="text-xs text-slate-500">Sao lưu từ bản IGN của bạn để xem rõ.</p>
-        </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          {ignReferences.map((img) => (
-            <figure
-              key={img.src}
-              className="overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/60 shadow-inner shadow-slate-950/40"
-            >
-              <ZoomableImage
-                src={img.src}
-                alt={img.alt}
-                width={1650}
-                height={928}
-                sizes="(max-width: 768px) 100vw, 33vw"
-                uiText={zoomUiText}
-              />
-              <figcaption className="px-3 py-2 text-xs text-slate-300/90 border-t border-slate-800/80">
-                {img.caption} (nhấn để phóng to)
-              </figcaption>
-            </figure>
           ))}
         </div>
       </section>

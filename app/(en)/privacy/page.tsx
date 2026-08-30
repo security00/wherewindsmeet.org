@@ -72,21 +72,23 @@ export default function PrivacyPage() {
           3. Cookies, analytics, and similar technologies.
         </h2>
         <p>
-          This site may use basic analytics tools to understand how many people
-          visit, which pages are popular, and how long readers stay on certain
-          sections. When enabled, these tools typically rely on cookies or
-          similar identifiers set in your browser. The goal is to measure
-          interest in different Where Winds Meet topics so the most useful
-          guides can be expanded over time.
+          Optional services are off by default. The site loads Google Analytics,
+          Microsoft Clarity, and Plausible only after you explicitly consent to
+          the Analytics category. Google AdSense loads only after you explicitly
+          consent to the Advertising category. Providers that are enabled may
+          receive your IP address, page and device information under their own
+          policies. Google&apos;s certified consent-platform and account requirements
+          remain applicable in regulated regions.
         </p>
         <p>
-          Any analytics that are added in the future will be configured to focus
-          on aggregated trends rather than tracking individuals across the
-          internet. If a particular analytics provider offers additional privacy
-          controls—such as IP anonymization or opt-out mechanisms—those options
-          will be enabled wherever practical. If the analytics setup changes in
-          a meaningful way, this privacy policy will be updated to describe that
-          change.
+          Your category choices, a consent-format version, and an update time are
+          stored in your browser&apos;s <code className="rounded bg-slate-900 px-1 py-0.5 text-xs">localStorage</code>.
+          This necessary record does not itself load those providers. Use the
+          persistent “Privacy settings” button to change or withdraw your choice.
+          Withdrawal prevents future optional script loading and removes known
+          first-party analytics or ad cookies where possible; it cannot undo data
+          a provider already received. This site-level preference control is not
+          presented as a Google-certified consent management platform.
         </p>
       </section>
 
@@ -196,6 +198,7 @@ export default function PrivacyPage() {
       </section>
 
       <footer className="border-t border-slate-800 pt-4 text-xs text-slate-400">
+        <p>Last updated: 30 August 2026.</p>
         <p>
           This privacy policy is provided for transparency and general
           informational purposes. It does not replace any rights you may have

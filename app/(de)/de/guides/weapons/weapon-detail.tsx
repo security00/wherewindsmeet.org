@@ -55,7 +55,7 @@ export function WeaponDetail({ weaponId }: { weaponId: WeaponId }) {
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">{weapon.description}</p>
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
             Nutze diese Seite als Praxis-Begleiter zur{" "}
-            <Link href="/de/guides/tier-list" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
+            <Link href="/guides/tier-list" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
               Tierliste
             </Link>{" "}
             und den{" "}
@@ -152,7 +152,7 @@ export function WeaponDetail({ weaponId }: { weaponId: WeaponId }) {
               Alle Waffen →
             </Link>
             <Link
-              href={`${base}/guides/weapons/tier-list`}
+              href="/guides/weapons/tier-list"
               className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
             >
               Waffen-Tierliste →

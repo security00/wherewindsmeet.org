@@ -256,7 +256,7 @@ export default function NewPlayersGuidePage() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-900/30 border border-emerald-500/30 text-emerald-400 text-xs font-medium mb-4 backdrop-blur-sm">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              Updated for Launch
+              Version-neutral first-week route
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-50 font-serif mb-6 text-shadow-lg">
               Where Winds Meet <span className="text-ink-gold">Beginner Guide</span>
@@ -354,7 +354,6 @@ export default function NewPlayersGuidePage() {
 
             {/* Final CTA */}
             <section className="rounded-3xl bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 p-8 text-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-[url('/background/noise.png')] opacity-5 mix-blend-overlay"></div>
               <h2 className="text-2xl font-serif text-slate-50 mb-4 relative z-10">Ready for the next step?</h2>
               <p className="text-slate-300 mb-8 max-w-lg mx-auto relative z-10">
                 Once you&apos;ve mastered the basics, check out the Tier List to plan your endgame build.

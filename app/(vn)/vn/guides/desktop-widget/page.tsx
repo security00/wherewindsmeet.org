@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
+import DesktopWidgetAuthorizedMedia from "@/components/guides/DesktopWidgetAuthorizedMedia";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
@@ -134,36 +135,11 @@ export default function DesktopWidgetGuidePage() {
         <p className="text-xs leading-relaxed text-slate-400">
           Lưu ý: nội dung Reddit là thông tin cộng đồng và có thể thay đổi.
         </p>
-
-        <div className="grid gap-4 lg:grid-cols-2">
-          <figure className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
-            <CdnImage
-              src="/guides/desktop-widget/reddit-daily-assistant-widget.png"
-              alt="Màn hình trong game hiển thị Daily Assistant / Desktop Widget và ghi chú cần tải bản mobile"
-              width={1685}
-              height={917}
-              className="h-auto w-full"
-            />
-            <figcaption className="p-4 text-xs leading-relaxed text-slate-400">
-              Ví dụ màn hình có chữ “Desktop Widget” nhưng lại hướng người chơi sang bản mobile. Ảnh được dùng với sự cho
-              phép.
-            </figcaption>
-          </figure>
-
-          <figure className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
-            <CdnImage
-              src="/guides/desktop-widget/reddit-widget-screenshot.jpeg"
-              alt="Danh sách widget trên Android có Where Winds Meet"
-              width={1080}
-              height={2340}
-              className="mx-auto h-auto w-full max-w-[360px]"
-            />
-            <figcaption className="p-4 text-xs leading-relaxed text-slate-400">
-              Ví dụ trong thư viện widget Android. Nếu bạn không thấy, có thể do khu vực/phiên bản app. Ảnh được dùng
-              với sự cho phép.
-            </figcaption>
-          </figure>
-        </div>
+        <p className="rounded-2xl border border-amber-500/30 bg-amber-500/10 p-4 text-xs leading-relaxed text-amber-50/90">
+          Publisher: Reddit community thread. Reuse authorization confirmed by site owner 2026-08-29. Các ảnh chụp cộng
+          đồng có ngày tháng giải thích báo cáo ban đầu nhưng không phải tài liệu chính thức; hãy kiểm tra trạng thái trong
+          app hoặc trang store chính thức hiện tại.
+        </p>
 
         <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
           <h3 className="text-lg font-bold text-slate-100">Lỗi thường gặp</h3>
@@ -183,36 +159,9 @@ export default function DesktopWidgetGuidePage() {
           </ul>
         </div>
 
-        <div className="mt-4 grid gap-4 lg:grid-cols-2">
-          <figure className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
-            <CdnImage
-              src="/guides/desktop-widget/reddit-widget-region-availability.png"
-              alt="Trang Google Play hiển thị Where Winds Meet không khả dụng ở quốc gia của bạn"
-              width={1080}
-              height={1500}
-              className="mx-auto h-auto w-full max-w-[360px]"
-            />
-            <figcaption className="p-4 text-xs leading-relaxed text-slate-400">
-              Ví dụ: app mobile có thể bị giới hạn theo khu vực, kéo theo widget cũng không xuất hiện. Ảnh được dùng với
-              sự cho phép.
-            </figcaption>
-          </figure>
-
-          <figure className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
-            <CdnImage
-              src="/guides/desktop-widget/reddit-mobile-launch-region.png"
-              alt="Trang Google Play có thông báo về khu vực và tab Widgets"
-              width={1080}
-              height={2219}
-              className="mx-auto h-auto w-full max-w-[360px]"
-            />
-            <figcaption className="p-4 text-xs leading-relaxed text-slate-400">
-              Trên Android, trang Play Store có thể có tab “Widgets”. Nếu không thấy, có thể phiên bản/thiết bị/khu vực
-              của bạn chưa hỗ trợ widget. Ảnh được dùng với sự cho phép.
-            </figcaption>
-          </figure>
-        </div>
       </section>
+
+      <DesktopWidgetAuthorizedMedia locale="vi" />
 
       <section className="space-y-6 rounded-3xl border border-slate-800/80 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
         <h2 className="text-2xl font-bold text-slate-50">PC/Mac: dựng “daily assistant” gọn sạch</h2>

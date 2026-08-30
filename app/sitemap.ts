@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { bosses } from "@/lib/bosses";
 import { latestNewsDate } from "@/lib/news";
 import { weapons } from "@/lib/weapons";
+import { getAvailableLocales } from "@/i18n/routing.mjs";
 
 export const dynamic = "force-static";
 
@@ -63,11 +64,11 @@ const staticEntries: Entry[] = [
   { path: "/guides/cosmetics", changeFrequency: "weekly", priority: 0.75 },
   { path: "/guides/qin-caiwei", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/murong-yuan-adoptive-father", changeFrequency: "weekly", priority: 0.78 },
+  { path: "/guides/npc-list", changeFrequency: "weekly", priority: 0.82, lastModified: new Date("2026-08-29") },
   { path: "/guides/who-is-destined-to-face-the-purple-star-catastrophe", changeFrequency: "weekly", priority: 0.78 },
   { path: "/guides/which-faction-controls-ghost-revelry-hall", changeFrequency: "weekly", priority: 0.78 },
   { path: "/guides/find-officer-nan", changeFrequency: "weekly", priority: 0.78 },
   { path: "/guides/unholy-prophecy", changeFrequency: "weekly", priority: 0.78 },
-  { path: "/guides/npc-list", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/gift-of-gab", changeFrequency: "weekly", priority: 0.75 },
   { path: "/guides/new-players", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/sects", changeFrequency: "weekly", priority: 0.75 },
@@ -79,12 +80,14 @@ const staticEntries: Entry[] = [
   { path: "/terms", changeFrequency: "yearly", priority: 0.4 },
 ];
 
-const deEntries: Entry[] = staticEntries.map((entry) => ({
-  ...entry,
-  path: entry.path === "/" ? "/de" : `/de${entry.path}`,
-}));
+const deEntries: Entry[] = staticEntries
+  .filter((entry) => getAvailableLocales(entry.path).includes("de"))
+  .map((entry) => ({
+    ...entry,
+    path: entry.path === "/" ? "/de" : `/de${entry.path}`,
+  }));
 
-const vnEntries: Entry[] = [
+const vnEntries: Entry[] = ([
   { path: "/vn", changeFrequency: "daily", priority: 0.9 },
   { path: "/vn/guides", changeFrequency: "daily", priority: 0.85 },
   { path: "/vn/guides/platforms", changeFrequency: "weekly", priority: 0.76 },
@@ -93,13 +96,9 @@ const vnEntries: Entry[] = [
   { path: "/vn/tools/reset-timer", changeFrequency: "weekly", priority: 0.7 },
   { path: "/vn/tools/checklist", changeFrequency: "weekly", priority: 0.7 },
   { path: "/vn/tools/pvp-combos", changeFrequency: "weekly", priority: 0.68 },
-  { path: "/vn/guides/tier-list", changeFrequency: "daily", priority: 0.8 },
-  { path: "/vn/guides/pvp-tier-list", changeFrequency: "weekly", priority: 0.78 },
   { path: "/vn/guides/free-morph", changeFrequency: "weekly", priority: 0.75 },
-  { path: "/vn/guides/codes", changeFrequency: "daily", priority: 0.8 },
   { path: "/vn/guides/builds", changeFrequency: "weekly", priority: 0.78 },
   { path: "/vn/guides/weapons", changeFrequency: "weekly", priority: 0.8 },
-  { path: "/vn/guides/weapons/tier-list", changeFrequency: "weekly", priority: 0.75 },
   { path: "/vn/guides/bosses", changeFrequency: "weekly", priority: 0.75 },
   { path: "/vn/guides/items", changeFrequency: "weekly", priority: 0.75 },
   { path: "/vn/guides/martial-arts-weapons", changeFrequency: "weekly", priority: 0.75 },
@@ -114,27 +113,19 @@ const vnEntries: Entry[] = [
   { path: "/vn/guides/evershift-labyrinth", changeFrequency: "daily", priority: 0.74 },
   { path: "/vn/guides/character-creation-codes", changeFrequency: "weekly", priority: 0.74 },
   { path: "/vn/guides/commerce-coins", changeFrequency: "weekly", priority: 0.72 },
-  { path: "/vn/guides/one-leaf-one-life", changeFrequency: "weekly", priority: 0.72 },
   { path: "/vn/guides/the-great-faceologist", changeFrequency: "weekly", priority: 0.72 },
   { path: "/vn/guides/flicker-of-faces", changeFrequency: "weekly", priority: 0.7 },
-  { path: "/vn/guides/qin-caiwei", changeFrequency: "weekly", priority: 0.72 },
-  { path: "/vn/guides/murong-yuan-adoptive-father", changeFrequency: "weekly", priority: 0.7 },
-  { path: "/vn/guides/who-is-destined-to-face-the-purple-star-catastrophe", changeFrequency: "weekly", priority: 0.7 },
+      { path: "/vn/guides/qin-caiwei", changeFrequency: "weekly", priority: 0.72 },
+      { path: "/vn/guides/murong-yuan-adoptive-father", changeFrequency: "weekly", priority: 0.7 },
+      { path: "/vn/guides/npc-list", changeFrequency: "weekly", priority: 0.74, lastModified: new Date("2026-08-29") },
+      { path: "/vn/guides/who-is-destined-to-face-the-purple-star-catastrophe", changeFrequency: "weekly", priority: 0.7 },
   { path: "/vn/guides/which-faction-controls-ghost-revelry-hall", changeFrequency: "weekly", priority: 0.7 },
   { path: "/vn/guides/find-officer-nan", changeFrequency: "weekly", priority: 0.7 },
-  { path: "/vn/guides/unholy-prophecy", changeFrequency: "weekly", priority: 0.7 },
   { path: "/vn/guides/gift-of-gab", changeFrequency: "weekly", priority: 0.7 },
   { path: "/vn/guides/woven-with-malice", changeFrequency: "weekly", priority: 0.72 },
   { path: "/vn/guides/mist-shrouded-prison", changeFrequency: "weekly", priority: 0.72 },
   { path: "/vn/guides/mistveil-city", changeFrequency: "daily", priority: 0.73 },
-  { path: "/vn/guides/qinchuan", changeFrequency: "weekly", priority: 0.72 },
   { path: "/vn/guides/jiangnan-hangzhou", changeFrequency: "daily", priority: 0.76 },
-  { path: "/vn/guides/imperial-decree", changeFrequency: "daily", priority: 0.72 },
-  { path: "/vn/guides/sunken-city-lake", changeFrequency: "weekly", priority: 0.7 },
-  { path: "/vn/guides/to-friends-to-the-end", changeFrequency: "weekly", priority: 0.7 },
-  { path: "/vn/guides/travel-permit", changeFrequency: "weekly", priority: 0.68 },
-  { path: "/vn/guides/verdant-flute", changeFrequency: "weekly", priority: 0.68 },
-  { path: "/vn/guides/npc-list", changeFrequency: "weekly", priority: 0.72 },
   { path: "/vn/guides/cosmetics", changeFrequency: "weekly", priority: 0.68 },
   { path: "/vn/guides/sects", changeFrequency: "weekly", priority: 0.67 },
   { path: "/vn/guides/endgame", changeFrequency: "weekly", priority: 0.7 },
@@ -144,10 +135,13 @@ const vnEntries: Entry[] = [
   { path: "/vn/privacy", changeFrequency: "yearly", priority: 0.35 },
   { path: "/vn/terms", changeFrequency: "yearly", priority: 0.35 },
   { path: "/vn/videos", changeFrequency: "weekly", priority: 0.55, lastModified: videosLastModified },
-];
+] satisfies Entry[]).filter((entry) => {
+  const basePath = entry.path === "/vn" ? "/" : entry.path.replace(/^\/vn/, "");
+  return getAvailableLocales(basePath).includes("vi");
+});
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const bossEntries: Entry[] = bosses.map((boss) => ({
+  const bossEntries: Entry[] = bosses.filter((boss) => boss.id === "feng-ruzhi").map((boss) => ({
     path: `/guides/bosses/${boss.id}`,
     changeFrequency: "weekly",
     priority: 0.7,
@@ -159,22 +153,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const deBossEntries: Entry[] = bossEntries.map((entry) => ({
-    ...entry,
-    path: `/de${entry.path}`,
-  }));
-  const vnBossEntries: Entry[] = bossEntries.map((entry) => ({
-    ...entry,
-    path: `/vn${entry.path}`,
-  }));
-  const deWeaponEntries: Entry[] = weaponEntries.map((entry) => ({
-    ...entry,
-    path: `/de${entry.path}`,
-  }));
-  const vnWeaponEntries: Entry[] = weaponEntries.map((entry) => ({
-    ...entry,
-    path: `/vn${entry.path}`,
-  }));
+  const deBossEntries: Entry[] = bossEntries
+    .filter((entry) => getAvailableLocales(entry.path).includes("de"))
+    .map((entry) => ({ ...entry, path: `/de${entry.path}` }));
+  const vnBossEntries: Entry[] = bossEntries
+    .filter((entry) => getAvailableLocales(entry.path).includes("vi"))
+    .map((entry) => ({ ...entry, path: `/vn${entry.path}` }));
+  const deWeaponEntries: Entry[] = weaponEntries
+    .filter((entry) => getAvailableLocales(entry.path).includes("de"))
+    .map((entry) => ({ ...entry, path: `/de${entry.path}` }));
+  const vnWeaponEntries: Entry[] = weaponEntries
+    .filter((entry) => getAvailableLocales(entry.path).includes("vi"))
+    .map((entry) => ({ ...entry, path: `/vn${entry.path}` }));
 
   const entries = [
     ...staticEntries,

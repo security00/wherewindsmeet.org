@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { DeferredIframeEmbed } from "@/components/DeferredIframeEmbed";
+import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const combosUrl = "https://www.wwmcombos.com/?hasVideo=true";
@@ -70,7 +72,7 @@ export default function PvpCombosPage() {
 
         <div className="mt-5 flex flex-wrap gap-2 text-sm">
           <Link
-            href="/vn/guides/pvp-tier-list"
+            href="/guides/pvp-tier-list"
             className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-4 py-2 font-semibold text-emerald-100 hover:border-emerald-400/70 hover:text-emerald-50"
           >
             PVP tier list →
@@ -104,15 +106,14 @@ export default function PvpCombosPage() {
             </a>
           </div>
 
-          <div className="relative h-[70vh] min-h-[560px] w-full bg-slate-900/40 sm:min-h-[720px]">
-            <iframe
-              src={combosUrl}
-              title="Where Winds Meet PVP combos database"
-              className="absolute inset-0 h-full w-full border-0"
-              sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-popups"
-              referrerPolicy="strict-origin-when-cross-origin"
-            />
-          </div>
+          <DeferredIframeEmbed
+            src={combosUrl}
+            title="Where Winds Meet PVP combos database"
+            loadLabel="Tai database ben thu ba"
+            privacyNote="Nha cung cap chi duoc lien he sau khi ban bam tai. Ban cung co the dung link nguon o tren."
+            className="h-[70vh] min-h-[560px] sm:min-h-[720px]"
+            sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-popups"
+          />
         </div>
 
         <p className="rounded-2xl border border-slate-800/80 bg-slate-950/60 p-5 text-xs leading-relaxed text-slate-300">
@@ -134,21 +135,22 @@ export default function PvpCombosPage() {
               key={video.id}
               className="space-y-3 rounded-3xl border border-slate-800 bg-slate-950/80 p-4 shadow-sm shadow-slate-950/60"
             >
-              <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
-                <div className="aspect-video bg-slate-950/80">
-                  <iframe
-                    title={video.title}
-                    src={`https://www.youtube-nocookie.com/embed/${video.id}?rel=0&modestbranding=1&playsinline=1`}
-                    className="h-full w-full border-0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                  />
-                </div>
-              </div>
+              <LiteYouTubeEmbed
+                videoId={video.id}
+                title={video.title}
+                poster="/background/bg4.webp"
+                analytics={{ eventName: "pvp_combo_video_play", params: { locale: "vi" } }}
+              />
               <p className="text-sm font-semibold text-slate-100">{video.title}</p>
               <p className="text-xs leading-relaxed text-slate-300">{video.description}</p>
+              <a
+                href={`https://www.youtube.com/watch?v=${video.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-semibold text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+              >
+                Mo video nguon tren YouTube
+              </a>
             </article>
           ))}
         </div>
@@ -156,4 +158,3 @@ export default function PvpCombosPage() {
     </article>
   );
 }
-

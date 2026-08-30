@@ -110,7 +110,7 @@ export default function EndgamePage() {
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">PvP endgame</h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
           PvP khác PvE: đối thủ học thói quen của bạn. Cần build chuyên đấu tay đôi, luyện với người thật, linh hoạt đổi chiến thuật. Xem{" "}
-          <Link href="/vn/guides/pvp-tier-list" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
+          <Link href="/guides/pvp-tier-list" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
             tier list PvP
           </Link>{" "}
           để chọn vũ khí, rồi luyện cho đến khi thành phản xạ.

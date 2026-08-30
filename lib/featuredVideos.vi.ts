@@ -12,7 +12,7 @@ export const featuredVideos: FeaturedVideo[] = [
     id: "S7u9JuVHIyM",
     title: "Now's a Great Time to Jump into Where Winds Meet (Huge Updates)",
     description:
-      "Video cho nguoi choi quay lai, phu hop voi truy van where winds meet, where the winds meet va cau hoi co nen bat dau trong Version 1.7 khong.",
+      "Tong quan cho nguoi choi quay lai tu thang 6/2026, duoc giu nhu boi canh co ngay cho truy van where winds meet va where the winds meet.",
     publishedAt: "2026-06-10",
   },
   {

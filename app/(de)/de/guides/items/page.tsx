@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
 import ItemTabs from "@/app/(en)/guides/items/ItemTabs";
-import { itemCategories } from "@/app/(en)/guides/items/data";
+import { itemCategories, itemCoverage } from "@/app/(en)/guides/items/data";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "Item-Index | Where Winds Meet (DE)",
+  title: "Where Winds Meet Items – verifizierte Nutzung und Quellen",
   description:
-    "Reiterbasierter Item-Index: Materialien, Verbrauchsgüter und Kuriositäten mit Nutzen und Fundorten, angelehnt an das Wiki-Layout.",
+    "Quellengestützter Item-Guide für Where Winds Meet. Nur geprüfte Nutzung und Beschaffung werden veröffentlicht; offene Einträge bleiben als ausstehend markiert.",
   alternates: buildHreflangAlternates("/guides/items", { canonicalLanguage: "de" }),
 };
 
@@ -39,55 +39,44 @@ export default function ItemsPage() {
     "inner-way-passives": "Innere-Weg-Passiva",
     "martial-arts-upgrades": "Kampfkunst-Upgrades",
     miscellaneous: "Sonstiges",
+    "verified-systems-and-tuning": "Verifizierte Systeme & Tuning",
     "mystic-arts-upgrades": "Mystik-Upgrades",
     "gear-tuning": "Ausrüstungs-Tuning",
   };
 
-  const localizeUse = (value: string) => {
-    switch (value) {
-      case "Crafting/Breakthrough material (details pending)":
-        return "Handwerk-/Durchbruchmaterial (Details folgen)";
-      case "Weapon/Martial Arts/Mechanism development material (details pending)":
-        return "Entwicklungsmaterial für Waffen/Kampfkünste/Mechanik (Details folgen)";
-      case "Consumable: effect details pending":
-        return "Verbrauchsitem: Effekt-Details folgen";
-      case "Common item: effect details pending":
-        return "Alltagsitem: Effekt-Details folgen";
-      default:
-        return value;
-    }
+  const verifiedItemText: Record<string, { use: string; location: string }> = {
+    "Oscillating Jade": {
+      use: "Die offizielle Event-Seite Echoes Across the World nennt dieses Item als Belohnung, erklärt dort aber keine dauerhafte Spielfunktion. Dieser Eintrag leitet deshalb keine weitere Nutzung ab.",
+      location: "Nur historischer Bezug: Das Event Echoes Across the World im April 2026 führte Oscillating Jade bei mehreren Resonanz-Meilensteinen sowie für den ersten Upload oder die Freigabe einer offiziellen Aufnahme. Das belegt keine aktuelle dauerhafte Farmquelle.",
+    },
+    "Modulating Stone": {
+      use: "Laut Version 2.0 kann der Stein geeignete epische oder legendäre Tier-100-Ausrüstung auf ihre Anfangsattribute zurücksetzen, bevor sie neu getunt wird. Frühere Materialien werden nicht erstattet, der Vorgang ist unumkehrbar und unterliegt Limits und Abklingzeiten pro Item.",
+      location: "Die offiziellen Hinweise vom 23. Juli 2026 nennen Recycling oder Verbrauch vollständig getunter legendärer Ausrüstung als Quelle; Archery Arts sind ausgenommen. Prüfe die aktuelle Bestätigung im Spiel, bevor du Ausrüstung einsetzt.",
+    },
+    "Retuning Stone: Mirage": {
+      use: "Die offiziellen Korrekturen vom 7. August bezeichnen ihn als Retuning-Item für Hidden Mountain und dokumentieren eine Korrektur des Kauflimits. Preis und dauerhafte Verfügbarkeit werden dort nicht zugesichert.",
+      location: "Die offiziellen Korrekturen vom 7. August 2026 führen Retuning Stone: Mirage beim Pangolin Stand in Hidden Mountain. Verfügbarkeit und Kauflimit können sich nach diesem Build ändern.",
+    },
+    "Horse Gallop Tactic": {
+      use: "Laut Update vom 28. Mai erhöht der Verbrauch das Ausrüstungslimit für Spirit Gift Skills und erlaubt es, bereits besessene Skills eines Reittiers an- oder abzulegen. Die Zahl der Plätze unterscheidet sich je nach Reittier.",
+      location: "Das offizielle Update vom 28. Mai 2026 nennt Shop und Divine Steed Level-Belohnungen als Quellen. Einen aktuellen Preis, eine Rate oder einen dauerhaften Zeitplan nennt es nicht.",
+    },
   };
 
-  const localizeLocation = (value: string) => {
-    switch (value) {
-      case "Gathering/Hunting/Merchant/Commission (details pending)":
-        return "Sammeln/Jagd/Händler/Kommission (Details folgen)";
-      case "Secret Realm/Commission/Merchant/Task Drop (details pending)":
-        return "Geheimes Reich/Kommission/Händler/Quest-Drops (Details folgen)";
-      case "Acquisition method pending":
-        return "Beschaffung folgt";
-      default:
-        return value;
-    }
+  const localizeItem = <T extends { name: string; use: string; location: string }>(item: T): T => {
+    const text = verifiedItemText[item.name];
+    return text ? { ...item, ...text } : item;
   };
 
   const localizedCategories = itemCategories.map((category) => ({
     ...category,
     title: categoryText[category.id]?.title ?? category.title,
     blurb: categoryText[category.id]?.blurb ?? category.blurb,
-    items: category.items.map((item) => ({
-      ...item,
-      use: localizeUse(item.use),
-      location: localizeLocation(item.location),
-    })),
+    items: category.items.map(localizeItem),
     groups: category.groups?.map((group) => ({
       ...group,
       title: groupTitle[group.id] ?? group.title,
-      items: group.items.map((item) => ({
-        ...item,
-        use: localizeUse(item.use),
-        location: localizeLocation(item.location),
-      })),
+      items: group.items.map(localizeItem),
     })),
   }));
 
@@ -108,11 +97,13 @@ export default function ItemsPage() {
         <div className="relative space-y-3">
           <p className="text-xs uppercase tracking-wide text-emerald-300">Items & Kategorien</p>
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet Item-Index mit Schnell-Tabs.
+            Ein quellengestützter Where Winds Meet Item-Index.
           </h1>
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-            Angelehnt an das Wiki-Layout: Items nach Kategorien klickbar sortiert. Jede Kategorie zeigt Beispiele, Nutzung und Beschaffung.
-            Kombiniere dies mit der{" "}
+            Der Index trennt geprüfte Guide-Einträge von Namen, die noch redaktionell geprüft werden. Ein Item
+            erscheint erst mit belastbarer Quelle und konkreter Nutzung oder Beschaffung. Medien werden nur angezeigt, wenn ihre Herkunft nachvollziehbar ist.
+            Ausstehende Einträge werden gezählt, aber nicht als bestätigte Farm-Orte ausgegeben.
+            Kombiniere geprüfte Einträge mit der{" "}
             <Link href="/de/guides/martial-arts-weapons" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
               Waffen/Kampfkunst-Tabelle
             </Link>{" "}
@@ -120,29 +111,53 @@ export default function ItemsPage() {
             <Link href="/de/guides/skill-theft" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
               Skill-Theft-Guide
             </Link>{" "}
-            für schnelle Farm-Routen.
+            für deine Planung.
           </p>
         </div>
+      </section>
+
+      <section className="space-y-4 rounded-3xl border border-amber-500/25 bg-amber-950/20 p-6 shadow-lg shadow-slate-950/40">
+        <div className="space-y-2">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">Prüfstatus</p>
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-50">Offene Details werden nicht geraten.</h2>
+          <p className="max-w-3xl text-sm leading-relaxed text-slate-300">
+            Doppelte Namen wurden entfernt. Datensätze ohne verifizierte Spielinformationen und Quellen bleiben
+            aus dem Hauptindex ausgeblendet.
+          </p>
+        </div>
+        <dl className="grid gap-3 sm:grid-cols-3">
+          <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4"><dt className="text-xs uppercase tracking-wide text-slate-400">Eindeutige Namen</dt><dd className="mt-1 text-2xl font-semibold text-slate-100">{itemCoverage.catalogued}</dd></div>
+          <div className="rounded-2xl border border-emerald-500/25 bg-emerald-950/20 p-4"><dt className="text-xs uppercase tracking-wide text-emerald-300">Veröffentlicht und belegt</dt><dd className="mt-1 text-2xl font-semibold text-emerald-100">{itemCoverage.published}</dd></div>
+          <div className="rounded-2xl border border-amber-500/25 bg-amber-950/20 p-4"><dt className="text-xs uppercase tracking-wide text-amber-300">Prüfung ausstehend</dt><dd className="mt-1 text-2xl font-semibold text-amber-100">{itemCoverage.pending}</dd></div>
+        </dl>
       </section>
 
       <ItemTabs
         categories={localizedCategories}
         uiText={{
-          heading: "Item-Kategorien wechseln",
-          imagePending: "Bild folgt",
+          heading: "Verifizierte Item-Kategorien",
+          imageUnavailable: "Kein verifiziertes Bild",
           acquisitionLabel: "Fundort:",
+          verificationSourceLabel: "Prüfquelle",
           scrollToItems: "Zu den Items ↓",
           itemsSuffix: "Items",
+          verifiedBadge: "Verifiziert",
+          verifiedSuffix: "verifiziert",
+          pendingSuffix: "ausstehend",
+          cataloguedSuffix: "erfasst",
+          emptyHeading: "Noch keine verifizierten, wichtigen Einträge",
+          emptyBody: "Datensätze ohne zuverlässige Quelle und konkrete Spieldetails bleiben im Hauptindex verborgen.",
+          pendingRetentionTemplate: "{count} {status} Datensätze bleiben für die redaktionelle Prüfung erhalten.",
         }}
       />
 
       <section className="grid gap-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 md:grid-cols-2">
         <div className="space-y-2">
-          <h3 className="text-lg font-semibold text-slate-50">Nutzungstipps</h3>
+          <h3 className="text-lg font-semibold text-slate-50">Veröffentlichungsstandard</h3>
           <ul className="space-y-2 text-sm text-slate-300">
-            <li>Materialien und Entwicklungs-Materialien priorisieren – sie sind die Engpässe für Waffen- und Innere‑Kunst‑Durchbrüche.</li>
-            <li>2–3 Gruppengerichte vorbereiten; vor Teamplay essen für mehr Fehlertoleranz.</li>
-            <li>Alltags-Items als Geschenke/Favor nutzen, um Begegnungen und Rabatte freizuschalten.</li>
+            <li>Spielbehauptungen benötigen eine verlässliche Prüfquelle.</li>
+            <li>Mindestens eine konkrete Nutzung oder Beschaffung ist erforderlich.</li>
+            <li>Nur eigene Aufnahmen oder nachvollziehbare offizielle Medien werden angezeigt.</li>
           </ul>
         </div>
         <div className="space-y-2">

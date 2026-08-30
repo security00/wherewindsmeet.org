@@ -86,8 +86,39 @@
   {
     "name": "Oscillating Jade",
     "image": "/items/development/oscillating-jade-develop-wherewindsmeet-wiki-guide.png",
-    "use": "Weapon/Martial Arts/Mechanism development material (details pending)",
-    "location": "Secret Realm/Commission/Merchant/Task Drop (details pending)"
+    "use": "The official Echoes Across the World event page identifies this as a reward; it does not define a permanent gameplay use, so this entry does not infer one.",
+    "location": "Historical acquisition only: the April 2026 Echoes Across the World event listed Oscillating Jade at several resonance milestones and for a first upload or official-recording release. This is not evidence of a current permanent farm.",
+    "verificationStatus": "verified",
+    "sourceUrl": "https://www.wherewindsmeetgame.com/202604/sounds/en/",
+    "highValue": true,
+    "mediaKind": "unverified"
+  },
+  {
+    "name": "Modulating Stone",
+    "use": "Version 2.0 says it can reset eligible Tier 100 Epic or Legendary gear so only the initial attributes remain before another tuning cycle. Prior materials are not refunded, the action is irreversible, and per-item limits and cooldowns apply.",
+    "location": "The July 23, 2026 official notes say it can be obtained by recycling or consuming Fully Tuned Legendary Gear, excluding Archery Arts. Check the current in-game confirmation before spending gear.",
+    "verificationStatus": "verified",
+    "sourceUrl": "https://www.wherewindsmeetgame.com/news/official/723update.html",
+    "highValue": true,
+    "mediaKind": "unverified"
+  },
+  {
+    "name": "Retuning Stone: Mirage",
+    "use": "The August 7 official fixes identify this as a Hidden Mountain retuning item and document a purchase-limit correction; they do not publish a price or guarantee permanent availability.",
+    "location": "The August 7, 2026 official fixes list Retuning Stone: Mirage at Pangolin Stand in Hidden Mountain. Availability and purchase limits may change after that build.",
+    "verificationStatus": "verified",
+    "sourceUrl": "https://www.wherewindsmeetgame.com/news/official/723update.html",
+    "highValue": true,
+    "mediaKind": "unverified"
+  },
+  {
+    "name": "Horse Gallop Tactic",
+    "use": "The May 28 update says consuming it increases the Spirit Gift Skill equip limit and lets you equip or remove skills already owned by a mount; the number of slots varies by mount.",
+    "location": "The May 28, 2026 official update lists the Shop and Divine Steed Level rewards as sources. It does not state a current price, rate, or permanent schedule.",
+    "verificationStatus": "verified",
+    "sourceUrl": "https://www.wherewindsmeetgame.com/news/official/527update.html",
+    "highValue": true,
+    "mediaKind": "unverified"
   },
   {
     "name": "Vicious Fruit",

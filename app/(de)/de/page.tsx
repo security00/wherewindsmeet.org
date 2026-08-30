@@ -3,17 +3,20 @@ import Link from "next/link";
 import { HomeMainKeywordSections } from "@/components/HomeMainKeywordSections";
 import JianghuMapClient from "@/components/JianghuMapClient";
 import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
+import { getContentFreshness } from "@/lib/contentFreshness";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
+const freshness = getContentFreshness("/");
+
 export const metadata: Metadata = {
-  title: "Where Winds Meet Guide-Hub Deutsch - Version 1.7",
+  title: "Where Winds Meet Guide-Hub Deutsch - Version 2.1",
   description:
-    "Deutscher Where Winds Meet Guide-Hub für Version 1.7: The Imperial Palace, Codes, Patch Notes, Tierliste, Builds, Bosse, interaktive Karte und Plattformen.",
+    "Deutscher Where Winds Meet Guide-Hub für Version 2.1: Codes, Patch Notes, Tierliste, Builds, Bosse, interaktive Karte und Plattformen.",
   alternates: buildHreflangAlternates("/", { canonicalLanguage: "de" }),
   openGraph: {
-    title: "Where Winds Meet Guide-Hub Deutsch - Version 1.7",
+    title: "Where Winds Meet Guide-Hub Deutsch - Version 2.1",
     description:
-      "Deutscher Where Winds Meet Guide-Hub für Version 1.7: The Imperial Palace, Codes, Patch Notes, Tierliste, Builds, Bosse, interaktive Karte und Plattformen.",
+      "Deutscher Where Winds Meet Guide-Hub für Version 2.1: Codes, Patch Notes, Tierliste, Builds, Bosse, interaktive Karte und Plattformen.",
     url: "https://wherewindsmeet.org/de",
     images: [
       {
@@ -40,7 +43,7 @@ export default function Home() {
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1.4fr)] lg:items-start">
           <div className="space-y-6">
             <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-              Version 1.7 <span className="text-ink-gold">The Imperial Palace</span>
+              Version 2.1 <span className="text-ink-gold">Guide-Hub</span>
             </h2>
             <div className="space-y-4 text-slate-300 leading-relaxed">
               <p>
@@ -50,8 +53,9 @@ export default function Home() {
                 zwischen wanderndem Held, Hofintrigen und freier Erkundung.
               </p>
               <p>
-                Dieser Hub wurde für Version 1.7 / The Imperial Palace aktualisiert: Palace-Code-Kandidaten, Patch Notes vom 29. Mai,
-                Path Balance, Builds, Tierlisten und ältere Qinchuan/Hexi-Catch-up-Guides stehen jetzt zusammen.
+                Dieser Hub wurde für {freshness?.gameVersion ?? "Version 2.1 / August 27"} geprüft. Aktuelle
+                Patch Notes, Builds und Tierlisten stehen neben datierten Palace-, Qinchuan- und Hexi-Catch-up-Guides,
+                damit ältere Inhalte nicht als heutiger Patch-Stand gelesen werden.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Link
@@ -67,7 +71,7 @@ export default function Home() {
                   🧩 Wandrätsel Lösung
                 </Link>
                 <Link
-                  href="/de/guides/unholy-prophecy"
+                  href="/guides/unholy-prophecy"
                   className="inline-flex items-center gap-2 rounded-full border border-purple-400/60 bg-purple-500/10 px-4 py-2 text-sm font-semibold text-purple-200 transition hover:border-purple-300/80 hover:text-purple-100"
                 >
                   🔮 An Unholy Prophecy – Feuerbecken, Meridian-Touch, Stachelgang
@@ -105,7 +109,7 @@ export default function Home() {
               href="/de/news#next-update"
               className="rounded-full border border-emerald-500/50 bg-emerald-500/10 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/70"
             >
-              Version 1.7 / Palace
+                  {freshness?.gameVersion ?? "Version 2.1"} Refresh
             </Link>
             <Link
               href="/de/news#organic-search-watch"
@@ -120,7 +124,7 @@ export default function Home() {
               Upcoming nerfs
             </Link>
             <Link
-              href="/de/guides/tier-list#arena-ranks"
+              href="/guides/tier-list#arena-ranks"
               className="rounded-full border border-emerald-500/50 bg-emerald-500/10 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/70"
             >
               WWM arena ranks
@@ -132,7 +136,7 @@ export default function Home() {
               Bossliste & Schwächen
             </Link>
             <Link
-              href="/de/guides/bosses/feng-ruzhi"
+              href="/guides/bosses/feng-ruzhi"
               className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
             >
               Feng Ruzhi (Silk Ball) Boss-Guide
@@ -150,13 +154,13 @@ export default function Home() {
               Free Morph freischalten
             </Link>
               <Link
-                href="/de/guides/tier-list"
+                href="/guides/tier-list"
                 className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
               >
                 China‑Tierliste
               </Link>
             <Link
-              href="/de/guides/unholy-prophecy"
+              href="/guides/unholy-prophecy"
               className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60"
             >
               An Unholy Prophecy
@@ -299,7 +303,7 @@ export default function Home() {
             },
             {
               title: "An Unholy Prophecy",
-              href: "/de/guides/unholy-prophecy",
+              href: "/guides/unholy-prophecy",
               desc: "Jianghu Legacy 07: Dach-Feuerpfeile, Meridian-Touch-Türen, Stachelfallen, Shi-Zhen-Kampf.",
               tag: "Jianghu",
             },
@@ -317,13 +321,13 @@ export default function Home() {
             },
             {
               title: "Aktive Codes",
-              href: "/de/guides/codes",
+              href: "/guides/codes",
               desc: "Aktuelle Belohnungscodes rechtzeitig einlösen. Häufig aktualisiert.",
               tag: "Belohnungen",
             },
             {
               title: "Tierlisten",
-              href: "/de/guides/tier-list",
+              href: "/guides/tier-list",
               desc: "PvP/PvE-Rankings und Waffen-Tiers nach Balance-Änderungen.",
               tag: "Meta",
             },

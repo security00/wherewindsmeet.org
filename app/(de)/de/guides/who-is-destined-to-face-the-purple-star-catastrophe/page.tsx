@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CdnImage from "@/components/CdnImage";
+import { DeferredYouTubeGallery } from "@/components/DeferredYouTubeGallery";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
@@ -135,7 +136,7 @@ const relatedLinks = [
   },
   {
     title: "An Unholy Prophecy (Jianghu Legacy Guide)",
-    href: "/de/guides/unholy-prophecy",
+    href: "/guides/unholy-prophecy",
     note: "Falls du wegen Omen-/Stern-Lore gesucht hast statt wegen des Quiz.",
   },
   {
@@ -439,7 +440,7 @@ export default function PurpleStarCatastropheQuizAnswerPageDe() {
         </div>
         <p className="text-xs text-slate-400">
           Related reading:{" "}
-          <Link href="/de/guides/unholy-prophecy" className="text-purple-300 hover:text-purple-200 underline underline-offset-4">
+          <Link href="/guides/unholy-prophecy" className="text-purple-300 hover:text-purple-200 underline underline-offset-4">
             An Unholy Prophecy
           </Link>
           .
@@ -455,25 +456,12 @@ export default function PurpleStarCatastropheQuizAnswerPageDe() {
           Wenn du lieber 20 Sekunden Video schaust: Das ist der Clip, den Google für dieses Keyword häufig ganz oben anzeigt.
         </p>
 
-        {videos.map((video) => (
-          <article key={video.id} className="space-y-3 rounded-3xl border border-slate-800 bg-slate-950/80 p-4 shadow-sm shadow-slate-950/60">
-            <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
-              <div className="aspect-video bg-slate-950/80">
-                <iframe
-                  title={video.title}
-                  src={`https://www.youtube-nocookie.com/embed/${video.id}?rel=0&modestbranding=1&playsinline=1`}
-                  className="h-full w-full border-0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                />
-              </div>
-            </div>
-            <h3 className="text-sm font-medium text-slate-100">{video.title}</h3>
-            <p className="text-xs leading-relaxed text-slate-300">{video.note}</p>
-          </article>
-        ))}
+        <DeferredYouTubeGallery
+          videos={videos.map(({ id, title, note }) => ({ id, title, caption: note }))}
+          locale="de"
+          sourceLabel="Quellvideo auf YouTube oeffnen"
+          analyticsContext="purple-star-catastrophe-quiz"
+        />
       </section>
 
       <section className="rounded-3xl border border-slate-800/70 bg-slate-950/70 p-6 shadow-lg space-y-4">

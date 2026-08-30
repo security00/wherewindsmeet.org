@@ -5,6 +5,8 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 const ogImage = `${baseUrl}/guides/qin-caiwei/hero.jpg`;
+const allThingsSourceUrl =
+  "https://allthings.how/why-qin-caiwei-is-so-hard-to-befriend-in-where-winds-meet/";
 
 export const metadata: Metadata = {
   title: "WWM Qin Caiwei Freundschafts-Guide (2025) | Where Winds Meet AI Chat",
@@ -288,18 +290,25 @@ export default function QinCaiweiDePage() {
             </div>
           </div>
 
-          <div className="relative">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 shadow-xl shadow-black/40">
-              <CdnImage
-                src="/guides/qin-caiwei/hero.jpg"
-                alt="WWM Qin Caiwei AI-Chat Porträt für die Freundschaftsmission in Where Winds Meet"
-                fill
-                className="object-cover object-center"
-                priority
-              />
-            </div>
-            <p className="mt-3 text-xs text-slate-500">Bildquelle: Referenz-Capture von allthings.how</p>
-          </div>
+          <figure className="overflow-hidden rounded-2xl border border-amber-400/30 bg-slate-900/70 shadow-xl shadow-black/40">
+            <CdnImage
+              src="/guides/qin-caiwei/hero.jpg"
+              alt="Historische Community-Aufnahme von Qin Caiweis AI-Chat-Porträt in Where Winds Meet"
+              width={1200}
+              height={675}
+              priority
+              className="h-auto w-full"
+            />
+            <figcaption className="space-y-2 p-4 text-xs leading-5 text-slate-300">
+              <p>
+                Publisher: AllThings.How. Reuse authorization confirmed by site owner 2026-08-29. Diese historische
+                Community-Referenz zeigt Qin Caiweis Porträt und den Chat-Kontext; sie ist kein Beleg für den aktuellen Build.
+              </p>
+              <a href={allThingsSourceUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-amber-200 underline underline-offset-4 hover:text-amber-100">
+                Quellenartikel des Publishers lesen →
+              </a>
+            </figcaption>
+          </figure>
         </div>
       </section>
 

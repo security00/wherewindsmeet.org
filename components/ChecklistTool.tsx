@@ -164,7 +164,7 @@ const UI_TEXT: Record<
     links: [
       { label: "Reset timer →", href: "/vn/tools/reset-timer" },
       { label: "Bản đồ tương tác →", href: "/vn/tools/interactive-map" },
-      { label: "Code →", href: "/vn/guides/codes" },
+      { label: "Code →", href: "/guides/codes" },
       { label: "Tin tức →", href: "/vn/news" },
     ],
     weekdays: {
@@ -194,7 +194,7 @@ const UI_TEXT: Record<
     links: [
       { label: "Reset Timer →", href: "/de/tools/reset-timer" },
       { label: "Interaktive Karte →", href: "/de/tools/interactive-map" },
-      { label: "Aktive Codes →", href: "/de/guides/codes" },
+      { label: "Aktive Codes →", href: "/guides/codes" },
       { label: "News →", href: "/de/news" },
     ],
     weekdays: {

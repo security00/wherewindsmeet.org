@@ -3,6 +3,7 @@ import CdnImage from "@/components/CdnImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import { weaponTierMeta } from "@/lib/weaponTierData";
 
 const baseUrl = "https://wherewindsmeet.org";
 
@@ -56,13 +57,13 @@ const postPatchChecks = [
     title: "Waffenpaar anpassen",
     detail:
       "Tausche zuerst die Zweitwaffe, wenn der Haupt-Loop noch funktioniert, aber ein Counter-Matchup nach Maintenance schlechter wurde.",
-    href: "/de/guides/weapons/tier-list#weapon-meta-check",
+    href: "/guides/weapons/tier-list#weapon-meta-check",
   },
   {
     title: "Stat-Plan resetten",
     detail:
       "Nutze guenstigeren Martial Art Reset und niedrigere Inner Way Conversion-Kosten, wenn dein Kern-Damage-Stat nicht mehr zur Waffenpaarung passt.",
-    href: "/de/guides/pvp-tier-list#arena-rank-checklist",
+    href: "/guides/pvp-tier-list#arena-rank-checklist",
   },
 ];
 
@@ -168,13 +169,15 @@ export default function BuildsDePage() {
         <section id="post-patch-build-check" className="space-y-5 rounded-3xl border border-emerald-400/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/30">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Version 1.7 build decision</p>
+              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">
+                {weaponTierMeta.gameVersion} Build-Entscheidung · Evidenz geprüft {weaponTierMeta.updatedAt}
+              </p>
               <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
                 Nach dem Patch: behalten, anpassen oder resetten?
               </h2>
             </div>
             <Link
-              href="/de/guides/tier-list#arena-ranks"
+              href="/guides/tier-list#arena-ranks"
               className="rounded-full border border-emerald-300/50 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-100 hover:border-emerald-200/80"
             >
               Arena rank notes

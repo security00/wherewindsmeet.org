@@ -101,21 +101,12 @@ function extractLatestNewsSignals(newsText) {
 
 function deriveGameVersionFromTitle(title) {
   // Turn titles like:
-  // "1.7 Version Patch Notes: Optimizations and Bug Fixes (June 5, 2026)"
-  // "Version 1.7 Path Balance Adjustment Announcement (May 28)"
-  // into compact labels like "Version 1.7 / June 5 fixes"
-  let version = 'Version 1.7';
-  const verMatch = title.match(/Version\s+1\.[0-9]+/i) || title.match(/\b1\.[0-9]+\s*Version/i);
-  if (verMatch) {
-    let v = verMatch[0];
-    v = v.replace(/^\s*1\./i, 'Version 1.');
-    v = v.replace(/\bVersion\s*1\./i, 'Version 1.');
-    v = v.replace(/\s*Version\s*$/i, '');
-    version = v.trim();
-  }
-  if (!/^Version 1\./i.test(version)) {
-    version = 'Version 1.7';
-  }
+  // "2.1 Version Patch Notes: Optimizations and Bug Fixes (August 20, 2026)"
+  // "Version 2.1 Update Overview - August 27"
+  // into compact labels like "Version 2.1 / August 27".
+  const prefixedVersion = title.match(/\bVersion\s+(\d+\.\d+)\b/i);
+  const suffixedVersion = title.match(/\b(\d+\.\d+)\s+Version\b/i);
+  const version = `Version ${prefixedVersion?.[1] ?? suffixedVersion?.[1] ?? '2.1'}`;
 
   let suffix = '';
 
@@ -253,8 +244,7 @@ function updateEntry(entry, recommended, forcedDate, forcedVersion, discoveredUr
 
   if (forcedVersion) {
     next.gameVersion = forcedVersion;
-  } else if (recommended.gameVersion && !next.gameVersion.includes('1.7')) {
-    // Only upgrade if current doesn't look current
+  } else if (recommended.gameVersion) {
     next.gameVersion = recommended.gameVersion;
   }
 
@@ -401,7 +391,11 @@ Examples:
   }
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exitCode = 1;
-});
+module.exports = { deriveGameVersionFromTitle, updateEntry };
+
+if (require.main === module) {
+  main().catch((err) => {
+    console.error(err);
+    process.exitCode = 1;
+  });
+}

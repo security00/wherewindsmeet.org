@@ -100,7 +100,7 @@ const UI_TEXT: Record<
     note: "Gợi ý: thời gian reset có thể khác theo server/khu vực. Nếu trong game khác, hãy chỉnh cài đặt.",
     linksTitle: "Gợi ý trang nên xem trước/sau reset",
     links: [
-      { label: "Code đang hoạt động →", href: "/vn/guides/codes" },
+      { label: "Code đang hoạt động →", href: "/guides/codes" },
       { label: "Đồ miễn phí →", href: "/vn/guides/free-outfits" },
       { label: "Tin mới nhất →", href: "/vn/news" },
       { label: "Checklist tool →", href: "/vn/tools/checklist" },
@@ -143,7 +143,7 @@ const UI_TEXT: Record<
     note: "Tipp: Reset-Zeiten können je nach Server/Region abweichen. Wenn es im Spiel anders ist, stell es hier um.",
     linksTitle: "Nützlich rund um den Reset",
     links: [
-      { label: "Aktive Codes →", href: "/de/guides/codes" },
+      { label: "Aktive Codes →", href: "/guides/codes" },
       { label: "Kostenlose Outfits →", href: "/de/guides/free-outfits" },
       { label: "Aktuelle News →", href: "/de/news" },
       { label: "Checklist tool →", href: "/de/tools/checklist" },

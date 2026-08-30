@@ -41,7 +41,10 @@ export default function PrivacyPage() {
       <section className="space-y-2">
         <h2 className="text-lg font-semibold text-slate-50">3. Cookies, Analytics & ähnliche Technologien</h2>
         <p>
-          Falls einfache Analytics aktiviert werden, dienen sie dazu zu verstehen, welche Inhalte nützlich sind. Sie können Cookies oder ähnliche Kennungen setzen. Wenn möglich, werden Optionen wie IP-Anonymisierung oder Opt-out aktiviert. Änderungen an der Analytics-Konfiguration werden hier nachgetragen.
+          Optionale Dienste sind standardmäßig aus. Google Analytics, Microsoft Clarity und Plausible werden erst geladen, nachdem Sie ausdrücklich in die Kategorie „Analyse“ eingewilligt haben. Google AdSense wird erst geladen, nachdem Sie ausdrücklich in die Kategorie „Werbung“ eingewilligt haben. Aktivierte Anbieter können IP-Adresse sowie Seiten- und Geräteinformationen nach ihren eigenen Richtlinien erhalten. Googles Anforderungen an zertifizierte Consent-Plattformen und die Kontokonfiguration gelten in regulierten Regionen weiterhin.
+        </p>
+        <p>
+          Ihre Kategorien, eine Formatversion und der Änderungszeitpunkt werden als notwendige Auswahl im <code className="rounded bg-slate-900 px-1 py-0.5 text-xs">localStorage</code> Ihres Browsers gespeichert. Mit der dauerhaft erreichbaren Schaltfläche „Datenschutzeinstellungen“ können Sie die Einwilligung ändern oder widerrufen. Ein Widerruf verhindert künftiges Laden optionaler Skripte und entfernt bekannte First-Party-Cookies soweit möglich, macht aber bereits an Anbieter übermittelte Daten nicht rückgängig. Diese lokale Auswahlhilfe wird nicht als Google-zertifizierte Consent-Management-Plattform dargestellt.
         </p>
       </section>
 
@@ -80,6 +83,7 @@ export default function PrivacyPage() {
       </section>
 
       <footer className="border-t border-slate-800 pt-4 text-xs text-slate-400 space-y-2">
+        <p>Zuletzt aktualisiert: 30. August 2026.</p>
         <p>Diese Erklärung dient der Transparenz und ersetzt keine Rechte, die Ihnen nach lokalem Recht zustehen.</p>
         <p>
           Zurück zur{" "}

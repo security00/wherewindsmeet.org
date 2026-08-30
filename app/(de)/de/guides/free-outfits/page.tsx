@@ -171,7 +171,7 @@ export default function FreeOutfitsDePage() {
             <Link href="/de/guides/cosmetics" className="rounded-full border border-emerald-400/60 bg-emerald-500/10 px-3 py-1 font-semibold text-emerald-100 hover:border-emerald-300/80">
               Kosmetik-Guide
             </Link>
-            <Link href="/de/guides/codes" className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60">
+            <Link href="/guides/codes" className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60">
               Aktive Codes
             </Link>
           </div>

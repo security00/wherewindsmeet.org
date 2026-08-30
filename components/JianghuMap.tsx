@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useCallback, useMemo, useState } from 'react';
 import { usePathname } from 'next/navigation';
+import { buildLocalizedPath } from '@/i18n/routing.mjs';
 
 interface MapLandmark {
   id: string;
@@ -28,7 +29,7 @@ const landmarks: MapLandmark[] = [
     position: { x: 30, y: 58 },
     description: 'Start your journey in the Jianghu',
     category: 'beginner',
-    backgroundPreview: '/design/background/11.png',
+    backgroundPreview: '/background/11.webp',
   },
   {
     id: 'tier-list',
@@ -39,7 +40,7 @@ const landmarks: MapLandmark[] = [
     position: { x: 50, y: 24 },
     description: 'Compete at the peak of martial arts',
     category: 'combat',
-    backgroundPreview: '/design/background/5.png',
+    backgroundPreview: '/background/5.webp',
   },
   {
     id: 'builds',
@@ -50,7 +51,7 @@ const landmarks: MapLandmark[] = [
     position: { x: 68, y: 38 },
     description: 'Master your combat style',
     category: 'combat',
-    backgroundPreview: '/design/background/18.png',
+    backgroundPreview: '/background/18.webp',
     tooltipSide: 'top',
   },
   {
@@ -62,7 +63,7 @@ const landmarks: MapLandmark[] = [
     position: { x: 32, y: 38 },
     description: 'Claim your rewards',
     category: 'rewards',
-    backgroundPreview: '/design/background/4.png',
+    backgroundPreview: '/background/4.webp',
     tooltipSide: 'top',
   },
   {
@@ -74,7 +75,7 @@ const landmarks: MapLandmark[] = [
     position: { x: 70, y: 60 },
     description: 'Explore legendary armaments',
     category: 'knowledge',
-    backgroundPreview: '/design/background/25.png',
+    backgroundPreview: '/background/25.webp',
   },
   {
     id: 'bosses',
@@ -85,7 +86,7 @@ const landmarks: MapLandmark[] = [
     position: { x: 50, y: 72 },
     description: 'Face formidable foes',
     category: 'combat',
-    backgroundPreview: '/design/background/13.png',
+    backgroundPreview: '/background/13.webp',
   },
 ];
 
@@ -216,8 +217,7 @@ export default function JianghuMap() {
   const withLangPrefix = useCallback(
     (slug: string) => {
       if (language === "en") return slug;
-      const prefix = language === "vi" ? "/vn" : "/de";
-      return slug.startsWith(prefix) ? slug : `${prefix}${slug}`;
+      return buildLocalizedPath(slug, language) ?? slug;
     },
     [language]
   );

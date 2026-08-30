@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
+import LiteMp4Embed from "@/components/LiteMp4Embed";
 import Link from "next/link";
 import type { BossId } from "@/lib/bosses";
 import { bosses } from "@/lib/bosses.vi";
 import { buildHreflangAlternates } from "@/lib/hreflang";
-import { resolveCdnAssetSrc } from "@/lib/image-utils";
+import { buildLocalizedPath } from "@/i18n/routing.mjs";
 
 export function generateBossMetadata(id: BossId): Metadata {
   const boss = bosses.find((b) => b.id === id);
@@ -14,6 +15,7 @@ export function generateBossMetadata(id: BossId): Metadata {
     title: `${boss.name} – tổng quan trận boss | Where Winds Meet`,
     description: `Tóm tắt trận ${boss.name}: bối cảnh, nhịp giao tranh và gợi ý chuẩn bị vũ khí/build (Tiếng Việt).`,
     alternates: buildHreflangAlternates(`/guides/bosses/${boss.id}`, { canonicalLanguage: "vi" }),
+    robots: { index: false, follow: true },
   };
 }
 
@@ -21,7 +23,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
   const boss = bosses.find((b) => b.id === bossId);
   if (!boss) return null;
 
-  const base = "/vn";
+  const localizedPath = (path: string) => buildLocalizedPath(path, "vi") ?? path;
 
   return (
     <article className="space-y-10">
@@ -42,14 +44,14 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
             Đây là trang tổng quan “ít spoiler”, dùng để đặt kỳ vọng về tông truyện và cảm giác giao tranh. Khi cần chuẩn bị build, hãy dùng kèm{" "}
             <Link
-              href={`${base}/guides/weapons`}
+              href={localizedPath("/guides/weapons")}
               className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
             >
               tổng quan vũ khí
             </Link>{" "}
             và{" "}
             <Link
-              href={`${base}/guides/builds`}
+              href={localizedPath("/guides/builds")}
               className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
             >
               hướng dẫn build
@@ -59,15 +61,15 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
           <p className="text-xs text-slate-400">
             Ghi chú: nội dung dựa trên tư liệu chính thức và kinh nghiệm ARPG, ưu tiên mô tả cảm giác & bối cảnh thay vì số liệu/khung hình.
           </p>
-        </div>
-        <div className="space-y-4">
-          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
-            <video
-              src={resolveCdnAssetSrc(boss.backgroundVideo).src}
-              muted
-              playsInline
-              preload="metadata"
-              className="h-full w-full object-cover opacity-75"
+          </div>
+          <div className="space-y-4">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
+            <CdnImage
+              src="/background/bg4.webp"
+              alt=""
+              fill
+              sizes="(max-width: 640px) 100vw, 40vw"
+              className="object-cover opacity-75"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
             <div className="pointer-events-none absolute bottom-3 left-3 h-10 w-40 sm:h-12 sm:w-48">
@@ -81,7 +83,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
             </div>
           </div>
           <p className="text-xs text-slate-400">
-            Ảnh/clip minh họa dựa trên showcase boss và title art (ưu tiên nguồn chính thức khi có). Hình ảnh có thể thay đổi theo patch hoặc cosmetics.
+            Hinh nen phia tren la anh minh hoa chung cua trang web, khong phai bang chung ve tran boss. Title art phu len anh chi dung de nhan dien encounter khi co.
           </p>
         </div>
       </section>
@@ -108,7 +110,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
             <span>
               Mở{" "}
               <Link
-                href={`${base}/guides/weapons`}
+                href={localizedPath("/guides/weapons")}
                 className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
               >
                 tổng quan vũ khí
@@ -121,7 +123,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
             <span>
               Xem{" "}
               <Link
-                href={`${base}/guides/builds`}
+                href={localizedPath("/guides/builds")}
                 className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
               >
                 hướng dẫn build
@@ -141,22 +143,27 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
         </p>
       </section>
 
-      <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+      {boss.backgroundVideo ? <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
           Xem {boss.name} chuyển động.
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
           Clip chính thức giúp bạn nắm nhịp và “khí chất” của boss mà không cần xem một full clear dài. Đừng cố học thuộc từng đòn; hãy quan sát tốc độ chain, khoảng cách camera và mức độ trừng phạt khi bạn đứng sai vị trí.
         </p>
-        <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
-          <video
-            src={resolveCdnAssetSrc(boss.backgroundVideo).src}
-            controls
-            muted
-            loop
-            className="h-full w-full"
-          />
-        </div>
+        <LiteMp4Embed
+          src={boss.backgroundVideo}
+          title={`Clip giới thiệu ${boss.name}`}
+          poster="/background/bg4.webp"
+          analytics={{ eventName: "boss_detail_video_play", params: { boss: boss.id, locale: "vi" } }}
+        />
+        <a
+          href={boss.backgroundVideo}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex text-xs font-semibold text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+        >
+          Mở trực tiếp nguồn clip
+        </a>
         <div className="space-y-2 text-xs leading-relaxed text-slate-400 sm:text-sm">
           <p>
             Khi xem, bạn có thể để ý: boss mở giao tranh từ đâu, có bao nhiêu cửa sổ an toàn để phản công, và khi nào nên reset thay vì cố “tham đòn”.
@@ -165,7 +172,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
             Nếu video không tải, có thể URL hosting đã thay đổi (hoặc nguồn đã chuyển) kể từ lần trang được cập nhật gần nhất.
           </p>
         </div>
-      </section>
+      </section> : null}
 
       <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
@@ -173,7 +180,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
             Xem thêm boss khác.
           </h2>
           <Link
-            href={`${base}/guides/bosses`}
+            href={localizedPath("/guides/bosses")}
             className="text-sm font-semibold text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
           >
             Xem danh sách boss →
@@ -188,7 +195,7 @@ export function BossDetail({ bossId }: { bossId: BossId }) {
             .map((other) => (
               <Link
                 key={other.id}
-                href={`${base}/guides/bosses/${other.id}`}
+                href={localizedPath(`/guides/bosses/${other.id}`)}
                 className="group rounded-2xl border border-slate-800 bg-slate-950/70 p-4 shadow-sm shadow-slate-950/60 transition hover:border-slate-700 hover:bg-slate-900/70"
               >
                 <p className="text-sm font-semibold text-slate-50 group-hover:text-ink-gold transition-colors">

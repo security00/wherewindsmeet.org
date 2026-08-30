@@ -370,7 +370,8 @@ export default function GiftOfGabDePage() {
             intro: "Wenn du Gift of Gab einmal „in Bewegung“ sehen willst, helfen diese Clips beim Timing und Kartenfluss.",
             privacyTitle: "Datenschutz-Hinweis",
             privacyText:
-              "Die Einbettungen nutzen den erweiterten Datenschutzmodus (youtube-nocookie.com). Cookies oder Watch-History werden in der Regel erst relevant, wenn du aktiv interagierst.",
+              "YouTube wird erst nach einem Klick auf die Vorschau kontaktiert. Die Wiedergabe nutzt dann den erweiterten Datenschutzmodus (youtube-nocookie.com).",
+            sourceLabel: "Quellvideo auf YouTube oeffnen",
           }}
         />
       </section>

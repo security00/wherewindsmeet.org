@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
+import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -7,174 +8,99 @@ const baseUrl = "https://wherewindsmeet.org";
 const cdnBase = "https://static.wherewindsmeet.org";
 const heroImagePath = "/guides/mist-shrouded-prison/youtube-cover.jpg";
 const heroImage = `${cdnBase}${heroImagePath}`;
-const cdn = (path: string) => `${cdnBase}${path}`;
 const walkthrough = [
   {
     title: "Tìm lối vào Mist-Shrouded Prison",
     detail:
       "Hoàn thành The Ephemeral Blight, giao đủ Mistveil Forest Cures cho Zhai Xu để lấy thuốc giải, đi thang máy gần Central Mistveil Forest. Đốt nụ hoa xanh đầu tiên bằng mũi tên lửa để mở hầm mộ.",
-    image: { src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-tomb-location-in-wwm-where-winds-meet.jpg"), alt: "Vị trí lối vào hầm mộ Mist-Shrouded Prison" },
   },
   {
     title: "Vòng lặp 1: cánh cửa phủ gân bên phải",
     detail: "Từ lối vào, phòng bên phải bị phong ấn bởi gân từ một nụ hoa xanh—tạm bỏ qua. Leo thang bên trái; hầm mộ sẽ lặp tổng cộng 3 lần.",
-    image: { src: cdn("/guides/mist-shrouded-prison/gr/loop-1-mist-shrouded-prison-chest-1-location-in-wwm-where-winds-meet.jpg"), alt: "Tổng quan hành lang vòng lặp 1" },
   },
   {
     title: "Rương 1 (phòng đỏ có “cô gái đỏ”)",
     detail: "Vào phòng ánh đỏ phía trước; ở vòng 1, cô gái đỏ đứng trong phòng. Mở rương 1 ngay cạnh cô ấy.",
-    image: { src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-1-location-in-wwm-where-winds-meet.jpg"), alt: "Vị trí rương 1 Mist-Shrouded Prison" },
   },
   {
     title: "Hành lang độc Frost Fungus và nụ hoa",
     detail: "Rời phòng, đi xuyên qua hành lang độc Frost Fungus Poison, rồi đốt nụ hoa xanh ở phía đối diện bằng mũi tên lửa để tiếp tục.",
-    image: { src: cdn("/guides/mist-shrouded-prison/gr/loop-1-destroy-bud-with-fire-in-wwm-where-winds-meet.jpg"), alt: "Đốt nụ hoa để mở đường" },
   },
   {
     title: "Rương 2 (kích hoạt chông trần)",
     detail: "Tiếp tục đến rương 2; mở rương sẽ thả bẫy chông từ trần xuống, vì vậy hãy mở xong rồi lùi lại về phía lối vào.",
-    image: { src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-2-location-in-wwm-where-winds-meet.jpg"), alt: "Vị trí rương 2 Mist-Shrouded Prison" },
   },
   {
     title: "Rương 3 (rẽ trái qua bẫy chông)",
     detail: "Nhảy lên các chông nhô lên, sau đó rẽ trái vào hành lang nhỏ để lấy rương 3.",
-    image: { src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-3-location-in-wwm-where-winds-meet.jpg"), alt: "Vị trí rương 3 Mist-Shrouded Prison" },
   },
   {
     title: "Vượt bẫy chông và leo lên",
     detail: "Dùng bẫy chông lần nữa để sang phía đối diện, rồi leo thang lên đường trên.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest.png"),
-      alt: "Tổng quan phòng bẫy chông Mist-Shrouded Prison",
-    },
   },
   {
     title: "Giẫm lên tấm áp lực",
     detail: "Kích hoạt tấm áp lực để chông ngang bắt đầu di chuyển; quay lại phía lối vào để bám theo chúng.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/press-the-pressure-plate-to-activate-spikes-in-wwm-where-winds-meet.jpg"),
-      alt: "Tấm áp lực kích hoạt bẫy chông",
-    },
   },
   {
     title: "Rương 4 (đi sát sau chông di chuyển)",
     detail: "Khi chông trượt tới phía trước, chạy bám ngay sau chúng để lấy rương 4 an toàn.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-4-location-in-wwm-where-winds-meet.jpg"),
-      alt: "Vị trí rương 4 Mist-Shrouded Prison",
-    },
   },
   {
     title: "Rơi xuống để vào vòng lặp 2",
     detail: "Đi qua cổng và rơi xuống phòng đầu tiên quen thuộc. Cô gái đỏ cạnh thang xác nhận bạn đã sang vòng 2.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/how-to-enter-loop-2-in-wwm-where-winds-meet.jpg"),
-      alt: "Cách vào vòng lặp 2 bằng đường rơi",
-    },
   },
   {
     title: "Lặp lại phòng chông ở vòng 2",
     detail: "Băng qua hành lang vào lại phòng chông, leo thang, giẫm tấm áp lực và đi tiếp để đẩy bố cục sang vòng lặp cuối.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/step-11.png"),
-      alt: "Thiết lập lại phòng chông ở vòng 2",
-    },
   },
   {
     title: "Vào vòng lặp 3",
     detail: "Sau khi lặp lại, bạn đã vào vòng 3—lần xoay cuối của hầm mộ.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/enter-loop-3-in-wwm-where-winds-meet.jpg"),
-      alt: "Khu vực vào vòng lặp 3",
-    },
   },
   {
     title: "Cô gái đỏ ở hành lang hoa xanh",
     detail: "Leo thang và rẽ phải; hành lang phủ hoa xanh giờ có cô gái đỏ, xác nhận bạn đang ở vòng 3.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/loop-3-in-wwm-where-winds-meet.jpg"),
-      alt: "Hành lang hoa xanh ở vòng 3",
-    },
   },
   {
     title: "Rương 5 (hành lang độc)",
     detail: "Chạy xuyên qua độc ở đây, không dừng lại, rồi mở rương thứ 5 dọc hành lang.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-5-location-in-wwm-where-winds-meet.jpg"),
-      alt: "Vị trí rương 5 Mist-Shrouded Prison",
-    },
   },
   {
     title: "Đốt nụ hoa xanh thứ hai",
     detail: "Rời hành lang, đốt nụ hoa xanh phía trước và đi tiếp đến căn phòng có tờ ghi chú trên bàn.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/destroy-blue-bud-2-in-wwm-where-winds-meet.jpg"),
-      alt: "Đốt nụ hoa xanh sau rương 5",
-    },
   },
   {
     title: "Rơi xuống bẫy chông di chuyển",
     detail: "Từ phòng ghi chú, nhìn xuống hố và chờ chông ngang (từ vòng 2) thẳng hàng; sau đó rơi xuống đúng vị trí.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/jump-onto-the-moving-spikes-in-wwm-where-winds-meet.jpg"),
-      alt: "Rơi xuống bẫy chông đang di chuyển",
-    },
   },
   {
     title: "Đi tới góc và dọn phục kích",
     detail: "Khi chông tiến gần mép, nhảy xuống và hạ kẻ địch đang ẩn gần đó.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/step-17.png"),
-      alt: "Ổ phục kích ở góc gần bẫy chông",
-    },
   },
   {
     title: "Rương 6 (phần thưởng vòng 3)",
     detail: "Sau khi dọn xong phục kích, mở rương 6 ở khu vực này.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-6-location-in-wwm-where-winds-meet.jpg"),
-      alt: "Vị trí rương 6 Mist-Shrouded Prison",
-    },
   },
   {
     title: "Rơi về khu vực hành lang cũ",
     detail: "Đi tiếp và rơi xuống hố dài để đáp gần vị trí rương 3 ở vòng 1.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/drop-from-chest-6-location-to-return-to-loop-1-in-wwm-where-winds-meet.jpg"),
-      alt: "Rơi từ vị trí rương 6 để quay về vòng 1",
-    },
   },
   {
     title: "Quay lại theo đường bẫy chông",
     detail: "Đi tới phòng chông, leo lên chông di chuyển, nhảy sang trái vào hành lang nhỏ, rồi rơi qua hai hố xuống hành lang rộng.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/frop-down-from-chest-in-loop-2-in-wwm-where-winds-meet.jpg"),
-      alt: "Đường quay lại qua phòng bẫy chông",
-    },
   },
   {
     title: "Đốt nụ ở cuối hành lang",
     detail: "Đốt nụ hoa xanh ở cuối bằng mũi tên lửa và đi qua cổng để trở lại phòng ban đầu.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/remove-the-bud-to-open-the-final-door-in-wwm-where-winds-meet.jpg"),
-      alt: "Đốt nụ để mở đường vào kho báu cuối",
-    },
   },
   {
     title: "Rương kho báu cuối",
     detail: "Vào căn phòng từng bị phủ gân ở vòng 1 và mở rương kho báu cuối ở phía sau.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/final-treasure-wide.jpg"),
-      alt: "Góc nhìn rộng rương kho báu cuối",
-    },
   },
   {
     title: "Rest in Peace (kết thúc)",
     detail: "Tương tác “Pay respect” tại điểm đánh dấu để hoàn thành hầm mộ Mist-Shrouded Prison.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/pray-to-red-lady-in-wwm-where-winds-meet.jpg"),
-      alt: "Tương tác Pay respect với cô gái đỏ",
-    },
   },
 ];
 
@@ -221,6 +147,32 @@ const quickFacts = [
   { label: "Bẫy", value: "Độc Frost Fungus, chông di chuyển, nụ hoa xanh", icon: "⚠️" },
   { label: "Chuẩn bị", value: "Xong The Ephemeral Blight, thu đủ thuốc chữa, đi thang máy gần Central Mistveil Forest", icon: "🧪" },
 ];
+
+const walkthroughImagePaths = [
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-tomb-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/loop-1-mist-shrouded-prison-chest-1-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-1-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/loop-1-destroy-bud-with-fire-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-2-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-3-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest.png",
+  "/guides/mist-shrouded-prison/gr/press-the-pressure-plate-to-activate-spikes-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-4-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/how-to-enter-loop-2-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/step-11.png",
+  "/guides/mist-shrouded-prison/gr/enter-loop-3-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/loop-3-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-5-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/destroy-blue-bud-2-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/jump-onto-the-moving-spikes-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/step-17.png",
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-6-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/drop-from-chest-6-location-to-return-to-loop-1-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/frop-down-from-chest-in-loop-2-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/remove-the-bud-to-open-the-final-door-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/final-treasure-wide.jpg",
+  "/guides/mist-shrouded-prison/gr/pray-to-red-lady-in-wwm-where-winds-meet.jpg",
+] as const;
 
 const tlDr = [
   "Mistveil Prison la cach tim ngan gon ma nhieu nguoi choi dung cho huyen mo Mist-Shrouded Prison trong Where Winds Meet. Route nay gan voi Mistveil Forest, The Ephemeral Blight, thuoc giai cua Zhai Xu, red lady loop markers, 6 ruong va kho bau cuoi.",
@@ -329,9 +281,9 @@ const breadcrumbStructuredData = {
 };
 
 const related = [
-  { href: "/vn/guides/unholy-prophecy", title: "An Unholy Prophecy (thắp lửa, Meridian Touch)" },
+  { href: "/guides/unholy-prophecy", title: "An Unholy Prophecy (English; thắp lửa, Meridian Touch)" },
   { href: "/vn/guides/woven-with-malice", title: "Sợi Định Mệnh (mốc giờ, bẫy)" },
-  { href: "/vn/guides/one-leaf-one-life", title: "One Leaf, One Life – hướng dẫn Lost Chapter" },
+  { href: "/guides/one-leaf-one-life", title: "One Leaf, One Life – English Lost Chapter guide" },
   { href: "/vn/news#roadmap", title: "Roadmap / cập nhật tiếp theo" },
 ];
 
@@ -450,24 +402,30 @@ export default function MistShroudedPrisonPage() {
           Bạn sẽ thấy ghi chú này sau khi đốt nụ thứ hai ở vòng 3, trước khi rơi xuống bẫy chông di chuyển. Đọc xong, hãy làm đúng thứ tự các bước để mạch
           “vòng lặp” của hầm mộ không bị lệch.
         </p>
-        <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 shadow-inner shadow-black/25">
+        <figure className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70">
           <CdnImage
-            src={cdn("/guides/mist-shrouded-prison/gr/read-note-in-prison-in-wwm-where-winds-meet.jpg")}
-            alt="Ghi chú manh mối trong Mist-Shrouded Prison"
+            src="/guides/mist-shrouded-prison/gr/read-note-in-prison-in-wwm-where-winds-meet.jpg"
+            alt="Tờ ghi chú trên bàn ở vòng 3 của Mist-Shrouded Prison"
             width={1600}
             height={900}
             loading="lazy"
             className="h-full w-full object-cover"
             sizes="(max-width: 1024px) 100vw, 960px"
           />
-        </div>
+          <figcaption className="border-t border-slate-800 px-4 py-3 text-xs leading-5 text-slate-300">
+            Ghi chú ở vòng 3. Source publisher: GameRant. Reuse authorization confirmed by site owner 2026-08-29.
+          </figcaption>
+        </figure>
       </section>
 
       <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg">
         <div className="flex items-center gap-2">
           <span className="text-lg">🖼️</span>
-          <h2 className="text-2xl font-bold text-slate-50">Walkthrough có hình</h2>
+          <h2 className="text-2xl font-bold text-slate-50">Walkthrough có hình minh họa</h2>
         </div>
+        <p className="text-sm text-emerald-200">
+          Source publisher: GameRant. Reuse authorization confirmed by site owner 2026-08-29.
+        </p>
         <ol className="space-y-5">
           {walkthrough.map((step, index) => (
             <li
@@ -481,17 +439,20 @@ export default function MistShroudedPrisonPage() {
                   <p className="text-sm text-slate-200 leading-relaxed">{step.detail}</p>
                 </div>
               </div>
-              <div className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60">
+              <figure className="overflow-hidden rounded-xl border border-slate-800 bg-slate-950/60">
                 <CdnImage
-                  src={step.image.src}
-                  alt={step.image.alt}
-                  loading="lazy"
+                  src={walkthroughImagePaths[index]}
+                  alt={`Mist-Shrouded Prison bước ${index + 1}: ${step.title}`}
                   width={1600}
                   height={900}
+                  loading="lazy"
                   className="h-full w-full object-cover"
                   sizes="(max-width: 1024px) 100vw, 960px"
                 />
-              </div>
+                <figcaption className="border-t border-slate-800 px-4 py-3 text-xs leading-5 text-slate-300">
+                  Bước {index + 1}: {step.title}. Source publisher: GameRant.
+                </figcaption>
+              </figure>
             </li>
           ))}
         </ol>
@@ -545,18 +506,22 @@ export default function MistShroudedPrisonPage() {
           <h2 className="text-xl sm:text-2xl font-semibold text-slate-50">Video hướng dẫn (YouTube)</h2>
         </div>
         <p className="text-sm text-slate-300">
-          Nếu bạn vẫn thấy các bước minh họa chưa rõ, hãy xem video hướng dẫn này để theo trọn lộ trình Mist-Shrouded Prison.
+          Nếu bạn vẫn thấy các bước dạng chữ chưa rõ, hãy xem video hướng dẫn này để theo trọn lộ trình Mist-Shrouded Prison.
         </p>
-        <div className="relative w-full overflow-hidden rounded-2xl border border-slate-800 bg-black shadow-inner shadow-black/25" style={{ paddingBottom: "56.25%" }}>
-          <iframe
-            className="absolute inset-0 h-full w-full"
-            src="https://www.youtube-nocookie.com/embed/dHDy9nzQsd4"
-            title="Video hướng dẫn Mist-Shrouded Prison"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-        </div>
+        <LiteYouTubeEmbed
+          videoId="dHDy9nzQsd4"
+          title="Video hướng dẫn Mist-Shrouded Prison"
+          poster={heroImagePath}
+          analytics={{ eventName: "guide_video_play", params: { guide: "mist-shrouded-prison", locale: "vi" } }}
+        />
+        <a
+          href="https://www.youtube.com/watch?v=dHDy9nzQsd4"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex text-xs font-semibold text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+        >
+          Mo video nguon tren YouTube
+        </a>
       </section>
     </article>
   );

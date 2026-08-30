@@ -359,14 +359,13 @@ export default function NewPlayersGuidePage() {
 
             {/* Final CTA */}
             <section className="rounded-3xl bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 p-8 text-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-[url('/background/noise.png')] opacity-5 mix-blend-overlay"></div>
               <h2 className="text-2xl font-serif text-slate-50 mb-4 relative z-10">Sẵn sàng cho bước tiếp theo?</h2>
               <p className="text-slate-300 mb-8 max-w-lg mx-auto relative z-10">
                 Khi đã nắm vững nền tảng, hãy xem Tier List để lên kế hoạch build endgame.
               </p>
               <div className="flex flex-wrap justify-center gap-4 relative z-10">
                 <Link
-                  href="/vn/guides/pvp-tier-list"
+                  href="/guides/pvp-tier-list"
                   className="px-6 py-3 rounded-full bg-emerald-600 text-white font-medium hover:bg-emerald-500 transition-all shadow-lg shadow-emerald-900/20 hover:shadow-emerald-500/30 hover:-translate-y-0.5"
                 >
                   Xem Tier List

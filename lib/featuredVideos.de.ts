@@ -12,7 +12,7 @@ export const featuredVideos: FeaturedVideo[] = [
     id: "S7u9JuVHIyM",
     title: "Now's a Great Time to Jump into Where Winds Meet (Huge Updates)",
     description:
-      "Rueckkehrer-freundlicher Ueberblick fuer breite Suchanfragen wie where winds meet, where the winds meet und ob sich der Einstieg in Version 1.7 lohnt.",
+      "Rueckkehrer-Ueberblick vom Juni 2026, als datierter Kontext fuer breite Suchanfragen wie where winds meet und where the winds meet erhalten.",
     publishedAt: "2026-06-10",
   },
   {

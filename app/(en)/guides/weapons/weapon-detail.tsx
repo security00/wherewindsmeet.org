@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
+import LiteMp4Embed from "@/components/LiteMp4Embed";
 import Link from "next/link";
 import { weapons, type WeaponId } from "@/lib/weapons";
 import { weaponDetails } from "@/lib/weaponDetails";
@@ -739,25 +740,29 @@ export function WeaponDetail({ weaponId }: { weaponId: WeaponId }) {
       {weapon.id === "spear" && (
         <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
           <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-            Sample Spear builds from Traditional Chinese guides.
+            Community-reported starting points for Spear from Traditional Chinese guides.
           </h2>
           <div className="relative h-40 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80 sm:h-52">
             <CdnImage
-              src="https://www.ludens.com.tw/wp-content/uploads/2025/11/20251116012957_1.jpg"
-              alt="Where Winds Meet spear and sword build screenshot"
+              src={weapon.officialArt}
+              alt={`${weapon.name} official weapon identity artwork`}
               fill
-              className="object-cover object-center opacity-75"
+              className="object-contain object-center opacity-90"
               sizes="(min-width: 1280px) 40vw, (min-width: 768px) 60vw, 100vw"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
           </div>
+          <p className="text-xs text-slate-400">
+            Official weapon identity art; it does not verify the community build rotations below.
+          </p>
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
             Community builds written in Traditional Chinese describe three major
             spear families: simple Nameless basics, a complex bleed-and-burn
             engine centered on Nine Swords and Nine Spears, and a tanky
             Bloodbath-ready setup based on Bafang Thunder Spear. The notes
-            below translate those ideas into English so you can copy the
-            structure even if your client shows Chinese skill names.
+            below translate those ideas into English as historical starting
+            points. Verify names, effects, and balance in your current client
+            before investing resources.
           </p>
           <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5">
             <h3 className="text-lg font-semibold tracking-tight text-slate-50">
@@ -797,7 +802,7 @@ export function WeaponDetail({ weaponId }: { weaponId: WeaponId }) {
             <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
               This flow uses a specific spear style to stack bleed, burn, and
               other damage-over-time effects, then swaps to sword to detonate
-              them. It has one of the highest ceilings in the game but expects
+              them. Community guides describe it as execution-heavy and expect
               you to follow a strict combo script.
             </p>
             <ul className="space-y-2 text-sm leading-relaxed text-slate-200 sm:text-base">
@@ -824,13 +829,13 @@ export function WeaponDetail({ weaponId }: { weaponId: WeaponId }) {
 
           <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5">
             <h3 className="text-lg font-semibold tracking-tight text-slate-50">
-              3. Bafang Thunder Spear – PVE “unkillable” tank.
+              3. Bafang Thunder Spear – community sustain setup.
             </h3>
             <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
               Another popular Traditional Chinese build stacks multiple additive
-              damage-reduction sources around Bafang Thunder Spear, turning your
-              character into a near-unkillable tank for dungeons and Bloodbath
-              bosses.
+              damage-reduction sources around Bafang Thunder Spear for a more
+              forgiving dungeon and Bloodbath approach. It is not a survival
+              guarantee, and live balance or encounter mechanics can change the result.
             </p>
             <ul className="space-y-2 text-sm leading-relaxed text-slate-200 sm:text-base">
               <li className="flex gap-3">
@@ -863,14 +868,17 @@ export function WeaponDetail({ weaponId }: { weaponId: WeaponId }) {
           </h2>
           <div className="relative h-40 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80 sm:h-52">
             <CdnImage
-              src="https://www.ludens.com.tw/wp-content/uploads/2025/11/20251116015118_1.jpg"
-              alt="Where Winds Meet umbrella and fan builds screenshot"
+              src={weapon.officialArt}
+              alt={`${weapon.name} official weapon identity artwork`}
               fill
-              className="object-cover object-center opacity-75"
+              className="object-contain object-center opacity-90"
               sizes="(min-width: 1280px) 40vw, (min-width: 768px) 60vw, 100vw"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
           </div>
+          <p className="text-xs text-slate-400">
+            Official weapon identity art; it does not verify the community build rotations below.
+          </p>
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
             Umbrella and fan weapons support three standout playstyles in
             Traditional Chinese builds: a pure damage umbrella that plays like a
@@ -982,15 +990,20 @@ export function WeaponDetail({ weaponId }: { weaponId: WeaponId }) {
           showcase clip below offers a quick preview so you can decide whether{" "}
           {weapon.name} matches your taste.
         </p>
-        <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
-          <video
-            src={weapon.officialVideo}
-            controls
-            muted
-            loop
-            className="h-full w-full"
-          />
-        </div>
+        <LiteMp4Embed
+          src={weapon.officialVideo}
+          title={`${weapon.name} official showcase clip`}
+          poster={weapon.officialArt}
+          analytics={{ eventName: "weapon_showcase_play", params: { weapon: weapon.id } }}
+        />
+        <a
+          href={weapon.officialVideo}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex text-xs font-semibold text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+        >
+          Open official showcase source
+        </a>
         {detail && (
           <div className="space-y-2 text-xs leading-relaxed text-slate-400 sm:text-sm">
             <p>

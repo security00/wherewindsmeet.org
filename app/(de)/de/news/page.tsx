@@ -3,33 +3,35 @@ import CdnImage from "@/components/CdnImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import Link from "next/link";
 import type { NewsType } from "@/lib/news";
+import { getContentFreshness } from "@/lib/contentFreshness";
 import { latestNewsDate, newsItems } from "@/lib/news.de";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
+const freshness = getContentFreshness("/news");
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Nachrichten, Roadmap & Patch Notes (DE)",
   description:
-    "Kuratiertes Where Winds Meet News-Feed: Roadmap-Updates, Balance-Patches, Bugfixes und Events 鈥?schnell verst盲ndlich auf Deutsch.",
+    "Kuratiertes Where Winds Meet News-Feed mit Datum, Typ und Quellenlink. Offizielle englische Titel bleiben unverändert gekennzeichnet.",
   alternates: buildHreflangAlternates("/news", { canonicalLanguage: "de" }),
   openGraph: {
     title: "Where Winds Meet Nachrichten & Updates (DE)",
     description:
-      "Roadmap, Balance-Patches, Bugfixes und Events 鈥?kompakt zusammengefasst, mit Link zur offiziellen Quelle.",
+      "Roadmap, Balance-Patches, Bugfixes und Events mit klarer Kennzeichnung der offiziellen englischen Titel und Quellen.",
     url: `${baseUrl}/de/news`,
     locale: "de_DE",
   },
   twitter: {
     title: "Where Winds Meet News (DE)",
     description:
-      "Deutscher 脺berblick zu aktuellen Where Winds Meet Ank眉ndigungen, Patch Notes und Roadmap.",
+      "Deutscher Überblick über aktuelle Where Winds Meet Ankündigungen, Patch Notes und die Roadmap.",
   },
 };
 
 export default function NewsPage() {
   const typeLabel: Record<NewsType, string> = {
-    announcement: "Ank眉ndigung",
+    announcement: "Ankündigung",
     event: "Event",
     guide: "Guide",
     beta: "Beta",
@@ -66,50 +68,50 @@ export default function NewsPage() {
   ];
 
   const roadmapBlock = {
-    title: "Roadmap / N盲chste Updates (Watchlist)",
+    title: "Roadmap / Nächste Updates (Beobachtungsliste)",
     summary:
-      "Aktualisiert auf Version 1.8: Companions Make Home, Patch Notes vom 25. Juni und das Dev Q&A A Place to Call Home stehen jetzt vor aelteren Version-1.7-, Xbox-, Anti-Cheat-, Code-, Hexi- und Qinchuan-Notizen.",
+      "Letzter geprüfter Stand: Version 2.1. Die offizielle Übersicht zum 27. August und die Patch Notes vom 20. August stehen vor den datierten Version-2.0-, Version-1.8-, Palace-, Xbox-, Hexi- und Qinchuan-Notizen.",
     updated: lastUpdatedLabel,
     links: [
-      { href: "/de/guides/tier-list", label: "China-Tierliste & Balance-Notizen" },
-      { href: "/de/guides/bosses", label: "Bossliste & 脛nderungen" },
-      { href: "/de/guides/unholy-prophecy", label: "An Unholy Prophecy (Quest-Fixes)" },
+      { href: "/guides/tier-list", label: "China-Tierliste & Balance-Notizen" },
+      { href: "/de/guides/bosses", label: "Bossliste & Änderungen" },
+      { href: "/guides/unholy-prophecy", label: "An Unholy Prophecy (Quest-Fixes)" },
       { href: "/de/guides/woven-with-malice", label: "Woven with Malice (Zeitschranken)" },
     ],
   };
 
   const searchIntentWatchlist = [
     {
-      title: "Future draw preview und Reward-Previews",
+      title: "Vorschau auf kommende Ziehungen und Belohnungen",
       query: "wwm future draw preview",
       action:
-        "Zuerst die offizielle News-Liste pruefen, dann Spieler zu Cosmetics, Gratis-Outfits, Codes und Event-Rewards fuehren, sobald der Draw bestaetigt ist.",
+        "Zuerst die offizielle News-Liste prüfen, dann Spieler zu Kosmetik, Gratis-Outfits, Codes und Event-Belohnungen führen, sobald die Ziehung bestätigt ist.",
       href: "/de/guides/cosmetics",
-      cta: "Cosmetics hub",
+      cta: "Kosmetik-Hub",
     },
     {
-      title: "Arena ranks und Tierlisten-Checks",
+      title: "Arena-Ränge und Tierlisten-Prüfung",
       query: "wwm arena ranks",
       action:
         "Haupt-Tierliste, PVP-Tierliste, Waffen-Tierliste und Patch Notes eng verlinken, damit Rank-Climber schnell von Suche zu Build-Entscheidung kommen.",
-      href: "/de/guides/tier-list#arena-ranks",
-      cta: "Arena rank notes",
+      href: "/guides/tier-list#arena-ranks",
+      cta: "Hinweise zu Arena-Rängen",
     },
     {
-      title: "Upcoming nerfs und Balance-Watch",
+      title: "Kommende Abschwächungen und Balance-Beobachtung",
       query: "upcoming nerf wwm",
       action:
-        "Keine Aenderung als bestaetigt markieren, bis sie in offiziellen Notes steht. Danach zu Path Balance, Maintenance und Patch-Impact-Cards routen.",
+        "Keine Änderung als bestätigt markieren, bis sie in den offiziellen Hinweisen steht. Danach zu Path Balance, Wartung und Karten zu Patch-Auswirkungen weiterleiten.",
       href: "/de/guides/patch-notes#upcoming-nerfs",
-      cta: "Balance watch",
+      cta: "Balance-Beobachtung",
     },
     {
-      title: "Mistveil / Mist-Shrouded Prison aliases",
+      title: "Namensvarianten von Mistveil / Mist-Shrouded Prison",
       query: "mistveil prison",
       action:
-        "Mistveil Prison als Alias-Intent fuer Mist-Shrouded Prison behandeln und zur Truhenroute, Loop-Markern und Endschatz-Schritten fuehren.",
+        "Mistveil Prison als Suchvariante von Mist-Shrouded Prison behandeln und zur Truhenroute, den Schleifenmarkierungen und den Schritten zum Endschatz führen.",
       href: "/de/guides/mist-shrouded-prison#mistveil-prison",
-      cta: "Prison route",
+      cta: "Gefängnisroute",
     },
   ];
 
@@ -133,7 +135,7 @@ export default function NewsPage() {
         </div>
 
         <div className="absolute right-8 top-8 hidden text-vertical text-3xl font-bold text-slate-50/10 lg:block font-serif select-none">
-          姹熸箹椋庝簯
+          江湖风云
         </div>
 
         <div className="relative space-y-6 z-10 max-w-3xl">
@@ -142,12 +144,12 @@ export default function NewsPage() {
           </h1>
           <div className="space-y-4 text-slate-200/90 font-sans text-lg leading-relaxed">
             <p>
-              Hier fassen wir offizielle Ank眉ndigungen, Roadmap-Beitr盲ge, Launch-Guides, Systemhinweise und Beta-Notizen kompakt auf Deutsch zusammen.
-              Jede Karte verlinkt zur Originalquelle, damit du Details bei Bedarf nachlesen kannst.
+              Hier listen wir offizielle Ankündigungen, Roadmap-Beiträge, Launch-Guides, Systemhinweise und Beta-Notizen.
+              Die englischen Originaltitel bleiben sichtbar; jede Karte kennzeichnet die Quellsprache und verlinkt zur offiziellen Meldung.
             </p>
             <p>
-              Wenn du nur schnell <span className="font-semibold text-emerald-400">Patch Notes</span> 眉berfliegen oder die
-              <span className="font-semibold text-emerald-400"> Roadmap</span> checken willst, bekommst du hier die Kernpunkte auf einen Blick.
+              Wenn du nur schnell <span className="font-semibold text-emerald-400">Patch Notes</span> überfliegen oder die
+              <span className="font-semibold text-emerald-400"> Roadmap</span> prüfen willst, findest du hier Datum, Typ und Quelle auf einen Blick.
             </p>
           </div>
 
@@ -156,22 +158,24 @@ export default function NewsPage() {
             className="rounded-2xl border border-emerald-500/40 bg-emerald-500/10 p-4 text-sm text-emerald-50 shadow-inner shadow-emerald-900/40"
           >
             <div className="flex items-center justify-between gap-2">
-              <p className="font-semibold">Version 1.8 / Companions Make Home (laufend aktualisiert)</p>
+              <p className="font-semibold">Version 2.1 / Clouded Revelation (letzter geprüfter Stand)</p>
               <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
                 {lastUpdatedLabel}
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Latest pass: Version 1.8 / Companions Make Home, Patch Notes vom 25. Juni und Dev Q&A vom 23. Juni. Aeltere Version-1.7-, Xbox-, Anti-Cheat-, Code-Warnungs-, Hexi- und Qinchuan-Posts bleiben darunter als Catch-up.
+              Geprüft für {freshness?.gameVersion ?? "Version 2.1 / August 27"}: Die offizielle Übersicht zum
+              27. August und die Patch Notes vom 20. August bilden den aktuellen Anker. Version 2.0, Version 1.8,
+              Palace, Xbox, Hexi und Qinchuan bleiben darunter als datierter Rückblick.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
-              <Link href="/de/guides/tier-list" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
+              <Link href="/guides/tier-list" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
                 Tierliste (China-Perspektive)
               </Link>
               <Link href="/de/guides/bosses" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
-                Boss-脛nderungen
+                Boss-Änderungen
               </Link>
-              <Link href="/de/guides/codes" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
+              <Link href="/guides/codes" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
                 Neueste Codes
               </Link>
             </div>
@@ -208,12 +212,12 @@ export default function NewsPage() {
             <div className="flex flex-wrap items-center justify-between gap-2">
               <p className="font-semibold">Aktuelle Spielerfragen</p>
               <span className="rounded-full bg-blue-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-blue-100">
-                Current watch
+                Beobachtung
               </span>
             </div>
             <p className="mt-2 text-blue-100/90">
               Spieler suchen nach Future Draw Previews, Arena ranks, Patch-Note-Nerfs, Codes, Qinchuan-Routen, NPCs,
-              Kartenhilfe und Mist-Shrouded-Prison-Antworten. Dieser Block fuehrt schnell zur passenden Seite.
+              Kartenhilfe und Mist-Shrouded-Prison-Antworten. Dieser Block führt schnell zur passenden Seite.
             </p>
             <div className="mt-4 grid gap-3 md:grid-cols-2">
               {searchIntentWatchlist.map((item) => (
@@ -239,6 +243,9 @@ export default function NewsPage() {
               >
                 <div className="space-y-2">
                   <div className="flex flex-wrap items-center gap-3">
+                    <span className="w-full text-[10px] font-semibold uppercase tracking-wide text-slate-400">
+                      Offizieller englischer Titel
+                    </span>
                     <h2 className="text-lg font-bold text-slate-50 group-hover:text-ink-jade transition-colors font-serif">
                       {item.title}
                     </h2>
@@ -251,7 +258,7 @@ export default function NewsPage() {
                     {item.tags && item.tags.length > 0 && (
                       <>
                         <span className="mx-2 text-slate-700">|</span>
-                        {item.tags.join(" 路 ")}
+                        {item.tags.join(" · ")}
                       </>
                     )}
                   </p>
@@ -283,13 +290,13 @@ export default function NewsPage() {
         </h2>
         <div className="space-y-4 text-slate-300 font-sans leading-relaxed">
           <p>
-            Wir sammeln die wichtigsten Where Winds Meet Meldungen in einem ruhigen, lesbaren Stream. Statt jede Patch Note zu w眉hlen oder Social Feeds zu durchsuchen, bekommst du kurze Zusammenfassungen, warum die 脛nderung wichtig ist und wen sie betrifft.
+            Wir sammeln offizielle Where Winds Meet Meldungen in einem ruhigen, lesbaren Stream. Die Karten nennen Datum, Typ und Quelle, erheben aber keinen Anspruch auf eine vollständige deutsche Übersetzung des englischen Artikels.
           </p>
           <p>
-            Schwerpunkt sind Updates, die dein t盲gliches Spielgef眉hl 盲ndern 鈥?Steuerung, Performance, Events, Balance. Saison-Events mit Ablaufdatum werden deutlich markiert.
+            Schwerpunkt sind Updates, die dein tägliches Spielgefühl ändern — etwa Steuerung, Performance, Events und Balance. Für die inhaltlichen Einzelheiten ist die verlinkte offizielle Quelle maßgeblich.
           </p>
           <p>
-            Jede News verkn眉pfen wir mit relevanten Guides (z. B. Boss-脛nderungen 鈫?Boss-Guide, Codes 鈫?Belohnungs-Guide), damit du direkt weiterklicken kannst.
+            Relevante Meldungen verknüpfen wir mit passenden Guides, etwa Boss-Änderungen → Boss-Guide oder Codes → Belohnungs-Guide, damit du direkt weiterklicken kannst.
           </p>
         </div>
       </section>

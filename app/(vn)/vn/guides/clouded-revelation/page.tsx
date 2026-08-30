@@ -23,12 +23,12 @@ const changes = [
   {
     title: "Vernal Umbrella cấp 96+",
     text: "Các dòng Attunement được gộp vào Frequent Projectile DMG Boost và bổ sung dòng Light/Heavy/Varied Combo. Thay đổi cũng ảnh hưởng Silkbind Jade.",
-    href: "/vn/guides/weapons/tier-list",
+    href: "/guides/weapons/tier-list",
   },
   {
     title: "Arena và chiến đấu",
     text: "Bản vá sửa vị trí bóng Everspring Umbrella gần mép Arena, lỗi hủy tích lực Strategic Sword, Guardian Palm cấp 3 và thao tác đứng dậy sau khi bị hạ gục.",
-    href: "/vn/guides/pvp-tier-list",
+    href: "/guides/pvp-tier-list",
   },
   {
     title: "Homestead và ngoại hình",

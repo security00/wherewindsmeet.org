@@ -3,6 +3,7 @@ import CdnImage from "@/components/CdnImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import { weaponTierMeta } from "@/lib/weaponTierData";
 
 const baseUrl = "https://wherewindsmeet.org";
 
@@ -57,13 +58,13 @@ const postPatchChecks = [
     title: "Doi cap vu khi",
     detail:
       "Doi vu khi phu truoc neu loop chinh van on nhung counter matchup xau hon sau maintenance.",
-    href: "/vn/guides/weapons/tier-list#weapon-meta-check",
+    href: "/guides/weapons/tier-list#weapon-meta-check",
   },
   {
     title: "Reset stat plan",
     detail:
       "Dung Martial Art Reset re hon va Inner Way Conversion thap hon khi chi so damage chinh khong con hop voi cap vu khi.",
-    href: "/vn/guides/pvp-tier-list#arena-rank-checklist",
+    href: "/guides/pvp-tier-list#arena-rank-checklist",
   },
 ];
 
@@ -165,13 +166,15 @@ export default function BuildsPage() {
         <section id="post-patch-build-check" className="space-y-5 rounded-3xl border border-emerald-400/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/30">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Version 1.7 build decision</p>
+              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">
+                {weaponTierMeta.gameVersion} quyết định build · kiểm tra bằng chứng {weaponTierMeta.updatedAt}
+              </p>
               <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
                 Sau patch: giu build, chinh lai, hay reset?
               </h2>
             </div>
             <Link
-              href="/vn/guides/tier-list#arena-ranks"
+              href="/guides/tier-list#arena-ranks"
               className="rounded-full border border-emerald-300/50 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-100 hover:border-emerald-200/80"
             >
               Arena rank notes

@@ -1,213 +1,61 @@
 import type { Metadata } from "next";
-import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
+import CdnImage from "@/components/CdnImage";
 import { buildHreflangAlternates } from "@/lib/hreflang";
-import { getContentFreshness } from "@/lib/contentFreshness";
+import {
+  currentWeaponRoster,
+  getWeaponSources,
+  weaponTierMeta,
+} from "@/lib/weaponTierData";
+import { weapons } from "@/lib/weapons";
 
-const freshness = getContentFreshness("/guides/weapons/tier-list");
-
-export const metadata: Metadata = {
-  title: "Where Winds Meet Weapon Tier List (August 2026)",
-  description:
-    "Where Winds Meet weapon tier list for Version 2.1: best WWM weapons for PVE, PVP and Arena, with August 2026 Path Balance, Gauntlets, and Vernal Umbrella checks.",
-  alternates: buildHreflangAlternates("/guides/weapons/tier-list"),
-};
-
-const quickRankings = [
-  { tier: "S", weapons: "Rope Dart, Dual Blades", bestFor: "PVP pressure, fast picks, mobile burst windows" },
-  { tier: "A", weapons: "Spear, Mo Blade", bestFor: "Safe PVE clears, bruiser damage, boss learning" },
-  { tier: "B", weapons: "Sword, Fan, Umbrella", bestFor: "Beginner comfort, support, counters, specialist builds" },
-];
-
-const weaponMetaChecks = [
-  {
-    title: "Arena climbing",
-    detail:
-      "Prioritize weapons that can start or escape fights on demand. Rope Dart and Dual Blades should be tested first when you are stuck in arena ranks.",
-    href: "/guides/pvp-tier-list#arena-rank-checklist",
-  },
-  {
-    title: "Path Balance retest",
-    detail:
-      "After Path Balance or maintenance, retest your current weapon before pivoting. Some changes alter comfort more than raw damage.",
-    href: "/guides/patch-notes#upcoming-nerfs",
-  },
-  {
-    title: "Build compatibility",
-    detail:
-      "A weapon swap only works if your stat plan and second weapon support it. Check builds before spending materials.",
-    href: "/guides/builds#post-patch-build-check",
-  },
-];
-
-const weaponFreshPicks = [
-  {
-    title: "Best PvP weapons",
-    picks: "Rope Dart, Dual Blades",
-    note:
-      "Start here if you searched WWM weapon tier list from arena or duel results. Mobility, engage control, and burst windows matter most.",
-  },
-  {
-    title: "Best safe PvE weapons",
-    picks: "Spear, Mo Blade",
-    note:
-      "These are the easiest picks to recommend for bosses, story cleanup, and players who want power without constant weapon swapping.",
-  },
-  {
-    title: "Best beginner weapons",
-    picks: "Spear, Sword, Umbrella",
-    note:
-      "Use these when learning parry timing, spacing, and survival. They are not always the ceiling, but they reduce early mistakes.",
-  },
-  {
-    title: "Best page to compare all ranks",
-    picks: "Main tier list",
-    note:
-      "Use the broader tier list when you need paths, builds, PvP notes, and weapons in one ranking view.",
-    href: "/guides/tier-list",
-  },
-];
+const baseUrl = "https://wherewindsmeet.org";
 
 const faqs = [
   {
-    question: "What is the best weapon in Where Winds Meet?",
-    answer:
-      "For most players, Rope Dart and Dual Blades are the strongest aggressive picks right now because they combine mobility, pressure, and burst. Spear and Mo Blade are safer if you care more about stable PVE clears.",
-  },
-  {
     question: "What is the current Where Winds Meet weapon tier list?",
     answer:
-      "Use Rope Dart and Dual Blades as the highest-pressure PVP checks, Spear and Mo Blade as safer PVE investments, and Sword, Fan, or Umbrella when you value comfort, support, or counterplay over raw burst.",
+      "The current dataset does not assign letter tiers because it has no matched-build Version 2.1 test sample. It confirms all eight weapon families and separates PvE and PvP review status so an old community ranking is not presented as current fact.",
   },
   {
-    question: "What is the best PVP weapon in WWM?",
+    question: "Are Gauntlets included in the current roster?",
     answer:
-      "Dual Blades and Rope Dart are the first weapons to test for PVP because they can force engagements and punish mistakes quickly. Umbrella remains useful for players who prefer reactive counters.",
+      "Yes. The official Hidden Mountain developer letter says Gauntlets arrived in Version 2.0 and introduced Bamboocut Kite, which can pair with Rope Dart.",
   },
   {
-    question: "Is this WWM weapon tier list beginner friendly?",
+    question: "Why are PvE and PvP marked review required?",
     answer:
-      "Yes. New players should treat S tier as the ceiling, not a command. If you want a smoother start, Spear, Sword, or Mo Blade can feel easier while you learn dodges, parries, and boss timings.",
+      "A current rank needs a dated patch, matched gear, documented builds, repeatable encounters or matchups, latency context for PvP, and a useful sample size. Those records are not yet stored in the dataset.",
+  },
+  {
+    question: "How should I choose a weapon before rankings are retested?",
+    answer:
+      "Choose the role and combat rhythm you want, use the linked weapon guide, and test one repeatable route before spending heavily. Treat convenience, latency, build access, and mode as part of the decision.",
   },
 ];
 
-const tierSummaries = [
-  {
-    tier: "S Tier",
-    summary:
-      "Best-in-slot weapons that comfortably handle endgame PVE and high-pressure encounters when played with solid fundamentals.",
-    bestFor:
-      "Players who want reliable power with room to grow into advanced tech over time.",
-  },
-  {
-    tier: "A Tier",
-    summary:
-      "Strong, flexible weapons that shine when you lean into their strengths and pair them with the right builds.",
-    bestFor:
-      "Players who enjoy experimenting with paths and builds without giving up too much consistency.",
-  },
-  {
-    tier: "B Tier",
-    summary:
-      "More specialized or execution-heavy picks that can perform very well in the right hands or specific matchups.",
-    bestFor:
-      "Players who like off-meta choices, high skill expression, and counter-picking certain fights.",
-  },
-];
-
-const tierWeaponExamples = [
-  {
-    label: "S Tier Weapons",
+export const metadata: Metadata = {
+  title: "Where Winds Meet Weapon Tier List: Version 2.1 Evidence",
+  description:
+    "Version 2.1 WWM weapon tier-list evidence for all 8 weapons including Gauntlets, with separate PvE/PvP review status, methodology, dates, and official sources.",
+  alternates: buildHreflangAlternates("/guides/weapons/tier-list"),
+  openGraph: {
+    title: "Where Winds Meet Weapon Tier List: Version 2.1 Evidence",
     description:
-      "Top-end options that feel strong almost everywhere, especially in late-game PVE and demanding group content.",
-    weapons: [
-      {
-        name: "Nameless Sword",
-        note: "Highly flexible main weapon with strong routes for story, PVE, and early PVP.",
-      },
-      {
-        name: "Spear",
-        note: "Excellent range and safe tools for learning bosses while keeping solid DPS.",
-      },
-      {
-        name: "Mo Blade",
-        note: "Heavy-hitting bruiser choice that rewards good positioning and timing.",
-      },
-      {
-        name: "Umbrella",
-        note: "Defensive utility and counter tools that bridge PVE survivability and PVP playmaking.",
-      },
-      {
-        name: "Dual Blades",
-        note: "High-tempo weapon with explosive burst windows for confident players.",
-      },
-    ],
+      "A sourced roster and mode-specific evidence matrix that does not invent unsupported weapon tiers.",
+    url: `${baseUrl}/guides/weapons/tier-list`,
   },
-  {
-    label: "A Tier Weapons",
-    description:
-      "Weapons that can absolutely clear all content, but either ask for more setup, specific paths, or practiced execution.",
-    weapons: [
-      {
-        name: "Fan",
-        note: "Control-focused option that rewards spacing, zoning, and smart cooldown use.",
-      },
-      {
-        name: "Hybrid Sword + Spear",
-        note: "Combines safe poke with solid finishers once you learn the routes.",
-      },
-      {
-        name: "Supportive Umbrella / Fan",
-        note: "Shines in groups where you value shielding, buffs, and crowd control.",
-      },
-    ],
-  },
-  {
-    label: "B Tier Weapons",
-    description:
-      "Picks that are more niche, greedy, or matchup-dependent, but can be very rewarding when mastered.",
-    weapons: [
-      {
-        name: "Glass-cannon routes",
-        note: "High damage if you rarely get hit, but punishing when mistakes happen.",
-      },
-      {
-        name: "Off-meta hybrids",
-        note: "Unusual combinations that trade reliability for style and surprise value.",
-      },
-      {
-        name: "Experimental PVP setups",
-        note: "Specialist builds aimed at countering specific opponents or comps.",
-      },
-    ],
-  },
-];
-
-const weaponCategories = [
-  {
-    name: "Melee Weapons",
-    description: "Close-range options with high damage and aggressive playstyles",
-  },
-  {
-    name: "Ranged Weapons",
-    description:
-      "Distance-based combat tools for control and safe positioning",
-  },
-  {
-    name: "Hybrid Weapons",
-    description: "Versatile options that bridge close and ranged combat",
-  },
-];
+};
 
 export default function WeaponTierListPage() {
   const structuredData = [
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      name: "Where Winds Meet Weapon Tier List (August 2026)",
+      name: metadata.title,
       description: metadata.description,
-      url: "https://wherewindsmeet.org/guides/weapons/tier-list",
-      dateModified: freshness?.lastChecked ?? "2026-08-21",
+      url: `${baseUrl}/guides/weapons/tier-list`,
+      dateModified: weaponTierMeta.updatedAt,
     },
     {
       "@context": "https://schema.org",
@@ -215,438 +63,166 @@ export default function WeaponTierListPage() {
       mainEntity: faqs.map((faq) => ({
         "@type": "Question",
         name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer,
-        },
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
       })),
     },
   ];
 
   return (
-    <article className="space-y-10">
+    <article className="space-y-8 pb-14">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
+
+      <section className="relative overflow-hidden rounded-3xl border border-emerald-400/25 bg-slate-950/85 p-6 shadow-2xl shadow-slate-950/60 sm:p-8">
         <div className="pointer-events-none absolute inset-0">
           <CdnImage
             src="/background/bg1.webp"
-            alt="Where Winds Meet weapon tier list background"
+            alt="Where Winds Meet weapon review background"
             fill
-            className="object-cover opacity-40"
+            className="object-cover opacity-25"
+            sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/95 to-slate-950/55" />
         </div>
-
-        <div className="relative">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-300">
-            WWM weapon tier list / PVE / PVP / Arena
+        <div className="relative max-w-4xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-300">
+            {weaponTierMeta.gameVersion} · checked {weaponTierMeta.updatedAt}
           </p>
-          <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet Weapon Tier List (August 2026)
+          <h1 className="mt-3 text-balance text-3xl font-bold text-slate-50 sm:text-5xl">
+            Where Winds Meet weapon tier list: a sourced review, not an invented ranking.
           </h1>
-          <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Updated {freshness?.lastChecked ?? "2026-08-21"} for {freshness?.gameVersion ?? "Version 2.1 / August 2026 balance recheck"}.{" "}
-            This WWM weapon tier list answers the search directly: which Where
-            Winds Meet weapons are worth investing in for PVE, PVP, arena ranks,
-            and endgame builds. Choosing the right weapon is foundational to your Where Winds Meet
-            experience. Each weapon in Where Winds Meet has a distinct playstyle,
-            power curve, and learning curve. This dedicated Where Winds Meet weapon
-            tier list breaks down every weapon across multiple dimensions: raw power,
-            ease of use, versatility across content, and how comfortably it handles
-            endgame challenges. Whether you are a new player overwhelmed by choices or
-            a veteran optimizing your arsenal, this Where Winds Meet weapon tier list
-            provides the framework to make informed decisions.
+          <p className="mt-5 text-base leading-7 text-slate-300">
+            The official material confirms the current roster, including Gauntlets, but does not publish a complete
+            comparative tier order. Until matched-build Version 2.1 tests are recorded, every PvE and PvP placement
+            stays in review. Use the role, guide, patch evidence, and retest notes below to make a decision you can verify.
           </p>
-          <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-            The main Where Winds Meet tier list covers weapons alongside paths and
-            builds. This dedicated Where Winds Meet weapon tier list zooms in to
-            compare weapons directly, helping you understand not just which weapons
-            are strong in absolute terms but also why they excel and what tradeoffs
-            come with choosing them. Some Where Winds Meet weapons are simply better
-            than others at high levels of play, while some are accessible and
-            friendly to newer players despite lower theoretical power ceilings.
-          </p>
-          <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-            If you searched for a Where Winds Meet weapons tier list to guide your
-            loadout decisions, this page ranks every option and explains its
-            applications. You will find weapons suitable for story progression, PVE
-            endgame bosses, cooperative play, PVP dueling, and speedrunning. Use this
-            Where Winds Meet weapon tier list as a reference when you are unsure which
-            piece of equipment to invest in next. Start with the main Where Winds Meet
-            tier list if you want a broad overview, then use this page to zoom in on
-            specific weapons and finally jump into the builds guide to finish your
-            setup.
-          </p>
-          <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            {quickRankings.map((row) => (
-              <div key={row.tier} className="rounded-2xl border border-emerald-500/20 bg-slate-950/70 p-4">
-                <p className="text-xs font-semibold uppercase tracking-widest text-emerald-300">{row.tier} Tier</p>
-                <p className="mt-2 text-sm font-semibold text-slate-50">{row.weapons}</p>
-                <p className="mt-2 text-xs leading-relaxed text-slate-300">{row.bestFor}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href="/guides/pvp-tier-list"
-              className="inline-flex items-center rounded-full border border-red-400/40 bg-red-500/10 px-4 py-2 text-sm font-semibold text-red-100 transition hover:border-red-300/70"
-            >
-              PVP tier list & arena ranks
+          <div className="mt-6 flex flex-wrap gap-3 text-sm">
+            <Link href="#weapon-evidence" className="rounded-full bg-emerald-400 px-4 py-2 font-semibold text-slate-950 hover:bg-emerald-300">
+              Compare all {currentWeaponRoster.length} weapons
             </Link>
-            <Link
-              href="/guides/tier-list"
-              className="inline-flex items-center rounded-full border border-emerald-400/40 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-100 transition hover:border-emerald-300/70"
-            >
-              Full WWM tier list
+            <Link href="/guides/tier-list#tier-data" className="rounded-full border border-slate-700 px-4 py-2 font-semibold text-slate-200 hover:border-emerald-300/60">
+              Full evidence matrix
             </Link>
           </div>
         </div>
       </section>
 
-      <section id="wwm-weapon-tier-list" className="space-y-5 rounded-3xl border border-emerald-400/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/30">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Search intent: wwm weapon tier list</p>
-          <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-            WWM Weapon Tier List August 2026: PvE, PvP, and Arena picks.
-          </h2>
-          <p className="mt-2 text-sm leading-relaxed text-slate-200 sm:text-base">
-            The short answer for the current WWM weapon tier list is simple: Rope Dart and Dual Blades are the
-            most aggressive PvP checks, Spear and Mo Blade are the safest PvE investments, and Umbrella remains
-            useful when you need defensive counterplay. Version 2.0 added Gauntlets and changed multiple Paths and
-            Arena interactions on July 23, so treat these placements as a practical starting point and retest your
-            exact build before you spend reset materials.
-          </p>
-          <p className="mt-3 rounded-2xl border border-sky-400/30 bg-sky-500/10 p-4 text-sm leading-6 text-sky-50">
-            <strong>Version 2.1 check:</strong> the August 20 patch consolidates Tier 96+ Vernal Umbrella attunement affixes into Frequent Projectile DMG Boost, adds a Light/Heavy/Varied Combo affix, and applies the attunement change to Silkbind Jade. Re-test high-tier umbrella rolls, but do not treat this targeted change as a full tier-list reset. <Link href="/guides/clouded-revelation" className="font-semibold underline underline-offset-4">See the Clouded Revelation impact guide.</Link>
-          </p>
+      <section className="grid gap-4 md:grid-cols-3">
+        <div className="rounded-2xl border border-emerald-400/25 bg-emerald-500/10 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Confirmed</p>
+          <h2 className="mt-2 text-lg font-bold text-slate-50">Eight current weapon families</h2>
+          <p className="mt-3 text-sm leading-6 text-slate-300">Gauntlets joined the established seven-family roster in Version 2.0.</p>
         </div>
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {weaponFreshPicks.map((item) => {
-            const content = (
-              <>
-                <h3 className="text-sm font-semibold text-slate-50">{item.title}</h3>
-                <p className="mt-2 text-sm font-semibold text-emerald-100">{item.picks}</p>
-                <p className="mt-2 text-xs leading-5 text-slate-300">{item.note}</p>
-              </>
-            );
+        <div className="rounded-2xl border border-amber-400/25 bg-amber-500/10 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">Not confirmed</p>
+          <h2 className="mt-2 text-lg font-bold text-slate-50">A universal S/A/B order</h2>
+          <p className="mt-3 text-sm leading-6 text-slate-300">Official patch notes document changes, but they do not prove a complete cross-mode ranking.</p>
+        </div>
+        <div className="rounded-2xl border border-cyan-400/25 bg-cyan-500/10 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-cyan-200">Next evidence</p>
+          <h2 className="mt-2 text-lg font-bold text-slate-50">Matched PvE and PvP retests</h2>
+          <p className="mt-3 text-sm leading-6 text-slate-300">Record build, gear, encounter or matchup, latency, result, and sample size before assigning a tier.</p>
+        </div>
+      </section>
 
-            return item.href ? (
-              <Link key={item.title} href={item.href} className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4 transition hover:border-emerald-300/60">
-                {content}
-              </Link>
-            ) : (
-              <div key={item.title} className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4">
-                {content}
-              </div>
+      <section id="weapon-evidence" className="space-y-5">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">Current roster coverage</p>
+          <h2 className="mt-2 text-2xl font-bold text-slate-50">Every weapon, with evidence and review status.</h2>
+        </div>
+        <div className="grid gap-5 md:grid-cols-2">
+          {currentWeaponRoster.map((weaponEvidence) => {
+            const guideWeapon = weapons.find((weapon) => weapon.id === weaponEvidence.id);
+            const sources = getWeaponSources(weaponEvidence);
+
+            return (
+              <article key={weaponEvidence.id} className="overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 shadow-lg shadow-slate-950/40">
+                <div className="grid grid-cols-[112px,1fr] gap-4 p-5">
+                  {guideWeapon ? (
+                    <div className="relative h-28 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
+                      <CdnImage
+                        src={guideWeapon.officialArt}
+                        alt={`${guideWeapon.name} official weapon artwork`}
+                        fill
+                        className="object-cover"
+                        sizes="112px"
+                      />
+                    </div>
+                  ) : (
+                    <div className="flex h-28 items-center justify-center rounded-2xl border border-emerald-400/30 bg-emerald-500/10 text-4xl font-black text-emerald-100" aria-label="Gauntlets artwork not yet stored">
+                      G
+                    </div>
+                  )}
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <h3 className="text-xl font-bold text-slate-50">{weaponEvidence.name}</h3>
+                      <span className="rounded-full border border-emerald-400/30 bg-emerald-500/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-emerald-100">
+                        {weaponEvidence.roster.status === "official-confirmed" ? "Officially confirmed" : "Live roster"}
+                      </span>
+                    </div>
+                    <p className="mt-2 text-sm text-slate-300">{weaponEvidence.role}</p>
+                    <p className="mt-2 text-xs leading-5 text-slate-400">{weaponEvidence.roster.note}</p>
+                  </div>
+                </div>
+
+                <div className="grid gap-3 border-t border-slate-800 p-5 sm:grid-cols-2">
+                  <div className="rounded-2xl border border-amber-400/20 bg-amber-500/5 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">PvE · review required</p>
+                    <p className="mt-2 text-xs leading-5 text-slate-400">{weaponEvidence.pve.note}</p>
+                  </div>
+                  <div className="rounded-2xl border border-amber-400/20 bg-amber-500/5 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">PvP · review required</p>
+                    <p className="mt-2 text-xs leading-5 text-slate-400">{weaponEvidence.pvp.note}</p>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-800 px-5 py-4 text-xs">
+                  <div className="flex flex-wrap gap-3">
+                    {sources.map((source) => (
+                      <a key={source.id} href={source.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                        {source.title}
+                      </a>
+                    ))}
+                  </div>
+                  {weaponEvidence.guide.href ? (
+                    <Link href={weaponEvidence.guide.href} className="font-semibold text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
+                      Open weapon guide →
+                    </Link>
+                  ) : (
+                    <span className="font-semibold text-amber-200">Dedicated guide planned</span>
+                  )}
+                </div>
+              </article>
             );
           })}
         </div>
       </section>
 
-      <section id="weapon-meta-check" className="space-y-5 rounded-3xl border border-blue-400/30 bg-blue-500/10 p-6 shadow-lg shadow-blue-950/30">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-wide text-blue-200">Search intent: best WWM weapon after patch</p>
-          <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-            Weapon meta check for arena ranks and Path Balance.
-          </h2>
-          <p className="mt-2 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Use this section when you are deciding whether to keep investing in your weapon, move to a faster PVP pick,
-            or wait for upcoming nerf confirmation. The answer is usually a combination of weapon tier, build fit, and
-            current patch notes.
-          </p>
-        </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          {weaponMetaChecks.map((item) => (
-            <Link
-              key={item.title}
-              href={item.href}
-              className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 transition hover:border-blue-300/60"
-            >
-              <p className="text-sm font-semibold text-slate-50">{item.title}</p>
-              <p className="mt-2 text-xs leading-5 text-slate-300">{item.detail}</p>
-            </Link>
+      <section id="weapon-meta-check" className="rounded-3xl border border-violet-400/25 bg-violet-500/10 p-6 sm:p-8">
+        <h2 className="text-2xl font-bold text-slate-50">How the next ranking will be earned.</h2>
+        <ol className="mt-5 grid gap-3 md:grid-cols-2">
+          {weaponTierMeta.reviewProtocol.map((step, index) => (
+            <li key={step} className="flex gap-3 rounded-2xl border border-slate-800 bg-slate-950/65 p-4 text-sm leading-6 text-slate-300">
+              <span className="font-bold text-violet-200">{index + 1}.</span>
+              <span>{step}</span>
+            </li>
           ))}
-        </div>
+        </ol>
+        <p className="mt-5 text-xs leading-5 text-slate-400">{weaponTierMeta.methodology}</p>
       </section>
 
-      <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
-        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          How Where Winds Meet weapon tiers work.
-        </h2>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          We group weapons into broad power bands instead of arguing about tiny
-          numerical differences. Each tier reflects how a weapon feels to play in real
-          PVE and PVP: its comfort, consistency, and how much effort it takes to make
-          it shine. Use these tiers as guidelines, then adjust based on your own
-          experience and goals.
-        </p>
-        <div className="grid gap-4 md:grid-cols-3">
-          {tierSummaries.map((tier) => (
-            <div
-              key={tier.tier}
-              className="rounded-3xl border border-slate-800 bg-slate-950/80 p-4 text-sm shadow-sm shadow-slate-950/60"
-            >
-              <h3 className="text-sm font-semibold text-slate-50">
-                {tier.tier}
-              </h3>
-              <p className="mt-2 text-xs leading-relaxed text-slate-300">
-                {tier.summary}
-              </p>
-              <p className="mt-3 text-[11px] leading-relaxed text-slate-400">
-                Best for:{" "}
-                <span className="text-slate-200">{tier.bestFor}</span>
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
-        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          Where Winds Meet weapon categories and playstyles.
-        </h2>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Where Winds Meet weapons fall into broad categories, each enabling different
-          playstyles and requiring different skill expression. Understanding your
-          preferred category makes this Where Winds Meet weapon tier list more
-          actionable. You do not need to learn every weapon; instead, find the
-          category that resonates with you, then explore the highest-ranked Where
-          Winds Meet weapons within that category. If you are unsure where to start,
-          pick a weapon in the middle of the tier list that matches your favorite
-          fantasy and learn its basics before chasing pure meta picks.
-        </p>
-        <div className="grid gap-4 md:grid-cols-3">
-          {weaponCategories.map((cat) => (
-            <div
-              key={cat.name}
-              className="rounded-3xl border border-slate-800 bg-slate-950/80 p-4 text-sm shadow-sm shadow-slate-950/60"
-            >
-              <h3 className="text-sm font-semibold text-slate-50">{cat.name}</h3>
-              <p className="mt-2 text-xs leading-relaxed text-slate-200">
-                {cat.description}
-              </p>
-            </div>
-          ))}
-        </div>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          This site includes individual guides for all major Where Winds Meet weapons.
-          These guides go deeper into mechanics, combos, stat synergies, and
-          situational use cases than any tier list can cover. Use this Where Winds
-          Meet weapon tier list to identify promising options, then read the
-          dedicated weapon guide for your top choices to understand them fully.
-        </p>
-        <div className="mt-4">
-          <Link
-            href="/guides/weapons"
-            className="inline-flex items-center rounded-lg border border-slate-700 bg-slate-900/40 px-4 py-2 text-sm font-medium text-slate-100 transition-colors hover:border-slate-600 hover:bg-slate-900/60"
-          >
-            Explore Weapon Guides
-          </Link>
-        </div>
-      </section>
-
-      <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
-        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          How to interpret this Where Winds Meet weapon tier list.
-        </h2>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Tier rankings in this Where Winds Meet weapon tier list reflect multiple
-          factors: raw damage output, durability, how quickly the weapon comes online,
-          and flexibility across different playstyles. An S tier Where Winds Meet
-          weapon typically excels at most of these dimensions, while a C tier weapon
-          might dominate one area while struggling in others.
-        </p>
-        <div className="space-y-4">
-          <div className="rounded-xl border border-slate-700 bg-slate-900/40 p-4">
-            <h3 className="text-sm font-semibold text-slate-50">Where Winds Meet weapon power levels</h3>
-            <p className="mt-2 text-xs leading-relaxed text-slate-200">
-              S tier Where Winds Meet weapons are strong in most situations. A tier
-              weapons are consistently good but may underperform in specific matchups.
-              B tier Where Winds Meet weapons have a clear identity but require
-              specific builds to shine. C tier Where Winds Meet weapons are playable
-              for dedicated enthusiasts who accept their limitations.
-            </p>
-          </div>
-          <div className="rounded-xl border border-slate-700 bg-slate-900/40 p-4">
-            <h3 className="text-sm font-semibold text-slate-50">Where Winds Meet weapon learning curves</h3>
-            <p className="mt-2 text-xs leading-relaxed text-slate-200">
-              Some Where Winds Meet weapons are immediately powerful as you acquire
-              them. Others require stats, specific codes, or practice to function
-              properly. This Where Winds Meet weapon tier list assumes moderate
-              optimization. A weapon that is mediocre on paper might feel incredible
-              once you invest in its specific stat synergies.
-            </p>
-          </div>
-          <div className="rounded-xl border border-slate-700 bg-slate-900/40 p-4">
-            <h3 className="text-sm font-semibold text-slate-50">Where Winds Meet weapon versatility</h3>
-            <p className="mt-2 text-xs leading-relaxed text-slate-200">
-              Versatile Where Winds Meet weapons remain viable across PVE, PVP, and
-              different playstyles. Specialist Where Winds Meet weapons dominate one
-              area but struggle in others. Versatility is valuable if you like to
-              switch between solo and cooperative play, but specialist weapons let you
-              go deeper into specific niches.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
-        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          Choosing your first Where Winds Meet weapon.
-        </h2>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          If you are new to Where Winds Meet and checking this weapon tier list to
-          decide which weapon to start with, follow this strategy: find the highest
-          ranked Where Winds Meet weapon in your preferred category, then ask yourself
-          if the playstyle feels intuitive. Does the weapon&apos;s attack pattern feel
-          natural when you swing it? Do you find the animations cool or boring? These
-          subjective factors often matter more than tier ranking, especially early in
-          the game.
-        </p>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Where Winds Meet rewards specialization. You will become much better at one
-          weapon if you use it for dozens of hours than if you constantly swap. Even a
-          lower-ranked Where Winds Meet weapon feels powerful when you truly master it.
-          So pick a weapon from the middle of this tier list that appeals to you, play
-          it extensively, then revisit this Where Winds Meet weapon tier list once you
-          reach endgame. At that point, you have enough experience to evaluate whether
-          switching to a stronger weapon is worth the relearning curve.
-        </p>
-      </section>
-
-      <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
-        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          Example Where Winds Meet weapons by tier.
-        </h2>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          These examples highlight how different weapons fit into the tier bands. They
-          are not exhaustive lists, and placements may shift with future patches, but
-          they give you a grounded starting point when planning what to level and
-          practice.
-        </p>
-        <div className="grid gap-4 md:grid-cols-3">
-          {tierWeaponExamples.map((tier) => (
-            <div
-              key={tier.label}
-              className="rounded-3xl border border-slate-800 bg-slate-950/80 p-4 text-sm shadow-sm shadow-slate-950/60"
-            >
-              <h3 className="text-sm font-semibold text-slate-50">
-                {tier.label}
-              </h3>
-              <p className="mt-2 text-xs leading-relaxed text-slate-300">
-                {tier.description}
-              </p>
-              <ul className="mt-3 space-y-2 text-xs leading-relaxed text-slate-200">
-                {tier.weapons.map((weapon) => (
-                  <li key={weapon.name}>
-                    <span className="font-semibold">{weapon.name}</span>
-                    <span className="text-slate-400"> - {weapon.note}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
-        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          Endgame Where Winds Meet weapon optimization.
-        </h2>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          In Where Winds Meet endgame, this weapon tier list becomes more relevant. You
-          are no longer experimenting; you are optimizing. At this point, you should
-          own weapons from multiple tier tiers so you can adapt to different content.
-          An S tier Where Winds Meet weapon might carry you through routine bosses, but
-          switching to a specialized B tier option might make a specific challenging
-          encounter much easier.
-        </p>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Where Winds Meet endgame also involves understanding matchups. The best Where
-          Winds Meet weapon to use depends on what enemies you face. A weapon that
-          dominates in open PVE might feel clunky against opponents that can block your
-          attacks. Conversely, a weapon that struggles in general combat might have
-          specific tools that trivialize a particular boss. Use this Where Winds Meet
-          weapon tier list as a starting point, then customize your loadout for
-          specific challenges.
-        </p>
-        <div className="mt-4">
-          <Link
-            href="/guides/endgame"
-            className="inline-flex items-center rounded-lg border border-slate-700 bg-slate-900/40 px-4 py-2 text-sm font-medium text-slate-100 transition-colors hover:border-slate-600 hover:bg-slate-900/60"
-          >
-            Endgame Guide
-          </Link>
-        </div>
-      </section>
-
-      <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
-        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          Weapon combinations and synergies in Where Winds Meet.
-        </h2>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Individual weapon ranking in this Where Winds Meet weapon tier list is
-          important, but synergy matters equally. Some Where Winds Meet weapons pair
-          beautifully in the same build, amplifying each other&apos;s strengths. Others
-          compete for the same stat allocation and fighting over the same roles. Smart
-          Where Winds Meet weapon pairing can elevate even lower-ranked weapons into
-          highly effective builds.
-        </p>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          The builds guide on this site explains weapon combinations in depth. If you
-          fell in love with a B or C tier Where Winds Meet weapon, check the builds
-          guide to find build archetypes that pair it with synergistic options. Often,
-          a slightly weaker weapon becomes incredible once you build around it
-          correctly. Do not let a tier ranking discourage you from exploring
-          combinations that excite you.
-        </p>
-        <div className="mt-4">
-          <Link
-            href="/guides/builds"
-            className="inline-flex items-center rounded-lg border border-slate-700 bg-slate-900/40 px-4 py-2 text-sm font-medium text-slate-100 transition-colors hover:border-slate-600 hover:bg-slate-900/60"
-          >
-            Explore Builds
-          </Link>
-        </div>
-      </section>
-
-      <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
-        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          WWM weapon tier list FAQ.
-        </h2>
-        <div className="space-y-4">
+      <section className="rounded-3xl border border-slate-800 bg-slate-950/75 p-6 sm:p-8">
+        <h2 className="text-2xl font-bold text-slate-50">Weapon tier-list FAQ</h2>
+        <div className="mt-5 grid gap-4 md:grid-cols-2">
           {faqs.map((faq) => (
-            <div key={faq.question} className="rounded-2xl border border-slate-800 bg-slate-900/40 p-4">
-              <h3 className="text-sm font-semibold text-slate-50">{faq.question}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-300">{faq.answer}</p>
+            <div key={faq.question} className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+              <h3 className="font-semibold text-slate-100">{faq.question}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-400">{faq.answer}</p>
             </div>
           ))}
         </div>
-      </section>
-
-      <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
-        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          Keeping your WWM weapon tier list current.
-        </h2>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          This Where Winds Meet weapon tier list reflects the current patch. After
-          major balance updates, weapon rankings may shift significantly. When a new
-          Where Winds Meet patch drops, check back on this page to see if your favorite
-          weapon moved up or down the rankings. A weapon that was mid-tier might
-          suddenly become S tier if the right balance changes align, or vice versa.
-        </p>
-        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          By bookmarking this Where Winds Meet weapon tier list and checking it
-          regularly, you stay informed about what the community considers strong. This
-          helps you make decisions about what to level up next, which weapons to invest
-          resources into, and when pivoting to a new option might be worth the effort.
-          Remember that tier rankings are suggestions, not laws. Play the Where Winds
-          Meet weapons that make you happy, but stay aware of where you stand in the
-          competitive landscape.
-        </p>
       </section>
     </article>
   );

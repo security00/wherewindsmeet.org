@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
+import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -7,174 +8,99 @@ const baseUrl = "https://wherewindsmeet.org";
 const cdnBase = "https://static.wherewindsmeet.org";
 const heroImagePath = "/guides/mist-shrouded-prison/youtube-cover.jpg";
 const heroImage = `${cdnBase}${heroImagePath}`;
-const cdn = (path: string) => `${cdnBase}${path}`;
 const walkthrough = [
   {
     title: "Find the Mist-Shrouded Prison entrance",
     detail:
       "Complete The Ephemeral Blight, deliver all Mistveil Forest Cures to Zhai Xu for the antidote, then ride the elevator near Central Mistveil Forest. Burn the first blue bud with a fire arrow to open the tomb.",
-    image: { src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-tomb-location-in-wwm-where-winds-meet.jpg"), alt: "Mist-Shrouded Prison tomb entrance location" },
   },
   {
     title: "Loop 1 start: veined door on the right",
     detail: "From the entrance, a room on the right is sealed by veins from a blue flower bud—ignore it now. Climb the ladder on the left; this tomb will loop three times.",
-    image: { src: cdn("/guides/mist-shrouded-prison/gr/loop-1-mist-shrouded-prison-chest-1-location-in-wwm-where-winds-meet.jpg"), alt: "Loop 1 hall overview" },
   },
   {
     title: "Chest 1 (red room with the red lady)",
     detail: "Enter the red-lit room ahead; the red lady stands inside during loop 1. Loot the first chest beside her.",
-    image: { src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-1-location-in-wwm-where-winds-meet.jpg"), alt: "Mist-Shrouded Prison chest 1 location" },
   },
   {
     title: "Frost Fungus corridor and bud",
     detail: "Leave the room, push through the Frost Fungus Poison corridor, and burn the blue bud on the far side with a fire arrow to keep moving.",
-    image: { src: cdn("/guides/mist-shrouded-prison/gr/loop-1-destroy-bud-with-fire-in-wwm-where-winds-meet.jpg"), alt: "Burn the bud to progress" },
   },
   {
     title: "Chest 2 (ceiling spikes trigger)",
     detail: "Keep going to chest 2; opening it drops a spike trap from the roof, so open then step back toward the entrance.",
-    image: { src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-2-location-in-wwm-where-winds-meet.jpg"), alt: "Mist-Shrouded Prison chest 2 location" },
   },
   {
     title: "Chest 3 (left corridor via spikes)",
     detail: "Jump onto the rising spikes, then angle left into the small corridor to claim chest 3.",
-    image: { src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-3-location-in-wwm-where-winds-meet.jpg"), alt: "Mist-Shrouded Prison chest 3 location" },
   },
   {
     title: "Cross the spikes and climb up",
     detail: "Use the spikes again to reach the opposite side and climb the ladder toward the upper path.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest.png"),
-      alt: "Mist-Shrouded Prison spike room overview",
-    },
   },
   {
     title: "Step on the pressure plate",
     detail: "Hit the pressure plate to send the horizontal spikes moving; head back toward the entrance to follow them.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/press-the-pressure-plate-to-activate-spikes-in-wwm-where-winds-meet.jpg"),
-      alt: "Pressure plate for spikes",
-    },
   },
   {
     title: "Chest 4 (behind the moving spikes)",
     detail: "When the spikes slide forward, run right behind them to pick up chest 4 safely.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-4-location-in-wwm-where-winds-meet.jpg"),
-      alt: "Mist-Shrouded Prison chest 4 location",
-    },
   },
   {
     title: "Drop to start Loop 2",
     detail: "Head through the gate and drop into the familiar first room. The red lady beside the ladder signals loop 2.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/how-to-enter-loop-2-in-wwm-where-winds-meet.jpg"),
-      alt: "Enter loop 2 via drop",
-    },
   },
   {
     title: "Repeat the spike room in Loop 2",
     detail: "Cross the corridor into the spike room again, climb the ladder, press the plate, and move forward to push the layout into the final loop.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/step-11.png"),
-      alt: "Loop 2 spike reset",
-    },
   },
   {
     title: "Enter Loop 3",
     detail: "After the repeat, you're now in loop 3—the last rotation through the tomb.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/enter-loop-3-in-wwm-where-winds-meet.jpg"),
-      alt: "Entering loop 3 section",
-    },
   },
   {
     title: "Red lady in the blue-flower corridor",
     detail: "Climb the ladder and turn right; the corridor lined with blue flowers now holds the red lady, confirming loop 3.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/loop-3-in-wwm-where-winds-meet.jpg"),
-      alt: "Loop 3 corridor with blue flowers",
-    },
   },
   {
     title: "Chest 5 (poison corridor)",
     detail: "Push through the poison here without stopping and open the fifth chest along the hall.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-5-location-in-wwm-where-winds-meet.jpg"),
-      alt: "Mist-Shrouded Prison chest 5 location",
-    },
   },
   {
     title: "Destroy the second blue bud",
     detail: "Exit the corridor, burn the blue bud ahead, and continue to the room with the note on the table.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/destroy-blue-bud-2-in-wwm-where-winds-meet.jpg"),
-      alt: "Destroy blue bud after chest 5",
-    },
   },
   {
     title: "Drop onto the moving spikes",
     detail: "From the note room, look down the hole and wait for the horizontal spikes from loop 2 to line up; drop onto them.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/jump-onto-the-moving-spikes-in-wwm-where-winds-meet.jpg"),
-      alt: "Jumping onto the moving spikes",
-    },
   },
   {
     title: "Ride to the corner and clear the ambush",
     detail: "As the spikes near the edge, hop off and defeat the enemy hiding nearby.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/step-17.png"),
-      alt: "Corner ambush near the spikes",
-    },
   },
   {
     title: "Chest 6 (loop 3 reward)",
     detail: "Open chest 6 in this section once the ambush is clear.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-6-location-in-wwm-where-winds-meet.jpg"),
-      alt: "Mist-Shrouded Prison chest 6 location",
-    },
   },
   {
     title: "Drop toward the earlier halls",
     detail: "Continue forward and fall through the long hole to land near chest 3's spot from loop 1.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/drop-from-chest-6-location-to-return-to-loop-1-in-wwm-where-winds-meet.jpg"),
-      alt: "Drop from chest 6 spot to loop 1",
-    },
   },
   {
     title: "Return via the spike trap path",
     detail: "Head to the spike room, climb the moving spikes, jump left into the small corridor, then drop through the two holes to the wide corridor.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/frop-down-from-chest-in-loop-2-in-wwm-where-winds-meet.jpg"),
-      alt: "Return path through spike trap room",
-    },
   },
   {
     title: "Clear the bud at the corridor's end",
     detail: "Burn the blue bud at the end with a fire arrow and pass through the gate back to the original room.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/remove-the-bud-to-open-the-final-door-in-wwm-where-winds-meet.jpg"),
-      alt: "Remove bud for final door",
-    },
   },
   {
     title: "Final treasure chest",
     detail: "Enter the once-veined room from loop 1 and open the final treasure chest at the back.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/final-treasure-wide.jpg"),
-      alt: "Final treasure wide angle view",
-    },
   },
   {
     title: "Rest in Peace",
     detail: "Pay respect at the marker to finish the Mist-Shrouded Prison tomb.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/pray-to-red-lady-in-wwm-where-winds-meet.jpg"),
-      alt: "Pray to Red Lady interaction",
-    },
   },
 ];
 
@@ -221,6 +147,32 @@ const quickFacts = [
   { label: "Hazards", value: "Frost Fungus Poison, moving spikes, blue flower buds", icon: "⚠️" },
   { label: "Prep", value: "Finish The Ephemeral Blight, collect cures, ride the elevator near Central Mistveil Forest", icon: "🧪" },
 ];
+
+const walkthroughImagePaths = [
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-tomb-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/loop-1-mist-shrouded-prison-chest-1-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-1-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/loop-1-destroy-bud-with-fire-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-2-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-3-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest.png",
+  "/guides/mist-shrouded-prison/gr/press-the-pressure-plate-to-activate-spikes-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-4-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/how-to-enter-loop-2-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/step-11.png",
+  "/guides/mist-shrouded-prison/gr/enter-loop-3-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/loop-3-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-5-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/destroy-blue-bud-2-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/jump-onto-the-moving-spikes-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/step-17.png",
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-6-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/drop-from-chest-6-location-to-return-to-loop-1-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/frop-down-from-chest-in-loop-2-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/remove-the-bud-to-open-the-final-door-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/final-treasure-wide.jpg",
+  "/guides/mist-shrouded-prison/gr/pray-to-red-lady-in-wwm-where-winds-meet.jpg",
+] as const;
 
 const tlDr = [
   "Mistveil Prison is the common short search name for the Where Winds Meet Mist-Shrouded Prison tomb. Finish The Ephemeral Blight, gather all Mistveil Forest Cures, hand them to Zhai Xu for the antidote, clear the mist, ride the elevator by Central Mistveil Forest, and burn the first blue bud to enter.",
@@ -451,17 +403,20 @@ export default function MistShroudedPrisonPage() {
           You&apos;ll see this note after burning the second bud in loop 3, before dropping onto the moving spikes. Read it, then continue the steps in
           order so the Where Winds Meet Mist-Shrouded Prison tomb flow stays intact.
         </p>
-        <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 shadow-inner shadow-black/25">
+        <figure className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70">
           <CdnImage
-            src={cdn("/guides/mist-shrouded-prison/gr/read-note-in-prison-in-wwm-where-winds-meet.jpg")}
-            alt="Prison note clue in Mist-Shrouded Prison"
+            src="/guides/mist-shrouded-prison/gr/read-note-in-prison-in-wwm-where-winds-meet.jpg"
+            alt="Clue note on the table during loop 3 of Mist-Shrouded Prison"
             width={1600}
             height={900}
             loading="lazy"
             className="h-full w-full object-cover"
             sizes="(max-width: 1024px) 100vw, 960px"
           />
-        </div>
+          <figcaption className="border-t border-slate-800 px-4 py-3 text-xs leading-5 text-slate-300">
+            Loop 3 clue note. Source publisher: GameRant. Reuse authorization confirmed by site owner 2026-08-29.
+          </figcaption>
+        </figure>
       </section>
 
       <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg">
@@ -469,6 +424,9 @@ export default function MistShroudedPrisonPage() {
           <span className="text-lg">🖼️</span>
           <h2 className="text-2xl font-bold text-slate-50">Illustrated walkthrough</h2>
         </div>
+        <p className="text-sm text-emerald-200">
+          Source publisher: GameRant. Reuse authorization confirmed by site owner 2026-08-29.
+        </p>
         <ol className="space-y-5">
           {walkthrough.map((step, index) => (
             <li
@@ -482,17 +440,20 @@ export default function MistShroudedPrisonPage() {
                   <p className="text-sm text-slate-200 leading-relaxed">{step.detail}</p>
                 </div>
               </div>
-              <div className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60">
+              <figure className="overflow-hidden rounded-xl border border-slate-800 bg-slate-950/60">
                 <CdnImage
-                  src={step.image.src}
-                  alt={step.image.alt}
-                  loading="lazy"
+                  src={walkthroughImagePaths[index]}
+                  alt={`Mist-Shrouded Prison step ${index + 1}: ${step.title}`}
                   width={1600}
                   height={900}
+                  loading="lazy"
                   className="h-full w-full object-cover"
                   sizes="(max-width: 1024px) 100vw, 960px"
                 />
-              </div>
+                <figcaption className="border-t border-slate-800 px-4 py-3 text-xs leading-5 text-slate-300">
+                  Step {index + 1}: {step.title}. Source publisher: GameRant.
+                </figcaption>
+              </figure>
             </li>
           ))}
         </ol>
@@ -546,18 +507,22 @@ export default function MistShroudedPrisonPage() {
           <h2 className="text-xl sm:text-2xl font-semibold text-slate-50">Video guide (YouTube)</h2>
         </div>
         <p className="text-sm text-slate-300">
-          If the illustrated steps are still unclear, watch this video walkthrough for the full Mist-Shrouded Prison route.
+          If the text steps are still unclear, watch this video walkthrough for the full Mist-Shrouded Prison route.
         </p>
-        <div className="relative w-full overflow-hidden rounded-2xl border border-slate-800 bg-black shadow-inner shadow-black/25" style={{ paddingBottom: "56.25%" }}>
-          <iframe
-            className="absolute inset-0 h-full w-full"
-            src="https://www.youtube-nocookie.com/embed/dHDy9nzQsd4"
-            title="Mist-Shrouded Prison walkthrough video"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-        </div>
+        <LiteYouTubeEmbed
+          videoId="dHDy9nzQsd4"
+          title="Mist-Shrouded Prison walkthrough video"
+          poster={heroImagePath}
+          analytics={{ eventName: "guide_video_play", params: { guide: "mist-shrouded-prison", locale: "en" } }}
+        />
+        <a
+          href="https://www.youtube.com/watch?v=dHDy9nzQsd4"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex text-xs font-semibold text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+        >
+          Open the walkthrough source on YouTube
+        </a>
       </section>
     </article>
   );

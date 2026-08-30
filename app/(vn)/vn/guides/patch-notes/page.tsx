@@ -10,134 +10,152 @@ const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
   {
-    title: "July 9 Version 1.8 optimizations and bug fixes",
-    date: "2026-07-09",
+    title: "Tổng quan bản cập nhật Clouded Revelation Version 2.1 ngày 27/08",
+    date: "2026-08-26",
+    source: "https://www.wherewindsmeetgame.com/news/official/827update.html",
+    summary:
+      "Tổng quan cập nhật chính thức mới nhất đã được kiểm tra. Trang chính thức ghi thời điểm phát hành là ngày 27/08 và được đăng ngày 26/08.",
+    playerAction:
+      "Dùng tổng quan này làm mốc phát hành hiện tại, sau đó dùng patch notes ngày 20/08 cho danh sách bản sửa lỗi đã được xác nhận.",
+  },
+  {
+    title: "Patch notes Clouded Revelation Version 2.1 ngày 20/08",
+    date: "2026-08-20",
+    source: "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
+    summary:
+      "Đây là mốc patch notes Version 2.1 mới nhất đã được kiểm tra. Các thẻ cũ hơn bên dưới được giữ lại như lịch sử patch có ngày.",
+    playerAction:
+      "Thử lại các quest bị ảnh hưởng, Arena, Vernal Umbrella, Homestead và các bản sửa lỗi hình ảnh trước khi dùng giải pháp tạm thời cũ.",
+  },
+  {
+    title: "Lịch sử: July 17 Version 1.8 optimizations and bug fixes",
+    date: "2026-07-17",
     source: "https://www.wherewindsmeetgame.com/news/official/625update.html",
     summary:
-      "Moc patch notes moi nhat cho Version 1.8: Training Terrace Preliminary, giam do kho Taiping Mausoleum tang 10-12, sua Skyward Bond va Homestead, va tang gioi han Sleeping Daoist len 450 giay.",
+      "Lịch sử patch Version 1.8 có các mốc July 17, July 9, July 2 và June 25 trên cùng một trang chính thức.",
     playerAction:
-      "Kiem tra Arena, Taiping Mausoleum, Sleeping Daoist, Homestead va Skyward Bond truoc khi dung huong dan cu.",
+      "Kiểm tra Arena, Taiping Mausoleum, Sleeping Daoist, Homestead và Skyward Bond trước khi dùng hướng dẫn cũ.",
   },
   {
     title: "Version 1.8 / Companions Make Home overview",
     date: "2026-06-24",
     source: "https://www.wherewindsmeetgame.com/news/official/CompanionsMakeHome.html",
     summary:
-      "Tong quan official cho Version 1.8 Companions Make Home; day la moc moi cho roadmap va update searches.",
+      "Tổng quan Version 1.8 Companions Make Home mang tính lịch sử, được đăng trước Version 2.0 và Version 2.1.",
     playerAction:
-      "Chuyen update-today, roadmap, homestead, companion va returning-player links sang boi canh Version 1.8.",
+      "Dùng cho lịch sử Homestead và companion; các truy vấn về bản cập nhật hiện tại bắt đầu từ Version 2.1.",
   },
   {
     title: "Version 1.8 Dev Q&A: A Place to Call Home",
     date: "2026-06-23",
     source: "https://www.wherewindsmeetgame.com/news/official/623faq.html",
     summary:
-      "Dev Q&A official cho A Place to Call Home / homestead update va cac cau hoi ve companion systems.",
+      "Dev Q&A chính thức về A Place to Call Home, bản cập nhật Homestead và các câu hỏi về hệ thống companion.",
     playerAction:
-      "Dung Q&A lam context cho cau hoi ve homestead, companion va nhung dieu can theo doi sau update.",
+      "Dùng Q&A làm bối cảnh cho câu hỏi về Homestead, companion và những điều cần theo dõi sau bản cập nhật.",
   },
   {
     title: "June 5 Version 1.7 fixes",
     date: "2026-06-05",
     source: "https://www.wherewindsmeetgame.com/news/official/529update.html",
     summary:
-      "Ban fix moi cho Version 1.7: server Oceania, Middle East va South America da mo day du; Papercutting controller input, quest text trong Imperial Palace, mobile loading, Palace Oddities, Hexi Familiar Faces NPCs, Jade Fish display, Skyward Bond UI text, PS5 Palace map snow, Skill Theft access va Grand Nuo Ritual da duoc sua.",
+      "Bản sửa lỗi lịch sử của Version 1.7: máy chủ tại Oceania, Middle East và South America đã mở đầy đủ; lỗi nhập liệu bằng tay cầm trong Papercutting, văn bản quest tại Imperial Palace, tải trên mobile, Palace Oddities, NPC Hexi Familiar Faces, hiển thị Jade Fish, văn bản UI Skyward Bond, hình ảnh tuyết trên bản đồ Palace của PS5, quyền truy cập Skill Theft và Grand Nuo Ritual đã được sửa.",
     playerAction:
-      "Thu lai Palace exploration, Imperial Palace quests, Hexi NPC befriending, mobile loading, Papercutting, Skill Theft routes, PS5 map va event rewards truoc khi tin vao bug report cu.",
+      "Thử lại việc khám phá Palace, các quest Imperial Palace, kết bạn với NPC Hexi, tải trên mobile, Papercutting, lộ trình Skill Theft, bản đồ PS5 và phần thưởng sự kiện trước khi tin vào báo cáo lỗi cũ.",
   },
   {
     title: "May 29 Version 1.7 historical fixes",
     date: "2026-05-29",
     source: "https://www.wherewindsmeetgame.com/news/official/529update.html",
     summary:
-      "Cung trang official con luu cac fix May 29: Soaring Record rewards, Ghost Master trong Skyward Bond, Palace map tren mobile, Guild Hero's Realm, Guild UI, Kaifeng model, controller shop selection, Jadeware translation va Palace Unveiled rewards.",
+      "Cùng trang chính thức còn lưu các bản sửa lỗi May 29: phần thưởng Soaring Record, Ghost Master trong Skyward Bond, bản đồ Palace trên mobile, Guild Hero's Realm, UI Guild, mô hình Kaifeng, chọn cửa hàng bằng tay cầm, bản dịch Jadeware và phần thưởng Palace Unveiled.",
     playerAction:
-      "Dung May 29 lam moc lich su cho bug luc Palace moi ra, nhung xem June 5 la trang thai moi nhat.",
+      "Dùng May 29 làm mốc lịch sử cho lỗi khi Palace mới ra mắt và bắt đầu kiểm tra hiện tại từ Version 2.1.",
   },
   {
     title: "May 27 / May 28 live maintenance",
     date: "2026-05-28",
     source: "https://www.wherewindsmeetgame.com/news/official/527update.html",
     summary:
-      "Ban cap nhat lon cho Path Tutorial, Martial Art Reset, chi phi Inner Way Conversion, Arena, Hero's Realm, Sword Trial, Guild War, replay tren World Map va cong cu xa hoi.",
+      "Bản cập nhật trực tiếp lớn dành cho Path Tutorial, Martial Art Reset, chi phí Inner Way Conversion, Arena, Hero's Realm, Sword Trial, Guild War, tính năng xem lại trên World Map và công cụ xã hội.",
     playerAction:
-      "Kiem tra lai build, chi phi reset, camera boss, Hero's Realm, Sword Trial va ke hoach Arena sau patch nay.",
+      "Kiểm tra lại build, chi phí reset, camera boss, Hero's Realm, Sword Trial và kế hoạch Arena sau patch này.",
   },
   {
     title: "Version 1.7 / The Imperial Palace",
     date: "2026-05-27",
     source: "https://www.wherewindsmeetgame.com/news/official/TheImperialPalace.html",
     summary:
-      "Tong quan chinh thuc cua Version 1.7 va boi canh Palace hien tai cho event, roadmap, nguoi choi quay lai va do moi cua guide.",
+      "Tổng quan chính thức mang tính lịch sử của Version 1.7 dành cho sự kiện Palace, roadmap cũ và người chơi quay lại.",
     playerAction:
-      "Dung Version 1.7 lam moc cho patch notes, codes, boss, tier list va builds.",
+      "Chỉ dùng Version 1.7 làm mốc Palace có ngày; patch notes, boss và build hiện tại bắt đầu từ Version 2.1.",
   },
   {
-    title: "Sandstorm Tavern va boss fix cu",
+    title: "Sandstorm Tavern và các bản sửa lỗi boss cũ",
     date: "2026-05-15",
     source: "https://www.wherewindsmeetgame.com/news/official/515update.html",
     summary:
-      "Sandstorm Tavern ra mat trong cua so su kien May 15 den June 5 va van mo vinh vien sau do. Cung patch nay da fix loi Lunar Eidolon o Sunken City Lake khong vao phase cuoi.",
+      "Sandstorm Tavern ra mắt trong thời gian sự kiện từ May 15 đến June 5 và vẫn mở vĩnh viễn sau đó. Cùng patch này đã sửa lỗi Lunar Eidolon ở Sunken City Lake không chuyển sang giai đoạn cuối.",
     playerAction:
-      "Xem Sandstorm Tavern la muc guide can lam, va lam moi loi khuyen cu ve Sunken City Lake.",
+      "Xem Sandstorm Tavern là mục guide cần làm và làm mới lời khuyên cũ về Sunken City Lake.",
   },
 ];
 
 const impactChecklist = [
-  "Patch notes today / new update: dua June 5 len dau, sau do moi toi May 29 va May 27 thay vi noi ve cac tom tat May cu.",
-  "Boss va dungeon search: nhac Ghost Master, Hero's Realm, Sword Trial, Sandstorm Tavern, Sunken City Lake va Lunar Eidolon khi co lien quan.",
-  "Build search: nhac chi phi Martial Art Reset va Inner Way Conversion thap hon truoc khi khuyen respec.",
-  "Tier-list search: noi khuyen weapon va Path voi May 26 Path Balance va May 27 maintenance.",
-  "Mobile va controller search: Palace map loading va Season Shop controller selection la fix chinh thuc May 29.",
+  "Patch notes today / new update: bắt đầu với tổng quan 27/08, sau đó dùng patch notes 20/08 cho danh sách bản sửa lỗi đã được xác nhận.",
+  "Tìm kiếm boss và dungeon: nhắc đến Ghost Master, Hero's Realm, Sword Trial, Sandstorm Tavern, Sunken City Lake và Lunar Eidolon khi có liên quan.",
+  "Tìm kiếm build: nhắc chi phí Martial Art Reset và Inner Way Conversion thấp hơn trước khi khuyên respec.",
+  "Tìm kiếm tier list: nối khuyến nghị về vũ khí và Path với Path Balance ngày May 26 và đợt bảo trì May 27.",
+  "Tìm kiếm trên mobile và tay cầm: tải bản đồ Palace và chọn Season Shop bằng tay cầm là các bản sửa lỗi chính thức ngày May 29.",
 ];
 
 const upcomingNerfWatch = [
   {
     topic: "Path Balance",
-    status: "Moc chinh thuc",
+    status: "Mốc chính thức",
     action:
-      "Dung thong bao Path Balance May 26 lam diem bat dau truoc khi goi mot build hay vu khi la bi nerf.",
-    href: "/vn/guides/tier-list#arena-ranks",
+      "Dùng thông báo Path Balance May 26 làm điểm bắt đầu trước khi gọi một build hay vũ khí là bị nerf.",
+    href: "/guides/tier-list#arena-ranks",
   },
   {
-    topic: "Arena va PVP ranks",
-    status: "Search intent cao",
+    topic: "Arena và PVP ranks",
+    status: "Ý định tìm kiếm cao",
     action:
-      "Khi nguoi choi hoi upcoming nerfs, dua ho toi arena ranks, PVP tier list va weapon tier list de so sanh tac dong meta.",
-    href: "/vn/guides/pvp-tier-list",
+      "Khi người chơi hỏi về upcoming nerfs, đưa họ tới arena ranks, PVP tier list và weapon tier list để so sánh tác động đến meta.",
+    href: "/guides/pvp-tier-list",
   },
   {
     topic: "Build reset costs",
-    status: "Maintenance da anh huong",
+    status: "Đã chịu tác động của bảo trì",
     action:
-      "Martial Art Reset re hon va Inner Way Conversion thap hon giup nguoi choi quay lai test build sau patch de hon.",
+      "Martial Art Reset rẻ hơn và Inner Way Conversion thấp hơn giúp người chơi quay lại thử build sau patch dễ hơn.",
     href: "/vn/guides/builds",
   },
   {
-    topic: "Boss va dungeon comfort fixes",
-    status: "Dung doc thanh nerf",
+    topic: "Các bản sửa lỗi trải nghiệm boss và dungeon",
+    status: "Đừng nhầm với nerf",
     action:
-      "Hero's Realm, Sword Trial, Ghost Master va Palace fixes co the doi advice trong guide, du khong phai nerf vu khi.",
+      "Các bản sửa lỗi Hero's Realm, Sword Trial, Ghost Master và Palace có thể thay đổi lời khuyên trong guide, dù không phải nerf vũ khí.",
     href: "/vn/guides/bosses",
   },
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Patch Notes Hom Nay - Version 1.8 June 25",
+  title: "Where Winds Meet Patch Notes Hôm Nay - Version 2.1 August 27",
   description:
-    "Patch notes Where Winds Meet tieng Viet cho Version 1.8: June 25 fixes, Companions Make Home, homestead, companion, build, tier list va roadmap.",
+    "Patch notes Where Winds Meet tiếng Việt cho Version 2.1: tổng quan 27/08, patch notes 20/08 và lịch sử cập nhật có ngày.",
   alternates: buildHreflangAlternates("/guides/patch-notes", { canonicalLanguage: "vi" }),
   openGraph: {
-    title: "Where Winds Meet Patch Notes Hom Nay - Version 1.8 June 25",
+    title: "Where Winds Meet Patch Notes Hôm Nay - Version 2.1 August 27",
     description:
-      "Version 1.8 patch notes: June 25 fixes, Companions Make Home, homestead, companion, build, tier list va roadmap.",
+      "Version 2.1 patch notes: tổng quan 27/08, các bản sửa lỗi 20/08 và lịch sử cập nhật có ngày.",
     url: `${baseUrl}/vn/guides/patch-notes`,
     locale: "vi_VN",
   },
   twitter: {
-    title: "Where Winds Meet Patch Notes Hom Nay - Version 1.8 June 25",
+    title: "Where Winds Meet Patch Notes Hôm Nay - Version 2.1 August 27",
     description:
-      "Version 1.8 patch notes: June 25 fixes, Companions Make Home, homestead, companion, build va tier list.",
+      "Version 2.1 patch notes: tổng quan 27/08, các bản sửa lỗi 20/08 và lịch sử cập nhật có ngày.",
   },
 };
 
@@ -155,7 +173,7 @@ export default function PatchNotesViPage() {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Trang chu", item: `${baseUrl}/vn` },
+        { "@type": "ListItem", position: 1, name: "Trang chủ", item: `${baseUrl}/vn` },
         { "@type": "ListItem", position: 2, name: "Guides", item: `${baseUrl}/vn/guides` },
         { "@type": "ListItem", position: 3, name: "Patch Notes", item: `${baseUrl}/vn/guides/patch-notes` },
       ],
@@ -173,7 +191,7 @@ export default function PatchNotesViPage() {
         <div className="pointer-events-none absolute inset-0">
           <CdnImage
             src="/background/bg1.webp"
-            alt="Where Winds Meet patch notes background"
+            alt="Phông nền patch notes Where Winds Meet"
             fill
             className="object-cover opacity-40"
           />
@@ -182,25 +200,25 @@ export default function PatchNotesViPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet patch notes hom nay: Version 1.8, homestead, companion va roadmap.
+            Where Winds Meet patch notes hôm nay: Version 2.1 và lịch sử cập nhật có ngày.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Cap nhat {freshness?.lastChecked ?? "2026-07-12"}: Where Winds Meet hien dang o boi canh {freshness?.gameVersion ?? "Version 1.8 / July 9 fixes"}. Chuoi update moi bat dau voi Training Terrace, Taiping Mausoleum, Skyward Bond va Homestead fixes ngay July 9, sau do la Companions Make Home va Dev Q&A ngay June 23.
+            Cập nhật {freshness?.lastChecked ?? "2026-08-26"}: mốc đã được kiểm tra là {freshness?.gameVersion ?? "Version 2.1 / August 27"}. Chuỗi cập nhật hiện tại bắt đầu với tổng quan chính thức ngày 27/08 và patch notes 20/08; Version 2.0, Version 1.8 và Palace được giữ lại như lịch sử có ngày.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Trang nay danh dau cac diem can kiem tra lai: codes, quest bug, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, boss guides, builds va tier-list.
+            Trang này đánh dấu các điểm cần kiểm tra lại: codes, lỗi quest, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, boss guides, builds và tier list.
           </p>
         </div>
       </section>
 
       <section className="space-y-6 rounded-3xl border border-amber-400/30 bg-amber-500/10 p-6 shadow-lg shadow-amber-950/30">
         <div className="space-y-2">
-          <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">Danh sach update chinh thuc moi</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">Danh sách cập nhật chính thức mới</p>
           <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-            Patch notes moi nhat thay doi dieu gi?
+            Patch notes mới nhất thay đổi điều gì?
           </h2>
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-            Neu ban tim Where Winds Meet patch notes hom nay, bat dau tu day. Cac diem nay nen duoc dung de cap nhat guide va internal links.
+            Nếu bạn tìm Where Winds Meet patch notes hôm nay, hãy bắt đầu từ đây. Các điểm này nên được dùng để cập nhật guide và liên kết nội bộ.
           </p>
         </div>
         <div className="grid gap-4 lg:grid-cols-2">
@@ -216,13 +234,13 @@ export default function PatchNotesViPage() {
                   rel="noopener noreferrer"
                   className="text-[11px] font-semibold text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
                 >
-                  Nguon chinh thuc
+                  Nguồn chính thức
                 </a>
               </div>
               <h3 className="mt-3 text-base font-semibold text-slate-50">{item.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">{item.summary}</p>
               <p className="mt-3 text-xs leading-relaxed text-slate-400">
-                <span className="font-semibold text-slate-200">Can lam:</span> {item.playerAction}
+                <span className="font-semibold text-slate-200">Cần làm:</span> {item.playerAction}
               </p>
             </article>
           ))}
@@ -233,11 +251,11 @@ export default function PatchNotesViPage() {
         <div>
           <p className="text-xs font-semibold uppercase tracking-wide text-red-200">Search intent: upcoming nerf wwm</p>
           <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-            Upcoming nerfs va balance watch.
+            Upcoming nerfs và theo dõi cân bằng.
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Nguoi choi tim upcoming nerfs thuong muon biet co nen tam dung nang cap, reset build hay doi vu khi truoc lan day arena tiep theo.
-            Hay dung patch notes chinh thuc lam nguon dung, roi mo cac guide duoi day de kiem tra tac dong.
+            Người chơi tìm upcoming nerfs thường muốn biết có nên tạm dừng nâng cấp, reset build hay đổi vũ khí trước lần đẩy Arena tiếp theo.
+            Hãy dùng patch notes chính thức làm nguồn chuẩn, rồi mở các guide dưới đây để kiểm tra tác động.
           </p>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
@@ -258,34 +276,34 @@ export default function PatchNotesViPage() {
           ))}
         </div>
         <p className="text-xs leading-5 text-red-100/80">
-          Ghi chu: creator lists va social posts co the la canh bao som, nhung chi nen goi mot nerf la confirmed khi no xuat hien trong official patch notes hoac text maintenance trong game.
+          Ghi chú: danh sách của creator và bài đăng mạng xã hội có thể là cảnh báo sớm, nhưng chỉ nên gọi một thay đổi là nerf đã xác nhận khi nó xuất hiện trong patch notes chính thức hoặc thông báo bảo trì trong game.
         </p>
       </section>
 
       <section className="space-y-6 rounded-3xl border border-emerald-500/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/40">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          Version 1.7 catch-up: nen kiem tra gi truoc?
+          Lịch sử Version 1.7 cho người chơi quay lại: nên kiểm tra gì?
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Neu ban quay lai tu guide cu, hay xem Version 1.7 la moc moi. Kiem tra Palace event, Skyward Bond, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, build cost va tier-list recommendation.
+          Version 1.7 ở đây chỉ là mốc Palace có ngày. Hãy bắt đầu từ Version 2.1, sau đó kiểm tra lại sự kiện Palace, Skyward Bond, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, chi phí build và khuyến nghị tier list.
         </p>
         <div className="grid gap-3 md:grid-cols-2">
           <Link
             href="/vn/guides/bosses"
             className="rounded-2xl border border-emerald-400/40 bg-slate-950/60 p-4 transition hover:border-emerald-300/70"
           >
-            <p className="text-sm font-semibold text-slate-50">Hang doi boss va dungeon guide</p>
+            <p className="text-sm font-semibold text-slate-50">Hàng đợi guide về boss và dungeon</p>
             <p className="mt-1 text-xs leading-relaxed text-slate-300">
-              Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, Sunken City Lake va cac trang can ghi chu theo patch.
+              Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, Sunken City Lake và các trang cần ghi chú theo patch.
             </p>
           </Link>
           <Link
             href="/vn/guides/builds"
             className="rounded-2xl border border-emerald-400/40 bg-slate-950/60 p-4 transition hover:border-emerald-300/70"
           >
-            <p className="text-sm font-semibold text-slate-50">Build reset va meta checks</p>
+            <p className="text-sm font-semibold text-slate-50">Reset build và kiểm tra meta</p>
             <p className="mt-1 text-xs leading-relaxed text-slate-300">
-              Chi phi reset va conversion thap hon giup nguoi choi thu build Version 1.7 de hon.
+              Các thay đổi reset và conversion trong lịch sử giúp giải thích build Version 1.7 cũ; khuyến nghị hiện tại cần được kiểm tra lại theo Version 2.1.
             </p>
           </Link>
         </div>
@@ -293,10 +311,10 @@ export default function PatchNotesViPage() {
 
       <section className="space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          SEO guide checklist sau Version 1.7.
+          Checklist SEO cho guide từ Version 1.7 đến Version 2.1.
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Trang update tot khong chi noi la moi. No can tra loi dung cac truy van nguoi choi tim ngay sau patch.
+          Trang cập nhật tốt không chỉ nói rằng nội dung mới. Trang còn phải trả lời đúng các truy vấn người chơi tìm ngay sau patch.
         </p>
         <ul className="space-y-2 text-sm leading-relaxed text-slate-200">
           {impactChecklist.map((item) => (

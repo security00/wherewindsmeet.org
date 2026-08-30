@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         url: "https://static.wherewindsmeet.org/guides/wall-puzzle/wall-tiles-right.webp",
         width: 1650,
         height: 928,
-        alt: "Die Steine 移 und 百 an der rechten Wand im Echoes of Old Battles Rätsel drücken",
+        alt: "Rechte Wand des Wandrätsels mit den Steinen Yi und Bai",
       },
     ],
     locale: "de_DE",
@@ -67,26 +67,34 @@ const quickAnswers = [
 const heroImages = [
   {
     src: "/guides/wall-puzzle/fire-contraptions-map.webp",
-    alt: "Feuerstellen rund um die Ruinenfestung in Qinghe",
-    caption: "Feuerstellen-Karte: Zünde alle vier Feuerstellen, damit sich der Tunnel öffnet.",
+    alt: "Karte mit den vier Feuerstellen an den Qinghe-Ruinen",
+    caption: "Entzünde alle vier markierten Feuerstellen, bevor du zum Trainingsplatz zurückkehrst.",
   },
   {
     src: "/guides/wall-puzzle/pose-yanyun-oath.webp",
-    alt: "Pose Yanyun Oath vor der großen Statue benutzen",
-    caption: "Trigger: Nutze die Pose Yanyun Oath an der großen Statue, um das Wandrätsel zu starten.",
+    alt: "Spielfigur nutzt die Pose Yanyun Oath vor der riesigen Statue",
+    caption: "Nutze Yanyun Oath vor der Statue, um den Wandmechanismus zu aktivieren.",
   },
   {
     src: "/guides/wall-puzzle/wall-tiles-right.webp",
-    alt: "Die Steine 移 und 百 an der rechten Wand drücken",
-    caption: "Lösung: Rechte Wand drückt 移 und 百, linke Wand drückt 漂 – dann öffnet sich die Tür.",
+    alt: "Rechte Rätselwand mit den ausgewählten Schriftzeichen Yi und Bai",
+    caption: "Lösung der rechten Wand: 移 und 百 drücken.",
+  },
+  {
+    src: "/guides/wall-puzzle/wall-tiles-left.webp",
+    alt: "Linke Rätselwand mit dem ausgewählten Schriftzeichen Piao",
+    caption: "Lösung der linken Wand: 漂 drücken.",
   },
 ];
 
-const zoomableUiText = {
-  openAriaLabelTemplate: "Bild in groß öffnen: {alt}",
-  closeLabel: "Schließen",
-  hintTemplate: "Scrollen oder +/- zum Zoomen, ziehen/scrollen zum Verschieben. Aktuell: {pct}%",
-} as const;
+const ignReferenceImages = [
+  { src: "/guides/wall-puzzle/ign/1.webp", alt: "Wandrätsel-Kammer mit der zentralen Statue", caption: "Aufbau der Kammer vor dem Aktivieren der Statue." },
+  { src: "/guides/wall-puzzle/ign/2.webp", alt: "Inschrift-Hinweis nahe der Wandrätsel-Statue", caption: "Der Hinweis verweist auf die passenden Schriftzeichen an den Wänden." },
+  { src: "/guides/wall-puzzle/ign/3.webp", alt: "Rechte Rätselwand vor der Auswahl", caption: "Rechte Wand vor der Lösung: ersten und dritten markierten Block wählen." },
+  { src: "/guides/wall-puzzle/ign/4.webp", alt: "Linke Rätselwand vor der Auswahl", caption: "Linke Wand vor der Lösung: zweiten markierten Block wählen." },
+  { src: "/guides/wall-puzzle/ign/5.webp", alt: "Rechte Rätselwand nach der richtigen Auswahl", caption: "Gelöster Zustand der rechten Wand." },
+  { src: "/guides/wall-puzzle/ign/6.webp", alt: "Linke Rätselwand nach der richtigen Auswahl", caption: "Gelöster Zustand der linken Wand." },
+] as const;
 
 const fireContraptions = [
   {
@@ -134,109 +142,47 @@ const unlockSteps = [
   {
     title: "Quest bei den Qinghe-Ruinen starten",
     text: "Sprich mit Lie Bujin vor den Ruinen, um „Echoes of Old Battles“ in Qinghe (Verdant Wilds) anzunehmen.",
-    image: {
-      src: "/guides/wall-puzzle/game8/4331081-57e94f6bf21d69927689e378eb0358fd.webp",
-      alt: "Questmarker von Echoes of Old Battles auf der Karte",
-      caption: "Questmarker: Qinghe-Ruinen, Verdant Wilds.",
-    },
   },
   {
     title: "Belausche, spreng die Fässer, räume die Mobs weg",
     text: "Belausche die Banditen bei den Fässern, zünde die Brandfässer mit einem Feuerpfeil, besiege die Wellen plus Boss Zhang Bao und plündere die Arenatruhe für die Feuerstellen-Karte.",
-    image: {
-      src: "/guides/wall-puzzle/game8/4331075-caa01c4ee0d88da905e52717793aa762.webp",
-      alt: "Abhör- und Fass-Spot in der Arena",
-      caption: "Erst zuhören, dann die Brandfässer zünden, um die erste Welle zu löschen.",
-    },
   },
   {
     title: "Vier Feuerstellen anzünden",
     text: "Nutze die Karte und entzünde alle Feuerstellen (Reihenfolge egal): links vom Eingang, oberer Mauerrest, unteres Ost-Plateau und in der Arena.",
-    image: {
-      src: "/guides/wall-puzzle/game8/4331076-f79e5957d1551183859b4e5d3e86d414.webp",
-      alt: "Die richtige Feuerstelle entzünden",
-      caption: "Alle vier richtigen Feuerstellen müssen brennen, sonst bleibt der Untergrund verschlossen.",
-    },
   },
   {
     title: "Platte stampfen, nach unten gehen",
     text: "Sind alle Feuerstellen aktiv, erscheint in der Arena eine Bodenplatte; setze Mighty Drop ein, um sie zu drücken und den Tunnel zu öffnen.",
-    image: {
-      src: "/guides/wall-puzzle/game8/4331077-e5a535c018ecb105709d9d47994d8b12.webp",
-      alt: "Eingang zum Untergrundtunnel",
-      caption: "Stampfe die Platte, um den Untergrund-Eingang freizulegen.",
-    },
   },
   {
     title: "Pose Yanyun Oath ausleihen",
     text: "Kopiere die Pose Yanyun Oath von der Soldatenstatue und nutze sie vor der riesigen Statue, um den Mechanismus zu aktivieren.",
-    image: {
-      src: "/guides/wall-puzzle/game8/4331078-7e11bf6db03c83463d137fe7e8d188aa.webp",
-      alt: "Pose Yanyun Oath nutzen, um den Mechanismus zu starten",
-      caption: "Du musst die Pose nutzen, sonst reagiert die Wand nicht.",
-    },
   },
   {
     title: "Wandsteine drücken (Kernschritt)",
     text: "Rechte Wand: drücke 移 und 百. Linke Wand: drücke 漂. Reihenfolge ist flexibel – Hauptsache, alle drei werden gedrückt, damit sich die Tür öffnet.",
-    image: {
-      src: "/guides/wall-puzzle/wall-tiles-right.webp",
-      alt: "Die Steine 移 und 百 an der rechten Wand drücken",
-      caption: "Rechte Wand: 移 + 百; linke Wand: 漂.",
-    },
   },
   {
     title: "Hebel hinter dem Wasserfall ziehen",
     text: "Wenn die Tür offen ist, spring hinüber und ziehe den Hebel hinter dem Wasserfall, um weiterzukommen.",
-    image: {
-      src: "/guides/wall-puzzle/game8/4331080-4a13e0a7c62d5ea365fce67df363dbe1.webp",
-      alt: "Hebel hinter dem Wasserfall",
-      caption: "Der Hebel öffnet den Weg zum Schatzraum.",
-    },
   },
   {
     title: "Truhe öffnen: Touch of Death",
     text: "Endbelohnung: Assassin-Mystik-Skill Touch of Death plus Loot; schließt diesen Story-Abschnitt ab.",
-    image: {
-      src: "/guides/wall-puzzle/game8/4331079-8c8f3f163d873516d57b4e93078f2a7b.webp",
-      alt: "Schatztruhe mit Touch of Death",
-      caption: "Sichere dir den Assassin-Skill Touch of Death.",
-    },
   },
 ];
 
-const ignReferences = [
-  {
-    src: "/guides/wall-puzzle/ign/1.webp",
-    alt: "Übersicht des Wandrätsel-Raums mit zentraler Statue",
-    caption: "IGN: Raumlayout, bevor du interagierst.",
-  },
-  {
-    src: "/guides/wall-puzzle/ign/2.webp",
-    alt: "Hinweis-Steinplatte am Boden neben der Statue",
-    caption: "IGN: Hinweis, welche Schriftzeichen auf die Wände gehören.",
-  },
-  {
-    src: "/guides/wall-puzzle/ign/3.webp",
-    alt: "Rechte Wand mit vier interaktiven Blöcken vor der Lösung",
-    caption: "IGN: Rechte Wand – drücke Block 1 und 3 (移, 百).",
-  },
-  {
-    src: "/guides/wall-puzzle/ign/4.webp",
-    alt: "Linke Wand mit zwei interaktiven Blöcken vor der Lösung",
-    caption: "IGN: Linke Wand – drücke den zweiten Block (漂).",
-  },
-  {
-    src: "/guides/wall-puzzle/ign/5.webp",
-    alt: "Rechte Wand nach dem Drücken der richtigen Blöcke",
-    caption: "IGN: Gelöste rechte Wand.",
-  },
-  {
-    src: "/guides/wall-puzzle/ign/6.webp",
-    alt: "Linke Wand nach dem Drücken des richtigen Blocks",
-    caption: "IGN: Gelöste linke Wand.",
-  },
-];
+const unlockImages = [
+  "/guides/wall-puzzle/game8/4331081-57e94f6bf21d69927689e378eb0358fd.webp",
+  "/guides/wall-puzzle/game8/4331075-caa01c4ee0d88da905e52717793aa762.webp",
+  "/guides/wall-puzzle/game8/4331076-f79e5957d1551183859b4e5d3e86d414.webp",
+  "/guides/wall-puzzle/game8/4331077-e5a535c018ecb105709d9d47994d8b12.webp",
+  "/guides/wall-puzzle/game8/4331078-7e11bf6db03c83463d137fe7e8d188aa.webp",
+  "/guides/wall-puzzle/wall-tiles-right.webp",
+  "/guides/wall-puzzle/game8/4331080-4a13e0a7c62d5ea365fce67df363dbe1.webp",
+  "/guides/wall-puzzle/game8/4331079-8c8f3f163d873516d57b4e93078f2a7b.webp",
+] as const;
 
 export default function WallPuzzleDePage() {
   return (
@@ -299,29 +245,48 @@ export default function WallPuzzleDePage() {
         </div>
       </section>
 
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-4 sm:p-6 shadow-lg">
-        <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
-          <h2 className="text-xl font-bold text-slate-50">Wichtige Bilder</h2>
-          <p className="text-xs text-slate-500">Quelle: GameRant (lokal gespiegelt)</p>
+      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-4 shadow-lg sm:p-6">
+        <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h2 className="text-xl font-bold text-slate-50">Wichtige Screenshots</h2>
+            <p className="mt-1 text-xs text-slate-400">Source publisher: Game8 and GameRant.</p>
+          </div>
+          <p className="text-xs text-emerald-200">Reuse authorization confirmed by site owner 2026-08-29.</p>
         </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          {heroImages.map((img) => (
-            <figure
-              key={img.src}
-              className="overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/60 shadow-inner shadow-slate-950/40"
-            >
+        <div className="grid gap-4 md:grid-cols-2">
+          {heroImages.map((image, index) => (
+            <figure key={image.src} className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
               <ZoomableImage
-                src={img.src}
-                alt={img.alt}
+                src={image.src}
+                alt={image.alt}
                 width={1650}
                 height={928}
-                sizes="(max-width: 768px) 100vw, 33vw"
-                priority
-                uiText={zoomableUiText}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority={index === 0}
               />
-              <figcaption className="px-3 py-2 text-xs text-slate-300/90 border-t border-slate-800/80">
-                {img.caption} (zum Vergrößern klicken)
+              <figcaption className="border-t border-slate-800 px-4 py-3 text-xs leading-5 text-slate-300">
+                {image.caption}
               </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/70 p-4 shadow-lg sm:p-6">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h2 className="text-xl font-bold text-slate-50">Referenzgalerie der Wandkammer</h2>
+            <p className="mt-1 text-xs text-slate-400">Source publisher: IGN.</p>
+          </div>
+          <p className="max-w-xl text-xs leading-5 text-amber-200">
+            Reuse authorization confirmed by site owner 2026-08-29. Third-party walkthrough screenshots are not official or current-build evidence.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {ignReferenceImages.map((image) => (
+            <figure key={image.src} className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
+              <ZoomableImage src={image.src} alt={image.alt} width={1650} height={928} sizes="(max-width: 768px) 100vw, 33vw" />
+              <figcaption className="border-t border-slate-800 px-4 py-3 text-xs leading-5 text-slate-300">{image.caption}</figcaption>
             </figure>
           ))}
         </div>
@@ -410,8 +375,8 @@ export default function WallPuzzleDePage() {
 
       <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-6">
         <div className="flex items-center justify-between gap-3 flex-wrap">
-          <h3 className="text-xl font-bold text-slate-50">Schritte + lokale Screenshots</h3>
-          <p className="text-xs text-slate-500">Bilder von Game8 und GameRant, lokal gespiegelt.</p>
+          <h3 className="text-xl font-bold text-slate-50">Schritte mit Screenshots</h3>
+          <p className="text-xs text-slate-400">Source publisher: Game8 and GameRant.</p>
         </div>
         <div className="grid gap-5 md:grid-cols-2">
           {unlockSteps.map((step, idx) => (
@@ -431,45 +396,17 @@ export default function WallPuzzleDePage() {
               </div>
               <figure className="border-t border-slate-800/80">
                 <ZoomableImage
-                  src={step.image.src}
-                  alt={step.image.alt}
+                  src={unlockImages[idx]}
+                  alt={`${step.title} – Screenshot zur Quest in Where Winds Meet`}
                   width={1650}
                   height={928}
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  uiText={zoomableUiText}
                 />
-                <figcaption className="px-4 py-3 text-xs text-slate-300/90 border-t border-slate-800/80">
-                  {step.image.caption} (zum Vergrößern klicken)
+                <figcaption className="border-t border-slate-800/80 px-4 py-3 text-xs leading-5 text-slate-300">
+                  Schritt {idx + 1}: {step.title}. Source publisher: {idx === 5 ? "GameRant" : "Game8"}.
                 </figcaption>
               </figure>
             </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
-        <div className="flex items-center justify-between flex-wrap gap-3">
-          <h3 className="text-xl font-bold text-slate-50">IGN-Referenzen (lokal)</h3>
-          <p className="text-xs text-slate-500">Aus deiner IGN-Version gespiegelt für Übersicht.</p>
-        </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          {ignReferences.map((img) => (
-            <figure
-              key={img.src}
-              className="overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/60 shadow-inner shadow-slate-950/40"
-            >
-              <ZoomableImage
-                src={img.src}
-                alt={img.alt}
-                width={1650}
-                height={928}
-                sizes="(max-width: 768px) 100vw, 33vw"
-                uiText={zoomableUiText}
-              />
-              <figcaption className="px-3 py-2 text-xs text-slate-300/90 border-t border-slate-800/80">
-                {img.caption} (zum Vergrößern klicken)
-              </figcaption>
-            </figure>
           ))}
         </div>
       </section>

@@ -21,7 +21,6 @@ export const bosses: Boss[] = [
       "Lần đầu chạm trán trong chiến dịch Heavenfall ở Roaring Sands (Kaifeng), sau đó xuất hiện như world boss tại Verdant Hill Village. Trận này bị “ám ảnh” bởi yếu tố mục tiêu: nếu Silk Ball bị cướp, bạn phải giành lại thật nhanh, nếu không sẽ bị tính thua dù HP vẫn còn.",
     encounterType: "World boss / Tỉ thí có cơ chế mục tiêu",
     theme: "Áp lực, di chuyển, giành lại Silk Ball",
-    backgroundVideo: "/guides/bosses/feng-ruzhi/preview.mp4",
     titleImage: "/bosses/feng-ruzhi-title.png",
   },
   {

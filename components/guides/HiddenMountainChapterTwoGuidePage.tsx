@@ -36,8 +36,8 @@ const content = {
     source: "Evidence and freshness",
     official: "Official Version 2.1 developer letter",
     serp: "Current step-by-step reference",
-    video: "Official Heaven’s Threshold Chapter 2 trailer",
-    labyrinthVideo: "Evershift Labyrinth full quest walkthrough",
+    video: "Third-party mirror of the official Heaven’s Threshold Chapter 2 trailer · GameTrailers",
+    labyrinthVideo: "Creator quest walkthrough · Game Guides Channel",
     related: "Continue through Hidden Mountain",
   },
   vi: {
@@ -63,8 +63,8 @@ const content = {
     source: "Nguồn và độ mới",
     official: "Thư nhà phát triển Version 2.1",
     serp: "Hướng dẫn từng bước hiện tại",
-    video: "Trailer chính thức Heaven’s Threshold Chapter 2",
-    labyrinthVideo: "Video toàn bộ nhiệm vụ Evershift Labyrinth",
+    video: "Bản mirror bên thứ ba của trailer Heaven’s Threshold Chapter 2 · GameTrailers",
+    labyrinthVideo: "Video nhiệm vụ của creator · Game Guides Channel",
     related: "Tiếp tục Hidden Mountain",
   },
   de: {
@@ -90,8 +90,8 @@ const content = {
     source: "Quellen und Aktualität",
     official: "Offizieller Version-2.1-Entwicklerbrief",
     serp: "Aktuelle Schrittanleitung",
-    video: "Offizieller Heaven’s-Threshold-Chapter-2-Trailer",
-    labyrinthVideo: "Kompletter Evershift-Labyrinth-Quest-Walkthrough",
+    video: "Drittanbieter-Mirror des Heaven’s-Threshold-Chapter-2-Trailers · GameTrailers",
+    labyrinthVideo: "Creator-Quest-Walkthrough · Game Guides Channel",
     related: "Weiter durch Hidden Mountain",
   },
 } as const;
@@ -129,7 +129,8 @@ export default function HiddenMountainChapterTwoGuidePage({ language, kind }: { 
         </div>
         <div>
           <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-emerald-300">{videoTitle}</p>
-          <LiteYouTubeEmbed videoId={videoId} title={videoTitle} poster={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`} analytics={{ eventName: "guide_video_play", params: { guide: kind } }} />
+          <LiteYouTubeEmbed videoId={videoId} title={videoTitle} poster="/background/bg4.webp" analytics={{ eventName: "guide_video_play", params: { guide: kind } }} />
+          <a href={`https://www.youtube.com/watch?v=${videoId}`} target="_blank" rel="noreferrer" className="mt-3 inline-flex text-xs font-semibold text-sky-200 hover:text-sky-100">Open the attributed YouTube source ↗</a>
         </div>
       </section>
 

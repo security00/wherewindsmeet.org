@@ -229,7 +229,7 @@ export default function FreeOutfitsPage() {
           </p>
           <div className="flex flex-wrap gap-3 text-xs text-emerald-200">
             <Link
-              href="/vn/guides/codes"
+              href="/guides/codes"
               className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 hover:border-emerald-400 hover:text-emerald-100"
             >
               Xem code mới nhất
@@ -422,7 +422,7 @@ export default function FreeOutfitsPage() {
           <p>
             Ưu tiên code: nhiều trang phục/kiểu tóc miễn phí đến từ code giới hạn. Nhập ở{" "}
             <Link
-              href="/vn/guides/codes"
+              href="/guides/codes"
               className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
             >
               trang Codes

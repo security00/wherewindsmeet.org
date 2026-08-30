@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
-import LightboxGallery from "@/components/LightboxGallery";
 import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
+import LightboxGallery from "@/components/LightboxGallery";
 
 export type GrowthGuideLanguage = "en" | "vi" | "de";
 export type GrowthGuideKind = "character-codes" | "commerce-coins" | "hidden-mountain";
@@ -38,35 +38,50 @@ const copy = {
 const characterCopy = {
   en: {
     title: "Where Winds Meet Character Creation Codes: Import Text or QR Presets",
-    intro: "Character creation codes are appearance presets, not reward codes. Use this visual route to import a shared face safely, understand why some cosmetics do not carry over, and avoid pasting an appearance string into the redeem-code box.",
-    quick: "Quick import route",
+    intro: "Character creation codes are appearance presets, not reward codes. Where Winds Meet supports shared text codes and QR images, but the exact import control can move between platforms and client versions. Use the current customization screen as the authority instead of forcing a code into an unrelated field.",
+    quick: "Version-aware import route",
     steps: [
-      "Open Character Creation for a new character, or open Appearance when editing an existing one.",
-      "Choose Import Customization Data. Paste the shared text code or upload its QR image.",
-      "Preview every tab before applying. Hair, makeup, accessories, and paid items you do not own may be skipped.",
-      "Apply the preset, then save your own share code or QR before making further edits.",
+      "Start in the character customization editor. For a new character, stay in creation. For an existing character, open Appearance and use Edit Face only if your client offers that route.",
+      "Open the import or share panel shown by your current client. A November 2025 PC walkthrough uses the V key; controller and mobile labels can differ. If no import control appears, do not guess.",
+      "Use the text-code field or QR-image option only when that control is visible. Keep the code exactly as shared, then preview the result before applying it.",
+      "Compare the face, hair, makeup, and accessories with the shared preview. Save your current look first if you are replacing an existing face, then apply only after the comparison.",
     ],
+    verifiedScreens: "Screenshot evidence boundary",
+    visualBoundary: "No verified current import-dialog screenshot is published here. The two authorized historical captures below show only how the December 2025 client entered Appearance; they did not show the text-code field or QR-import control. They are navigation context, not proof of the import control.",
+    navigationTitle: "Appearance navigation context (historical UI)",
+    navigationAlts: ["Historical Where Winds Meet menu with Appearance selected", "Historical wardrobe screen with the base Appearance tab selected"],
+    navigationCaptions: ["Open Appearance from the game menu.", "Switch from outfit browsing to the base Appearance area."],
     troubleshoot: "Code not working?",
-    fixes: ["Confirm it is an appearance code, not a gift-code string.", "Try the QR image if copying text changed a character or space.", "A preset can load while unowned cosmetics remain unavailable.", "Keep a screenshot of the original sliders before overwriting an existing face."],
-    evidence: "The menu route and owned-cosmetic limitation are cross-checked against current SERP walkthroughs. The screenshots below show the same Appearance workflow already documented on this site; labels can vary slightly by platform or client language.",
+    fixes: ["Confirm it is an appearance code, not a reward or gift-code string.", "If the import field is absent, stop: your platform or client version may use a different route.", "Get a fresh share directly from its creator if a copied string is truncated or rejected; do not rely on an unattributed code aggregator.", "Use a QR image only when the customization panel exposes a QR-image option.", "Keep a screenshot of the current face before replacing an existing look."],
+    evidence: "The official character-share page demonstrates that Where Winds Meet distributes appearance shares as a copyable code and QR image. PC Gamer documented the V-key, paste, and QR-image workflow for PC in November 2025. No verified current import-dialog screenshot is published here. Treat the labels in your current client as the authority.",
   },
   vi: {
     title: "Mã tạo nhân vật Where Winds Meet: nhập mã chữ hoặc QR",
-    intro: "Mã tạo nhân vật là preset ngoại hình, không phải gift code. Hướng dẫn bằng ảnh này giúp bạn nhập khuôn mặt được chia sẻ, hiểu vì sao một số mỹ phẩm không được áp dụng và tránh dán nhầm mã vào ô đổi quà.",
-    quick: "Đường dẫn nhập nhanh",
-    steps: ["Mở Character Creation, hoặc Appearance nếu đang sửa nhân vật.", "Chọn Import Customization Data, rồi dán mã chữ hoặc tải ảnh QR.", "Xem trước từng mục. Tóc, makeup, phụ kiện hoặc vật phẩm chưa sở hữu có thể bị bỏ qua.", "Áp dụng preset và lưu mã/QR của riêng bạn trước khi chỉnh tiếp."],
+    intro: "Mã tạo nhân vật là preset ngoại hình, không phải gift code. Where Winds Meet có mã chữ và ảnh QR được chia sẻ, nhưng nút nhập có thể khác giữa nền tảng và phiên bản. Hãy coi giao diện hiện tại trong game là nguồn quyết định.",
+    quick: "Quy trình nhập theo phiên bản",
+    steps: ["Bắt đầu trong trình chỉnh nhân vật. Với nhân vật mới, ở lại màn hình tạo nhân vật; với nhân vật hiện có, mở Appearance và chỉ dùng Edit Face nếu client có tuyến đó.", "Mở bảng import/share mà client hiện tại hiển thị. Hướng dẫn PC tháng 11/2025 dùng phím V; tay cầm và mobile có thể có nhãn khác. Nếu không thấy nút nhập, đừng đoán.", "Chỉ dán mã hoặc chọn ảnh QR khi bảng chỉnh nhân vật thực sự hiển thị tùy chọn đó. Giữ nguyên mã và xem trước kết quả.", "So sánh khuôn mặt, tóc, makeup và phụ kiện với ảnh chia sẻ. Lưu lại ngoại hình hiện tại trước khi thay thế."],
+    verifiedScreens: "Giới hạn bằng chứng hình ảnh",
+    visualBoundary: "Trang chưa đăng ảnh hộp thoại import hiện tại đã được xác minh. Hai ảnh lịch sử được phép sử dụng bên dưới chỉ cho thấy cách client tháng 12/2025 đi vào Appearance; ảnh không hiển thị ô mã chữ hoặc nút nhập QR. Đây là ngữ cảnh điều hướng, không phải bằng chứng cho nút import.",
+    navigationTitle: "Ngữ cảnh điều hướng Appearance (giao diện lịch sử)",
+    navigationAlts: ["Menu Where Winds Meet lịch sử với mục Appearance được chọn", "Màn hình tủ đồ lịch sử với tab Appearance cơ bản được chọn"],
+    navigationCaptions: ["Mở Appearance từ menu game.", "Chuyển từ trang phục sang khu Appearance cơ bản."],
     troubleshoot: "Mã không hoạt động?",
-    fixes: ["Kiểm tra đây là mã ngoại hình, không phải gift code.", "Thử ảnh QR nếu quá trình sao chép làm thay đổi ký tự hoặc khoảng trắng.", "Preset vẫn có thể tải dù mỹ phẩm chưa sở hữu không được áp dụng.", "Chụp lại thanh chỉnh ban đầu trước khi ghi đè khuôn mặt hiện tại."],
-    evidence: "Đường dẫn menu và giới hạn mỹ phẩm đã sở hữu được đối chiếu với các hướng dẫn SERP hiện tại. Ảnh bên dưới là cùng luồng Appearance đã được tài liệu hóa trên trang; tên nút có thể khác theo nền tảng hoặc ngôn ngữ game.",
+    fixes: ["Kiểm tra đây là mã ngoại hình, không phải reward/gift code.", "Nếu không có ô nhập, hãy dừng lại: nền tảng hoặc phiên bản của bạn có thể dùng đường dẫn khác.", "Xin lại mã trực tiếp từ người tạo nếu chuỗi bị cắt hoặc bị từ chối; tránh trang tổng hợp không ghi nguồn.", "Chỉ dùng ảnh QR khi bảng chỉnh nhân vật có tùy chọn ảnh QR.", "Chụp lại khuôn mặt hiện tại trước khi thay thế."],
+    evidence: "Trang chia sẻ nhân vật chính thức cho thấy Where Winds Meet phát hành ngoại hình dưới dạng mã có thể sao chép và ảnh QR. PC Gamer ghi lại quy trình phím V, dán mã và dùng ảnh QR trên PC vào tháng 11/2025. Trang chưa đăng ảnh hộp thoại import hiện tại đã được xác minh; hãy làm theo nhãn trong client hiện tại.",
   },
   de: {
     title: "Where Winds Meet Character-Creation-Codes: Text- oder QR-Presets importieren",
-    intro: "Character-Creation-Codes sind Aussehen-Presets und keine Geschenkcodes. Diese bebilderte Route zeigt den sicheren Import, erklärt fehlende Kosmetik und verhindert, dass ein Aussehen-Code im Einlösefeld landet.",
-    quick: "Schneller Importweg",
-    steps: ["Öffne Character Creation oder bei einer bestehenden Figur Appearance.", "Wähle Import Customization Data und füge den Textcode ein oder lade das QR-Bild hoch.", "Prüfe alle Register vor dem Anwenden. Nicht besessene Haare, Make-up- oder Bezahlobjekte können fehlen.", "Wende das Preset an und speichere vor weiteren Änderungen deinen eigenen Code oder QR."],
+    intro: "Character-Creation-Codes sind Aussehen-Presets und keine Geschenkcodes. Where Winds Meet unterstützt geteilte Textcodes und QR-Bilder; der Import-Befehl kann sich aber je nach Plattform und Client-Version unterscheiden. Maßgeblich ist die aktuell sichtbare Spieloberfläche.",
+    quick: "Versionsabhängiger Importweg",
+    steps: ["Beginne im Charaktereditor. Bleibe bei einer neuen Figur in der Erstellung; öffne bei einer bestehenden Figur Appearance und nutze Edit Face nur, wenn dein Client diesen Weg anbietet.", "Öffne das Import- oder Teilen-Fenster deines aktuellen Clients. Ein PC-Guide vom November 2025 nutzt die Taste V; Controller und Mobile können andere Bezeichnungen haben. Ist kein Import sichtbar, rate nicht.", "Nutze Textcode oder QR-Bild nur, wenn diese Option im Charaktereditor tatsächlich angezeigt wird. Übernimm den Code unverändert und prüfe die Vorschau.", "Vergleiche Gesicht, Haare, Make-up und Accessoires mit der geteilten Vorschau. Sichere zuerst dein aktuelles Aussehen, bevor du es ersetzt."],
+    verifiedScreens: "Grenzen des Bildnachweises",
+    visualBoundary: "Hier wird kein verifizierter Screenshot des aktuellen Importdialogs veröffentlicht. Die zwei autorisiert verwendeten historischen Bilder zeigen nur den Weg in Appearance im Client vom Dezember 2025; weder Textcode-Feld noch QR-Import sind darauf zu sehen. Sie sind Navigationskontext, kein Beleg für die Importfunktion.",
+    navigationTitle: "Appearance-Navigationskontext (historische Oberfläche)",
+    navigationAlts: ["Historisches Where-Winds-Meet-Menü mit ausgewähltem Appearance-Eintrag", "Historische Garderobe mit ausgewähltem Basis-Appearance-Tab"],
+    navigationCaptions: ["Appearance über das Spielmenü öffnen.", "Von Outfits zum Basis-Appearance-Bereich wechseln."],
     troubleshoot: "Code funktioniert nicht?",
-    fixes: ["Prüfe, ob es ein Aussehen-Code und kein Geschenkcode ist.", "Nutze das QR-Bild, falls beim Kopieren Zeichen oder Leerzeichen verändert wurden.", "Das Preset kann laden, obwohl nicht besessene Kosmetik fehlt.", "Sichere die bisherigen Regler per Screenshot, bevor du ein Gesicht überschreibst."],
-    evidence: "Menüweg und Beschränkung auf besessene Kosmetik wurden mit aktuellen SERP-Anleitungen abgeglichen. Die Bilder zeigen denselben bereits auf dieser Website dokumentierten Appearance-Ablauf; Bezeichnungen können je nach Plattform und Sprache leicht abweichen.",
+    fixes: ["Prüfe, ob es ein Aussehen-Code und kein Reward-/Geschenkcode ist.", "Fehlt das Importfeld, stoppe: Plattform oder Client-Version können einen anderen Weg nutzen.", "Bitte den Ersteller um einen neuen Share, wenn der Text abgeschnitten oder abgelehnt wird; meide Quellen ohne Herkunftsnachweis.", "Nutze ein QR-Bild nur, wenn der Charaktereditor eine QR-Bildoption zeigt.", "Sichere das aktuelle Gesicht per Screenshot, bevor du es ersetzt."],
+    evidence: "Die offizielle Character-Share-Seite zeigt, dass Where Winds Meet Aussehen als kopierbaren Code und QR-Bild teilt. PC Gamer dokumentierte im November 2025 für PC den Ablauf mit V-Taste, Einfügen und QR-Bild. Hier wird kein verifizierter Screenshot des aktuellen Importdialogs veröffentlicht; maßgeblich sind die Beschriftungen im aktuellen Client.",
   },
 } as const;
 
@@ -78,7 +93,7 @@ const commerceCopy = {
     steps: ["Open the commerce or trade interface and note the current weekly modifiers before buying.", "Compare destinations or other worlds; buy where the live modifier is favorable and sell where demand is higher.", "Start with a small trade to confirm the route and current return before using the rest of your allowance.", "Recheck after the weekly refresh instead of relying on an old screenshot or fixed-price guide."],
     spend: "What are Commerce Coins used for?",
     uses: ["Trading and commerce progression.", "Selected social or world activities that ask for commerce currency.", "Community guides also report sect-related uses; verify the live tooltip before spending because requirements can change."],
-    evidence: "Google Trends shows rising interest for “commerce coin.” The trade loop is synthesized from current SERP guides and the embedded walkthrough, not from a static official price table. Exact prices and limits are deliberately omitted because they are live-state dependent.",
+    evidence: "Google Trends shows rising interest for “commerce coin.” The trade loop is synthesized from current SERP guides and an Italian-language creator walkthrough by GoGamesGuide, not from a static official price table. Exact prices and limits are deliberately omitted because they are live-state dependent.",
   },
   vi: {
     title: "Commerce Coins trong Where Winds Meet: cách kiếm và sử dụng",
@@ -140,13 +155,36 @@ export default function GrowthOpportunityGuidePage({ language, kind }: { languag
 
   if (kind === "character-codes") {
     const c = characterCopy[language];
-    const captions = c.steps;
-    const images = ["step-1-open-appearance.webp", "step-2-switch-appearance-tab.webp", "step-3-edit-face.webp", "step-4-choose-preset.webp", "step-5-preview.webp"].map((name, i) => ({ src: `/guides/the-great-faceologist/${name}`, alt: `${c.title} – ${i + 1}`, caption: captions[Math.min(i, captions.length - 1)] }));
+    const appearanceNavigationImages = [
+      {
+        src: "/guides/the-great-faceologist/step-1-open-appearance.webp",
+        alt: c.navigationAlts[0],
+        caption: c.navigationCaptions[0],
+      },
+      {
+        src: "/guides/the-great-faceologist/step-2-switch-appearance-tab.webp",
+        alt: c.navigationAlts[1],
+        caption: c.navigationCaptions[1],
+      },
+    ];
     return <GuideShell language={language} eyebrow={ui.checked} title={c.title} intro={c.intro}>
-      <section><h2 className="text-3xl font-bold text-slate-50">{c.quick}</h2><StepList items={c.steps} /><p className="mt-4 text-xs text-slate-400">{ui.imageHelp}</p><div className="mt-3"><LightboxGallery items={images} columns={2} /></div></section>
+      <section><h2 className="text-3xl font-bold text-slate-50">{c.quick}</h2><StepList items={c.steps} /></section>
+      <section className="rounded-3xl border border-slate-700 bg-slate-950/60 p-6">
+        <h2 className="text-2xl font-bold text-slate-50">{c.verifiedScreens}</h2>
+        <p className="mt-3 text-sm leading-6 text-slate-300">{c.visualBoundary}</p>
+        <h3 className="mt-5 text-lg font-semibold text-slate-100">{c.navigationTitle}</h3>
+        <div className="mt-3"><LightboxGallery items={appearanceNavigationImages} columns={2} /></div>
+        <p className="mt-3 text-xs leading-5 text-amber-200">
+          Publisher: AllThings.How. Reuse authorization confirmed by site owner 2026-08-29. These images document
+          Appearance navigation only; they do not demonstrate text-code or QR import.
+        </p>
+        <a href="https://allthings.how/how-to-use-the-great-faceologist-event-in-where-winds-meet/" target="_blank" rel="noreferrer" className="mt-2 inline-flex text-xs font-semibold text-sky-200 underline underline-offset-4 hover:text-sky-100">
+          Historical image source ↗
+        </a>
+      </section>
       <section className="rounded-3xl border border-amber-400/30 bg-amber-500/10 p-6"><h2 className="text-2xl font-bold text-slate-50">{c.troubleshoot}</h2><ul className="mt-4 space-y-2 text-sm text-slate-200">{c.fixes.map(x => <li key={x}>• {x}</li>)}</ul></section>
-      <Evidence label={ui.sourceNote} text={c.evidence} links={[{href:"https://allthings.how/where-winds-meet-how-to-import-character-customization-data/",label:"Import walkthrough"},{href:"https://www.pcgamer.com/games/rpg/where-winds-meet-customization-codes/",label:"Customization examples"}]} />
-      <Related title={ui.related} links={[{href:`${prefix}/guides/codes`,label:"Reward / redeem codes"},{href:`${prefix}/guides/the-great-faceologist`,label:"Appearance gallery route"},{href:`${prefix}/guides/free-outfits`,label:"Free outfits"}]} />
+      <Evidence label={ui.sourceNote} text={c.evidence} links={[{href:"https://www.wherewindsmeetgame.com/2026/yq/en/",label:"Official character-share format"},{href:"https://www.pcgamer.com/games/rpg/where-winds-meet-customization-codes/",label:"PC Gamer (November 2025 PC flow)"}]} />
+      <Related title={ui.related} links={[{href:"/guides/codes",label:"Reward / redeem codes"},{href:`${prefix}/guides/the-great-faceologist`,label:"Appearance gallery route"},{href:`${prefix}/guides/free-outfits`,label:"Free outfits"}]} />
     </GuideShell>;
   }
 
@@ -154,17 +192,17 @@ export default function GrowthOpportunityGuidePage({ language, kind }: { languag
     const c = commerceCopy[language];
     return <GuideShell language={language} eyebrow={ui.checked} title={c.title} intro={c.intro}>
       <section><h2 className="text-3xl font-bold text-slate-50">{c.earn}</h2><StepList items={c.steps} /></section>
-      <section className="grid gap-6 lg:grid-cols-2"><div className="rounded-3xl border border-amber-400/30 bg-amber-500/10 p-6"><h2 className="text-2xl font-bold text-slate-50">{c.spend}</h2><ul className="mt-4 space-y-3 text-sm leading-6 text-slate-200">{c.uses.map(x => <li key={x}>• {x}</li>)}</ul></div><div><p className="mb-3 text-xs font-semibold uppercase tracking-wide text-emerald-300">{ui.video}</p><LiteYouTubeEmbed videoId="XCfdIFQjIKI" title={c.title} poster="https://i.ytimg.com/vi/XCfdIFQjIKI/hqdefault.jpg" analytics={{eventName:"guide_video_play",params:{guide:"commerce-coins"}}} /></div></section>
-      <Evidence label={ui.sourceNote} text={c.evidence} links={[{href:"https://www.gamerguides.com/where-winds-meet/guide/getting-started/currencies/commerce-coins",label:"Commerce Coin reference"},{href:"https://www.youtube.com/watch?v=XCfdIFQjIKI",label:"Trading walkthrough"}]} />
+      <section className="grid gap-6 lg:grid-cols-2"><div className="rounded-3xl border border-amber-400/30 bg-amber-500/10 p-6"><h2 className="text-2xl font-bold text-slate-50">{c.spend}</h2><ul className="mt-4 space-y-3 text-sm leading-6 text-slate-200">{c.uses.map(x => <li key={x}>• {x}</li>)}</ul></div><div><p className="mb-3 text-xs font-semibold uppercase tracking-wide text-emerald-300">{ui.video} · GoGamesGuide · Italian</p><LiteYouTubeEmbed videoId="XCfdIFQjIKI" title="GoGamesGuide Italian-language Commerce Coin walkthrough" poster="/background/bg4.webp" analytics={{eventName:"guide_video_play",params:{guide:"commerce-coins"}}} /></div></section>
+      <Evidence label={ui.sourceNote} text={c.evidence} links={[{href:"https://www.gamerguides.com/where-winds-meet/guide/getting-started/currencies/commerce-coins",label:"Commerce Coin reference"},{href:"https://www.youtube.com/watch?v=XCfdIFQjIKI",label:"GoGamesGuide Italian-language creator walkthrough"}]} />
       <Related title={ui.related} links={[{href:`${prefix}/guides/sects`,label:"Sects guide"},{href:`${prefix}/guides/new-players`,label:"New-player route"},{href:`${prefix}/guides/items`,label:"Items database"}]} />
     </GuideShell>;
   }
 
   const c = mountainCopy[language];
   return <GuideShell language={language} eyebrow={ui.checked} title={c.title} intro={c.intro}>
-    <section className="grid gap-6 lg:grid-cols-[1fr_1.05fr]"><div><h2 className="text-3xl font-bold text-slate-50">{c.unlock}</h2><StepList items={c.steps} /></div><div><p className="mb-3 text-xs font-semibold uppercase tracking-wide text-emerald-300">{ui.video}</p><LiteYouTubeEmbed videoId="5_FI471ah5A" title="Where Winds Meet Hidden Mountain official trailer" poster="https://i.ytimg.com/vi/5_FI471ah5A/hqdefault.jpg" analytics={{eventName:"guide_video_play",params:{guide:"hidden-mountain"}}} /></div></section>
+    <section className="grid gap-6 lg:grid-cols-[1fr_1.05fr]"><div><h2 className="text-3xl font-bold text-slate-50">{c.unlock}</h2><StepList items={c.steps} /></div><div><p className="mb-3 text-xs font-semibold uppercase tracking-wide text-emerald-300">{ui.video} · Xbox official channel</p><LiteYouTubeEmbed videoId="5_FI471ah5A" title="Where Winds Meet Hidden Mountain official trailer" poster="/background/bg4.webp" analytics={{eventName:"guide_video_play",params:{guide:"hidden-mountain"}}} /></div></section>
     <section className="rounded-3xl border border-sky-400/30 bg-sky-500/10 p-6"><h2 className="text-2xl font-bold text-slate-50">{c.v21}</h2><ul className="mt-4 grid gap-3 md:grid-cols-3">{c.changes.map(x => <li key={x} className="rounded-2xl border border-sky-300/20 bg-slate-950/50 p-4 text-sm leading-6 text-slate-200">{x}</li>)}</ul></section>
-    <Evidence label={ui.sourceNote} text={c.evidence} links={[{href:"https://www.wherewindsmeetgame.com/news/official/719devletter.html",label:"Official Hidden Mountain letter"},{href:"https://www.wherewindsmeetgame.com/news/official/821devletter.html",label:"Official Version 2.1 letter"},{href:"https://www.altchar.com/guides/where-winds-meet-hidden-mountain-how-to-unlock-the-new-region-aC5T63k6437t",label:"Unlock route reference"}]} />
+    <Evidence label={ui.sourceNote} text={c.evidence} links={[{href:"https://www.wherewindsmeetgame.com/news/official/719devletter.html",label:"Official Hidden Mountain letter"},{href:"https://www.wherewindsmeetgame.com/news/official/821devletter.html",label:"Official Version 2.1 letter"},{href:"https://www.youtube.com/watch?v=5_FI471ah5A",label:"Official Xbox trailer source"},{href:"https://www.altchar.com/guides/where-winds-meet-hidden-mountain-how-to-unlock-the-new-region-aC5T63k6437t",label:"Unlock route reference"}]} />
     <Related title={ui.related} links={[{href:`${prefix}/guides/heavens-threshold-cloudstair`,label:"Heaven’s Threshold / Cloudstair"},{href:`${prefix}/guides/evershift-labyrinth`,label:"Evershift Labyrinth"},{href:`${prefix}/guides/clouded-revelation`,label:"Version 2.1 guide"},{href:`${prefix}/tools/interactive-map`,label:"Interactive map"},{href:`${prefix}/guides/bosses`,label:"Boss guides"}]} />
   </GuideShell>;
 }

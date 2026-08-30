@@ -32,22 +32,24 @@ const guideSections = [
       "Offizieller Where Winds Meet Plattformstatus fuer Xbox, PS5, PC, iOS, Android, Mobile, Cross-Play und Account-Linking.",
   },
   {
-    title: "PvP-Meta-Tierliste",
-    slug: "/de/guides/pvp-tier-list",
-    label: "PvP",
+    title: "PvP-Evidenzprüfung",
+    slug: "/guides/pvp-tier-list",
+    label: "Version 2.1",
     icon: "⚔️",
     color: "text-red-400",
     size: "medium",
-    description: "Duelliere dominierend mit den aktuellen Meta-Rankings, abgestimmt auf den neuesten Patch.",
+    description:
+      "Modusspezifische Version-2.1-Evidenz und Matchup-Prüfungen; keine Buchstabenränge ohne reproduzierbare Stichprobe.",
   },
   {
-    title: "Patch Notes / Upcoming Nerfs",
+    title: "Patch Notes / aktueller Stand",
     slug: "/de/guides/patch-notes",
     label: "Updates",
     icon: "🧭",
     color: "text-red-300",
     size: "small",
-    description: "Version 1.7, Path Balance, upcoming nerfs und Impact auf Arena ranks, Builds und Bosse.",
+    description:
+      "Offizielle Version-2.1-Updates, datierte Patch-Historie, Balance-Evidenz und Build-Neuprüfung.",
   },
   {
     title: "Heaven’s Threshold & Cloudstair",
@@ -119,7 +121,8 @@ const guideSections = [
     icon: "🗡️",
     color: "text-blue-400",
     size: "small",
-    description: "Vollständige Werte und Hintergründe zu jeder Waffe.",
+    description:
+      "Quellenstatus, Rolle, Paarungen und Routen für den aktuellen Bestand aus acht Waffen.",
   },
   {
     title: "Kampfkünste-Waffen",
@@ -178,7 +181,7 @@ const guideSections = [
   },
   {
     title: "An Unholy Prophecy",
-    slug: "/de/guides/unholy-prophecy",
+    slug: "/guides/unholy-prophecy",
     label: "Jianghu Legacy",
     icon: "🔮",
     color: "text-purple-300",
@@ -212,7 +215,7 @@ const guideSections = [
     color: "text-cyan-300",
     size: "small",
     description:
-      "Warum Mistveil City gesperrt ist (22. vs 26. Jan 2026) + Vorbereitung: Ephemeral Blight und die drei Cure-Notizen.",
+      "Historische Freischalt-Timeline, aktuelle Voraussetzungen, Route, Ephemeral Blight und Blocker-Hilfe.",
   },
   {
     title: "One Leaf, One Life",
@@ -326,7 +329,7 @@ const guideSections = [
   },
   {
     title: "Aktive Codes",
-    slug: "/de/guides/codes",
+    slug: "/guides/codes",
     label: "Gratis",
     icon: "🎁",
     color: "text-yellow-400",
@@ -410,13 +413,13 @@ export default function GuidesPage() {
             href="/de/news#organic-search-watch"
             className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-blue-400/60 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-200 transition hover:border-blue-300/80 hover:text-blue-100"
           >
-            News: Future Draw, Arena ranks, upcoming nerfs
+            News: Version 2.1, Balance-Evidenz und Update-Verlauf
           </Link>
           <Link
-            href="/de/guides/tier-list#arena-ranks"
+            href="/guides/tier-list#arena-ranks"
             className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-400/60 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-200 transition hover:border-emerald-300/80 hover:text-emerald-100"
           >
-            WWM arena ranks und Tierlisten-Checks
+            Version-2.1-PvP-Evidenz und Tierlisten-Prüfung
           </Link>
         </div>
 

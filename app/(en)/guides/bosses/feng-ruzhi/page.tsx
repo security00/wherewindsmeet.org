@@ -12,17 +12,17 @@ const slug = "/guides/bosses/feng-ruzhi";
 const heroPath = "/guides/bosses/feng-ruzhi/hero.webp";
 const mapPath = "/guides/bosses/feng-ruzhi/map.webp";
 const heavenfallPath = "/guides/bosses/feng-ruzhi/heavenfall.webp";
-
 const game8VideoBase = "/guides/bosses/feng-ruzhi/game8";
 const game8PosterBase = "/guides/bosses/feng-ruzhi/game8/posters";
 const rubyVideo = "/guides/bosses/feng-ruzhi/preview.mp4";
+const game8Source = "https://game8.co/games/Where-Winds-Meet/archives/570793";
 
 const heroOgImage = getImageUrl(heroPath);
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Feng Ruzhi – Location, Unlock & Boss Guide",
   description:
-    "Where Winds Meet Feng Ruzhi guide: unlock (Heavenfall), location in Roaring Sands / Verdant Hill Village, Silk Ball steal (recover it in ~15 seconds), and safer ways to beat her.",
+    "Where Winds Meet Feng Ruzhi guide: reported Heavenfall unlock, Roaring Sands / Verdant Hill Village location, Silk Ball fail condition, evidence limits, and safer practice habits.",
   keywords: [
     "where winds meet feng ruzhi",
     "where winds meet feng ruzhi location",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Where Winds Meet Feng Ruzhi – Location, Unlock & Boss Guide",
     description:
-      "Unlock Feng Ruzhi via Heavenfall, find her in Roaring Sands / Verdant Hill Village, and learn the Silk Ball mechanic (recover it fast or you lose).",
+      "Reported Feng Ruzhi unlock and location route, the Silk Ball fail condition, evidence limits, and safer practice habits.",
     url: `${baseUrl}${slug}`,
     siteName: "Where Winds Meet Hub",
     images: [
@@ -62,7 +62,7 @@ const quickFacts = [
   { label: "Boss type", value: "World Boss (also appears in the Heavenfall campaign)" },
   { label: "Region", value: "Kaifeng → Roaring Sands → Verdant Hill Village" },
   { label: "Unlock requirement", value: "Complete the Heavenfall campaign (Update 1.1 era)" },
-  { label: "Fail condition", value: "If your Silk Ball is stolen and not recovered in ~15 seconds" },
+  { label: "Fail condition", value: "Community reports describe a short Silk Ball recovery window; verify the timer in your current build" },
   { label: "What to watch", value: "Yellow-glint steal/grab attempts and combo finishers you can parry" },
 ];
 
@@ -77,11 +77,11 @@ const faq = [
   },
   {
     q: "How long do you have to recover the Silk Ball?",
-    a: "Most guides and player reports describe a very short recovery window—roughly 15 seconds. If you miss it, the attempt ends even if your HP is still high.",
+    a: "This is a community-reported short recovery window. Treat the visible in-game timer as authoritative and verify the current build rather than relying on an old exact number.",
   },
   {
     q: "Why did I instantly fail the fight?",
-    a: "Feng Ruzhi can steal your Silk Ball on specific yellow-glint attacks. If you don’t retrieve it quickly (often described as ~15 seconds), the game counts it as a defeat even if your HP is fine.",
+    a: "Feng Ruzhi can steal your Silk Ball on specific yellow-glint attacks. Community reports describe a short recovery window; follow the visible timer in your current build.",
   },
   {
     q: "What should I do when my Silk Ball gets stolen?",
@@ -114,9 +114,9 @@ const faq = [
 ];
 
 export default function FengRuzhiBossGuidePage() {
-  const tipClips = [
+  const practiceTips = [
     {
-      title: "Recover the Silk Ball fast (≈15s)",
+      title: "Recover the Silk Ball during the reported short window",
       description:
         "If the ball gets stolen, stop “dueling” immediately. Sprint straight to the stolen ball, delete the holder, then reset back to neutral.",
       video: `${game8VideoBase}/retrieve-silk-ball.mp4`,
@@ -138,7 +138,7 @@ export default function FengRuzhiBossGuidePage() {
     },
   ] as const;
 
-  const moveClips = [
+  const reportedMoves = [
     {
       name: "Rapid Strikes",
       response: "Fast melee flurry. Dodge sideways/through and punish after the sequence ends.",
@@ -253,7 +253,11 @@ export default function FengRuzhiBossGuidePage() {
             Ball pressure.
           </p>
           <p className="text-xs text-slate-400">
-            Note: Exact mechanics and rewards can change by patch/server. If your in-game version behaves differently, trust the game first.
+            Evidence boundary: route, move names, and timer language are community-reported and were reviewed on August 28, 2026. Site owner confirmed reuse authorization on August 29, 2026 for the locally hosted Game8 screenshots and clips. Trust the current in-game journal and reward preview first. Source: {" "}
+            <a href={game8Source} target="_blank" rel="noopener noreferrer" className="font-semibold text-sky-200 underline underline-offset-4 hover:text-sky-100">
+              Game8 Feng Ruzhi guide
+            </a>
+            .
           </p>
         </div>
       </section>
@@ -280,20 +284,21 @@ export default function FengRuzhiBossGuidePage() {
             ))}
           </ul>
         </div>
-	        <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70">
-	          <CdnImage
-	            src={mapPath}
-	            alt="where winds meet feng ruzhi map location in Roaring Sands (Kaifeng)"
-	            fill
-	            className="object-cover"
-	            sizes="(max-width: 1024px) 100vw, 560px"
-	            priority={false}
-	          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent" />
-          <div className="absolute bottom-3 left-3 right-3 text-xs text-slate-100">
-            Verdant Hill Village (Roaring Sands) becomes her world boss spawn after Heavenfall.
+        <figure className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70">
+          <div className="relative aspect-video">
+            <CdnImage
+              src={mapPath}
+              alt="Feng Ruzhi location reference in Roaring Sands"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 560px"
+              priority={false}
+            />
           </div>
-        </div>
+          <figcaption className="p-3 text-xs leading-5 text-slate-300">
+            Game8 route reference, republished with confirmed reuse authorization; verify the current in-game marker because patches can move or rename objectives.
+          </figcaption>
+        </figure>
       </section>
 
 	      <section
@@ -335,20 +340,21 @@ export default function FengRuzhiBossGuidePage() {
             </ol>
           </div>
 
-          <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70">
-            <CdnImage
-              src={heavenfallPath}
-              alt="where winds meet feng ruzhi Heavenfall campaign encounter area in Roaring Sands (Kaifeng)"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 560px"
-              priority={false}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent" />
-            <div className="absolute bottom-3 left-3 right-3 text-xs text-slate-100">
-              First encounter happens during Heavenfall in Roaring Sands.
+          <figure className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70">
+            <div className="relative aspect-video">
+              <CdnImage
+                src={heavenfallPath}
+                alt="Feng Ruzhi Heavenfall encounter reference in Roaring Sands"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 560px"
+                priority={false}
+              />
             </div>
-          </div>
+            <figcaption className="p-3 text-xs leading-5 text-slate-300">
+              Heavenfall route reference from the authorized Game8 media set; confirm the active objective in your current build.
+            </figcaption>
+          </figure>
         </div>
 
         <div className="rounded-2xl border border-amber-500/40 bg-amber-500/10 p-4 text-sm text-amber-100">
@@ -383,7 +389,7 @@ export default function FengRuzhiBossGuidePage() {
               <li className="flex gap-3">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
                 <span>
-                  When it&apos;s stolen, you have a short window (commonly described as about <span className="font-semibold">15 seconds</span>) to recover it—otherwise it counts as a defeat.
+                      When it&apos;s stolen, community guides report a short recovery window. Follow the visible timer and verify the current build rather than memorizing an old exact value.
                 </span>
               </li>
               <li className="flex gap-3">
@@ -407,7 +413,7 @@ export default function FengRuzhiBossGuidePage() {
         </div>
 
         <div className="grid gap-4 lg:grid-cols-3">
-          {tipClips.map((tip) => (
+          {practiceTips.map((tip) => (
             <div key={tip.title} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 space-y-3">
               <h3 className="text-sm font-semibold text-slate-50">{tip.title}</h3>
               <LiteMp4Embed
@@ -493,10 +499,10 @@ export default function FengRuzhiBossGuidePage() {
 	        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
 	          If you&apos;re searching <span className="font-semibold">where winds meet feng ruzhi</span> to identify specific attacks, don&apos;t try to
 	          memorize everything. Instead, learn the <span className="font-semibold">tell</span>, choose a response (dodge or parry), then reset back
-	          to neutral. These short clips help you match names to animations.
+	          to neutral. The short clips below are from the authorized Game8 media set and load only after you click; use them as visual references, then verify timings in your current build.
 	        </p>
         <div className="grid gap-4 md:grid-cols-2">
-          {moveClips.map((move) => (
+          {reportedMoves.map((move) => (
             <div key={move.name} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 space-y-3">
               <div className="flex items-baseline justify-between gap-3">
                 <h3 className="text-sm font-semibold text-slate-50">{move.name}</h3>
@@ -521,42 +527,13 @@ export default function FengRuzhiBossGuidePage() {
         className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60"
       >
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          Where Winds Meet Feng Ruzhi rewards: why players farm the boss.
+          Feng Ruzhi reward verification.
         </h2>
 	        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
 	          If you searched <span className="font-semibold">where winds meet feng ruzhi</span> for the reward list, here&apos;s the simple version:
-	          Feng Ruzhi is tied to Heavenfall progression and also offers world boss drops. Rewards can vary by patch/difficulty, but typical loot
-	          includes materials (like <span className="font-semibold">Crimson Silk</span>) plus currency/XP bundles.
+	          Feng Ruzhi is reported as part of Heavenfall progression and a repeatable world-boss route. We are not publishing an exact reward table because the previous list lacked a dated, traceable current-build source.
 	        </p>
-        <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
-            <h3 className="text-sm font-semibold text-slate-50">Heavenfall completion (campaign)</h3>
-            <ul className="mt-3 space-y-1 text-sm text-slate-200">
-              <li>Medicinal Tales</li>
-              <li>Oscillating Jade × 5</li>
-              <li>Echo Jade × 60</li>
-              <li>Kaifeng Exploration × 110</li>
-              <li>Enlightenment Point × 100</li>
-              <li>Character EXP × 50,000</li>
-              <li>Coin × 50,000</li>
-            </ul>
-          </div>
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
-            <h3 className="text-sm font-semibold text-slate-50">World boss drops (repeatable)</h3>
-            <ul className="mt-3 space-y-1 text-sm text-slate-200">
-              <li>Custom Note Chest × 5</li>
-              <li>Medical Tales × 3</li>
-              <li>Crimson Silk</li>
-              <li>Echo Jade × 20</li>
-              <li>Kaifeng Exploration × 50</li>
-              <li>Character EXP × 8,000</li>
-              <li>Coin × 8,000</li>
-            </ul>
-          </div>
-        </div>
-        <p className="text-xs text-slate-400">
-          If your reward list differs, it may be due to region/server balancing or changes in a newer patch.
-        </p>
+        <div className="rounded-2xl border border-emerald-400/30 bg-emerald-500/10 p-4 text-sm leading-6 text-emerald-50">Open the encounter&apos;s in-game reward preview immediately before spending stamina or attempts. Record the platform, server, difficulty, and build date before reporting a difference.</div>
       </section>
 
       <section
@@ -564,7 +541,7 @@ export default function FengRuzhiBossGuidePage() {
         className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60"
       >
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          Video: Where Winds Meet Feng Ruzhi no-hit style runs (Legend/Abyss).
+          Third-party creator walkthrough: Feng Ruzhi run.
         </h2>
 	        <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
 	          If you searched <span className="font-semibold">where winds meet feng ruzhi</span> for a “no hit” reference, watching a clean run is the
@@ -578,9 +555,9 @@ export default function FengRuzhiBossGuidePage() {
           analytics={{ eventName: "play_video", params: { page: "feng-ruzhi" } }}
         />
         <p className="text-xs text-slate-400">
-          Embeds use YouTube privacy-enhanced mode (<span className="font-semibold">youtube-nocookie.com</span>). Video availability can change
-          if creators remove or region-lock uploads.
+          Third-party creator walkthrough, not official mechanics documentation. The player loads only after a click and uses YouTube privacy-enhanced mode. Video availability can change if the creator removes or region-locks it.
         </p>
+        <a href="https://www.youtube.com/watch?v=ImGcZ7vtI_g" target="_blank" rel="noopener noreferrer" className="inline-flex text-xs font-semibold text-sky-200 hover:text-sky-100">Open the attributed YouTube source ↗</a>
       </section>
 
       <section id="faq" className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
+import LiteMp4Embed from "@/components/LiteMp4Embed";
 import Link from "next/link";
 import { bosses } from "@/lib/bosses";
 import { getContentFreshness } from "@/lib/contentFreshness";
 import { buildHreflangAlternates } from "@/lib/hreflang";
-import { resolveCdnAssetSrc } from "@/lib/image-utils";
 
 const baseUrl = "https://wherewindsmeet.org";
 const freshness = getContentFreshness("/guides/bosses");
@@ -56,7 +56,7 @@ const versionBossWatch = [
 const bossFaqs = [
   {
     q: "Where can I find a Where Winds Meet boss list?",
-    a: "Use the boss gallery on this page as the current boss list hub, then open individual encounter pages for fight-specific prep. Start with Ghost Master, Hero's Realm, Sword Trial, Sandstorm Tavern, and Sunken City Lake if you are checking recent patch-cycle bosses.",
+    a: "Use the boss gallery on this page as a curated starting list, then open individual encounter pages for fight-specific prep. It is not presented as an exhaustive Hidden Mountain roster; use official notes and the in-game journal for encounters not yet documented here.",
   },
   {
     q: "Which bosses should new players prepare for first?",
@@ -71,7 +71,7 @@ const bossFaqs = [
 export const metadata: Metadata = {
   title: "Where Winds Meet Bosses - Boss List, Ghost Master & Dungeon Prep",
   description:
-    "Where Winds Meet bosses hub with a current boss list, Ghost Master notes, dungeon boss prep, Hero's Realm, Sword Trial, Sandstorm Tavern, builds, and weapons.",
+    "Where Winds Meet bosses hub with a curated boss list, verified patch-history notes, dungeon prep, Hero's Realm, Sword Trial, Sandstorm Tavern, builds, and weapons.",
   alternates: buildHreflangAlternates("/guides/bosses"),
 };
 
@@ -142,13 +142,13 @@ export default function BossesPage() {
         <div className="relative">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-200">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            Version 1.7 boss and dungeon guide hub
+            Version 2.1 boss-guide review
           </div>
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
             Where Winds Meet boss list, Ghost Master watch, and dungeon boss prep.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Updated {freshness?.lastChecked ?? "2026-06-24"} for {freshness?.gameVersion ?? "Version 1.7 / GSC boss-list refresh"}: this page answers the high-demand Where Winds Meet boss, bosses, and all bosses searches with a practical boss list, current patch watch, and links into builds and weapon prep. Start with Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, and Sunken City Lake notes before using older boss advice.
+            Updated {freshness?.lastChecked ?? "2026-08-26"} for {freshness?.gameVersion ?? "Version 2.1 / boss-guide wording review"}: this page answers high-demand Where Winds Meet boss searches with a curated starter list, verified historical patch notes, and links into builds and weapon prep. It does not claim to list every Hidden Mountain encounter; check official notes and the in-game journal for bosses not yet documented here.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Use it alongside the{" "}
@@ -204,7 +204,7 @@ export default function BossesPage() {
 
       <section className="space-y-6 rounded-3xl border border-amber-400/30 bg-amber-500/10 p-6 shadow-lg shadow-amber-950/30">
         <div className="space-y-2">
-          <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">Version 1.7 watchlist</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">Verified patch-history watchlist</p>
           <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
             New boss and dungeon searches to refresh first.
           </h2>
@@ -249,19 +249,7 @@ export default function BossesPage() {
               key={boss.id}
               className="group flex flex-col overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 shadow-sm shadow-slate-950/60 transition hover:border-emerald-400/80 hover:shadow-emerald-500/30"
             >
-              <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-900/80">
-                <video
-                  src={resolveCdnAssetSrc(boss.backgroundVideo).src}
-                  muted
-                  autoPlay
-                  loop
-                  playsInline
-                  preload="metadata"
-                  poster="/background/bg4.webp"
-                  className="h-full w-full object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-95"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
-              </div>
+              {boss.backgroundVideo ? <LiteMp4Embed src={boss.backgroundVideo} title={`${boss.name} publisher-hosted showcase clip`} poster="/background/bg4.webp" analytics={{ eventName: "boss_gallery_video_play", params: { boss: boss.id, locale: "en" } }} /> : <div className="relative aspect-video bg-slate-900"><CdnImage src={boss.titleImage} alt={`${boss.name} official identity art`} fill className="object-contain p-4" /></div>}
               <div className="flex flex-1 flex-col gap-2 p-4">
                 <div className="flex items-center justify-between gap-2">
                   <h3 className="text-sm font-semibold text-slate-50">
@@ -288,6 +276,7 @@ export default function BossesPage() {
                   >
                     Browse builds
                   </Link>
+                  {boss.backgroundVideo ? <a href={boss.backgroundVideo} target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-900/80 px-3 py-1 text-slate-200 ring-1 ring-slate-700/70 hover:ring-emerald-400/60">Open publisher CDN source</a> : <span className="rounded-full bg-slate-900/80 px-3 py-1 text-slate-400 ring-1 ring-slate-700/70">No licensed clip published</span>}
                 </div>
               </div>
             </article>

@@ -6,8 +6,8 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-08-21",
-    "gameVersion": "Version 2.1 / August 20 patch notes",
+    "lastChecked": "2026-08-26",
+    "gameVersion": "Version 2.1 / August 27",
     "priorityCluster": "main-keyword-recovery",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/",
@@ -16,6 +16,7 @@
       "https://www.playstation.com/en-us/games/where-winds-meet/",
       "https://play.google.com/store/apps/details?id=com.netease.yysls",
       "https://www.wherewindsmeetgame.com/m/news/",
+      "https://www.wherewindsmeetgame.com/news/official/827update.html",
       "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
       "https://www.wherewindsmeetgame.com/news/official/CloudedRevelation.html",
       "https://www.wherewindsmeetgame.com/jm/activity/3sSSr3/3NddQA?lang=en&jm_track=web_en",
@@ -101,11 +102,13 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-08-23",
-    "gameVersion": "Version 2.1 / August 21 developer letter",
+    "lastChecked": "2026-08-26",
+    "gameVersion": "Version 2.1 / August 27",
     "priorityCluster": "main-keyword-recovery",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
+      "https://www.wherewindsmeetgame.com/news/official/827update.html",
+      "https://www.wherewindsmeetgame.com/news/official/Banreport824.html",
       "https://www.wherewindsmeetgame.com/news/official/821devletter.html",
       "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
       "https://www.wherewindsmeetgame.com/news/official/CloudedRevelation.html",
@@ -133,11 +136,12 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-08-21",
-    "gameVersion": "Version 2.1 / August 20 Clouded Revelation fixes",
+    "lastChecked": "2026-08-26",
+    "gameVersion": "Version 2.1 / August 27",
     "priorityCluster": "week-1-rescue",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
+      "https://www.wherewindsmeetgame.com/news/official/827update.html",
       "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
       "https://www.wherewindsmeetgame.com/news/official/CloudedRevelation.html",
       "https://www.wherewindsmeetgame.com/jm/activity/3sSSr3/3NddQA?lang=en&jm_track=web_en",
@@ -157,12 +161,10 @@
   {
     "basePath": "/guides/codes",
     "languages": [
-      "en",
-      "vi",
-      "de"
+      "en"
     ],
-    "lastChecked": "2026-08-21",
-    "gameVersion": "Version 2.1 / August 21 code status check",
+    "lastChecked": "2026-08-26",
+    "gameVersion": "Version 2.1 / August 27",
     "priorityCluster": "week-1-rescue",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
@@ -182,11 +184,12 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-07-12",
-    "gameVersion": "Version 1.8 / July 9 Sleeping Daoist and Skyward Bond watch",
+    "lastChecked": "2026-08-26",
+    "gameVersion": "Version 2.1 / August 27",
     "priorityCluster": "week-2-ctr-rescue",
     "sourceUrls": [
       "doc/seo-data-readout-2026-06-03.md",
+      "https://www.wherewindsmeetgame.com/news/official/827update.html",
       "https://www.wherewindsmeetgame.com/news/official/625update.html",
       "https://www.wherewindsmeetgame.com/news/official/529update.html",
       "https://www.wherewindsmeetgame.com/news/official/527update.html",
@@ -243,9 +246,7 @@
   {
     "basePath": "/guides/tier-list",
     "languages": [
-      "en",
-      "vi",
-      "de"
+      "en"
     ],
     "lastChecked": "2026-08-21",
     "gameVersion": "Version 2.1 / August 20 targeted balance recheck",
@@ -284,9 +285,7 @@
   {
     "basePath": "/guides/pvp-tier-list",
     "languages": [
-      "en",
-      "vi",
-      "de"
+      "en"
     ],
     "lastChecked": "2026-08-21",
     "gameVersion": "Version 2.1 / August 20 Arena and combat fix watch",
@@ -306,9 +305,7 @@
   {
     "basePath": "/guides/weapons/tier-list",
     "languages": [
-      "en",
-      "vi",
-      "de"
+      "en"
     ],
     "lastChecked": "2026-08-21",
     "gameVersion": "Version 2.1 / August 20 Vernal Umbrella recheck",
@@ -326,9 +323,7 @@
   {
     "basePath": "/guides/qinchuan",
     "languages": [
-      "en",
-      "vi",
-      "de"
+      "en"
     ],
     "lastChecked": "2026-06-05",
     "gameVersion": "Version 1.7 / June 5 fixes",
@@ -371,9 +366,7 @@
   {
     "basePath": "/guides/imperial-decree",
     "languages": [
-      "en",
-      "vi",
-      "de"
+      "en"
     ],
     "lastChecked": "2026-08-21",
     "gameVersion": "Version 2.1 / August 21 Imperial Decree recheck",
@@ -415,8 +408,7 @@
     "sourceUrls": [
       "doc/seo-data-readout-2026-06-03.md",
       "https://www.wherewindsmeetgame.com/news/index.html",
-      "https://game8.co/games/Where-Winds-Meet/archives/565812",
-      "public/guides/npc-list/603.json"
+      "https://game8.co/games/Where-Winds-Meet/archives/565812"
     ]
   },
   {

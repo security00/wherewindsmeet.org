@@ -1,58 +1,46 @@
 'use client';
 
+import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useMemo, useState } from "react";
+import { usePathname } from "next/navigation";
+import { buildLocalizedPath, stripLocalePrefix } from "@/i18n/routing.mjs";
+
+type SuggestedLocale = "vi" | "de";
 
 type LanguageSite = {
   countryCodes: string[];
-  path: string;
-  label: string;
-  message: string;
-  cta: string;
-  stayCta: string;
+  locale: SuggestedLocale;
+};
+
+type PromptSite = LanguageSite & {
+  targetPath: string;
 };
 
 const LANGUAGE_SITES: LanguageSite[] = [
-  {
-    countryCodes: ["VN"],
-    path: "/vn",
-    label: "Tiếng Việt",
-    message: "Hiện đã có phiên bản tiếng Việt.",
-    cta: "Chuyển sang Tiếng Việt",
-    stayCta: "Tiếp tục dùng bản hiện tại",
-  },
-  {
-    countryCodes: ["DE", "AT", "CH", "LI", "LU"],
-    path: "/de",
-    label: "Deutsch",
-    message: "Es gibt jetzt auch eine deutsche Version.",
-    cta: "Zur deutschen Seite wechseln",
-    stayCta: "Auf dieser Seite bleiben",
-  },
+  { countryCodes: ["VN"], locale: "vi" },
+  { countryCodes: ["DE", "AT", "CH", "LI", "LU"], locale: "de" },
 ];
 
 const STORAGE_KEY = "wwm-lang-choice";
 
 export function LanguageSwitchPrompt({ geoApiEndpoint }: { geoApiEndpoint?: string }) {
-  const [promptSite, setPromptSite] = useState<LanguageSite | null>(null);
+  const t = useTranslations("languagePrompt");
+  const locale = useLocale();
+  const pathname = usePathname();
+  const [promptSite, setPromptSite] = useState<PromptSite | null>(null);
   const geoEndpoint = useMemo(
-    () => geoApiEndpoint || process.env.NEXT_PUBLIC_GEOIP_ENDPOINT || "https://ipapi.co/json/",
-    [geoApiEndpoint]
+    () => geoApiEndpoint || process.env.NEXT_PUBLIC_GEOIP_ENDPOINT || "",
+    [geoApiEndpoint],
   );
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined" || locale !== "en" || !geoEndpoint) return;
 
     const storedChoice = window.localStorage.getItem(STORAGE_KEY);
-    if (storedChoice === "dismiss") return;
-    if (storedChoice?.startsWith("switched:")) return;
-
-    const currentPath = window.location.pathname;
-    const alreadyOnSupportedSite = LANGUAGE_SITES.some(
-      (site) => currentPath === site.path || currentPath.startsWith(`${site.path}/`)
-    );
-    if (alreadyOnSupportedSite) return;
+    if (storedChoice === "dismiss" || storedChoice?.startsWith("switched:")) return;
 
     const controller = new AbortController();
+    const basePath = stripLocalePrefix(pathname || window.location.pathname);
 
     const fetchCountry = async () => {
       try {
@@ -62,23 +50,17 @@ export function LanguageSwitchPrompt({ geoApiEndpoint }: { geoApiEndpoint?: stri
         const countryCodeRaw =
           data?.country_code || data?.countryCode || data?.country || data?.countryCodeIso2;
         const countryCode = typeof countryCodeRaw === "string" ? countryCodeRaw.toUpperCase() : "";
-        if (!countryCode) return;
-
-        const site = LANGUAGE_SITES.find((entry) =>
-          entry.countryCodes.some((code) => code.toUpperCase() === countryCode)
-        );
+        const site = LANGUAGE_SITES.find((entry) => entry.countryCodes.includes(countryCode));
         if (!site) return;
 
-        const currentPath = window.location.pathname;
-        if (currentPath === site.path || currentPath.startsWith(`${site.path}/`)) return;
-
-        setPromptSite(site);
+        const targetPath = buildLocalizedPath(basePath, site.locale);
+        if (!targetPath) return;
+        setPromptSite({ ...site, targetPath });
       } catch (error) {
         if ((error as Error).name === "AbortError") return;
       }
     };
 
-    // Delay geo lookup until the browser is idle to protect INP/LCP on first view.
     const fallbackTimeoutId = window.setTimeout(fetchCountry, 1500);
     const idleId =
       typeof window.requestIdleCallback === "function"
@@ -87,7 +69,7 @@ export function LanguageSwitchPrompt({ geoApiEndpoint }: { geoApiEndpoint?: stri
               window.clearTimeout(fallbackTimeoutId);
               fetchCountry();
             },
-            { timeout: 3000 }
+            { timeout: 3000 },
           )
         : null;
 
@@ -98,20 +80,18 @@ export function LanguageSwitchPrompt({ geoApiEndpoint }: { geoApiEndpoint?: stri
         window.cancelIdleCallback(idleId);
       }
     };
-  }, [geoEndpoint]);
+  }, [geoEndpoint, locale, pathname]);
 
-  if (!promptSite) {
-    return null;
-  }
+  if (!promptSite) return null;
+
+  const messageKey = `suggestions.${promptSite.locale}`;
 
   const handleSwitch = () => {
-    if (typeof window === "undefined") return;
-    window.localStorage.setItem(STORAGE_KEY, `switched:${promptSite.path}`);
-    window.location.assign(promptSite.path);
+    window.localStorage.setItem(STORAGE_KEY, `switched:${promptSite.locale}`);
+    window.location.assign(promptSite.targetPath);
   };
 
   const handleStay = () => {
-    if (typeof window === "undefined") return;
     window.localStorage.setItem(STORAGE_KEY, "dismiss");
     setPromptSite(null);
   };
@@ -120,18 +100,16 @@ export function LanguageSwitchPrompt({ geoApiEndpoint }: { geoApiEndpoint?: stri
     <div className="pointer-events-none fixed inset-x-0 bottom-4 z-[70] px-4 sm:bottom-6">
       <div
         role="dialog"
-        aria-label="Language suggestion"
+        aria-label={t("dialogAria")}
         className="pointer-events-auto mx-auto max-w-xl rounded-2xl border border-amber-400/50 bg-amber-50/10 p-4 text-sm text-amber-50 shadow-lg shadow-amber-900/30 backdrop-blur"
-        style={{
-          paddingBottom: "max(1rem, env(safe-area-inset-bottom))",
-        }}
+        style={{ paddingBottom: "max(1rem, env(safe-area-inset-bottom))" }}
       >
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="space-y-1">
             <p className="text-base font-semibold text-amber-100">
-              {promptSite.path === "/vn" ? "Đã hỗ trợ:" : "Jetzt verfügbar:"} {promptSite.label}
+              {t(`${messageKey}.available`)} {t(`${messageKey}.label`)}
             </p>
-            <p className="text-xs text-amber-100/80">{promptSite.message}</p>
+            <p className="text-xs text-amber-100/80">{t(`${messageKey}.message`)}</p>
           </div>
           <div className="flex flex-wrap items-center gap-2">
             <button
@@ -139,14 +117,14 @@ export function LanguageSwitchPrompt({ geoApiEndpoint }: { geoApiEndpoint?: stri
               onClick={handleSwitch}
               className="inline-flex items-center justify-center rounded-full bg-amber-400 px-4 py-2 text-sm font-semibold text-amber-950 shadow-md shadow-amber-900/30 transition hover:bg-amber-300"
             >
-              {promptSite.cta}
+              {t(`${messageKey}.cta`)}
             </button>
             <button
               type="button"
               onClick={handleStay}
               className="inline-flex items-center justify-center rounded-full border border-amber-300/60 bg-amber-100/10 px-4 py-2 text-sm font-semibold text-amber-50 transition hover:border-amber-200/80 hover:text-amber-100"
             >
-              {promptSite.stayCta}
+              {t(`${messageKey}.stayCta`)}
             </button>
           </div>
         </div>

@@ -271,7 +271,7 @@ export default function RisingQueryGuidePage() {
       <section className="rounded-3xl border border-cyan-400/25 bg-cyan-500/10 p-6 shadow-lg shadow-slate-950/40">
         <h2 className="text-2xl font-bold text-cyan-50">Visual answer card: Travel Permit fields</h2>
         <p className="mt-2 max-w-3xl text-sm leading-6 text-cyan-50/80">
-          This is an original visual checklist. Replace these cards with our own in-game screenshots later; for now they make the route and answer sequence scannable without copying another site’s images.
+          This is an original schematic checklist, not an in-game screenshot. It summarizes the route and does not prove current UI or map state.
         </p>
         <div className="mt-5 grid gap-3 md:grid-cols-4">
           <div className="relative rounded-2xl border border-cyan-300/30 bg-slate-950/75 p-4">

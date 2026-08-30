@@ -4,23 +4,35 @@
   "private": true,
   "scripts": {
     "dev": "node ./scripts/run-with-baseline-env.cjs dev",
-    "build": "node ./scripts/run-with-baseline-env.cjs build",
+    "build": "node ./scripts/run-with-baseline-env.cjs build --webpack",
+    "build:static": "NEXT_STATIC_EXPORT=1 node ./scripts/run-with-baseline-env.cjs build --webpack",
     "start": "node ./scripts/run-with-baseline-env.cjs start",
-    "seo:check": "node ./scripts/seo-check.cjs && npm run seo:check:freshness",
+    "test": "node --test --test-concurrency=1 tests/*.test.mjs",
+    "test:generated": "node tests/i18n-generated-output.check.mjs",
+    "seo:check": "npm run build:static && npm run test:generated && node ./scripts/seo-check.cjs && npm run seo:check:freshness",
     "seo:check:live": "node ./scripts/seo-check.cjs --origin https://wherewindsmeet.org",
-    "seo:check:full": "npm run build && npm run seo:check",
+    "seo:check:full": "npm run seo:check",
     "seo:check:freshness": "node ./scripts/seo-freshness-check.cjs",
     "seo:check:hreflang": "node ./scripts/seo-hreflang-regression.cjs --origin https://wherewindsmeet.org",
     "seo:gsc:prioritize": "node ./scripts/gsc-priority.cjs",
     "seo:freshness:update": "node ./scripts/update-content-freshness.cjs",
     "seo:freshness:update:dry": "node ./scripts/update-content-freshness.cjs --dry-run",
-    "lint": "eslint"
+    "lint": "eslint",
+    "cf:build": "opennextjs-cloudflare build",
+    "cf:preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "cf:smoke": "node scripts/worker-smoke.mjs",
+    "cf:deploy:artifact": "opennextjs-cloudflare deploy",
+    "cf:deploy": "npm run cf:build && npm run cf:deploy:artifact",
+    "cf:release": "npm run cf:deploy",
+    "cf:typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.20.4",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.24",
     "mime-types": "^3.0.2",
-    "next": "^16.0.7",
+    "next": "^16.3.3",
+    "next-intl": "^4.14.1",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-intersection-observer": "^10.0.0"
@@ -32,8 +44,9 @@
     "@types/react-dom": "^19",
     "baseline-browser-mapping": "^2.9.6",
     "eslint": "^9",
-    "eslint-config-next": "^16.0.7",
+    "eslint-config-next": "^16.3.3",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.127.1"
   }
 }

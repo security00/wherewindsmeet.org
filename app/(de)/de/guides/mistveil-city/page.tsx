@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
-import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
+import MistveilCityAuthorizedMedia from "@/components/guides/MistveilCityAuthorizedMedia";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
-const cdnBaseUrl = (process.env.NEXT_PUBLIC_CDN_URL || "https://static.wherewindsmeet.org").replace(/\/+$/, "");
-const heroImagePath = "/guides/mistveil-city/allthings/Screenshot-2026-01-10-100403-1.png";
-const heroImageForMeta = `${cdnBaseUrl}${heroImagePath}`;
+const allThingsSourceUrl =
+  "https://allthings.how/where-winds-meet-mistveil-forest-cures-and-mistveil-city-unlock/";
+const walkthroughSourceUrl =
+  "https://www.youtube.com/results?search_query=Where+Winds+Meet+Ephemeral+Blight+100%25+Guides";
+const mistveilHero = `${baseUrl}/guides/mistveil-city/allthings/Screenshot-2026-01-10-100403-1.png`;
 
 export const metadata: Metadata = {
   title: "Mistveil City: Freischaltdatum & Sperre | Where Winds Meet",
@@ -19,14 +21,7 @@ export const metadata: Metadata = {
       "Mistveil City ist für viele Spieler aktuell zeitlich gesperrt. Erfahre, was die Sperre bedeutet, wann es öffnen könnte und wie du Ephemeral Blight in Mistveil Forest abschließt.",
     url: `${baseUrl}/de/guides/mistveil-city`,
     siteName: "Where Winds Meet Hub",
-    images: [
-      {
-        url: heroImageForMeta,
-        width: 1206,
-        height: 678,
-        alt: "Nebel-Screenshot aus der Mistveil-Region in Where Winds Meet",
-      },
-    ],
+    images: [{ url: mistveilHero, width: 1206, height: 678, alt: "Historische Aufnahme der Mistveil-City-Sperre" }],
     locale: "de_DE",
     type: "article",
   },
@@ -35,12 +30,7 @@ export const metadata: Metadata = {
     title: "Mistveil City: Freischaltdatum & Sperre | Where Winds Meet",
     description:
       "Warum Mistveil City gesperrt ist, welche Daten genannt werden (22. vs 26. Jan 2026) und was du in Mistveil Forest in der Zwischenzeit erledigen solltest.",
-    images: [
-      {
-        url: heroImageForMeta,
-        alt: "Nebel-Screenshot aus der Mistveil-Region in Where Winds Meet",
-      },
-    ],
+    images: [mistveilHero],
   },
 };
 
@@ -99,98 +89,9 @@ const breadcrumbStructuredData = {
   ],
 };
 
-const allThingsImages = {
-  mistveilCover: {
-    src: "/guides/mistveil-city/allthings/image-1048-1.webp",
-    caption: "Bildquelle: NetEase",
-    alt: "Szene aus der Mistveil-Region",
-  },
-  talkToZhaiXu: {
-    src: "/guides/mistveil-city/allthings/image-1049-1-1.webp",
-    caption:
-      "Sprich mit Zhai Xu über den Anhänger und den giftigen Nebel | Bildquelle: NetEase (via YouTube/@100% Guides)",
-    alt: "Gespräch mit Zhai Xu über den Anhänger und den Nebel",
-  },
-  meridianTouchChime: {
-    src: "/guides/mistveil-city/allthings/image-1050.webp",
-    caption:
-      "Nutze Meridian Touch am Windspiel draußen | Bildquelle: NetEase (via YouTube/@100% Guides)",
-    alt: "Meridian Touch an einem Windspiel verwenden",
-  },
-  readThousandWish: {
-    src: "/guides/mistveil-city/allthings/image-1051-1.webp",
-    caption:
-      "Öffne deinen Beutel (B), wechsle zu den Quest-Gegenständen und lies die Thousand-Wish Amendment | Bildquelle: NetEase (via YouTube/@100% Guides)",
-    alt: "Thousand-Wish Amendment in Quest-Gegenständen lesen",
-  },
-  postStation: {
-    src: "/guides/mistveil-city/allthings/image-1052-1.webp",
-    caption:
-      "Reise zur Soulshade Umbrella – Post Station | Bildquelle: NetEase (via YouTube/@100% Guides)",
-    alt: "Ort: Soulshade Umbrella – Post Station",
-  },
-  stealthGuard: {
-    src: "/guides/mistveil-city/allthings/image-1053-1.webp",
-    caption: "Werde den Wächter leise los | Bildquelle: NetEase (via YouTube/@100% Guides)",
-    alt: "Leiser Takedown eines Wächters",
-  },
-  aureateOutpost: {
-    src: "/guides/mistveil-city/allthings/image-1054-1.webp",
-    caption: "Reise zum Außenposten Aureate Pavilion | Bildquelle: NetEase (via YouTube/@100% Guides)",
-    alt: "Ort: Außenposten Aureate Pavilion",
-  },
-  aureateCure: {
-    src: "/guides/mistveil-city/allthings/image-1055-1.webp",
-    caption:
-      "Hole den Aureate Pavilion Mistveil-Forest-Cure aus der zentralen Hütte | Bildquelle: NetEase (via YouTube/@100% Guides)",
-    alt: "Aureate-Pavilion-Cure in der zentralen Hütte finden",
-  },
-  turnInCures: {
-    src: "/guides/mistveil-city/allthings/image-1056-1.webp",
-    caption: "Sprich mit Zhai Xu und gib die Gegenstände ab | Bildquelle: NetEase (via YouTube/@100% Guides)",
-    alt: "Gegenstände an Zhai Xu übergeben",
-  },
-  receiveMedicine: {
-    src: "/guides/mistveil-city/allthings/image-1057-1.webp",
-    caption: "Sprich mit Zhai Xu, um die Medizin nahe des Waldes zu erhalten | Bildquelle: NetEase (via YouTube/@100% Guides)",
-    alt: "Medizin von Zhai Xu nahe des Waldes erhalten",
-  },
-  forestGuards: {
-    src: "/guides/mistveil-city/allthings/image-1058-1.webp",
-    caption: "Schalte die Aureate-Pavilion-Wachen im Wald aus | Bildquelle: NetEase (via YouTube/@100% Guides)",
-    alt: "Kampf gegen Wachen im Mistveil Forest",
-  },
-  burnBloomsPendant: {
-    src: "/guides/mistveil-city/allthings/image-1059-1.webp",
-    caption:
-      "Nutze Feuerpfeile, um die Blüten zu verbrennen, bevor du den Jadeanhänger aufhebst | Bildquelle: NetEase (via YouTube/@100% Guides)",
-    alt: "Giftblüten mit Feuerpfeilen verbrennen",
-  },
-  pathUnderground: {
-    src: "/guides/mistveil-city/allthings/image-1060-1.webp",
-    caption: "Folge dem Weg in die Untergrund-Ebene | Bildquelle: NetEase (via YouTube/@100% Guides)",
-    alt: "Pfad führt in die Untergrund-Ebene",
-  },
-  deductionInterface: {
-    src: "/guides/mistveil-city/allthings/image-1061-1.webp",
-    caption:
-      "Öffne das Deduktions-Interface und kombiniere die Hinweise | Bildquelle: NetEase (via YouTube/@100% Guides)",
-    alt: "Deduktions-Interface: Hinweise kombinieren",
-  },
-  followPuppet: {
-    src: "/guides/mistveil-city/allthings/image-1062-1.webp",
-    caption:
-      "Folge dem Sleeping Puppet durch das Höhlensystem | Bildquelle: NetEase (via YouTube/@100% Guides)",
-    alt: "Dem Sleeping Puppet in der Höhle folgen",
-  },
-} as const;
-
-type WalkthroughImage = (typeof allThingsImages)[keyof typeof allThingsImages];
-
 type WalkthroughStep = {
   title: string;
   detail: string;
-  images?: WalkthroughImage[];
 };
 
 type WalkthroughSection = {
@@ -211,19 +112,16 @@ const walkthroughSections: WalkthroughSection[] = [
         title: "In Wishing Cove aufwachen und mit Zhai Xu reden",
         detail:
           "Heb den Jadeanhänger neben dem Bett auf, dann sprich mit Zhai Xu über den Anhänger und den giftigen Nebel, um die Cure-Kette zu starten.",
-        images: [allThingsImages.talkToZhaiXu],
       },
       {
         title: "Wind Sense nutzen, dann mit Meridian Touch ablenken",
         detail:
           "Im Haus nutzt du Wind Sense, um die zwei Bücher auf dem Tisch zu finden — aber Zhai Xu warnt dich, dich nicht einzumischen. Stell dich ans Fenster über dem Tisch und nutze Meridian Touch am Windspiel, um ihn nach draußen zu locken.",
-        images: [allThingsImages.meridianTouchChime],
       },
       {
         title: "Bücher lesen und das 3-Cure-Ziel freischalten",
         detail:
           "Während Zhai Xu draußen ist, lies beide Bücher (Wishing-Cove-Cure + Thousand-Wish Amendment). Öffne danach Beutel → Quest-Gegenstände und lies die Amendment: Sie listet die drei Mistveil-Forest-Cures, die du brauchst (Wishing Cove, Hollow Abode, Aureate Pavilion).",
-        images: [allThingsImages.readThousandWish],
       },
     ],
   },
@@ -234,7 +132,6 @@ const walkthroughSections: WalkthroughSection[] = [
         title: "Zur Soulshade Umbrella – Post Station (Skill-Theft-Dungeon)",
         detail:
           "Reise südwestlich von Mistveil Forest zur Soulshade Umbrella – Post Station. Dein Ziel ist nur das Cure-Dokument — du musst nicht den gesamten Dungeon abschließen.",
-        images: [allThingsImages.postStation],
       },
       {
         title: "Schleichweg: Ranken → Fenster → Treppe",
@@ -245,7 +142,6 @@ const walkthroughSections: WalkthroughSection[] = [
         title: "Touch of Death am Wächter, dann das Cure looten",
         detail:
           "Warte, bis die Patrouille wegschaut, schalte ihn leise mit Touch of Death aus, finde den Nebenraum mit der grünen Kerze und nimm den Hollow-Abode-Cure vom Tisch.",
-        images: [allThingsImages.stealthGuard],
       },
     ],
   },
@@ -256,13 +152,11 @@ const walkthroughSections: WalkthroughSection[] = [
         title: "Zum Außenposten Aureate Pavilion (nördlich des Nebels)",
         detail:
           "Geh am Rand von Mistveil Forest entlang zum Außenposten Aureate Pavilion. Wenn du einen nahegelegenen Teleporter freigeschaltet hast, nutze ihn, um den Weg abzukürzen.",
-        images: [allThingsImages.aureateOutpost],
       },
       {
         title: "Cure aus der zentralen Hütte holen (bei der mumifizierten Leiche)",
         detail:
           "Dein Ziel ist die Haupthütte in der Mitte des Außenpostens. Kämpf dich durch oder schleiche mit Bewegungsskills hinein; drinnen liegt das Cure auf einem Tisch neben einer mumifizierten Leiche.",
-        images: [allThingsImages.aureateCure],
       },
     ],
   },
@@ -272,7 +166,6 @@ const walkthroughSections: WalkthroughSection[] = [
       {
         title: "Alle drei Cures in Wishing Cove abgeben",
         detail: "Kehre zu Zhai Xu zurück und gib die drei Cure-Notizen ab, damit er mit dem Antidot beginnen kann.",
-        images: [allThingsImages.turnInCures],
       },
       {
         title: "Zeit um zwei volle In-Game-Tage vorspulen",
@@ -283,7 +176,6 @@ const walkthroughSections: WalkthroughSection[] = [
         title: "Zhai Xu am Nordufer treffen und den Feuern folgen",
         detail:
           "Folge dem Questmarker an den Nordrand, sprich mit Zhai Xu, um die Medizin zu erhalten, und geh dann weiter, während du nahe bei den Feuern entlang der Route bleibst (sie wirken als temporäre sichere Zonen).",
-        images: [allThingsImages.receiveMedicine],
       },
     ],
   },
@@ -294,13 +186,11 @@ const walkthroughSections: WalkthroughSection[] = [
         title: "Wachen beseitigen und den blütenblockierten Pfad erreichen",
         detail:
           "Geh tiefer in den Wald; du triffst auf weitere Aureate-Pavilion-Wachen. Schalte sie aus, um das Gebiet zu sichern, und erreiche einen Pfad, der von Dawn-to-Dusk-Blüten blockiert ist.",
-        images: [allThingsImages.forestGuards],
       },
       {
         title: "Blüten verbrennen, dann den Baum mit den hängenden Leichen durchsuchen",
         detail:
           "Rüste Feuerpfeile aus und verbrenne die Giftblüten, um den Weg zu öffnen. Geh weiter, bis du den riesigen Baum mit hängenden Leichen findest; zerstöre dort die drei Blüten, besiege die Sleeping Puppets, die aufwachen, und nimm den halben Jadeanhänger auf, der nahe beim Baum droppt.",
-        images: [allThingsImages.burnBloomsPendant],
       },
     ],
   },
@@ -311,19 +201,16 @@ const walkthroughSections: WalkthroughSection[] = [
         title: "Dem Schatten der Silver Needle in den Untergrund folgen",
         detail:
           "Nachdem du den Anhänger aufgenommen hast, erscheint eine Schattenfigur und zieht sich zurück. Folge dem Questpfad in ein unterirdisches Versteck, das in einem Raum mit einer mumifizierten Leiche endet.",
-        images: [allThingsImages.pathUnderground],
       },
       {
         title: "Sun Buqis Notizen lesen und Deduktionen starten",
         detail:
           "Durchsuche den Raum, lies Sun Buqi’s Notes und die Dokumente in der Nähe, öffne dann das Deduktions-Interface und kombiniere die Hinweise zu einer stimmigen Geschichte.",
-        images: [allThingsImages.deductionInterface],
       },
       {
         title: "Dem Sleeping Puppet folgen und die letzten Blüten zerstören",
         detail:
           "Nachdem du die Deduktionen bestätigt hast, interagiere mit dem ungewöhnlichen Sleeping Puppet bei der Mumie. Folge ihm durch die Höhlen zum Nebel-Ursprung und zerstöre die drei großen Blüten, die den Fog aufrechterhalten. Kehre danach zu Zhai Xu zurück, um Ephemeral Blight abzuschließen und Mistveil Forest dauerhaft zu klären.",
-        images: [allThingsImages.followPuppet],
       },
     ],
   },
@@ -340,17 +227,7 @@ export default function MistveilCityPage() {
       />
 
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-2xl shadow-slate-950/40 sm:p-8">
-        <div className="pointer-events-none absolute inset-0">
-          <CdnImage
-            src={heroImagePath}
-            alt="Mistveil City Vorschau"
-            fill
-            className="object-cover opacity-45"
-            priority
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/35" />
-        </div>
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-emerald-950/35 via-slate-950 to-slate-950" />
 
         <div className="relative z-10 max-w-4xl space-y-4">
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/50 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
@@ -392,6 +269,26 @@ export default function MistveilCityPage() {
         </ul>
       </section>
 
+      <section className="space-y-3 rounded-3xl border border-amber-500/30 bg-amber-500/10 p-6 shadow-lg">
+        <h2 className="text-lg font-semibold text-amber-100">Quellen- und Mediengrenze</h2>
+        <p className="text-sm leading-relaxed text-amber-50/90">
+          Diese Text-Route nutzt Walkthroughs aus der Community nur zum Gegenprüfen, nicht als offizielle Spielanleitung.
+          Publisher: AllThings.How. Reuse authorization confirmed by site owner 2026-08-29. Die Aufnahmen dokumentieren
+          einen Ablauf vom Januar 2026 und sind kein Beleg für den aktuellen Build. Prüfe veränderliche Ziele im aktuellen
+          Client und in offiziellen Patch Notes.
+        </p>
+        <div className="flex flex-wrap gap-4">
+          <a href={allThingsSourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex text-sm font-semibold text-amber-100 underline underline-offset-4 hover:text-amber-50">
+            Quellenartikel bei AllThings.How lesen →
+          </a>
+          <a href={walkthroughSourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex text-sm font-semibold text-amber-100 underline underline-offset-4 hover:text-amber-50">
+            Genannten 100%-Guides-Walkthrough auf YouTube suchen →
+          </a>
+        </div>
+      </section>
+
+      <MistveilCityAuthorizedMedia locale="de" />
+
       <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
           Warum Mistveil City gesperrt ist (und was die Meldung bedeutet).
@@ -405,22 +302,6 @@ export default function MistveilCityPage() {
           gesperrt, bis die Entwickler sie freischalten. Das erklärt auch, warum Spieler mit sehr unterschiedlichen Builds, Sektenwahl und Quest-Fortschritt
           denselben Countdown mit Zwangsteleport am Mistveil-City-Eingang sehen.
         </p>
-        <figure className="rounded-2xl border border-slate-800 bg-slate-900/30 p-3">
-          <div className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60">
-            <CdnImage
-              src={allThingsImages.mistveilCover.src}
-              alt={allThingsImages.mistveilCover.alt}
-              loading="lazy"
-              width={1133}
-              height={637}
-              className="h-auto w-full"
-              sizes="(max-width: 1024px) 100vw, 720px"
-            />
-          </div>
-          <figcaption className="mt-2 text-[11px] leading-relaxed text-slate-300">
-            {allThingsImages.mistveilCover.caption}
-          </figcaption>
-        </figure>
         <div className="rounded-2xl border border-slate-800 bg-slate-900/30 p-4">
           <h3 className="text-sm font-semibold text-slate-50">Praktisches Fazit</h3>
           <p className="mt-2 text-xs leading-relaxed text-slate-200">
@@ -497,8 +378,8 @@ export default function MistveilCityPage() {
 
       <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg">
         <div className="flex items-center gap-2">
-          <span className="text-lg">🖼️</span>
-          <h2 className="text-2xl font-bold text-slate-50">Ephemeral Blight Schritt-für-Schritt (mit Screenshots)</h2>
+          <span className="text-lg">🧭</span>
+          <h2 className="text-2xl font-bold text-slate-50">Ephemeral Blight als Text-Walkthrough</h2>
         </div>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
           Mistveil City kann zeitlich gesperrt sein, aber du kannst Ephemeral Blight trotzdem jetzt abschließen und Mistveil Forest dauerhaft klären. Dieser
@@ -517,26 +398,6 @@ export default function MistveilCityPage() {
                     <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">Schritt {index + 1}</p>
                     <p className="text-sm font-semibold text-slate-100">{step.title}</p>
                     <p className="text-sm leading-relaxed text-slate-200">{step.detail}</p>
-                    {step.images ? (
-                      <div className={step.images.length > 1 ? "grid gap-3 sm:grid-cols-2 lg:grid-cols-3" : "space-y-3"}>
-                        {step.images.map((image) => (
-                          <figure key={image.src} className="rounded-xl border border-slate-800 bg-slate-900/60 p-2">
-                            <div className="overflow-hidden rounded-lg border border-slate-800 bg-slate-900/60">
-                              <CdnImage
-                                src={image.src}
-                                alt={image.alt}
-                                loading="lazy"
-                                width={1600}
-                                height={900}
-                                className="h-auto w-full"
-                                sizes="(max-width: 1024px) 100vw, 520px"
-                              />
-                            </div>
-                            <figcaption className="mt-2 text-[11px] leading-relaxed text-slate-300">{image.caption}</figcaption>
-                          </figure>
-                        ))}
-                      </div>
-                    ) : null}
                   </li>
                 ))}
               </ol>

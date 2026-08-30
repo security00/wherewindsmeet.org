@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
+import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
 import { featuredVideos } from "@/lib/featuredVideos";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -8,18 +9,18 @@ const baseUrl = "https://wherewindsmeet.org";
 export const metadata: Metadata = {
   title: "Where Winds Meet Videos - 2026 Updates, Tier Lists & Xbox Gameplay",
   description:
-    "Watch fresh Where Winds Meet videos for 2026 updates, Version 1.7 Imperial Palace, Xbox gameplay, PvP tier lists, events, builds, and guide checks.",
+    "Watch a dated, curated selection of Where Winds Meet videos covering 2026 updates, Hidden Mountain, Xbox gameplay, PvP tier lists, events, and builds.",
   alternates: buildHreflangAlternates("/videos"),
   openGraph: {
     title: "Where Winds Meet Videos - 2026 Updates, Tier Lists & Xbox Gameplay",
     description:
-      "Fresh Where Winds Meet videos for Version 1.7, Xbox gameplay, PvP tier lists, Imperial Palace events, builds, and update checks.",
+      "Dated Where Winds Meet videos for Hidden Mountain, Xbox gameplay, PvP tier lists, Imperial Palace context, builds, and update research.",
     url: `${baseUrl}/videos`,
   },
   twitter: {
     title: "Where Winds Meet Videos - 2026 Updates, Tier Lists & Xbox Gameplay",
     description:
-      "Fresh Where Winds Meet videos for Version 1.7, Xbox gameplay, PvP tier lists, Imperial Palace events, builds, and update checks.",
+      "Dated Where Winds Meet videos for Hidden Mountain, Xbox gameplay, PvP tier lists, Imperial Palace context, builds, and update research.",
   },
 };
 
@@ -82,30 +83,31 @@ export default function VideosPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Watch fresh Where Winds Meet videos, updates, tier lists, and Xbox gameplay.
+            Watch curated Where Winds Meet videos, update history, tier lists, and Xbox gameplay.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            This page gathers recently refreshed Where Winds Meet videos in one quiet
-            place: Version 1.7 Imperial Palace coverage, Xbox launch gameplay, PvP
-            tier lists, event guides, build showcases, and returner-friendly update
-            checks.
+            This page gathers a dated selection of Where Winds Meet videos in one quiet
+            place: Hidden Mountain and Imperial Palace coverage, Xbox launch gameplay,
+            PvP tier lists, event guides, build showcases, and returner context.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             It is built for broad searches like where winds meet and where the winds
             meet, then nudges visitors into the site&apos;s codes, maps, tier lists,
-            builds, and patch-note pages after they see what is current.
+            builds, and patch-note pages. Use the publication date on each card and the
+            official news page before treating a video as current guidance.
           </p>
         </div>
       </section>
 
       <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          Fresh curated Where Winds Meet videos.
+          Curated Where Winds Meet videos with publication dates.
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          Each card embeds a recent or update-relevant Where Winds Meet video directly
-          on this page. Use them as freshness support for Version 1.7, Xbox launch,
-          PvP tier lists, Imperial Palace events, and build research.
+          Each card embeds an update-relevant Where Winds Meet video directly on this
+          page. Use it as visual context for Xbox launch, Hidden Mountain, Imperial
+          Palace, PvP tier lists, and build research—not as a substitute for current
+          official patch notes.
         </p>
         <div className="grid gap-6 md:grid-cols-2">
           {featuredVideos.map((video) => (
@@ -113,28 +115,29 @@ export default function VideosPage() {
               key={video.id}
               className="space-y-3 rounded-3xl border border-slate-800 bg-slate-950/80 p-4 shadow-sm shadow-slate-950/60"
             >
-              <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
-                <div className="aspect-video bg-slate-950/80">
-                  <iframe
-                    title={video.title}
-                    src={`https://www.youtube-nocookie.com/embed/${video.id}?rel=0&modestbranding=1&playsinline=1`}
-                    className="h-full w-full border-0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                  />
-                </div>
-              </div>
+              <LiteYouTubeEmbed
+                videoId={video.id}
+                title={video.title}
+                poster="/background/bg4.webp"
+                analytics={{ eventName: "videos_gallery_play", params: { locale: "en" } }}
+              />
               <p className="text-sm font-medium text-slate-100">
                 {video.title}
               </p>
               <p className="text-[11px] font-semibold uppercase tracking-wide text-emerald-300">
-                Refreshed pick - {video.publishedAt}
+                Published - {video.publishedAt}
               </p>
               <p className="text-xs leading-relaxed text-slate-300">
                 {video.description}
               </p>
+              <a
+                href={`https://www.youtube.com/watch?v=${video.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex text-xs font-semibold text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+              >
+                Open the source video on YouTube
+              </a>
             </article>
           ))}
         </div>

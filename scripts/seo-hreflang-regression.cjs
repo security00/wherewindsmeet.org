@@ -123,29 +123,25 @@ const extractLinks = (html) => {
   return { canonical: canonical || canonicalFromFlight, alternates };
 };
 
-const languagePrefixFromPath = (path) => {
-  if (path.startsWith("/de/")) return "/de";
-  if (path.startsWith("/vn/")) return "/vn";
-  return "";
-};
-
-const stripPrefix = (path, prefix) => {
-  if (!prefix) return path;
-  if (path === prefix) return "/";
-  return path.startsWith(prefix) ? path.slice(prefix.length) : path;
-};
-
-const buildExpectedHreflang = (origin, normalizedPath) => {
+const toOriginUrl = (origin, path) => {
   const base = normalizeOrigin(origin);
-  return {
-    "en-US": `${base}${normalizedPath}`,
-    "vi-VN": `${base}/vn${normalizedPath}`,
-    "de-DE": `${base}/de${normalizedPath}`,
-    "x-default": `${base}${normalizedPath}`,
-  };
+  return `${base}${path === "/" ? "" : path}`;
 };
 
-const checkPage = async (origin, path) => {
+const buildExpectedHreflang = (origin, normalizedPath, routing) => {
+  const expected = {};
+  for (const locale of routing.getAvailableLocales(normalizedPath)) {
+    const localizedPath = routing.buildLocalizedPath(normalizedPath, locale);
+    if (!localizedPath) continue;
+    expected[routing.LOCALE_CONFIG[locale].hrefLang] = toOriginUrl(origin, localizedPath);
+  }
+
+  const defaultPath = routing.buildLocalizedPath(normalizedPath, "en");
+  if (defaultPath) expected["x-default"] = toOriginUrl(origin, defaultPath);
+  return expected;
+};
+
+const checkPage = async (origin, path, routing) => {
   const url = `${origin}${path}`;
   let response;
   try {
@@ -167,10 +163,14 @@ const checkPage = async (origin, path) => {
   const html = await response.text();
   const { canonical, alternates } = extractLinks(html);
 
-  const prefix = languagePrefixFromPath(path);
-  const normalizedPath = stripPrefix(path, prefix) || "/";
+  const locale = routing.localeFromPathname(path);
+  const normalizedPath = routing.stripLocalePrefix(path);
+  const canonicalPath =
+    routing.buildLocalizedPath(normalizedPath, locale) ||
+    routing.buildLocalizedPath(normalizedPath, "en") ||
+    "/";
 
-  const expectedCanonical = normalizeUrl(`${origin}${prefix}${normalizedPath}`, origin);
+  const expectedCanonical = normalizeUrl(toOriginUrl(origin, canonicalPath), origin);
   const actualCanonical = normalizeUrl(canonical, origin);
 
   const errors = [];
@@ -182,7 +182,7 @@ const checkPage = async (origin, path) => {
     errors.push(`Canonical mismatch: expected ${expectedCanonical}, got ${actualCanonical}`);
   }
 
-  const expectedAlternates = buildExpectedHreflang(origin, normalizedPath);
+  const expectedAlternates = buildExpectedHreflang(origin, normalizedPath, routing);
   for (const [lang, expectedHref] of Object.entries(expectedAlternates)) {
     const actual = alternates[lang];
     if (!actual) {
@@ -196,9 +196,10 @@ const checkPage = async (origin, path) => {
     }
   }
 
-  const alternateCount = Object.keys(alternates).length;
-  if (alternateCount && alternateCount < 3) {
-    warnings.push(`Only ${alternateCount} hreflang alternates found`);
+  for (const lang of Object.keys(alternates)) {
+    if (!(lang in expectedAlternates)) {
+      errors.push(`Unexpected hreflang alternate: ${lang}`);
+    }
   }
 
   return { ok: errors.length === 0, path, url, errors, warnings };
@@ -213,7 +214,7 @@ Usage:
   node scripts/seo-hreflang-regression.cjs [--origin https://wherewindsmeet.org]
 
 Notes:
-  - Checks that EN/VN/DE boss + weapon detail pages return 200 and emit expected canonical + hreflang URLs.
+  - Checks every reviewed boss + weapon locale owner from the positive locale manifest.
   - Reads IDs from \`lib/bosses.ts\` and \`lib/weapons.ts\`.
   - Retries transient network errors up to ${DEFAULT_RETRIES} times per page.
 `);
@@ -227,16 +228,23 @@ Notes:
 
   const bossIds = readUnionTypeStrings(resolve("lib/bosses.ts"), "BossId");
   const weaponIds = readUnionTypeStrings(resolve("lib/weapons.ts"), "WeaponId");
+  const routing = await import("../i18n/routing.mjs");
 
-  const paths = [
-    ...bossIds.flatMap((id) => [`/guides/bosses/${id}`, `/de/guides/bosses/${id}`, `/vn/guides/bosses/${id}`]),
-    ...weaponIds.flatMap((id) => [`/guides/weapons/${id}`, `/de/guides/weapons/${id}`, `/vn/guides/weapons/${id}`]),
+  const basePaths = [
+    ...bossIds.map((id) => `/guides/bosses/${id}`),
+    ...weaponIds.map((id) => `/guides/weapons/${id}`),
   ];
+  const paths = basePaths.flatMap((basePath) =>
+    routing
+      .getAvailableLocales(basePath)
+      .map((locale) => routing.buildLocalizedPath(basePath, locale))
+      .filter(Boolean),
+  );
 
   const results = [];
   for (const path of paths) {
     console.log(`- Checking ${path}`);
-    results.push(await checkPage(origin, path));
+    results.push(await checkPage(origin, path, routing));
   }
 
   const failures = results.filter((r) => !r.ok);

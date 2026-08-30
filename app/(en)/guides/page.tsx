@@ -32,24 +32,24 @@ const guideSections = [
       "Official Where Winds Meet platform status for Xbox, PS5, PC, iOS, Android, mobile, cross-play, and account-linking checks.",
   },
   {
-    title: "PVP Meta Tier List",
+    title: "PVP Evidence Review",
     slug: "/guides/pvp-tier-list",
-    label: "Competitive",
+    label: "Version 2.1",
     icon: "⚔️",
     color: "text-red-400",
     size: "medium",
     description:
-      "Dominate duels with the current meta rankings. Updated for the latest patch.",
+      "Mode-specific Version 2.1 evidence and matchup checks; no letter rank is published without a reproducible sample.",
   },
   {
-    title: "Patch Notes / Upcoming Nerfs",
+    title: "Patch Notes / Current Baseline",
     slug: "/guides/patch-notes",
     label: "Balance",
     icon: "!",
     color: "text-red-300",
     size: "medium",
     description:
-      "Version 1.7 patch notes, Path Balance, upcoming nerf watch, arena-rank impact, and build reset checks.",
+      "Version 2.1 official updates, dated patch history, balance evidence, and build recheck steps.",
   },
   {
     title: "Best Builds",
@@ -62,13 +62,14 @@ const guideSections = [
       "Flexible setups for every playstyle. Tank, DPS, and Support archetypes.",
   },
   {
-    title: "WWM Weapon Tier List",
+    title: "Weapon Evidence Review",
     slug: "/guides/weapons/tier-list",
-    label: "Best Weapons",
+    label: "8 Weapons",
     icon: "🗡️",
     color: "text-blue-400",
     size: "medium",
-    description: "Best Where Winds Meet weapons ranked for PVE, PVP, arena, and endgame builds.",
+    description:
+      "Version 2.1 roster coverage and mode-specific evidence without an unsupported universal ranking.",
   },
   {
     title: "Weapon Encyclopedia",
@@ -77,7 +78,8 @@ const guideSections = [
     icon: "📚",
     color: "text-blue-300",
     size: "small",
-    description: "Complete stats and lore for every weapon.",
+    description:
+      "Source-status, role, pairing, and route coverage for the current eight-weapon roster.",
   },
   {
     title: "Martial Arts Weapons",
@@ -222,7 +224,8 @@ const guideSections = [
     icon: "🏙️",
     color: "text-cyan-300",
     size: "small",
-    description: "Why Mistveil City is locked (Jan 22 vs Jan 26) + what to do now: Ephemeral Blight and cures.",
+    description:
+      "Historical unlock timeline, current prerequisites, route checks, Ephemeral Blight, and blocker recovery.",
   },
   {
     title: "One Leaf, One Life",
@@ -478,13 +481,13 @@ export default function GuidesPage() {
             href="/guides/tier-list#arena-ranks"
             className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-red-400/60 bg-red-500/10 px-4 py-2 text-sm font-semibold text-red-100 transition hover:border-red-300/80 hover:text-red-50"
           >
-            WWM arena ranks and upcoming nerf watch
+              Version 2.1 PVP evidence and balance watch
           </Link>
           <Link
             href="/guides/weapons/tier-list"
             className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-blue-400/60 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-100 transition hover:border-blue-300/80 hover:text-blue-50"
           >
-            🗡️ Trending: WWM weapon tier list and best weapons
+              🗡️ Version 2.1 weapon evidence and build checks
           </Link>
         </div>
 

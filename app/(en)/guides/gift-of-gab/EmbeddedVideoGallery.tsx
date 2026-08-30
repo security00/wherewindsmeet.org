@@ -12,6 +12,7 @@ export type EmbeddedVideoGalleryUiText = {
   intro: string;
   privacyTitle: string;
   privacyText: string;
+  sourceLabel: string;
 };
 
 const DEFAULT_VIDEOS: EmbeddedVideo[] = [
@@ -40,7 +41,8 @@ const DEFAULT_UI_TEXT: EmbeddedVideoGalleryUiText = {
   intro: "Watch these embedded tutorials to see Gift of Gab gameplay, strategies, and progression in action.",
   privacyTitle: "Privacy Notice",
   privacyText:
-    "These videos use YouTube's privacy-enhanced mode (nocookie), which doesn't set cookies or store your watch history unless you click \"Watch on YouTube.\"",
+    "YouTube is not contacted until you click a preview. Playback then uses privacy-enhanced mode (nocookie), and the provider's policy applies.",
+  sourceLabel: "Open source video on YouTube",
 };
 
 type Props = {
@@ -66,6 +68,7 @@ export default function EmbeddedVideoGallery({ videos, uiText }: Props) {
             videoId={video.videoId}
             title={video.title}
             description={video.description}
+            sourceLabel={resolvedUiText.sourceLabel}
           />
         ))}
       </div>

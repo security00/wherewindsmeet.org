@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
+import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -7,175 +8,100 @@ const baseUrl = "https://wherewindsmeet.org";
 const cdnBase = "https://static.wherewindsmeet.org";
 const heroImagePath = "/guides/mist-shrouded-prison/youtube-cover.jpg";
 const heroImage = `${cdnBase}${heroImagePath}`;
-const cdn = (path: string) => `${cdnBase}${path}`;
 
 const walkthrough = [
   {
     title: "Eingang zur Mist-Shrouded Prison finden",
     detail:
       "Schließe „The Ephemeral Blight“ ab, liefere alle Mistveil Forest Cures bei Zhai Xu ab, um das Antidot zu erhalten, nimm den Aufzug nahe Central Mistveil Forest und verbrenne die erste blaue Knospe mit einem Feuerpfeil, um die Gruft zu öffnen.",
-    image: { src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-tomb-location-in-wwm-where-winds-meet.jpg"), alt: "Eingang der Mist-Shrouded Prison Gruft" },
   },
   {
     title: "Loop 1 Start: geäderte Tür rechts",
     detail: "Vom Eingang aus ist rechts ein Raum mit Adern einer blauen Knospe versiegelt – jetzt ignorieren. Links die Leiter hoch; diese Gruft dreht drei Loops.",
-    image: { src: cdn("/guides/mist-shrouded-prison/gr/loop-1-mist-shrouded-prison-chest-1-location-in-wwm-where-winds-meet.jpg"), alt: "Loop-1-Flur Übersicht" },
   },
   {
     title: "Truhe 1 (roter Raum mit der roten Dame)",
     detail: "Geh in den rot beleuchteten Raum; dort steht in Loop 1 die rote Dame. Truhe 1 liegt neben ihr.",
-    image: { src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-1-location-in-wwm-where-winds-meet.jpg"), alt: "Fundort Truhe 1 Mist-Shrouded Prison" },
   },
   {
     title: "Frostpilz-Korridor und Knospe",
     detail: "Verlasse den Raum, geh durch den Frostpilz-Giftkorridor und verbrenne die blaue Knospe dahinter mit einem Feuerpfeil, um weiterzukommen.",
-    image: { src: cdn("/guides/mist-shrouded-prison/gr/loop-1-destroy-bud-with-fire-in-wwm-where-winds-meet.jpg"), alt: "Knospe mit Feuer verbrennen" },
   },
   {
     title: "Truhe 2 (Deckenstachel-Trigger)",
     detail: "Weiter zu Truhe 2; beim Öffnen fallen Stacheln von oben. Öffnen und kurz zurücktreten.",
-    image: { src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-2-location-in-wwm-where-winds-meet.jpg"), alt: "Fundort Truhe 2" },
   },
   {
     title: "Truhe 3 (linker Gang über Stacheln)",
     detail: "Auf die anhebenden Stacheln springen, dann links in den kleinen Gang abbiegen, um Truhe 3 zu holen.",
-    image: { src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-3-location-in-wwm-where-winds-meet.jpg"), alt: "Fundort Truhe 3" },
   },
   {
     title: "Über die Stacheln auf die andere Seite",
     detail: "Nutze die Stacheln erneut, um auf die Gegenseite zu gelangen, und klettere die Leiter zum oberen Pfad.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest.png"),
-      alt: "Stachelraum Übersicht",
-    },
   },
   {
     title: "Druckplatte aktivieren",
     detail: "Auf die Platte treten, damit die horizontalen Stacheln losfahren; zurück Richtung Eingang und ihnen folgen.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/press-the-pressure-plate-to-activate-spikes-in-wwm-where-winds-meet.jpg"),
-      alt: "Druckplatte für Stacheln",
-    },
   },
   {
     title: "Truhe 4 (hinter den fahrenden Stacheln)",
     detail: "Wenn die Stacheln nach vorn rollen, direkt dahinter entlanglaufen und Truhe 4 einsammeln.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-4-location-in-wwm-where-winds-meet.jpg"),
-      alt: "Fundort Truhe 4",
-    },
   },
   {
     title: "Hinabfallen für Loop 2",
     detail: "Durch das Tor gehen und in den ersten Raum hinunterfallen. Die rote Dame neben der Leiter signalisiert Loop 2.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/how-to-enter-loop-2-in-wwm-where-winds-meet.jpg"),
-      alt: "Einstieg in Loop 2",
-    },
   },
   {
     title: "Stachelraum in Loop 2 wiederholen",
     detail: "Korridor überqueren, Stachelraum erneut lösen, Leiter hoch, Platte drücken, weiter – so schiebst du das Layout in den letzten Loop.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/step-11.png"),
-      alt: "Loop-2-Reset im Stachelraum",
-    },
   },
   {
     title: "Loop 3 betreten",
     detail: "Nach der Wiederholung befindest du dich in Loop 3 – der letzten Rotation.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/enter-loop-3-in-wwm-where-winds-meet.jpg"),
-      alt: "Eingang zu Loop 3",
-    },
   },
   {
     title: "Rote Dame im Blau-Blumen-Korridor",
     detail: "Leiter hoch, rechts abbiegen: Im blau besäumten Gang steht nun die rote Dame – Bestätigung für Loop 3.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/loop-3-in-wwm-where-winds-meet.jpg"),
-      alt: "Loop-3-Korridor mit blauen Blumen",
-    },
   },
   {
     title: "Truhe 5 (Giftkorridor)",
     detail: "Durch das Gift durchlaufen und Truhe 5 im Gang öffnen.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-5-location-in-wwm-where-winds-meet.jpg"),
-      alt: "Fundort Truhe 5",
-    },
   },
   {
     title: "Zweite blaue Knospe zerstören",
     detail: "Korridor verlassen, nächste blaue Knospe verbrennen und zum Raum mit dem Zettel weitergehen.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/destroy-blue-bud-2-in-wwm-where-winds-meet.jpg"),
-      alt: "Zweite Knospe verbrennen",
-    },
   },
   {
     title: "Auf die fahrenden Stacheln fallen",
     detail: "Im Zettelraum nach unten schauen, warten bis die horizontalen Stacheln aus Loop 2 ausrichten, dann auf sie hinabspringen.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/jump-onto-the-moving-spikes-in-wwm-where-winds-meet.jpg"),
-      alt: "Sprung auf die beweglichen Stacheln",
-    },
   },
   {
     title: "Zur Ecke fahren und Hinterhalt räumen",
     detail: "Wenn die Stacheln sich der Kante nähern, abspringen und den Gegner im Hinterhalt besiegen.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/step-17.png"),
-      alt: "Hinterhalt nahe den Stacheln",
-    },
   },
   {
     title: "Truhe 6 (Loop-3-Belohnung)",
     detail: "Truhe 6 in diesem Abschnitt öffnen, sobald der Hinterhalt geklärt ist.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-6-location-in-wwm-where-winds-meet.jpg"),
-      alt: "Fundort Truhe 6",
-    },
   },
   {
     title: "Zu den früheren Hallen absteigen",
     detail: "Weitergehen und durch das lange Loch fallen, um nahe dem Ort von Truhe 3 aus Loop 1 zu landen.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/drop-from-chest-6-location-to-return-to-loop-1-in-wwm-where-winds-meet.jpg"),
-      alt: "Abstieg zurück Richtung Loop 1",
-    },
   },
   {
     title: "Über den Stachelpfad zurück",
     detail: "Zum Stachelraum, die beweglichen Stacheln hinauf, links in den kleinen Gang springen, dann durch die zwei Löcher in den breiten Korridor fallen.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/frop-down-from-chest-in-loop-2-in-wwm-where-winds-meet.jpg"),
-      alt: "Rückweg über den Stachelraum",
-    },
   },
   {
     title: "Knospe am Korridorende entfernen",
     detail: "Am Ende die blaue Knospe mit Feuerpfeil verbrennen und durch das Tor zurück in den Startraum gehen.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/remove-the-bud-to-open-the-final-door-in-wwm-where-winds-meet.jpg"),
-      alt: "Letzte Knospe verbrennen",
-    },
   },
   {
     title: "Letzte Schatztruhe",
     detail: "Den ehemals geäderten Raum aus Loop 1 betreten und die finale Truhe hinten öffnen.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/final-treasure-wide.jpg"),
-      alt: "Letzte Schatztruhe in der Gruft",
-    },
   },
   {
     title: "Rest in Peace",
     detail: "Am Marker Respekt zollen, um die Mist-Shrouded Prison abzuschließen.",
-    image: {
-      src: cdn("/guides/mist-shrouded-prison/gr/pray-to-red-lady-in-wwm-where-winds-meet.jpg"),
-      alt: "Interaktion 'Rest in Peace'",
-    },
   },
 ];
 
@@ -222,6 +148,32 @@ const quickFacts = [
   { label: "Gefahren", value: "Frostpilz-Gift, bewegliche Stacheln, blaue Knospen", icon: "⚠️" },
   { label: "Vorbereitung", value: "The Ephemeral Blight abschließen, Cures sammeln, Aufzug am Central Mistveil Forest nehmen", icon: "🧪" },
 ];
+
+const walkthroughImagePaths = [
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-tomb-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/loop-1-mist-shrouded-prison-chest-1-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-1-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/loop-1-destroy-bud-with-fire-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-2-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-3-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest.png",
+  "/guides/mist-shrouded-prison/gr/press-the-pressure-plate-to-activate-spikes-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-4-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/how-to-enter-loop-2-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/step-11.png",
+  "/guides/mist-shrouded-prison/gr/enter-loop-3-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/loop-3-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-5-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/destroy-blue-bud-2-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/jump-onto-the-moving-spikes-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/step-17.png",
+  "/guides/mist-shrouded-prison/gr/mist-shrouded-prison-chest-6-location-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/drop-from-chest-6-location-to-return-to-loop-1-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/frop-down-from-chest-in-loop-2-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/remove-the-bud-to-open-the-final-door-in-wwm-where-winds-meet.jpg",
+  "/guides/mist-shrouded-prison/gr/final-treasure-wide.jpg",
+  "/guides/mist-shrouded-prison/gr/pray-to-red-lady-in-wwm-where-winds-meet.jpg",
+] as const;
 
 const tlDr = [
   "Mistveil Prison ist der kurze Suchname, den viele Spieler fuer die Mist-Shrouded Prison in Where Winds Meet nutzen. Die Route fuehrt ueber Mistveil Forest, The Ephemeral Blight, Zhai Xus Antidot, rote Dame als Loop-Marker, sechs Truhen und den Endschatz.",
@@ -330,7 +282,7 @@ const breadcrumbStructuredData = {
 };
 
 const related = [
-  { href: "/de/guides/unholy-prophecy", title: "An Unholy Prophecy (Fackeln, Meridian Touch)" },
+  { href: "/guides/unholy-prophecy", title: "An Unholy Prophecy (Fackeln, Meridian Touch)" },
   { href: "/de/guides/woven-with-malice", title: "Woven with Malice (Zeitfenster, Fallen)" },
   { href: "/de/guides/one-leaf-one-life", title: "One Leaf One Life (Lost Chapter Walkthrough)" },
   { href: "/de/news#roadmap", title: "Roadmap / nächste Updates" },
@@ -453,17 +405,20 @@ export default function MistShroudedPrisonDePage() {
           Diesen Zettel siehst du nach der zweiten Knospe in Loop 3, bevor du auf die beweglichen Stacheln springst. Lesen, dann die Schritte in
           Reihenfolge halten, damit der Mist-Shrouded-Prison-Fluss konsistent bleibt.
         </p>
-        <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 shadow-inner shadow-black/25">
+        <figure className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70">
           <CdnImage
-            src={cdn("/guides/mist-shrouded-prison/gr/read-note-in-prison-in-wwm-where-winds-meet.jpg")}
-            alt="Hinweiszettel in der Mist-Shrouded Prison"
+            src="/guides/mist-shrouded-prison/gr/read-note-in-prison-in-wwm-where-winds-meet.jpg"
+            alt="Hinweis-Zettel auf dem Tisch in Loop 3 der Mist-Shrouded Prison"
             width={1600}
             height={900}
             loading="lazy"
             className="h-full w-full object-cover"
             sizes="(max-width: 1024px) 100vw, 960px"
           />
-        </div>
+          <figcaption className="border-t border-slate-800 px-4 py-3 text-xs leading-5 text-slate-300">
+            Hinweis-Zettel in Loop 3. Source publisher: GameRant. Reuse authorization confirmed by site owner 2026-08-29.
+          </figcaption>
+        </figure>
       </section>
 
       <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg">
@@ -471,6 +426,9 @@ export default function MistShroudedPrisonDePage() {
           <span className="text-lg">🖼️</span>
           <h2 className="text-2xl font-bold text-slate-50">Illustrierter Walkthrough</h2>
         </div>
+        <p className="text-sm text-emerald-200">
+          Source publisher: GameRant. Reuse authorization confirmed by site owner 2026-08-29.
+        </p>
         <ol className="space-y-5">
           {walkthrough.map((step, index) => (
             <li
@@ -484,17 +442,20 @@ export default function MistShroudedPrisonDePage() {
                   <p className="text-sm text-slate-200 leading-relaxed">{step.detail}</p>
                 </div>
               </div>
-              <div className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60">
+              <figure className="overflow-hidden rounded-xl border border-slate-800 bg-slate-950/60">
                 <CdnImage
-                  src={step.image.src}
-                  alt={step.image.alt}
-                  loading="lazy"
+                  src={walkthroughImagePaths[index]}
+                  alt={`Mist-Shrouded Prison Schritt ${index + 1}: ${step.title}`}
                   width={1600}
                   height={900}
+                  loading="lazy"
                   className="h-full w-full object-cover"
                   sizes="(max-width: 1024px) 100vw, 960px"
                 />
-              </div>
+                <figcaption className="border-t border-slate-800 px-4 py-3 text-xs leading-5 text-slate-300">
+                  Schritt {index + 1}: {step.title}. Source publisher: GameRant.
+                </figcaption>
+              </figure>
             </li>
           ))}
         </ol>
@@ -550,19 +511,20 @@ export default function MistShroudedPrisonDePage() {
         <p className="text-sm text-slate-300">
           Wenn du die Route lieber sehen willst: Dieses Video zeigt die komplette Mist-Shrouded-Prison-Linie mit allen Loops, Knospen und Truhen.
         </p>
-        <div
-          className="relative w-full overflow-hidden rounded-2xl border border-slate-800 bg-black shadow-inner shadow-black/25"
-          style={{ paddingBottom: "56.25%" }}
+        <LiteYouTubeEmbed
+          videoId="dHDy9nzQsd4"
+          title="Mist-Shrouded Prison Video-Walkthrough"
+          poster={heroImagePath}
+          analytics={{ eventName: "guide_video_play", params: { guide: "mist-shrouded-prison", locale: "de" } }}
+        />
+        <a
+          href="https://www.youtube.com/watch?v=dHDy9nzQsd4"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex text-xs font-semibold text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
         >
-          <iframe
-            className="absolute inset-0 h-full w-full"
-            src="https://www.youtube-nocookie.com/embed/dHDy9nzQsd4"
-            title="Mist-Shrouded Prison Video-Walkthrough"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-        </div>
+          Walkthrough-Quelle auf YouTube oeffnen
+        </a>
       </section>
     </article>
   );

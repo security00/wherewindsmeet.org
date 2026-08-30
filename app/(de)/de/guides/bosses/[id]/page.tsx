@@ -3,11 +3,10 @@ import { notFound } from "next/navigation";
 import { BossDetail, generateBossMetadata } from "../boss-detail";
 import type { BossId } from "@/lib/bosses";
 
-type Params = { params: { id: BossId } | Promise<{ id: BossId }> };
+type Params = { params: Promise<{ id: BossId }> };
 
 const ids: BossId[] = [
   "dao-lord",
-  "feng-ruzhi",
   "god-of-avaric",
   "heartseeker",
   "lucky-seventeen",

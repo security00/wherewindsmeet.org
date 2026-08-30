@@ -13,7 +13,9 @@ The goal is to provide structured English content around the core query **“whe
 - Framework: [Next.js 16](https://nextjs.org/) (App Router)
 - Language: TypeScript + React 19
 - Styling: Tailwind CSS v4 (via `app/globals.css`)
-- Fonts: `next/font` + Geist
+- Fonts: local CSS system stack (`Inter` fallback); no remote font loader
+- i18n: `next-intl` with shared JSON UI packs for English, German, and Vietnamese
+- Runtime: OpenNext on Cloudflare Workers
 
 ---
 
@@ -40,6 +42,13 @@ npm run build
 npm start
 ```
 
+Cloudflare runtime preview (after installing dependencies):
+
+```bash
+npm run cf:build
+npm run cf:smoke
+```
+
 ---
 
 ## Key Routes & Information Architecture
@@ -49,7 +58,7 @@ Routes map directly to the `app/` directory.
 ### Public Pages
 
 - `/` – Hub homepage  
-  - Hero with `design/bg.jpg` game background and `design/logo.png` logo.  
+  - Hero with local background media and the site logo from `public/design/`.
   - Primary entry points: Tier List / Builds / Codes / News / Videos.  
   - Designed as a long, content-heavy page to increase dwell time.
 
@@ -58,8 +67,8 @@ Routes map directly to the `app/` directory.
   - Central internal link hub for Tier List / Builds / Codes.
 
 - `/guides/tier-list` – Where Winds Meet Tier List  
-  - Long-form PVE/PVP tier list aimed at real players (not just pure math).  
-  - Connects to the Builds page and explains how to adapt across patches.
+  - Versioned PVE/PVP evidence review with mode and sample-quality boundaries.
+  - Connects to Builds and does not publish universal letter ranks without reproducible evidence.
 
 - `/guides/builds` – Builds & Combat Tips  
   - Focus on build philosophy: combat loops, stat spreads, Solo / Co‑op / PVP variants.
@@ -71,7 +80,7 @@ Routes map directly to the `app/` directory.
   - Curates official and community information and ties it back into Tier List / Builds / Codes.
 
 - `/videos` – Videos Gallery  
-  - Grid layout embedding all curated Where Winds Meet YouTube videos so users can binge inside the site.  
+  - Click-to-load gallery for curated Where Winds Meet videos; no third-party player loads before interaction.
   - Video list comes from `lib/featuredVideos.ts`.
 
 - `/privacy` – Privacy Policy  
@@ -94,21 +103,20 @@ Routes map directly to the `app/` directory.
 
 ## Project Structure Overview
 
-- `app/layout.tsx`  
-  Global layout, header navigation, footer, and default `<head>` metadata.  
-  Uses `metadataBase` + `title.template` to standardize SEO titles.
+- `components/LocaleRootLayout.tsx` and `app/(en|de|vn)/layout.tsx`
+  Shared locale provider, consent UI, header, footer, and locale-specific metadata.
 
-- `app/page.tsx`  
-  Hub homepage: hero, core guide cards, tools teaser, FAQ, and the primary video module.
+- `app/(en)/page.tsx`
+  Hub homepage: hero, current-version entry points, guide cards, tools, and FAQ.
 
-- `app/guides/*`  
-  Content-heavy guide pages (tier list, builds, codes, overview) with strong internal linking.
+- `app/(en)/guides/**`
+  English guide owners; reviewed German and Vietnamese pages retain their indexed `/de` and `/vn` routes.
 
-- `app/news/page.tsx`  
-  News overview page, ready for future integration with external data sources (RSS / API).
+- `app/(en)/news/page.tsx`
+  News overview backed by the manually reviewed official rows in `lib/news.ts`.
 
-- `app/videos/page.tsx`  
-  Video gallery page; pulls all video IDs from `lib/featuredVideos.ts` and embeds them in a grid.
+- `app/(en)/videos/page.tsx`
+  Click-to-load video gallery backed by `lib/featuredVideos.ts`.
 
 - `lib/featuredVideos.ts`  
   Shared configuration for homepage and `/videos`:
@@ -116,10 +124,8 @@ Routes map directly to the `app/` directory.
   - `title`: short title  
   - `description`: short description used for text copy and SEO.
 
-- `design/`  
-  - `logo.png` – logo source used in the UI.  
-  - `bg.jpg` – hero background.  
-  - Other PNGs are design references/mockups.
+- `public/design/` and `public/background/`
+  Local site identity and decorative background assets.
 
 - `doc/PRD.md`  
   Product requirements document (in Chinese) describing positioning, target users, and content strategy.  
@@ -131,9 +137,10 @@ Routes map directly to the `app/` directory.
 
 ### Updating Homepage and Guides
 
-- Homepage: edit the relevant sections in `app/page.tsx`.  
-- Guide pages: edit `app/guides/*.tsx`.  
-- Try to keep each page long-form (≈ 800+ words) with natural repetition of the main keyword for that page.
+- English homepage: edit the relevant sections in `app/(en)/page.tsx`.
+- Guide pages: edit the matching owner below `app/(en)/guides/`; update a DE/VI page only after a real translation review.
+- Shared UI strings: update all three `i18n/messages/{en,de,vi}.json` packs together.
+- Prefer complete intent coverage, dated primary sources, accurate media captions, and useful decision paths; do not pad pages or repeat keywords mechanically.
 
 ### Updating the Video List
 
@@ -151,7 +158,8 @@ export const featuredVideos: FeaturedVideo[] = [
 ];
 ```
 
-The homepage uses the first entry as the main video; `/videos` renders all entries.
+`/videos` renders these entries as click-to-load cards. German and Vietnamese
+catalog copy lives in the corresponding `lib/featuredVideos.*.ts` files.
 
 ### Updating Contact Email
 
@@ -203,12 +211,22 @@ This eliminates most manual date/version churn in the SEO registry while keeping
 
 ## Deployment Notes
 
-This is a standard Next.js App Router application and can be deployed to any Node.js-capable environment:
+Production uses OpenNext on Cloudflare Workers. A release runs behavior tests,
+lint, a static-export SEO regression build, the OpenNext build, and a local
+runtime smoke test before deploying the already-tested artifact.
 
 ```bash
-npm install
-npm run build
-npm start
+npm ci
+npm test
+npm run lint
+npm run seo:check
+npm run cf:build
+npm run cf:smoke
+npm run cf:deploy:artifact
 ```
 
-For Vercel, simply connect the repository and let Vercel handle builds and hosting.
+For a manual release, prefer `npm run cf:deploy`, which rebuilds before deploy.
+`cf:deploy:artifact` must only be used immediately after a successful `cf:build`.
+The static export remains available via `npm run build:static` for SEO checks and
+an emergency hosting rollback. See `doc/architecture-i18n-workers.md` for the
+locale contract, cutover checklist, privacy boundary, and rollback procedure.

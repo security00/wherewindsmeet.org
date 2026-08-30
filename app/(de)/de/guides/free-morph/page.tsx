@@ -158,7 +158,7 @@ export default function FreeMorphPage() {
           <span className="rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1">Key: Drehtritte parieren</span>
           <span className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1">Phase 2 erreichen</span>
           <Link
-            href="/de/guides/tier-list"
+            href="/guides/tier-list"
             className="rounded-full border border-emerald-400/50 bg-emerald-500/10 px-3 py-1 font-semibold text-emerald-100 hover:border-emerald-300/70"
           >
             Aktuelle Meta ansehen

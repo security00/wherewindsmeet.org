@@ -266,7 +266,7 @@ Usage:
   node scripts/seo-check.cjs [--origin https://wherewindsmeet.org] [--port 3100] [--max-pages 600]
 
 Notes:
-  - If scanning localhost, requires a production build (run \`npm run build\` first).
+  - If scanning localhost, requires a static SEO build (run \`npm run build:static\` first).
   - Fails on internal 4xx/5xx.
   - Prints internal redirects (3xx) as warnings.
 
@@ -275,7 +275,7 @@ Examples:
   node scripts/seo-check.cjs --origin https://wherewindsmeet.org
 
   # Scan a local production server (will auto-start if needed)
-  npm run build
+  npm run build:static
   node scripts/seo-check.cjs --port 3100
 `);
     return;
@@ -297,7 +297,7 @@ Examples:
   })();
 
   if (isLocalOrigin && !existsSync(OUT_DIR)) {
-    console.error("Missing static export. Run `npm run build` before running this check.");
+    console.error("Missing static export. Run `npm run build:static` before running this check.");
     process.exitCode = 2;
     return;
   }

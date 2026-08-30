@@ -1,7 +1,7 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 export type NpcImagePreviewUiText = {
   instruction: string;
@@ -30,6 +30,9 @@ export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32",
   const [open, setOpen] = useState(false);
   const [zoom, setZoom] = useState(1);
   const [useLocal, setUseLocal] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
   const cdn = process.env.NEXT_PUBLIC_CDN_URL;
   const resolvedUiText = useMemo(() => ({ ...DEFAULT_UI_TEXT, ...uiText }), [uiText]);
 
@@ -61,14 +64,42 @@ export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32",
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") {
+        e.preventDefault();
+        setOpen(false);
+        return;
+      }
+      if (e.key !== "Tab" || !dialogRef.current) return;
+      const focusable = Array.from(
+        dialogRef.current.querySelectorAll<HTMLElement>(
+          'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
+      );
+      if (focusable.length === 0) {
+        e.preventDefault();
+        dialogRef.current.focus();
+        return;
+      }
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     };
     const prevOverflow = document.body.style.overflow;
+    const trigger = triggerRef.current;
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKey);
+    const focusTimer = window.setTimeout(() => closeButtonRef.current?.focus(), 0);
     return () => {
+      window.clearTimeout(focusTimer);
       window.removeEventListener("keydown", onKey);
       document.body.style.overflow = prevOverflow;
+      trigger?.focus();
     };
   }, [open]);
 
@@ -79,8 +110,11 @@ export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32",
 
   return (
     <>
-      <div
-        className={`relative w-full overflow-hidden rounded-xl border border-slate-800 bg-slate-900/80 ${thumbnailClassName} cursor-zoom-in`}
+      <button
+        ref={triggerRef}
+        type="button"
+        aria-label={`${alt}. ${resolvedUiText.instruction}`}
+        className={`relative w-full overflow-hidden rounded-xl border border-slate-800 bg-slate-900/80 ${thumbnailClassName} cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-emerald-400/60`}
         onClick={(e) => {
           e.stopPropagation();
           setOpen(true);
@@ -89,18 +123,25 @@ export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32",
         <img
           src={resolvedSrc}
           alt={alt}
+          loading="lazy"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-center"
           onError={() => setUseLocal(true)}
         />
-      </div>
+      </button>
 
       {open ? (
         <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-6"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 p-3 sm:p-6"
           onClick={() => setOpen(false)}
           onWheel={handleWheel}
         >
           <div
+            ref={dialogRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label={alt}
+            tabIndex={-1}
             className="relative max-h-[90vh] max-w-[95vw] overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/95 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
@@ -108,7 +149,8 @@ export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32",
               <span className="text-[11px] text-slate-400">{resolvedUiText.instruction}</span>
               <div className="flex gap-2">
                 <button
-                  className="rounded-md border border-slate-700 bg-slate-950 px-3 py-1 hover:border-emerald-400 hover:text-emerald-200"
+                  type="button"
+                  className="min-h-11 rounded-md border border-slate-700 bg-slate-950 px-3 py-1 hover:border-emerald-400 hover:text-emerald-200 focus:outline-none focus:ring-2 focus:ring-emerald-400/60"
                   onClick={(e) => {
                     e.stopPropagation();
                     adjustZoom(0.2);
@@ -117,7 +159,8 @@ export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32",
                   {resolvedUiText.zoomIn}
                 </button>
                 <button
-                  className="rounded-md border border-slate-700 bg-slate-950 px-3 py-1 hover:border-emerald-400 hover:text-emerald-200"
+                  type="button"
+                  className="min-h-11 rounded-md border border-slate-700 bg-slate-950 px-3 py-1 hover:border-emerald-400 hover:text-emerald-200 focus:outline-none focus:ring-2 focus:ring-emerald-400/60"
                   onClick={(e) => {
                     e.stopPropagation();
                     adjustZoom(-0.2);
@@ -126,7 +169,8 @@ export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32",
                   {resolvedUiText.zoomOut}
                 </button>
                 <button
-                  className="rounded-md border border-slate-700 bg-slate-950 px-3 py-1 hover:border-emerald-400 hover:text-emerald-200"
+                  type="button"
+                  className="min-h-11 rounded-md border border-slate-700 bg-slate-950 px-3 py-1 hover:border-emerald-400 hover:text-emerald-200 focus:outline-none focus:ring-2 focus:ring-emerald-400/60"
                   onClick={(e) => {
                     e.stopPropagation();
                     setZoom(1);
@@ -135,7 +179,9 @@ export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32",
                   {resolvedUiText.reset}
                 </button>
                 <button
-                  className="rounded-md border border-slate-700 bg-slate-950 px-3 py-1 hover:border-rose-400 hover:text-rose-200"
+                  ref={closeButtonRef}
+                  type="button"
+                  className="min-h-11 rounded-md border border-slate-700 bg-slate-950 px-3 py-1 hover:border-rose-400 hover:text-rose-200 focus:outline-none focus:ring-2 focus:ring-rose-400/60"
                   onClick={(e) => {
                     e.stopPropagation();
                     setOpen(false);

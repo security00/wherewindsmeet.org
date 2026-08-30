@@ -1,87 +1,50 @@
 'use client';
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import { buildLocalizedPath } from "@/i18n/routing.mjs";
 
-type FooterLink = {
-  href: string;
-  label: string;
-};
+type LocaleCode = "en" | "vi" | "de";
 
-const defaultLinks: FooterLink[] = [
-  { href: "/", label: "Where Winds Meet" },
-  { href: "/guides", label: "Guides" },
-  { href: "/tools", label: "Tools" },
-  { href: "/guides/bosses", label: "Bosses" },
-  { href: "/guides/weapons", label: "Weapons" },
-  { href: "/news", label: "News" },
-  { href: "/videos", label: "Videos" },
-  { href: "/privacy", label: "Privacy" },
-  { href: "/terms", label: "Terms" },
-  { href: "mailto:support@wherewindsmeet.org", label: "support@wherewindsmeet.org" },
-];
+const FOOTER_LINKS = [
+  { path: "/", key: "home" },
+  { path: "/guides", key: "guides" },
+  { path: "/tools", key: "tools" },
+  { path: "/guides/bosses", key: "bosses" },
+  { path: "/guides/weapons", key: "weapons" },
+  { path: "/news", key: "news" },
+  { path: "/videos", key: "videos" },
+  { path: "/privacy", key: "privacy" },
+  { path: "/terms", key: "terms" },
+] as const;
 
-const vietnameseLinks: FooterLink[] = [
-  { href: "/vn", label: "Where Winds Meet" },
-  { href: "/vn/guides", label: "Hướng dẫn" },
-  { href: "/vn/tools", label: "Công cụ" },
-  { href: "/vn/guides/bosses", label: "Boss" },
-  { href: "/vn/guides/weapons", label: "Vũ khí" },
-  { href: "/vn/news", label: "Tin tức" },
-  { href: "/vn/videos", label: "Video" },
-  { href: "/vn/privacy", label: "Riêng tư" },
-  { href: "/vn/terms", label: "Điều khoản" },
-  { href: "mailto:support@wherewindsmeet.org", label: "support@wherewindsmeet.org" },
-];
-
-const germanLinks: FooterLink[] = [
-  { href: "/de", label: "Where Winds Meet" },
-  { href: "/de/guides", label: "Guides" },
-  { href: "/de/tools", label: "Tools" },
-  { href: "/de/guides/bosses", label: "Bosse" },
-  { href: "/de/guides/weapons", label: "Waffen" },
-  { href: "/de/news", label: "News" },
-  { href: "/de/videos", label: "Videos" },
-  { href: "/de/privacy", label: "Datenschutz" },
-  { href: "/de/terms", label: "Nutzungsbedingungen" },
-  { href: "mailto:support@wherewindsmeet.org", label: "support@wherewindsmeet.org" },
-];
+const asLocale = (value: string): LocaleCode =>
+  value === "vi" || value === "de" ? value : "en";
 
 export function SiteFooter() {
-  const pathname = usePathname();
-  const isVietnamese = pathname?.startsWith("/vn");
-  const isGerman = pathname?.startsWith("/de");
-  const links = isVietnamese ? vietnameseLinks : isGerman ? germanLinks : defaultLinks;
-  const description = isVietnamese
-    ? "Fan hub không chính thức về Where Winds Meet. Mọi nhãn hiệu thuộc về chủ sở hữu tương ứng."
-    : isGerman
-      ? "Inoffizieller Where Winds Meet Fan-Hub. Alle Marken gehören ihren jeweiligen Inhabern."
-      : "Unofficial Where Winds Meet fan hub. All trademarks are the property of their respective owners.";
+  const t = useTranslations("siteFooter");
+  const locale = asLocale(useLocale());
 
   return (
     <footer className="border-t border-slate-700/45 bg-slate-950/38 py-6 text-xs text-slate-300 shadow-sm shadow-slate-950/20 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl flex-col justify-between gap-3 px-4 sm:flex-row sm:px-6 lg:px-8">
-        <p>{description}</p>
+        <p>{t("description")}</p>
         <div className="flex flex-wrap items-center gap-3">
-          {links.map((link) =>
-            link.href.startsWith("mailto:") ? (
-              <a
-                key={link.href}
-                href={link.href}
-                className="whitespace-nowrap transition-colors hover:text-emerald-400"
-              >
-                {link.label}
-              </a>
-            ) : (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="whitespace-nowrap transition-colors hover:text-emerald-400"
-              >
-                {link.label}
-              </Link>
-            )
-          )}
+          {FOOTER_LINKS.map((item) => (
+            <Link
+              key={item.path}
+              href={buildLocalizedPath(item.path, locale) || item.path}
+              className="whitespace-nowrap transition-colors hover:text-emerald-400"
+            >
+              {t(`links.${item.key}`)}
+            </Link>
+          ))}
+          <a
+            href="mailto:support@wherewindsmeet.org"
+            className="whitespace-nowrap transition-colors hover:text-emerald-400"
+          >
+            support@wherewindsmeet.org
+          </a>
         </div>
       </div>
     </footer>

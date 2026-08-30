@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { WeaponDetail, generateWeaponMetadata } from "../weapon-detail";
 import type { WeaponId } from "@/lib/weapons";
 
-type Params = { params: { id: WeaponId } | Promise<{ id: WeaponId }> };
+type Params = { params: Promise<{ id: WeaponId }> };
 
 const ids: WeaponId[] = ["dual-blades", "sword", "spear", "mo-blade", "fan", "umbrella", "rope-dart"];
 

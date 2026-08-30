@@ -24,6 +24,22 @@ type OfficialNewsRow = [
 // site can pin items out of strict date order, so news pages should not sort it.
 const officialNewsRows: OfficialNewsRow[] = [
   [
+    "august-27-version-2-1-update-overview",
+    "[Clouded Revelation] Version 2.1 Update Overview - August 27",
+    "2026-08-26",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/827update.html",
+    "Official Clouded Revelation Version 2.1 overview for the August 27 update window and the current update-freshness anchor.",
+  ],
+  [
+    "account-suspension-july27-august24-2026",
+    "Where Winds Meet - Account Suspension Notice (July 27-August 24)",
+    "2026-08-25",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/Banreport824.html",
+    "Official fair-play notice covering July 27 to August 24 violations involving unauthorized third-party tools, cheating, speed hacks, macros, and other abnormal behavior, with penalties including leaderboard removal, restrictions, and temporary or permanent bans.",
+  ],
+  [
     "august-21-version-2-1-dev-letter",
     "Version 2.1 Dev Letter: One Step Closer to the Sky",
     "2026-08-21",
@@ -48,20 +64,20 @@ const officialNewsRows: OfficialNewsRow[] = [
     "Official Clouded Revelation overview and the current Version 2.1 freshness anchor.",
   ],
   [
-    "august-7-version-2-0-update-overview",
-    "[Unseen Approach] Version 2.0 Update Overview",
-    "2026-08-07",
+    "august-14-version-2-0-update-overview",
+    "[Unseen Approach] Version 2.0 Update Overview - August 14",
+    "2026-08-14",
     "announcement",
     "https://www.wherewindsmeetgame.com/news/official/UnseenApproach.html",
-    "Official Version 2.0 update overview for Unseen Approach and the Hidden Mountain era, now the primary update and returning-player freshness anchor.",
+    "Official August 14 Version 2.0 overview for Unseen Approach and the Hidden Mountain era, retained as historical context behind the current Version 2.1 update trail.",
   ],
   [
-    "august-7-version-2-0-patch-notes",
-    "Version 2.0 Patch Notes: Optimizations and Bug Fixes (August 7, 2026)",
-    "2026-08-07",
+    "august-14-version-2-0-patch-notes",
+    "Version 2.0 Patch Notes: Optimizations and Bug Fixes (August 14, 2026)",
+    "2026-08-14",
     "announcement",
     "https://www.wherewindsmeetgame.com/news/official/723update.html",
-    "Official Version 2.0 update covering cross-region network and matchmaking improvements, Hidden Mountain and quest fixes, Cutie Clash balance changes, plus the earlier July 23 Path Balance and Arena changes on the same page.",
+    "Official aggregate Version 2.0 patch page headed by the August 14 Cutie Clash adjustments, with the August 7 network, matchmaking, Hidden Mountain, and quest fixes plus earlier July 23 Path Balance history.",
   ],
   [
     "cologne-post-gamescom-community-meetup-2026",
@@ -88,12 +104,12 @@ const officialNewsRows: OfficialNewsRow[] = [
     "Official Version 2.0 roadmap letter introducing Hidden Mountain, Gauntlets, Bamboocut - Kite, Mohist Hill, large exploration and visual upgrades, and ongoing balance testing through Training Terrace.",
   ],
   [
-    "july-9-version-1-8-patch-notes",
-    "1.8 Version Patch Notes: Optimizations and Bug Fixes (July 9, 2026)",
-    "2026-07-09",
+    "july-17-version-1-8-patch-notes",
+    "1.8 Version Patch Notes: Optimizations and Bug Fixes (July 17, 2026)",
+    "2026-07-17",
     "announcement",
     "https://www.wherewindsmeetgame.com/news/official/625update.html",
-    "Official July 9 Version 1.8 patch-note update covering Training Terrace Preliminary testing, lower Taiping Mausoleum floor 10-12 difficulty, Homestead and NPC fixes, Skyward Bond fixes, a longer Sleeping Daoist timer, mobile weapon-reforging visuals, plus the July 2 and June 25 fixes on the same official page.",
+    "Official aggregate Version 1.8 patch page headed by the July 17 update, retaining the earlier July 9, July 2, and June 25 optimization and bug-fix history.",
   ],
   [
     "account-suspension-may25-june25-2026",

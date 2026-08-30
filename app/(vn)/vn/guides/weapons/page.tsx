@@ -99,7 +99,7 @@ export default function WeaponsPage() {
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Cần snapshot xếp hạng? Xem{" "}
             <Link
-              href="/vn/guides/weapons/tier-list"
+              href="/guides/weapons/tier-list"
               className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
             >
               tier list vũ khí
@@ -109,7 +109,7 @@ export default function WeaponsPage() {
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Kết hợp với{" "}
             <Link
-              href="/vn/guides/tier-list"
+              href="/guides/tier-list"
               className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
             >
               tier list tổng
@@ -181,7 +181,7 @@ export default function WeaponsPage() {
                     Xem chi tiết vũ khí
                   </Link>
                   <Link
-                    href="/vn/guides/tier-list"
+                    href="/guides/tier-list"
                     className="rounded-full bg-slate-900/80 px-3 py-1 text-slate-200 ring-1 ring-slate-700/70 hover:ring-emerald-400/60"
                   >
                     Xem ngữ cảnh tier list

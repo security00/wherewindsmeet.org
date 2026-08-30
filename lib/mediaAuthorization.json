@@ -1,0 +1,67 @@
+{
+  "confirmedAt": "2026-08-29",
+  "authorizationBasis": "site-owner-confirmed",
+  "independentLegalDocumentReviewed": false,
+  "scopeNote": "The site owner confirmed that the listed publisher media may be reused on wherewindsmeet.org. This manifest records that instruction; it does not claim that the repository contains or independently reviewed the underlying legal instrument.",
+  "publishers": [
+    {
+      "publisher": "Game8",
+      "status": "authorized-for-site-reuse",
+      "confirmedAt": "2026-08-29",
+      "sourceDomains": ["game8.co"],
+      "assetPrefixes": [
+        "guides/bosses/feng-ruzhi",
+        "guides/unholy-prophecy/game8",
+        "guides/find-officer-nan",
+        "guides/npc-list",
+        "guides/wall-puzzle/game8"
+      ],
+      "assetPaths": [],
+      "usageBoundary": "Keep visible source attribution and accurate captions; do not treat walkthrough captures as official game-publisher evidence."
+    },
+    {
+      "publisher": "AllThings",
+      "status": "authorized-for-site-reuse",
+      "confirmedAt": "2026-08-29",
+      "sourceDomains": ["allthings.how"],
+      "assetPrefixes": [
+        "guides/mistveil-city/allthings",
+        "guides/the-great-faceologist"
+      ],
+      "assetPaths": ["guides/qin-caiwei/hero.jpg"],
+      "usageBoundary": "Keep visible source attribution and explain exactly what each screenshot demonstrates; do not use old UI captures as proof of the current build."
+    },
+    {
+      "publisher": "Reddit",
+      "status": "authorized-for-site-reuse",
+      "confirmedAt": "2026-08-29",
+      "sourceDomains": ["reddit.com"],
+      "assetPrefixes": ["guides/desktop-widget"],
+      "assetPaths": [],
+      "usageBoundary": "Keep the originating discussion link and identify screenshots as community captures rather than official product documentation."
+    },
+    {
+      "publisher": "GameRant",
+      "status": "authorized-for-site-reuse",
+      "confirmedAt": "2026-08-29",
+      "sourceDomains": ["gamerant.com"],
+      "assetPrefixes": ["guides/mist-shrouded-prison/gr"],
+      "assetPaths": [
+        "guides/wall-puzzle/fire-contraptions-map.webp",
+        "guides/wall-puzzle/pose-yanyun-oath.webp",
+        "guides/wall-puzzle/wall-tiles-left.webp",
+        "guides/wall-puzzle/wall-tiles-right.webp"
+      ],
+      "usageBoundary": "Keep visible source attribution and label captures as third-party walkthrough media, not official screenshots or current-build guarantees."
+    },
+    {
+      "publisher": "IGN",
+      "status": "authorized-for-site-reuse",
+      "confirmedAt": "2026-08-29",
+      "sourceDomains": ["ign.com"],
+      "assetPrefixes": ["guides/wall-puzzle/ign"],
+      "assetPaths": [],
+      "usageBoundary": "Keep visible source attribution and label the sequence as third-party walkthrough media; it is not official evidence or a guarantee that the current client UI is unchanged."
+    }
+  ]
+}

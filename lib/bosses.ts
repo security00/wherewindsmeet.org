@@ -18,7 +18,7 @@ export type Boss = {
   description: string;
   encounterType: string;
   theme: string;
-  backgroundVideo: string;
+  backgroundVideo?: string;
   titleImage: string;
 };
 
@@ -43,7 +43,6 @@ export const bosses: Boss[] = [
       "First encountered during the Heavenfall campaign in Roaring Sands (Kaifeng), then available as a world boss in Verdant Hill Village. The fight is infamous for its objective pressure: if your Silk Ball gets stolen, you must recover it fast or the run ends.",
     encounterType: "World boss / objective-style duel",
     theme: "Pressure, footwork, Silk Ball recovery",
-    backgroundVideo: "/guides/bosses/feng-ruzhi/preview.mp4",
     titleImage: "/bosses/feng-ruzhi-title.png",
   },
   {

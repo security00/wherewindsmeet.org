@@ -23,12 +23,12 @@ const changes = [
   {
     title: "Vernal Umbrella ab Stufe 96",
     text: "Attunement-Affixe wurden in Frequent Projectile DMG Boost zusammengeführt; dazu kommt ein Light/Heavy/Varied-Combo-Affix. Die Änderung betrifft auch Silkbind Jade.",
-    href: "/de/guides/weapons/tier-list",
+    href: "/guides/weapons/tier-list",
   },
   {
     title: "Arena und Kampf",
     text: "Der Patch korrigiert Everspring-Umbrella-Phantompositionen am Arena-Rand, Strategic-Sword-Ladeabbrüche, Guardian Palm Rang 3 und das Aufstehen nach einem Knockdown.",
-    href: "/de/guides/pvp-tier-list",
+    href: "/guides/pvp-tier-list",
   },
   {
     title: "Homestead und Kosmetik",

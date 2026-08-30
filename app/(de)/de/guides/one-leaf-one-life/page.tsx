@@ -170,7 +170,7 @@ export default function OneLeafDePage() {
               <ul className="text-xs text-emerald-200 space-y-1">
                 <li>• TL;DR: Hopewell Academy → Feast/Tale Vol. → Blätter 6/5/7 → Epilog.</li>
                 <li>• Zeitfenster: Wu / You / Zi / Chen.</li>
-                <li>• Verwandt: <Link href="/de/guides/woven-with-malice" className="underline underline-offset-4">Woven with Malice</Link> · <Link href="/de/guides/unholy-prophecy" className="underline underline-offset-4">An Unholy Prophecy</Link></li>
+                <li>• Verwandt: <Link href="/de/guides/woven-with-malice" className="underline underline-offset-4">Woven with Malice</Link> · <Link href="/guides/unholy-prophecy" className="underline underline-offset-4">An Unholy Prophecy</Link></li>
               </ul>
               <div className="flex flex-wrap gap-3 text-sm text-slate-200">
                 <span className="rounded-full bg-slate-900/70 px-3 py-1 ring-1 ring-emerald-400/40">Weiße Blätter farmen</span>
@@ -529,7 +529,7 @@ export default function OneLeafDePage() {
             <div className="text-sm font-semibold uppercase tracking-wide text-emerald-200">Weiterlesen</div>
             <p className="text-base text-slate-100">
               Mehr Lost Chapters? Schau auch <Link href="/de/guides/woven-with-malice" className="underline underline-offset-4">Woven with Malice</Link>{" "}
-              sowie unsere <Link href="/de/guides/tier-list" className="underline underline-offset-4">Tierlisten</Link> und{" "}
+              sowie unsere <Link href="/guides/tier-list" className="underline underline-offset-4">Tierlisten</Link> und{" "}
               <Link href="/de/guides/builds" className="underline underline-offset-4">Builds</Link>.
             </p>
           </div>

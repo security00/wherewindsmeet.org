@@ -34,7 +34,8 @@ export default function PrivacyPage() {
 
       <section className="space-y-2">
         <h2 className="text-lg font-semibold text-slate-50">3. Cookie & phân tích</h2>
-        <p>Nếu bật analytics, cookie/ID tương tự có thể dùng để biết trang nào hữu ích. Ưu tiên cấu hình ẩn danh/tổng hợp; nếu có thay đổi đáng kể sẽ cập nhật chính sách.</p>
+        <p>Các dịch vụ tùy chọn mặc định bị tắt. Google Analytics, Microsoft Clarity và Plausible chỉ được tải sau khi bạn đồng ý rõ ràng với mục Phân tích. Google AdSense chỉ được tải sau khi bạn đồng ý rõ ràng với mục Quảng cáo. Nhà cung cấp đã bật có thể nhận IP cùng thông tin trang/thiết bị theo chính sách riêng. Các yêu cầu của Google về nền tảng quản lý đồng ý được chứng nhận và cấu hình tài khoản vẫn áp dụng tại khu vực chịu quy định.</p>
+        <p>Lựa chọn danh mục, phiên bản định dạng và thời điểm cập nhật được lưu cần thiết trong <code className="rounded bg-slate-900 px-1 py-0.5 text-xs">localStorage</code> của trình duyệt. Bạn có thể dùng nút “Cài đặt quyền riêng tư” luôn hiển thị để đổi hoặc rút lại đồng ý. Việc rút lại sẽ chặn tải script tùy chọn trong tương lai và cố gắng xóa cookie bên thứ nhất đã biết, nhưng không thể hoàn tác dữ liệu đã gửi cho nhà cung cấp. Công cụ lựa chọn cục bộ này không được giới thiệu là nền tảng quản lý sự đồng ý được Google chứng nhận.</p>
       </section>
 
       <section className="space-y-2">
@@ -52,7 +53,7 @@ export default function PrivacyPage() {
           </a>.
         </p>
         <p className="text-xs text-slate-400">
-          Lần cập nhật gần nhất: {new Date().toISOString().slice(0, 10)}. Nội dung có thể thay đổi khi dịch vụ thay đổi.
+          Lần cập nhật gần nhất: 2026-08-30. Nội dung có thể thay đổi khi dịch vụ thay đổi.
         </p>
       </section>
     </article>

@@ -21,7 +21,6 @@ export const bosses: Boss[] = [
       "Erstes Aufeinandertreffen im Heavenfall-Kampagnenabschnitt in Roaring Sands (Kaifeng); danach als World Boss in Verdant Hill Village verfügbar. Der Kampf ist berüchtigt, weil er ein Ziel-Element hat: Wird dein Silk Ball gestohlen, musst du ihn schnell zurückholen – sonst endet der Versuch.",
     encounterType: "World Boss / Duell mit Zielmechanik",
     theme: "Druck, Footwork, Silk-Ball-Rückeroberung",
-    backgroundVideo: "/guides/bosses/feng-ruzhi/preview.mp4",
     titleImage: "/bosses/feng-ruzhi-title.png",
   },
   {

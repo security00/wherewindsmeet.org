@@ -5,6 +5,8 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 const ogImage = `${baseUrl}/guides/qin-caiwei/hero.jpg`;
+const allThingsSourceUrl =
+  "https://allthings.how/why-qin-caiwei-is-so-hard-to-befriend-in-where-winds-meet/";
 
 export const metadata: Metadata = {
   title: "Qin Caiwei Where Winds Meet: Friend Task Script & Location",
@@ -327,18 +329,25 @@ export default function QinCaiweiPage() {
             </div>
           </div>
 
-          <div className="relative">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 shadow-xl shadow-black/40">
-              <CdnImage
-                src="/guides/qin-caiwei/hero.jpg"
-                alt="WWM Qin Caiwei AI Chat dialogue portrait for the Where Winds Meet friend mission"
-                fill
-                className="object-cover object-center"
-                priority
-              />
-            </div>
-            <p className="mt-3 text-xs text-slate-500">Image source: reference capture from allthings.how</p>
-          </div>
+          <figure className="overflow-hidden rounded-2xl border border-amber-400/30 bg-slate-900/70 shadow-xl shadow-black/40">
+            <CdnImage
+              src="/guides/qin-caiwei/hero.jpg"
+              alt="Historical community capture of Qin Caiwei's AI Chat portrait in Where Winds Meet"
+              width={1200}
+              height={675}
+              priority
+              className="h-auto w-full"
+            />
+            <figcaption className="space-y-2 p-4 text-xs leading-5 text-slate-300">
+              <p>
+                Publisher: AllThings.How. Reuse authorization confirmed by site owner 2026-08-29. This historical
+                community reference identifies the Qin Caiwei portrait and chat context; it is not current-build proof.
+              </p>
+              <a href={allThingsSourceUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-amber-200 underline underline-offset-4 hover:text-amber-100">
+                Read the publisher source article →
+              </a>
+            </figcaption>
+          </figure>
         </div>
       </section>
 

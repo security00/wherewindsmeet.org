@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
-import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
+import MistveilCityAuthorizedMedia from "@/components/guides/MistveilCityAuthorizedMedia";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
-const cdnBaseUrl = (process.env.NEXT_PUBLIC_CDN_URL || "https://static.wherewindsmeet.org").replace(/\/+$/, "");
-const heroImagePath = "/guides/mistveil-city/allthings/Screenshot-2026-01-10-100403-1.png";
-const heroImageForMeta = `${cdnBaseUrl}${heroImagePath}`;
+const allThingsSourceUrl =
+  "https://allthings.how/where-winds-meet-mistveil-forest-cures-and-mistveil-city-unlock/";
+const walkthroughSourceUrl =
+  "https://www.youtube.com/results?search_query=Where+Winds+Meet+Ephemeral+Blight+100%25+Guides";
+const mistveilHero = `${baseUrl}/guides/mistveil-city/allthings/Screenshot-2026-01-10-100403-1.png`;
 
 export const metadata: Metadata = {
   title: "Mistveil City: Ngày Mở & Quest Bị Khóa | Where Winds Meet",
@@ -19,14 +21,7 @@ export const metadata: Metadata = {
       "Mistveil City có thể đang bị khóa theo lịch với nhiều người chơi. Xem ý nghĩa của gate, ngày có thể mở và cách dọn Ephemeral Blight ở Mistveil Forest.",
     url: `${baseUrl}/vn/guides/mistveil-city`,
     siteName: "Where Winds Meet Hub",
-    images: [
-      {
-        url: heroImageForMeta,
-        width: 1206,
-        height: 678,
-        alt: "Ảnh sương mù vùng Mistveil trong Where Winds Meet",
-      },
-    ],
+    images: [{ url: mistveilHero, width: 1206, height: 678, alt: "Ảnh lịch sử về ranh giới khóa Mistveil City" }],
     locale: "vi_VN",
     type: "article",
   },
@@ -35,12 +30,7 @@ export const metadata: Metadata = {
     title: "Mistveil City: Ngày Mở & Quest Bị Khóa | Where Winds Meet",
     description:
       "Vì sao Mistveil City bị khóa, hai mốc ngày hay được nhắc (Jan 22 vs Jan 26, 2026) và việc nên làm trong Mistveil Forest khi chờ mở.",
-    images: [
-      {
-        url: heroImageForMeta,
-        alt: "Ảnh sương mù vùng Mistveil trong Where Winds Meet",
-      },
-    ],
+    images: [mistveilHero],
   },
 };
 
@@ -99,98 +89,9 @@ const breadcrumbStructuredData = {
   ],
 };
 
-const allThingsImages = {
-  mistveilCover: {
-    src: "/guides/mistveil-city/allthings/image-1048-1.webp",
-    caption: "Nguồn ảnh: NetEase",
-    alt: "Khung cảnh vùng Mistveil",
-  },
-  talkToZhaiXu: {
-    src: "/guides/mistveil-city/allthings/image-1049-1-1.webp",
-    caption:
-      "Nói chuyện với Zhai Xu để hỏi về mặt dây ngọc và sương độc | Nguồn ảnh: NetEase (qua YouTube/@100% Guides)",
-    alt: "Nói chuyện với Zhai Xu về mặt dây và sương",
-  },
-  meridianTouchChime: {
-    src: "/guides/mistveil-city/allthings/image-1050.webp",
-    caption:
-      "Dùng Meridian Touch lên chuông gió treo bên ngoài | Nguồn ảnh: NetEase (qua YouTube/@100% Guides)",
-    alt: "Dùng Meridian Touch lên chuông gió",
-  },
-  readThousandWish: {
-    src: "/guides/mistveil-city/allthings/image-1051-1.webp",
-    caption:
-      "Mở túi (B), chuyển sang tab đồ nhiệm vụ và đọc Thousand-Wish Amendment | Nguồn ảnh: NetEase (qua YouTube/@100% Guides)",
-    alt: "Đọc Thousand-Wish Amendment trong đồ nhiệm vụ",
-  },
-  postStation: {
-    src: "/guides/mistveil-city/allthings/image-1052-1.webp",
-    caption:
-      "Di chuyển tới Soulshade Umbrella - Post Station | Nguồn ảnh: NetEase (qua YouTube/@100% Guides)",
-    alt: "Vị trí Soulshade Umbrella Post Station",
-  },
-  stealthGuard: {
-    src: "/guides/mistveil-city/allthings/image-1053-1.webp",
-    caption: "Hạ lính canh một cách im lặng | Nguồn ảnh: NetEase (qua YouTube/@100% Guides)",
-    alt: "Hạ gục lính canh lén lút",
-  },
-  aureateOutpost: {
-    src: "/guides/mistveil-city/allthings/image-1054-1.webp",
-    caption: "Di chuyển tới tiền đồn Aureate Pavilion | Nguồn ảnh: NetEase (qua YouTube/@100% Guides)",
-    alt: "Vị trí tiền đồn Aureate Pavilion",
-  },
-  aureateCure: {
-    src: "/guides/mistveil-city/allthings/image-1055-1.webp",
-    caption:
-      "Lấy cure Mistveil Forest ở Aureate Pavilion trong Central Hut | Nguồn ảnh: NetEase (qua YouTube/@100% Guides)",
-    alt: "Tìm cure ở Aureate Pavilion trong căn chòi trung tâm",
-  },
-  turnInCures: {
-    src: "/guides/mistveil-city/allthings/image-1056-1.webp",
-    caption: "Nói chuyện với Zhai Xu và nộp các vật phẩm | Nguồn ảnh: NetEase (qua YouTube/@100% Guides)",
-    alt: "Nộp vật phẩm cho Zhai Xu",
-  },
-  receiveMedicine: {
-    src: "/guides/mistveil-city/allthings/image-1057-1.webp",
-    caption: "Nói chuyện với Zhai Xu để nhận thuốc gần khu rừng | Nguồn ảnh: NetEase (qua YouTube/@100% Guides)",
-    alt: "Nhận thuốc từ Zhai Xu gần khu rừng",
-  },
-  forestGuards: {
-    src: "/guides/mistveil-city/allthings/image-1058-1.webp",
-    caption: "Hạ các lính gác Aureate Pavilion trong rừng | Nguồn ảnh: NetEase (qua YouTube/@100% Guides)",
-    alt: "Đánh lính gác trong Mistveil Forest",
-  },
-  burnBloomsPendant: {
-    src: "/guides/mistveil-city/allthings/image-1059-1.webp",
-    caption:
-      "Dùng mũi tên lửa đốt các bông hoa trước khi nhặt mặt dây ngọc | Nguồn ảnh: NetEase (qua YouTube/@100% Guides)",
-    alt: "Đốt hoa độc bằng mũi tên lửa",
-  },
-  pathUnderground: {
-    src: "/guides/mistveil-city/allthings/image-1060-1.webp",
-    caption: "Đi theo lối xuống tầng dưới lòng đất | Nguồn ảnh: NetEase (qua YouTube/@100% Guides)",
-    alt: "Lối dẫn xuống dưới lòng đất",
-  },
-  deductionInterface: {
-    src: "/guides/mistveil-city/allthings/image-1061-1.webp",
-    caption:
-      "Mở giao diện deduction và bắt đầu ghép các manh mối | Nguồn ảnh: NetEase (qua YouTube/@100% Guides)",
-    alt: "Giao diện deduction ghép manh mối",
-  },
-  followPuppet: {
-    src: "/guides/mistveil-city/allthings/image-1062-1.webp",
-    caption:
-      "Đi theo Sleeping Puppet qua hệ thống hang động | Nguồn ảnh: NetEase (qua YouTube/@100% Guides)",
-    alt: "Đi theo Sleeping Puppet trong hang",
-  },
-} as const;
-
-type WalkthroughImage = (typeof allThingsImages)[keyof typeof allThingsImages];
-
 type WalkthroughStep = {
   title: string;
   detail: string;
-  images?: WalkthroughImage[];
 };
 
 type WalkthroughSection = {
@@ -211,19 +112,16 @@ const walkthroughSections: WalkthroughSection[] = [
         title: "Tỉnh dậy ở Wishing Cove và nói chuyện với Zhai Xu",
         detail:
           "Nhặt mặt dây ngọc cạnh giường, rồi nói chuyện với Zhai Xu về mặt dây và sương độc để bắt đầu chuỗi thu cure.",
-        images: [allThingsImages.talkToZhaiXu],
       },
       {
         title: "Dùng Wind Sense, rồi đánh lạc hướng bằng Meridian Touch",
         detail:
           "Trong nhà, dùng Wind Sense để thấy 2 quyển sách trên bàn — nhưng Zhai Xu sẽ cảnh báo bạn đừng xen vào. Đứng cạnh cửa sổ phía trên chiếc bàn và dùng Meridian Touch lên chuông gió để dụ ông ấy ra ngoài.",
-        images: [allThingsImages.meridianTouchChime],
       },
       {
         title: "Đọc sách và mở mục tiêu 3 cure",
         detail:
           "Khi Zhai Xu ra ngoài, đọc cả hai quyển sách (cure ở Wishing Cove + Thousand-Wish Amendment). Sau đó mở Túi → Đồ nhiệm vụ và đọc Amendment: nó liệt kê 3 Mistveil Forest Cures bạn cần (Wishing Cove, Hollow Abode, Aureate Pavilion).",
-        images: [allThingsImages.readThousandWish],
       },
     ],
   },
@@ -234,7 +132,6 @@ const walkthroughSections: WalkthroughSection[] = [
         title: "Tới Soulshade Umbrella – Post Station (hầm ngục Skill Theft)",
         detail:
           "Di chuyển về phía tây nam Mistveil Forest tới Soulshade Umbrella – Post Station. Mục tiêu của bạn chỉ là tài liệu cure — không cần hoàn thành toàn bộ hầm ngục.",
-        images: [allThingsImages.postStation],
       },
       {
         title: "Đường lén: dây leo → cửa sổ → cầu thang",
@@ -245,7 +142,6 @@ const walkthroughSections: WalkthroughSection[] = [
         title: "Dùng Touch of Death với lính canh, rồi lấy cure",
         detail:
           "Đợi khi lính canh quay lưng, hạ gục lén bằng Touch of Death, sau đó tìm phòng bên có nến xanh và lấy Hollow Abode cure trên bàn.",
-        images: [allThingsImages.stealthGuard],
       },
     ],
   },
@@ -256,13 +152,11 @@ const walkthroughSections: WalkthroughSection[] = [
         title: "Tới tiền đồn Aureate Pavilion (phía bắc vùng sương)",
         detail:
           "Đi vòng theo rìa Mistveil Forest tới tiền đồn Aureate Pavilion. Nếu bạn đã mở điểm dịch chuyển gần đó, hãy dùng để rút ngắn đường.",
-        images: [allThingsImages.aureateOutpost],
       },
       {
         title: "Lấy cure trong căn chòi trung tâm (gần xác ướp)",
         detail:
           "Mục tiêu là căn chòi chính ở giữa tiền đồn. Bạn có thể đánh hoặc lẻn vào bằng kỹ năng di chuyển; bên trong, cure nằm trên bàn cạnh một xác ướp.",
-        images: [allThingsImages.aureateCure],
       },
     ],
   },
@@ -272,7 +166,6 @@ const walkthroughSections: WalkthroughSection[] = [
       {
         title: "Nộp đủ 3 cure tại Wishing Cove",
         detail: "Quay lại gặp Zhai Xu và nộp 3 ghi chú cure để ông ấy bắt đầu pha thuốc giải.",
-        images: [allThingsImages.turnInCures],
       },
       {
         title: "Tua thời gian thêm 2 ngày trong game",
@@ -283,7 +176,6 @@ const walkthroughSections: WalkthroughSection[] = [
         title: "Gặp Zhai Xu ở bờ bắc và đi theo các đốm lửa",
         detail:
           "Đi theo dấu nhiệm vụ tới rìa phía bắc, nói chuyện với Zhai Xu để nhận thuốc, rồi tiến vào sâu hơn trong khi bám sát các đốm lửa dọc đường (chúng như vùng an toàn tạm thời).",
-        images: [allThingsImages.receiveMedicine],
       },
     ],
   },
@@ -294,13 +186,11 @@ const walkthroughSections: WalkthroughSection[] = [
         title: "Dọn lính gác và tới lối bị hoa chặn",
         detail:
           "Tiến sâu vào rừng; bạn sẽ gặp thêm lính gác Aureate Pavilion. Dọn sạch để an toàn và tới một lối đi bị bông hoa Dawn-to-Dusk chặn.",
-        images: [allThingsImages.forestGuards],
       },
       {
         title: "Đốt hoa, rồi tìm khu cây treo xác",
         detail:
           "Trang bị Mũi tên lửa (Fire Arrows) và đốt các bông hoa độc để mở đường. Tiếp tục cho tới khi thấy cây khổng lồ có xác treo; phá 3 bông hoa ở đó, đánh bại Sleeping Puppets thức dậy, và nhặt nửa mặt dây ngọc rơi gần gốc cây.",
-        images: [allThingsImages.burnBloomsPendant],
       },
     ],
   },
@@ -311,19 +201,16 @@ const walkthroughSections: WalkthroughSection[] = [
         title: "Đi theo bóng Silver Needle xuống dưới lòng đất",
         detail:
           "Sau khi nhặt mặt dây, một bóng người xuất hiện rồi rút lui. Đi theo dấu nhiệm vụ tới một hang ổ dưới lòng đất, kết thúc tại căn phòng có một xác ướp.",
-        images: [allThingsImages.pathUnderground],
       },
       {
         title: "Đọc ghi chú của Sun Buqi và bắt đầu suy luận",
         detail:
           "Lục soát căn phòng, đọc Sun Buqi’s Notes và các tài liệu gần đó, rồi mở giao diện suy luận và ghép các manh mối thành câu chuyện hợp lý.",
-        images: [allThingsImages.deductionInterface],
       },
       {
         title: "Đi theo Sleeping Puppet và phá những bông hoa cuối cùng",
         detail:
           "Sau khi xác nhận suy luận, tương tác với Sleeping Puppet lạ gần xác ướp. Đi theo nó qua hang động tới nguồn sương và phá 3 bông hoa lớn duy trì sương mù, rồi quay lại gặp Zhai Xu để hoàn tất Ephemeral Blight và dọn sạch Mistveil Forest vĩnh viễn.",
-        images: [allThingsImages.followPuppet],
       },
     ],
   },
@@ -340,17 +227,7 @@ export default function MistveilCityPage() {
       />
 
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-2xl shadow-slate-950/40 sm:p-8">
-        <div className="pointer-events-none absolute inset-0">
-          <CdnImage
-            src={heroImagePath}
-            alt="Xem trước khu vực Mistveil City"
-            fill
-            className="object-cover opacity-45"
-            priority
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/35" />
-        </div>
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-emerald-950/35 via-slate-950 to-slate-950" />
 
         <div className="relative z-10 max-w-4xl space-y-4">
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/50 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
@@ -391,6 +268,26 @@ export default function MistveilCityPage() {
         </ul>
       </section>
 
+      <section className="space-y-3 rounded-3xl border border-amber-500/30 bg-amber-500/10 p-6 shadow-lg">
+        <h2 className="text-lg font-semibold text-amber-100">Ranh giới nguồn và hình ảnh</h2>
+        <p className="text-sm leading-relaxed text-amber-50/90">
+          Route chữ này chỉ dùng walkthrough cộng đồng để đối chiếu, không xem đó là hướng dẫn chính thức của game. Bộ ảnh
+          có Publisher: AllThings.How. Reuse authorization confirmed by site owner 2026-08-29. Ảnh ghi lại route tháng
+          1/2026, không phải bằng chứng cho build hiện tại; hãy kiểm tra mục tiêu thay đổi trong client live và patch notes
+          chính thức.
+        </p>
+        <div className="flex flex-wrap gap-4">
+          <a href={allThingsSourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex text-sm font-semibold text-amber-100 underline underline-offset-4 hover:text-amber-50">
+            Đọc bài nguồn trên AllThings.How →
+          </a>
+          <a href={walkthroughSourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex text-sm font-semibold text-amber-100 underline underline-offset-4 hover:text-amber-50">
+            Tìm walkthrough 100% Guides được ghi nguồn trên YouTube →
+          </a>
+        </div>
+      </section>
+
+      <MistveilCityAuthorizedMedia locale="vi" />
+
       <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
           Vì sao Mistveil City bị khóa (và ý nghĩa của thông báo).
@@ -404,22 +301,6 @@ export default function MistveilCityPage() {
           khi nhà phát triển mở. Vì vậy người chơi với lối build/môn phái/tiến độ khác nhau vẫn gặp cùng một đếm ngược rồi bị dịch chuyển khi đến gần lối
           vào Mistveil City.
         </p>
-        <figure className="rounded-2xl border border-slate-800 bg-slate-900/30 p-3">
-          <div className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60">
-            <CdnImage
-              src={allThingsImages.mistveilCover.src}
-              alt={allThingsImages.mistveilCover.alt}
-              loading="lazy"
-              width={1133}
-              height={637}
-              className="h-auto w-full"
-              sizes="(max-width: 1024px) 100vw, 720px"
-            />
-          </div>
-          <figcaption className="mt-2 text-[11px] leading-relaxed text-slate-300">
-            {allThingsImages.mistveilCover.caption}
-          </figcaption>
-        </figure>
         <div className="rounded-2xl border border-slate-800 bg-slate-900/30 p-4">
           <h3 className="text-sm font-semibold text-slate-50">Kết luận thực tế</h3>
           <p className="mt-2 text-xs leading-relaxed text-slate-200">
@@ -493,8 +374,8 @@ export default function MistveilCityPage() {
 
       <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg">
         <div className="flex items-center gap-2">
-          <span className="text-lg">🖼️</span>
-          <h2 className="text-2xl font-bold text-slate-50">Hướng dẫn Ephemeral Blight (kèm ảnh)</h2>
+          <span className="text-lg">🧭</span>
+          <h2 className="text-2xl font-bold text-slate-50">Hướng dẫn Ephemeral Blight bằng chữ</h2>
         </div>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
           Mistveil City có thể bị khóa theo lịch, nhưng bạn vẫn có thể hoàn thành Ephemeral Blight và dọn Mistveil Forest ngay bây giờ. Phần hướng dẫn này
@@ -513,26 +394,6 @@ export default function MistveilCityPage() {
                     <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">Bước {index + 1}</p>
                     <p className="text-sm font-semibold text-slate-100">{step.title}</p>
                     <p className="text-sm leading-relaxed text-slate-200">{step.detail}</p>
-                    {step.images ? (
-                      <div className={step.images.length > 1 ? "grid gap-3 sm:grid-cols-2 lg:grid-cols-3" : "space-y-3"}>
-                        {step.images.map((image) => (
-                          <figure key={image.src} className="rounded-xl border border-slate-800 bg-slate-900/60 p-2">
-                            <div className="overflow-hidden rounded-lg border border-slate-800 bg-slate-900/60">
-                              <CdnImage
-                                src={image.src}
-                                alt={image.alt}
-                                loading="lazy"
-                                width={1600}
-                                height={900}
-                                className="h-auto w-full"
-                                sizes="(max-width: 1024px) 100vw, 520px"
-                              />
-                            </div>
-                            <figcaption className="mt-2 text-[11px] leading-relaxed text-slate-300">{image.caption}</figcaption>
-                          </figure>
-                        ))}
-                      </div>
-                    ) : null}
                   </li>
                 ))}
               </ol>

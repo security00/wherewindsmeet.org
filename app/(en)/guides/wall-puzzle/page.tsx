@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         url: "https://static.wherewindsmeet.org/guides/wall-puzzle/wall-tiles-right.webp",
         width: 1650,
         height: 928,
-        alt: "Pressing 移 and 百 on the right wall in the Echoes of Old Battles puzzle",
+        alt: "Pressing the Yi and Bai tiles on the right wall in Echoes of Old Battles",
       },
     ],
     locale: "en_US",
@@ -65,20 +65,34 @@ const quickAnswers = [
 const heroImages = [
   {
     src: "/guides/wall-puzzle/fire-contraptions-map.webp",
-    alt: "Fire contraptions locations around the ruined castle in Qinghe",
-    caption: "Fire contraptions map: light all four braziers to unlock the tunnel.",
+    alt: "Map showing the four fire contraptions around the ruined castle in Qinghe",
+    caption: "Light all four marked braziers before returning to the training ground.",
   },
   {
     src: "/guides/wall-puzzle/pose-yanyun-oath.webp",
-    alt: "Using the Yanyun Oath pose to start the wall puzzle",
-    caption: "Trigger: use the Yanyun Oath pose at the giant statue to start the wall puzzle.",
+    alt: "Player using the Yanyun Oath pose in front of the giant statue",
+    caption: "Use Yanyun Oath at the statue to activate the wall mechanism.",
   },
   {
     src: "/guides/wall-puzzle/wall-tiles-right.webp",
-    alt: "Pressing the 移 and 百 stone blocks on the right wall",
-    caption: "Wall solution: right wall press 移 and 百, left wall press 漂 to open.",
+    alt: "Right wall of the puzzle with the Yi and Bai stone tiles selected",
+    caption: "Right wall solution: press 移 and 百.",
+  },
+  {
+    src: "/guides/wall-puzzle/wall-tiles-left.webp",
+    alt: "Left wall of the puzzle with the Piao stone tile selected",
+    caption: "Left wall solution: press 漂.",
   },
 ];
+
+const ignReferenceImages = [
+  { src: "/guides/wall-puzzle/ign/1.webp", alt: "Wall puzzle chamber with the central statue", caption: "Chamber layout before activating the statue." },
+  { src: "/guides/wall-puzzle/ign/2.webp", alt: "Inscription clue near the wall puzzle statue", caption: "The nearby clue points you toward the matching wall characters." },
+  { src: "/guides/wall-puzzle/ign/3.webp", alt: "Right puzzle wall before selecting its tiles", caption: "Right wall before solving: select the first and third marked blocks." },
+  { src: "/guides/wall-puzzle/ign/4.webp", alt: "Left puzzle wall before selecting its tile", caption: "Left wall before solving: select the second marked block." },
+  { src: "/guides/wall-puzzle/ign/5.webp", alt: "Right puzzle wall after the correct blocks are selected", caption: "Solved state of the right wall." },
+  { src: "/guides/wall-puzzle/ign/6.webp", alt: "Left puzzle wall after the correct block is selected", caption: "Solved state of the left wall." },
+] as const;
 
 const fireContraptions = [
   {
@@ -126,109 +140,47 @@ const unlockSteps = [
   {
     title: "Start the quest at the Qinghe ruins",
     text: "Speak to Lie Bujin outside the ruins to start Echoes of Old Battles in Qinghe (Verdant Wilds).",
-    image: {
-      src: "/guides/wall-puzzle/game8/4331081-57e94f6bf21d69927689e378eb0358fd.webp",
-      alt: "Echoes of Old Battles quest marker on the map",
-      caption: "Quest marker: Qinghe ruins, Verdant Wilds.",
-    },
   },
   {
     title: "Eavesdrop, blow the barrels, clear mobs",
     text: "Eavesdrop near the barrels, shoot the fire barrels to wipe enemies, then defeat Zhang Bao to loot the brazier map from the arena chest.",
-    image: {
-      src: "/guides/wall-puzzle/game8/4331075-caa01c4ee0d88da905e52717793aa762.webp",
-      alt: "Eavesdrop and explosive barrels spot",
-      caption: "Listen first, then fire-arrow the barrels to clear the first wave.",
-    },
   },
   {
     title: "Light four braziers",
     text: "Use the map to light all braziers (any order): left of the entrance, upper broken wall, lower east platform, and inside the arena.",
-    image: {
-      src: "/guides/wall-puzzle/game8/4331076-f79e5957d1551183859b4e5d3e86d414.webp",
-      alt: "Lighting the correct fire contraption",
-      caption: "All four correct braziers must be lit or the underground door stays shut.",
-    },
   },
   {
     title: "Stomp the plate, head underground",
     text: "After all braziers are lit, a plate appears in the arena; use Mighty Drop to press it and open the tunnel.",
-    image: {
-      src: "/guides/wall-puzzle/game8/4331077-e5a535c018ecb105709d9d47994d8b12.webp",
-      alt: "Entrance to the underground tunnel",
-      caption: "Stomp the plate to reveal the underground entrance.",
-    },
   },
   {
     title: "Borrow the Yanyun Oath pose",
     text: "Copy the Yanyun Oath pose from the soldier statue, then use it facing the giant statue to activate the wall puzzle.",
-    image: {
-      src: "/guides/wall-puzzle/game8/4331078-7e11bf6db03c83463d137fe7e8d188aa.webp",
-      alt: "Using the Yanyun Oath pose to start the mechanism",
-      caption: "You must use the pose before interacting; otherwise the wall stays inert.",
-    },
   },
   {
     title: "Press the wall tiles (core step)",
     text: "Right wall: press 移 and 百. Left wall: press 漂. Order is flexible—just hit all three to open the door.",
-    image: {
-      src: "/guides/wall-puzzle/wall-tiles-right.webp",
-      alt: "Pressing 移 and 百 on the right wall",
-      caption: "Right wall: 移 + 百; left wall: 漂.",
-    },
   },
   {
     title: "Pull the waterfall lever",
     text: "After the door opens, jump across and pull the lever behind the waterfall to advance.",
-    image: {
-      src: "/guides/wall-puzzle/game8/4331080-4a13e0a7c62d5ea365fce67df363dbe1.webp",
-      alt: "Lever hidden behind the waterfall",
-      caption: "The lever opens the path to the treasure room.",
-    },
   },
   {
     title: "Open the chest for Touch of Death",
     text: "Final room reward: Touch of Death Assassin Mystic Skill plus extra loot; completes the story beat.",
-    image: {
-      src: "/guides/wall-puzzle/game8/4331079-8c8f3f163d873516d57b4e93078f2a7b.webp",
-      alt: "Treasure chest reward: Touch of Death",
-      caption: "Grab the Assassin Mystic Skill: Touch of Death.",
-    },
   },
 ];
 
-const ignReferences = [
-  {
-    src: "/guides/wall-puzzle/ign/1.webp",
-    alt: "Wall puzzle chamber overview with central statue",
-    caption: "IGN capture: the chamber layout before interacting.",
-  },
-  {
-    src: "/guides/wall-puzzle/ign/2.webp",
-    alt: "Signpost clue on the floor near the statue",
-    caption: "IGN capture: the anonymous signpost hinting at which characters belong.",
-  },
-  {
-    src: "/guides/wall-puzzle/ign/3.webp",
-    alt: "Right wall with four interactable blocks before solving",
-    caption: "IGN capture: right wall blocks—press the 1st and 3rd (移, 百).",
-  },
-  {
-    src: "/guides/wall-puzzle/ign/4.webp",
-    alt: "Left wall with two interactable blocks before solving",
-    caption: "IGN capture: left wall blocks—press the 2nd (漂).",
-  },
-  {
-    src: "/guides/wall-puzzle/ign/5.webp",
-    alt: "Right wall after pressing the correct blocks",
-    caption: "IGN capture: solved right wall state.",
-  },
-  {
-    src: "/guides/wall-puzzle/ign/6.webp",
-    alt: "Left wall after pressing the correct block",
-    caption: "IGN capture: solved left wall state.",
-  },
-];
+const unlockImages = [
+  "/guides/wall-puzzle/game8/4331081-57e94f6bf21d69927689e378eb0358fd.webp",
+  "/guides/wall-puzzle/game8/4331075-caa01c4ee0d88da905e52717793aa762.webp",
+  "/guides/wall-puzzle/game8/4331076-f79e5957d1551183859b4e5d3e86d414.webp",
+  "/guides/wall-puzzle/game8/4331077-e5a535c018ecb105709d9d47994d8b12.webp",
+  "/guides/wall-puzzle/game8/4331078-7e11bf6db03c83463d137fe7e8d188aa.webp",
+  "/guides/wall-puzzle/wall-tiles-right.webp",
+  "/guides/wall-puzzle/game8/4331080-4a13e0a7c62d5ea365fce67df363dbe1.webp",
+  "/guides/wall-puzzle/game8/4331079-8c8f3f163d873516d57b4e93078f2a7b.webp",
+] as const;
 
 export default function WallPuzzleGuidePage() {
   return (
@@ -291,28 +243,48 @@ export default function WallPuzzleGuidePage() {
         </div>
       </section>
 
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-4 sm:p-6 shadow-lg">
-        <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
-          <h2 className="text-xl font-bold text-slate-50">Need-to-see visuals</h2>
-          <p className="text-xs text-slate-500">Source: GameRant (stored locally)</p>
+      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-4 shadow-lg sm:p-6">
+        <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h2 className="text-xl font-bold text-slate-50">Need-to-see visuals</h2>
+            <p className="mt-1 text-xs text-slate-400">Source publisher: Game8 and GameRant.</p>
+          </div>
+          <p className="text-xs text-emerald-200">Reuse authorization confirmed by site owner 2026-08-29.</p>
         </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          {heroImages.map((img) => (
-            <figure
-              key={img.src}
-              className="overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/60 shadow-inner shadow-slate-950/40"
-            >
+        <div className="grid gap-4 md:grid-cols-2">
+          {heroImages.map((image, index) => (
+            <figure key={image.src} className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
               <ZoomableImage
-                src={img.src}
-                alt={img.alt}
+                src={image.src}
+                alt={image.alt}
                 width={1650}
                 height={928}
-                sizes="(max-width: 768px) 100vw, 33vw"
-                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority={index === 0}
               />
-              <figcaption className="px-3 py-2 text-xs text-slate-300/90 border-t border-slate-800/80">
-                {img.caption} (click to enlarge)
+              <figcaption className="border-t border-slate-800 px-4 py-3 text-xs leading-5 text-slate-300">
+                {image.caption}
               </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/70 p-4 shadow-lg sm:p-6">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h2 className="text-xl font-bold text-slate-50">Wall chamber reference gallery</h2>
+            <p className="mt-1 text-xs text-slate-400">Source publisher: IGN.</p>
+          </div>
+          <p className="max-w-xl text-xs leading-5 text-amber-200">
+            Reuse authorization confirmed by site owner 2026-08-29. Third-party walkthrough screenshots are not official or current-build evidence.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {ignReferenceImages.map((image) => (
+            <figure key={image.src} className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
+              <ZoomableImage src={image.src} alt={image.alt} width={1650} height={928} sizes="(max-width: 768px) 100vw, 33vw" />
+              <figcaption className="border-t border-slate-800 px-4 py-3 text-xs leading-5 text-slate-300">{image.caption}</figcaption>
             </figure>
           ))}
         </div>
@@ -401,8 +373,8 @@ export default function WallPuzzleGuidePage() {
 
       <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-6">
         <div className="flex items-center justify-between gap-3 flex-wrap">
-          <h3 className="text-xl font-bold text-slate-50">Unlock steps + local screenshots</h3>
-          <p className="text-xs text-slate-500">Images from Game8 and GameRant, stored locally for clarity.</p>
+          <h3 className="text-xl font-bold text-slate-50">Unlock steps with screenshots</h3>
+          <p className="text-xs text-slate-400">Source publisher: Game8 and GameRant.</p>
         </div>
         <div className="grid gap-5 md:grid-cols-2">
           {unlockSteps.map((step, idx) => (
@@ -422,43 +394,17 @@ export default function WallPuzzleGuidePage() {
               </div>
               <figure className="border-t border-slate-800/80">
                 <ZoomableImage
-                  src={step.image.src}
-                  alt={step.image.alt}
+                  src={unlockImages[idx]}
+                  alt={`${step.title} walkthrough screenshot in Where Winds Meet`}
                   width={1650}
                   height={928}
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <figcaption className="px-4 py-3 text-xs text-slate-300/90 border-t border-slate-800/80">
-                  {step.image.caption} (click to enlarge)
+                <figcaption className="border-t border-slate-800/80 px-4 py-3 text-xs leading-5 text-slate-300">
+                  Step {idx + 1}: {step.title}. Source publisher: {idx === 5 ? "GameRant" : "Game8"}.
                 </figcaption>
               </figure>
             </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 shadow-lg space-y-4">
-        <div className="flex items-center justify-between flex-wrap gap-3">
-          <h3 className="text-xl font-bold text-slate-50">IGN visual references (local)</h3>
-          <p className="text-xs text-slate-500">Mirrored from your IGN copy for extra clarity.</p>
-        </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          {ignReferences.map((img) => (
-            <figure
-              key={img.src}
-              className="overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/60 shadow-inner shadow-slate-950/40"
-            >
-              <ZoomableImage
-                src={img.src}
-                alt={img.alt}
-                width={1650}
-                height={928}
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-              <figcaption className="px-3 py-2 text-xs text-slate-300/90 border-t border-slate-800/80">
-                {img.caption} (click to enlarge)
-              </figcaption>
-            </figure>
           ))}
         </div>
       </section>

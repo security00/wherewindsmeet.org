@@ -12,18 +12,18 @@ const freshness = getContentFreshness("/news");
 export const metadata: Metadata = {
   title: "Where Winds Meet Update Today - Version 2.1 News & Patch Notes",
   description:
-    "Where Winds Meet update today tracker for the August 21 Version 2.1 dev letter, Cloudstair, water rails, Clouded Revelation patch notes, and guide impact.",
+    "Where Winds Meet update today tracker for the August 27 Version 2.1 Clouded Revelation overview, August 20 patch notes, official notices, and guide impact.",
   alternates: buildHreflangAlternates("/news"),
   openGraph: {
     title: "Where Winds Meet Update Today - Version 2.1 News & Patch Notes",
     description:
-      "Where Winds Meet update today tracker for the August 21 Version 2.1 dev letter, Cloudstair, water rails, and Clouded Revelation patch impact.",
+      "Where Winds Meet update today tracker for the August 27 Version 2.1 Clouded Revelation overview, August 20 patch notes, and official notices.",
     url: `${baseUrl}/news`,
   },
   twitter: {
     title: "Where Winds Meet Update Today - Version 2.1 News & Patch Notes",
     description:
-      "Where Winds Meet update today tracker for the official August 21 Version 2.1 developer letter and current patch impact.",
+      "Where Winds Meet update today tracker for the official August 27 Version 2.1 overview and the August 20 patch-note impact.",
   },
 };
 
@@ -31,9 +31,9 @@ const todayStatusCards = [
   {
     title: "Latest official update",
     detail:
-      "The August 21 developer letter is the newest official anchor checked: repaired water rails, the server-wide Cloudstair project, streamlined Celestial Seize and Gamescom plans extend the Version 2.1 trail.",
-    href: "https://www.wherewindsmeetgame.com/news/official/821devletter.html",
-    label: "Official August 21 dev letter",
+      "The August 27 Clouded Revelation Version 2.1 overview is the newest official update anchor checked. Read the official page first, then use the August 20 patch notes for the confirmed fix list.",
+    href: "https://www.wherewindsmeetgame.com/news/official/827update.html",
+    label: "Official August 27 overview",
   },
   {
     title: "Today patch-note answer",
@@ -265,8 +265,8 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-3 leading-6 text-cyan-50/90">
-              The current checked update baseline is <strong>Version 2.1 / August 20 Clouded Revelation patch notes</strong>,
-              followed by the August 19 overview, Version 2.0 history, and the Cologne meetup announcement. If you searched for
+              The current checked update baseline is the <strong>Version 2.1 / August 27 Clouded Revelation overview</strong>,
+              followed by the August 20 patch notes, August 19 overview, and clearly labelled Version 2.0 history. If you searched for
               <span className="font-semibold"> where winds meet update today</span>, use the cards below to jump straight
               to official news, patch notes, and roadmap watch items.
             </p>
@@ -298,7 +298,7 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Latest official-news pass: {freshness?.gameVersion ?? "Version 2.1 / August 20 patch notes"}, including Clouded Revelation, quest-trigger fixes, Vernal Umbrella attunement, Arena/combat fixes, and Homestead controls. The list below follows the current official news trail.
+              Latest official-news pass: {freshness?.gameVersion ?? "Version 2.1 / August 27 update overview"}. The August 20 patch notes remain the source for confirmed quest-trigger, Vernal Umbrella, Arena/combat, and Homestead fixes. The list below follows the dated official news trail.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link href="/guides/tier-list" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
@@ -358,7 +358,7 @@ export default function NewsPage() {
             <div className="mt-3 grid gap-2 text-xs text-slate-300 sm:grid-cols-3">
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
                 <p className="font-semibold text-slate-100">Current update</p>
-                <p className="mt-1">Version 2.1 / August 20 Clouded Revelation patch notes are the current baseline; Version 2.0 Hidden Mountain, network, matchmaking, and Path Balance notes remain the historical foundation.</p>
+                <p className="mt-1">The Version 2.1 / August 27 Clouded Revelation overview is the current update anchor; the August 20 patch notes provide confirmed fixes, while Version 2.0 Hidden Mountain, network, matchmaking, and Path Balance notes remain historical context.</p>
               </div>
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
                 <p className="font-semibold text-slate-100">Next watch</p>
@@ -396,10 +396,10 @@ export default function NewsPage() {
                   </Link>
                 </li>
                 <li>
-                  Version 2.1 / August 20 patch notes - current anchor for Clouded Revelation, A Flourishing Legacy and Rising Beyond fixes, Vernal Umbrella, Arena, Homestead, and cosmetic searches.
+                  Version 2.1 / August 20 patch notes - confirmed fix source for A Flourishing Legacy, Rising Beyond, Vernal Umbrella, Arena, Homestead, and cosmetic searches.
                 </li>
                 <li>
-                  August 20 targeted weapon/combat fixes, then August 7 network updates and July 23 Path Balance - separate targeted fixes from the wider weapon baseline before revising tier lists.
+                  August 20 targeted weapon/combat fixes, then the August 14 aggregate page with its August 7 network section and July 23 Path Balance history - separate targeted fixes from the wider weapon baseline before revising tier lists.
                 </li>
                 <li>
                   Feng Ruzhi boss (Silk Ball) - location + unlock + mechanic:

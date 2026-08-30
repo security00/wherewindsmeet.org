@@ -1,14 +1,20 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
+import LiteMp4Embed from "@/components/LiteMp4Embed";
 import Link from "next/link";
 import { bosses } from "@/lib/bosses.de";
+import { buildLocalizedPath } from "@/i18n/routing.mjs";
 import { getContentFreshness } from "@/lib/contentFreshness";
 import { buildHreflangAlternates } from "@/lib/hreflang";
-import { resolveCdnAssetSrc } from "@/lib/image-utils";
 
 const baseUrl = "https://wherewindsmeet.org";
 const freshness = getContentFreshness("/guides/bosses");
+
+const bossHref = (id: string) => {
+  const bossPath = `/guides/bosses/${id}`;
+  return buildLocalizedPath(bossPath, "de") ?? bossPath;
+};
 
 const versionBossWatch = [
   {
@@ -16,7 +22,7 @@ const versionBossWatch = [
     status: "May 29 fix",
     searchIntent: "where winds meet ghost master / skyward bond boss",
     detail:
-      "Die offiziellen May 29 notes fixen ein Skyward-Bond-Problem, bei dem Ghost Master in der Vorbereitungszone erscheinen konnte. Aeltere Bugberichte sind danach mit Vorsicht zu lesen.",
+      "Die offiziellen May 29 notes fixen ein Skyward-Bond-Problem, bei dem Ghost Master in der Vorbereitungszone erscheinen konnte. Ältere Bugberichte sind danach mit Vorsicht zu lesen.",
     source: "https://www.wherewindsmeetgame.com/news/official/529update.html",
   },
   {
@@ -24,7 +30,7 @@ const versionBossWatch = [
     status: "May 27 tuning",
     searchIntent: "where winds meet hero's realm boss guide",
     detail:
-      "Das May 27 live update fuegte Boss-Markierungen, bessere Lock-on-Kamera, smartere Combat Assist Logik, Item-Drop-Regeln und Hinweise fuer enemy-flash attacks in Hero's Realm hinzu.",
+      "Das May 27 live update fügte Boss-Markierungen, bessere Lock-on-Kamera, smartere Combat Assist Logik, Item-Drop-Regeln und Hinweise für enemy-flash attacks in Hero's Realm hinzu.",
     source: "https://www.wherewindsmeetgame.com/news/official/527update.html",
   },
   {
@@ -32,7 +38,7 @@ const versionBossWatch = [
     status: "May 27 tuning",
     searchIntent: "where winds meet sword trial boss guide",
     detail:
-      "Sword Trial erhielt ebenfalls Boss-Markierungen, Lock-on- und Kamera-Verbesserungen sowie smartere Combat Assist Logik. Wiederkehrende Spieler sollten alte Schwierigkeitseinschaetzungen neu testen.",
+      "Sword Trial erhielt ebenfalls Boss-Markierungen, Lock-on- und Kamera-Verbesserungen sowie smartere Combat Assist Logik. Wiederkehrende Spieler sollten alte Schwierigkeitseinschätzungen neu testen.",
     source: "https://www.wherewindsmeetgame.com/news/official/527update.html",
   },
   {
@@ -40,7 +46,7 @@ const versionBossWatch = [
     status: "May 15 release",
     searchIntent: "where winds meet sandstorm tavern guide",
     detail:
-      "Sandstorm Tavern startete im May 15 update fuer das May 15 bis June 5 event window und bleibt danach dauerhaft verfuegbar. Das ist ein staerkeres Guide-Ziel als eine reine News-Erwaehnung.",
+      "Sandstorm Tavern startete im May 15 update für das May 15 bis June 5 event window und bleibt danach dauerhaft verfügbar. Das ist ein stärkeres Guide-Ziel als eine reine News-Erwähnung.",
     source: "https://www.wherewindsmeetgame.com/news/official/515update.html",
   },
   {
@@ -56,7 +62,7 @@ const versionBossWatch = [
 export const metadata: Metadata = {
   title: "Where Winds Meet Bosse - Ghost Master, Dungeon-Bosse & Bossliste",
   description:
-    "Deutscher Version 1.7 Boss-Hub fuer Where Winds Meet: Ghost Master, Hero's Realm, Sword Trial, Sandstorm Tavern, Sunken City Lake, Bossliste, Builds und Waffen-Vorbereitung.",
+    "Deutscher Version 2.1 Boss-Hub für Where Winds Meet: kuratierte Bossliste, überprüfte Patch-Historie, Builds und Waffen-Vorbereitung.",
   alternates: buildHreflangAlternates("/guides/bosses", { canonicalLanguage: "de" }),
 };
 
@@ -89,7 +95,7 @@ export default function BossesPage() {
         "@type": "ListItem",
         position: index + 1,
         name: boss.name,
-        url: `${baseUrl}/de/guides/bosses/${boss.id}`,
+        url: `${baseUrl}${bossHref(boss.id)}`,
       })),
     },
   ];
@@ -115,16 +121,16 @@ export default function BossesPage() {
         <div className="relative">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-200">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            Version 1.7 Boss- und Dungeon-Hub
+            Version 2.1 Boss- und Dungeon-Review
           </div>
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
             Where Winds Meet Bosse: Ghost Master, Dungeon-Bosse und wichtige Begegnungen.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Aktualisiert {freshness?.lastChecked ?? "2026-06-03"} fuer {freshness?.gameVersion ?? "Version 1.7 / The Imperial Palace"}: Diese Seite verbindet die bestehende Bossliste mit den neuen Boss- und Dungeon-Suchen aus dem aktuellen Patch-Zyklus.
+            Aktualisiert {freshness?.lastChecked ?? "2026-08-26"} für {freshness?.gameVersion ?? "Version 2.1 / August 27"}: Diese Seite verbindet die kuratierte Bossliste mit überprüften historischen Patch-Hinweisen und aktueller Waffen- und Build-Vorbereitung. Sie beansprucht keine vollständige Hidden-Mountain-Bossliste.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Starte mit Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern und Sunken City Lake, bevor du aeltere Boss-Tipps nutzt. Kombiniere die Hinweise mit{" "}
+            Starte mit Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern und Sunken City Lake, bevor du ältere Boss-Tipps nutzt. Kombiniere die Hinweise mit{" "}
             <Link href="/de/guides/weapons" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
               Waffen-Guides
             </Link>{" "}
@@ -148,26 +154,26 @@ export default function BossesPage() {
               Aktuelle Patch Notes
             </Link>
             <Link
-              href="/de/guides/tier-list"
+              href="/guides/tier-list"
               className="rounded-full border border-slate-700 px-4 py-2 text-xs font-semibold text-slate-100 hover:border-emerald-300/60"
             >
               Tierliste
             </Link>
           </div>
           <p className="mt-3 text-xs text-slate-400 sm:text-sm">
-            Boss-Informationen koennen sich nach Live-Service-Patches schnell aendern. Offizielle Notes und In-Game-Reward-Previews haben Vorrang.
+            Boss-Informationen können sich nach Live-Service-Patches schnell ändern. Offizielle Notes und In-Game-Reward-Previews haben Vorrang.
           </p>
         </div>
       </section>
 
       <section className="space-y-6 rounded-3xl border border-amber-400/30 bg-amber-500/10 p-6 shadow-lg shadow-amber-950/30">
         <div className="space-y-2">
-          <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">Version 1.7 Watchlist</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">Verifizierte Patch-Historie</p>
           <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
             Boss- und Dungeon-Suchen, die zuerst aktualisiert werden sollten.
           </h2>
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-            Das sind noch nicht alles eigene Boss-Seiten. Sie markieren die naechsten Guide-Kandidaten, sobald stabile Mechaniken, Screenshots und Rewards bestaetigt sind.
+            Das sind noch nicht alles eigene Boss-Seiten. Sie markieren die nächsten Guide-Kandidaten, sobald stabile Mechaniken, Screenshots und Rewards bestätigt sind.
           </p>
         </div>
         <div className="grid gap-4 lg:grid-cols-2">
@@ -204,19 +210,7 @@ export default function BossesPage() {
               key={boss.id}
               className="group flex flex-col overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 shadow-sm shadow-slate-950/60 transition hover:border-emerald-400/80 hover:shadow-emerald-500/30"
             >
-              <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-900/80">
-                <video
-                  src={resolveCdnAssetSrc(boss.backgroundVideo).src}
-                  muted
-                  autoPlay
-                  loop
-                  playsInline
-                  preload="metadata"
-                  poster="/background/bg4.webp"
-                  className="h-full w-full object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-95"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
-              </div>
+              {boss.backgroundVideo ? <LiteMp4Embed src={boss.backgroundVideo} title={`${boss.name} Publisher-Showcase-Clip`} poster="/background/bg4.webp" analytics={{ eventName: "boss_gallery_video_play", params: { boss: boss.id, locale: "de" } }} /> : <div className="relative aspect-video bg-slate-900"><CdnImage src={boss.titleImage} alt={`${boss.name} offizielles Identitätsmotiv`} fill className="object-contain p-4" /></div>}
               <div className="flex flex-1 flex-col gap-2 p-4">
                 <div className="flex items-center justify-between gap-2">
                   <h3 className="text-sm font-semibold text-slate-50">{boss.name}</h3>
@@ -228,7 +222,7 @@ export default function BossesPage() {
                 <p className="text-[11px] text-slate-400">Thema: {boss.theme}</p>
                 <div className="mt-3 flex flex-wrap gap-2 text-[11px]">
                   <Link
-                    href={`/de/guides/bosses/${boss.id}`}
+                    href={bossHref(boss.id)}
                     className="rounded-full bg-slate-900/80 px-3 py-1 text-emerald-300 ring-1 ring-emerald-400/60 hover:bg-emerald-500/10"
                   >
                     Encounter ansehen
@@ -239,6 +233,7 @@ export default function BossesPage() {
                   >
                     Passende Builds
                   </Link>
+                  {boss.backgroundVideo ? <a href={boss.backgroundVideo} target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-900/80 px-3 py-1 text-slate-200 ring-1 ring-slate-700/70 hover:ring-emerald-400/60">Publisher-CDN-Quelle öffnen</a> : <span className="rounded-full bg-slate-900/80 px-3 py-1 text-slate-400 ring-1 ring-slate-700/70">Kein lizenzierter Clip veröffentlicht</span>}
                 </div>
               </div>
             </article>

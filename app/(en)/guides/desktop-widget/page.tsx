@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
+import DesktopWidgetAuthorizedMedia from "@/components/guides/DesktopWidgetAuthorizedMedia";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
@@ -65,7 +66,7 @@ const breadcrumbStructuredData = {
 export const metadata: Metadata = {
   title: "Where Winds Meet Desktop Widget: No Download? PC Setup",
   description:
-    "Can’t find a Where Winds Meet desktop widget download? See screenshots, what it really means (mobile widget), and a quick PC setup with Reset Timer + Checklist.",
+    "Can’t find a Where Winds Meet desktop widget download? Learn what it means (mobile widget) and set up a PC Reset Timer + Checklist.",
   alternates: buildHreflangAlternates("/guides/desktop-widget"),
 };
 
@@ -238,37 +239,14 @@ export default function DesktopWidgetGuidePage() {
         <p className="text-xs leading-relaxed text-slate-400">
           Note: Reddit content can change. Treat it as community context, not official documentation.
         </p>
-
-        <div className="grid gap-4 lg:grid-cols-2">
-          <figure className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
-            <CdnImage
-              src="/guides/desktop-widget/reddit-daily-assistant-widget.png"
-              alt="In-game screen showing “Daily Assistant” and “Desktop Widget” with a note that it’s available via the mobile version"
-              width={1685}
-              height={917}
-              className="h-auto w-full"
-            />
-            <figcaption className="p-4 text-xs leading-relaxed text-slate-400">
-              Example screen that uses the term “Desktop Widget”, but points players to the mobile version. Screenshot
-              used with permission.
-            </figcaption>
-          </figure>
-
-          <figure className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
-            <CdnImage
-              src="/guides/desktop-widget/reddit-widget-screenshot.jpeg"
-              alt="Android widget gallery showing Where Winds Meet daily assistant widgets"
-              width={1080}
-              height={2340}
-              className="mx-auto h-auto w-full max-w-[360px]"
-            />
-            <figcaption className="p-4 text-xs leading-relaxed text-slate-400">
-              Example Android widget gallery entry for Where Winds Meet. If you don’t see it, it may be region/version
-              dependent. Screenshot used with permission.
-            </figcaption>
-          </figure>
-        </div>
+        <p className="rounded-2xl border border-amber-500/30 bg-amber-500/10 p-4 text-xs leading-relaxed text-amber-50/90">
+          Publisher: Reddit community thread. Reuse authorization confirmed by site owner 2026-08-29. These dated
+          community captures explain the original report, but they are not official documentation; verify availability
+          in the current app or official store page.
+        </p>
       </section>
+
+      <DesktopWidgetAuthorizedMedia locale="en" />
 
       <section className="space-y-6 rounded-3xl border border-slate-800/80 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
         <h2 className="text-2xl font-bold text-slate-50">Option 1: Use the mobile widget (Android / iOS)</h2>
@@ -325,35 +303,6 @@ export default function DesktopWidgetGuidePage() {
           </ul>
         </div>
 
-        <div className="mt-4 grid gap-4 lg:grid-cols-2">
-          <figure className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
-            <CdnImage
-              src="/guides/desktop-widget/reddit-widget-region-availability.png"
-              alt="Google Play listing showing Where Winds Meet is not available in the user's country"
-              width={1080}
-              height={1500}
-              className="mx-auto h-auto w-full max-w-[360px]"
-            />
-            <figcaption className="p-4 text-xs leading-relaxed text-slate-400">
-              Example: the mobile app can be unavailable in some regions, which also blocks the widget. Screenshot used
-              with permission.
-            </figcaption>
-          </figure>
-
-          <figure className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
-            <CdnImage
-              src="/guides/desktop-widget/reddit-mobile-launch-region.png"
-              alt="Google Play listing showing Where Winds Meet availability message and a Widgets tab"
-              width={1080}
-              height={2219}
-              className="mx-auto h-auto w-full max-w-[360px]"
-            />
-            <figcaption className="p-4 text-xs leading-relaxed text-slate-400">
-              On Android, the Play Store listing may show a Widgets section. If you don’t see it, widgets might not be
-              supported for your device/version yet. Screenshot used with permission.
-            </figcaption>
-          </figure>
-        </div>
       </section>
 
       <section className="space-y-6 rounded-3xl border border-slate-800/80 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">

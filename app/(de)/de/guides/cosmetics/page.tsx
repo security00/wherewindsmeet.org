@@ -35,7 +35,7 @@ export default function CosmeticsPage() {
             <Link href="/de/guides/free-outfits" className="rounded-full border border-emerald-400/60 bg-emerald-500/10 px-3 py-1 font-semibold text-emerald-100 hover:border-emerald-300/80">
               Gratis-Outfits
             </Link>
-            <Link href="/de/guides/codes" className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60">
+            <Link href="/guides/codes" className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60">
               Aktive Codes
             </Link>
             <Link href="/de/guides/flicker-of-faces" className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 font-semibold text-slate-100 hover:border-emerald-300/60">

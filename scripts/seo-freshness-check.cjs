@@ -17,6 +17,13 @@ const staleRules = [
   { pattern: /Updated May 14, 2026/i, reason: "patch notes still use the old May 14 check date" },
   { pattern: /Patch Notes May 2026 & Roadmap/i, reason: "patch notes metadata is still May 2026 focused" },
   { pattern: /Version 1\.6 \/ Flows of Dreams are summarized here/i, reason: "news page still treats 1.6 as the current trail" },
+  { pattern: /Version 2\.0 <span[^>]*>Guides Hub/i, reason: "homepage still presents Version 2.0 as the current guide hub" },
+  { pattern: /Version 1\.7 \/ The Imperial Palace Part 2/i, reason: "localized homepage fallback still presents Version 1.7 as current" },
+  { pattern: /Fresh Where Winds Meet videos for Version 1\.7/i, reason: "videos page still presents Version 1.7 as fresh" },
+  { pattern: /Version 1\.7 boss and dungeon guide hub/i, reason: "boss hub still presents Version 1.7 as current" },
+  { pattern: /Updated for Launch/i, reason: "beginner guide still carries a launch-era freshness badge" },
+  { pattern: /Mistveil City is currently time-gated/i, reason: "Mistveil page still presents an elapsed January gate as current" },
+  { pattern: /August 21 developer letter is the newest official anchor/i, reason: "news page still treats the August 21 letter as newest" },
 ];
 
 const staleScanTargets = [
@@ -30,6 +37,11 @@ const staleScanTargets = [
   "app/(vn)/vn/guides/codes/page.tsx",
   "app/(de)/de/guides/codes/page.tsx",
   "app/(en)/guides/patch-notes/page.tsx",
+  "components/HomeMainKeywordSections.tsx",
+  "app/(en)/videos/page.tsx",
+  "app/(en)/guides/bosses/page.tsx",
+  "app/(en)/guides/new-players/page.tsx",
+  "app/(en)/guides/mistveil-city/page.tsx",
 ];
 
 function walkFiles(dir, files = []) {
@@ -52,20 +64,20 @@ function routeFromHtmlPath(filePath) {
   return `/${rel.slice(0, -".html".length)}`;
 }
 
-function collectHtmlRoutes(dir = "out", routes = []) {
-  if (!existsSync(dir)) return routes;
+function collectHtmlPages(dir = "out", pages = []) {
+  if (!existsSync(dir)) return pages;
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
     const path = join(dir, entry.name);
     if (entry.isDirectory()) {
-      collectHtmlRoutes(path, routes);
+      collectHtmlPages(path, pages);
     } else if (entry.name.endsWith(".html")) {
-      routes.push(routeFromHtmlPath(path));
+      pages.push({ route: routeFromHtmlPath(path), path });
     }
   }
-  return routes;
+  return pages;
 }
 
-function checkFreshnessRegistry(errors) {
+async function checkFreshnessRegistry(errors) {
   const registryPath = "lib/contentFreshness.json";
   if (!existsSync(registryPath)) {
     errors.push("Missing lib/contentFreshness.json");
@@ -74,6 +86,17 @@ function checkFreshnessRegistry(errors) {
 
   const entries = JSON.parse(readFileSync(registryPath, "utf8"));
   const byPath = new Map(entries.map((entry) => [entry.basePath, entry]));
+  const { getAvailableLocales } = await import("../i18n/routing.mjs");
+
+  for (const entry of entries) {
+    const actualLanguages = Array.isArray(entry.languages) ? [...new Set(entry.languages)].sort() : [];
+    const expectedLanguages = getAvailableLocales(entry.basePath).sort();
+    if (actualLanguages.join(",") !== expectedLanguages.join(",")) {
+      errors.push(
+        `Freshness registry for ${entry.basePath} covers ${actualLanguages.join("/") || "no languages"}; positive locale manifest expects ${expectedLanguages.join("/")}`,
+      );
+    }
+  }
 
   // Derive a dynamic freshness anchor from the core entries themselves.
   // This removes the need to manually bump a hardcoded date in the checker every patch.
@@ -107,9 +130,6 @@ function checkFreshnessRegistry(errors) {
     } else if (maxCoreDate && isStaleComparedToAnchor(entry.lastChecked, maxCoreDate)) {
       errors.push(`Freshness registry for ${basePath} has stale lastChecked: ${entry.lastChecked} (anchor from other core entries is ${maxCoreDate}, drift > ${DRIFT_DAYS} days)`);
     }
-    if (!Array.isArray(entry.languages) || !["en", "vi", "de"].every((lang) => entry.languages.includes(lang))) {
-      errors.push(`Freshness registry for ${basePath} must cover en/vi/de`);
-    }
     if (!Array.isArray(entry.sourceUrls) || entry.sourceUrls.length === 0) {
       errors.push(`Freshness registry for ${basePath} needs at least one source URL`);
     }
@@ -139,8 +159,10 @@ function checkSitemapCoverage(errors) {
     [...sitemap.matchAll(/<loc>https:\/\/wherewindsmeet\.org(.*?)<\/loc>/g)].map((match) => match[1] || "/"),
   );
   const ignored = new Set(["/_not-found", "/404", "/500"]);
-  const missing = collectHtmlRoutes()
-    .filter((route) => !ignored.has(route))
+  const missing = collectHtmlPages()
+    .filter(({ route }) => !ignored.has(route))
+    .filter(({ path }) => !/<meta name="robots" content="[^"]*\bnoindex\b/i.test(readFileSync(path, "utf8")))
+    .map(({ route }) => route)
     .filter((route) => !sitemapRoutes.has(route));
 
   if (missing.length) {
@@ -157,9 +179,9 @@ function checkRedirectRisk(errors) {
   }
 }
 
-function main() {
+async function main() {
   const errors = [];
-  checkFreshnessRegistry(errors);
+  await checkFreshnessRegistry(errors);
   checkStalePhrases(errors);
   checkSitemapCoverage(errors);
   checkRedirectRisk(errors);
@@ -175,4 +197,7 @@ function main() {
   console.log(`SEO freshness check OK (${scannedFiles} source files available, ${outNote}).`);
 }
 
-main();
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});

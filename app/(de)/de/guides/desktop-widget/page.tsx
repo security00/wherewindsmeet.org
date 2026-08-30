@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
+import DesktopWidgetAuthorizedMedia from "@/components/guides/DesktopWidgetAuthorizedMedia";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
@@ -128,36 +129,11 @@ export default function DesktopWidgetGuidePage() {
         <p className="text-xs leading-relaxed text-slate-400">
           Hinweis: Community‑Infos sind nicht offiziell und können sich ändern.
         </p>
-
-        <div className="grid gap-4 lg:grid-cols-2">
-          <figure className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
-            <CdnImage
-              src="/guides/desktop-widget/reddit-daily-assistant-widget.png"
-              alt="In-Game-Screen „Daily Assistant / Desktop Widget“ mit Hinweis, dass man die Mobile-Version herunterladen soll"
-              width={1685}
-              height={917}
-              className="h-auto w-full"
-            />
-            <figcaption className="p-4 text-xs leading-relaxed text-slate-400">
-              Beispiel‑Screen, der „Desktop Widget“ sagt, aber auf die Mobile‑Version verweist. Screenshot mit Erlaubnis
-              genutzt.
-            </figcaption>
-          </figure>
-
-          <figure className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
-            <CdnImage
-              src="/guides/desktop-widget/reddit-widget-screenshot.jpeg"
-              alt="Android-Widget-Galerie mit Where Winds Meet Widgets"
-              width={1080}
-              height={2340}
-              className="mx-auto h-auto w-full max-w-[360px]"
-            />
-            <figcaption className="p-4 text-xs leading-relaxed text-slate-400">
-              Beispiel aus der Android‑Widget‑Galerie. Wenn du es nicht siehst, kann es an Region/App‑Version liegen.
-              Screenshot mit Erlaubnis genutzt.
-            </figcaption>
-          </figure>
-        </div>
+        <p className="rounded-2xl border border-amber-500/30 bg-amber-500/10 p-4 text-xs leading-relaxed text-amber-50/90">
+          Publisher: Reddit community thread. Reuse authorization confirmed by site owner 2026-08-29. Die datierten
+          Community-Aufnahmen erklären den ursprünglichen Bericht, sind aber keine offizielle Dokumentation. Prüfe die
+          Verfügbarkeit in der aktuellen App oder im offiziellen Store-Eintrag.
+        </p>
 
         <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
           <h3 className="text-lg font-bold text-slate-100">Häufige Probleme</h3>
@@ -173,36 +149,9 @@ export default function DesktopWidgetGuidePage() {
           </ul>
         </div>
 
-        <div className="mt-4 grid gap-4 lg:grid-cols-2">
-          <figure className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
-            <CdnImage
-              src="/guides/desktop-widget/reddit-widget-region-availability.png"
-              alt="Google-Play-Seite zeigt, dass Where Winds Meet im Land nicht verfügbar ist"
-              width={1080}
-              height={1500}
-              className="mx-auto h-auto w-full max-w-[360px]"
-            />
-            <figcaption className="p-4 text-xs leading-relaxed text-slate-400">
-              Beispiel: Wenn die Mobile‑App in deiner Region nicht verfügbar ist, wird auch das Widget fehlen. Screenshot
-              mit Erlaubnis genutzt.
-            </figcaption>
-          </figure>
-
-          <figure className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
-            <CdnImage
-              src="/guides/desktop-widget/reddit-mobile-launch-region.png"
-              alt="Google-Play-Seite mit Hinweis zur Verfügbarkeit und einem Widgets-Tab"
-              width={1080}
-              height={2219}
-              className="mx-auto h-auto w-full max-w-[360px]"
-            />
-            <figcaption className="p-4 text-xs leading-relaxed text-slate-400">
-              Auf Android kann der Play‑Store einen „Widgets“-Tab anzeigen. Wenn er fehlt, ist das Widget ggf. nicht für
-              dein Gerät/deine Version verfügbar. Screenshot mit Erlaubnis genutzt.
-            </figcaption>
-          </figure>
-        </div>
       </section>
+
+      <DesktopWidgetAuthorizedMedia locale="de" />
 
       <section className="space-y-6 rounded-3xl border border-slate-800/80 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60 sm:p-8">
         <h2 className="text-2xl font-bold text-slate-50">PC/Mac: einen Daily Assistant bauen</h2>

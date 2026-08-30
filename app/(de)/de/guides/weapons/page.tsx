@@ -82,14 +82,14 @@ export default function WeaponsPage() {
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Für ein reines Ranking schau in die{" "}
-            <Link href="/de/guides/weapons/tier-list" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
+            <Link href="/guides/weapons/tier-list" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
               Waffen-Tierliste
             </Link>{" "}
             und komm dann hierher zurück für Kontext und Rollen.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Kombiniere die Infos mit der{" "}
-            <Link href="/de/guides/tier-list" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
+            <Link href="/guides/tier-list" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
               Gesamt-Tierliste
             </Link>{" "}
             und den{" "}
@@ -149,7 +149,7 @@ export default function WeaponsPage() {
                     Details ansehen
                   </Link>
                   <Link
-                    href="/de/guides/tier-list"
+                    href="/guides/tier-list"
                     className="rounded-full bg-slate-900/80 px-3 py-1 text-slate-200 ring-1 ring-slate-700/70 hover:ring-emerald-400/60"
                   >
                     Tierliste-Kontext

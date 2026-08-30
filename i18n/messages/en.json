@@ -1,0 +1,78 @@
+{
+  "siteHeader": {
+    "brandSubtitle": "Guides · Tier List · Codes",
+    "homeAria": "Where Winds Meet home",
+    "switchLanguageAria": "Switch language",
+    "activeLabel": "Active",
+    "openMenuAria": "Open menu",
+    "openMenuSr": "Open menu",
+    "closeMenuAria": "Close menu",
+    "closeNavigationAria": "Close navigation",
+    "nav": {
+      "home": "Home",
+      "guides": "Guides",
+      "tools": "Tools",
+      "bosses": "Bosses",
+      "weapons": "Weapons",
+      "martialArts": "Martial Arts",
+      "tierList": "Tier List",
+      "builds": "Builds",
+      "codes": "Codes",
+      "items": "Items",
+      "news": "News",
+      "videos": "Videos"
+    }
+  },
+  "siteFooter": {
+    "description": "Unofficial Where Winds Meet fan hub. All trademarks are the property of their respective owners.",
+    "links": {
+      "home": "Where Winds Meet",
+      "guides": "Guides",
+      "tools": "Tools",
+      "bosses": "Bosses",
+      "weapons": "Weapons",
+      "news": "News",
+      "videos": "Videos",
+      "privacy": "Privacy",
+      "terms": "Terms"
+    }
+  },
+  "languagePrompt": {
+    "dialogAria": "Language suggestion",
+    "suggestions": {
+      "vi": {
+        "label": "Tiếng Việt",
+        "available": "Đã hỗ trợ:",
+        "message": "Hiện đã có phiên bản tiếng Việt.",
+        "cta": "Chuyển sang Tiếng Việt",
+        "stayCta": "Tiếp tục dùng bản hiện tại"
+      },
+      "de": {
+        "label": "Deutsch",
+        "available": "Jetzt verfügbar:",
+        "message": "Es gibt jetzt auch eine deutsche Version.",
+        "cta": "Zur deutschen Seite wechseln",
+        "stayCta": "Auf dieser Seite bleiben"
+      }
+    }
+  },
+  "consent": {
+    "title": "Your privacy choices",
+    "summary": "Optional analytics and advertising services stay off until you choose to allow them. Necessary local storage keeps your choice.",
+    "acceptAll": "Accept all",
+    "rejectOptional": "Reject optional",
+    "customize": "Customize",
+    "settingsTitle": "Privacy settings",
+    "settingsDescription": "Choose which optional services this fan hub may load. You can return here and change or withdraw your choice at any time.",
+    "necessaryLabel": "Necessary",
+    "necessaryDescription": "Always active. Stores your privacy choice locally so we do not ask on every visit.",
+    "analyticsLabel": "Analytics",
+    "analyticsDescription": "Allows Google Analytics, Microsoft Clarity, and Plausible to measure site usage and help improve guides.",
+    "adsLabel": "Advertising",
+    "adsDescription": "Allows Google AdSense to load advertising after you explicitly opt in and to process page and device data under Google's policies.",
+    "save": "Save choices",
+    "cancel": "Cancel",
+    "openSettings": "Privacy settings",
+    "privacyLink": "Read the privacy policy"
+  }
+}

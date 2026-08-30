@@ -2,67 +2,90 @@
 
 import Script from "next/script";
 import { useEffect, useState } from "react";
+import { useConsentPreferences } from "@/components/useConsentPreferences";
 
 const GA_MEASUREMENT_ID = "G-CELX735FQH";
 const ADSENSE_ID = "ca-pub-1548791648803369";
 const PLAUSIBLE_SCRIPT_SRC = "https://plausible.shipsolo.io/js/pa-ygCIsSexYA3JT_gyd8Ht4.js";
 
+const ANALYTICS_SCRIPT_IDS = [
+  "ga4-loader",
+  "ga4-init",
+  "plausible-script",
+  "plausible-init",
+  "ms-clarity",
+];
+
+function expireFirstPartyCookies(prefixes: string[]) {
+  for (const entry of document.cookie.split(";")) {
+    const name = entry.split("=")[0]?.trim();
+    if (!name || !prefixes.some((prefix) => name === prefix || name.startsWith(prefix))) continue;
+    document.cookie = `${name}=; Max-Age=0; path=/; SameSite=Lax`;
+    document.cookie = `${name}=; Max-Age=0; path=/; domain=.wherewindsmeet.org; SameSite=Lax`;
+  }
+}
+
+function removeScripts(ids: string[]) {
+  for (const id of ids) document.getElementById(id)?.remove();
+}
+
+function removeScriptsBySource(sourceFragment: string) {
+  document
+    .querySelectorAll<HTMLScriptElement>(`script[src*="${sourceFragment}"]`)
+    .forEach((script) => script.remove());
+}
+
 export function Analytics() {
   const isProd = process.env.NODE_ENV === "production";
-
-  const [shouldLoadAdsense, setShouldLoadAdsense] = useState(false);
-  const [shouldLoadTelemetry, setShouldLoadTelemetry] = useState(false);
+  const { consent } = useConsentPreferences();
+  const hasAnalyticsConsent = consent?.analytics === true;
+  const hasAdsConsent = consent?.ads === true;
+  const [analyticsReady, setAnalyticsReady] = useState(false);
 
   useEffect(() => {
-    if (!isProd) return;
-
-    // Keep third-party script loading off the critical path to protect INP.
+    if (!isProd || !hasAnalyticsConsent) return;
     let cancelled = false;
-
-    const schedule = (run: () => void, delayMs: number, idleTimeoutMs: number) => {
-      const timeoutId = window.setTimeout(run, delayMs);
-      const idleId =
-        typeof window.requestIdleCallback === "function"
-          ? window.requestIdleCallback(
-              () => {
-                window.clearTimeout(timeoutId);
-                run();
-              },
-              { timeout: idleTimeoutMs }
-            )
-          : null;
-
-      return () => {
+    const timeoutId = window.setTimeout(() => {
+      if (!cancelled) setAnalyticsReady(true);
+    }, 2500);
+    const idleId = window.requestIdleCallback?.(
+      () => {
         window.clearTimeout(timeoutId);
-        if (idleId && typeof window.cancelIdleCallback === "function") {
-          window.cancelIdleCallback(idleId);
-        }
-      };
-    };
-
-    const cleanupAdsense = schedule(() => {
-      if (cancelled) return;
-      setShouldLoadAdsense(true);
-    }, 2000, 4000);
-
-    const cleanupTelemetry = schedule(() => {
-      if (cancelled) return;
-      setShouldLoadTelemetry(true);
-    }, 4500, 6500);
+        if (!cancelled) setAnalyticsReady(true);
+      },
+      { timeout: 4500 },
+    );
 
     return () => {
       cancelled = true;
-      cleanupAdsense();
-      cleanupTelemetry();
+      window.clearTimeout(timeoutId);
+      if (idleId) window.cancelIdleCallback?.(idleId);
     };
-  }, [isProd]);
+  }, [hasAnalyticsConsent, isProd]);
+
+  useEffect(() => {
+    if (hasAnalyticsConsent) return;
+    removeScripts(ANALYTICS_SCRIPT_IDS);
+    removeScriptsBySource("clarity.ms/tag/");
+    expireFirstPartyCookies(["_ga", "_clck", "_clsk"]);
+  }, [hasAnalyticsConsent]);
+
+  useEffect(() => {
+    if (hasAdsConsent) return;
+    removeScripts(["adsense-loader"]);
+    removeScriptsBySource("pagead2.googlesyndication.com/pagead/js/adsbygoogle.js");
+    expireFirstPartyCookies(["_gads", "_gpi", "__gads", "__gpi"]);
+  }, [hasAdsConsent]);
 
   if (!isProd) return null;
 
+  const shouldLoadTelemetry = hasAnalyticsConsent && analyticsReady;
+
   return (
     <>
-      {shouldLoadAdsense ? (
+      {hasAdsConsent ? (
         <Script
+          id="adsense-loader"
           async
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}`}
           crossOrigin="anonymous"
@@ -73,6 +96,7 @@ export function Analytics() {
       {shouldLoadTelemetry ? (
         <>
           <Script
+            id="ga4-loader"
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
             strategy="afterInteractive"
           />
@@ -81,7 +105,7 @@ export function Analytics() {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', '${GA_MEASUREMENT_ID}');
+              gtag('config', '${GA_MEASUREMENT_ID}', {anonymize_ip: true});
             `}
           </Script>
 
