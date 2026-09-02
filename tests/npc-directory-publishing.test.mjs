@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
+import { isMediaShipped } from "./media-helper.mjs";
 
 const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
 
@@ -41,7 +42,7 @@ test("NPC directories publish authorized visual snapshots without claiming live 
   });
 });
 
-test("authorized NPC media and all three reviewed locale routes ship in the sitemap", () => {
+test("authorized NPC media and all three reviewed locale routes ship in the sitemap", async () => {
   const sitemap = read("app/sitemap.ts");
   assert.match(sitemap, /path:\s*"\/guides\/npc-list"/, "English/base sitemap entry");
   assert.match(sitemap, /path:\s*entry\.path === "\/" \? "\/de" : `\/de\$\{entry\.path\}`/, "German locale expansion");
@@ -52,10 +53,12 @@ test("authorized NPC media and all three reviewed locale routes ship in the site
     "base and Vietnamese sitemap entries use the page modification date",
   );
 
-  const mediaDirectory = new URL("../public/guides/npc-list", import.meta.url);
-  assert.equal(existsSync(mediaDirectory), true);
-  for (const asset of ["map.gif", "pins-old-friends.json", "hero.png", "zhou-yihang.png", "feng-rusong.png"]) {
-    assert.equal(existsSync(new URL(asset, `${mediaDirectory.href}/`)), true, asset);
+  // Check sample NPC assets - they may be on CDN or local
+  const sampleAssets = ["map.gif", "pins-old-friends.json", "hero.png", "zhou-yihang.png", "feng-rusong.png"];
+  for (const asset of sampleAssets) {
+    const publicPath = `public/guides/npc-list/${asset}`;
+    const shipped = await isMediaShipped(publicPath);
+    assert.equal(shipped, true, `${asset} should be shipped (local or CDN)`);
   }
 });
 
@@ -66,7 +69,7 @@ test("NPC pages separate the dated fact snapshot from the page modification date
   });
 });
 
-test("every rendered NPC name resolves to a checked-in local portrait", () => {
+test("every rendered NPC name resolves to a checked-in local portrait", async () => {
   const englishPage = pages[0][1];
   const names = [...englishPage.matchAll(/\{ name: "([^"]+)"/g)].map((match) => match[1]);
   assert.ok(names.length > 100, "expected the full editorial snapshot");
@@ -78,11 +81,9 @@ test("every rendered NPC name resolves to a checked-in local portrait", () => {
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-|-$/g, "");
-    assert.equal(
-      existsSync(new URL(`../public/guides/npc-list/${slug}.png`, import.meta.url)),
-      true,
-      `${name} portrait`,
-    );
+    const publicPath = `public/guides/npc-list/${slug}.png`;
+    const shipped = await isMediaShipped(publicPath);
+    assert.equal(shipped, true, `${name} portrait should be shipped (local or CDN)`);
   }
 });
 

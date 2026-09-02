@@ -1,12 +1,14 @@
 import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
+import { isMediaShipped } from "./media-helper.mjs";
 
 const projectFile = (path) => new URL(`../${path}`, import.meta.url);
 const read = (path) => readFileSync(projectFile(path), "utf8");
 
-test("Qin Caiwei pages publish the owner-authorized AllThings capture with an explicit evidence boundary", () => {
-  assert.equal(existsSync(projectFile("public/guides/qin-caiwei/hero.jpg")), true);
+test("Qin Caiwei pages publish the owner-authorized AllThings capture with an explicit evidence boundary", async () => {
+  const heroShipped = await isMediaShipped("public/guides/qin-caiwei/hero.jpg");
+  assert.equal(heroShipped, true, "Qin Caiwei hero image should be shipped (local or CDN)");
 
   const pages = {
     en: read("app/(en)/guides/qin-caiwei/page.tsx"),
