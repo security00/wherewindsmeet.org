@@ -13,4 +13,4 @@ binding = "ASSETS"
 run_worker_first = false
 
 [observability]
-enabled = true
+enabled = false
