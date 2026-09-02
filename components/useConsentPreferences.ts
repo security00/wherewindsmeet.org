@@ -4,6 +4,7 @@ import { useCallback, useMemo, useSyncExternalStore } from "react";
 import {
   CONSENT_CHANGE_EVENT,
   CONSENT_STORAGE_KEY,
+  DEFAULT_CONSENT,
   parseStoredConsent,
   serializeConsent,
 } from "@/lib/consent.mjs";
@@ -26,7 +27,7 @@ function getSnapshot() {
       return stored;
     }
   } catch {
-    // Keep optional services blocked when browser storage is unavailable.
+    // Browser storage unavailable; fall back to in-memory default.
   }
   return inMemorySnapshot ?? MISSING_SNAPSHOT;
 }
@@ -55,11 +56,12 @@ export function useConsentPreferences() {
   const snapshot = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
   const isReady = snapshot !== SERVER_SNAPSHOT;
   const consent = useMemo<ConsentPreferences | null>(() => {
-    if (snapshot === SERVER_SNAPSHOT || snapshot === MISSING_SNAPSHOT) return null;
+    if (snapshot === SERVER_SNAPSHOT) return null;
+    if (snapshot === MISSING_SNAPSHOT) {
+      return { necessary: true, analytics: true, ads: true };
+    }
     const parsed = parseStoredConsent(snapshot);
-    return parsed
-      ? { necessary: true, analytics: parsed.analytics === true, ads: parsed.ads === true }
-      : null;
+    return { necessary: true, analytics: parsed.analytics === true, ads: parsed.ads === true };
   }, [snapshot]);
 
   const saveConsent = useCallback(

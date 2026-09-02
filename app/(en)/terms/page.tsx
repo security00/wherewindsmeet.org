@@ -49,7 +49,15 @@ export default function TermsPage() {
           2. Using the site and its content.
         </h2>
         <p>
-          You are welcome to browse the site, read guides, and watch embedded
+          By using this site, you agree to the{" "}
+          <Link
+            href="/privacy"
+            className="text-emerald-300 hover:text-emerald-200"
+          >
+            Privacy Policy
+          </Link>
+          , including the use of analytics and advertising technologies described
+          there. You are welcome to browse the site, read guides, and watch embedded
           videos for personal, non-commercial use. You may share links to pages
           with friends, stream viewers, or community groups as long as you do so
           in a way that does not misrepresent the site as official or claim
