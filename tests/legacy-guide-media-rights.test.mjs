@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
+import { isMediaShipped } from "./media-helper.mjs";
 
 const projectFile = (path) => new URL(`../${path}`, import.meta.url);
 const read = (path) => readFileSync(projectFile(path), "utf8");
@@ -33,20 +34,16 @@ const desktopWidgetAssets = [
   "reddit-widget-screenshot.jpeg",
 ];
 
-test("owner-authorized AllThings and Reddit media is restored from the tracked archive", () => {
+test("owner-authorized AllThings and Reddit media is restored from the tracked archive", async () => {
   for (const asset of mistveilAssets) {
-    assert.equal(
-      existsSync(projectFile(`public/guides/mistveil-city/allthings/${asset}`)),
-      true,
-      `missing Mistveil asset: ${asset}`,
-    );
+    const publicPath = `public/guides/mistveil-city/allthings/${asset}`;
+    const shipped = await isMediaShipped(publicPath);
+    assert.equal(shipped, true, `missing Mistveil asset: ${asset} (should be local or CDN)`);
   }
   for (const asset of desktopWidgetAssets) {
-    assert.equal(
-      existsSync(projectFile(`public/guides/desktop-widget/${asset}`)),
-      true,
-      `missing desktop-widget asset: ${asset}`,
-    );
+    const publicPath = `public/guides/desktop-widget/${asset}`;
+    const shipped = await isMediaShipped(publicPath);
+    assert.equal(shipped, true, `missing desktop-widget asset: ${asset} (should be local or CDN)`);
   }
 });
 

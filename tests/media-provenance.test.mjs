@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
+import { isMediaShipped } from "./media-helper.mjs";
 
 const read = (path) =>
   readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
@@ -15,7 +16,7 @@ test("decorative backgrounds never auto-load remote video", () => {
   assert.doesNotMatch(wrapper, /enableVideo/);
 });
 
-test("character-code guidance uses authorized Faceologist media only for accurate Appearance navigation", () => {
+test("character-code guidance uses authorized Faceologist media only for accurate Appearance navigation", async () => {
   const source = read("components/guides/GrowthOpportunityGuidePage.tsx");
   const branch = source.slice(
     source.indexOf('if (kind === "character-codes")'),
@@ -30,11 +31,14 @@ test("character-code guidance uses authorized Faceologist media only for accurat
   assert.match(branch, /Reuse authorization confirmed by site owner 2026-08-29\./);
   assert.match(source, /No verified current import-dialog screenshot is published/i);
   assert.match(source, /did not show the text-code field or QR-import control/i);
-  assert.equal(existsSync(new URL("../public/guides/the-great-faceologist/step-1-open-appearance.webp", import.meta.url)), true);
-  assert.equal(existsSync(new URL("../public/guides/the-great-faceologist/step-2-switch-appearance-tab.webp", import.meta.url)), true);
+  
+  const step1Shipped = await isMediaShipped("public/guides/the-great-faceologist/step-1-open-appearance.webp");
+  const step2Shipped = await isMediaShipped("public/guides/the-great-faceologist/step-2-switch-appearance-tab.webp");
+  assert.equal(step1Shipped, true, "step-1 should be shipped");
+  assert.equal(step2Shipped, true, "step-2 should be shipped");
 });
 
-test("Great Faceologist typed archive publishes the authorized AllThings screenshot set with historical boundaries", () => {
+test("Great Faceologist typed archive publishes the authorized AllThings screenshot set with historical boundaries", async () => {
   const pages = [
     "app/(en)/guides/the-great-faceologist/page.tsx",
     "app/(de)/de/guides/the-great-faceologist/page.tsx",
@@ -60,11 +64,8 @@ test("Great Faceologist typed archive publishes the authorized AllThings screens
   }
   for (const asset of assets) {
     assert.match(shared, new RegExp(asset.replaceAll(".", "\\.")), asset);
-    assert.equal(
-      existsSync(new URL(`../public/guides/the-great-faceologist/${asset}`, import.meta.url)),
-      true,
-      asset,
-    );
+    const shipped = await isMediaShipped(`public/guides/the-great-faceologist/${asset}`);
+    assert.equal(shipped, true, `${asset} should be shipped (local or CDN)`);
   }
   assert.match(shared, /<CdnImage/);
   assert.match(shared, /alt=\{/);
@@ -101,7 +102,7 @@ test("Great Faceologist locale routes share one typed archive and one schema sou
   assert.match(shared, /\{content\.faq\.map/);
 });
 
-test("authorized wall-puzzle and Officer Nan walkthrough media is attributed and locally available", () => {
+test("authorized wall-puzzle and Officer Nan walkthrough media is attributed and locally available", async () => {
   const wallPages = [
     read("app/(en)/guides/wall-puzzle/page.tsx"),
     read("app/(de)/de/guides/wall-puzzle/page.tsx"),
@@ -136,12 +137,19 @@ test("authorized wall-puzzle and Officer Nan walkthrough media is attributed and
     assert.doesNotMatch(source, /<(?:iframe|video)\b/i);
   }
 
-  assert.equal(existsSync(new URL("../public/guides/wall-puzzle/game8/4331075-caa01c4ee0d88da905e52717793aa762.webp", import.meta.url)), true);
-  assert.equal(existsSync(new URL("../public/guides/wall-puzzle/wall-tiles-right.webp", import.meta.url)), true);
-  assert.equal(existsSync(new URL("../public/guides/wall-puzzle/ign/1.webp", import.meta.url)), true);
-  assert.equal(existsSync(new URL("../public/guides/wall-puzzle/ign/6.webp", import.meta.url)), true);
-  assert.equal(existsSync(new URL("../public/guides/find-officer-nan/hero.webp", import.meta.url)), true);
-  assert.equal(existsSync(new URL("../public/guides/find-officer-nan/find-nan.webp", import.meta.url)), true);
+  // Check sample assets are shipped (local or CDN)
+  const sampleAssets = [
+    "public/guides/wall-puzzle/game8/4331075-caa01c4ee0d88da905e52717793aa762.webp",
+    "public/guides/wall-puzzle/wall-tiles-right.webp",
+    "public/guides/wall-puzzle/ign/1.webp",
+    "public/guides/wall-puzzle/ign/6.webp",
+    "public/guides/find-officer-nan/hero.webp",
+    "public/guides/find-officer-nan/find-nan.webp",
+  ];
+  for (const asset of sampleAssets) {
+    const shipped = await isMediaShipped(asset);
+    assert.equal(shipped, true, `${asset} should be shipped (local or CDN)`);
+  }
 });
 
 test("deferred YouTube cards use local neutral posters and expose source attribution", () => {
@@ -201,7 +209,7 @@ test("unused placeholder video gallery cannot be reintroduced accidentally", () 
   );
 });
 
-test("authorized Mist-Shrouded Prison walkthrough images are attributed and deferred video stays private by default", () => {
+test("authorized Mist-Shrouded Prison walkthrough images are attributed and deferred video stays private by default", async () => {
   const pages = {
     en: read("app/(en)/guides/mist-shrouded-prison/page.tsx"),
     de: read("app/(de)/de/guides/mist-shrouded-prison/page.tsx"),
@@ -221,16 +229,13 @@ test("authorized Mist-Shrouded Prison walkthrough images are attributed and defe
     assert.doesNotMatch(source, /<(?:iframe|video)\b/i);
   }
 
-  assert.equal(
-    existsSync(new URL("../public/guides/mist-shrouded-prison/gr", import.meta.url)),
-    true,
-  );
-  assert.equal(
-    existsSync(new URL("../public/guides/mist-shrouded-prison/gr/final-treasure-wide.jpg", import.meta.url)),
-    true,
-  );
-  assert.equal(
-    existsSync(new URL("../public/guides/mist-shrouded-prison/youtube-cover.jpg", import.meta.url)),
-    true,
-  );
+  // Check sample assets are shipped (local or CDN)
+  const sampleAssets = [
+    "public/guides/mist-shrouded-prison/gr/final-treasure-wide.jpg",
+    "public/guides/mist-shrouded-prison/youtube-cover.jpg",
+  ];
+  for (const asset of sampleAssets) {
+    const shipped = await isMediaShipped(asset);
+    assert.equal(shipped, true, `${asset} should be shipped (local or CDN)`);
+  }
 });

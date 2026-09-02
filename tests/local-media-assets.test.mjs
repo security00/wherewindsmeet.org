@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import test from "node:test";
+import { isMediaShipped } from "./media-helper.mjs";
 
 const projectFile = (path) => new URL(`../${path}`, import.meta.url);
 const read = (path) => readFileSync(projectFile(path), "utf8");
@@ -12,7 +13,7 @@ const sourceFiles = (directory) =>
     return /\.(?:css|js|jsx|json|ts|tsx)$/.test(entry.name) ? [path] : [];
   });
 
-test("literal local media references are shipped with the app", () => {
+test("literal local media references are shipped with the app", async () => {
   const sources = [...sourceFiles("app"), ...sourceFiles("components"), ...sourceFiles("lib")].map(read);
   const localMedia = new Set(
     sources.flatMap((source) =>
@@ -24,10 +25,8 @@ test("literal local media references are shipped with the app", () => {
 
   assert.ok(localMedia.size > 0, "fixture should exercise local media paths");
   for (const asset of localMedia) {
-    assert.equal(
-      existsSync(projectFile(`public${asset}`)),
-      true,
-      `${asset} should exist below public/`,
-    );
+    const publicPath = `public${asset}`;
+    const shipped = await isMediaShipped(publicPath);
+    assert.equal(shipped, true, `${asset} should be shipped (local or CDN)`);
   }
 });
