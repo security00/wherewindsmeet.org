@@ -24,16 +24,6 @@ const images = {
   makeupBugPresetSwitch: cdn("/guides/flicker-of-faces/makeup-bug-preset-switch.png"),
 };
 
-// Local fallback keeps the original public path so CDN failures can fall back to on-host assets.
-const fallbackImages = {
-  hero: "/guides/flicker-of-faces/flicker-of-faces-preview.png",
-  price: "/guides/flicker-of-faces/flicker-of-faces-price.png",
-  voucherTooltip: "/guides/flicker-of-faces/flicker-of-faces-voucher-tooltip.png",
-  voucherItem: "/guides/flicker-of-faces/flicker-of-faces-voucher-item-details.jpg",
-  verseOfWinter: "/guides/flicker-of-faces/verse-of-winter-event.png",
-  makeupBugPresetSwitch: "/guides/flicker-of-faces/makeup-bug-preset-switch.png",
-};
-
 export const metadata: Metadata = {
   title: "Flicker of Faces: Preis, Voucher, Preview | Where Winds Meet",
   description:
@@ -247,7 +237,6 @@ export default function FlickerOfFacesPageDe() {
           <div className="relative aspect-video overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 shadow-inner">
             <FallbackImage
               src={images.hero}
-              fallbackSrc={fallbackImages.hero}
               alt="Flicker of Faces Outfit-Preview"
               fill
               className="object-contain p-3"
@@ -282,25 +271,21 @@ export default function FlickerOfFacesPageDe() {
           items={[
             {
               src: images.hero,
-              fallbackSrc: fallbackImages.hero,
               alt: "Flicker of Faces Preview-Sheet (m/w, Front/Back)",
               caption: "Outfit-Preview (Community)",
             },
             {
               src: images.price,
-              fallbackSrc: fallbackImages.price,
               alt: "Flicker of Faces Preis-Screenshot (2580 Perlen, Community)",
               caption: "Preis-Referenz (Community)",
             },
             {
               src: images.verseOfWinter,
-              fallbackSrc: fallbackImages.verseOfWinter,
               alt: "Verse of Winter Event-Screen mit Flicker-of-Faces-Voucher-Tooltip",
               caption: "Voucher-Tooltip (Verse of Winter)",
             },
             {
               src: images.voucherItem,
-              fallbackSrc: fallbackImages.voucherItem,
               alt: "Flicker of Faces Voucher Item-Details (10% & Shop-Verfügbarkeit)",
               caption: "Voucher-Details (Inventar)",
             },
@@ -421,7 +406,6 @@ export default function FlickerOfFacesPageDe() {
               items={[
                 {
                   src: images.voucherTooltip,
-                  fallbackSrc: fallbackImages.voucherTooltip,
                   alt: "Flicker of Faces Voucher Tooltip (10% & Stack-Limit)",
                   caption: "10% pro Voucher; bis zu 5",
                 },
@@ -488,7 +472,6 @@ export default function FlickerOfFacesPageDe() {
               items={[
                 {
                   src: images.makeupBugPresetSwitch,
-                  fallbackSrc: fallbackImages.makeupBugPresetSwitch,
                   alt: "Appearance-Menü mit Face-Presets (Workaround-Referenz)",
                   caption: "Preset wechseln, dann zurück",
                 },

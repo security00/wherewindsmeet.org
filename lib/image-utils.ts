@@ -67,18 +67,19 @@ export function isUsingCDN(): boolean {
 }
 
 /**
- * 将图片/资源 URL 解析为「CDN 地址 + 本地回退地址」。
- * - 传入本地路径（/foo/bar.webp）→ src 使用 CDN，fallbackSrc 使用本地路径
- * - 传入 CDN 绝对地址（https://static.wherewindsmeet.org/foo/bar.webp）→ fallbackSrc 自动推导为本地路径
+ * 将图片/资源 URL 解析为「CDN 地址」。
+ * - 传入本地路径（/foo/bar.webp）→ src 使用 CDN，无本地回退
+ * - 传入 CDN 绝对地址（https://static.wherewindsmeet.org/foo/bar.webp）→ 保持原样，无本地回退
+ * - 传入第三方绝对地址（YouTube、NetEase 等）→ 保持原样
  */
 export function resolveCdnAssetSrc(src: string, fallbackSrc?: string): ResolvedAssetSrc {
   const cdnBaseUrl = getCdnBaseUrl();
 
-  const normalizedFallbackSrc = fallbackSrc
-    ? isAbsoluteUrl(fallbackSrc)
+  // Only preserve explicitly provided absolute third-party fallback URLs
+  const normalizedFallbackSrc =
+    fallbackSrc && isAbsoluteUrl(fallbackSrc) && !fallbackSrc.includes(new URL(cdnBaseUrl).hostname)
       ? fallbackSrc
-      : ensureLeadingSlash(fallbackSrc)
-    : undefined;
+      : undefined;
 
   if (!src) return { src, fallbackSrc: normalizedFallbackSrc };
 
@@ -86,13 +87,13 @@ export function resolveCdnAssetSrc(src: string, fallbackSrc?: string): ResolvedA
     const localPath = ensureLeadingSlash(src);
     return {
       src: `${cdnBaseUrl}${localPath}`,
-      fallbackSrc: normalizedFallbackSrc ?? localPath,
+      fallbackSrc: normalizedFallbackSrc,
     };
   }
 
-  const inferredLocalPath = stripCdnBaseToLocalPath(src, cdnBaseUrl);
+  // For absolute URLs (CDN or third-party), keep src as-is, no local fallback
   return {
     src,
-    fallbackSrc: normalizedFallbackSrc ?? inferredLocalPath ?? undefined,
+    fallbackSrc: normalizedFallbackSrc,
   };
 }

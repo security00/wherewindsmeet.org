@@ -24,16 +24,6 @@ const images = {
   makeupBugPresetSwitch: cdn("/guides/flicker-of-faces/makeup-bug-preset-switch.png"),
 };
 
-// Local fallback keeps the original public path so CDN failures can fall back to on-host assets.
-const fallbackImages = {
-  hero: "/guides/flicker-of-faces/flicker-of-faces-preview.png",
-  price: "/guides/flicker-of-faces/flicker-of-faces-price.png",
-  voucherTooltip: "/guides/flicker-of-faces/flicker-of-faces-voucher-tooltip.png",
-  voucherItem: "/guides/flicker-of-faces/flicker-of-faces-voucher-item-details.jpg",
-  verseOfWinter: "/guides/flicker-of-faces/verse-of-winter-event.png",
-  makeupBugPresetSwitch: "/guides/flicker-of-faces/makeup-bug-preset-switch.png",
-};
-
 export const metadata: Metadata = {
   title: "Flicker of Faces: giá, voucher, preview | Where Winds Meet",
   description:
@@ -247,7 +237,6 @@ export default function FlickerOfFacesPageVn() {
           <div className="relative aspect-video overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 shadow-inner">
             <FallbackImage
               src={images.hero}
-              fallbackSrc={fallbackImages.hero}
               alt="Ảnh preview Flicker of Faces"
               fill
               className="object-contain p-3"
@@ -282,25 +271,21 @@ export default function FlickerOfFacesPageVn() {
           items={[
             {
               src: images.hero,
-              fallbackSrc: fallbackImages.hero,
               alt: "Ảnh preview Flicker of Faces (nam/nữ, trước/sau)",
               caption: "Preview outfit (cộng đồng)",
             },
             {
               src: images.price,
-              fallbackSrc: fallbackImages.price,
               alt: "Ảnh giá Flicker of Faces 2580 pearls (cộng đồng)",
               caption: "Giá tham khảo (cộng đồng)",
             },
             {
               src: images.verseOfWinter,
-              fallbackSrc: fallbackImages.verseOfWinter,
               alt: "Màn hình Verse of Winter với tooltip voucher Flicker of Faces",
               caption: "Tooltip voucher (Verse of Winter)",
             },
             {
               src: images.voucherItem,
-              fallbackSrc: fallbackImages.voucherItem,
               alt: "Chi tiết item Flicker of Faces Voucher (10% và thời gian shop)",
               caption: "Chi tiết voucher (trong túi)",
             },
@@ -421,7 +406,6 @@ export default function FlickerOfFacesPageVn() {
               items={[
                 {
                   src: images.voucherTooltip,
-                  fallbackSrc: fallbackImages.voucherTooltip,
                   alt: "Ảnh tooltip Flicker of Faces Voucher (10% và giới hạn cộng dồn)",
                   caption: "10% mỗi voucher; tối đa 5",
                 },
@@ -485,7 +469,6 @@ export default function FlickerOfFacesPageVn() {
               items={[
                 {
                   src: images.makeupBugPresetSwitch,
-                  fallbackSrc: fallbackImages.makeupBugPresetSwitch,
                   alt: "Menu Appearance với các face preset (ảnh minh họa workaround)",
                   caption: "Đổi preset 1 lần, rồi đổi lại",
                 },

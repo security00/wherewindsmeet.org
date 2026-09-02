@@ -10,7 +10,6 @@ import FallbackImage from "@/components/FallbackImage";
 const baseUrl = "https://wherewindsmeet.org";
 const cdnBase = "https://static.wherewindsmeet.org";
 const cdn = (path: string) => `${cdnBase}${path}`;
-const local = (path: string) => path;
 const slug = "/guides/flicker-of-faces";
 
 const images = {
@@ -20,15 +19,6 @@ const images = {
   voucherItem: cdn("/guides/flicker-of-faces/flicker-of-faces-voucher-item-details.jpg"),
   verseOfWinter: cdn("/guides/flicker-of-faces/verse-of-winter-event.png"),
   makeupBugPresetSwitch: cdn("/guides/flicker-of-faces/makeup-bug-preset-switch.png"),
-};
-
-const fallbackImages = {
-  hero: local("/guides/flicker-of-faces/flicker-of-faces-preview.png"),
-  price: local("/guides/flicker-of-faces/flicker-of-faces-price.png"),
-  voucherTooltip: local("/guides/flicker-of-faces/flicker-of-faces-voucher-tooltip.png"),
-  voucherItem: local("/guides/flicker-of-faces/flicker-of-faces-voucher-item-details.jpg"),
-  verseOfWinter: local("/guides/flicker-of-faces/verse-of-winter-event.png"),
-  makeupBugPresetSwitch: local("/guides/flicker-of-faces/makeup-bug-preset-switch.png"),
 };
 
 export const metadata: Metadata = {
@@ -246,7 +236,6 @@ export default function FlickerOfFacesPage() {
           <div className="relative aspect-video overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 shadow-inner">
             <FallbackImage
               src={images.hero}
-              fallbackSrc={fallbackImages.hero}
               alt="Flicker of Faces appearance preview image"
               fill
               className="object-contain p-3"
@@ -281,25 +270,21 @@ export default function FlickerOfFacesPage() {
           items={[
             {
               src: images.hero,
-              fallbackSrc: fallbackImages.hero,
               alt: "Flicker of Faces outfit preview sheet (male/female, front/back)",
               caption: "Outfit preview sheet (community)",
             },
             {
               src: images.price,
-              fallbackSrc: fallbackImages.price,
               alt: "Flicker of Faces price screenshot showing 2580 pearls (community)",
               caption: "Price reference (community)",
             },
             {
               src: images.verseOfWinter,
-              fallbackSrc: fallbackImages.verseOfWinter,
               alt: "Verse of Winter event screen showing Flicker of Faces Voucher tooltip",
               caption: "Voucher tooltip (Verse of Winter)",
             },
             {
               src: images.voucherItem,
-              fallbackSrc: fallbackImages.voucherItem,
               alt: "Flicker of Faces Voucher item details (shows 10% discount and shop availability time)",
               caption: "Voucher item details (Bag/Inventory)",
             },
@@ -422,7 +407,6 @@ export default function FlickerOfFacesPage() {
               items={[
                 {
                   src: images.voucherTooltip,
-                  fallbackSrc: fallbackImages.voucherTooltip,
                   alt: "Flicker of Faces Voucher tooltip close-up showing 10% discount and stack limit",
                   caption: "10% per voucher; up to 5 stack",
                 },
@@ -489,7 +473,6 @@ export default function FlickerOfFacesPage() {
               items={[
                 {
                   src: images.makeupBugPresetSwitch,
-                  fallbackSrc: fallbackImages.makeupBugPresetSwitch,
                   alt: "Appearance menu showing different face presets (workaround reference screenshot)",
                   caption: "Switch presets once, then switch back",
                 },
