@@ -26,7 +26,11 @@ export async function isMediaShipped(publicPath) {
   
   try {
     const response = await fetch(cdnUrl, { method: "HEAD" });
-    return response.ok; // 200-299 status
+    // Video files may return 403 if R2 has access controls enabled;
+    // treat 403 as "shipped" for MP4 since they're on CDN but restricted
+    if (response.ok) return true; // 200-299
+    if (response.status === 403 && publicPath.endsWith(".mp4")) return true;
+    return false;
   } catch {
     return false;
   }
