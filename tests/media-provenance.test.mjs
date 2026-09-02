@@ -198,6 +198,7 @@ test("authorized Game8 guide media is attributed and kept behind deferred player
   assert.match(unholy, /game8\.co\/games\/Where-Winds-Meet\/archives\/569548/);
   assert.match(feng, /Third-party creator walkthrough/);
   assert.match(feng, /youtube\.com\/watch\?v=ImGcZ7vtI_g/);
+  // Media now served from CDN (https://static.wherewindsmeet.org), no longer in public/
 });
 
 test("unused placeholder video gallery cannot be reintroduced accidentally", () => {
