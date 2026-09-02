@@ -34,7 +34,11 @@ export default function TermsPage() {
       <section className="space-y-2">
         <h2 className="text-lg font-semibold text-slate-50">2. Nutzung der Inhalte</h2>
         <p>
-          Sie dürfen die Seiten privat und nicht-kommerziell lesen und teilen, solange Sie den Hub nicht als offiziell darstellen oder Eigentum am Inhalt beanspruchen.
+          Durch die Nutzung dieser Seite stimmen Sie der{" "}
+          <Link href="/de/privacy" className="text-emerald-300 hover:text-emerald-200">
+            Datenschutzerklärung
+          </Link>{" "}
+          zu, einschließlich der Verwendung von Analyse- und Werbetechnologien, die dort beschrieben sind. Sie dürfen die Seiten privat und nicht-kommerziell lesen und teilen, solange Sie den Hub nicht als offiziell darstellen oder Eigentum am Inhalt beanspruchen.
         </p>
         <p>
           Größere Textpassagen zu kopieren und anderswo zu posten wird nicht empfohlen. Bei Zitaten bitte klare Quellenangabe und Link zurück zur jeweiligen Seite, damit Leser den Kontext und Aktualisierungen finden.

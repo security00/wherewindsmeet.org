@@ -33,9 +33,12 @@ export default function PrivacyPage() {
       </section>
 
       <section className="space-y-2">
-        <h2 className="text-lg font-semibold text-slate-50">3. Cookie & phân tích</h2>
-        <p>Các dịch vụ tùy chọn mặc định bị tắt. Google Analytics, Microsoft Clarity và Plausible chỉ được tải sau khi bạn đồng ý rõ ràng với mục Phân tích. Google AdSense chỉ được tải sau khi bạn đồng ý rõ ràng với mục Quảng cáo. Nhà cung cấp đã bật có thể nhận IP cùng thông tin trang/thiết bị theo chính sách riêng. Các yêu cầu của Google về nền tảng quản lý đồng ý được chứng nhận và cấu hình tài khoản vẫn áp dụng tại khu vực chịu quy định.</p>
-        <p>Lựa chọn danh mục, phiên bản định dạng và thời điểm cập nhật được lưu cần thiết trong <code className="rounded bg-slate-900 px-1 py-0.5 text-xs">localStorage</code> của trình duyệt. Bạn có thể dùng nút “Cài đặt quyền riêng tư” luôn hiển thị để đổi hoặc rút lại đồng ý. Việc rút lại sẽ chặn tải script tùy chọn trong tương lai và cố gắng xóa cookie bên thứ nhất đã biết, nhưng không thể hoàn tác dữ liệu đã gửi cho nhà cung cấp. Công cụ lựa chọn cục bộ này không được giới thiệu là nền tảng quản lý sự đồng ý được Google chứng nhận.</p>
+        <p>Bằng cách sử dụng hub fan này, bạn đồng ý rằng trang web có thể tải Google Analytics, Microsoft Clarity, Plausible Analytics và Google AdSense. Các dịch vụ này được bật theo mặc định khi bạn truy cập và duyệt trang. Họ có thể nhận địa chỉ IP, lượt xem trang và thông tin thiết bị của bạn theo chính sách quyền riêng tư của riêng họ. Các yêu cầu của Google về nền tảng quản lý đồng ý được chứng nhận và cấu hình tài khoản vẫn áp dụng tại các khu vực chịu quy định.</p>
+        <p>Không có popup hoặc banner đồng ý trên trang. Nếu bạn không muốn bị theo dõi bởi các dịch vụ phân tích và quảng cáo này, bạn có thể ngừng sử dụng trang web và xóa cookie hoặc dữ liệu trang thông qua cài đặt quyền riêng tư của trình duyệt. Để biết thêm chi tiết về cách các công nghệ này hoạt động và quyền của bạn, vui lòng tham khảo chính sách quyền riêng tư của Google Analytics, Microsoft Clarity, Plausible Analytics và Google AdSense. Câu hỏi về cách tiếp cận này có thể được gửi đến{" "}
+          <a href="mailto:support@wherewindsmeet.org" className="text-emerald-300 hover:text-emerald-200">
+            support@wherewindsmeet.org
+          </a>.
+        </p>
       </section>
 
       <section className="space-y-2">

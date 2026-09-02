@@ -3,7 +3,6 @@ import { preconnect } from "react-dom";
 import { NextIntlClientProvider } from "next-intl";
 import { Analytics } from "@/app/analytics";
 import BackgroundWrapper from "@/components/BackgroundWrapper";
-import { ConsentManager } from "@/components/ConsentManager";
 import { LanguageSwitchPrompt } from "@/components/LanguageSwitchPrompt";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -61,7 +60,6 @@ export async function LocaleRootLayout({
           timeZone="UTC"
         >
           <Analytics />
-          <ConsentManager />
           <BackgroundWrapper />
 
           <div className="relative min-h-screen z-10">

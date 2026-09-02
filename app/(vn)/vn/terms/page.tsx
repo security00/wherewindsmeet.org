@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 export const metadata: Metadata = {
   title: "Điều khoản sử dụng Where Winds Meet Hub",
@@ -27,7 +28,11 @@ export default function TermsPage() {
 
       <section className="space-y-2">
         <h2 className="text-lg font-semibold text-slate-50">2. Cách dùng nội dung</h2>
-        <p>Được xem guide/video cho mục đích cá nhân, không thương mại. Có thể chia sẻ link miễn là không giả mạo là trang chính thức hay nhận quyền sở hữu.</p>
+        <p>Bằng cách sử dụng trang web này, bạn đồng ý với{" "}
+          <Link href="/vn/privacy" className="text-emerald-300 hover:text-emerald-200">
+            Chính sách quyền riêng tư
+          </Link>
+          , bao gồm việc sử dụng các công nghệ phân tích và quảng cáo được mô tả ở đó. Được xem guide/video cho mục đích cá nhân, không thương mại. Có thể chia sẻ link miễn là không giả mạo là trang chính thức hay nhận quyền sở hữu.</p>
         <p>Sao chép nhiều nội dung để đăng lại không khuyến khích; trích dẫn nên ghi nguồn và link để người đọc xem bản đầy đủ/cập nhật.</p>
       </section>
 

@@ -72,23 +72,28 @@ export default function PrivacyPage() {
           3. Cookies, analytics, and similar technologies.
         </h2>
         <p>
-          Optional services are off by default. The site loads Google Analytics,
-          Microsoft Clarity, and Plausible only after you explicitly consent to
-          the Analytics category. Google AdSense loads only after you explicitly
-          consent to the Advertising category. Providers that are enabled may
-          receive your IP address, page and device information under their own
-          policies. Google&apos;s certified consent-platform and account requirements
-          remain applicable in regulated regions.
+          By using this fan hub, you agree that the site may load Google Analytics,
+          Microsoft Clarity, Plausible Analytics, and Google AdSense. These services
+          are enabled by default when you visit and browse the site. They may receive
+          your IP address, page views, and device information according to their own
+          privacy policies. Google&apos;s certified consent-platform and account
+          requirements remain applicable in regulated regions.
         </p>
         <p>
-          Your category choices, a consent-format version, and an update time are
-          stored in your browser&apos;s <code className="rounded bg-slate-900 px-1 py-0.5 text-xs">localStorage</code>.
-          This necessary record does not itself load those providers. Use the
-          persistent “Privacy settings” button to change or withdraw your choice.
-          Withdrawal prevents future optional script loading and removes known
-          first-party analytics or ad cookies where possible; it cannot undo data
-          a provider already received. This site-level preference control is not
-          presented as a Google-certified consent management platform.
+          There is no in-page consent popup or banner. If you prefer not to be tracked
+          by these analytics and advertising services, you can stop using the site and
+          clear cookies or site data through your browser&apos;s privacy settings. For
+          more details about how these technologies work and your rights, please
+          consult the privacy policies of Google Analytics, Microsoft Clarity,
+          Plausible Analytics, and Google AdSense. Questions about this approach can
+          be sent to{" "}
+          <a
+            href="mailto:support@wherewindsmeet.org"
+            className="text-emerald-300 hover:text-emerald-200"
+          >
+            support@wherewindsmeet.org
+          </a>
+          .
         </p>
       </section>
 

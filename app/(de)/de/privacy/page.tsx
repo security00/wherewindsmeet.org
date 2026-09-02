@@ -41,10 +41,14 @@ export default function PrivacyPage() {
       <section className="space-y-2">
         <h2 className="text-lg font-semibold text-slate-50">3. Cookies, Analytics & ähnliche Technologien</h2>
         <p>
-          Optionale Dienste sind standardmäßig aus. Google Analytics, Microsoft Clarity und Plausible werden erst geladen, nachdem Sie ausdrücklich in die Kategorie „Analyse“ eingewilligt haben. Google AdSense wird erst geladen, nachdem Sie ausdrücklich in die Kategorie „Werbung“ eingewilligt haben. Aktivierte Anbieter können IP-Adresse sowie Seiten- und Geräteinformationen nach ihren eigenen Richtlinien erhalten. Googles Anforderungen an zertifizierte Consent-Plattformen und die Kontokonfiguration gelten in regulierten Regionen weiterhin.
+          Durch die Nutzung dieses Fan-Hubs stimmen Sie zu, dass die Seite Google Analytics, Microsoft Clarity, Plausible Analytics und Google AdSense laden darf. Diese Dienste sind standardmäßig aktiviert, wenn Sie die Seite besuchen und durchsuchen. Sie können Ihre IP-Adresse, Seitenaufrufe und Geräteinformationen gemäß ihren eigenen Datenschutzrichtlinien erhalten. Googles Anforderungen an zertifizierte Consent-Plattformen und die Kontokonfiguration gelten in regulierten Regionen weiterhin.
         </p>
         <p>
-          Ihre Kategorien, eine Formatversion und der Änderungszeitpunkt werden als notwendige Auswahl im <code className="rounded bg-slate-900 px-1 py-0.5 text-xs">localStorage</code> Ihres Browsers gespeichert. Mit der dauerhaft erreichbaren Schaltfläche „Datenschutzeinstellungen“ können Sie die Einwilligung ändern oder widerrufen. Ein Widerruf verhindert künftiges Laden optionaler Skripte und entfernt bekannte First-Party-Cookies soweit möglich, macht aber bereits an Anbieter übermittelte Daten nicht rückgängig. Diese lokale Auswahlhilfe wird nicht als Google-zertifizierte Consent-Management-Plattform dargestellt.
+          Es gibt kein Consent-Popup oder Banner auf der Seite. Wenn Sie nicht von diesen Analyse- und Werbediensten verfolgt werden möchten, können Sie die Nutzung der Seite einstellen und Cookies oder Site-Daten über die Datenschutzeinstellungen Ihres Browsers löschen. Weitere Informationen darüber, wie diese Technologien funktionieren und welche Rechte Sie haben, finden Sie in den Datenschutzrichtlinien von Google Analytics, Microsoft Clarity, Plausible Analytics und Google AdSense. Fragen zu diesem Ansatz können an{" "}
+          <a href="mailto:support@wherewindsmeet.org" className="text-emerald-300 hover:text-emerald-200">
+            support@wherewindsmeet.org
+          </a>{" "}
+          gesendet werden.
         </p>
       </section>
 

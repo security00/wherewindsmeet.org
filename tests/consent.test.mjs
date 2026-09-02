@@ -5,19 +5,27 @@ import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
 
-test("consent state is opt-in, versioned, and rejects malformed stored values", async () => {
+test("consent state defaults to opted-in, versioned, and falls back to default for malformed values", async () => {
   const consent = await import("../lib/consent.mjs");
 
   assert.deepEqual(consent.DEFAULT_CONSENT, {
     necessary: true,
-    analytics: false,
-    ads: false,
+    analytics: true,
+    ads: true,
   });
-  assert.equal(consent.parseStoredConsent(null), null);
-  assert.equal(consent.parseStoredConsent("not-json"), null);
-  assert.equal(
+  assert.deepEqual(consent.parseStoredConsent(null), {
+    necessary: true,
+    analytics: true,
+    ads: true,
+  });
+  assert.deepEqual(consent.parseStoredConsent("not-json"), {
+    necessary: true,
+    analytics: true,
+    ads: true,
+  });
+  assert.deepEqual(
     consent.parseStoredConsent(JSON.stringify({ version: 0, analytics: true, ads: true })),
-    null,
+    { necessary: true, analytics: true, ads: true },
   );
   assert.deepEqual(
     consent.parseStoredConsent(
@@ -47,50 +55,15 @@ test("analytics and AdSense load only after their explicit consent categories ar
   assert.match(analytics, /ca-pub-1548791648803369/);
 });
 
-test("the locale shell exposes a revocable three-category preference UI", () => {
+test("the locale shell does not render ConsentManager (no banner UI)", () => {
   const layout = readFileSync(resolve(root, "components/LocaleRootLayout.tsx"), "utf8");
-  const manager = readFileSync(resolve(root, "components/ConsentManager.tsx"), "utf8");
 
-  assert.match(layout, /<ConsentManager\s*\/>/);
-  assert.match(manager, /useTranslations\(["']consent["']\)/);
-  assert.match(manager, /necessary/);
-  assert.match(manager, /analytics/);
-  assert.match(manager, /ads/);
-  assert.match(manager, /saveConsent/);
-  assert.match(manager, /openSettings/);
+  assert.doesNotMatch(layout, /<ConsentManager\s*\/>/);
+  assert.doesNotMatch(layout, /ConsentManager/);
 });
 
-test("all locale packs contain the same complete consent UI contract", () => {
-  const requiredKeys = [
-    "title",
-    "summary",
-    "acceptAll",
-    "rejectOptional",
-    "customize",
-    "settingsTitle",
-    "settingsDescription",
-    "necessaryLabel",
-    "necessaryDescription",
-    "analyticsLabel",
-    "analyticsDescription",
-    "adsLabel",
-    "adsDescription",
-    "save",
-    "cancel",
-    "openSettings",
-    "privacyLink",
-  ];
 
-  for (const locale of ["en", "de", "vi"]) {
-    const messages = JSON.parse(
-      readFileSync(resolve(root, `i18n/messages/${locale}.json`), "utf8"),
-    );
-    assert.ok(messages.consent, `${locale} consent namespace is missing`);
-    assert.deepEqual(Object.keys(messages.consent).sort(), requiredKeys.sort());
-  }
-});
-
-test("privacy pages accurately disclose the consent-gated analytics and advertising providers", () => {
+test("privacy pages disclose default-on analytics and advertising providers", () => {
   for (const file of [
     "app/(en)/privacy/page.tsx",
     "app/(de)/de/privacy/page.tsx",
@@ -100,8 +73,9 @@ test("privacy pages accurately disclose the consent-gated analytics and advertis
     for (const provider of ["Google Analytics", "Microsoft Clarity", "Plausible", "Google AdSense"]) {
       assert.match(page, new RegExp(provider), `${file} must disclose ${provider}`);
     }
-    assert.match(page, /consent|Einwilligung|đồng ý/i);
-    assert.match(page, /localStorage/);
-    assert.match(page, /advertising|Werbung|quảng cáo/i);
+    assert.match(page, /default|standardmäßig|mặc định/i, `${file} must mention default/enabled state`);
+    assert.match(page, /advertising|Werbe|quảng cáo/i, `${file} must mention advertising`);
+    assert.doesNotMatch(page, /Privacy settings.*button/i, `${file} must not reference Privacy settings button`);
+    assert.doesNotMatch(page, /explicitly consent/i, `${file} must not claim opt-in requirement`);
   }
 });
