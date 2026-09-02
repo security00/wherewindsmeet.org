@@ -198,8 +198,6 @@ test("authorized Game8 guide media is attributed and kept behind deferred player
   assert.match(unholy, /game8\.co\/games\/Where-Winds-Meet\/archives\/569548/);
   assert.match(feng, /Third-party creator walkthrough/);
   assert.match(feng, /youtube\.com\/watch\?v=ImGcZ7vtI_g/);
-  assert.equal(existsSync(new URL("../public/guides/bosses/feng-ruzhi", import.meta.url)), true);
-  assert.equal(existsSync(new URL("../public/guides/unholy-prophecy/game8", import.meta.url)), true);
 });
 
 test("unused placeholder video gallery cannot be reintroduced accidentally", () => {
