@@ -4,6 +4,8 @@ export type MartialArtPathId =
   | "silkbind-jade"
   | "silkbind-deluge"
   | "bamboocut-wind"
+  | "bamboocut-kite"
+  | "bamboocut-draught"
   | "stonesplit-might";
 
 export type MartialArtPath = {
@@ -54,6 +56,22 @@ export const martialArtPaths: MartialArtPath[] = [
     flavor:
       "Plays like a glass cannon-ideal for players who like suffocating targets with nonstop pressure.",
     relatedWeapons: ["Infernal Twinblades", "Mortal Rope Dart"],
+  },
+  {
+    id: "bamboocut-kite",
+    name: "Bamboocut - Kite",
+    focus: "Version 2.0 gauntlets path tied to Mohist Hill construction tools.",
+    flavor:
+      "Bought from the Mohist Hill shop even if you stay sectless. Separate from the September 3 drinking kit.",
+    relatedWeapons: ["Gauntlets"],
+  },
+  {
+    id: "bamboocut-draught",
+    name: "Bamboocut - Draught",
+    focus: "Drunken Fist melee DPS that spends Binge Points to enter Inebriate.",
+    flavor:
+      "Global on September 3, 2026. Skystrike Gauntlets drink from the gourd; Riven Twinblades cash a full gauge into aerial burst.",
+    relatedWeapons: ["Skystrike Gauntlets", "Riven Twinblades"],
   },
   {
     id: "stonesplit-might",
@@ -233,6 +251,44 @@ export const martialArtWeapons: MartialArtWeapon[] = [
       "Steal from the master in Well of Heaven Martial Camp.",
       "Join the Well of Heaven sect.",
       "From Qi Sheng after submitting your first Oddity.",
+    ],
+  },
+  {
+    id: "gauntlets",
+    name: "Gauntlets",
+    pathId: "bamboocut-kite",
+    image: "/martial-arts/weapons/skystrike-gauntlets.jpg",
+    mainSkills: ["Mohist gauntlet strings", "Shop Inner Ways", "Gauntlets - Conversion"],
+    basicSkills: ["Gauntlets - Light Attack"],
+    chargedSkills: ["Gauntlets - Heavy Attack"],
+    unlockMethods: [
+      "Sects → Shop → View other sects → Mohist Hill, even while sectless.",
+      "See the dedicated Gauntlets page for the Version 2.0 shop route.",
+    ],
+  },
+  {
+    id: "skystrike-gauntlets",
+    name: "Skystrike Gauntlets",
+    pathId: "bamboocut-draught",
+    image: "/martial-arts/weapons/skystrike-gauntlets.jpg",
+    mainSkills: ["Gourd drink", "Inebriate flurry", "Dragonquench - Inebriate"],
+    basicSkills: ["Gauntlets - Light Attack / Bloombreak"],
+    chargedSkills: ["Gourd recover"],
+    unlockMethods: [
+      "Gasping Cliff shoreline Martial Fellowship with the old man.",
+      "See the Drunken Fist page for the full four-stop route.",
+    ],
+  },
+  {
+    id: "riven-twinblades",
+    name: "Riven Twinblades",
+    pathId: "bamboocut-draught",
+    image: "/weapons/dualblades.png",
+    mainSkills: ["Hero's Blood - Inebriate", "Twinblade conversion", "Aerial burst"],
+    basicSkills: ["Dual Blades - Light Attack"],
+    chargedSkills: ["Special skill drunken aerial"],
+    unlockMethods: [
+      "Speak with Li Yangui north of Northern Vow Ruins (Revisit after Echoes of Old Battles).",
     ],
   },
 ];

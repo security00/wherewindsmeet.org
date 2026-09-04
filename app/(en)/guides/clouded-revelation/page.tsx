@@ -7,13 +7,11 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 const baseUrl = "https://wherewindsmeet.org";
 const pageUrl = `${baseUrl}/guides/clouded-revelation`;
 const patchUrl = "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html";
-const overviewUrl = "https://www.wherewindsmeetgame.com/news/official/CloudedRevelation.html";
-const devLetterUrl = "https://www.wherewindsmeetgame.com/news/official/821devletter.html";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Clouded Revelation Guide (Version 2.1)",
   description:
-    "Where Winds Meet Version 2.1 Clouded Revelation guide: August 20 patch changes, A Flourishing Legacy and Rising Beyond fixes, Vernal Umbrella impact, and what to retry.",
+    "Where Winds Meet Version 2.1.3 Clouded Revelation guide: September 3 Drunken Fist, Reflection Temple, August 20 patch fixes, and what to retry.",
   alternates: buildHreflangAlternates("/guides/clouded-revelation"),
   openGraph: {
     title: "Where Winds Meet Clouded Revelation Guide (Version 2.1)",
@@ -24,7 +22,22 @@ export const metadata: Metadata = {
   },
 };
 
+const sept3Url = "https://www.wherewindsmeetgame.com/news/official/903update.html";
+const reflectionUrl = "https://www.wherewindsmeetgame.com/news/official/829devletter.html";
+
 const changes = [
+  {
+    title: "Drunken Fist / Bamboocut - Draught",
+    impact:
+      "September 3 adds Skystrike Gauntlets, Riven Twinblades, and four Inner Ways. Do not use the Version 2.0 Mohist shop gauntlets guide for this path.",
+    href: "/guides/drunken-fist",
+  },
+  {
+    title: "Reflection Temple (Ghost Month)",
+    impact:
+      "Limited stage from the event page, currently dated through September 27. Taboos, offerings, and the unfinished ritual are the clear condition.",
+    href: "/guides/reflection-temple",
+  },
   {
     title: "A Flourishing Legacy / Rising Beyond",
     impact:
@@ -62,7 +75,7 @@ const retrySteps = [
 const faq = [
   {
     q: "What is Clouded Revelation in Where Winds Meet?",
-    a: "Clouded Revelation is the Version 2.1 update. The official overview was published August 19, 2026, followed by Version 2.1 patch notes on August 20.",
+    a: "Clouded Revelation is the Version 2.1 update. The official overview was published August 19, 2026, patch notes landed August 20, and the current playable follow-up is the September 3 Version 2.1.3 intel drop.",
   },
   {
     q: "Did Version 2.1 change the weapon tier list?",
@@ -71,6 +84,10 @@ const faq = [
   {
     q: "Was A Flourishing Legacy fixed?",
     a: "The August 20 official notes list fixes across A Flourishing Legacy and its Rising Beyond follow-up. Update and retry the exact blocked step; individual save states can still require a relog or a fresh trigger.",
+  },
+  {
+    q: "Where do I unlock Drunken Fist?",
+    a: "Use the dedicated Drunken Fist page. Skystrike Gauntlets start at Gasping Cliff; Riven Twinblades start with Li Yangui. That path is not the Version 2.0 Mohist Hill shop gauntlets.",
   },
 ];
 
@@ -82,7 +99,7 @@ export default function CloudedRevelationPage() {
       headline: metadata.title,
       description: metadata.description,
       datePublished: "2026-08-21",
-      dateModified: "2026-08-21",
+      dateModified: "2026-09-04",
       mainEntityOfPage: pageUrl,
     },
     {
@@ -104,16 +121,16 @@ export default function CloudedRevelationPage() {
       <section className="overflow-hidden rounded-3xl border border-sky-400/30 bg-slate-950/85 p-6 shadow-2xl shadow-sky-950/30 sm:p-10">
         <div className="grid gap-8 lg:grid-cols-[1fr_280px] lg:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sky-200">Official update checked · August 23, 2026</p>
-            <h1 className="mt-3 text-balance text-4xl font-bold text-slate-50 sm:text-5xl">Where Winds Meet Clouded Revelation: Version 2.1 guide</h1>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sky-200">Official update checked · September 4, 2026</p>
+            <h1 className="mt-3 text-balance text-4xl font-bold text-slate-50 sm:text-5xl">Where Winds Meet Clouded Revelation: Version 2.1.3 guide</h1>
             <p className="mt-5 max-w-3xl leading-7 text-slate-300">
-              Clouded Revelation is the current Version 2.1 update. This page turns the official August 20 patch notes into a short retry list for the changes most likely to affect guides: A Flourishing Legacy and Rising Beyond, Vernal Umbrella attunement, Arena behavior, Homestead controls, and the Heaven&apos;s Plea cosmetic fix.
+              Clouded Revelation is still the Version 2.1 era. The current playable layer is the September 3 follow-up: Drunken Fist, new Inner Ways, and Reflection Temple on top of the August 20 quest, Vernal Umbrella, Arena, Homestead, and cosmetic fixes.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href={patchUrl} target="_blank" rel="noreferrer" className="rounded-full border border-sky-300/60 bg-sky-500/10 px-4 py-2 text-sm font-semibold text-sky-100 hover:border-sky-200">Official Version 2.1 patch notes ↗</a>
-              <a href={overviewUrl} target="_blank" rel="noreferrer" className="rounded-full border border-slate-600 px-4 py-2 text-sm font-semibold text-slate-200 hover:border-slate-400">Official update overview ↗</a>
-              <a href={devLetterUrl} target="_blank" rel="noreferrer" className="rounded-full border border-violet-400/60 px-4 py-2 text-sm font-semibold text-violet-100 hover:border-violet-300">August 21 dev letter ↗</a>
-              <Link href="/guides/hidden-mountain" className="rounded-full border border-emerald-400/60 px-4 py-2 text-sm font-semibold text-emerald-100 hover:border-emerald-300">Hidden Mountain guide →</Link>
+              <a href={sept3Url} target="_blank" rel="noreferrer" className="rounded-full border border-sky-300/60 bg-sky-500/10 px-4 py-2 text-sm font-semibold text-sky-100 hover:border-sky-200">Official September 3 overview ↗</a>
+              <a href={patchUrl} target="_blank" rel="noreferrer" className="rounded-full border border-slate-600 px-4 py-2 text-sm font-semibold text-slate-200 hover:border-slate-400">August 20 patch notes ↗</a>
+              <a href={reflectionUrl} target="_blank" rel="noreferrer" className="rounded-full border border-violet-400/60 px-4 py-2 text-sm font-semibold text-violet-100 hover:border-violet-300">Reflection Temple letter ↗</a>
+              <Link href="/guides/drunken-fist" className="rounded-full border border-emerald-400/60 px-4 py-2 text-sm font-semibold text-emerald-100 hover:border-emerald-300">Drunken Fist unlock →</Link>
             </div>
           </div>
           <div className="mx-auto rounded-3xl border border-sky-400/20 bg-sky-500/10 p-8">

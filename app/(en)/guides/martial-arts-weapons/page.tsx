@@ -7,7 +7,7 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 export const metadata: Metadata = {
   title: "Where Winds Meet Martial Arts Weapons List & Unlock Guide",
   description:
-    "Full comparison table of all 12 martial art weapons in Where Winds Meet with images, path focus, signature skills, and unlock methods via Skill Theft or sects.",
+    "Full comparison table of martial art weapons in Where Winds Meet, including Version 2.0 Gauntlets and September 3 Drunken Fist, with images, path focus, and unlock methods.",
   alternates: buildHreflangAlternates("/guides/martial-arts-weapons"),
 };
 
@@ -71,7 +71,7 @@ export default function MartialArtsWeaponsPage() {
             Martial art paths at a glance.
           </h2>
           <p className="text-xs text-slate-400">
-            6 paths · 12 weapons · offense, defense, and support flavors
+            8 paths · 15 weapons · including Gauntlets and Drunken Fist
           </p>
         </div>
 

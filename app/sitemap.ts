@@ -16,7 +16,7 @@ type Entry = {
 };
 
 const newsLastModified = new Date(latestNewsDate);
-const videosLastModified = new Date("2026-06-17");
+const videosLastModified = new Date("2026-09-04");
 
 const staticEntries: Entry[] = [
   { path: "/", changeFrequency: "daily", priority: 1 },
@@ -57,6 +57,18 @@ const staticEntries: Entry[] = [
   { path: "/guides/hidden-mountain", changeFrequency: "daily", priority: 0.84 },
   { path: "/guides/heavens-threshold-cloudstair", changeFrequency: "daily", priority: 0.82 },
   { path: "/guides/evershift-labyrinth", changeFrequency: "daily", priority: 0.82 },
+  { path: "/guides/drunken-fist", changeFrequency: "daily", priority: 0.84 },
+  { path: "/guides/gauntlets", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/guides/reflection-temple", changeFrequency: "daily", priority: 0.84 },
+  { path: "/guides/mystic-arts", changeFrequency: "weekly", priority: 0.82 },
+  { path: "/guides/how-to-fly", changeFrequency: "weekly", priority: 0.82 },
+  { path: "/guides/inner-ways", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/guides/mohist-hill", changeFrequency: "weekly", priority: 0.78 },
+  { path: "/guides/divinecraft-dungeons", changeFrequency: "weekly", priority: 0.82 },
+  { path: "/guides/phasecycle", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/guides/zenithstride", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/guides/ephemeral-glory", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/guides/mirkvale", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/character-creation-codes", changeFrequency: "weekly", priority: 0.82 },
   { path: "/guides/commerce-coins", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/codes", changeFrequency: "daily", priority: 0.8 },
@@ -111,6 +123,18 @@ const vnEntries: Entry[] = ([
   { path: "/vn/guides/hidden-mountain", changeFrequency: "daily", priority: 0.76 },
   { path: "/vn/guides/heavens-threshold-cloudstair", changeFrequency: "daily", priority: 0.74 },
   { path: "/vn/guides/evershift-labyrinth", changeFrequency: "daily", priority: 0.74 },
+  { path: "/vn/guides/drunken-fist", changeFrequency: "daily", priority: 0.76 },
+  { path: "/vn/guides/gauntlets", changeFrequency: "weekly", priority: 0.72 },
+  { path: "/vn/guides/reflection-temple", changeFrequency: "daily", priority: 0.76 },
+  { path: "/vn/guides/mystic-arts", changeFrequency: "weekly", priority: 0.74 },
+  { path: "/vn/guides/how-to-fly", changeFrequency: "weekly", priority: 0.74 },
+  { path: "/vn/guides/inner-ways", changeFrequency: "weekly", priority: 0.72 },
+  { path: "/vn/guides/mohist-hill", changeFrequency: "weekly", priority: 0.7 },
+  { path: "/vn/guides/divinecraft-dungeons", changeFrequency: "weekly", priority: 0.74 },
+  { path: "/vn/guides/phasecycle", changeFrequency: "weekly", priority: 0.72 },
+  { path: "/vn/guides/zenithstride", changeFrequency: "weekly", priority: 0.72 },
+  { path: "/vn/guides/ephemeral-glory", changeFrequency: "weekly", priority: 0.72 },
+  { path: "/vn/guides/mirkvale", changeFrequency: "weekly", priority: 0.72 },
   { path: "/vn/guides/character-creation-codes", changeFrequency: "weekly", priority: 0.74 },
   { path: "/vn/guides/commerce-coins", changeFrequency: "weekly", priority: 0.72 },
   { path: "/vn/guides/the-great-faceologist", changeFrequency: "weekly", priority: 0.72 },

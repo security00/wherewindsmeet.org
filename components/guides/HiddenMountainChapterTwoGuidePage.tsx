@@ -153,6 +153,8 @@ export default function HiddenMountainChapterTwoGuidePage({ language, kind }: { 
         <div className="mt-4 flex flex-wrap gap-3">
           <Link href={`${base}/guides/hidden-mountain`} className="rounded-full border border-emerald-300/40 px-4 py-2 text-sm font-semibold text-emerald-100">Hidden Mountain →</Link>
           <Link href={`${base}/guides/${kind === "cloudtop" ? "evershift-labyrinth" : "heavens-threshold-cloudstair"}`} className="rounded-full border border-violet-300/40 px-4 py-2 text-sm font-semibold text-violet-100">{kind === "cloudtop" ? "Evershift Labyrinth" : "Heaven’s Threshold / Cloudstair"} →</Link>
+          <Link href={`${base}/guides/mirkvale`} className="rounded-full border border-rose-300/40 px-4 py-2 text-sm font-semibold text-rose-100">Mirkvale →</Link>
+          <Link href={`${base}/guides/zenithstride`} className="rounded-full border border-sky-300/40 px-4 py-2 text-sm font-semibold text-sky-100">Zenithstride →</Link>
           <Link href={`${base}/tools/interactive-map`} className="rounded-full border border-sky-300/40 px-4 py-2 text-sm font-semibold text-sky-100">Interactive map →</Link>
         </div>
       </nav>

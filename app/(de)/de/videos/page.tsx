@@ -9,18 +9,18 @@ const baseUrl = "https://wherewindsmeet.org";
 export const metadata: Metadata = {
   title: "Where Winds Meet Videos - 2026 Updates, Tierlisten & Xbox",
   description:
-    "Datierte Where Winds Meet Videos aus 2025 und 2026 zu Hidden Mountain, Imperial Palace, Xbox Gameplay, PvP Tierlisten, Events und Builds.",
+    "Frische Where Winds Meet Videos fuer Version 2.1.3, Heaven's Threshold, Drunken Fist, Hidden Mountain und aktuelle Guides.",
   alternates: buildHreflangAlternates("/videos", { canonicalLanguage: "de" }),
   openGraph: {
     title: "Where Winds Meet Videos - 2026 Updates, Tierlisten & Xbox",
     description:
-      "Datierte Where Winds Meet Videos aus 2025 und 2026 zu Hidden Mountain, Imperial Palace, Xbox Gameplay, PvP Tierlisten, Events und Builds.",
+      "Frische Where Winds Meet Videos fuer Version 2.1.3, Heaven's Threshold, Drunken Fist, Hidden Mountain und aktuelle Guides.",
     url: `${baseUrl}/de/videos`,
   },
   twitter: {
     title: "Where Winds Meet Videos - 2026 Updates, Tierlisten & Xbox",
     description:
-      "Datierte Where Winds Meet Videos aus 2025 und 2026 zu Hidden Mountain, Imperial Palace, Xbox Gameplay, PvP Tierlisten, Events und Builds.",
+      "Frische Where Winds Meet Videos fuer Version 2.1.3, Heaven's Threshold, Drunken Fist, Hidden Mountain und aktuelle Guides.",
   },
 };
 

@@ -84,7 +84,7 @@ export default function Home() {
             {
               title: "Fresh 2026 videos",
               href: "/videos",
-                  desc: "Dated Where Winds Meet videos for Hidden Mountain, Imperial Palace, Xbox, update reactions, and creator coverage.",
+              desc: "Current Where Winds Meet videos for Heaven's Threshold, Drunken Fist, Hidden Mountain, Xbox, and update reactions.",
             },
           ].map((item) => (
             <Link

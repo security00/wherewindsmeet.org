@@ -9,11 +9,32 @@ export type FeaturedVideo = {
 // Keep the list short so every embed has a clear reason to be on the videos page.
 export const featuredVideos: FeaturedVideo[] = [
   {
-    id: "S7u9JuVHIyM",
-    title: "Now's a Great Time to Jump into Where Winds Meet (Huge Updates)",
+    id: "8MHyHYcJzJo",
+    title: "Hidden Mountain Chapter 2: Heaven's Threshold Announcement Trailer",
     description:
-      "June 2026 returner overview preserved as dated context for broad searches like where winds meet, where the winds meet, and whether the game is worth starting.",
-    publishedAt: "2026-06-10",
+      "Official Heaven's Threshold trailer for Version 2.1, useful for Cloudstair, Drunken Fist, Reflection Temple, and current Hidden Mountain searches.",
+    publishedAt: "2026-08-12",
+  },
+  {
+    id: "3_OMV6jjJtM",
+    title: "How to Get Drunken Fist Martial Arts and Inner Ways",
+    description:
+      "Unlock route for Skystrike Gauntlets, Riven Twinblades, and the four Draught Inner Ways that landed on Global on September 3.",
+    publishedAt: "2026-08-22",
+  },
+  {
+    id: "xQqbepOOLrE",
+    title: "Hidden Mountain Expansion Launch Trailer",
+    description:
+      "Official Version 2.0 launch trailer for Hidden Mountain, Mohist Hill, and the gauntlets era that still underpins current region searches.",
+    publishedAt: "2026-07-23",
+  },
+  {
+    id: "pNjmMRlOXG4",
+    title: "Hidden Mountain Expansion Gameplay Trailer",
+    description:
+      "Official gameplay of vertical exploration and lightness movement, useful for how-to-fly and Hidden Mountain traversal searches.",
+    publishedAt: "2026-07-17",
   },
   {
     id: "5_FI471ah5A",
@@ -21,20 +42,6 @@ export const featuredVideos: FeaturedVideo[] = [
     description:
       "Official Xbox Games Showcase 2026 trailer for the Hidden Mountain expansion, useful for roadmap, Xbox, and upcoming update searches.",
     publishedAt: "2026-06-08",
-  },
-  {
-    id: "Dmp0G0JFPGA",
-    title: "This Where Winds Meet Update Is WILD (HUGE New Map!)",
-    description:
-      "May 2026 creator coverage of the Imperial Palace map update, useful as historical visual context rather than a current patch reference.",
-    publishedAt: "2026-05-28",
-  },
-  {
-    id: "0xhVPMCk5H0",
-    title: "Where Winds Meet Had A HUGE Expansion",
-    description:
-      "Long-form expansion impressions from a high-recognition MMO creator, useful for players comparing major updates and deciding whether to come back.",
-    publishedAt: "2026-04-02",
   },
   {
     id: "ozHJ-Pd_mBo",

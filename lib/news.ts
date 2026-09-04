@@ -24,12 +24,28 @@ type OfficialNewsRow = [
 // site can pin items out of strict date order, so news pages should not sort it.
 const officialNewsRows: OfficialNewsRow[] = [
   [
+    "september-3-version-2-1-update-overview",
+    "[Clouded Revelation] Version 2.1 Update Overview - September 3",
+    "2026-09-02",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/903update.html",
+    "Official September 3 Version 2.1.3 intel: Skystrike Gauntlets, Riven Twinblades, new Inner Ways, live events including Reflection Temple, and the current Hidden Mountain follow-up.",
+  ],
+  [
+    "august-29-reflection-temple-dev-letter",
+    "Dev Letter | Ghost Month Special Stage: Reflection Temple",
+    "2026-08-29",
+    "event",
+    "https://www.wherewindsmeetgame.com/news/official/829devletter.html",
+    "Official Ghost Month letter for Reflection Temple: folk taboos, offerings, lanterns, paper effigies, and a ritual you complete rather than simply escaping.",
+  ],
+  [
     "august-27-version-2-1-update-overview",
     "[Clouded Revelation] Version 2.1 Update Overview - August 27",
     "2026-08-26",
     "announcement",
     "https://www.wherewindsmeetgame.com/news/official/827update.html",
-    "Official Clouded Revelation Version 2.1 overview for the August 27 update window and the current update-freshness anchor.",
+    "Official Clouded Revelation Version 2.1 overview for the August 27 update window.",
   ],
   [
     "account-suspension-july27-august24-2026",

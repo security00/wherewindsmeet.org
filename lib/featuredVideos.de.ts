@@ -9,11 +9,32 @@ export type FeaturedVideo = {
 // Video IDs stay identical to the English list for parity.
 export const featuredVideos: FeaturedVideo[] = [
   {
-    id: "S7u9JuVHIyM",
-    title: "Now's a Great Time to Jump into Where Winds Meet (Huge Updates)",
+    id: "8MHyHYcJzJo",
+    title: "Hidden Mountain Chapter 2: Heaven's Threshold Announcement Trailer",
     description:
-      "Rueckkehrer-Ueberblick vom Juni 2026, als datierter Kontext fuer breite Suchanfragen wie where winds meet und where the winds meet erhalten.",
-    publishedAt: "2026-06-10",
+      "Offizieller Heaven's-Threshold-Trailer fuer Version 2.1, passend zu Cloudstair, Drunken Fist, Reflection Temple und Hidden Mountain.",
+    publishedAt: "2026-08-12",
+  },
+  {
+    id: "3_OMV6jjJtM",
+    title: "How to Get Drunken Fist Martial Arts and Inner Ways",
+    description:
+      "Freischaltroute fuer Skystrike Gauntlets, Riven Twinblades und die vier Draught-Inner-Ways vom 3. September.",
+    publishedAt: "2026-08-22",
+  },
+  {
+    id: "xQqbepOOLrE",
+    title: "Hidden Mountain Expansion Launch Trailer",
+    description:
+      "Offizieller Version-2.0-Launch-Trailer zu Hidden Mountain, Mohist Hill und Gauntlets.",
+    publishedAt: "2026-07-23",
+  },
+  {
+    id: "pNjmMRlOXG4",
+    title: "Hidden Mountain Expansion Gameplay Trailer",
+    description:
+      "Offizielles Gameplay zu vertikaler Erkundung und Leichtkoerper, nuetzlich fuer How-to-fly-Suchen.",
+    publishedAt: "2026-07-17",
   },
   {
     id: "5_FI471ah5A",
@@ -21,20 +42,6 @@ export const featuredVideos: FeaturedVideo[] = [
     description:
       "Offizieller Xbox Games Showcase 2026 Trailer zur Hidden-Mountain-Erweiterung, passend fuer Roadmap-, Xbox- und Upcoming-Update-Suchen.",
     publishedAt: "2026-06-08",
-  },
-  {
-    id: "Dmp0G0JFPGA",
-    title: "This Where Winds Meet Update Is WILD (HUGE New Map!)",
-    description:
-      "Creator-Coverage zur neuen Karte und zum Imperial-Palace-Update, ideal fuer Spieler, die wissen wollen, ob sich die Rueckkehr lohnt.",
-    publishedAt: "2026-05-28",
-  },
-  {
-    id: "0xhVPMCk5H0",
-    title: "Where Winds Meet Had A HUGE Expansion",
-    description:
-      "Expansion-Eindruck eines bekannten MMO-Creators, nuetzlich fuer Spieler, die grosse Updates vergleichen und eine Rueckkehr abwaegen.",
-    publishedAt: "2026-04-02",
   },
   {
     id: "ozHJ-Pd_mBo",

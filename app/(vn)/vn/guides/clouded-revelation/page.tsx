@@ -16,6 +16,16 @@ export const metadata: Metadata = {
 
 const changes = [
   {
+    title: "Drunken Fist / Bamboocut - Draught",
+    text: "Ngay 3/9 them Skystrike Gauntlets, Riven Twinblades va bon Inner Way. Day khong phai gang shop Mohist Hill Version 2.0.",
+    href: "/vn/guides/drunken-fist",
+  },
+  {
+    title: "Reflection Temple (Ghost Month)",
+    text: "San khau gioi han tu trang su kien, hien den 27/9. Kieng ky, le vat va nghi le chua xong la dieu kien clear.",
+    href: "/vn/guides/reflection-temple",
+  },
+  {
     title: "A Flourishing Legacy / Rising Beyond",
     text: "Bản vá chính thức sửa nhiều lỗi nhiệm vụ, co-op, vật phẩm và điều kiện kích hoạt trong chuỗi Jianghu Legacy. Nếu từng bị kẹt, hãy cập nhật game rồi thử lại trong thế giới của bạn.",
     href: "#flourishing-legacy",

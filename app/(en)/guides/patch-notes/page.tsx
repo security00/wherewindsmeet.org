@@ -10,13 +10,22 @@ const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
   {
-    title: "August 27 Clouded Revelation Version 2.1 update overview",
-    date: "2026-08-26",
-    source: "https://www.wherewindsmeetgame.com/news/official/827update.html",
+    title: "September 3 Version 2.1.3 Clouded Revelation overview",
+    date: "2026-09-02",
+    source: "https://www.wherewindsmeetgame.com/news/official/903update.html",
     summary:
-      "Newest verified official update overview. The official page labels the release window August 27 and publishes it on August 26.",
+      "Current official intel anchor. It is the September 3 follow-up inside Clouded Revelation: Skystrike Gauntlets, Riven Twinblades, new Draught Inner Ways, and live event coverage including Reflection Temple.",
     playerAction:
-      "Use this as the current release anchor, then use the August 20 patch notes below for the confirmed fix list instead of inferring mechanics from an older overview.",
+      "Unlock Drunken Fist before copying an older gauntlet guide, run Reflection Temple from the event page, and treat Hidden Mountain Chapter 3 (September 16) as a preview until the chapter is live.",
+  },
+  {
+    title: "August 29 Ghost Month / Reflection Temple developer letter",
+    date: "2026-08-29",
+    source: "https://www.wherewindsmeetgame.com/news/official/829devletter.html",
+    summary:
+      "Official event letter for the limited Reflection Temple stage: folk taboos, offerings, lanterns, paper effigies, and a ritual clear rather than a simple escape.",
+    playerAction:
+      "Open the event menu instead of hunting an overworld door, and use the Reflection Temple guide for start steps and blockers.",
   },
   {
     title: "August 20 Version 2.1 Clouded Revelation patch notes",
@@ -146,7 +155,7 @@ const latestUpdateCards = [
 ];
 
 const impactChecklist = [
-  "Where Winds Meet patch notes today / new update: lead with the August 27 Version 2.1 overview, use August 20 for confirmed fixes, then the August 14 aggregate page and July 23 Path Balance history.",
+  "Where Winds Meet patch notes today / new update: lead with the September 3 Version 2.1.3 overview, then August 20 Clouded Revelation fixes, the August 14 aggregate page, and July 23 Path Balance history.",
   "Boss and dungeon searches: mention Ghost Master, Hero's Realm, Sword Trial, Sandstorm Tavern, Sunken City Lake, and Lunar Eidolon where relevant.",
   "Build searches: call out cheaper Martial Art Reset and lower Inner Way Conversion cost before telling players to respec.",
   "Tier-list searches: re-test Version 2.1 Vernal Umbrella and Silkbind Jade attunement, while keeping the wider weapon baseline tied to the July 23 Path Balance.",

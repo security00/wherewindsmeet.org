@@ -6,8 +6,8 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-08-26",
-    "gameVersion": "Version 2.1 / August 27",
+    "lastChecked": "2026-09-04",
+    "gameVersion": "Version 2.1.3 / September 3 overview",
     "priorityCluster": "main-keyword-recovery",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/",
@@ -16,6 +16,8 @@
       "https://www.playstation.com/en-us/games/where-winds-meet/",
       "https://play.google.com/store/apps/details?id=com.netease.yysls",
       "https://www.wherewindsmeetgame.com/m/news/",
+      "https://www.wherewindsmeetgame.com/news/official/903update.html",
+      "https://www.wherewindsmeetgame.com/news/official/829devletter.html",
       "https://www.wherewindsmeetgame.com/news/official/827update.html",
       "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
       "https://www.wherewindsmeetgame.com/news/official/CloudedRevelation.html",
@@ -102,11 +104,13 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-08-26",
-    "gameVersion": "Version 2.1 / August 27",
+    "lastChecked": "2026-09-04",
+    "gameVersion": "Version 2.1.3 / September 3 overview",
     "priorityCluster": "main-keyword-recovery",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
+      "https://www.wherewindsmeetgame.com/news/official/903update.html",
+      "https://www.wherewindsmeetgame.com/news/official/829devletter.html",
       "https://www.wherewindsmeetgame.com/news/official/827update.html",
       "https://www.wherewindsmeetgame.com/news/official/Banreport824.html",
       "https://www.wherewindsmeetgame.com/news/official/821devletter.html",
@@ -136,8 +140,8 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-08-26",
-    "gameVersion": "Version 2.1 / August 27",
+    "lastChecked": "2026-09-04",
+    "gameVersion": "Version 2.1.3 / September 3 overview",
     "priorityCluster": "week-1-rescue",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
@@ -340,10 +344,12 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-08-23",
-    "gameVersion": "Version 2.1 / August 21 developer letter",
+    "lastChecked": "2026-09-04",
+    "gameVersion": "Version 2.1.3 / September 3 overview",
     "priorityCluster": "emerging-update-intent",
     "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/news/official/903update.html",
+      "https://www.wherewindsmeetgame.com/news/official/829devletter.html",
       "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
       "https://www.wherewindsmeetgame.com/news/official/CloudedRevelation.html",
       "https://www.wherewindsmeetgame.com/news/official/821devletter.html"
@@ -468,6 +474,51 @@
       "https://allthings.how/where-winds-meet-pass-through-the-rotating-mechanism-in-evershift-labyrinth/",
       "https://www.youtube.com/watch?v=aqZ1F_PS5rQ",
       "https://www.reddit.com/r/WhereWindsMeet/comments/1vt8z84/evershift_labyrinth_lost_chapter_quest_where/"
+    ]
+  },
+  {
+    "basePath": "/guides/drunken-fist",
+    "languages": ["en", "vi", "de"],
+    "lastChecked": "2026-09-04",
+    "gameVersion": "Version 2.1.3 / Drunken Fist",
+    "priorityCluster": "fresh-weapon-unlock-intent",
+    "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/news/official/903update.html",
+      "https://quoramarketing.com/how-to-get-drunken-fist-bamboocut-draught-martial-arts-inner-ways-where-winds-meet/",
+      "https://game8.co/games/Where-Winds-Meet/archives/564726",
+      "https://www.youtube.com/watch?v=3_OMV6jjJtM"
+    ]
+  },
+  {
+    "basePath": "/guides/reflection-temple",
+    "languages": ["en", "vi", "de"],
+    "lastChecked": "2026-09-04",
+    "gameVersion": "Version 2.1 / Ghost Month event",
+    "priorityCluster": "live-event-intent",
+    "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/news/official/829devletter.html",
+      "https://game8.co/games/Where-Winds-Meet/archives/617349"
+    ]
+  },
+  {
+    "basePath": "/guides/mystic-arts",
+    "languages": ["en", "vi", "de"],
+    "lastChecked": "2026-09-04",
+    "gameVersion": "Version 2.1.3",
+    "priorityCluster": "evergreen-system-intent",
+    "sourceUrls": [
+      "https://www.vg247.com/where-winds-meet-mystic-arts-guide-and-unlock-locations"
+    ]
+  },
+  {
+    "basePath": "/guides/how-to-fly",
+    "languages": ["en", "vi", "de"],
+    "lastChecked": "2026-09-04",
+    "gameVersion": "Version 2.1.3",
+    "priorityCluster": "evergreen-system-intent",
+    "sourceUrls": [
+      "https://www.dexerto.com/wikis/where-winds-meet/how-to-fly/",
+      "https://www.wherewindsmeetgame.com/news/official/821devletter.html"
     ]
   }
 ]

@@ -10,13 +10,22 @@ const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
   {
+    title: "September 3 Version 2.1.3 Clouded Revelation overview",
+    date: "2026-09-02",
+    source: "https://www.wherewindsmeetgame.com/news/official/903update.html",
+    summary:
+      "Aktueller Official-Anker: Skystrike Gauntlets, Riven Twinblades, neue Draught-Inner-Ways und Reflection Temple.",
+    playerAction:
+      "Drunken Fist zuerst oeffnen, Reflection Temple ueber die Eventseite starten, Hidden Mountain Kapitel 3 erst ab 16. September als Walkthrough behandeln.",
+  },
+  {
     title: "August 27 Clouded Revelation Version 2.1 update overview",
     date: "2026-08-26",
     source: "https://www.wherewindsmeetgame.com/news/official/827update.html",
     summary:
-      "Neueste überprüfte offizielle Update-Übersicht. Die offizielle Seite nennt den 27. August als Release-Fenster und wurde am 26. August veröffentlicht.",
+      "Offizielle Update-Übersicht. Die offizielle Seite nennt den 27. August als Release-Fenster und wurde am 26. August veröffentlicht.",
     playerAction:
-      "Nutze diese Übersicht als aktuellen Release-Anker und die Patch Notes vom 20. August für die bestätigte Fix-Liste.",
+      "Nutze die September-3-Übersicht als aktuellen Anker und die Patch Notes vom 20. August für die bestätigte Fix-Liste.",
   },
   {
     title: "August 20 Version 2.1 Clouded Revelation patch notes",

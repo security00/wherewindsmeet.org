@@ -9,19 +9,19 @@ const baseUrl = "https://wherewindsmeet.org";
 export const metadata: Metadata = {
   title: "Video Where Winds Meet - Update 2026, Tier List, Xbox",
   description:
-    "Video Where Winds Meet co ngay dang tu 2025 va 2026: Hidden Mountain, Imperial Palace, Xbox gameplay, PvP tier list, event va build.",
+    "Video Where Winds Meet mới: Version 2.1.3, Heaven's Threshold, Drunken Fist, Hidden Mountain và hướng dẫn hiện tại.",
   alternates: buildHreflangAlternates("/videos", { canonicalLanguage: "vi" }),
   openGraph: {
     title: "Video Where Winds Meet - Update 2026, Tier List, Xbox",
     description:
-      "Video Where Winds Meet co ngay dang tu 2025 va 2026: Hidden Mountain, Imperial Palace, Xbox gameplay, PvP tier list, event va build.",
+      "Video Where Winds Meet mới: Version 2.1.3, Heaven's Threshold, Drunken Fist, Hidden Mountain và hướng dẫn hiện tại.",
     url: `${baseUrl}/vn/videos`,
     locale: "vi_VN",
   },
   twitter: {
     title: "Video Where Winds Meet - Update 2026, Tier List, Xbox",
     description:
-      "Video Where Winds Meet co ngay dang tu 2025 va 2026: Hidden Mountain, Imperial Palace, Xbox gameplay, PvP tier list, event va build.",
+      "Video Where Winds Meet mới: Version 2.1.3, Heaven's Threshold, Drunken Fist, Hidden Mountain và hướng dẫn hiện tại.",
   },
 };
 

@@ -20,7 +20,8 @@ type SectId =
   | "zuihuayin"
   | "wenjinguan"
   | "wuxingu"
-  | "moshandao";
+  | "moshandao"
+  | "mohist-hill";
 
 type Sect = {
   id: SectId;
@@ -130,6 +131,15 @@ const sects: Sect[] = [
     description:
       "Moshan Dao meißelt Zufluchten in steile Klippen und versteckt Mechanismen in scheinbar schlichtem Stein. Sie träumen von einer Zukunft, in der Brücken, Gleiter und Flugmaschinen das Leben so stark verändern wie jede Kampfkunst. Diese Sekte passt, wenn du Plattforming, Apparaturen und leichte Rätsel magst – und gerne das Terrain selbst zur Waffe oder zur Fluchtroute machst.",
     image: "/sect/moshandao.png",
+  },
+  {
+    id: "mohist-hill",
+    name: "Mohist Hill",
+    tagline: "Eine Bergstadt, die Zahnräder als Kampfkunst behandelt.",
+    roleHint: "Bauer, Shop-Käufer, Hidden-Mountain-Hub.",
+    description:
+      "Mohist Hill kam mit Hidden Mountain als mechanische Stadt, nicht nur als Kampffaktion. Der Shop ist ohne Beitritt nutzbar – so kaufen die meisten die Version-2.0-Gauntlets. Dieselben Straßen tragen den Cloudstair-Bau für Heaven’s Threshold.",
+    image: "/sect/mohist-hill.jpg",
   },
 ];
 

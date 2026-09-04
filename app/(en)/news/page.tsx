@@ -10,20 +10,20 @@ const baseUrl = "https://wherewindsmeet.org";
 const freshness = getContentFreshness("/news");
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Update Today - Version 2.1 News & Patch Notes",
+  title: "Where Winds Meet Update Today - Version 2.1.3 News & Patch Notes",
   description:
-    "Where Winds Meet update today tracker for the August 27 Version 2.1 Clouded Revelation overview, August 20 patch notes, official notices, and guide impact.",
+    "Where Winds Meet update today tracker for the September 3 Version 2.1.3 overview, Reflection Temple, Drunken Fist, Clouded Revelation, and guide impact.",
   alternates: buildHreflangAlternates("/news"),
   openGraph: {
-    title: "Where Winds Meet Update Today - Version 2.1 News & Patch Notes",
+    title: "Where Winds Meet Update Today - Version 2.1.3 News & Patch Notes",
     description:
-      "Where Winds Meet update today tracker for the August 27 Version 2.1 Clouded Revelation overview, August 20 patch notes, and official notices.",
+      "Where Winds Meet update today tracker for the September 3 Version 2.1.3 overview, Reflection Temple, and Drunken Fist.",
     url: `${baseUrl}/news`,
   },
   twitter: {
-    title: "Where Winds Meet Update Today - Version 2.1 News & Patch Notes",
+    title: "Where Winds Meet Update Today - Version 2.1.3 News & Patch Notes",
     description:
-      "Where Winds Meet update today tracker for the official August 27 Version 2.1 overview and the August 20 patch-note impact.",
+      "Where Winds Meet update today tracker for the official September 3 Version 2.1.3 overview, Reflection Temple, and current patch impact.",
   },
 };
 
@@ -31,23 +31,23 @@ const todayStatusCards = [
   {
     title: "Latest official update",
     detail:
-      "The August 27 Clouded Revelation Version 2.1 overview is the newest official update anchor checked. Read the official page first, then use the August 20 patch notes for the confirmed fix list.",
-    href: "https://www.wherewindsmeetgame.com/news/official/827update.html",
-    label: "Official August 27 overview",
+      "The September 3 Version 2.1.3 overview is the newest official intel checked: Skystrike Gauntlets, Riven Twinblades, new Inner Ways, and live Clouded Revelation events. Reflection Temple remains the time-boxed Ghost Month stage.",
+    href: "https://www.wherewindsmeetgame.com/news/official/903update.html",
+    label: "Official September 3 overview",
   },
   {
     title: "Today patch-note answer",
     detail:
-      "The latest checked patch is Version 2.1 on August 20. Re-test the affected quest triggers, high-tier Vernal Umbrella rolls, Arena edge behavior, Homestead controls, and Heaven's Plea makeup before relying on older workaround advice.",
+      "Use Version 2.1.3 as the current playable layer on top of the August 20 Clouded Revelation fixes. Re-test Draught unlocks, Reflection Temple, Vernal Umbrella rolls, and older Jianghu Legacy triggers before following pre-September workarounds.",
     href: "/guides/clouded-revelation",
-    label: "Version 2.1 impact guide",
+    label: "Version 2.1.3 impact guide",
   },
   {
-    title: "Roadmap watch",
+    title: "Live event watch",
     detail:
-      "Hidden Mountain remains the region baseline, while Version 2.1 adds shared construction and traversal follow-up. Use the visual region guide for the unlock route and current systems.",
-    href: "/guides/hidden-mountain",
-    label: "Hidden Mountain guide",
+      "Reflection Temple runs from the event page through September 27. Hidden Mountain Chapter 3 is scheduled for September 16. Extraction mode is announced for September but has no real combat guide yet.",
+    href: "/guides/reflection-temple",
+    label: "Reflection Temple guide",
   },
   {
     title: "Jiangnan / Hangzhou watch",
@@ -265,8 +265,8 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-3 leading-6 text-cyan-50/90">
-              The current checked update baseline is the <strong>Version 2.1 / August 27 Clouded Revelation overview</strong>,
-              followed by the August 20 patch notes, August 19 overview, and clearly labelled Version 2.0 history. If you searched for
+              The current checked update baseline is <strong>Version 2.1.3 / September 3 Clouded Revelation overview</strong>,
+              followed by the Ghost Month Reflection Temple letter, the August 20 patch notes, and Version 2.0 history. If you searched for
               <span className="font-semibold"> where winds meet update today</span>, use the cards below to jump straight
               to official news, patch notes, and roadmap watch items.
             </p>
@@ -298,7 +298,7 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Latest official-news pass: {freshness?.gameVersion ?? "Version 2.1 / August 27 update overview"}. The August 20 patch notes remain the source for confirmed quest-trigger, Vernal Umbrella, Arena/combat, and Homestead fixes. The list below follows the dated official news trail.
+              Latest official-news pass: {freshness?.gameVersion ?? "Version 2.1.3 / September 3 overview"}, including Drunken Fist, Reflection Temple, Clouded Revelation, quest-trigger fixes, and Hidden Mountain follow-up. The list below follows the current official news trail.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link href="/guides/tier-list" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
@@ -329,7 +329,7 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-3 leading-6 text-violet-50/90">
-              Clouded Revelation is now the current Version 2.1 update, while Hidden Mountain remains the major Version 2.0 expansion baseline. Use the Version 2.1 guide for current quest, weapon, Arena, Homestead, and cosmetic fixes, then use the video hub for visual route context.
+              Version 2.1.3 is the current playable layer on Clouded Revelation, while Hidden Mountain remains the Version 2.0 expansion baseline. Use the Drunken Fist, Reflection Temple, and Version 2.1 guides first, then the video hub for official footage.
             </p>
             <div className="mt-4 flex flex-wrap gap-2 text-xs">
               <Link href="/videos" className="rounded-full border border-violet-300/60 px-3 py-1 font-semibold text-violet-50 hover:border-violet-200">

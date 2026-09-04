@@ -10,7 +10,7 @@ const baseUrl = "https://wherewindsmeet.org";
 const weaponIntentAnswers = [
   {
     title: "All weapons",
-    body: "Current roster: Dual Blades, Sword, Spear, Mo Blade, Fan, Umbrella, Rope Dart, and Gauntlets. Compare roles, guide coverage, and current evidence below.",
+    body: "Current roster: Dual Blades, Sword, Spear, Mo Blade, Fan, Umbrella, Rope Dart, and Gauntlets. Drunken Fist / Skystrike Gauntlets are on the dedicated September 3 unlock page.",
   },
   {
     title: "Evidence-based tier review",
@@ -25,7 +25,7 @@ const weaponIntentAnswers = [
 const weaponFaqs = [
   {
     q: "How many weapons are in Where Winds Meet?",
-    a: `This ${weaponTierMeta.gameVersion} guide tracks eight current weapon families: Dual Blades, Sword, Spear, Mo Blade, Fan, Umbrella, Rope Dart, and Gauntlets.`,
+    a: `This ${weaponTierMeta.gameVersion} guide tracks eight current weapon families: Dual Blades, Sword, Spear, Mo Blade, Fan, Umbrella, Rope Dart, and Gauntlets. Use the Drunken Fist page for Skystrike Gauntlets and Riven Twinblades.`,
   },
   {
     q: "What is the best weapon for new players?",

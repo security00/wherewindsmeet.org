@@ -20,7 +20,8 @@ type SectId =
   | "zuihuayin"
   | "wenjinguan"
   | "wuxingu"
-  | "moshandao";
+  | "moshandao"
+  | "mohist-hill";
 
 type Sect = {
   id: SectId;
@@ -130,6 +131,15 @@ const sects: Sect[] = [
     description:
       "Moshan Dao carves sanctuaries into sheer cliffs and hides mechanisms in what looks like simple stone. They chase a future where bridges, gliders, and flying machines can change how people live as profoundly as any martial art. Joining them fits players who love platforms, contraptions, and light puzzles, and who enjoy turning terrain itself into a weapon or an escape route.",
     image: "/sect/moshandao.png",
+  },
+  {
+    id: "mohist-hill",
+    name: "Mohist Hill",
+    tagline: "A mountain city that treats gears as a martial art.",
+    roleHint: "Builders, shop buyers, Hidden Mountain hub.",
+    description:
+      "Mohist Hill arrived with Hidden Mountain as a lived-in mechanical city rather than a purely combat school. You can browse its shop without joining, which is how most wanderers buy the Version 2.0 Gauntlets. The same streets host Cloudstair construction for Heaven’s Threshold. Join if you want the construction story; skip the oath if you only need the shop.",
+    image: "/sect/mohist-hill.jpg",
   },
 ];
 

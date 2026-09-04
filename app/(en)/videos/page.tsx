@@ -9,7 +9,7 @@ const baseUrl = "https://wherewindsmeet.org";
 export const metadata: Metadata = {
   title: "Where Winds Meet Videos - 2026 Updates, Tier Lists & Xbox Gameplay",
   description:
-    "Watch a dated, curated selection of Where Winds Meet videos covering 2026 updates, Hidden Mountain, Xbox gameplay, PvP tier lists, events, and builds.",
+    "Watch fresh Where Winds Meet videos for Version 2.1.3, Heaven's Threshold, Drunken Fist, Hidden Mountain, Xbox gameplay, and current guide checks.",
   alternates: buildHreflangAlternates("/videos"),
   openGraph: {
     title: "Where Winds Meet Videos - 2026 Updates, Tier Lists & Xbox Gameplay",
@@ -83,12 +83,12 @@ export default function VideosPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Watch curated Where Winds Meet videos, update history, tier lists, and Xbox gameplay.
+            Watch fresh Where Winds Meet videos for Heaven's Threshold, Drunken Fist, and Hidden Mountain.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            This page gathers a dated selection of Where Winds Meet videos in one quiet
-            place: Hidden Mountain and Imperial Palace coverage, Xbox launch gameplay,
-            PvP tier lists, event guides, build showcases, and returner context.
+            This page gathers recently refreshed Where Winds Meet videos in one quiet
+            place: Heaven&apos;s Threshold, Drunken Fist unlocks, Hidden Mountain
+            launch footage, Xbox showcase trailers, and returner-friendly update checks.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             It is built for broad searches like where winds meet and where the winds

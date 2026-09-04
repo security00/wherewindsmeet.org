@@ -118,6 +118,15 @@ const sects: Sect[] = [
       "Đào đường hầm, giấu cơ quan trong đá, mơ glider và máy bay. Hợp người thích platform, dụng cụ, biến địa hình thành vũ khí/lối thoát.",
     image: "/sect/moshandao.png",
   },
+  {
+    id: "mohist-hill",
+    name: "Mohist Hill",
+    tagline: "Thành núi coi bánh răng là võ học.",
+    roleHint: "Xây dựng, shop, hub Hidden Mountain.",
+    description:
+      "Mohist Hill đến cùng Hidden Mountain. Có thể xem shop khi chưa nhập môn để mua Gauntlets 2.0. Cùng con phố này chạy Cloudstair cho Heaven’s Threshold.",
+    image: "/sect/mohist-hill.jpg",
+  },
 ];
 
 export default function SectsPage() {

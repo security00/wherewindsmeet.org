@@ -6,7 +6,7 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 export const metadata: Metadata = {
   title: "Kampfkunst-Waffen Liste & Freischalt-Guide | Where Winds Meet (DE)",
   description:
-    "Vergleichstabelle aller 12 Kampfkunst-Waffen in Where Winds Meet: Bilder, Pfad-Fokus, Signature-Skills und Freischaltwege via Skill Theft oder Sekten.",
+    "Vergleichstabelle der Kampfkunst-Waffen in Where Winds Meet inklusive Version-2.0-Gauntlets und Drunken Fist vom 3. September.",
   alternates: buildHreflangAlternates("/guides/martial-arts-weapons", { canonicalLanguage: "de" }),
 };
 
@@ -45,6 +45,20 @@ const martialArtPaths = [
     focus: "Unbarmherziger DPS-Druck und extreme Mobilität, wenig Eigen-Defense.",
     flavor: "Spielgefühl wie Glas-Kanone: nonstop Druck, Ausweichen statt Tanken.",
     relatedWeapons: ["Infernal Twinblades", "Mortal Rope Dart"],
+  },
+  {
+    id: "bamboocut-kite",
+    name: "Bamboocut - Kite",
+    focus: "Version-2.0-Gauntlets-Pfad über den Mohist-Hill-Shop.",
+    flavor: "Auch ohne Sektenbeitritt kaufbar. Getrennt vom Trink-Set vom 3. September.",
+    relatedWeapons: ["Gauntlets"],
+  },
+  {
+    id: "bamboocut-draught",
+    name: "Bamboocut - Draught",
+    focus: "Drunken-Fist-Nahkampf, der Binge Points in Inebriate umsetzt.",
+    flavor: "Global am 3. September 2026. Skystrike Gauntlets trinken aus dem Kürbis; Riven Twinblades machen den vollen Gauge zum Luft-Burst.",
+    relatedWeapons: ["Skystrike Gauntlets", "Riven Twinblades"],
   },
   {
     id: "stonesplit-might",
@@ -209,6 +223,44 @@ const martialArtWeapons = [
       "Von Qi Sheng nach Abgabe deiner ersten Kuriosität (Oddity).",
     ],
   },
+  {
+    id: "gauntlets",
+    name: "Gauntlets",
+    pathId: "bamboocut-kite",
+    image: "/martial-arts/weapons/skystrike-gauntlets.jpg",
+    mainSkills: ["Mohist-Stulpen-Strings", "Shop-Inner-Ways", "Gauntlets - Conversion"],
+    basicSkills: ["Gauntlets - Light Attack"],
+    chargedSkills: ["Gauntlets - Heavy Attack"],
+    unlockMethods: [
+      "Sects → Shop → View other sects → Mohist Hill, auch ohne Sekte.",
+      "Siehe die Gauntlets-Seite für die Version-2.0-Shop-Route.",
+    ],
+  },
+  {
+    id: "skystrike-gauntlets",
+    name: "Skystrike Gauntlets",
+    pathId: "bamboocut-draught",
+    image: "/martial-arts/weapons/skystrike-gauntlets.jpg",
+    mainSkills: ["Kürbis-Trunk", "Inebriate-Flurry", "Dragonquench - Inebriate"],
+    basicSkills: ["Gauntlets - Light Attack / Bloombreak"],
+    chargedSkills: ["Kürbis-Erholung"],
+    unlockMethods: [
+      "Martial Fellowship mit dem Alten am Gasping-Cliff-Ufer.",
+      "Vollständige Vier-Stop-Route auf der Drunken-Fist-Seite.",
+    ],
+  },
+  {
+    id: "riven-twinblades",
+    name: "Riven Twinblades",
+    pathId: "bamboocut-draught",
+    image: "/weapons/dualblades.png",
+    mainSkills: ["Hero's Blood - Inebriate", "Twinblade-Conversion", "Luft-Burst"],
+    basicSkills: ["Dual Blades - Light Attack"],
+    chargedSkills: ["Special Skill drunken aerial"],
+    unlockMethods: [
+      "Mit Li Yangui nördlich von Northern Vow Ruins sprechen (Revisit nach Echoes of Old Battles).",
+    ],
+  },
 ];
 
 const pathLookup = Object.fromEntries(martialArtPaths.map((path) => [path.id, path]));
@@ -269,7 +321,7 @@ export default function MartialArtsWeaponsDePage() {
           <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
             Kampfkünste-Pfade im Überblick.
           </h2>
-          <p className="text-xs text-slate-400">6 Pfade · 12 Waffen · Offense, Defense, Support</p>
+          <p className="text-xs text-slate-400">8 Pfade · 15 Waffen · inklusive Gauntlets und Drunken Fist</p>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
