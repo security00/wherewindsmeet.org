@@ -166,7 +166,9 @@
   {
     "basePath": "/guides/codes",
     "languages": [
-      "en"
+      "en",
+      "vi",
+      "de"
     ],
     "lastChecked": "2026-09-13",
     "gameVersion": "Version 2.1 / checked 2026-09-13",
@@ -315,7 +317,9 @@
   {
     "basePath": "/guides/weapons/tier-list",
     "languages": [
-      "en"
+      "en",
+      "vi",
+      "de"
     ],
     "lastChecked": "2026-09-13",
     "gameVersion": "Version 2.1 / evidence recheck 2026-09-13",
@@ -567,7 +571,9 @@
   {
     "basePath": "/guides/pve-tier-list",
     "languages": [
-      "en"
+      "en",
+      "vi",
+      "de"
     ],
     "lastChecked": "2026-09-13",
     "gameVersion": "Version 2.1 / PvE evidence recheck 2026-09-13",

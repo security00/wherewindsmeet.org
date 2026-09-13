@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import CdnImageClient from "@/components/CdnImageClient";
 import {
   buildLocalizedPath,
-  LOCALES,
+  getAvailableLocales,
   LOCALE_CONFIG,
   stripLocalePrefix,
 } from "@/i18n/routing.mjs";
@@ -54,21 +54,23 @@ export function SiteHeader() {
     [basePath, locale],
   );
 
-  // Always show EN/VI/DE. If this path is English-only in the positive
-  // locale manifest, fall back to that locale's homepage instead of hiding
-  // the switcher (which looked like a "missing languages" bug on new pages).
+  // Same-path locales only. Never fall back to a locale homepage — that
+  // bounced DE/VI readers off the intent page. EN-only routes show English.
   const languageTargets = useMemo(
     () =>
-      (LOCALES as readonly LocaleCode[]).map((code) => ({
-        code,
-        href:
-          buildLocalizedPath(basePath, code) ||
-          buildLocalizedPath("/", code) ||
-          "/",
-        active: code === locale,
-        label: LOCALE_CONFIG[code].label,
-        flag: LOCALE_CONFIG[code].flag,
-      })),
+      (getAvailableLocales(basePath) as LocaleCode[])
+        .map((code) => {
+          const href = buildLocalizedPath(basePath, code);
+          if (!href) return null;
+          return {
+            code,
+            href,
+            active: code === locale,
+            label: LOCALE_CONFIG[code].label,
+            flag: LOCALE_CONFIG[code].flag,
+          };
+        })
+        .filter((entry): entry is NonNullable<typeof entry> => entry !== null),
     [basePath, locale],
   );
 
