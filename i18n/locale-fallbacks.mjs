@@ -1,6 +1,5 @@
 const missingInDeAndVi = [
   "/guides/bosses/feng-ruzhi",
-  "/guides/codes",
   "/guides/imperial-decree",
   "/guides/qinchuan",
   "/guides/pvp-tier-list",
@@ -10,7 +9,6 @@ const missingInDeAndVi = [
   "/guides/travel-permit",
   "/guides/unholy-prophecy",
   "/guides/verdant-flute",
-  "/guides/weapons/tier-list",
 ];
 
 const missingInVi = [

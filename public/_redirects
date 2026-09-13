@@ -42,8 +42,6 @@
 # Keep the historical URLs recoverable without publishing English copy as localized content.
 /de/guides/bosses/feng-ruzhi /guides/bosses/feng-ruzhi 301
 /vn/guides/bosses/feng-ruzhi /guides/bosses/feng-ruzhi 301
-/de/guides/codes /guides/codes 301
-/vn/guides/codes /guides/codes 301
 /de/guides/imperial-decree /guides/imperial-decree 301
 /vn/guides/imperial-decree /guides/imperial-decree 301
 /vn/guides/one-leaf-one-life /guides/one-leaf-one-life 301
@@ -63,5 +61,3 @@
 /vn/guides/unholy-prophecy /guides/unholy-prophecy 301
 /de/guides/verdant-flute /guides/verdant-flute 301
 /vn/guides/verdant-flute /guides/verdant-flute 301
-/de/guides/weapons/tier-list /guides/weapons/tier-list 301
-/vn/guides/weapons/tier-list /guides/weapons/tier-list 301

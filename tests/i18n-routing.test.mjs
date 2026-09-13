@@ -8,7 +8,6 @@ const root = resolve(import.meta.dirname, "..");
 const untranslatedGuides = {
   de: [
     "bosses/feng-ruzhi",
-    "codes",
     "imperial-decree",
     "pvp-tier-list",
     "qinchuan",
@@ -18,11 +17,9 @@ const untranslatedGuides = {
     "travel-permit",
     "unholy-prophecy",
     "verdant-flute",
-    "weapons/tier-list",
   ],
   vn: [
     "bosses/feng-ruzhi",
-    "codes",
     "imperial-decree",
     "one-leaf-one-life",
     "pvp-tier-list",
@@ -33,7 +30,6 @@ const untranslatedGuides = {
     "travel-permit",
     "unholy-prophecy",
     "verdant-flute",
-    "weapons/tier-list",
   ],
 };
 
@@ -98,7 +94,7 @@ test("route locale availability prevents links and hreflang to missing translati
   const routing = await import("../i18n/routing.mjs");
 
   assert.deepEqual(routing.getAvailableLocales("/guides/imperial-decree"), ["en"]);
-  assert.deepEqual(routing.getAvailableLocales("/guides/codes"), ["en"]);
+  assert.deepEqual(routing.getAvailableLocales("/guides/codes"), ["en", "vi", "de"]);
   assert.deepEqual(routing.getAvailableLocales("/guides/bosses"), ["en", "vi", "de"]);
   assert.deepEqual(routing.getAvailableLocales("/guides/bosses/feng-ruzhi"), ["en"]);
   assert.deepEqual(routing.getAvailableLocales("/guides/brand-new-english-page"), ["en"]);
@@ -106,8 +102,8 @@ test("route locale availability prevents links and hreflang to missing translati
   assert.deepEqual(routing.getAvailableLocales("/guides/unholy-prophecy"), ["en"]);
   assert.deepEqual(routing.getAvailableLocales("/guides/tier-list"), ["en"]);
   assert.deepEqual(routing.getAvailableLocales("/guides/pvp-tier-list"), ["en"]);
-  assert.deepEqual(routing.getAvailableLocales("/guides/weapons/tier-list"), ["en"]);
-  assert.deepEqual(routing.getAvailableLocales("/guides/pve-tier-list"), ["en"]);
+  assert.deepEqual(routing.getAvailableLocales("/guides/weapons/tier-list"), ["en", "vi", "de"]);
+  assert.deepEqual(routing.getAvailableLocales("/guides/pve-tier-list"), ["en", "vi", "de"]);
   assert.deepEqual(routing.getAvailableLocales("/guides/reflection-temple"), ["en", "vi", "de"]);
   assert.equal(routing.buildLocalizedPath("/guides/imperial-decree", "de"), null);
   assert.equal(routing.buildLocalizedPath("/guides/bosses", "vi"), "/vn/guides/bosses");
@@ -115,7 +111,19 @@ test("route locale availability prevents links and hreflang to missing translati
   assert.equal(routing.buildLocalizedPath("/guides/tier-list#arena-ranks", "vi"), null);
   assert.equal(
     routing.buildLocalizedPath("/guides/codes?source=menu#redeem", "de"),
-    null,
+    "/de/guides/codes?source=menu#redeem",
+  );
+  assert.equal(
+    routing.buildLocalizedPath("/guides/codes?source=menu#redeem", "vi"),
+    "/vn/guides/codes?source=menu#redeem",
+  );
+  assert.equal(
+    routing.buildLocalizedPath("/guides/weapons/tier-list", "de"),
+    "/de/guides/weapons/tier-list",
+  );
+  assert.equal(
+    routing.buildLocalizedPath("/guides/pve-tier-list", "vi"),
+    "/vn/guides/pve-tier-list",
   );
   assert.equal(
     routing.buildLocalizedPath("/guides/codes?source=menu#redeem", "en"),
@@ -142,6 +150,8 @@ test("route locale availability prevents links and hreflang to missing translati
     routing.buildLocaleUrls("/guides/codes?source=menu#redeem"),
     {
       "en-US": "https://wherewindsmeet.org/guides/codes?source=menu#redeem",
+      "vi-VN": "https://wherewindsmeet.org/vn/guides/codes?source=menu#redeem",
+      "de-DE": "https://wherewindsmeet.org/de/guides/codes?source=menu#redeem",
       "x-default": "https://wherewindsmeet.org/guides/codes?source=menu#redeem",
     },
   );
@@ -176,7 +186,11 @@ test("shared navigation chrome reads labels from locale JSON instead of parallel
 
   assert.match(header, /useTranslations\(["']siteHeader["']\)/);
   assert.match(header, /CdnImageClient/);
-  assert.match(header, /LOCALES/);
+  assert.match(header, /getAvailableLocales/);
+  assert.doesNotMatch(
+    header,
+    /buildLocalizedPath\(basePath,\s*code\)\s*\|\|\s*buildLocalizedPath\("\/"/,
+  );
   assert.doesNotMatch(header, /languageTargets\.length\s*>\s*1/);
   assert.match(footer, /useTranslations\(["']siteFooter["']\)/);
   assert.match(prompt, /useTranslations\(["']languagePrompt["']\)/);
@@ -285,8 +299,8 @@ test("localized pages link directly to the English owner when no translation exi
           ? [path]
           : [];
     });
-  const staleTierLink = /\/(?:de|vn)\/guides\/(?:tier-list|pvp-tier-list|weapons\/tier-list)/;
-  const prefixedTierTemplate = /\$\{[^}]+\}\/guides\/(?:tier-list|pvp-tier-list|weapons\/tier-list)/;
+  const staleTierLink = /\/(?:de|vn)\/guides\/(?:tier-list|pvp-tier-list)(?!\/)/;
+  const prefixedTierTemplate = /\$\{[^}]+\}\/guides\/(?:tier-list|pvp-tier-list)(?!\/)/;
 
   for (const localeRoot of ["app/(de)/de", "app/(vn)/vn"]) {
     for (const sourcePath of collectSourceFiles(resolve(root, localeRoot))) {
@@ -304,33 +318,27 @@ test("localized pages link directly to the English owner when no translation exi
   }
 });
 
-test("internal codes links target the English evidence owner without a redirect hop", () => {
-  const collectSourceFiles = (directory) =>
-    readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
-      const path = resolve(directory, entry.name);
-      return entry.isDirectory()
-        ? collectSourceFiles(path)
-        : /\.(?:ts|tsx)$/.test(entry.name)
-          ? [path]
-          : [];
-    });
-  const staleLocalizedCodesLink = /\/(?:de|vn)\/guides\/codes\b/;
-  const reconstructedLocalizedCodesLink = /\$\{[^}]+\}\/guides\/codes\b/;
-
-  for (const sourceRoot of ["app", "components"]) {
-    for (const sourcePath of collectSourceFiles(resolve(root, sourceRoot))) {
-      const source = readFileSync(sourcePath, "utf8");
-      assert.doesNotMatch(
-        source,
-        staleLocalizedCodesLink,
-        `${sourcePath} must not link to a removed localized codes page`,
-      );
-      assert.doesNotMatch(
-        source,
-        reconstructedLocalizedCodesLink,
-        `${sourcePath} must not reconstruct a localized codes URL`,
-      );
+test("reviewed codes and weapon/pve tier-list routes publish same-path DE/VI owners", () => {
+  for (const [localeRoot, prefix] of [
+    ["app/(de)/de", "de"],
+    ["app/(vn)/vn", "vn"],
+  ]) {
+    for (const slug of ["codes", "pve-tier-list", "weapons/tier-list"]) {
+      const routeFile = resolve(root, `${localeRoot}/guides/${slug}/page.tsx`);
+      assert.equal(existsSync(routeFile), true, `missing ${prefix}/guides/${slug}`);
+      const source = readFileSync(routeFile, "utf8");
+      assert.match(source, /canonicalLanguage:\s*["'](?:de|vi)["']/);
+      assert.match(source, /language=["'](?:de|vi)["']/);
     }
+  }
+
+  const redirects = readFileSync(resolve(root, "public/_redirects"), "utf8");
+  for (const slug of ["codes", "weapons/tier-list"]) {
+    assert.doesNotMatch(
+      redirects,
+      new RegExp(`^/(?:de|vn)/guides/${slug.replace("/", "\\/")}\\s+/guides/${slug.replace("/", "\\/")}\\s+301$`, "m"),
+      `${slug} must not permanently redirect locale URLs to English after review`,
+    );
   }
 });
 
@@ -368,14 +376,15 @@ test("localized pages link directly to the English owner for withdrawn guides", 
   }
 });
 
-test("the codes freshness record only claims the reviewed English owner", () => {
+test("the codes and P0 tier freshness records claim reviewed EN/VI/DE owners", () => {
   const registry = JSON.parse(
     readFileSync(resolve(root, "lib/contentFreshness.json"), "utf8"),
   );
-  const codes = registry.find((entry) => entry.basePath === "/guides/codes");
-
-  assert.ok(codes, "missing freshness record for /guides/codes");
-  assert.deepEqual(codes.languages, ["en"]);
+  for (const basePath of ["/guides/codes", "/guides/weapons/tier-list", "/guides/pve-tier-list"]) {
+    const entry = registry.find((row) => row.basePath === basePath);
+    assert.ok(entry, `missing freshness record for ${basePath}`);
+    assert.deepEqual(entry.languages, ["en", "vi", "de"]);
+  }
 });
 
 test("freshness language claims exactly match the positive locale manifest", async () => {
