@@ -10,6 +10,15 @@ const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
   {
+    title: "September 5 Version 2.1 patch notes (Clouded Revelation)",
+    date: "2026-09-05",
+    source: "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
+    summary:
+      "Newest section on the official Clouded Revelation patch-notes page: Skystrike Gauntlets Castlink animation, Ceramic Bliss model, Bounty Order publisher rewards, Cloudtop Ascent construction claims, Reflection Temple cuju-ball and shadow-respawn quest fixes, Homestead loading states, and Eagleglide accessory placement.",
+    playerAction:
+      "Retry blocked Reflection Temple quest steps (cuju ball hand-in and shadow respawn), re-check Skystrike Gauntlets animations, Cloudtop Ascent claims, Bounty Order rewards, Homestead construction loading, and Eagleglide placement before following pre-September workarounds.",
+  },
+  {
     title: "September 3 Version 2.1.3 Clouded Revelation overview",
     date: "2026-09-02",
     source: "https://www.wherewindsmeetgame.com/news/official/903update.html",
@@ -32,7 +41,7 @@ const latestUpdateCards = [
     date: "2026-08-20",
     source: "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
     summary:
-      "Current official patch-note anchor. It addresses A Flourishing Legacy and Rising Beyond blockers, changes Tier 96+ Vernal Umbrella attunement, and fixes Arena/combat, Homestead, cosmetic, quest, and UI issues.",
+      "Earlier August 20 section on the same official Clouded Revelation patch-notes page (now headed by September 5). It addresses A Flourishing Legacy and Rising Beyond blockers, Tier 96+ Vernal Umbrella attunement, and Arena/combat, Homestead, cosmetic, quest, and UI issues.",
     playerAction:
       "Update and retry blocked Jianghu Legacy steps, re-test Vernal Umbrella and Silkbind Jade rolls, and verify affected Arena behavior before following an older workaround or rebuilding a loadout.",
   },
@@ -155,7 +164,7 @@ const latestUpdateCards = [
 ];
 
 const impactChecklist = [
-  "Where Winds Meet patch notes today / new update: lead with the September 3 Version 2.1.3 overview, then August 20 Clouded Revelation fixes, the August 14 aggregate page, and July 23 Path Balance history.",
+  "Where Winds Meet patch notes today / new update: lead with the September 5 Clouded Revelation patch-notes section, then the September 3 Version 2.1.3 overview, August 20 fixes on the same page, the August 14 aggregate page, and July 23 Path Balance history.",
   "Boss and dungeon searches: mention Ghost Master, Hero's Realm, Sword Trial, Sandstorm Tavern, Sunken City Lake, and Lunar Eidolon where relevant.",
   "Build searches: call out cheaper Martial Art Reset and lower Inner Way Conversion cost before telling players to respec.",
   "Tier-list searches: re-test Version 2.1 Vernal Umbrella and Silkbind Jade attunement, while keeping the wider weapon baseline tied to the July 23 Path Balance.",
@@ -194,20 +203,20 @@ const upcomingNerfWatch = [
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Patch Notes Today - Version 2.1 August 20",
+  title: "Where Winds Meet Patch Notes Today - Version 2.1 September 5",
   description:
-    "Where Winds Meet Version 2.1 patch notes for August 20: Clouded Revelation, quest fixes, Vernal Umbrella attunement, Arena, combat, Homestead, and cosmetics.",
+    "Where Winds Meet Version 2.1 patch notes for September 5 and August 20 Clouded Revelation: Reflection Temple quest fixes, Gauntlets animation, Vernal Umbrella, Arena, Homestead, and cosmetics.",
   alternates: buildHreflangAlternates("/guides/patch-notes"),
   openGraph: {
-    title: "Where Winds Meet Patch Notes Today - Version 2.1 August 20",
+    title: "Where Winds Meet Patch Notes Today - Version 2.1 September 5",
     description:
-      "Where Winds Meet Version 2.1 patch notes: August 20 Clouded Revelation quest, weapon, Arena, combat, Homestead, and cosmetic fixes.",
+      "Where Winds Meet Version 2.1 patch notes: September 5 quest/animation fixes plus the earlier August 20 Clouded Revelation section.",
     url: `${baseUrl}/guides/patch-notes`,
   },
   twitter: {
-    title: "Where Winds Meet Patch Notes Today - Version 2.1 August 20",
+    title: "Where Winds Meet Patch Notes Today - Version 2.1 September 5",
     description:
-      "Version 2.1 patch notes tracker: August 20 Clouded Revelation fixes and the earlier Version 2.0 update history.",
+      "Version 2.1 patch notes tracker: September 5 Clouded Revelation fixes, the August 20 section, and earlier Version 2.0 history.",
   },
 };
 
@@ -271,7 +280,7 @@ export default function PatchNotesPage() {
             Where Winds Meet patch notes today: Version 2.1 Clouded Revelation, quests, weapons, and Arena.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Updated {freshness?.lastChecked ?? "2026-08-26"}: Where Winds Meet is on {freshness?.gameVersion ?? "Version 2.1 / August 27 update overview"}. Use the August 27 overview as the current release anchor, August 20 for confirmed Clouded Revelation fixes, and the aggregate August 14 Version 2.0 page for its earlier network and Path Balance history.
+            Updated {freshness?.lastChecked ?? "2026-09-13"}: Where Winds Meet is on {freshness?.gameVersion ?? "Version 2.1.3 / September 5 patch + September 3 overview"}. Lead with the September 5 patch-notes section, keep the September 3 overview for 2.1.3 content intel, treat August 20 as the earlier Clouded Revelation section on the same official page, and use the aggregate August 14 Version 2.0 page for older network and Path Balance history.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             We flag roadmap checkpoints, official news beats, and practical player impact so you know what to re-check: codes, quest bugs, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, boss guides, builds, and tier-list assumptions.
@@ -371,7 +380,7 @@ export default function PatchNotesPage() {
           Version 2.1 catch-up: what changed recently.
         </h2>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-          The official news feed now leads with the August 27 Clouded Revelation overview, followed by the August 20 Version 2.1 patch notes. If you last played around Version 1.8 or earlier, use Hidden Mountain and the July 23 balance pass as historical checkpoints, review the August 7 network section on the aggregate August 14 page, then finish with the confirmed Version 2.1 fixes.
+          The official trail now leads with the September 5 Version 2.1 patch-notes section and the September 3 overview, with August 20 retained as an earlier section on the same Clouded Revelation patch page. If you last played around Version 1.8 or earlier, use Hidden Mountain and the July 23 balance pass as historical checkpoints, review the August 7 network section on the aggregate August 14 page, then finish with the confirmed Version 2.1 fixes.
         </p>
         <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
           Start with practical checks: verify Palace-era code reports in-game, re-open blocked event or quest steps after the June 5 and May 29 fixes, and compare your build against the May 26 Path Balance notes before spending scarce upgrade materials.

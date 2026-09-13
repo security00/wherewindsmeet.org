@@ -17,8 +17,8 @@ const quickAnswers = [
   {
     label: "PvE evidence",
     answer: "No universal letter grade is published until matched-gear boss and dungeon tests are recorded for the current patch.",
-    href: "/guides/builds#post-patch-build-check",
-    cta: "Check your build",
+    href: "/guides/pve-tier-list",
+    cta: "Open PvE tier review",
   },
   {
     label: "PvP evidence",
@@ -126,6 +126,9 @@ export default function TierListPage() {
         <div className="mt-6 flex flex-wrap gap-3 text-sm">
           <Link href="#tier-data" className="rounded-full bg-emerald-400 px-4 py-2 font-semibold text-slate-950 hover:bg-emerald-300">
             Open evidence matrix
+          </Link>
+          <Link href="/guides/pve-tier-list" className="rounded-full border border-slate-700 px-4 py-2 font-semibold text-slate-200 hover:border-emerald-300/60">
+            PvE tier-list hub
           </Link>
           <Link href="/guides/patch-notes" className="rounded-full border border-slate-700 px-4 py-2 font-semibold text-slate-200 hover:border-emerald-300/60">
             Check patch notes

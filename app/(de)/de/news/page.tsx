@@ -70,7 +70,7 @@ export default function NewsPage() {
   const roadmapBlock = {
     title: "Roadmap / Nächste Updates (Beobachtungsliste)",
     summary:
-      "Letzter geprüfter Stand: Version 2.1. Die offizielle Übersicht zum 27. August und die Patch Notes vom 20. August stehen vor den datierten Version-2.0-, Version-1.8-, Palace-, Xbox-, Hexi- und Qinchuan-Notizen.",
+      "Letzter geprüfter Stand: Version 2.1. Die Patch Notes vom 5. September und die Übersicht zum 3. September stehen vor den datierten 27.-August-, 20.-August-, Version-2.0-, Version-1.8-, Palace-, Xbox-, Hexi- und Qinchuan-Notizen.",
     updated: lastUpdatedLabel,
     links: [
       { href: "/guides/tier-list", label: "China-Tierliste & Balance-Notizen" },
@@ -164,8 +164,11 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Geprüft für {freshness?.gameVersion ?? "Version 2.1 / August 27"}: Die offizielle Übersicht zum
-              27. August und die Patch Notes vom 20. August bilden den aktuellen Anker. Version 2.0, Version 1.8,
+              Geprüft für {freshness?.gameVersion ?? "Version 2.1 / September 5"}: Die offiziellen{' '}
+              <a href="https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html" target="_blank" rel="noopener noreferrer" className="underline">Patch Notes vom 5. September</a>
+              {' '}und die{' '}
+              <a href="https://www.wherewindsmeetgame.com/news/official/903update.html" target="_blank" rel="noopener noreferrer" className="underline">Übersicht zum 3. September</a>
+              {' '}bilden den aktuellen Anker vor älteren August-Notizen. Version 2.0, Version 1.8,
               Palace, Xbox, Hexi und Qinchuan bleiben darunter als datierter Rückblick.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">

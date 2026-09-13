@@ -8,9 +8,9 @@ import Link from "next/link";
 const freshness = getContentFreshness("/guides/codes");
 
 export const metadata: Metadata = {
-  title: "WWM Codes August 2026: Active Where Winds Meet Codes",
+  title: "WWM Codes September 2026: Where Winds Meet Codes (checked 2026-09-13)",
   description:
-    "WWM codes checked August 2026: reported active Where Winds Meet redeem codes, redemption steps, expired-code warnings, and links for outfit or character codes.",
+    "WWM codes checked 2026-09-13 (September 2026): reported Where Winds Meet redeem codes labeled verify in-game, redemption steps, expired-code warnings, and links for outfit or character codes.",
   alternates: buildHreflangAlternates("/guides/codes"),
 };
 
@@ -135,11 +135,11 @@ export default function CodesPage() {
 
         <div className="relative z-10 space-y-6">
           <h1 className="text-balance text-4xl font-bold tracking-tight text-ink sm:text-5xl">
-            WWM Codes <span className="text-ink-gold">August 2026</span>
+            WWM Codes <span className="text-ink-gold">September 2026</span>
           </h1>
           <div className="max-w-3xl space-y-4 text-slate-300 leading-relaxed">
             <p>
-              Updated {lastChecked}: this page refreshes the Where Winds Meet codes list for {freshness?.gameVersion ?? "Version 2.1 / August 2026"} instead of leaving old launch-only codes at the top. Start with the most recently verified entries, then try Palace, Qinchuan/Hexi, and older launch rewards only if your account has never claimed them.
+              Updated {lastChecked}: this page refreshes the Where Winds Meet codes checklist for {freshness?.gameVersion ?? "Version 2.1 / checked 2026-09-13"}. Codes below stay labeled Reported—not confirmed-active—because aggregator lists are not treated as live truth. Prefer redeem steps and in-game verification over stuffing unverified strings.
             </p>
             <p>
               Important: the official news feed also reported that a leaked batch of 30 exchange codes was disabled in early May 2026. If a code from social media fails, it may simply be one of those disabled leak codes rather than a problem with your account.
@@ -210,8 +210,11 @@ export default function CodesPage() {
       {/* Distribution Pattern */}
       <section id="how-to-redeem" className="card-wuxia rounded-3xl p-8 space-y-6">
         <h2 className="text-2xl font-bold text-slate-100 border-brush inline-block pb-2">
-          How Codes Work
+          How Codes Work · redeem path
         </h2>
+        <p className="text-sm leading-6 text-slate-300">
+          Practical redeem path for reward codes: <strong className="text-slate-100">Settings → Other → Exchange Code</strong>, then claim from the mailbox. Character-creation appearance codes stay on a different page.
+        </p>
         <div className="grid gap-8 md:grid-cols-3">
           <div className="space-y-3">
             <h3 className="text-lg font-semibold text-ink-gold">📢 Official Events</h3>
@@ -266,23 +269,35 @@ export default function CodesPage() {
         </h2>
         <div className="grid gap-8 md:grid-cols-2">
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-ink-spirit">PC & Mobile</h3>
+            <h3 className="text-lg font-semibold text-ink-spirit">PC & Mobile (in-game exchange)</h3>
             <ol className="space-y-3 text-sm text-slate-300">
-              <li className="step-manual">Open the <span className="text-slate-100 font-medium">System Menu</span> (Esc).</li>
-              <li className="step-manual">Navigate to <span className="text-slate-100 font-medium">Settings {'>'} Account</span>.</li>
-              <li className="step-manual">Select <span className="text-slate-100 font-medium">Redeem Code</span>.</li>
-              <li className="step-manual">Paste the code and check your in-game mail.</li>
+              <li className="step-manual">Open <span className="text-slate-100 font-medium">Settings</span> from the system menu.</li>
+              <li className="step-manual">Choose <span className="text-slate-100 font-medium">Other</span>.</li>
+              <li className="step-manual">Select <span className="text-slate-100 font-medium">Exchange Code</span>.</li>
+              <li className="step-manual">Enter the code exactly, submit, then claim the reward from your <span className="text-slate-100 font-medium">mailbox</span>.</li>
             </ol>
+            <p className="text-xs leading-5 text-slate-400">
+              Source checklist note: third-party trackers (including PC Gamer&apos;s codes roundup already cited in freshness) may list candidates, but only the in-game Exchange Code result confirms whether a string still works on your account/region.
+            </p>
           </div>
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-ink-spirit">PlayStation 5</h3>
             <p className="text-sm text-slate-300 leading-relaxed">
-              Most codes can be redeemed in-game via the same menu. However, some platform-exclusive packs must be claimed via the <span className="text-slate-100 font-medium">PlayStation Store</span> interface.
+              Most redeem codes use the same Settings → Other → Exchange Code path in-game. Platform store packs are separate and must be claimed in the <span className="text-slate-100 font-medium">PlayStation Store</span>.
             </p>
             <div className="rounded bg-slate-950/50 p-3 text-xs text-slate-400 border border-slate-800">
-              Tip: Use the PlayStation App on your phone to type codes faster!
+              Tip: Use the PlayStation App on your phone to type long codes faster, then finish the mailbox claim in-game.
             </div>
           </div>
+        </div>
+        <div className="rounded-2xl border border-slate-700 bg-slate-950/50 p-5 space-y-3">
+          <h3 className="text-lg font-semibold text-slate-100">Redeem FAQ</h3>
+          <ul className="space-y-2 text-sm leading-6 text-slate-300">
+            <li><strong className="text-slate-100">Expired or rejected?</strong> Mark it expired for your account. Do not spam retries—region gates and one-time claims both look like failures.</li>
+            <li><strong className="text-slate-100">Case-sensitive?</strong> Enter codes exactly as shown. Mixed-case strings (for example launch YouTube codes) often fail if forced to all-caps.</li>
+            <li><strong className="text-slate-100">May 2026 leak batch:</strong> The official mobile news feed said a leaked batch of 30 exchange codes was disabled in early May 2026. Large social lists may still recycle those dead strings.</li>
+            <li><strong className="text-slate-100">Character creation / outfit codes?</strong> Those are not redeem codes—use the separate character-creation and cosmetics guides linked above.</li>
+          </ul>
         </div>
       </section>
 

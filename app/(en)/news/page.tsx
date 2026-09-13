@@ -10,35 +10,42 @@ const baseUrl = "https://wherewindsmeet.org";
 const freshness = getContentFreshness("/news");
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Update Today - Version 2.1.3 News & Patch Notes",
+  title: "Where Winds Meet Update Today - Version 2.1 September 5 News & Patch Notes",
   description:
-    "Where Winds Meet update today tracker for the September 3 Version 2.1.3 overview, Reflection Temple, Drunken Fist, Clouded Revelation, and guide impact.",
+    "Where Winds Meet update today tracker for the September 5 Version 2.1 patch notes, September 3 overview, Reflection Temple, Drunken Fist, and Clouded Revelation impact.",
   alternates: buildHreflangAlternates("/news"),
   openGraph: {
-    title: "Where Winds Meet Update Today - Version 2.1.3 News & Patch Notes",
+    title: "Where Winds Meet Update Today - Version 2.1 September 5 News & Patch Notes",
     description:
-      "Where Winds Meet update today tracker for the September 3 Version 2.1.3 overview, Reflection Temple, and Drunken Fist.",
+      "Where Winds Meet update today tracker for the September 5 patch notes, September 3 overview, Reflection Temple, and Drunken Fist.",
     url: `${baseUrl}/news`,
   },
   twitter: {
-    title: "Where Winds Meet Update Today - Version 2.1.3 News & Patch Notes",
+    title: "Where Winds Meet Update Today - Version 2.1 September 5 News & Patch Notes",
     description:
-      "Where Winds Meet update today tracker for the official September 3 Version 2.1.3 overview, Reflection Temple, and current patch impact.",
+      "Where Winds Meet update today tracker for the official September 5 patch notes, September 3 overview, Reflection Temple, and current patch impact.",
   },
 };
 
 const todayStatusCards = [
   {
-    title: "Latest official update",
+    title: "Latest official patch notes",
     detail:
-      "The September 3 Version 2.1.3 overview is the newest official intel checked: Skystrike Gauntlets, Riven Twinblades, new Inner Ways, and live Clouded Revelation events. Reflection Temple remains the time-boxed Ghost Month stage.",
+      "The September 5 Version 2.1 section on the official Clouded Revelation patch-notes page is the newest confirmed fix list checked: Gauntlets Castlink animation, Ceramic Bliss, Bounty Order rewards, Cloudtop Ascent claims, Reflection Temple cuju-ball and shadow-respawn quest fixes, Homestead loading, and Eagleglide placement.",
+    href: "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
+    label: "Official September 5 patch notes",
+  },
+  {
+    title: "September 3 intel overview",
+    detail:
+      "The September 3 Version 2.1.3 overview remains the content-intel anchor: Skystrike Gauntlets, Riven Twinblades, new Inner Ways, and live Clouded Revelation events. Reflection Temple remains the time-boxed Ghost Month stage.",
     href: "https://www.wherewindsmeetgame.com/news/official/903update.html",
     label: "Official September 3 overview",
   },
   {
     title: "Today patch-note answer",
     detail:
-      "Use Version 2.1.3 as the current playable layer on top of the August 20 Clouded Revelation fixes. Re-test Draught unlocks, Reflection Temple, Vernal Umbrella rolls, and older Jianghu Legacy triggers before following pre-September workarounds.",
+      "Lead with the September 5 fixes, then use Version 2.1.3 playable content on top of the earlier August 20 Clouded Revelation section. Re-test Reflection Temple quest steps, Draught unlocks, Vernal Umbrella rolls, and older Jianghu Legacy triggers before following pre-September workarounds.",
     href: "/guides/clouded-revelation",
     label: "Version 2.1.3 impact guide",
   },
@@ -265,7 +272,7 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-3 leading-6 text-cyan-50/90">
-              The current checked update baseline is <strong>Version 2.1.3 / September 3 Clouded Revelation overview</strong>,
+              The current checked update baseline is <strong>Version 2.1 / September 5 patch notes + September 3 overview</strong>,
               followed by the Ghost Month Reflection Temple letter, the August 20 patch notes, and Version 2.0 history. If you searched for
               <span className="font-semibold"> where winds meet update today</span>, use the cards below to jump straight
               to official news, patch notes, and roadmap watch items.
@@ -298,7 +305,7 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Latest official-news pass: {freshness?.gameVersion ?? "Version 2.1.3 / September 3 overview"}, including Drunken Fist, Reflection Temple, Clouded Revelation, quest-trigger fixes, and Hidden Mountain follow-up. The list below follows the current official news trail.
+              Latest official-news pass: {freshness?.gameVersion ?? "Version 2.1.3 / September 5 patch + September 3 overview"}, including September 5 Reflection Temple quest fixes, Drunken Fist, Clouded Revelation, and Hidden Mountain follow-up. The list below follows the current official news trail.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link href="/guides/tier-list" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
@@ -358,7 +365,7 @@ export default function NewsPage() {
             <div className="mt-3 grid gap-2 text-xs text-slate-300 sm:grid-cols-3">
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
                 <p className="font-semibold text-slate-100">Current update</p>
-                <p className="mt-1">The Version 2.1 / August 27 Clouded Revelation overview is the current update anchor; the August 20 patch notes provide confirmed fixes, while Version 2.0 Hidden Mountain, network, matchmaking, and Path Balance notes remain historical context.</p>
+                <p className="mt-1">The September 5 Version 2.1 patch-notes section and September 3 overview are the current update anchors; August 20 remains an earlier Clouded Revelation section on the same official patch page, while Version 2.0 Hidden Mountain, network, matchmaking, and Path Balance notes remain historical context.</p>
               </div>
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
                 <p className="font-semibold text-slate-100">Next watch</p>

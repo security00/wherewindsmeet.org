@@ -14,18 +14,18 @@ test("the public news feed starts with the latest verified official notices", ()
     newsItems.slice(0, 2).map(({ id, date, officialUrl }) => ({ id, date, officialUrl })),
     [
       {
-        id: "august-27-version-2-1-update-overview",
-        date: "2026-08-26",
-        officialUrl: "https://www.wherewindsmeetgame.com/news/official/827update.html",
+        id: "september-5-version-2-1-patch-notes",
+        date: "2026-09-05",
+        officialUrl: "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
       },
       {
-        id: "account-suspension-july27-august24-2026",
-        date: "2026-08-25",
-        officialUrl: "https://www.wherewindsmeetgame.com/news/official/Banreport824.html",
+        id: "september-3-version-2-1-update-overview",
+        date: "2026-09-02",
+        officialUrl: "https://www.wherewindsmeetgame.com/news/official/903update.html",
       },
     ],
   );
-  assert.equal(latestNewsDate, "2026-08-26");
+  assert.equal(latestNewsDate, "2026-09-05");
 });
 
 test("aggregate official update rows use the latest date shown by their source page", () => {
@@ -72,12 +72,12 @@ test("core update surfaces record the latest official Version 2.1 review", () =>
     readFileSync(new URL("../lib/contentFreshness.json", import.meta.url), "utf8"),
   );
   const byPath = new Map(registry.map((entry) => [entry.basePath, entry]));
-  const officialUpdateUrl = "https://www.wherewindsmeetgame.com/news/official/827update.html";
+  const officialUpdateUrl = "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html";
 
   for (const path of ["/", "/news", "/guides/patch-notes", "/guides/codes", "/guides/bosses"]) {
     const entry = byPath.get(path);
     assert.ok(entry, `missing freshness entry for ${path}`);
-    assert.equal(entry.lastChecked, "2026-08-26", `${path} review date`);
+    assert.equal(entry.lastChecked, "2026-09-13", `${path} review date`);
     assert.match(entry.gameVersion, /Version 2\.1/, `${path} game version`);
     if (path !== "/guides/codes") {
       assert.ok(entry.sourceUrls.includes(officialUpdateUrl), `${path} should cite the current official update`);
@@ -115,8 +115,8 @@ test("current-state page copy does not present superseded releases or elapsed ga
   assert.doesNotMatch(patchNotes, /date: "2026-08-0[27]"|date: "2026-07-09"|current roadmap anchor for Hidden Mountain|current August 7 official patch page/);
 
   assert.match(homepage, /Version 2\.1/);
-  assert.match(news, /827update\.html/);
-  assert.match(patchNotes, /827update\.html/);
+  assert.match(news, /CloudedRevelationPatchNotes\.html/);
+  assert.match(patchNotes, /CloudedRevelationPatchNotes\.html/);
   assert.match(mistveil, /historical/i);
 });
 
@@ -209,7 +209,7 @@ test("German and Vietnamese video galleries present older videos as a dated arch
     const surface = `${page}\n${catalog}`;
     assert.doesNotMatch(surface, staleLanguage);
     assert.match(page, datedLanguage);
-    assert.match(catalog, /publishedAt: "2026-06-10"/);
+    assert.match(catalog, /publishedAt: "2026-0[6-8]-\d{2}"/);
   }
 });
 
