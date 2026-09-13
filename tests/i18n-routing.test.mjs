@@ -108,7 +108,7 @@ test("route locale availability prevents links and hreflang to missing translati
   assert.deepEqual(routing.getAvailableLocales("/guides/pvp-tier-list"), ["en"]);
   assert.deepEqual(routing.getAvailableLocales("/guides/weapons/tier-list"), ["en"]);
   assert.deepEqual(routing.getAvailableLocales("/guides/pve-tier-list"), ["en"]);
-  assert.deepEqual(routing.getAvailableLocales("/guides/reflection-temple"), ["en"]);
+  assert.deepEqual(routing.getAvailableLocales("/guides/reflection-temple"), ["en", "vi", "de"]);
   assert.equal(routing.buildLocalizedPath("/guides/imperial-decree", "de"), null);
   assert.equal(routing.buildLocalizedPath("/guides/bosses", "vi"), "/vn/guides/bosses");
   assert.equal(routing.buildLocalizedPath("/news#next-update", "vi"), "/vn/news#next-update");
