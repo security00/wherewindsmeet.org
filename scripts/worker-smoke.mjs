@@ -152,10 +152,17 @@ async function run() {
   assert.equal(sitemap.status, 200);
   assert.match(sitemap.headers.get("content-type") || "", /(?:xml|text\/plain)/);
   const sitemapXml = await sitemap.text();
+  // Overall and PvP tier hubs remain English-only; weapon tier list now has DE/VI.
   assert.doesNotMatch(
     sitemapXml,
-    /\/(?:de|vn)\/guides\/(?:tier-list|pvp-tier-list|weapons\/tier-list)/,
+    /\/(?:de|vn)\/guides\/(?:tier-list|pvp-tier-list)(?!\/)/,
   );
+  assert.match(sitemapXml, /\/de\/guides\/weapons\/tier-list/);
+  assert.match(sitemapXml, /\/vn\/guides\/weapons\/tier-list/);
+  assert.match(sitemapXml, /\/de\/guides\/pve-tier-list/);
+  assert.match(sitemapXml, /\/vn\/guides\/pve-tier-list/);
+  assert.match(sitemapXml, /\/de\/guides\/codes/);
+  assert.match(sitemapXml, /\/vn\/guides\/codes/);
 
   const fallback = await fetch(`${origin}/vn/guides/one-leaf-one-life`, {
     redirect: "manual",
