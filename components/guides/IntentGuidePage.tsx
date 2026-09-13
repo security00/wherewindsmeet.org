@@ -1,6 +1,7 @@
 import Link from "next/link";
 import CdnImage from "@/components/CdnImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
+import { buildLocalizedPath } from "@/i18n/routing.mjs";
 import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
 
 export type IntentGuideLanguage = "en" | "vi" | "de";
@@ -17,8 +18,6 @@ export type IntentGuideKind =
   | "zenithstride"
   | "ephemeral-glory"
   | "mirkvale";
-
-const prefix = { en: "", vi: "/vn", de: "/de" } as const;
 
 type ExtraItem = { title: string; body: string };
 type RelatedLink = { href: string; label: string };
@@ -1430,7 +1429,6 @@ export default function IntentGuidePage({
   kind: IntentGuideKind;
 }) {
   const page = guides[kind][language];
-  const base = prefix[language];
   const poster = page.videoId ? `https://i.ytimg.com/vi/${page.videoId}/hqdefault.jpg` : undefined;
 
   return (
@@ -1509,7 +1507,7 @@ export default function IntentGuidePage({
         <h2 className="font-semibold text-emerald-100">{page.relatedTitle}</h2>
         <div className="mt-4 flex flex-wrap gap-3">
           {page.related.map((item) => (
-            <Link key={item.href} href={`${base}${item.href}`} className="rounded-full border border-emerald-300/40 px-4 py-2 text-sm font-semibold text-emerald-100">
+            <Link key={item.href} href={buildLocalizedPath(item.href, language) ?? item.href} className="rounded-full border border-emerald-300/40 px-4 py-2 text-sm font-semibold text-emerald-100">
               {item.label} →
             </Link>
           ))}
