@@ -175,6 +175,9 @@ test("shared navigation chrome reads labels from locale JSON instead of parallel
   const prompt = readFileSync(resolve(root, "components/LanguageSwitchPrompt.tsx"), "utf8");
 
   assert.match(header, /useTranslations\(["']siteHeader["']\)/);
+  assert.match(header, /CdnImageClient/);
+  assert.match(header, /LOCALES/);
+  assert.doesNotMatch(header, /languageTargets\.length\s*>\s*1/);
   assert.match(footer, /useTranslations\(["']siteFooter["']\)/);
   assert.match(prompt, /useTranslations\(["']languagePrompt["']\)/);
   assert.doesNotMatch(header, /const\s+(vnNavLinks|deNavLinks|UI_TEXT)\s*=/);
