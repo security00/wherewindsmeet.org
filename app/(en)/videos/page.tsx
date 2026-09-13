@@ -83,7 +83,7 @@ export default function VideosPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Watch fresh Where Winds Meet videos for Heaven's Threshold, Drunken Fist, and Hidden Mountain.
+            Watch fresh Where Winds Meet videos for Heaven&apos;s Threshold, Drunken Fist, and Hidden Mountain.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
             This page gathers recently refreshed Where Winds Meet videos in one quiet
