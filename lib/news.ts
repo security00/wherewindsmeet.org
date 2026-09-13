@@ -24,6 +24,14 @@ type OfficialNewsRow = [
 // site can pin items out of strict date order, so news pages should not sort it.
 const officialNewsRows: OfficialNewsRow[] = [
   [
+    "september-5-version-2-1-patch-notes",
+    "Version 2.1 Patch Notes: Optimizations and Bug Fixes (September 5, 2026)",
+    "2026-09-05",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
+    "Official September 5 Version 2.1 fixes: Skystrike Gauntlets Castlink animation, Ceramic Bliss model, Bounty Order publisher rewards, Cloudtop Ascent construction claims, Reflection Temple cuju-ball and shadow-respawn quest blockers, Homestead loading states, and Eagleglide accessory placement.",
+  ],
+  [
     "september-3-version-2-1-update-overview",
     "[Clouded Revelation] Version 2.1 Update Overview - September 3",
     "2026-09-02",
@@ -69,7 +77,7 @@ const officialNewsRows: OfficialNewsRow[] = [
     "2026-08-20",
     "announcement",
     "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
-    "Official Version 2.1 fixes for A Flourishing Legacy and Rising Beyond, Vernal Umbrella attunement, Arena and combat behavior, Homestead controls, cosmetics, and other live issues.",
+    "Earlier August 20 Version 2.1 Clouded Revelation fixes on the same official patch-notes page now headed by the September 5 section: A Flourishing Legacy and Rising Beyond, Vernal Umbrella attunement, Arena and combat behavior, Homestead controls, cosmetics, and other live issues.",
   ],
   [
     "august-19-version-2-1-update-overview",

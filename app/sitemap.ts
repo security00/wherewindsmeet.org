@@ -29,6 +29,7 @@ const staticEntries: Entry[] = [
   { path: "/tools/pvp-combos", changeFrequency: "weekly", priority: 0.7 },
   { path: "/guides/tier-list", changeFrequency: "daily", priority: 0.9 },
   { path: "/guides/pvp-tier-list", changeFrequency: "weekly", priority: 0.85 },
+  { path: "/guides/pve-tier-list", changeFrequency: "weekly", priority: 0.85 },
   { path: "/guides/weapons", changeFrequency: "weekly", priority: 0.9 },
   { path: "/guides/weapons/tier-list", changeFrequency: "weekly", priority: 0.85 },
   { path: "/guides/bosses", changeFrequency: "weekly", priority: 0.85 },

@@ -63,11 +63,12 @@ test("localized news pages label official English titles and share the current V
   assert.match(vietnamesePage, /Tiêu đề tiếng Anh chính thức/);
 
   for (const [locale, source, dateBoundary] of [
-    ["de", germanPage, /27\. August/],
-    ["vi", vietnamesePage, /27\/08/],
+    ["de", germanPage, /5\. September|3\. September/],
+    ["vi", vietnamesePage, /05\/09|03\/09/],
   ]) {
     assert.match(source, /Version 2\.1/, `${locale} current version`);
-    assert.match(source, dateBoundary, `${locale} August 27 boundary`);
+    assert.match(source, dateBoundary, `${locale} September boundary`);
+    assert.match(source, /CloudedRevelationPatchNotes\.html/, `${locale} official patch-notes source`);
   }
 });
 

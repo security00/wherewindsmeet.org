@@ -155,8 +155,11 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Đã rà soát theo {freshness?.gameVersion ?? "Version 2.1 / August 27"}: tổng quan chính thức ngày
-              27/08 và patch notes ngày 20/08 là mốc hiện tại. Version 2.0, Version 1.8, Palace, Xbox, Hexi và
+              Đã rà soát theo {freshness?.gameVersion ?? "Version 2.1 / September 5"}: {' '}
+              <a href="https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html" target="_blank" rel="noopener noreferrer" className="underline">patch notes 05/09</a>
+              {' '}và{' '}
+              <a href="https://www.wherewindsmeetgame.com/news/official/903update.html" target="_blank" rel="noopener noreferrer" className="underline">tổng quan 03/09</a>
+              {' '}là mốc hiện tại trước các ghi chú tháng 8. Version 2.0, Version 1.8, Palace, Xbox, Hexi và
               Qinchuan vẫn nằm bên dưới dưới dạng nội dung lịch sử có ngày.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
@@ -272,7 +275,7 @@ export default function NewsPage() {
             Phần mô tả cho biết bài gốc dùng tiếng Anh và dẫn thẳng tới nguồn. Nội dung, phạm vi thay đổi và điều kiện sự kiện phải được kiểm tra trên trang chính thức.
           </p>
           <p>
-            Các trang hướng dẫn liên quan chỉ được cập nhật sau khi thông tin có thể đối chiếu với nguồn chính thức; mốc hiện tại của trang tin là Version 2.1, ngày 27/08.
+            Các trang hướng dẫn liên quan chỉ được cập nhật sau khi thông tin có thể đối chiếu với nguồn chính thức; mốc hiện tại của trang tin là Version 2.1, patch notes 05/09 và tổng quan 03/09.
           </p>
         </div>
       </section>

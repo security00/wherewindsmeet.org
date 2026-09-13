@@ -6,8 +6,8 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-09-04",
-    "gameVersion": "Version 2.1.3 / September 3 overview",
+    "lastChecked": "2026-09-13",
+    "gameVersion": "Version 2.1.3 / September 5 patch + September 3 overview",
     "priorityCluster": "main-keyword-recovery",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/",
@@ -104,8 +104,8 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-09-04",
-    "gameVersion": "Version 2.1.3 / September 3 overview",
+    "lastChecked": "2026-09-13",
+    "gameVersion": "Version 2.1.3 / September 5 patch + September 3 overview",
     "priorityCluster": "main-keyword-recovery",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
@@ -140,10 +140,11 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-09-04",
-    "gameVersion": "Version 2.1.3 / September 3 overview",
+    "lastChecked": "2026-09-13",
+    "gameVersion": "Version 2.1.3 / September 5 patch + September 3 overview",
     "priorityCluster": "week-1-rescue",
     "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/news/official/903update.html",
       "https://www.wherewindsmeetgame.com/m/news/",
       "https://www.wherewindsmeetgame.com/news/official/827update.html",
       "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
@@ -167,10 +168,12 @@
     "languages": [
       "en"
     ],
-    "lastChecked": "2026-08-26",
-    "gameVersion": "Version 2.1 / August 27",
+    "lastChecked": "2026-09-13",
+    "gameVersion": "Version 2.1 / checked 2026-09-13",
     "priorityCluster": "week-1-rescue",
     "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/news/official/903update.html",
+      "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
       "https://www.wherewindsmeetgame.com/m/news/",
       "https://www.wherewindsmeetgame.com/jm/activity/3sSSr3/3NddQA?lang=en&jm_track=web_en",
       "https://www.wherewindsmeetgame.com/news/official/UnseenApproach.html",
@@ -188,10 +191,12 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-08-26",
-    "gameVersion": "Version 2.1 / August 27",
+    "lastChecked": "2026-09-13",
+    "gameVersion": "Version 2.1.3 / September 5 patch + September 3 overview",
     "priorityCluster": "week-2-ctr-rescue",
     "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/news/official/903update.html",
+      "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
       "doc/seo-data-readout-2026-06-03.md",
       "https://www.wherewindsmeetgame.com/news/official/827update.html",
       "https://www.wherewindsmeetgame.com/news/official/625update.html",
@@ -252,8 +257,8 @@
     "languages": [
       "en"
     ],
-    "lastChecked": "2026-08-21",
-    "gameVersion": "Version 2.1 / August 20 targeted balance recheck",
+    "lastChecked": "2026-09-13",
+    "gameVersion": "Version 2.1 / evidence recheck 2026-09-13",
     "priorityCluster": "week-2-meta-refresh",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
@@ -265,7 +270,8 @@
       "https://www.wherewindsmeetgame.com/news/official/CompanionsMakeHome.html",
       "https://www.wherewindsmeetgame.com/news/official/623faq.html",
       "https://www.wherewindsmeetgame.com/news/official/609update.html",
-      "https://www.wherewindsmeetgame.com/news/official/529update.html"
+      "https://www.wherewindsmeetgame.com/news/official/529update.html",
+      "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html"
     ]
   },
   {
@@ -291,8 +297,8 @@
     "languages": [
       "en"
     ],
-    "lastChecked": "2026-08-21",
-    "gameVersion": "Version 2.1 / August 20 Arena and combat fix watch",
+    "lastChecked": "2026-09-13",
+    "gameVersion": "Version 2.1 / evidence recheck 2026-09-13",
     "priorityCluster": "week-2-meta-refresh",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
@@ -311,8 +317,8 @@
     "languages": [
       "en"
     ],
-    "lastChecked": "2026-08-21",
-    "gameVersion": "Version 2.1 / August 20 Vernal Umbrella recheck",
+    "lastChecked": "2026-09-13",
+    "gameVersion": "Version 2.1 / evidence recheck 2026-09-13",
     "priorityCluster": "week-2-meta-refresh",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/m/news/",
@@ -344,8 +350,8 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-09-04",
-    "gameVersion": "Version 2.1.3 / September 3 overview",
+    "lastChecked": "2026-09-13",
+    "gameVersion": "Version 2.1.3 / September 5 patch + September 3 overview",
     "priorityCluster": "emerging-update-intent",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/news/official/903update.html",
@@ -419,7 +425,11 @@
   },
   {
     "basePath": "/guides/character-creation-codes",
-    "languages": ["en", "vi", "de"],
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
     "lastChecked": "2026-08-23",
     "gameVersion": "Version 2.1 / August 23 search-demand pass",
     "priorityCluster": "rising-character-customization-intent",
@@ -430,7 +440,11 @@
   },
   {
     "basePath": "/guides/commerce-coins",
-    "languages": ["en", "vi", "de"],
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
     "lastChecked": "2026-08-23",
     "gameVersion": "Version 2.1 / August 23 search-demand pass",
     "priorityCluster": "rising-commerce-intent",
@@ -441,7 +455,11 @@
   },
   {
     "basePath": "/guides/hidden-mountain",
-    "languages": ["en", "vi", "de"],
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
     "lastChecked": "2026-08-23",
     "gameVersion": "Version 2.1 / One Step Closer to the Sky",
     "priorityCluster": "official-freshness-and-rising-region-intent",
@@ -453,7 +471,11 @@
   },
   {
     "basePath": "/guides/heavens-threshold-cloudstair",
-    "languages": ["en", "vi", "de"],
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
     "lastChecked": "2026-08-23",
     "gameVersion": "Version 2.1 / Heaven's Threshold Chapter 2",
     "priorityCluster": "fresh-server-unlock-task-intent",
@@ -465,7 +487,11 @@
   },
   {
     "basePath": "/guides/evershift-labyrinth",
-    "languages": ["en", "vi", "de"],
+    "languages": [
+      "en",
+      "vi",
+      "de"
+    ],
     "lastChecked": "2026-08-23",
     "gameVersion": "Version 2.1 / Heaven's Threshold Chapter 2",
     "priorityCluster": "fresh-puzzle-blocker-intent",
@@ -478,8 +504,10 @@
   },
   {
     "basePath": "/guides/drunken-fist",
-    "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-09-04",
+    "languages": [
+      "en"
+    ],
+    "lastChecked": "2026-09-13",
     "gameVersion": "Version 2.1.3 / Drunken Fist",
     "priorityCluster": "fresh-weapon-unlock-intent",
     "sourceUrls": [
@@ -491,19 +519,24 @@
   },
   {
     "basePath": "/guides/reflection-temple",
-    "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-09-04",
-    "gameVersion": "Version 2.1 / Ghost Month event",
+    "languages": [
+      "en"
+    ],
+    "lastChecked": "2026-09-13",
+    "gameVersion": "Version 2.1 / Ghost Month + September 5 quest fixes",
     "priorityCluster": "live-event-intent",
     "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
       "https://www.wherewindsmeetgame.com/news/official/829devletter.html",
       "https://game8.co/games/Where-Winds-Meet/archives/617349"
     ]
   },
   {
     "basePath": "/guides/mystic-arts",
-    "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-09-04",
+    "languages": [
+      "en"
+    ],
+    "lastChecked": "2026-09-13",
     "gameVersion": "Version 2.1.3",
     "priorityCluster": "evergreen-system-intent",
     "sourceUrls": [
@@ -512,13 +545,30 @@
   },
   {
     "basePath": "/guides/how-to-fly",
-    "languages": ["en", "vi", "de"],
-    "lastChecked": "2026-09-04",
+    "languages": [
+      "en"
+    ],
+    "lastChecked": "2026-09-13",
     "gameVersion": "Version 2.1.3",
     "priorityCluster": "evergreen-system-intent",
     "sourceUrls": [
       "https://www.dexerto.com/wikis/where-winds-meet/how-to-fly/",
       "https://www.wherewindsmeetgame.com/news/official/821devletter.html"
+    ]
+  },
+  {
+    "basePath": "/guides/pve-tier-list",
+    "languages": [
+      "en"
+    ],
+    "lastChecked": "2026-09-13",
+    "gameVersion": "Version 2.1 / PvE evidence recheck 2026-09-13",
+    "priorityCluster": "week-2-meta-refresh",
+    "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/m/news/",
+      "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
+      "https://www.wherewindsmeetgame.com/news/official/903update.html",
+      "https://www.wherewindsmeetgame.com/news/official/719devletter.html"
     ]
   }
 ]

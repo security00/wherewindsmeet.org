@@ -272,9 +272,9 @@ const guides: Record<IntentGuideKind, Record<IntentGuideLanguage, GuideCopy>> = 
   },
   "reflection-temple": {
     en: {
-      checked: "Event window · August 27 to September 27, 2026",
+      checked: "Event window · August 27 to September 27, 2026 · Sep 5 quest fixes reviewed",
       title: "Where Winds Meet Reflection Temple Event Guide",
-      intro: "Reflection Temple is the Ghost Month limited stage. There is no overworld door to hunt: open the event page and press Go. Survival is not enough. You have to learn the temple taboos, read offerings and paper effigies, and finish the unfinished ritual.",
+      intro: "Reflection Temple is the Ghost Month limited stage. There is no overworld door to hunt: open the event page and press Go. Survival is not enough. You have to learn the temple taboos, read offerings and paper effigies, and finish the unfinished ritual. If a cuju-ball hand-in or shadow respawn was stuck before, the official September 5 Clouded Revelation patch notes listed fixes for those quest blockers.",
       hero: "/guides/reflection-temple/hero.jpg",
       heroAlt: "Lantern-lit abandoned water temple with paper effigies and altar offerings over a misty pool",
       videoId: "8MHyHYcJzJo",
@@ -288,14 +288,15 @@ const guides: Record<IntentGuideKind, Record<IntentGuideLanguage, GuideCopy>> = 
         "Some objectives require you to die or look into the water. If a run ends suddenly, reread the last taboo instead of assuming a bug.",
         "After the quest, replay from the event page for extra Soulbound Paper collection rewards before September 27, 4:59:59 UTC+8.",
       ],
-      extraTitle: "What the official letter actually asks you to notice",
+      extraTitle: "What the official letter and September 5 fixes actually ask you to notice",
       extraItems: [
         { title: "Folk taboos", body: "The studio designed the stage around Ghost Month prohibitions. There is no clean safety manual; you assemble the rules from ruins, deaths, and notes." },
         { title: "Ritual, not just escape", body: "Offerings feed wandering spirits, lanterns guide them, paper effigies can be decoys or vessels. Completing the lingering ritual is the real clear condition." },
+        { title: "September 5 quest fixes", body: "Official Clouded Revelation patch notes for September 5 fixed Reflection Temple blockers where players could not hand the cuju ball to the NPC, and where a character's shadow would not respawn after death. Retry those steps after updating; this page still does not invent offering coordinates." },
       ],
       blockerTitle: "Stuck or scared you broke it",
-      fixes: ["No map pin: use the event page teleport.", "Looping deaths: stop interacting and reread the last posted taboo.", "Missing extra rewards: finish the event-page objectives, not only the inner quest.", "After September 27 the stage archives; keep this page as a recap, not a live timer."],
-      evidence: "Unlock method and event dates are current Game8 / official overlap. Taboo and ritual language is from the August 29 developer letter. Exact offering coordinates vary by run and are not invented here.",
+      fixes: ["No map pin: use the event page teleport.", "Looping deaths: stop interacting and reread the last posted taboo.", "Cuju ball or shadow-respawn stuck after a prior attempt: update for the September 5 official quest fixes, then retry from the event page.", "Missing extra rewards: finish the event-page objectives, not only the inner quest.", "After September 27 the stage archives; keep this page as a recap, not a live timer."],
+      evidence: "Unlock method and event dates are current Game8 / official overlap. Taboo and ritual language is from the August 29 developer letter. Cuju-ball and shadow-respawn fixes are from the September 5 section of the official Clouded Revelation patch notes. Exact offering coordinates vary by run and are not invented here.",
       officialLabel: "Official Ghost Month developer letter",
       officialUrl: "https://www.wherewindsmeetgame.com/news/official/829devletter.html",
       serpLabel: "Event dates and start route",
@@ -303,6 +304,7 @@ const guides: Record<IntentGuideKind, Record<IntentGuideLanguage, GuideCopy>> = 
       relatedTitle: "While the event is live",
       related: [
         { href: "/guides/clouded-revelation", label: "Version 2.1 hub" },
+        { href: "/guides/patch-notes", label: "September 5 patch notes" },
         { href: "/guides/codes", label: "Codes" },
         { href: "/news", label: "Official news" },
         { href: "/guides/hidden-mountain", label: "Hidden Mountain" },

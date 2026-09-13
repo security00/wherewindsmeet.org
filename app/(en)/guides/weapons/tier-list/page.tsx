@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CdnImage from "@/components/CdnImage";
+import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 import {
   currentWeaponRoster,
@@ -35,12 +36,12 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Weapon Tier List: Version 2.1 Evidence",
+  title: "WWM Weapon Tier List | Where Winds Meet Weapon Tier List (Version 2.1)",
   description:
-    "Version 2.1 WWM weapon tier-list evidence for all 8 weapons including Gauntlets, with separate PvE/PvP review status, methodology, dates, and official sources.",
+    "WWM Weapon Tier List and Where Winds Meet Weapon Tier List for Version 2.1: all 8 weapons including Gauntlets, separate PvE/PvP review status, methodology, dates, and official sources—no invented S/A/B ranks.",
   alternates: buildHreflangAlternates("/guides/weapons/tier-list"),
   openGraph: {
-    title: "Where Winds Meet Weapon Tier List: Version 2.1 Evidence",
+    title: "WWM Weapon Tier List | Where Winds Meet Weapon Tier List (Version 2.1)",
     description:
       "A sourced roster and mode-specific evidence matrix that does not invent unsupported weapon tiers.",
     url: `${baseUrl}/guides/weapons/tier-list`,
@@ -91,22 +92,50 @@ export default function WeaponTierListPage() {
             {weaponTierMeta.gameVersion} · checked {weaponTierMeta.updatedAt}
           </p>
           <h1 className="mt-3 text-balance text-3xl font-bold text-slate-50 sm:text-5xl">
-            Where Winds Meet weapon tier list: a sourced review, not an invented ranking.
+            What is the current WWM / Where Winds Meet weapon tier list in Version 2.1?
           </h1>
           <p className="mt-5 text-base leading-7 text-slate-300">
-            The official material confirms the current roster, including Gauntlets, but does not publish a complete
-            comparative tier order. Until matched-build Version 2.1 tests are recorded, every PvE and PvP placement
-            stays in review. Use the role, guide, patch evidence, and retest notes below to make a decision you can verify.
+            Searchers looking for a <strong>WWM Weapon Tier List</strong> or{" "}
+            <strong>Where Winds Meet Weapon Tier List</strong> usually want a quick best-weapon answer.
+            The honest one: official sources confirm the eight-family roster (including Gauntlets) and selected
+            balance fixes, but they do <strong>not</strong> publish an official S/A/B order—and this page does not invent one.
+            Use the PvE and PvP sections below for review status, then open a weapon guide and run one repeatable test on your build.
           </p>
+          <div className="mt-4 rounded-2xl border border-amber-400/30 bg-amber-500/10 p-4 text-sm leading-6 text-amber-50/95">
+            Honesty callout: community letter tiers are not treated as current fact here. Until matched-build Version 2.1
+            evidence is stored, every comparative placement stays in review.
+          </div>
           <div className="mt-6 flex flex-wrap gap-3 text-sm">
-            <Link href="#weapon-evidence" className="rounded-full bg-emerald-400 px-4 py-2 font-semibold text-slate-950 hover:bg-emerald-300">
-              Compare all {currentWeaponRoster.length} weapons
+            <Link href="#pve" className="rounded-full bg-emerald-400 px-4 py-2 font-semibold text-slate-950 hover:bg-emerald-300">
+              Jump to PvE
             </Link>
-            <Link href="/guides/tier-list#tier-data" className="rounded-full border border-slate-700 px-4 py-2 font-semibold text-slate-200 hover:border-emerald-300/60">
-              Full evidence matrix
+            <Link href="#pvp" className="rounded-full border border-slate-700 px-4 py-2 font-semibold text-slate-200 hover:border-emerald-300/60">
+              Jump to PvP
+            </Link>
+            <Link href="#weapon-evidence" className="rounded-full border border-slate-700 px-4 py-2 font-semibold text-slate-200 hover:border-emerald-300/60">
+              All {currentWeaponRoster.length} weapons
             </Link>
           </div>
         </div>
+      </section>
+
+      <section className="rounded-3xl border border-cyan-400/30 bg-cyan-500/10 p-5 text-sm leading-6 text-slate-200">
+        <p className="text-xs font-semibold uppercase tracking-wide text-cyan-200">Related tier pages (dedupe)</p>
+        <p className="mt-2">
+          This page is the weapon-family evidence hub. For the broader matrix use{" "}
+          <Link href="/guides/tier-list" className="font-semibold text-cyan-100 underline underline-offset-4">
+            /guides/tier-list
+          </Link>
+          ; for arena-only checks use{" "}
+          <Link href="/guides/pvp-tier-list" className="font-semibold text-cyan-100 underline underline-offset-4">
+            /guides/pvp-tier-list
+          </Link>
+          ; for PvE-focused review use{" "}
+          <Link href="/guides/pve-tier-list" className="font-semibold text-cyan-100 underline underline-offset-4">
+            /guides/pve-tier-list
+          </Link>
+          .
+        </p>
       </section>
 
       <section className="grid gap-4 md:grid-cols-3">
@@ -124,6 +153,41 @@ export default function WeaponTierListPage() {
           <p className="text-xs font-semibold uppercase tracking-wide text-cyan-200">Next evidence</p>
           <h2 className="mt-2 text-lg font-bold text-slate-50">Matched PvE and PvP retests</h2>
           <p className="mt-3 text-sm leading-6 text-slate-300">Record build, gear, encounter or matchup, latency, result, and sample size before assigning a tier.</p>
+        </div>
+      </section>
+
+      <section id="pve" className="space-y-4 rounded-3xl border border-emerald-400/25 bg-emerald-500/10 p-6 sm:p-8">
+        <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">PvE review</p>
+        <h2 className="text-2xl font-bold text-slate-50">PvE weapon status: roster confirmed, letter tiers withheld.</h2>
+        <p className="max-w-3xl text-sm leading-6 text-slate-300">
+          Every family below is live for bosses, dungeons, and open-world clears, but comparative PvE grades still need
+          matched-gear, repeatable encounter records for Version 2.1. Open the dedicated PvE hub or a weapon guide before
+          spending upgrade materials on an unverified “meta” claim.
+        </p>
+        <div className="flex flex-wrap gap-3 text-sm">
+          <Link href="/guides/pve-tier-list" className="rounded-full bg-emerald-400 px-4 py-2 font-semibold text-slate-950 hover:bg-emerald-300">
+            Open PvE tier-list hub
+          </Link>
+          <Link href="#weapon-evidence" className="rounded-full border border-emerald-300/50 px-4 py-2 font-semibold text-emerald-50">
+            Weapon cards with PvE notes
+          </Link>
+        </div>
+      </section>
+
+      <section id="pvp" className="space-y-4 rounded-3xl border border-red-400/25 bg-red-500/10 p-6 sm:p-8">
+        <p className="text-xs font-semibold uppercase tracking-wide text-red-200">PvP review</p>
+        <h2 className="text-2xl font-bold text-slate-50">PvP weapon status: arena evidence still under review.</h2>
+        <p className="max-w-3xl text-sm leading-6 text-slate-300">
+          Arena placements need matchup, rank-band, latency, build, and sample-size evidence. Until those records exist,
+          this page will not invent duel S/A/B ranks from highlight clips or undated community images.
+        </p>
+        <div className="flex flex-wrap gap-3 text-sm">
+          <Link href="/guides/pvp-tier-list" className="rounded-full bg-red-300 px-4 py-2 font-semibold text-slate-950 hover:bg-red-200">
+            Open PvP tier-list hub
+          </Link>
+          <Link href="#weapon-evidence" className="rounded-full border border-red-300/50 px-4 py-2 font-semibold text-red-50">
+            Weapon cards with PvP notes
+          </Link>
         </div>
       </section>
 
@@ -198,6 +262,26 @@ export default function WeaponTierListPage() {
             );
           })}
         </div>
+      </section>
+
+      <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-8">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">Optional gameplay context</p>
+            <h2 className="mt-2 text-2xl font-bold text-slate-50">Unofficial unlock / Draught route video</h2>
+          </div>
+          <span className="rounded-full border border-amber-400/40 bg-amber-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-amber-100">
+            Unofficial
+          </span>
+        </div>
+        <p className="max-w-3xl text-sm leading-6 text-slate-400">
+          Community video already referenced elsewhere on this site for Skystrike Gauntlets / Draught Inner Ways unlock context.
+          It is not an official tier ranking and does not replace in-game verification.
+        </p>
+        <LiteYouTubeEmbed
+          videoId="3_OMV6jjJtM"
+          title="Unofficial: How to Get Drunken Fist Martial Arts and Inner Ways"
+        />
       </section>
 
       <section id="weapon-meta-check" className="rounded-3xl border border-violet-400/25 bg-violet-500/10 p-6 sm:p-8">
