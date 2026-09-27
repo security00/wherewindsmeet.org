@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { getCdnBaseUrl } from "@/lib/image-utils";
 
 export type NpcImagePreviewUiText = {
   instruction: string;
@@ -29,30 +30,17 @@ type Props = {
 export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32", uiText }: Props) {
   const [open, setOpen] = useState(false);
   const [zoom, setZoom] = useState(1);
-  const [useLocal, setUseLocal] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
-  const cdn = process.env.NEXT_PUBLIC_CDN_URL;
   const resolvedUiText = useMemo(() => ({ ...DEFAULT_UI_TEXT, ...uiText }), [uiText]);
 
-  const localFallbackSrc = useMemo(() => {
-    if (src.startsWith("http://") || src.startsWith("https://")) {
-      try {
-        return new URL(src).pathname;
-      } catch {
-        return src;
-      }
-    }
-    return src.startsWith("/") ? src : `/${src}`;
-  }, [src]);
-
   const resolvedSrc = useMemo(() => {
-    if (useLocal) return localFallbackSrc;
     if (src.startsWith("http://") || src.startsWith("https://")) return src;
-    if (!cdn) return localFallbackSrc;
-    return `${cdn}${localFallbackSrc}`;
-  }, [cdn, localFallbackSrc, src, useLocal]);
+    const cdnBase = getCdnBaseUrl();
+    const normalizedPath = src.startsWith("/") ? src : `/${src}`;
+    return `${cdnBase}${normalizedPath}`;
+  }, [src]);
 
   const adjustZoom = (delta: number) => {
     setZoom((z) => {
@@ -126,7 +114,6 @@ export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32",
           loading="lazy"
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-center"
-          onError={() => setUseLocal(true)}
         />
       </button>
 
@@ -199,7 +186,6 @@ export default function NpcImagePreview({ src, alt, thumbnailClassName = "h-32",
                   alt={alt}
                   className="block max-w-full"
                   style={{ transform: `scale(${zoom})`, transformOrigin: "top left" }}
-                  onError={() => setUseLocal(true)}
                 />
               </div>
             </div>
