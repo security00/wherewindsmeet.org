@@ -11,12 +11,12 @@ const sixFastUrl = "https://yysls-map.6fast.com/yysls/maps/qinghe?lang=en";
 const map17173Url = "https://map.17173.com/yysls/maps/qinchuan";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Interactive Map: Bosses, NPCs, Chests & CN Map",
+  title: "Where Winds Meet Map — Interactive Map for Bosses, NPCs & Collectibles",
   description:
-    "Open a Where Winds Meet interactive map for bosses, NPCs, chests, oddities, collectibles, teleport points, official map pins, CN map routes, and MapGenie.",
+    "Looking for a Where Winds Meet map? Use the official interactive map, MapGenie, or a CN map alternative for bosses, NPCs, chests, oddities, teleport points, and collectible routes—plus a short FAQ on map vs CN map coverage.",
   alternates: buildHreflangAlternates("/tools/interactive-map"),
   openGraph: {
-    title: "Where Winds Meet Interactive Map: Bosses, NPCs, Chests & CN Map",
+    title: "Where Winds Meet Map — Interactive Map for Bosses, NPCs & Collectibles",
     description:
       "Choose the official Where Winds Meet map, an English MapGenie view, or the 6Fast CN map for bosses, NPCs, chests, oddities, and route planning.",
     url: pageUrl,
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Where Winds Meet Interactive Map: Bosses, NPCs, Chests & CN Map",
+    title: "Where Winds Meet Map — Interactive Map for Bosses, NPCs & Collectibles",
     description:
       "Official map, CN map alternative, MapGenie, bosses, NPCs, chests, oddities, and farming routes.",
   },
@@ -101,6 +101,26 @@ const faqs = [
     answer:
       "The embedded content is controlled by the map provider. This page does not inject ads, but it also cannot remove ads inside a third-party map.",
   },
+  {
+    question: "Is there a Where Winds Meet map page separate from the interactive map?",
+    answer:
+      "No need. Searches for 'Where Winds Meet map' should land here. We intentionally do not maintain a separate thin /map article that would compete with this tool page.",
+  },
+  {
+    question: "Does the Where Winds Meet interactive map show every chest and NPC?",
+    answer:
+      "Coverage depends on the map provider and patch timing. Treat maps as helpers; confirm critical chests, NPCs, and bosses in the current client.",
+  },
+  {
+    question: "Which map should I use for bosses and collectibles?",
+    answer:
+      "Start with the official map for authoritative pins, then MapGenie for English checklist planning. Use a CN map when you need a second opinion on dense clusters. Cross-check bosses with /guides/bosses and NPCs with /guides/npc-list.",
+  },
+  {
+    question: "Can I use the map on mobile?",
+    answer:
+      "Most linked map sites work in a mobile browser, but embeds and third-party scripts vary by device. If an embed fails, use the 'open in new tab' links on this page.",
+  },
 ];
 
 export default function InteractiveMapPage() {
@@ -138,24 +158,45 @@ export default function InteractiveMapPage() {
       <header className="rounded-3xl border border-slate-800/80 bg-slate-950/80 p-6 shadow-2xl shadow-slate-950/40 sm:p-8">
         <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">Tools</p>
         <h1 className="mt-2 text-balance text-3xl font-bold tracking-tight text-slate-50 sm:text-4xl">
-          Where Winds Meet <span className="text-ink-gold">Interactive Map</span>: official map, CN map, bosses, NPCs,
-          and collectibles.
+          Where is the Where Winds Meet interactive map (bosses, NPCs, chests & collectibles)?
         </h1>
         <div className="mt-4 max-w-3xl space-y-3 text-sm leading-relaxed text-slate-300">
           <p>
-            If you are trying to locate a specific NPC, boss, chest, oddity, collectible, teleport point, or activity
-            quickly, an interactive map is usually faster than reading a long walkthrough.
-          </p>
-          <p>
-            This page gives you the official map, an English-first MapGenie option, and a CN map alternative so searches
-            like &quot;where winds meet interactive map&quot; and &quot;where winds meet cn map&quot; land on the right tool immediately.
+            <strong>Short answer:</strong> The fastest Where Winds Meet <strong>map</strong> landing is this page&apos;s interactive tools—not a separate thin article. Start with the <strong>official interactive map</strong> for the safest pins, use <strong>MapGenie</strong> for an English-first checklist of bosses, NPCs, chests, and teleport points, and keep a <strong>CN map</strong> alternative when you need a second source for dense routes. Coverage changes with patches; always verify important pins in-game before spending materials or time gates.
           </p>
         </div>
       </header>
 
-      <section id="cn-map" className="rounded-3xl border border-emerald-400/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/30 sm:p-8">
-        <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Quick answer</p>
-        <h2 className="mt-2 text-2xl font-bold text-slate-50">Which Where Winds Meet map should you use?</h2>
+      <section id="map-vs-interactive" className="rounded-3xl border border-emerald-400/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/30 sm:p-8">
+        <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Map vs interactive map</p>
+        <h2 className="mt-2 text-2xl font-bold text-slate-50">Map vs interactive map — same intent</h2>
+        <p className="mt-3 max-w-4xl text-sm leading-6 text-slate-300">
+          Players searching <strong>where winds meet map</strong>, <strong>where winds meet interactive map</strong>, or <strong>where winds meet cn map</strong> usually want the same thing: a pin layer for exploration. This hub keeps that intent on <strong>one URL</strong> (<code>/tools/interactive-map</code>) so you do not bounce between thin duplicates.
+        </p>
+        <ul className="mt-3 max-w-4xl space-y-2 text-sm leading-6 text-slate-300 list-disc pl-5">
+          <li><strong>Official map</strong> — first check for publisher pins</li>
+          <li><strong>MapGenie</strong> — English labels, checklists, community-style planning</li>
+          <li><strong>CN map alternatives</strong> — dense route references; names may not match global English exactly</li>
+        </ul>
+
+        <div className="mt-6">
+          <h3 className="text-lg font-bold text-slate-50">What these maps help you find</h3>
+          <p className="mt-2 text-sm leading-6 text-slate-300">
+            Use filters (when the provider offers them) for common goals:
+          </p>
+          <ul className="mt-2 space-y-1 text-sm text-slate-300 list-disc pl-5">
+            <li>Bosses and elite encounters</li>
+            <li>NPCs / Old Friends route planning (pair with <Link href="/guides/npc-list" className="text-emerald-300 hover:text-emerald-200">/guides/npc-list</Link>)</li>
+            <li>Chests, oddities, and collectibles</li>
+            <li>Teleport / boundary stones and exploration markers</li>
+          </ul>
+          <p className="mt-2 text-xs text-slate-400">
+            Pin completeness is <strong>provider-dependent</strong> and can lag patches. This fan hub does not claim a live total of map markers.
+          </p>
+        </div>
+
+        <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-emerald-200">Quick answer</p>
+        <h3 className="mt-2 text-xl font-bold text-slate-50">Which Where Winds Meet map should you use?</h3>
         <p className="mt-3 max-w-4xl text-sm leading-6 text-slate-300">
           Start with the official interactive map if you want the safest source, then use MapGenie for English labels or
           the 6Fast CN map when you need an alternate route reference. CN map pages can be especially useful for dense
@@ -340,12 +381,46 @@ export default function InteractiveMapPage() {
             Bosses guide hub &gt;
           </Link>
           <Link
-            href="/guides/items"
+            href="/guides/platforms"
             className="rounded-2xl border border-slate-800 bg-slate-900/60 px-4 py-3 font-semibold text-slate-100 hover:border-emerald-500/40 hover:text-emerald-100"
           >
-            Items & materials &gt;
+            Platforms &gt;
+          </Link>
+          <Link
+            href="/guides/release-date"
+            className="rounded-2xl border border-slate-800 bg-slate-900/60 px-4 py-3 font-semibold text-slate-100 hover:border-emerald-500/40 hover:text-emerald-100"
+          >
+            Release date &gt;
+          </Link>
+          <Link
+            href="/guides/beta"
+            className="rounded-2xl border border-slate-800 bg-slate-900/60 px-4 py-3 font-semibold text-slate-100 hover:border-emerald-500/40 hover:text-emerald-100"
+          >
+            Beta status &gt;
           </Link>
         </div>
+      </section>
+
+      <section className="rounded-3xl border border-slate-800/80 bg-slate-950/80 p-6 text-xs leading-relaxed text-slate-400 sm:p-8">
+        <p className="font-semibold text-slate-300">Last checked: 2026-09-28</p>
+        <p className="mt-2 font-semibold text-slate-300">Sources / map providers to re-verify on publish:</p>
+        <ul className="mt-2 space-y-1 list-disc pl-5">
+          <li>
+            Official map: <a href={officialMapUrl} target="_blank" rel="noopener noreferrer" className="text-emerald-300 hover:text-emerald-200">{officialMapUrl}</a>
+          </li>
+          <li>
+            MapGenie: <a href={mapgenieUrl} target="_blank" rel="noopener noreferrer" className="text-emerald-300 hover:text-emerald-200">{mapgenieUrl}</a>
+          </li>
+          <li>
+            6Fast CN alt: <a href={sixFastUrl} target="_blank" rel="noopener noreferrer" className="text-emerald-300 hover:text-emerald-200">{sixFastUrl}</a>
+          </li>
+          <li>
+            17173 CN reference (Qinchuan): <a href={map17173Url} target="_blank" rel="noopener noreferrer" className="text-emerald-300 hover:text-emerald-200">{map17173Url}</a>
+          </li>
+        </ul>
+        <p className="mt-4 text-slate-500">
+          Unofficial Where Winds Meet fan hub. Map embeds are third-party; trademarks belong to their owners.
+        </p>
       </section>
     </article>
   );

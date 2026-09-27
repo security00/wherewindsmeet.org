@@ -22,6 +22,8 @@ const staticEntries: Entry[] = [
   { path: "/", changeFrequency: "daily", priority: 1 },
   { path: "/guides", changeFrequency: "daily", priority: 0.9 },
   { path: "/guides/platforms", changeFrequency: "weekly", priority: 0.86 },
+  { path: "/guides/release-date", changeFrequency: "weekly", priority: 0.86 },
+  { path: "/guides/beta", changeFrequency: "weekly", priority: 0.84 },
   { path: "/tools", changeFrequency: "weekly", priority: 0.8 },
   { path: "/tools/interactive-map", changeFrequency: "weekly", priority: 0.8 },
   { path: "/tools/reset-timer", changeFrequency: "weekly", priority: 0.75 },

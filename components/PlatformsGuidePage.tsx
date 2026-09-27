@@ -136,9 +136,9 @@ const germanOfficialSources = [
 
 const englishPlatforms: PlatformStatus[] = [
   {
-    name: "PC",
+    name: "PC — Steam, Epic, official website",
     statusKind: "confirmed",
-    status: "Available through Steam and the official PC route.",
+    status: "Available through Steam (Release Date: Nov 14, 2025), Epic Games Store, and the official website client per NetEase Games global launch post. Steam lists Cross-Platform Multiplayer.",
     bestFor: "Best for keyboard/mouse controls, long sessions, screenshots, and guide testing.",
     action: "Check PC downloads",
     href: sourceUrls.steam,
@@ -146,7 +146,7 @@ const englishPlatforms: PlatformStatus[] = [
   {
     name: "PlayStation 5",
     statusKind: "confirmed",
-    status: "Available on PS5 as a free-to-play game.",
+    status: "Available at global launch (November 14, 2025) per NetEase IR announcement (PC and PlayStation 5). PlayStation lists the PS5 version as free-to-play.",
     bestFor: "Best for couch play, DualSense features, and players who want a console setup.",
     action: "Open PS5 page",
     href: sourceUrls.playStation,
@@ -162,7 +162,7 @@ const englishPlatforms: PlatformStatus[] = [
   {
     name: "iOS",
     statusKind: "region-dependent",
-    status: "The official website lists an iOS App Store route; use the official download page because Apple's web link can redirect by region.",
+    status: "Official materials and the live platforms guide treat mobile as a real route, but App Store availability can be region-dependent. Search the exact game name in the store app and verify the publisher.",
     bestFor: "Best for mobile check-ins, casual exploration, and playing away from your desk.",
     action: "How to find iOS app",
     href: "#ios-download-note",
@@ -171,7 +171,7 @@ const englishPlatforms: PlatformStatus[] = [
     name: "Android",
     statusKind: "region-dependent",
     status:
-      "The official mobile launch notice lists Android and Google Play has a store page; availability can still vary by region.",
+      "Official materials list Android routes and Google Play has a store page, but availability can vary by region. Safest path: search exact game name in Google Play on device and verify publisher.",
     bestFor: "Best for mobile-first players, but store availability can still vary by region.",
     action: "Open Google Play",
     href: sourceUrls.googlePlay,
@@ -291,15 +291,15 @@ const copy: Record<ContentLanguage, PageCopy> = {
     inLanguage: "en-US",
     heroAlt: "Where Winds Meet platform guide background art",
     eyebrow: "Where Winds Meet platforms",
-    title: "Where Winds Meet Platforms: Xbox, PS5, PC, iOS, Android, Cross-Play",
+    title: "Where Winds Meet Platforms: PC, PS5, Xbox, Mobile, Steam & Cross-Play",
     subtitle:
-      "A current platform guide for players searching where winds meet xbox, where winds meet ps5, where winds meet pc, where winds meet mobile, where winds meet platforms, and whether cross-play or cross-progression matters before starting.",
+      "Where Winds Meet platforms guide for Steam/PC, PlayStation 5, Xbox, iOS, and Android—plus cross-play, cross-progression, account linking, and region checks before you download.",
     checkedPrefix: "Checked",
     checkedLabel: "Checked June 9, 2026",
     versionFallback: "Version 1.7 / Xbox launch",
     summaryTitle: "Short answer",
     summary:
-      "Where Winds Meet has official routes for PC, PlayStation 5, Xbox Series X|S, Xbox on PC, Xbox Cloud, iOS, and Android. Steam lists cross-platform multiplayer, PlayStation lists the PS5 version as free-to-play, and the official Xbox FAQ says character data can be shared when the same bound account is used. Mobile storefront availability remains region-dependent.",
+      "Where Winds Meet has official routes for PC (Steam, Epic Games Store, and the official website per NetEase's global launch post), PlayStation 5, Xbox Series X|S / Xbox on PC / Xbox Cloud (see table—use the live page's sourced June 2026 Xbox wording until re-verified), and iOS / Android where stores allow (region-dependent). NetEase's launch post and Steam's About text describe full cross-play and cross-progression; still bind accounts carefully before creating a new character on a second platform. Confirm every store page in your region before installing or spending.",
     quickFacts: [
       "Main keyword target: where winds meet platforms",
       "High-intent variants: xbox, ps5, pc, mobile, ios, android",
@@ -359,12 +359,17 @@ const copy: Record<ContentLanguage, PageCopy> = {
       {
         question: "Is Where Winds Meet on PS5?",
         answer:
-          "Yes. PlayStation lists Where Winds Meet as a PS5 free-to-play game.",
+          "Yes. PlayStation lists Where Winds Meet as a PS5 free-to-play game. NetEase IR announced global launch on PC and PlayStation 5 for November 14, 2025.",
       },
       {
         question: "Is Where Winds Meet on PC?",
         answer:
-          "Yes. Steam lists Where Winds Meet as a free-to-play PC game, with single-player, online PVP, online co-op, and cross-platform multiplayer features.",
+          "Yes. Steam lists Where Winds Meet as a free-to-play PC game, with single-player, online PVP, online co-op, and cross-platform multiplayer features. Release Date: Nov 14, 2025.",
+      },
+      {
+        question: "Is Where Winds Meet on Steam?",
+        answer:
+          "Yes. Steam lists Where Winds Meet as a free-to-play PC game with a release date of November 14, 2025, and includes Cross-Platform Multiplayer among its features. Prefer the official app page over third-party download mirrors.",
       },
       {
         question: "Is Where Winds Meet on mobile?",
@@ -374,12 +379,27 @@ const copy: Record<ContentLanguage, PageCopy> = {
       {
         question: "Does Where Winds Meet have cross-play?",
         answer:
-          "Official store copy says Where Winds Meet supports cross-play across PS5, PC, and mobile. Still verify account-linking details in your region before using paid items or rewards.",
+          "Yes according to the NetEase Games worldwide launch post (full cross-play and cross-progression) and Steam's store/About copy (cross-platform multiplayer; play across Xbox, PS5, PC, and mobile with full cross-play and cross-progression). Account binding still matters—read the Xbox FAQ / official bind steps before making a new character on a second device.",
+      },
+      {
+        question: "Does Where Winds Meet have cross-play and cross-progression?",
+        answer:
+          "Yes according to the NetEase Games worldwide launch post (full cross-play and cross-progression) and Steam's store/About copy (cross-platform multiplayer across Xbox, PS5, PC, and mobile). Account binding still matters—read the Xbox FAQ / official bind steps before making a new character on a second device.",
+      },
+      {
+        question: "Is Where Winds Meet cross-platform between PS5, PC, and mobile?",
+        answer:
+          "Official launch and Steam About copy describe cross-play across those families (and Xbox in Steam About). Always confirm matchmaking and account link status in your client after binding.",
       },
       {
         question: "Is Where Winds Meet on Xbox?",
         answer:
           "Yes. The official June 8, 2026 announcement lists Where Winds Meet for Xbox Series X|S, Xbox on PC, and Xbox Cloud. Use the Microsoft Store route and read the Xbox FAQ before account binding.",
+      },
+      {
+        question: "When did each platform get Where Winds Meet?",
+        answer:
+          "Use /guides/release-date for the dated table. Global PC/PS5 milestone: November 14, 2025 (NetEase + Steam). Xbox and mobile timing: follow this platforms table's sourced wording / Pending cells—do not guess.",
       },
     ],
   },
