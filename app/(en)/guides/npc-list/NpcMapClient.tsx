@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { useId, useMemo, useState } from "react";
+import { getCdnBaseUrl } from "@/lib/image-utils";
 import NpcImagePreview from "./NpcImagePreview";
 import type { NpcImagePreviewUiText } from "./NpcImagePreview";
 
@@ -75,11 +76,9 @@ export default function NpcMapClient({
   const [region, setRegion] = useState<string | "all">("all");
   const [selected, setSelected] = useState<MapPin | null>(null);
   const [showMap, setShowMap] = useState(false);
-  const [useLocalMap, setUseLocalMap] = useState(false);
   const controlId = useId();
   const regionId = `${controlId}-region`;
   const searchId = `${controlId}-search`;
-  const cdn = process.env.NEXT_PUBLIC_CDN_URL;
 
   const { filteredPins, regions } = useMemo(() => {
     const uniqueRegions = Array.from(new Set(pins.map((pin) => pin.region).filter(Boolean))) as string[];
@@ -93,9 +92,11 @@ export default function NpcMapClient({
   }, [pins, region, search]);
 
   const visiblePins = filteredPins.slice(0, 24);
-  const resolvedMapSrc = !cdn || useLocalMap
-    ? mapSrc
-    : `${cdn}${mapSrc.startsWith("/") ? mapSrc : `/${mapSrc}`}`;
+  const resolvedMapSrc = useMemo(() => {
+    const cdnBase = getCdnBaseUrl();
+    const normalizedPath = mapSrc.startsWith("/") ? mapSrc : `/${mapSrc}`;
+    return `${cdnBase}${normalizedPath}`;
+  }, [mapSrc]);
 
   return (
     <div className="space-y-5">
@@ -212,7 +213,6 @@ export default function NpcMapClient({
               loading="lazy"
               decoding="async"
               className="block h-auto w-full object-contain"
-              onError={() => setUseLocalMap(true)}
             />
           </div>
         ) : null}
