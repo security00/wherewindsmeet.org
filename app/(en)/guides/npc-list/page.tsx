@@ -9,14 +9,14 @@ import { npcMapPath, npcPortraitPath } from "@/lib/npc-media";
 const baseUrl = "https://wherewindsmeet.org";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet NPC List - Old Friends Locations & Rewards",
+  title: "Where Winds Meet Characters & NPC List (Old Friends Locations)",
   description:
-    "Browse a dated editorial snapshot of Where Winds Meet NPC location notes, Old Friends context, AI Chat lines, and Qin Caiwei help.",
+    "Where Winds Meet characters and NPC list: browse Old Friends by region, location notes, AI Chat tips, and non-interactable service NPCs. Dated editorial directory—verify every pin in the current client.",
   alternates: buildHreflangAlternates("/guides/npc-list"),
   openGraph: {
-    title: "Where Winds Meet NPC List - Old Friends Locations & Rewards",
+    title: "Where Winds Meet Characters & NPC List (Old Friends Locations)",
     description:
-      "Browse a dated editorial snapshot of Old Friends NPC location notes and AI Chat tips.",
+      "Browse a dated editorial snapshot of Where Winds Meet characters, Old Friends NPC location notes and AI Chat tips.",
     url: `${baseUrl}/guides/npc-list`,
     siteName: "Where Winds Meet Hub",
     images: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Where Winds Meet NPC List - Old Friends Locations & Rewards",
+    title: "Where Winds Meet Characters & NPC List (Old Friends Locations)",
     description:
       "Browse a dated editorial snapshot of Old Friends NPC location notes and AI Chat tips.",
   },
@@ -126,6 +126,26 @@ const npcFaqs = [
   {
     q: "Where are Zhou Yihang and Feng Rusong?",
     a: "Zhou Yihang is at Palace of Annals in Moonveil Mountain near the docks by Stillwind Slope. Feng Rusong is near the Divinecraft Dungeon entrance at Mercyheart Monastery in Sundara Land.",
+  },
+  {
+    q: "Who are the main Where Winds Meet characters?",
+    a: "This hub indexes NPCs and Old Friends you can meet in the open world (with dated location notes), not a full cinematic cast bible. Browse by name or region below. Main-story identity reveals stay lightly spoiled—open individual cards only when you need the route.",
+  },
+  {
+    q: "Is the Where Winds Meet characters list the same as the NPC list?",
+    a: "For search purposes, yes on this site: characters queries should land on /guides/npc-list. We do not maintain a separate thin /characters URL.",
+  },
+  {
+    q: "How many characters or NPCs are in Where Winds Meet?",
+    a: "Pending official confirmation for any marketing total you might quote. Publisher materials have mentioned very large NPC counts in launch PR; do not invent a live tally here. This page shows the catalogued editorial subset (live snapshot showed on the order of 100+ Old Friends records)—always incomplete vs the live world.",
+  },
+  {
+    q: "Can I find character locations on the interactive map?",
+    a: "Often yes as NPC pins, depending on the map provider. Use /tools/interactive-map, then confirm with the route notes on this page.",
+  },
+  {
+    q: "Do characters have stats on this page?",
+    a: "No. We do not publish invented ATK/HP tables. For combat entities, use boss and build guides; for friendship NPCs, use the relationship panel in-game.",
   },
 ];
 
@@ -344,10 +364,10 @@ export default function NpcListPage() {
               This page is a dated editorial snapshot reviewed on 2026-06-24. It is not an exhaustive live-game database; verify names, routes, interactions, and rewards in the current client.
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-50">
-              Where Winds Meet NPC List: Old Friends locations, rewards, and AI Chat.
+              Who are the Where Winds Meet characters and NPCs (Old Friends list & locations)?
             </h1>
             <p className="text-sm sm:text-base text-slate-200 leading-relaxed max-w-2xl">
-              Looking for a Where Winds Meet NPC list? Start with this dated visual directory of editorial location notes, Old Friends context, non-interactable NPC notes, and AI Chat lines for friends like Qin Caiwei.
+              <strong>Short answer:</strong> Searches for <strong>Where Winds Meet characters</strong> and <strong>Where Winds Meet NPC list</strong> both belong on this page. Use the dated directory below for Old Friends locations, relationship / reward notes, and AI Chat patterns. Character and NPC positions can move with patches—treat every route as a starting hint and confirm in your current client. For world pins, pair this list with the <Link href="/tools/interactive-map" className="text-emerald-300 hover:text-emerald-200">/tools/interactive-map</Link>.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
@@ -382,13 +402,44 @@ export default function NpcListPage() {
       <section className="rounded-3xl border border-emerald-500/30 bg-emerald-500/10 p-6 shadow-lg">
         <div className="space-y-3">
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">
-            Fast answer for searchers
+            Characters, NPCs, and Old Friends — how this page maps the intent
           </p>
           <h2 className="text-2xl font-bold text-slate-50">
-            Use this page as a starting point for an NPC location note, Old Friends context, or AI Chat line.
+            Use this page as the characters & NPC starting point: location notes, Old Friends context, AI Chat lines, and service NPCs that do not open friendship chat.
           </h2>
           <p className="max-w-3xl text-sm leading-relaxed text-emerald-50/90">
             The page is built around the most common Where Winds Meet NPC searches: where an NPC is, whether they count as an Old Friend, what reward or completion progress they provide, and what to type when the AI Chat refuses a short answer.
+          </p>
+          <div className="mt-4 overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/75">
+            <table className="w-full text-left text-sm">
+              <thead className="bg-slate-900/90 text-xs uppercase tracking-wide text-slate-400">
+                <tr>
+                  <th className="px-4 py-3">Search phrasing</th>
+                  <th className="px-4 py-3">What this page gives you</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-800 text-slate-200">
+                <tr>
+                  <td className="px-4 py-3 font-semibold text-slate-50">Where Winds Meet <strong>characters</strong></td>
+                  <td className="px-4 py-3 leading-6">Named people you meet in the Jianghu—primarily catalogued <strong>Old Friends</strong> and notable service NPCs below (not a spoilery main-story cast wiki)</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 font-semibold text-slate-50">Where Winds Meet <strong>NPC list</strong></td>
+                  <td className="px-4 py-3 leading-6">Region / area / route notes for interactable NPCs in the editorial snapshot</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 font-semibold text-slate-50"><strong>Old Friends</strong></td>
+                  <td className="px-4 py-3 leading-6">Friendship / AI Chat relationships; check the in-game relationship panel for current rewards</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 font-semibold text-slate-50">Story bosses / weapons</td>
+                  <td className="px-4 py-3 leading-6">Use /guides/bosses and weapons guides—not duplicated as fake "character stats" here</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3 text-xs text-amber-100/80">
+            <strong>No invented character stats, affinity numbers, or player counts.</strong> If a reward or location is unclear in the snapshot, mark the row mentally as verify-in-client.
           </p>
         </div>
         <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -617,9 +668,24 @@ export default function NpcListPage() {
               note: "Card-based persuasion basics to complement AI Chat.",
             },
             {
-              title: "Woven with Malice",
-              href: "/guides/woven-with-malice",
-              note: "Narrative quest if you want more story-driven encounters.",
+              title: "Interactive Map",
+              href: "/tools/interactive-map",
+              note: "Visual map tool to find NPC pins by region.",
+            },
+            {
+              title: "Platforms",
+              href: "/guides/platforms",
+              note: "PC, PS5, Xbox, mobile, cross-play, and account linking.",
+            },
+            {
+              title: "Release Date",
+              href: "/guides/release-date",
+              note: "When Where Winds Meet released by platform.",
+            },
+            {
+              title: "Beta Status",
+              href: "/guides/beta",
+              note: "Is Where Winds Meet still in beta?",
             },
           ].map((item) => (
             <Link
@@ -637,6 +703,20 @@ export default function NpcListPage() {
             </Link>
           ))}
         </div>
+      </section>
+
+      <section className="rounded-3xl border border-slate-800/80 bg-slate-950/80 p-6 text-xs leading-relaxed text-slate-400 sm:p-8">
+        <p className="font-semibold text-slate-300">Last checked: 2026-09-28</p>
+        <p className="mt-2 font-semibold text-slate-300">Sources / dataset notes</p>
+        <ul className="mt-2 space-y-1 list-disc pl-5">
+          <li>Editorial NPC snapshot last reviewed 2026-06-24 (live page)</li>
+          <li>Game8 media reuse authorization note already on live page (owner-confirmed)—do not expand legal claims</li>
+          <li>Map companion: <Link href="/tools/interactive-map" className="text-emerald-300 hover:text-emerald-200">/tools/interactive-map</Link></li>
+          <li>Do not present third-party lists as official NetEase character databases</li>
+        </ul>
+        <p className="mt-4 text-slate-500">
+          Unofficial Where Winds Meet fan hub. All trademarks are the property of their respective owners. NPC data is a dated fan editorial snapshot, not a live official database.
+        </p>
       </section>
     </article>
   );
