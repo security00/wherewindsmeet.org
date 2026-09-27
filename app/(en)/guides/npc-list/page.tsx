@@ -433,7 +433,7 @@ export default function NpcListPage() {
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-semibold text-slate-50">Story bosses / weapons</td>
-                  <td className="px-4 py-3 leading-6">Use /guides/bosses and weapons guides—not duplicated as fake "character stats" here</td>
+                  <td className="px-4 py-3 leading-6">Use /guides/bosses and weapons guides—not duplicated as fake &quot;character stats&quot; here</td>
                 </tr>
               </tbody>
             </table>
