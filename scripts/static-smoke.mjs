@@ -1,0 +1,139 @@
+// Smoke QA for the assets-only deployment. Runs the real Wrangler asset server
+// against ./out (after `npm run cf:build`) and the www -> apex redirect Worker.
+import assert from "node:assert/strict";
+import { spawn } from "node:child_process";
+import { once } from "node:events";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const port = Number(process.env.CF_SMOKE_PORT || 8792);
+const origin = `http://127.0.0.1:${port}`;
+const wranglerBinary = resolve(projectRoot, "node_modules/.bin/wrangler");
+const children = [];
+const logs = new Map();
+
+const delay = (ms) => new Promise((r) => setTimeout(r, ms));
+
+function startWrangler(label, config, extraArgs = []) {
+  const child = spawn(
+    wranglerBinary,
+    ["dev", "--config", config, "--ip", "127.0.0.1", "--port", String(port), "--show-interactive-dev-session", "false", ...extraArgs],
+    { cwd: projectRoot, detached: process.platform !== "win32", env: process.env, stdio: ["ignore", "pipe", "pipe"] },
+  );
+  logs.set(label, "");
+  const capture = (chunk) => logs.set(label, `${logs.get(label)}${chunk}`.slice(-20_000));
+  child.stdout.on("data", capture);
+  child.stderr.on("data", capture);
+  children.push(child);
+  return child;
+}
+
+async function waitFor(child, label, path, expectedStatus) {
+  const deadline = Date.now() + 90_000;
+  while (Date.now() < deadline) {
+    if (child.exitCode !== null) throw new Error(`${label} exited early.\n${logs.get(label)}`);
+    try {
+      const response = await fetch(`${origin}${path}`, { redirect: "manual" });
+      if (response.status === expectedStatus) return;
+    } catch {
+      // still starting
+    }
+    await delay(250);
+  }
+  throw new Error(`Timed out waiting for ${label}.\n${logs.get(label)}`);
+}
+
+async function stopChild(child) {
+  if (!child || child.exitCode !== null) return;
+  if (process.platform === "win32") child.kill("SIGINT");
+  else process.kill(-child.pid, "SIGINT");
+  await Promise.race([once(child, "exit"), delay(5_000)]);
+  if (child.exitCode === null) {
+    if (process.platform === "win32") child.kill("SIGKILL");
+    else process.kill(-child.pid, "SIGKILL");
+  }
+}
+
+const get = (path, init = {}) =>
+  fetch(`${origin}${path}`, { redirect: "manual", headers: { "sec-fetch-mode": "navigate" }, ...init });
+
+async function expectHtml(path, language) {
+  const response = await get(path);
+  assert.equal(response.status, 200, `${path} should return 200`);
+  assert.match(response.headers.get("content-type") || "", /text\/html/);
+  const html = await response.text();
+  assert.match(html, new RegExp(`<html[^>]+lang=["']${language}["']`));
+  assert.match(html, /rel=["']canonical["']/);
+  assert.doesNotMatch(html, /pagead2\.googlesyndication\.com/);
+  return html;
+}
+
+async function expectRedirect(path, status, location) {
+  const response = await get(path);
+  assert.equal(response.status, status, `${path} should return ${status}`);
+  const actual = new URL(response.headers.get("location"), origin);
+  assert.equal(`${actual.pathname}${actual.search}`, location, `${path} location`);
+}
+
+async function expectCanonicalHostRedirect() {
+  const child = startWrangler("www-redirect", "workers/www-redirect/wrangler.toml", ["--host", "www.wherewindsmeet.org"]);
+  await waitFor(child, "www-redirect", "/", 301);
+  const response = await get("/guides?smoke=1");
+  assert.equal(response.status, 301);
+  assert.equal(response.headers.get("location"), "https://wherewindsmeet.org/guides?smoke=1");
+  await stopChild(child);
+}
+
+async function run() {
+  const site = startWrangler("assets", "wrangler.toml");
+  await waitFor(site, "assets", "/", 200);
+
+  const homeHtml = await expectHtml("/", "en-US");
+  await expectHtml("/de", "de-DE");
+  await expectHtml("/vn", "vi-VN");
+  await expectHtml("/guides/npc-list", "en-US");
+
+  const sitemap = await get("/sitemap.xml");
+  assert.equal(sitemap.status, 200);
+  assert.match(sitemap.headers.get("content-type") || "", /(?:xml|text\/plain)/);
+  const sitemapXml = await sitemap.text();
+  // Overall and PvP tier hubs remain English-only; weapon tier list now has DE/VI.
+  assert.doesNotMatch(sitemapXml, /\/(?:de|vn)\/guides\/(?:tier-list|pvp-tier-list)(?!\/)/);
+  for (const path of ["/de/guides/weapons/tier-list", "/vn/guides/weapons/tier-list", "/de/guides/pve-tier-list", "/vn/guides/pve-tier-list", "/de/guides/codes", "/vn/guides/codes"]) {
+    assert.match(sitemapXml, new RegExp(path.replace(/[.*+?^${}()|[\]\\/]/g, "\\$&")));
+  }
+  const robots = await get("/robots.txt");
+  assert.equal(robots.status, 200);
+  assert.match(await robots.text(), /Sitemap:\s*https:\/\/wherewindsmeet\.org\/sitemap\.xml/i);
+
+  // Locale fallback + legacy redirects (public/_redirects).
+  await expectRedirect("/vn/guides/one-leaf-one-life", 301, "/guides/one-leaf-one-life");
+  await expectRedirect("/codes", 301, "/guides/codes");
+  // Next.js trailingSlash=false parity (generated by scripts/postbuild-static.mjs).
+  await expectRedirect("/guides/codes/", 308, "/guides/codes");
+  await expectRedirect("/de/guides/", 308, "/de/guides");
+
+  const missing = await get("/not-a-real-page");
+  assert.equal(missing.status, 404);
+  assert.match(await missing.text(), /could not be found/i);
+
+  const assetPath = homeHtml.match(/(?:src|href)=["'](\/_next\/static\/[^"']+)["']/)?.[1];
+  assert.ok(assetPath, "home page should reference a Next.js static asset");
+  const asset = await fetch(`${origin}${assetPath}`);
+  assert.equal(asset.status, 200);
+  assert.match(asset.headers.get("cache-control") || "", /immutable/i);
+
+  await stopChild(site);
+  await expectCanonicalHostRedirect();
+
+  console.log("Static smoke OK: pages, locale/legacy redirects, trailing-slash 308, www canonical, 404, sitemap, robots, asset cache.");
+}
+
+run()
+  .catch((error) => {
+    console.error(error);
+    for (const [label, log] of logs) if (log) console.error(`--- ${label} ---\n${log}`);
+    process.exitCode = 1;
+  })
+  .finally(() => Promise.all(children.map(stopChild)));

@@ -1,10 +1,11 @@
 # i18n and Cloudflare Workers architecture
 
-Status: implemented and awaiting an explicitly approved production release.
+Status: production runs as a static export on an assets-only Worker (since 2026-10-02).
 
 ## Decision
 
-- Production runs as a full Next.js application through OpenNext on Cloudflare Workers.
+- Production is the Next.js static export (`npm run build:static`) served by an **assets-only** Cloudflare Worker (no `main` script). Page views are served by Workers Static Assets and are not billed as Worker invocations.
+- History: 2026-08-30 to 2026-10-02 the site ran through OpenNext on Workers. Every HTML request invoked the Worker (~15M requests/day, the bulk of a ~$186 monthly bill), with no server-side feature that needed it, so it was moved back to static assets.
 - The established public URLs remain unchanged: English has no prefix, Vietnamese uses `/vn`, and German uses `/de`.
 - `next-intl` supplies request/message infrastructure. Shared interface copy lives in `i18n/messages/{en,vi,de}.json` and is consumed by the shared header, footer, language prompt, and consent UI.
 - Long-form SEO guides remain reviewed locale pages for now. Moving hundreds of article paragraphs into one UI dictionary would make source review and page ownership harder, not easier.
@@ -15,17 +16,18 @@ Status: implemented and awaiting an explicitly approved production release.
 
 The repository already has more than 100 physical `/de` and `/vn` pages and established indexed URLs. A big-bang move to `app/[locale]` would combine content migration, URL handling, metadata changes, and runtime migration in one release. Keeping the physical routes makes this change reversible while still removing duplicated navigation dictionaries and false localized pages.
 
-Next.js 16 uses Node.js `proxy.ts`, while the selected OpenNext adapter does not currently support Node.js middleware. Do not add a locale proxy just because the application now runs on Workers. A later `[locale]` consolidation needs a separate compatibility test and migration plan.
+The static export has no middleware/proxy, API routes, or request-time rendering. Do not add a locale proxy, API route, or any `run_worker_first`/`main` script without an explicit cost review: it would turn every page view back into a billed Worker invocation. A later `[locale]` consolidation needs a separate compatibility test and migration plan.
 
 ## Runtime and caching
 
-`open-next.config.ts` uses the read-only Workers Static Assets incremental cache because this site currently has no ISR or on-demand revalidation. `enableCacheInterception` keeps pre-rendered page reads on the asset path. If ISR, server mutations, or on-demand revalidation are introduced, revisit this cache choice first.
+`wrangler.toml` defines the assets-only Worker `wherewindsmeet-org` on the `wherewindsmeet.org/*` route: `directory = "./out"`, `html_handling = "drop-trailing-slash"`, `not_found_handling = "404-page"` (serves `out/404.html` with status 404). It intentionally has no `main`, no bindings, and no observability.
 
-`worker.mjs` is the stable Wrangler entry point. It redirects the legacy `www` host before delegating to the generated OpenNext worker, so a cached SSG response cannot bypass the canonical-host redirect. `run_worker_first = false` still lets immutable public assets bypass application code; HTML and the protected OpenNext page cache continue through the Worker.
+- `public/_redirects` holds legacy 301s and locale-fallback 301s; Workers Static Assets applies them before serving files.
+- `scripts/postbuild-static.mjs` appends explicit `/<path>/ -> /<path>` **308** rules for every exported page and every redirect source, preserving the former Next.js `trailingSlash: false` status code (the built-in html_handling redirect would be 307). It fails the build if the 2000 static-rule limit would be exceeded.
+- `public/_headers` sets immutable caching for `/_next/static/*`; HTML uses the Static Assets default (`public, max-age=0, must-revalidate`, edge-cached by Cloudflare).
+- `www.wherewindsmeet.org/*` is answered by the separate tiny Worker `workers/www-redirect` (301 to the apex, path and query preserved). Static Assets `_redirects` cannot match on host, and the CI token cannot manage zone Redirect Rules. Only `www` traffic invokes it; replacing it with a zone Redirect Rule (dashboard → Rules → Redirect Rules) and deleting that Worker would make it free as well.
 
-The production workflow builds static output for SEO regression checks, builds one OpenNext artifact, starts that artifact locally, and smoke-tests English, German, Vietnamese, redirects, 404 behavior, sitemap output, and immutable assets before deploying the exact artifact. Deployment concurrency cancels obsolete runs so an older commit cannot overwrite a newer release. `cf:deploy:artifact` intentionally does not rebuild; use it only inside that verified workflow or immediately after `cf:build`. The safe manual entry point is `npm run cf:deploy`.
-
-The final 2026-08-29 Wrangler dry run observed an approximately 2.15 MiB gzip Worker bundle and 872 assets. These are observations, not permanent limits or budgets; repeat the dry run for every material dependency or media change.
+The workflow runs on pull requests (checks only) and on `main` (checks + deploy). It builds the static export once (`seo:check`), finishes the bundle (`cf:postbuild`), runs `cf:smoke` against real `wrangler dev` for both Workers, and then deploys with `cf:deploy:artifact` (`wrangler deploy` for the site, then the www redirect Worker). `cf:deploy:artifact` does not rebuild; the safe manual entry point is `npm run cf:deploy`.
 
 Local Worker secrets belong in `.dev.vars` and are ignored by Git. Only a redacted `.dev.vars.example` may be committed. Production credentials remain Cloudflare/GitHub secrets and must never enter the repository.
 
@@ -39,12 +41,12 @@ Analytics remains off until the visitor explicitly opts in. The in-site preferen
 2. Add the base path to the positive manifest in `i18n/routing.mjs`.
 3. Remove any fallback redirect for that locale/path.
 4. Add UI strings to all three JSON packs when shared chrome changes.
-5. Run route, generated hreflang/sitemap, static build, and Workers preview checks.
+5. Run route, generated hreflang/sitemap, static build, and `npm run cf:smoke` checks.
 
 ## Release and cutover
 
 1. Record the currently active Worker deployment/version, custom-domain routes, and the last known-good static deployment before changing production.
-2. Run `npm ci`, `npm test`, `npm run lint`, `npm run seo:check`, `npm run cf:build`, a Wrangler dry run, and `npm run cf:smoke` from a clean checkout.
+2. Run `npm ci`, `npm test`, `npm run lint`, `npm run seo:check`, `npm run cf:postbuild`, and `npm run cf:smoke` from a clean checkout.
 3. Inspect the generated artifact for unexpected size growth and verify that no secret or local `.dev.vars` file is included.
 4. Deploy the already-tested artifact only after an explicit release approval.
 5. Recheck the apex and `www` host, `/de`, `/vn`, a locale fallback, a real 404, `/sitemap.xml`, canonical/hreflang output, and one immutable asset against production.
@@ -52,4 +54,4 @@ Analytics remains off until the visitor explicitly opts in. The in-site preferen
 
 ## Rollback
 
-Prefer rolling back to the recorded last known-good Worker version through Cloudflare when the runtime deployment itself is faulty. If the OpenNext model must be abandoned, the static-export path remains available as `npm run build:static`: restore the previous static-assets Worker configuration and deploy the verified `out/` artifact without changing public URLs. Reverting source alone is not a rollback until the matching artifact and domain routes are active and the production smoke checks pass.
+Roll back through Cloudflare (Workers → wherewindsmeet-org → Deployments) to the previous version when a deployment itself is faulty. To return to OpenNext, revert the 2026-10-02 static-assets commit; note that it re-routes `www` back to the main Worker, so remove the `wherewindsmeet-www-redirect` route first, and it brings back per-request Worker billing.

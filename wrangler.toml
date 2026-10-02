@@ -1,16 +1,15 @@
+# Assets-only Worker: there is intentionally no `main` script. Every request to
+# wherewindsmeet.org is answered by Workers Static Assets (pages, _redirects,
+# _headers, 404.html), so page views are not billed as Worker invocations.
+# Do not add `main`, `run_worker_first`, or observability here without
+# re-reading doc/architecture-i18n-workers.md (cost incident 2026-09).
 name = "wherewindsmeet-org"
-main = "worker.mjs"
 compatibility_date = "2026-08-28"
-compatibility_flags = ["nodejs_compat"]
 routes = [
   { pattern = "wherewindsmeet.org/*", zone_name = "wherewindsmeet.org" },
-  { pattern = "www.wherewindsmeet.org/*", zone_name = "wherewindsmeet.org" },
 ]
 
 [assets]
-directory = ".open-next/assets"
-binding = "ASSETS"
-run_worker_first = false
-
-[observability]
-enabled = false
+directory = "./out"
+html_handling = "drop-trailing-slash"
+not_found_handling = "404-page"
