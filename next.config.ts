@@ -38,8 +38,8 @@ const redirectConfig: Partial<NextConfig> =
       };
 
 const nextConfig: NextConfig = {
-  // Production runs through OpenNext on Cloudflare Workers. Keep a static-export
-  // mode solely for the generated-site SEO regression crawler.
+  // Production is the static export (NEXT_STATIC_EXPORT=1, `npm run build:static`)
+  // served by an assets-only Cloudflare Worker. Non-export mode is for `next dev`.
   output: process.env.NEXT_STATIC_EXPORT === "1" ? "export" : undefined,
   images: {
     unoptimized: true,
@@ -54,8 +54,8 @@ const nextConfig: NextConfig = {
     // validation without the flaky subprocess capture.
     useTypeScriptCli: false,
   },
-  // Static-export SEO checks use public/_redirects. The Worker runtime keeps
-  // native redirects as a fallback behind the canonical-host wrapper.
+  // Production redirects live in public/_redirects (served by Workers Static
+  // Assets). Native redirects only apply to `next dev` / `next start`.
   ...redirectConfig,
 };
 

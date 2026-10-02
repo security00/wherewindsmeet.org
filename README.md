@@ -15,7 +15,7 @@ The goal is to provide structured English content around the core query **“whe
 - Styling: Tailwind CSS v4 (via `app/globals.css`)
 - Fonts: local CSS system stack (`Inter` fallback); no remote font loader
 - i18n: `next-intl` with shared JSON UI packs for English, German, and Vietnamese
-- Runtime: OpenNext on Cloudflare Workers
+- Runtime: static export on an assets-only Cloudflare Worker (no per-request Worker script)
 
 ---
 
@@ -42,7 +42,7 @@ npm run build
 npm start
 ```
 
-Cloudflare runtime preview (after installing dependencies):
+Cloudflare static-assets preview (after installing dependencies):
 
 ```bash
 npm run cf:build
@@ -211,22 +211,23 @@ This eliminates most manual date/version churn in the SEO registry while keeping
 
 ## Deployment Notes
 
-Production uses OpenNext on Cloudflare Workers. A release runs behavior tests,
-lint, a static-export SEO regression build, the OpenNext build, and a local
-runtime smoke test before deploying the already-tested artifact.
+Production is the Next.js static export (`out/`) served by an assets-only
+Cloudflare Worker, so page views are not billed as Worker invocations. A
+release runs behavior tests, lint, the static-export SEO build, the static
+post-build (trailing-slash 308 rules), and a local `wrangler dev` smoke test
+before deploying the tested `out/` bundle and the tiny www → apex redirect Worker.
 
 ```bash
 npm ci
 npm test
 npm run lint
 npm run seo:check
-npm run cf:build
+npm run cf:postbuild
 npm run cf:smoke
 npm run cf:deploy:artifact
 ```
 
 For a manual release, prefer `npm run cf:deploy`, which rebuilds before deploy.
-`cf:deploy:artifact` must only be used immediately after a successful `cf:build`.
-The static export remains available via `npm run build:static` for SEO checks and
-an emergency hosting rollback. See `doc/architecture-i18n-workers.md` for the
+`cf:deploy:artifact` must only be used immediately after a successful `cf:build`
+(or `seo:check` + `cf:postbuild`). See `doc/architecture-i18n-workers.md` for the
 locale contract, cutover checklist, privacy boundary, and rollback procedure.
