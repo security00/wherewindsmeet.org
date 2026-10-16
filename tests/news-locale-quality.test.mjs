@@ -55,7 +55,7 @@ test("localized news feeds preserve official records without presenting English 
   }
 });
 
-test("localized news pages label official English titles and share the current Version 2.1 boundary", () => {
+test("localized news pages label official English titles and share the current Version 2.3 boundary", () => {
   const germanPage = read("app/(de)/de/news/page.tsx");
   const vietnamesePage = read("app/(vn)/vn/news/page.tsx");
 
@@ -63,10 +63,12 @@ test("localized news pages label official English titles and share the current V
   assert.match(vietnamesePage, /Tiêu đề tiếng Anh chính thức/);
 
   for (const [locale, source, dateBoundary] of [
-    ["de", germanPage, /5\. September|3\. September/],
-    ["vi", vietnamesePage, /05\/09|03\/09/],
+    ["de", germanPage, /15\. Oktober/],
+    ["vi", vietnamesePage, /15\/10/],
   ]) {
-    assert.match(source, /Version 2\.1/, `${locale} current version`);
+    assert.match(source, /Version 2\.3/, `${locale} current version`);
+    assert.match(source, /Version 2\.2/, `${locale} previous version`);
+    assert.match(source, /1846651706675921/, `${locale} official Version 2.3 source`);
     assert.match(source, dateBoundary, `${locale} September boundary`);
     assert.match(source, /CloudedRevelationPatchNotes\.html/, `${locale} official patch-notes source`);
   }

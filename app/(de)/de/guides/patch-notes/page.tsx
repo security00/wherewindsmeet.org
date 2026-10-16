@@ -10,13 +10,40 @@ const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
   {
+    title: "October 15 Version 2.3 [Friends from Afar] update overview",
+    date: "2026-10-15",
+    source: "https://store.steampowered.com/news/app/3564740/view/1846651706675921",
+    summary:
+      "Aktuelle Version. Live-Update am 15. Oktober von 5:00 bis 12:00 Uhr (UTC+8): neue Region Qingzhou – Eastern Peak, Waffe Waist Drum und Pfad Silkbind – Wings, Sekte Inkbound Order, drei Weltbosse, Gift of Gab: War of Words, Tier-100-Ausrüstung und Saison S5: Ever Aflame.",
+    playerAction:
+      "Erreiche Lv. 32 und schließe das Qinghe-Hauptkapitel Heaven Has No Pier ab, um Away to Qingzhou zu starten.",
+  },
+  {
+    title: "September 16 Version 2.2 patch notes",
+    date: "2026-09-16",
+    source: "https://store.steampowered.com/news/app/3564740/view/1843481262704696",
+    summary:
+      "Rollende Wartung am 16. September von 5:00 bis 10:00 Uhr (UTC+8): bearbeitbare Gildenliste mit angehefteten Mitgliedern, saisonale Guild-War-Statistiken, Boss-Talent-Tracking für beide Bosse, Ehrentitel, Gildenbasis-Blacklist und zwei Fehlerbehebungen.",
+    playerAction:
+      "Der Eingang zum Reflection Temple ist vorübergehend geschlossen und öffnet wieder, sobald Jiangnan erscheint; der Fortschritt bleibt erhalten. Beim Nameless Sword wurde nur die Beschreibung von Sword Energy korrigiert.",
+  },
+  {
+    title: "September 16 Version 2.2 [Perilous Eminence] update overview",
+    date: "2026-09-16",
+    source: "https://store.steampowered.com/news/app/3564740/view/1843481262704691",
+    summary:
+      "Vorherige Inhaltsversion: Hidden-Mountain-Hauptkapitel Bringer of Embers (A Bitter Winter und Sea of Sunfire), Kampagne Skyward City Ruins, Weltbosse Golden Colossus Taicu und Goshawk sowie der Extraktionsmodus Transdust Ruins ab 23. September.",
+    playerAction:
+      "Schließe Hidden Mountain Hauptkapitel IV: Gold Crow Fall ab, um die neuen Kapitel freizuschalten; Transdust Ruins erfordert Lv. 20 und die Erkundungsquest Sands of Perils.",
+  },
+  {
     title: "September 3 Version 2.1.3 Clouded Revelation overview",
     date: "2026-09-02",
     source: "https://www.wherewindsmeetgame.com/news/official/903update.html",
     summary:
       "Aktueller Official-Anker: Skystrike Gauntlets, Riven Twinblades, neue Draught-Inner-Ways und Reflection Temple.",
     playerAction:
-      "Drunken Fist zuerst oeffnen, Reflection Temple ueber die Eventseite starten, Hidden Mountain Kapitel 3 erst ab 16. September als Walkthrough behandeln.",
+      "Historisch: Drunken Fist zuerst öffnen. Die Hidden-Mountain-Folgekapitel sind seit Version 2.2 am 16. September live; der Reflection Temple ist seitdem geschlossen, bis Jiangnan erscheint.",
   },
   {
     title: "August 27 Clouded Revelation Version 2.1 update overview",
@@ -150,21 +177,21 @@ const upcomingNerfWatch = [
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Patch Notes Heute - Version 2.1 August 27",
+  title: "Where Winds Meet Patch Notes Heute - Version 2.3 Friends from Afar",
   description:
-    "Deutscher Where Winds Meet Patch-Notes-Tracker für Version 2.1: August-27-Übersicht, August-20-Patch-Notes und datierte Update-Historie.",
+    "Deutscher Where Winds Meet Patch-Notes-Tracker für Version 2.3 (15. Oktober) und Version 2.2 (16. September) mit datierter Update-Historie ab Version 2.1.",
   alternates: buildHreflangAlternates("/guides/patch-notes", { canonicalLanguage: "de" }),
   openGraph: {
-    title: "Where Winds Meet Patch Notes Heute - Version 2.1 August 27",
+    title: "Where Winds Meet Patch Notes Heute - Version 2.3 Friends from Afar",
     description:
-      "Version 2.1 Patch Notes: August-27-Übersicht, August-20-Fixes und datierte Update-Historie.",
+      "Patch Notes zu Version 2.3 und Version 2.2 sowie datierte Update-Historie ab Version 2.1.",
     url: `${baseUrl}/de/guides/patch-notes`,
     locale: "de_DE",
   },
   twitter: {
-    title: "Where Winds Meet Patch Notes Heute - Version 2.1 August 27",
+    title: "Where Winds Meet Patch Notes Heute - Version 2.3 Friends from Afar",
     description:
-      "Version 2.1 Patch Notes: August-27-Übersicht, August-20-Fixes und datierte Update-Historie.",
+      "Patch Notes zu Version 2.3 und Version 2.2 sowie datierte Update-Historie ab Version 2.1.",
   },
 };
 
@@ -209,10 +236,10 @@ export default function PatchNotesDePage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet Patch Notes heute: Version 2.1 und datierte Update-Historie.
+            Where Winds Meet Patch Notes heute: Version 2.3, Version 2.2 und datierte Update-Historie.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Aktualisiert {freshness?.lastChecked ?? "2026-08-26"}: Überprüfter Stand ist {freshness?.gameVersion ?? "Version 2.1 / August 27"}. Die aktuelle Update-Spur beginnt mit der offiziellen Übersicht zum 27. August und den Patch Notes vom 20. August; Version 2.0, Version 1.8 und Palace-Inhalte bleiben als datierte Historie erhalten.
+            Aktualisiert {freshness?.lastChecked ?? "2026-10-17"}: Überprüfter Stand ist {freshness?.gameVersion ?? "Version 2.3 / 15. Oktober"}. Die aktuelle Update-Spur beginnt mit der offiziellen Übersicht zu Version 2.3 vom 15. Oktober, gefolgt von den Patch Notes und der Übersicht zu Version 2.2 vom 16. September. Version 2.1 (Übersicht 27. August, Stand 2026-08-26, Patch Notes 20. August), Version 2.0, Version 1.8 und Palace-Inhalte bleiben als datierte Historie erhalten.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Diese Seite markiert die Punkte, die du neu prüfen solltest: Codes, Quest-Bugs, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, Boss-Guides, Builds und Tier-List-Annahmen.
@@ -254,6 +281,36 @@ export default function PatchNotesDePage() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section id="version-2-3" className="space-y-4 rounded-3xl border border-emerald-400/30 bg-emerald-500/10 p-6">
+        <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Aktuelle Version – 15. Oktober 2026</p>
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">Version 2.3 [Friends from Afar] – Zusammenfassung</h2>
+        <p className="text-sm leading-relaxed text-slate-200">Live-Update am 15. Oktober 2026, 5:00–12:00 Uhr (UTC+8). Alle Details stehen in der <a href="https://store.steampowered.com/news/app/3564740/view/1846651706675921" target="_blank" rel="noreferrer" className="underline underline-offset-4">offiziellen Steam-Ankündigung</a> (Englisch).</p>
+        <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-200">
+          <li>Neue Region Qingzhou – Eastern Peak: ab Lv. 32 nach dem Qinghe-Hauptkapitel [Heaven Has No Pier] über das Lost Chapter [Away to Qingzhou].</li>
+          <li>Neue Jianghu Legacies [Riddled Echoes] und [Sea Shepherd]; Weltbosse Tidewatcher, Old Raftsman und Shuttlecock Champion.</li>
+          <li>Neue Waffe Waist Drum und neuer Pfad [Silkbind – Wings] mit [Museflow Waist Drum] und dem Fächer [Willowbend Fan]; dazu 4 zusätzliche kostenlose Inner-Way-Umwandlungen und 8 kostenlose Set-Umwandlungen bis zum Start der neuen Saison.</li>
+          <li>Neue Sekte Inkbound Order (Aufnahme über die Primary Exam); Gift of Gab: War of Words in Qingzhou.</li>
+          <li>Tier-100-Ausrüstung, Gear Enhance Lv. 66–70, Solo Mode Level Lv. 18; Levelobergrenze bleibt Lv. 100. Neue Lv.-100-Inhalte: Sword Trial [Compass &amp; Chime] und Hero&apos;s Realm [Liminal Ascension].</li>
+          <li>Saison S5: Ever Aflame (Arena und Taiping Mausoleum): 15. Oktober 2026, 05:00 – 26. November 2026, 04:59:59.</li>
+        </ul>
+      </section>
+
+      <section id="version-2-2" className="space-y-4 rounded-3xl border border-sky-400/30 bg-sky-500/10 p-6">
+        <p className="text-xs font-semibold uppercase tracking-wide text-sky-200">Vorherige Version – 16. September 2026</p>
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">Version 2.2 [Perilous Eminence] und Patch Notes vom 16. September</h2>
+        <p className="text-sm leading-relaxed text-slate-200">Rollende Wartung am 16. September 2026, 5:00–10:00 Uhr (UTC+8). Quellen: <a href="https://store.steampowered.com/news/app/3564740/view/1843481262704696" target="_blank" rel="noreferrer" className="underline underline-offset-4">offizielle Patch Notes</a> und <a href="https://store.steampowered.com/news/app/3564740/view/1843481262704691" target="_blank" rel="noreferrer" className="underline underline-offset-4">offizielle Übersicht</a>.</p>
+        <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-200">
+          <li>Gildenliste bearbeitbar: Die Gildenleitung kann Mitglieder oben anheften; die übrigen werden nach der Aktivität der Vorwoche sortiert.</li>
+          <li>Guild War zeigt persönliche und Gilden-Statistiken pro Saison (ab der neuen Saison).</li>
+          <li>Boss-Talent-Tracking zählt Belohnungen nach dem Guild Hero&apos;s Realm jetzt für beide Bosse.</li>
+          <li>Ehrentitel für herausragende Leistungen bei Gildenevents; Blacklist für die Gildenbasis (einzelne Spieler oder ganze Gilden).</li>
+          <li>Der Eingang zum Reflection Temple ist vorübergehend geschlossen und öffnet wieder, sobald Jiangnan erscheint; der Fortschritt bleibt erhalten.</li>
+          <li>Behoben: Anzeigefehler des Outfits [Hidden Scent] in bestimmten Ergebnis-Animationen.</li>
+          <li>[Nameless Sword]: Beschreibung korrigiert – jede Stufe Sword Energy erhöht den Damage Boost gegen Nicht-Spieler-Einheiten um 10 %, ohne Exhausted-Zustand. Nur ein Textfehler; der Effekt funktionierte bereits so.</li>
+          <li>Übersicht: Hidden-Mountain-Hauptkapitel [Bringer of Embers] mit A Bitter Winter und Sea of Sunfire, Kampagne Skyward City Ruins, Weltbosse Golden Colossus Taicu und Goshawk, Extraktionsmodus Transdust Ruins ab 23. September 2026, 06:00.</li>
+        </ul>
       </section>
 
       <section id="upcoming-nerfs" className="space-y-5 rounded-3xl border border-red-400/30 bg-red-500/10 p-6 shadow-lg shadow-red-950/30">

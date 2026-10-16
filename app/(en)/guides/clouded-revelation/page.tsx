@@ -35,7 +35,7 @@ const changes = [
   {
     title: "Reflection Temple (Ghost Month)",
     impact:
-      "Limited stage from the event page, currently dated through September 27. Taboos, offerings, and the unfinished ritual are the clear condition.",
+      "Ghost Month stage whose entrance has been temporarily closed since the September 16 Version 2.2 patch; it reopens when Jiangnan arrives and stage progress is preserved. Taboos, offerings, and the unfinished ritual are the clear condition.",
     href: "/guides/reflection-temple",
   },
   {

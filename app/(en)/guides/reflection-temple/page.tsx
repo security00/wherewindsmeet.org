@@ -4,7 +4,7 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Reflection Temple Event Guide",
-  description: "Start Reflection Temple from the event page, learn Ghost Month taboos, and clear offerings before the September 27, 2026 end date.",
+  description: "Reflection Temple status and recap: the entrance is closed since Version 2.2 and reopens when Jiangnan arrives with progress kept. Ghost Month taboos, offerings, and clear steps.",
   alternates: buildHreflangAlternates("/guides/reflection-temple"),
 };
 

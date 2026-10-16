@@ -10,51 +10,55 @@ const baseUrl = "https://wherewindsmeet.org";
 const freshness = getContentFreshness("/news");
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Update Today - Version 2.1 September 5 News & Patch Notes",
+  title: "Where Winds Meet Update Today - Version 2.3 Friends from Afar News & Patch Notes",
   description:
-    "Where Winds Meet update today tracker for the September 5 Version 2.1 patch notes, September 3 overview, Reflection Temple, Drunken Fist, and Clouded Revelation impact.",
+    "Where Winds Meet update today tracker for the October 15 Version 2.3 Friends from Afar update, Qingzhou, the Waist Drum and Silkbind - Wings path, plus the September 16 Version 2.2 patch notes.",
   alternates: buildHreflangAlternates("/news"),
   openGraph: {
-    title: "Where Winds Meet Update Today - Version 2.1 September 5 News & Patch Notes",
+    title: "Where Winds Meet Update Today - Version 2.3 Friends from Afar News & Patch Notes",
     description:
-      "Where Winds Meet update today tracker for the September 5 patch notes, September 3 overview, Reflection Temple, and Drunken Fist.",
+      "Where Winds Meet update today tracker for Version 2.3 Friends from Afar (October 15), Qingzhou, and the Version 2.2 patch notes.",
     url: `${baseUrl}/news`,
   },
   twitter: {
-    title: "Where Winds Meet Update Today - Version 2.1 September 5 News & Patch Notes",
+    title: "Where Winds Meet Update Today - Version 2.3 Friends from Afar News & Patch Notes",
     description:
-      "Where Winds Meet update today tracker for the official September 5 patch notes, September 3 overview, Reflection Temple, and current patch impact.",
+      "Where Winds Meet update today tracker for the official October 15 Version 2.3 overview and the September 16 Version 2.2 patch notes.",
   },
 };
 
+const steamVersion23Url = "https://store.steampowered.com/news/app/3564740/view/1846651706675921";
+const steamVersion22PatchUrl = "https://store.steampowered.com/news/app/3564740/view/1843481262704696";
+const steamVersion22OverviewUrl = "https://store.steampowered.com/news/app/3564740/view/1843481262704691";
+
 const todayStatusCards = [
   {
-    title: "Latest official patch notes",
+    title: "CURRENT: Version 2.3 Friends from Afar",
     detail:
-      "The September 5 Version 2.1 section on the official Clouded Revelation patch-notes page is the newest confirmed fix list checked: Gauntlets Castlink animation, Ceramic Bliss, Bounty Order rewards, Cloudtop Ascent claims, Reflection Temple cuju-ball and shadow-respawn quest fixes, Homestead loading, and Eagleglide placement.",
+      "Official October 15 overview (live update 5:00-12:00 UTC+8): new region Qingzhou - Eastern Peak via the Lost Chapter Away to Qingzhou (Lv. 32 and Qinghe Main Chapter Heaven Has No Pier), the Waist Drum weapon and Silkbind - Wings path (Museflow Waist Drum + Willowbend Fan), the Inkbound Order sect, three world bosses, War of Words Gift of Gab, Tier 100 gear, and season S5: Ever Aflame.",
+    href: steamVersion23Url,
+    label: "Official Version 2.3 overview",
+  },
+  {
+    title: "Previous: Version 2.2 patch notes",
+    detail:
+      "September 16 Version 2.2 notes: editable Guild Roster with pinned members, seasonal Guild War stats, boss talent tracking for both Guild Hero's Realm bosses, Guild honorary titles, a Guild Base blacklist, the Hidden Scent outfit fix, and a text-only Nameless Sword Sword Energy description correction.",
+    href: steamVersion22PatchUrl,
+    label: "Official Version 2.2 patch notes",
+  },
+  {
+    title: "Previous: Version 2.2 Perilous Eminence",
+    detail:
+      "September 16 overview: Hidden Mountain Main Chapter Bringer of Embers (A Bitter Winter and Sea of Sunfire, after Chapter IV: Gold Crow Fall), the Skyward City Ruins campaign, Golden Colossus Taicu and Goshawk, and the Transdust Ruins extraction match that opened September 23.",
+    href: steamVersion22OverviewUrl,
+    label: "Official Version 2.2 overview",
+  },
+  {
+    title: "Reflection Temple status",
+    detail:
+      "Since the September 16 Version 2.2 patch, the Reflection Temple entrance is temporarily closed. It reopens when Jiangnan arrives, and stage progress is preserved. Version 2.1 history (September 5 fixes, September 3 overview) stays on the official Clouded Revelation patch page.",
     href: "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
-    label: "Official September 5 patch notes",
-  },
-  {
-    title: "September 3 intel overview",
-    detail:
-      "The September 3 Version 2.1.3 overview remains the content-intel anchor: Skystrike Gauntlets, Riven Twinblades, new Inner Ways, and live Clouded Revelation events. Reflection Temple remains the time-boxed Ghost Month stage.",
-    href: "https://www.wherewindsmeetgame.com/news/official/903update.html",
-    label: "Official September 3 overview",
-  },
-  {
-    title: "Today patch-note answer",
-    detail:
-      "Lead with the September 5 fixes, then use Version 2.1.3 playable content on top of the earlier August 20 Clouded Revelation section. Re-test Reflection Temple quest steps, Draught unlocks, Vernal Umbrella rolls, and older Jianghu Legacy triggers before following pre-September workarounds.",
-    href: "/guides/clouded-revelation",
-    label: "Version 2.1.3 impact guide",
-  },
-  {
-    title: "Live event watch",
-    detail:
-      "Reflection Temple runs from the event page through September 27. Hidden Mountain Chapter 3 is scheduled for September 16. Extraction mode is announced for September but has no real combat guide yet.",
-    href: "/guides/reflection-temple",
-    label: "Reflection Temple guide",
+    label: "Version 2.1 patch history",
   },
   {
     title: "Jiangnan / Hangzhou watch",
@@ -162,6 +166,7 @@ export default function NewsPage() {
     updated: lastUpdatedLabel,
     links: [
       { href: "/guides/tier-list", label: "China tier list & balance notes" },
+      { href: "/guides/patch-notes#version-2-3", label: "Version 2.3 patch notes" },
       { href: "/guides/clouded-revelation", label: "Version 2.1 Clouded Revelation" },
       { href: "/guides/jiangnan-hangzhou", label: "Jiangnan / Hangzhou Global watch" },
       { href: "/guides/bosses", label: "Boss list & changes" },
@@ -272,8 +277,8 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-3 leading-6 text-cyan-50/90">
-              The current checked update baseline is <strong>Version 2.1 / September 5 patch notes + September 3 overview</strong>,
-              followed by the Ghost Month Reflection Temple letter, the August 20 patch notes, and Version 2.0 history. If you searched for
+              The current checked update baseline is <strong>Version 2.3 Friends from Afar / October 15 overview</strong>,
+              followed by the September 16 Version 2.2 patch notes and Perilous Eminence overview, then Version 2.1 Clouded Revelation history. If you searched for
               <span className="font-semibold"> where winds meet update today</span>, use the cards below to jump straight
               to official news, patch notes, and roadmap watch items.
             </p>
@@ -305,7 +310,7 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Latest official-news pass: {freshness?.gameVersion ?? "Version 2.1.3 / September 5 patch + September 3 overview"}, including September 5 Reflection Temple quest fixes, Drunken Fist, Clouded Revelation, and Hidden Mountain follow-up. The list below follows the current official news trail.
+              Latest official-news pass: {freshness?.gameVersion ?? "Version 2.3 / October 15 overview + Version 2.2 September 16 patch"}, including Qingzhou, the Waist Drum, the Inkbound Order, the Version 2.2 Guild changes, and the Reflection Temple closure until Jiangnan. The list below follows the current official news trail.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link href="/guides/tier-list" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
@@ -336,7 +341,7 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-3 leading-6 text-violet-50/90">
-              Version 2.1.3 is the current playable layer on Clouded Revelation, while Hidden Mountain remains the Version 2.0 expansion baseline. Use the Drunken Fist, Reflection Temple, and Version 2.1 guides first, then the video hub for official footage.
+              Version 2.3 Friends from Afar is the current playable layer. Version 2.2 continued Hidden Mountain with the Bringer of Embers main chapter and Skyward City Ruins, on top of the Version 2.0 expansion baseline. Use the official overviews first, then the video hub for official footage.
             </p>
             <div className="mt-4 flex flex-wrap gap-2 text-xs">
               <Link href="/videos" className="rounded-full border border-violet-300/60 px-3 py-1 font-semibold text-violet-50 hover:border-violet-200">
@@ -365,7 +370,7 @@ export default function NewsPage() {
             <div className="mt-3 grid gap-2 text-xs text-slate-300 sm:grid-cols-3">
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
                 <p className="font-semibold text-slate-100">Current update</p>
-                <p className="mt-1">The September 5 Version 2.1 patch-notes section and September 3 overview are the current update anchors; August 20 remains an earlier Clouded Revelation section on the same official patch page, while Version 2.0 Hidden Mountain, network, matchmaking, and Path Balance notes remain historical context.</p>
+                <p className="mt-1">The October 15 Version 2.3 overview is the current update anchor, with the September 16 Version 2.2 patch notes and overview as the previous version. Version 2.1 Clouded Revelation (September 5 and August 20 sections) and Version 2.0 notes remain historical context.</p>
               </div>
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
                 <p className="font-semibold text-slate-100">Next watch</p>

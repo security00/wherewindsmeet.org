@@ -10,6 +10,33 @@ const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
   {
+    title: "October 15 Version 2.3 [Friends from Afar] update overview",
+    date: "2026-10-15",
+    source: "https://store.steampowered.com/news/app/3564740/view/1846651706675921",
+    summary:
+      "Current official update. Live update on October 15 from 5:00 to 12:00 (UTC+8): new region Qingzhou - Eastern Peak, the Waist Drum weapon and Silkbind - Wings path, the Inkbound Order sect, three world bosses, War of Words Gift of Gab, Tier 100 gear, and season S5: Ever Aflame.",
+    playerAction:
+      "Reach Lv. 32 and finish the Qinghe Main Chapter Heaven Has No Pier to start Away to Qingzhou, then use the Version 2.3 section below for weapons, gear and season dates.",
+  },
+  {
+    title: "September 16 Version 2.2 patch notes",
+    date: "2026-09-16",
+    source: "https://store.steampowered.com/news/app/3564740/view/1843481262704696",
+    summary:
+      "Rolling maintenance on September 16 from 5:00 to 10:00 (UTC+8): Guild Roster, Guild War season stats, boss talent tracking, Guild honorary titles, Guild Base blacklist, the Reflection Temple entrance closure, and two bug fixes.",
+    playerAction:
+      "Reflection Temple is closed until Jiangnan arrives; stage progress is kept. Nameless Sword players: only the Sword Energy description changed, not the effect.",
+  },
+  {
+    title: "September 16 Version 2.2 [Perilous Eminence] update overview",
+    date: "2026-09-16",
+    source: "https://store.steampowered.com/news/app/3564740/view/1843481262704691",
+    summary:
+      "Previous content update: Hidden Mountain Main Chapter Bringer of Embers, the Skyward City Ruins campaign, Golden Colossus Taicu and Goshawk world bosses, the Transdust Ruins extraction match (from September 23), and Wildtrail Journal: Ruffled Up.",
+    playerAction:
+      "Finish Hidden Mountain Main Chapter IV: Gold Crow Fall to unlock A Bitter Winter and Sea of Sunfire; Transdust Ruins needs Lv. 20 and the Exploration Quest Sands of Perils.",
+  },
+  {
     title: "September 5 Version 2.1 patch notes (Clouded Revelation)",
     date: "2026-09-05",
     source: "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
@@ -25,7 +52,7 @@ const latestUpdateCards = [
     summary:
       "Current official intel anchor. It is the September 3 follow-up inside Clouded Revelation: Skystrike Gauntlets, Riven Twinblades, new Draught Inner Ways, and live event coverage including Reflection Temple.",
     playerAction:
-      "Unlock Drunken Fist before copying an older gauntlet guide, run Reflection Temple from the event page, and treat Hidden Mountain Chapter 3 (September 16) as a preview until the chapter is live.",
+      "Unlock Drunken Fist before copying an older gauntlet guide, and note that the Hidden Mountain follow-up chapters went live with Version 2.2 on September 16.",
   },
   {
     title: "August 29 Ghost Month / Reflection Temple developer letter",
@@ -34,7 +61,7 @@ const latestUpdateCards = [
     summary:
       "Official event letter for the limited Reflection Temple stage: folk taboos, offerings, lanterns, paper effigies, and a ritual clear rather than a simple escape.",
     playerAction:
-      "Open the event menu instead of hunting an overworld door, and use the Reflection Temple guide for start steps and blockers.",
+      "Historical: the Reflection Temple entrance has been closed since the September 16 Version 2.2 patch and reopens when Jiangnan arrives, with stage progress preserved.",
   },
   {
     title: "August 20 Version 2.1 Clouded Revelation patch notes",
@@ -164,7 +191,7 @@ const latestUpdateCards = [
 ];
 
 const impactChecklist = [
-  "Where Winds Meet patch notes today / new update: lead with the September 5 Clouded Revelation patch-notes section, then the September 3 Version 2.1.3 overview, August 20 fixes on the same page, the August 14 aggregate page, and July 23 Path Balance history.",
+  "Where Winds Meet patch notes today / new update: lead with the October 15 Version 2.3 overview, then the September 16 Version 2.2 patch notes and overview, the September 5 Clouded Revelation section, the September 3 Version 2.1.3 overview, August 20 fixes on the same page, the August 14 aggregate page, and July 23 Path Balance history.",
   "Boss and dungeon searches: mention Ghost Master, Hero's Realm, Sword Trial, Sandstorm Tavern, Sunken City Lake, and Lunar Eidolon where relevant.",
   "Build searches: call out cheaper Martial Art Reset and lower Inner Way Conversion cost before telling players to respec.",
   "Tier-list searches: re-test Version 2.1 Vernal Umbrella and Silkbind Jade attunement, while keeping the wider weapon baseline tied to the July 23 Path Balance.",
@@ -203,20 +230,20 @@ const upcomingNerfWatch = [
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Patch Notes Today - Version 2.1 September 5",
+  title: "Where Winds Meet Patch Notes Today - Version 2.3 Friends from Afar",
   description:
-    "Where Winds Meet Version 2.1 patch notes for September 5 and August 20 Clouded Revelation: Reflection Temple quest fixes, Gauntlets animation, Vernal Umbrella, Arena, Homestead, and cosmetics.",
+    "Where Winds Meet patch notes for Version 2.3 Friends from Afar (October 15) and Version 2.2 (September 16): Qingzhou, Waist Drum, Tier 100 gear, Guild changes, and the Reflection Temple closure, plus Version 2.1 history.",
   alternates: buildHreflangAlternates("/guides/patch-notes"),
   openGraph: {
-    title: "Where Winds Meet Patch Notes Today - Version 2.1 September 5",
+    title: "Where Winds Meet Patch Notes Today - Version 2.3 Friends from Afar",
     description:
-      "Where Winds Meet Version 2.1 patch notes: September 5 quest/animation fixes plus the earlier August 20 Clouded Revelation section.",
+      "Where Winds Meet patch notes: Version 2.3 Friends from Afar, Version 2.2 Guild changes and fixes, plus Version 2.1 history.",
     url: `${baseUrl}/guides/patch-notes`,
   },
   twitter: {
-    title: "Where Winds Meet Patch Notes Today - Version 2.1 September 5",
+    title: "Where Winds Meet Patch Notes Today - Version 2.3 Friends from Afar",
     description:
-      "Version 2.1 patch notes tracker: September 5 Clouded Revelation fixes, the August 20 section, and earlier Version 2.0 history.",
+      "Patch notes tracker: Version 2.3 (October 15), Version 2.2 (September 16), and Version 2.1 Clouded Revelation history.",
   },
 };
 
@@ -277,10 +304,10 @@ export default function PatchNotesPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet patch notes today: Version 2.1 Clouded Revelation, quests, weapons, and Arena.
+            Where Winds Meet patch notes today: Version 2.3 Friends from Afar, Version 2.2, and Version 2.1 history.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Updated {freshness?.lastChecked ?? "2026-09-13"}: Where Winds Meet is on {freshness?.gameVersion ?? "Version 2.1.3 / September 5 patch + September 3 overview"}. Lead with the September 5 patch-notes section, keep the September 3 overview for 2.1.3 content intel, treat August 20 as the earlier Clouded Revelation section on the same official page, and use the aggregate August 14 Version 2.0 page for older network and Path Balance history.
+            Updated {freshness?.lastChecked ?? "2026-10-17"}: Where Winds Meet is on {freshness?.gameVersion ?? "Version 2.3 / October 15 overview + Version 2.2 September 16 patch"}. Lead with the October 15 Version 2.3 overview, then the September 16 Version 2.2 patch notes and overview; keep the September 5 and August 20 Clouded Revelation sections as Version 2.1 history, and use the aggregate August 14 Version 2.0 page for older network and Path Balance history.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             We flag roadmap checkpoints, official news beats, and practical player impact so you know what to re-check: codes, quest bugs, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, boss guides, builds, and tier-list assumptions.
@@ -338,6 +365,47 @@ export default function PatchNotesPage() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section id="version-2-3" className="space-y-4 rounded-3xl border border-emerald-400/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/30">
+        <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Current version - October 15, 2026</p>
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">Version 2.3 [Friends from Afar] patch notes summary</h2>
+        <p className="text-sm leading-relaxed text-slate-200">Live update on October 15, 2026, 5:00-12:00 (UTC+8). Summary of the official overview; open the <Link href="https://store.steampowered.com/news/app/3564740/view/1846651706675921" target="_blank" rel="noreferrer" className="text-emerald-300 underline underline-offset-4">official Steam announcement</Link> for every detail.</p>
+        <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-200">
+          <li><strong>New map: Qingzhou - Eastern Peak.</strong> Reach Lv. 32 and complete the Qinghe Main Chapter [Heaven Has No Pier] to accept the Lost Chapter [Away to Qingzhou]. Adds folk customs (Everbloom Spree, Exam Vigil), Injustice Quests, Qingzhou Meow Meow, and five Qingzhou Oddities.</li>
+          <li><strong>New Jianghu Legacies:</strong> Volume 1 [Riddled Echoes] and Volume 2 [Sea Shepherd], both opened from Qingzhou&apos;s Journal.</li>
+          <li><strong>World bosses:</strong> Tidewatcher, Old Raftsman, and Shuttlecock Champion (unlock the Qingzhou region).</li>
+          <li><strong>New weapon: Waist Drum</strong> and the new path [Silkbind - Wings], with the Waist Drum martial art [Museflow Waist Drum] (from Sea Shepherd) and the Fan martial art [Willowbend Fan] (from Riddled Echoes). Adds the Legendary Inner Way [Harmony Song], Epic Inner Ways [Zephyr Whispers], [Melody of the Brush] and [Blade&apos;s Will], gear sets [Cloudshear] and [Reinchime], and an extra 4 free Inner Way Conversions plus 8 free Gear Set Conversions until the new season starts.</li>
+          <li><strong>New sect: Inkbound Order.</strong> Join through the Primary Exam (admission pass from Master Goose); Novice and Initiate ranks open now, higher ranks after the Farm Recess. Visiting Disciples keep their primary sect.</li>
+          <li><strong>Gift of Gab: War of Words.</strong> A new debate mode unlocked through the Profession feature and played in Qingzhou; it keeps your existing Scholar rank.</li>
+          <li><strong>Season progression:</strong> Solo Mode Level unlocks Lv. 18: Discernment; the level cap stays at Lv. 100. Tier 100 gear drops, Gear Enhance Lv. 66-70, Tier 100 Tuning and Attuning, Tier 96 Gear Relaying, Mystic Skills cap Tier 6 Stage 25, and Medicine Chest Lv. 18.</li>
+          <li><strong>New Lv. 100 content:</strong> Sword Trial [Compass &amp; Chime] (5-player) and Hero&apos;s Realm [Liminal Ascension] (10-player); leaderboard rewards unlock October 16 at 05:00 server time.</li>
+          <li><strong>Season S5: Ever Aflame</strong> for Arena and Taiping Mausoleum: October 15, 2026 05:00 - November 26, 2026 04:59:59. The Path Trial Challenge event runs until October 29, 2026 04:59:59.</li>
+        </ul>
+      </section>
+
+      <section id="version-2-2" className="space-y-4 rounded-3xl border border-sky-400/30 bg-sky-500/10 p-6 shadow-lg shadow-sky-950/30">
+        <p className="text-xs font-semibold uppercase tracking-wide text-sky-200">Previous version - September 16, 2026</p>
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">Version 2.2 [Perilous Eminence] and September 16 patch notes</h2>
+        <p className="text-sm leading-relaxed text-slate-200">Rolling maintenance on September 16, 2026, 5:00-10:00 (UTC+8). Sources: <Link href="https://store.steampowered.com/news/app/3564740/view/1843481262704696" target="_blank" rel="noreferrer" className="text-sky-300 underline underline-offset-4">official patch notes</Link> and <Link href="https://store.steampowered.com/news/app/3564740/view/1843481262704691" target="_blank" rel="noreferrer" className="text-sky-300 underline underline-offset-4">official update overview</Link>.</p>
+        <h3 className="text-base font-semibold text-slate-100">Patch notes</h3>
+        <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-200">
+          <li>Guild Roster homepage is editable: Guild Management can pin members to the top; others are sorted by last week&apos;s activity.</li>
+          <li>Guild War adds personal and guild seasonal statistics (from the new season onward).</li>
+          <li>Boss talent tracking now records reward counts for both bosses after clearing the Guild Hero&apos;s Realm.</li>
+          <li>Honorary titles for standout Guild event performers, shown on the Guild Roster and in Guild chat.</li>
+          <li>Guild Base blacklist for individual Wanderers or whole guilds.</li>
+          <li>The Reflection Temple entrance is temporarily closed and reopens when Jiangnan arrives; all stage progress is preserved.</li>
+          <li>Fixed the [Hidden Scent] tailored outfit displaying incorrectly in some results animations.</li>
+          <li>[Nameless Sword] Sword Energy description corrected: each stack increases Damage Boost against non-player units by 10%, with no need to enter the Exhausted state. Description only; the effect already worked this way.</li>
+        </ul>
+        <h3 className="text-base font-semibold text-slate-100">Update overview</h3>
+        <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-200">
+          <li>Hidden Mountain Main Chapter [Bringer of Embers]: after Main Chapter IV: Gold Crow Fall, two new chapters, A Bitter Winter and Sea of Sunfire.</li>
+          <li>Hidden Mountain Campaign [Skyward City Ruins] and world bosses Golden Colossus Taicu and Goshawk.</li>
+          <li>Transdust Ruins extraction match from September 23, 2026 06:00: Lv. 20 plus the Exploration Quest Sands of Perils; Solo, Trio, AI Solo and AI Trio.</li>
+          <li>Wildtrail Journal: Ruffled Up goose mode, plus the Trekking for Treasures and Goose Greeting events.</li>
+        </ul>
       </section>
 
       <section id="upcoming-nerfs" className="space-y-5 rounded-3xl border border-red-400/30 bg-red-500/10 p-6 shadow-lg shadow-red-950/30">

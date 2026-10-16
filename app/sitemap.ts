@@ -19,7 +19,7 @@ const newsLastModified = new Date(latestNewsDate);
 const videosLastModified = new Date("2026-09-04");
 
 const staticEntries: Entry[] = [
-  { path: "/", changeFrequency: "daily", priority: 1 },
+  { path: "/", changeFrequency: "daily", priority: 1, lastModified: newsLastModified },
   { path: "/guides", changeFrequency: "daily", priority: 0.9 },
   { path: "/guides/platforms", changeFrequency: "weekly", priority: 0.86 },
   { path: "/guides/release-date", changeFrequency: "weekly", priority: 0.86 },
@@ -55,7 +55,7 @@ const staticEntries: Entry[] = [
   { path: "/guides/one-leaf-one-life", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/the-great-faceologist", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/flicker-of-faces", changeFrequency: "weekly", priority: 0.78 },
-  { path: "/guides/patch-notes", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/guides/patch-notes", changeFrequency: "weekly", priority: 0.8, lastModified: newsLastModified },
   { path: "/guides/clouded-revelation", changeFrequency: "daily", priority: 0.84 },
   { path: "/guides/hidden-mountain", changeFrequency: "daily", priority: 0.84 },
   { path: "/guides/heavens-threshold-cloudstair", changeFrequency: "daily", priority: 0.82 },
@@ -124,7 +124,7 @@ const vnEntries: Entry[] = ([
   { path: "/vn/guides/free-outfits", changeFrequency: "weekly", priority: 0.7 },
   { path: "/vn/guides/skill-theft", changeFrequency: "weekly", priority: 0.73 },
   { path: "/vn/guides/new-players", changeFrequency: "weekly", priority: 0.73 },
-  { path: "/vn/guides/patch-notes", changeFrequency: "weekly", priority: 0.72 },
+  { path: "/vn/guides/patch-notes", changeFrequency: "weekly", priority: 0.72, lastModified: newsLastModified },
   { path: "/vn/guides/clouded-revelation", changeFrequency: "daily", priority: 0.76 },
   { path: "/vn/guides/hidden-mountain", changeFrequency: "daily", priority: 0.76 },
   { path: "/vn/guides/heavens-threshold-cloudstair", changeFrequency: "daily", priority: 0.74 },

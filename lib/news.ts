@@ -20,9 +20,35 @@ type OfficialNewsRow = [
 ];
 
 // Source of truth: https://www.wherewindsmeetgame.com/news/index.html
+// Version 2.2 and 2.3 rows are verified against the official Steam
+// announcements for app 3564740 (store.steampowered.com/news/app/3564740).
 // Keep this array in the same order as the official news index. The official
 // site can pin items out of strict date order, so news pages should not sort it.
 const officialNewsRows: OfficialNewsRow[] = [
+  [
+    "october-15-version-2-3-update-overview",
+    "Version 2.3 [Friends from Afar] Update Overview (October 15, 2026)",
+    "2026-10-15",
+    "announcement",
+    "https://store.steampowered.com/news/app/3564740/view/1846651706675921",
+    "Official Version 2.3 Friends from Afar overview for the October 15 live update (5:00-12:00 UTC+8): the new Qingzhou - Eastern Peak region and Lost Chapter Away to Qingzhou (Lv. 32 after Heaven Has No Pier), the Waist Drum weapon and Silkbind - Wings path with Museflow Waist Drum and Willowbend Fan, the Inkbound Order sect, Tidewatcher, Old Raftsman and Shuttlecock Champion world bosses, War of Words Gift of Gab, Tier 100 gear, and season S5: Ever Aflame (October 15 - November 26).",
+  ],
+  [
+    "september-16-version-2-2-patch-notes",
+    "Version 2.2 Patch Notes: Optimizations and Bug Fixes (September 16, 2026)",
+    "2026-09-16",
+    "announcement",
+    "https://store.steampowered.com/news/app/3564740/view/1843481262704696",
+    "Official September 16 Version 2.2 patch notes (rolling maintenance 5:00-10:00 UTC+8): editable Guild Roster with pinned members, seasonal Guild War statistics, boss talent tracking for both Guild Hero's Realm bosses, Guild honorary titles, a Guild Base blacklist, Reflection Temple entrance closed until Jiangnan arrives with progress preserved, a Hidden Scent outfit display fix, and a corrected Nameless Sword Sword Energy description.",
+  ],
+  [
+    "september-16-version-2-2-update-overview",
+    "Version 2.2 [Perilous Eminence] Update Overview (September 16, 2026)",
+    "2026-09-16",
+    "announcement",
+    "https://store.steampowered.com/news/app/3564740/view/1843481262704691",
+    "Official Version 2.2 Perilous Eminence overview for the September 16 live update: the Hidden Mountain Main Chapter Bringer of Embers (A Bitter Winter and Sea of Sunfire), the Skyward City Ruins campaign, Golden Colossus Taicu and Goshawk world bosses, the Transdust Ruins extraction match from September 23, Wildtrail Journal: Ruffled Up, and the Trekking for Treasures and Goose Greeting events.",
+  ],
   [
     "september-5-version-2-1-patch-notes",
     "Version 2.1 Patch Notes: Optimizations and Bug Fixes (September 5, 2026)",

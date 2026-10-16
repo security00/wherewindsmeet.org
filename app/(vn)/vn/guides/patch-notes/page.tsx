@@ -10,6 +10,33 @@ const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
   {
+    title: "Tổng quan bản cập nhật Version 2.3 [Friends from Afar] ngày 15/10",
+    date: "2026-10-15",
+    source: "https://store.steampowered.com/news/app/3564740/view/1846651706675921",
+    summary:
+      "Phiên bản hiện tại. Cập nhật trực tiếp ngày 15/10 từ 5:00 đến 12:00 (UTC+8): vùng mới Qingzhou – Eastern Peak, vũ khí Waist Drum và lưu phái Silkbind – Wings, môn phái Inkbound Order, ba world boss, Gift of Gab: War of Words, trang bị Tier 100 và mùa S5: Ever Aflame.",
+    playerAction:
+      "Đạt Lv. 32 và hoàn thành chương chính Qinghe Heaven Has No Pier để nhận Lost Chapter Away to Qingzhou.",
+  },
+  {
+    title: "Patch notes Version 2.2 ngày 16/09",
+    date: "2026-09-16",
+    source: "https://store.steampowered.com/news/app/3564740/view/1843481262704696",
+    summary:
+      "Bảo trì cuốn chiếu ngày 16/09 từ 5:00 đến 10:00 (UTC+8): danh sách Bang hội có thể chỉnh sửa và ghim thành viên, thống kê Guild War theo mùa, theo dõi boss talent cho cả hai boss, danh hiệu vinh dự, danh sách chặn Guild Base và hai bản sửa lỗi.",
+    playerAction:
+      "Lối vào Reflection Temple tạm đóng và sẽ mở lại khi Jiangnan ra mắt; tiến độ được giữ nguyên. Với Nameless Sword, chỉ phần mô tả Sword Energy được sửa.",
+  },
+  {
+    title: "Tổng quan bản cập nhật Version 2.2 [Perilous Eminence] ngày 16/09",
+    date: "2026-09-16",
+    source: "https://store.steampowered.com/news/app/3564740/view/1843481262704691",
+    summary:
+      "Phiên bản nội dung trước: chương chính Hidden Mountain Bringer of Embers (A Bitter Winter và Sea of Sunfire), chiến dịch Skyward City Ruins, world boss Golden Colossus Taicu và Goshawk, cùng chế độ extraction Transdust Ruins từ 23/09.",
+    playerAction:
+      "Hoàn thành chương chính Hidden Mountain IV: Gold Crow Fall để mở các chương mới; Transdust Ruins yêu cầu Lv. 20 và nhiệm vụ khám phá Sands of Perils.",
+  },
+  {
     title: "Tổng quan bản cập nhật Clouded Revelation Version 2.1 ngày 27/08",
     date: "2026-08-26",
     source: "https://www.wherewindsmeetgame.com/news/official/827update.html",
@@ -141,21 +168,21 @@ const upcomingNerfWatch = [
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Patch Notes Hôm Nay - Version 2.1 August 27",
+  title: "Where Winds Meet Patch Notes Hôm Nay - Version 2.3 Friends from Afar",
   description:
-    "Patch notes Where Winds Meet tiếng Việt cho Version 2.1: tổng quan 27/08, patch notes 20/08 và lịch sử cập nhật có ngày.",
+    "Patch notes Where Winds Meet tiếng Việt cho Version 2.3 (15/10) và Version 2.2 (16/09), kèm lịch sử cập nhật có ngày từ Version 2.1.",
   alternates: buildHreflangAlternates("/guides/patch-notes", { canonicalLanguage: "vi" }),
   openGraph: {
-    title: "Where Winds Meet Patch Notes Hôm Nay - Version 2.1 August 27",
+    title: "Where Winds Meet Patch Notes Hôm Nay - Version 2.3 Friends from Afar",
     description:
-      "Version 2.1 patch notes: tổng quan 27/08, các bản sửa lỗi 20/08 và lịch sử cập nhật có ngày.",
+      "Patch notes Version 2.3 và Version 2.2, kèm lịch sử cập nhật có ngày từ Version 2.1.",
     url: `${baseUrl}/vn/guides/patch-notes`,
     locale: "vi_VN",
   },
   twitter: {
-    title: "Where Winds Meet Patch Notes Hôm Nay - Version 2.1 August 27",
+    title: "Where Winds Meet Patch Notes Hôm Nay - Version 2.3 Friends from Afar",
     description:
-      "Version 2.1 patch notes: tổng quan 27/08, các bản sửa lỗi 20/08 và lịch sử cập nhật có ngày.",
+      "Patch notes Version 2.3 và Version 2.2, kèm lịch sử cập nhật có ngày từ Version 2.1.",
   },
 };
 
@@ -200,10 +227,10 @@ export default function PatchNotesViPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet patch notes hôm nay: Version 2.1 và lịch sử cập nhật có ngày.
+            Where Winds Meet patch notes hôm nay: Version 2.3, Version 2.2 và lịch sử cập nhật có ngày.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Cập nhật {freshness?.lastChecked ?? "2026-08-26"}: mốc đã được kiểm tra là {freshness?.gameVersion ?? "Version 2.1 / August 27"}. Chuỗi cập nhật hiện tại bắt đầu với tổng quan chính thức ngày 27/08 và patch notes 20/08; Version 2.0, Version 1.8 và Palace được giữ lại như lịch sử có ngày.
+            Cập nhật {freshness?.lastChecked ?? "2026-10-17"}: mốc đã được kiểm tra là {freshness?.gameVersion ?? "Version 2.3 / 15/10"}. Chuỗi cập nhật hiện tại bắt đầu với tổng quan chính thức Version 2.3 ngày 15/10, tiếp theo là patch notes và tổng quan Version 2.2 ngày 16/09. Version 2.1 (tổng quan 27/08, mốc 2026-08-26, patch notes 20/08), Version 2.0, Version 1.8 và Palace được giữ lại như lịch sử có ngày.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Trang này đánh dấu các điểm cần kiểm tra lại: codes, lỗi quest, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, boss guides, builds và tier list.
@@ -245,6 +272,36 @@ export default function PatchNotesViPage() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section id="version-2-3" className="space-y-4 rounded-3xl border border-emerald-400/30 bg-emerald-500/10 p-6">
+        <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Phiên bản hiện tại – 15/10/2026</p>
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">Tóm tắt Version 2.3 [Friends from Afar]</h2>
+        <p className="text-sm leading-relaxed text-slate-200">Cập nhật trực tiếp ngày 15/10/2026, 5:00–12:00 (UTC+8). Xem toàn bộ chi tiết trong <a href="https://store.steampowered.com/news/app/3564740/view/1846651706675921" target="_blank" rel="noreferrer" className="underline underline-offset-4">thông báo chính thức trên Steam</a> (tiếng Anh).</p>
+        <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-200">
+          <li>Vùng mới Qingzhou – Eastern Peak: từ Lv. 32, sau chương chính Qinghe [Heaven Has No Pier], qua Lost Chapter [Away to Qingzhou].</li>
+          <li>Jianghu Legacy mới [Riddled Echoes] và [Sea Shepherd]; world boss Tidewatcher, Old Raftsman và Shuttlecock Champion.</li>
+          <li>Vũ khí mới Waist Drum và lưu phái mới [Silkbind – Wings] với [Museflow Waist Drum] và quạt [Willowbend Fan]; thêm 4 lượt chuyển đổi Inner Way và 8 lượt chuyển đổi bộ trang bị miễn phí cho đến khi mùa mới bắt đầu.</li>
+          <li>Môn phái mới Inkbound Order (gia nhập qua kỳ thi Primary Exam); Gift of Gab: War of Words tại Qingzhou.</li>
+          <li>Trang bị Tier 100, Gear Enhance Lv. 66–70, Solo Mode Level Lv. 18; giới hạn cấp vẫn là Lv. 100. Nội dung Lv. 100 mới: Sword Trial [Compass &amp; Chime] và Hero&apos;s Realm [Liminal Ascension].</li>
+          <li>Mùa S5: Ever Aflame (Đấu trường và Taiping Mausoleum): 15/10/2026 05:00 – 26/11/2026 04:59:59.</li>
+        </ul>
+      </section>
+
+      <section id="version-2-2" className="space-y-4 rounded-3xl border border-sky-400/30 bg-sky-500/10 p-6">
+        <p className="text-xs font-semibold uppercase tracking-wide text-sky-200">Phiên bản trước – 16/09/2026</p>
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">Version 2.2 [Perilous Eminence] và patch notes ngày 16/09</h2>
+        <p className="text-sm leading-relaxed text-slate-200">Bảo trì cuốn chiếu ngày 16/09/2026, 5:00–10:00 (UTC+8). Nguồn: <a href="https://store.steampowered.com/news/app/3564740/view/1843481262704696" target="_blank" rel="noreferrer" className="underline underline-offset-4">patch notes chính thức</a> và <a href="https://store.steampowered.com/news/app/3564740/view/1843481262704691" target="_blank" rel="noreferrer" className="underline underline-offset-4">tổng quan chính thức</a>.</p>
+        <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-200">
+          <li>Trang danh sách Bang hội có thể chỉnh sửa: ban quản lý có thể ghim thành viên lên đầu; các thành viên khác được sắp xếp theo mức hoạt động tuần trước.</li>
+          <li>Guild War có thống kê cá nhân và bang hội theo mùa (từ mùa mới trở đi).</li>
+          <li>Theo dõi boss talent ghi nhận phần thưởng cho cả hai boss sau khi hoàn thành Guild Hero&apos;s Realm.</li>
+          <li>Danh hiệu vinh dự cho người chơi nổi bật trong sự kiện Bang hội; danh sách chặn cho Guild Base (từng người chơi hoặc cả bang hội).</li>
+          <li>Lối vào Reflection Temple tạm đóng và sẽ mở lại khi Jiangnan ra mắt; toàn bộ tiến độ được giữ nguyên.</li>
+          <li>Sửa lỗi trang phục [Hidden Scent] hiển thị sai trong một số hoạt ảnh kết quả.</li>
+          <li>[Nameless Sword]: sửa mô tả – mỗi tầng Sword Energy tăng 10% Damage Boost lên đơn vị không phải người chơi, không cần trạng thái Exhausted. Chỉ là lỗi mô tả; hiệu ứng vốn đã hoạt động đúng.</li>
+          <li>Tổng quan: chương chính Hidden Mountain [Bringer of Embers] với A Bitter Winter và Sea of Sunfire, chiến dịch Skyward City Ruins, world boss Golden Colossus Taicu và Goshawk, chế độ extraction Transdust Ruins từ 23/09/2026 06:00.</li>
+        </ul>
       </section>
 
       <section id="upcoming-nerfs" className="space-y-5 rounded-3xl border border-red-400/30 bg-red-500/10 p-6 shadow-lg shadow-red-950/30">

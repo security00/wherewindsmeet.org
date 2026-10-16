@@ -398,7 +398,7 @@ const guideSections = [
     icon: "🕯️",
     color: "text-violet-300",
     size: "medium",
-    description: "Ghost Month stage: event-page teleport, taboos, offerings, and the September 27 end date.",
+    description: "Ghost Month stage: taboos, offerings, and status (entrance closed until Jiangnan arrives, progress kept).",
   },
   {
     title: "Mystic Arts Unlock List",

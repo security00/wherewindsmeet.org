@@ -11,21 +11,26 @@ const { deriveGameVersionFromTitle, updateEntry } = require("../scripts/update-c
 
 test("the public news feed starts with the latest verified official notices", () => {
   assert.deepEqual(
-    newsItems.slice(0, 2).map(({ id, date, officialUrl }) => ({ id, date, officialUrl })),
+    newsItems.slice(0, 3).map(({ id, date, officialUrl }) => ({ id, date, officialUrl })),
     [
       {
-        id: "september-5-version-2-1-patch-notes",
-        date: "2026-09-05",
-        officialUrl: "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html",
+        id: "october-15-version-2-3-update-overview",
+        date: "2026-10-15",
+        officialUrl: "https://store.steampowered.com/news/app/3564740/view/1846651706675921",
       },
       {
-        id: "september-3-version-2-1-update-overview",
-        date: "2026-09-02",
-        officialUrl: "https://www.wherewindsmeetgame.com/news/official/903update.html",
+        id: "september-16-version-2-2-patch-notes",
+        date: "2026-09-16",
+        officialUrl: "https://store.steampowered.com/news/app/3564740/view/1843481262704696",
+      },
+      {
+        id: "september-16-version-2-2-update-overview",
+        date: "2026-09-16",
+        officialUrl: "https://store.steampowered.com/news/app/3564740/view/1843481262704691",
       },
     ],
   );
-  assert.equal(latestNewsDate, "2026-09-05");
+  assert.equal(latestNewsDate, "2026-10-15");
 });
 
 test("aggregate official update rows use the latest date shown by their source page", () => {
@@ -74,11 +79,22 @@ test("core update surfaces record the latest official Version 2.1 review", () =>
   const byPath = new Map(registry.map((entry) => [entry.basePath, entry]));
   const officialUpdateUrl = "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html";
 
+  const version23Paths = new Set(["/", "/news", "/guides/patch-notes", "/guides/codes"]);
   for (const path of ["/", "/news", "/guides/patch-notes", "/guides/codes", "/guides/bosses"]) {
     const entry = byPath.get(path);
     assert.ok(entry, `missing freshness entry for ${path}`);
-    assert.equal(entry.lastChecked, "2026-09-13", `${path} review date`);
-    assert.match(entry.gameVersion, /Version 2\.1/, `${path} game version`);
+    if (version23Paths.has(path)) {
+      assert.equal(entry.lastChecked, "2026-10-17", `${path} review date`);
+      assert.match(entry.gameVersion, /Version 2\.3/, `${path} game version`);
+      assert.ok(
+        path === "/guides/codes" ||
+          entry.sourceUrls.includes("https://store.steampowered.com/news/app/3564740/view/1846651706675921"),
+        `${path} should cite the official Version 2.3 overview`,
+      );
+    } else {
+      assert.equal(entry.lastChecked, "2026-09-13", `${path} review date`);
+      assert.match(entry.gameVersion, /Version 2\.1/, `${path} game version`);
+    }
     if (path !== "/guides/codes") {
       assert.ok(entry.sourceUrls.includes(officialUpdateUrl), `${path} should cite the current official update`);
     }
@@ -114,7 +130,8 @@ test("current-state page copy does not present superseded releases or elapsed ga
   assert.doesNotMatch(news, /August 21 developer letter is the newest|current checked update baseline is <strong>Version 2\.1 \/ August 20|Version 2\.1 \/ August 20 Clouded Revelation patch notes are the current baseline/);
   assert.doesNotMatch(patchNotes, /date: "2026-08-0[27]"|date: "2026-07-09"|current roadmap anchor for Hidden Mountain|current August 7 official patch page/);
 
-  assert.match(homepage, /Version 2\.1/);
+  assert.match(homepage, /Version 2\.3/);
+  assert.doesNotMatch(news, /through September 27|Chapter 3 is scheduled for September 16|Extraction mode is announced for September/);
   assert.match(news, /CloudedRevelationPatchNotes\.html/);
   assert.match(patchNotes, /CloudedRevelationPatchNotes\.html/);
   assert.match(mistveil, /historical/i);
