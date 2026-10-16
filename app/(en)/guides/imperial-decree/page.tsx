@@ -300,12 +300,12 @@ const farmingAffairsAnswers = [
 ];
 
 export const metadata: Metadata = {
-  title: "Imperial Decree WWM Guide: S Answers, Location & Rewards",
+  title: "Imperial Decree WWM: Meaning, S-Rank Answers, Location & Rewards",
   description:
-    "Imperial Decree WWM guide with all S answer meanings, Finance, Farming Affairs and Penal Law solutions, Rear Garden location, Qu Chunqiu steps, and rewards.",
+    "What Imperial Decree means in Where Winds Meet and how to get S rank: all answer meanings, Finance, Farming Affairs and Penal Law solutions, Rear Garden location, Qu Chunqiu steps, and rewards.",
   alternates: buildHreflangAlternates(`/guides/${slug}`),
   openGraph: {
-    title: "Imperial Decree WWM Guide: S Answers, Location & Rewards",
+    title: "Imperial Decree WWM: Meaning, S-Rank Answers, Location & Rewards",
     description:
       "Start Imperial Decree in the Imperial Palace, find Qu Chunqiu, review Finance and Farming Affairs memorials, and understand the S-rank answer route.",
     url: pageUrl,
@@ -398,10 +398,10 @@ export default function ImperialDecreeGuidePage() {
               Imperial Palace guide · rechecked for Version 2.1
             </p>
             <h1 className="mt-3 text-balance text-3xl font-bold tracking-tight text-slate-50 sm:text-5xl">
-              Imperial Decree WWM guide: S answers, Finance route, and Rear Garden location.
+              Imperial Decree WWM meaning, S answers, Finance route, and Rear Garden location.
             </h1>
             <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">
-              Imperial Decree is a Palace exploration activity in Where Winds Meet. Go to the Rear Garden in
+              What does Imperial Decree mean in WWM? It is a Palace exploration activity in Where Winds Meet in which you answer court memorials, and your answers set the grade. Go to the Rear Garden in
               Kaifeng Imperial Palace, speak with Qu Chunqiu, then review the Finance memorials on the table.
               For S-grade attempts, pick responses that support practical public welfare: approve the Jinming
               Pool night market, protect farmland, avoid austerity-only policy, restore fields, deny reckless

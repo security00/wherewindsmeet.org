@@ -56,7 +56,7 @@ export default function GiftOfGabPage() {
 
         <div className="relative space-y-3">
           <p className="text-xs uppercase tracking-wide text-amber-300">Dialogue Minigame</p>
-          <h1 className="text-3xl sm:text-4xl font-bold text-slate-50">Gift of Gab Guide</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-slate-50">Gift of Gab Guide (incl. Version 2.3 War of Words)</h1>
           <p className="text-sm sm:text-base text-slate-300 max-w-2xl">
             Master the persuasion minigame. Choose the right debate style, manage your Inspiration, and win dialogue duels against NPCs.
           </p>
@@ -64,6 +64,27 @@ export default function GiftOfGabPage() {
       </section>
 
       {/* 1. What Is Gift of Gab? */}
+      <section id="war-of-words" className="space-y-3 rounded-2xl border border-amber-400/30 bg-amber-500/10 p-6">
+        <p className="text-xs uppercase tracking-wide text-amber-300">New in Version 2.3 (October 15, 2026)</p>
+        <h2 className="text-2xl font-semibold text-slate-50">Gift of Gab: War of Words</h2>
+        <p className="text-sm text-slate-300">
+          The official Version 2.3 overview adds a new Gift of Gab mode, War of Words. It needs the Profession feature
+          unlocked, and you collect new cards by taking on Gift of Gab challenges in the Qingzhou region. It does not
+          change the original Gift of Gab mode and keeps your existing Scholar rank.
+        </p>
+        <ul className="list-disc space-y-1 pl-5 text-sm text-slate-300">
+          <li>You defend three lines of Inner Bastions: Valour, Poetics, and Discernment. If any one is shattered, you lose.</li>
+          <li>You attack by playing Gab Cards, Quip Cards, and Maxim Cards.</li>
+        </ul>
+        <p className="text-xs text-slate-400">
+          Source:{" "}
+          <Link href="https://store.steampowered.com/news/app/3564740/view/1846651706675921" target="_blank" rel="noreferrer" className="text-amber-300 underline underline-offset-4">
+            official Version 2.3 Friends from Afar overview
+          </Link>
+          .
+        </p>
+      </section>
+
       <section className="space-y-6">
         <h2 className="text-3xl font-bold text-slate-50">What Is The Gift Of Gab?</h2>
 

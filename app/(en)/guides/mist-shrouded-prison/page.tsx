@@ -105,14 +105,14 @@ const walkthrough = [
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Mist-Shrouded Prison / Mistveil Prison Guide",
+  title: "Mist-Shrouded Prison (Mistveil Prison Tomb) Guide: All 6 Chests | WWM",
   description:
-    "Where Winds Meet Mist-Shrouded Prison guide, also searched as Mistveil Prison: unlock after Ephemeral Blight, follow red lady loops, and grab six chests plus final treasure.",
+    "Mist-Shrouded Prison, also called Mistveil Prison or the Mistveil tomb, in Where Winds Meet: how to enter after Ephemeral Blight, the three red-lady loops, all six chests, and the final treasure.",
   alternates: buildHreflangAlternates("/guides/mist-shrouded-prison"),
   openGraph: {
-    title: "Where Winds Meet Mist-Shrouded Prison / Mistveil Prison Guide",
+    title: "Mist-Shrouded Prison (Mistveil Prison Tomb) Guide: All 6 Chests | WWM",
     description:
-      "Where Winds Meet Mist-Shrouded Prison guide, also searched as Mistveil Prison: unlock after Ephemeral Blight, follow red lady loops, and grab six chests plus final treasure.",
+      "Mist-Shrouded Prison, also called Mistveil Prison or the Mistveil tomb, in Where Winds Meet: how to enter after Ephemeral Blight, the three red-lady loops, all six chests, and the final treasure.",
     url: `${baseUrl}/guides/mist-shrouded-prison`,
     siteName: "Where Winds Meet Hub",
     images: [
@@ -128,9 +128,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Where Winds Meet Mist-Shrouded Prison / Mistveil Prison Guide",
+    title: "Mist-Shrouded Prison (Mistveil Prison Tomb) Guide: All 6 Chests | WWM",
     description:
-      "Where Winds Meet Mist-Shrouded Prison guide, also searched as Mistveil Prison: unlock after Ephemeral Blight, follow red lady loops, and grab six chests plus final treasure.",
+      "Mist-Shrouded Prison, also called Mistveil Prison or the Mistveil tomb, in Where Winds Meet: how to enter after Ephemeral Blight, the three red-lady loops, all six chests, and the final treasure.",
     images: [
       {
         url: heroImage,

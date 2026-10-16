@@ -291,15 +291,15 @@ const copy: Record<ContentLanguage, PageCopy> = {
     inLanguage: "en-US",
     heroAlt: "Where Winds Meet platform guide background art",
     eyebrow: "Where Winds Meet platforms",
-    title: "Where Winds Meet Platforms: PC, PS5, Xbox, Mobile, Steam & Cross-Play",
+    title: "Is Where Winds Meet Cross-Platform? Yes: Crossplay on PC, PS5, Xbox & Mobile",
     subtitle:
-      "Where Winds Meet platforms guide for Steam/PC, PlayStation 5, Xbox, iOS, and Android—plus cross-play, cross-progression, account linking, and region checks before you download.",
+      "Yes, Where Winds Meet is cross-platform: Steam lists full cross-play and cross-progression across Xbox, PS5, PC, and mobile. Platform list, account binding, and setup checks.",
     checkedPrefix: "Checked",
     checkedLabel: "Checked June 9, 2026",
     versionFallback: "Version 1.7 / Xbox launch",
     summaryTitle: "Short answer",
     summary:
-      "Where Winds Meet has official routes for PC (Steam, Epic Games Store, and the official website per NetEase's global launch post), PlayStation 5, Xbox Series X|S / Xbox on PC / Xbox Cloud (see table—use the live page's sourced June 2026 Xbox wording until re-verified), and iOS / Android where stores allow (region-dependent). NetEase's launch post and Steam's About text describe full cross-play and cross-progression; still bind accounts carefully before creating a new character on a second platform. Confirm every store page in your region before installing or spending.",
+      "Yes — Where Winds Meet supports crossplay. Steam's official store page says you can \"play free across XBOX, PS5, PC, and mobile with full cross-play and cross-progression\" and lists Cross-Platform Multiplayer. Where Winds Meet has official routes for PC (Steam, Epic Games Store, and the official website per NetEase's global launch post), PlayStation 5, Xbox Series X|S / Xbox on PC / Xbox Cloud (see table—use the live page's sourced June 2026 Xbox wording until re-verified), and iOS / Android where stores allow (region-dependent). NetEase's launch post and Steam's About text describe full cross-play and cross-progression; still bind accounts carefully before creating a new character on a second platform. Confirm every store page in your region before installing or spending.",
     quickFacts: [
       "Main keyword target: where winds meet platforms",
       "High-intent variants: xbox, ps5, pc, mobile, ios, android",

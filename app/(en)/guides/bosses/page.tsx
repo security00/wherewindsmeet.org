@@ -69,9 +69,9 @@ const bossFaqs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Bosses - Boss List, Ghost Master & Dungeon Prep",
+  title: "Where Winds Meet Bosses: Full Boss List, Locations & How to Beat Them",
   description:
-    "Where Winds Meet bosses hub with a curated boss list, verified patch-history notes, dungeon prep, Hero's Realm, Sword Trial, Sandstorm Tavern, builds, and weapons.",
+    "Every Where Winds Meet boss in one list: locations, mechanics, dungeon prep for Hero's Realm and Sword Trial, recommended builds, and patch-verified fixes.",
   alternates: buildHreflangAlternates("/guides/bosses"),
 };
 

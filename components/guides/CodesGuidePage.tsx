@@ -8,7 +8,7 @@ export type CodesGuideLanguage = "en" | "vi" | "de";
 
 const freshness = getContentFreshness("/guides/codes");
 const lastChecked = freshness?.lastChecked ?? "2026-06-03";
-const gameVersionLabel = freshness?.gameVersion ?? "Version 2.1 / checked 2026-09-13";
+const gameVersionLabel = freshness?.gameVersion ?? "Version 2.3 / October 15";
 
 const liveCodeFacts = [
   {
@@ -214,9 +214,9 @@ const liveCodeFacts = [
 const copy = {
   en: {
     h1Before: "WWM Codes ",
-    h1Highlight: "September 2026",
+    h1Highlight: "October 2026",
     intro1: (checked: string, version: string) =>
-      `Updated ${checked}: this page refreshes the Where Winds Meet codes checklist for ${version}. Codes below stay labeled Reported—not confirmed-active—because aggregator lists are not treated as live truth. Prefer redeem steps and in-game verification over stuffing unverified strings.`,
+      `Updated ${checked}: this page refreshes the Where Winds Meet codes checklist for ${version}. Codes below stay labeled Reported—not confirmed-active—because aggregator lists are not treated as live truth. Prefer redeem steps and in-game verification over stuffing unverified strings. October 2026 check: the official Version 2.2 and Version 2.3 Steam announcements did not publish any new redeem codes, so no codes were added.`,
     intro2:
       "Important: the official news feed also reported that a leaked batch of 30 exchange codes was disabled in early May 2026. If a code from social media fails, it may simply be one of those disabled leak codes rather than a problem with your account.",
     reportedTitle: "Reported Codes ",
@@ -316,7 +316,7 @@ const copy = {
   },
   de: {
     h1Before: "WWM Codes ",
-    h1Highlight: "September 2026",
+    h1Highlight: "Oktober 2026",
     intro1: (checked: string, version: string) =>
       `Aktualisiert ${checked}: Diese Seite aktualisiert die Where-Winds-Meet-Code-Checkliste fuer ${version}. Codes unten bleiben als Gemeldet gekennzeichnet—nicht als bestaetigt-aktiv—, weil Aggregator-Listen nicht als Live-Wahrheit gelten. Lieber Einloese-Schritte und In-Game-Pruefung statt ungepruefte Strings zu spammen.`,
     intro2:
@@ -418,7 +418,7 @@ const copy = {
   },
   vi: {
     h1Before: "WWM Codes ",
-    h1Highlight: "Tháng 9/2026",
+    h1Highlight: "Tháng 10/2026",
     intro1: (checked: string, version: string) =>
       `Cập nhật ${checked}: trang này làm mới checklist mã Where Winds Meet cho ${version}. Các mã bên dưới vẫn gắn nhãn Đã báo cáo—không phải đã xác nhận còn hiệu lực—vì danh sách aggregator không được coi là sự thật live. Ưu tiên bước đổi thưởng và xác minh trong game hơn việc nhồi chuỗi chưa kiểm chứng.`,
     intro2:

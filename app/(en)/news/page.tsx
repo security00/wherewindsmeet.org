@@ -10,18 +10,18 @@ const baseUrl = "https://wherewindsmeet.org";
 const freshness = getContentFreshness("/news");
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Update Today - Version 2.3 Friends from Afar News & Patch Notes",
+  title: "Where Winds Meet Next Update & News: Version 2.3 Live, What Comes Next",
   description:
     "Where Winds Meet update today tracker for the October 15 Version 2.3 Friends from Afar update, Qingzhou, the Waist Drum and Silkbind - Wings path, plus the September 16 Version 2.2 patch notes.",
   alternates: buildHreflangAlternates("/news"),
   openGraph: {
-    title: "Where Winds Meet Update Today - Version 2.3 Friends from Afar News & Patch Notes",
+    title: "Where Winds Meet Next Update & News: Version 2.3 Live, What Comes Next",
     description:
       "Where Winds Meet update today tracker for Version 2.3 Friends from Afar (October 15), Qingzhou, and the Version 2.2 patch notes.",
     url: `${baseUrl}/news`,
   },
   twitter: {
-    title: "Where Winds Meet Update Today - Version 2.3 Friends from Afar News & Patch Notes",
+    title: "Where Winds Meet Next Update & News: Version 2.3 Live, What Comes Next",
     description:
       "Where Winds Meet update today tracker for the official October 15 Version 2.3 overview and the September 16 Version 2.2 patch notes.",
   },
@@ -52,6 +52,13 @@ const todayStatusCards = [
       "September 16 overview: Hidden Mountain Main Chapter Bringer of Embers (A Bitter Winter and Sea of Sunfire, after Chapter IV: Gold Crow Fall), the Skyward City Ruins campaign, Golden Colossus Taicu and Goshawk, and the Transdust Ruins extraction match that opened September 23.",
     href: steamVersion22OverviewUrl,
     label: "Official Version 2.2 overview",
+  },
+  {
+    title: "Next update: what is officially announced",
+    detail:
+      "No Version 2.4 date has been announced yet. The Version 2.3 overview says new Solo Mode levels, character level caps, gear tiers, and progression systems are coming soon, and that higher Inkbound Order ranks unlock after the Farm Recess. Per the Version 2.2 notes, Reflection Temple reopens when Jiangnan arrives. Season S5: Ever Aflame runs until November 26, 2026 04:59:59 (server time).",
+    href: steamVersion23Url,
+    label: "Official Version 2.3 overview",
   },
   {
     title: "Reflection Temple status",
@@ -244,7 +251,7 @@ export default function NewsPage() {
 
         <div className="relative space-y-6 z-10 max-w-3xl">
           <h1 className="text-balance text-4xl font-bold tracking-tight text-slate-50 sm:text-5xl font-serif">
-            <span className="text-ink-gold">Where Winds Meet</span> update today, roadmap, and patch notes.
+            <span className="text-ink-gold">Where Winds Meet</span> next update: Version 2.3 is live, here is what is officially announced next.
           </h1>
           <div className="space-y-4 text-slate-200/90 font-sans text-lg leading-relaxed">
             <p>
