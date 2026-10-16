@@ -10,6 +10,33 @@ const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
   {
+    title: "October 16 Version 2.3 patch notes",
+    date: "2026-10-16",
+    source: "https://www.wherewindsmeetgame.com/news/official/1016patchnotes.html",
+    summary:
+      "25 official fixes, including the PlayStation Echo Bead count, Season 4 Forge Ahead settlement titles, Graceful Melody judgment, Aureate Dominion rarity, Inkbound Order entrance-exam questions, Homestead cooking queues, and controller L3.",
+    playerAction:
+      "Infernal Twinblades users: the second stage of Greed Bane - Soul now casts much faster and triggers Perfect Dodge in Online Mode Dungeons; Talon Strike and Yaksha Rush Super Armor no longer lasts too long.",
+  },
+  {
+    title: "October 15 Version 2.3 patch notes",
+    date: "2026-10-15",
+    source: "https://www.wherewindsmeetgame.com/news/official/FriendsFromAfarPatchNotes.html",
+    summary:
+      "Quality-of-life notes for the 2.3 update: Transdust Ruins Solo and Trio open all day, Hero's Realm and Sword Trial AFK detection, Ready Check and tank-role requests, Multiplayer Wooden Stake, avatar and dyeing upgrades, Guild War changes, Gallery and Photo Mode upgrades, Warehouse and Mount Sack.",
+    playerAction:
+      "The Warehouse unlocks at Lv. 20 (up to 3 tabs, 30 slots each); the Mount Sack scales with Mount Prowess.",
+  },
+  {
+    title: "October 15 & 18 Version 2.3 new appearances",
+    date: "2026-10-15",
+    source: "https://www.wherewindsmeetgame.com/news/official/1015appearance.html",
+    summary:
+      "Aureate Dominion (Fading Glory draw, until November 9), Blazing Sands hairstyle (until January 13, 2027), Veil of Lotus draw set (until December 28), Scarlet Whispers Battle Pass (until November 14), Eastwind Soarer mount (Qingzhou only, until December 13), and the Path of Youth set on October 18.",
+    playerAction:
+      "Check end dates before spending; unused Sun-Raven Eyes are reclaimed when Fading Glory ends.",
+  },
+  {
     title: "October 15 Version 2.3 [Friends from Afar] update overview",
     date: "2026-10-15",
     source: "https://store.steampowered.com/news/app/3564740/view/1846651706675921",
@@ -381,6 +408,12 @@ export default function PatchNotesPage() {
           <li><strong>Season progression:</strong> Solo Mode Level unlocks Lv. 18: Discernment; the level cap stays at Lv. 100. Tier 100 gear drops, Gear Enhance Lv. 66-70, Tier 100 Tuning and Attuning, Tier 96 Gear Relaying, Mystic Skills cap Tier 6 Stage 25, and Medicine Chest Lv. 18.</li>
           <li><strong>New Lv. 100 content:</strong> Sword Trial [Compass &amp; Chime] (5-player) and Hero&apos;s Realm [Liminal Ascension] (10-player); leaderboard rewards unlock October 16 at 05:00 server time.</li>
           <li><strong>Season S5: Ever Aflame</strong> for Arena and Taiping Mausoleum: October 15, 2026 05:00 - November 26, 2026 04:59:59. The Path Trial Challenge event runs until October 29, 2026 04:59:59.</li>
+        </ul>
+        <h3 id="version-2-3-patch-notes" className="pt-2 text-base font-semibold text-slate-100">October 15 and October 16 patch notes</h3>
+        <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-200">
+          <li><strong>October 15 (<a href="https://www.wherewindsmeetgame.com/news/official/FriendsFromAfarPatchNotes.html" target="_blank" rel="noreferrer" className="underline underline-offset-4">official</a>):</strong> Transdust Ruins Solo and Trio are open all day; easier weekly tasks in Escape from Windkov; Hero&apos;s Realm and Sword Trial get AFK detection (matchmade teams), Ready Check, tank-role requests, VFX and umbrella transparency settings, and Claim All Rewards; Multiplayer Wooden Stake with real-time team damage stats; 1v1 Arena re-queue and auto-match; Warehouse (Lv. 20, up to 3 tabs of 30 slots) and Mount Sack; PC launcher Modular Download; Guild War Technique, Halftime Show and Guild Party changes; Gallery, Photo Mode, avatar and dyeing upgrades; mobile lighting and graphics options.</li>
+          <li><strong>October 16 (<a href="https://www.wherewindsmeetgame.com/news/official/1016patchnotes.html" target="_blank" rel="noreferrer" className="underline underline-offset-4">official</a>):</strong> 25 fixes, including the PlayStation Echo Bead count, Season 4 Forge Ahead settlement titles, Graceful Melody judgment, Tier 96 Relaying Stone: Mirage duration, Aureate Dominion rarity, Inkbound Order exam questions, Homestead cooking queues, Serene Breeze in Arena, faster Infernal Twinblades Greed Bane - Soul (also triggers Perfect Dodge in Online Mode Dungeons), shorter Talon Strike and Yaksha Rush Super Armor, Frost Paper recipe (Cocklebur replaced by Honeysuckle), and controller L3.</li>
+          <li><strong>New appearances (<a href="https://www.wherewindsmeetgame.com/news/official/1015appearance.html" target="_blank" rel="noreferrer" className="underline underline-offset-4">official</a>):</strong> Aureate Dominion via Fading Glory (until November 9), Blazing Sands (until January 13, 2027), Veil of Lotus (until December 28), Scarlet Whispers Battle Pass (until November 14), Crane Ascending: Chordsong Waist Drum VFX, Duskfall Verse and Ode to the Feline Muse, Eastwind Soarer mount (Qingzhou, until December 13), Myriad Sounds sword and spear, Tonight&apos;s Reverie, and Path of Youth from October 18 (discount until November 1).</li>
         </ul>
       </section>
 

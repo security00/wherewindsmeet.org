@@ -164,22 +164,31 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Geprüft für {freshness?.gameVersion ?? "Version 2.3 / 15. Oktober"}: Die offizielle 
+              Geprüft für {freshness?.gameVersion ?? "Version 2.3 / 15. Oktober"}: Die offizielle{' '}
               <a href="https://store.steampowered.com/news/app/3564740/view/1846651706675921" target="_blank" rel="noopener noreferrer" className="underline">Übersicht zu Version 2.3 vom 15. Oktober</a>
-               (Live-Update 5:00–12:00 Uhr UTC+8) bringt die neue Region Qingzhou – Eastern Peak, die Waffe Waist Drum mit dem Pfad
+              {' '}(Live-Update 5:00–12:00 Uhr UTC+8) bringt die neue Region Qingzhou – Eastern Peak, die Waffe Waist Drum mit dem Pfad
               Silkbind – Wings, die Sekte Inkbound Order, drei Weltbosse und die Saison S5: Ever Aflame (15. Oktober bis 26. November).
             </p>
             <p className="mt-2 text-emerald-100/90">
-              Vorherige Version: die 
+              Vorherige Version: die{' '}
               <a href="https://store.steampowered.com/news/app/3564740/view/1843481262704696" target="_blank" rel="noopener noreferrer" className="underline">Patch Notes zu Version 2.2 vom 16. September</a>
-               (Gilden-Verbesserungen, Fehlerbehebungen; der Eingang zum Reflection Temple ist vorübergehend geschlossen und öffnet wieder, sobald Jiangnan erscheint – der Fortschritt bleibt erhalten) und die 
+              {' '}(Gilden-Verbesserungen, Fehlerbehebungen; der Eingang zum Reflection Temple ist vorübergehend geschlossen und öffnet wieder, sobald Jiangnan erscheint – der Fortschritt bleibt erhalten) und die{' '}
               <a href="https://store.steampowered.com/news/app/3564740/view/1843481262704691" target="_blank" rel="noopener noreferrer" className="underline">Übersicht zu Version 2.2 [Perilous Eminence]</a>
-               mit dem Hidden-Mountain-Hauptkapitel Bringer of Embers und dem Extraktionsmodus Transdust Ruins ab 23. September.
-              Version 2.1 mit den 
+              {' '}mit dem Hidden-Mountain-Hauptkapitel Bringer of Embers und dem Extraktionsmodus Transdust Ruins ab 23. September.
+              Version 2.1 mit den{' '}
               <a href="https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html" target="_blank" rel="noopener noreferrer" className="underline">Patch Notes vom 5. September</a>
-               und der 
+              {' '}und der{' '}
               <a href="https://www.wherewindsmeetgame.com/news/official/903update.html" target="_blank" rel="noopener noreferrer" className="underline">Übersicht zum 3. September</a>
-               sowie ältere Versionen bleiben darunter als datierter Rückblick.
+              {' '}sowie ältere Versionen bleiben darunter als datierter Rückblick.
+            </p>
+            <p className="mt-2 text-emerald-100/90">
+              Neu zu Version 2.3:{' '}
+              <a href="https://www.wherewindsmeetgame.com/news/official/FriendsFromAfarPatchNotes.html" target="_blank" rel="noopener noreferrer" className="underline">Patch Notes vom 15. Oktober</a>
+              {' '}(u. a. Transdust Ruins ganztägig, AFK-Erkennung, Lager ab Lv. 20),{' '}
+              <a href="https://www.wherewindsmeetgame.com/news/official/1016patchnotes.html" target="_blank" rel="noopener noreferrer" className="underline">Patch Notes vom 16. Oktober</a>
+              {' '}(25 Fehlerbehebungen) und die{' '}
+              <a href="https://www.wherewindsmeetgame.com/news/official/1015appearance.html" target="_blank" rel="noopener noreferrer" className="underline">Übersicht der neuen Outfits</a>
+              {' '}(u. a. Aureate Dominion bis 9. November, Path of Youth ab 18. Oktober).
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link href="/guides/tier-list" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">
