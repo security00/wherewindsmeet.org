@@ -70,7 +70,7 @@ export default function NewsPage() {
   const roadmapBlock = {
     title: "Roadmap / Nächste Updates (Beobachtungsliste)",
     summary:
-      "Letzter geprüfter Stand: Version 2.1. Die Patch Notes vom 5. September und die Übersicht zum 3. September stehen vor den datierten 27.-August-, 20.-August-, Version-2.0-, Version-1.8-, Palace-, Xbox-, Hexi- und Qinchuan-Notizen.",
+      "Letzter geprüfter Stand: Version 2.3 (15. Oktober), davor Version 2.2 (16. September). Version 2.1 mit den Patch Notes vom 5. September und der Übersicht zum 3. September steht vor den datierten 27.-August-, 20.-August-, Version-2.0-, Version-1.8-, Palace-, Xbox-, Hexi- und Qinchuan-Notizen.",
     updated: lastUpdatedLabel,
     links: [
       { href: "/guides/tier-list", label: "China-Tierliste & Balance-Notizen" },
@@ -158,18 +158,28 @@ export default function NewsPage() {
             className="rounded-2xl border border-emerald-500/40 bg-emerald-500/10 p-4 text-sm text-emerald-50 shadow-inner shadow-emerald-900/40"
           >
             <div className="flex items-center justify-between gap-2">
-              <p className="font-semibold">Version 2.1 / Clouded Revelation (letzter geprüfter Stand)</p>
+              <p className="font-semibold">AKTUELL: Version 2.3 / Friends from Afar (15. Oktober 2026)</p>
               <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
                 {lastUpdatedLabel}
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Geprüft für {freshness?.gameVersion ?? "Version 2.1 / September 5"}: Die offiziellen{' '}
+              Geprüft für {freshness?.gameVersion ?? "Version 2.3 / 15. Oktober"}: Die offizielle 
+              <a href="https://store.steampowered.com/news/app/3564740/view/1846651706675921" target="_blank" rel="noopener noreferrer" className="underline">Übersicht zu Version 2.3 vom 15. Oktober</a>
+               (Live-Update 5:00–12:00 Uhr UTC+8) bringt die neue Region Qingzhou – Eastern Peak, die Waffe Waist Drum mit dem Pfad
+              Silkbind – Wings, die Sekte Inkbound Order, drei Weltbosse und die Saison S5: Ever Aflame (15. Oktober bis 26. November).
+            </p>
+            <p className="mt-2 text-emerald-100/90">
+              Vorherige Version: die 
+              <a href="https://store.steampowered.com/news/app/3564740/view/1843481262704696" target="_blank" rel="noopener noreferrer" className="underline">Patch Notes zu Version 2.2 vom 16. September</a>
+               (Gilden-Verbesserungen, Fehlerbehebungen; der Eingang zum Reflection Temple ist vorübergehend geschlossen und öffnet wieder, sobald Jiangnan erscheint – der Fortschritt bleibt erhalten) und die 
+              <a href="https://store.steampowered.com/news/app/3564740/view/1843481262704691" target="_blank" rel="noopener noreferrer" className="underline">Übersicht zu Version 2.2 [Perilous Eminence]</a>
+               mit dem Hidden-Mountain-Hauptkapitel Bringer of Embers und dem Extraktionsmodus Transdust Ruins ab 23. September.
+              Version 2.1 mit den 
               <a href="https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html" target="_blank" rel="noopener noreferrer" className="underline">Patch Notes vom 5. September</a>
-              {' '}und die{' '}
+               und der 
               <a href="https://www.wherewindsmeetgame.com/news/official/903update.html" target="_blank" rel="noopener noreferrer" className="underline">Übersicht zum 3. September</a>
-              {' '}bilden den aktuellen Anker vor älteren August-Notizen. Version 2.0, Version 1.8,
-              Palace, Xbox, Hexi und Qinchuan bleiben darunter als datierter Rückblick.
+               sowie ältere Versionen bleiben darunter als datierter Rückblick.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link href="/guides/tier-list" className="rounded-full border border-emerald-400/60 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/80">

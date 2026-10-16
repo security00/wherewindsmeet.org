@@ -40,9 +40,9 @@ const content: Record<ContentLanguage, HomeContent> = {
     eyebrow: "Main Where Winds Meet hub",
     h1: "Where Winds Meet",
     subtitle:
-      "The updated Where Winds Meet guide hub for the open-world wuxia RPG, also searched as Where the Winds Meet: Version 2.1, Clouded Revelation, Hidden Mountain, codes, patch notes, tier lists, builds, bosses, interactive map routes, videos, and platform help for Xbox, PC, PS5, iOS, and Android players.",
-    updateLabel: "Version 2.1 / Clouded Revelation (August 27)",
-    quickFacts: ["Free-to-play wuxia action RPG", "Xbox, PC, PS5, iOS, and Android", "Guides reviewed for Version 2.1"],
+      "The updated Where Winds Meet guide hub for the open-world wuxia RPG, also searched as Where the Winds Meet: Version 2.3 Friends from Afar, Qingzhou, Hidden Mountain, codes, patch notes, tier lists, builds, bosses, interactive map routes, videos, and platform help for Xbox, PC, PS5, iOS, and Android players.",
+    updateLabel: "Version 2.3 / Friends from Afar (October 15)",
+    quickFacts: ["Free-to-play wuxia action RPG", "Xbox, PC, PS5, iOS, and Android", "Guides reviewed for Version 2.3"],
     ctas: [
       { href: "/news", label: "Latest News" },
       { href: "/guides/patch-notes", label: "Patch Notes" },
@@ -66,7 +66,7 @@ const content: Record<ContentLanguage, HomeContent> = {
       {
         title: "Latest update",
         body:
-          "The current Where Winds Meet content pass tracks Version 2.1, the August 27 Clouded Revelation overview, the August 20 fixes, Hidden Mountain, and the earlier Path Balance history without treating an older release as current.",
+          "The current Where Winds Meet content pass tracks Version 2.3 Friends from Afar (October 15: Qingzhou, the Waist Drum, the Inkbound Order), with Version 2.2 Perilous Eminence (September 16) as the previous version and Version 2.1 Clouded Revelation kept as history.",
         links: [
           { href: "/news#next-update", label: "News watch" },
           { href: "/guides/patch-notes#upcoming-nerfs", label: "Balance watch" },
@@ -111,7 +111,7 @@ const content: Record<ContentLanguage, HomeContent> = {
       {
         question: "What is the latest Where Winds Meet update?",
         answer:
-          "This Where Winds Meet hub is checked for Version 2.1 / Clouded Revelation, including the August 27 overview and August 20 patch notes; older Hidden Mountain and Path Balance entries remain clearly marked as history.",
+          "The latest update is Version 2.3 Friends from Afar, live since October 15, 2026: the Qingzhou - Eastern Peak region, the Waist Drum weapon and Silkbind - Wings path, the Inkbound Order sect, and season S5: Ever Aflame. The previous version was Version 2.2 Perilous Eminence on September 16, 2026, which also closed the Reflection Temple entrance until Jiangnan arrives.",
       },
       {
         question: "Where can I find Where Winds Meet codes?",

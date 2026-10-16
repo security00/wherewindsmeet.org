@@ -149,18 +149,28 @@ export default function NewsPage() {
             className="rounded-2xl border border-emerald-500/40 bg-emerald-500/10 p-4 text-sm text-emerald-50 shadow-inner shadow-emerald-900/40"
           >
             <div className="flex items-center justify-between gap-2">
-              <p className="font-semibold">Version 2.1 / Clouded Revelation — mốc đã kiểm tra gần nhất</p>
+              <p className="font-semibold">HIỆN TẠI: Version 2.3 / Friends from Afar (15/10/2026)</p>
               <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
                 {lastUpdatedLabel}
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Đã rà soát theo {freshness?.gameVersion ?? "Version 2.1 / September 5"}: {' '}
+              Đã rà soát theo {freshness?.gameVersion ?? "Version 2.3 / 15/10"}:  
+              <a href="https://store.steampowered.com/news/app/3564740/view/1846651706675921" target="_blank" rel="noopener noreferrer" className="underline">tổng quan chính thức Version 2.3 ngày 15/10</a>
+               (cập nhật trực tiếp 5:00–12:00 UTC+8) thêm vùng mới Qingzhou – Eastern Peak, vũ khí Waist Drum với lưu phái Silkbind – Wings,
+              môn phái Inkbound Order, ba world boss và mùa S5: Ever Aflame (15/10 đến 26/11).
+            </p>
+            <p className="mt-2 text-emerald-100/90">
+              Phiên bản trước: 
+              <a href="https://store.steampowered.com/news/app/3564740/view/1843481262704696" target="_blank" rel="noopener noreferrer" className="underline">patch notes Version 2.2 ngày 16/09</a>
+               (cải tiến Bang hội, sửa lỗi; lối vào Reflection Temple tạm đóng và sẽ mở lại khi Jiangnan ra mắt, tiến độ được giữ nguyên) và 
+              <a href="https://store.steampowered.com/news/app/3564740/view/1843481262704691" target="_blank" rel="noopener noreferrer" className="underline">tổng quan Version 2.2 [Perilous Eminence]</a>
+               với chương chính Hidden Mountain Bringer of Embers và chế độ extraction Transdust Ruins từ 23/09.
+              Version 2.1 với 
               <a href="https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html" target="_blank" rel="noopener noreferrer" className="underline">patch notes 05/09</a>
-              {' '}và{' '}
+               và 
               <a href="https://www.wherewindsmeetgame.com/news/official/903update.html" target="_blank" rel="noopener noreferrer" className="underline">tổng quan 03/09</a>
-              {' '}là mốc hiện tại trước các ghi chú tháng 8. Version 2.0, Version 1.8, Palace, Xbox, Hexi và
-              Qinchuan vẫn nằm bên dưới dưới dạng nội dung lịch sử có ngày.
+               cùng các phiên bản cũ hơn vẫn nằm bên dưới dưới dạng nội dung lịch sử có ngày.
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link
@@ -275,7 +285,7 @@ export default function NewsPage() {
             Phần mô tả cho biết bài gốc dùng tiếng Anh và dẫn thẳng tới nguồn. Nội dung, phạm vi thay đổi và điều kiện sự kiện phải được kiểm tra trên trang chính thức.
           </p>
           <p>
-            Các trang hướng dẫn liên quan chỉ được cập nhật sau khi thông tin có thể đối chiếu với nguồn chính thức; mốc hiện tại của trang tin là Version 2.1, patch notes 05/09 và tổng quan 03/09.
+            Các trang hướng dẫn liên quan chỉ được cập nhật sau khi thông tin có thể đối chiếu với nguồn chính thức; mốc hiện tại của trang tin là Version 2.3 (15/10), phiên bản trước là Version 2.2 (16/09); Version 2.1 với patch notes 05/09 và tổng quan 03/09 là lịch sử.
           </p>
         </div>
       </section>

@@ -271,7 +271,7 @@ const guides: Record<IntentGuideKind, Record<IntentGuideLanguage, GuideCopy>> = 
   },
   "reflection-temple": {
     en: {
-      checked: "Event window · August 27 to September 27, 2026 · Sep 5 quest fixes reviewed",
+      checked: "Entrance closed since the September 16 Version 2.2 patch · reopens when Jiangnan arrives · progress preserved",
       title: "Where Winds Meet Reflection Temple Event Guide",
       intro: "Reflection Temple is the Ghost Month limited stage. There is no overworld door to hunt: open the event page and press Go. Survival is not enough. You have to learn the temple taboos, read offerings and paper effigies, and finish the unfinished ritual. If a cuju-ball hand-in or shadow respawn was stuck before, the official September 5 Clouded Revelation patch notes listed fixes for those quest blockers.",
       hero: "/guides/reflection-temple/hero.jpg",
@@ -285,7 +285,7 @@ const guides: Record<IntentGuideKind, Record<IntentGuideLanguage, GuideCopy>> = 
         "Read the temple taboos before walking. Turning around, answering disembodied voices, or touching the wrong object can kill the run on purpose.",
         "Treat altar offerings, lanterns, and paper effigies as the puzzle language: quantity, arrangement, and whether a flame is lit are the clues.",
         "Some objectives require you to die or look into the water. If a run ends suddenly, reread the last taboo instead of assuming a bug.",
-        "After the quest, replay from the event page for extra Soulbound Paper collection rewards before September 27, 4:59:59 UTC+8.",
+        "Since the September 16 Version 2.2 patch the entrance is temporarily closed; it reopens when Jiangnan arrives and your stage progress is preserved.",
       ],
       extraTitle: "What the official letter and September 5 fixes actually ask you to notice",
       extraItems: [
@@ -294,7 +294,7 @@ const guides: Record<IntentGuideKind, Record<IntentGuideLanguage, GuideCopy>> = 
         { title: "September 5 quest fixes", body: "Official Clouded Revelation patch notes for September 5 fixed Reflection Temple blockers where players could not hand the cuju ball to the NPC, and where a character's shadow would not respawn after death. Retry those steps after updating; this page still does not invent offering coordinates." },
       ],
       blockerTitle: "Stuck or scared you broke it",
-      fixes: ["No map pin: use the event page teleport.", "Looping deaths: stop interacting and reread the last posted taboo.", "Cuju ball or shadow-respawn stuck after a prior attempt: update for the September 5 official quest fixes, then retry from the event page.", "Missing extra rewards: finish the event-page objectives, not only the inner quest.", "After September 27 the stage archives; keep this page as a recap, not a live timer."],
+      fixes: ["No map pin: use the event page teleport.", "Looping deaths: stop interacting and reread the last posted taboo.", "Cuju ball or shadow-respawn stuck after a prior attempt: update for the September 5 official quest fixes, then retry from the event page.", "Missing extra rewards: finish the event-page objectives, not only the inner quest.", "Entrance closed since Version 2.2 (September 16): wait for Jiangnan to arrive; your stage progress is kept."],
       evidence: "Unlock method and event dates are current Game8 / official overlap. Taboo and ritual language is from the August 29 developer letter. Cuju-ball and shadow-respawn fixes are from the September 5 section of the official Clouded Revelation patch notes. Exact offering coordinates vary by run and are not invented here.",
       officialLabel: "Official Ghost Month developer letter",
       officialUrl: "https://www.wherewindsmeetgame.com/news/official/829devletter.html",
