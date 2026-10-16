@@ -54,6 +54,13 @@ const todayStatusCards = [
     label: "Official Version 2.2 overview",
   },
   {
+    title: "Version 2.3 patch notes: October 15 and 16",
+    detail:
+      "October 15: Transdust Ruins Solo and Trio open all day, Hero's Realm and Sword Trial AFK detection and Ready Check, Multiplayer Wooden Stake, Warehouse (Lv. 20) and Mount Sack. October 16: 25 fixes, including the PlayStation Echo Bead count, Inkbound Order exam questions, and faster Infernal Twinblades Greed Bane - Soul. New appearances include Aureate Dominion (until November 9) and Path of Youth (October 18).",
+    href: "/guides/patch-notes#version-2-3-patch-notes",
+    label: "Version 2.3 patch-note summary",
+  },
+  {
     title: "Next update: what is officially announced",
     detail:
       "No Version 2.4 date has been announced yet. The Version 2.3 overview says new Solo Mode levels, character level caps, gear tiers, and progression systems are coming soon, and that higher Inkbound Order ranks unlock after the Farm Recess. Per the Version 2.2 notes, Reflection Temple reopens when Jiangnan arrives. Season S5: Ever Aflame runs until November 26, 2026 04:59:59 (server time).",

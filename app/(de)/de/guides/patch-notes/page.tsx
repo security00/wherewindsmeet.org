@@ -10,6 +10,33 @@ const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
   {
+    title: "October 16 Version 2.3 patch notes",
+    date: "2026-10-16",
+    source: "https://www.wherewindsmeetgame.com/news/official/1016patchnotes.html",
+    summary:
+      "25 offizielle Fehlerbehebungen, u. a. Echo-Bead-Anzeige auf PlayStation, Season-4-Forge-Ahead-Titel, Graceful-Melody-Bewertung, Seltenheit von Aureate Dominion, Fragen der Inkbound-Order-Aufnahmeprüfung, Homestead-Kochwarteschlangen und Controller-L3.",
+    playerAction:
+      "Infernal Twinblades: Die zweite Stufe von Greed Bane – Soul wirkt deutlich schneller und löst in Online-Dungeons einen Perfect Dodge aus.",
+  },
+  {
+    title: "October 15 Version 2.3 patch notes",
+    date: "2026-10-15",
+    source: "https://www.wherewindsmeetgame.com/news/official/FriendsFromAfarPatchNotes.html",
+    summary:
+      "Komfortänderungen zu 2.3: Transdust Ruins Solo und Trio ganztägig, AFK-Erkennung, Ready Check und Tank-Rollenanfragen in Hero's Realm und Sword Trial, Mehrspieler-Holzpuppe, Avatar- und Färbe-Upgrades, Guild-War-Anpassungen, Lager und Reittier-Satteltasche.",
+    playerAction:
+      "Das Lager wird ab Lv. 20 freigeschaltet (bis zu 3 Tabs mit je 30 Plätzen).",
+  },
+  {
+    title: "October 15 & 18 Version 2.3 new appearances",
+    date: "2026-10-15",
+    source: "https://www.wherewindsmeetgame.com/news/official/1015appearance.html",
+    summary:
+      "Aureate Dominion (Fading-Glory-Ziehung, bis 9. November), Frisur Blazing Sands (bis 13. Januar 2027), Veil of Lotus (bis 28. Dezember), Battle-Pass-Outfit Scarlet Whispers (bis 14. November), Reittier Eastwind Soarer (nur Qingzhou, bis 13. Dezember) und Set Path of Youth ab 18. Oktober.",
+    playerAction:
+      "Achte vor dem Ausgeben auf die Enddaten.",
+  },
+  {
     title: "October 15 Version 2.3 [Friends from Afar] update overview",
     date: "2026-10-15",
     source: "https://store.steampowered.com/news/app/3564740/view/1846651706675921",
@@ -294,6 +321,12 @@ export default function PatchNotesDePage() {
           <li>Neue Sekte Inkbound Order (Aufnahme über die Primary Exam); Gift of Gab: War of Words in Qingzhou.</li>
           <li>Tier-100-Ausrüstung, Gear Enhance Lv. 66–70, Solo Mode Level Lv. 18; Levelobergrenze bleibt Lv. 100. Neue Lv.-100-Inhalte: Sword Trial [Compass &amp; Chime] und Hero&apos;s Realm [Liminal Ascension].</li>
           <li>Saison S5: Ever Aflame (Arena und Taiping Mausoleum): 15. Oktober 2026, 05:00 – 26. November 2026, 04:59:59.</li>
+        </ul>
+        <h3 id="version-2-3-patch-notes" className="pt-2 text-base font-semibold text-slate-100">Patch Notes vom 15. und 16. Oktober</h3>
+        <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-200">
+          <li><strong>15. Oktober (<a href="https://www.wherewindsmeetgame.com/news/official/FriendsFromAfarPatchNotes.html" target="_blank" rel="noreferrer" className="underline underline-offset-4">offiziell</a>):</strong> Transdust Ruins Solo und Trio sind ganztägig geöffnet; Hero&apos;s Realm und Sword Trial erhalten AFK-Erkennung (bei Matchmaking-Teams), Ready Check, Tank-Rollenanfragen und Transparenz-Einstellungen für Effekte; Mehrspieler-Holzpuppe mit Team-Schadensstatistik; Lager (ab Lv. 20, bis zu 3 Tabs mit je 30 Plätzen) und Reittier-Satteltasche; Modular Download im PC-Launcher; Guild-War-Anpassungen; Verbesserungen für Galerie, Fotomodus, Avatare und Färben; neue Grafikoptionen auf Mobilgeräten.</li>
+          <li><strong>16. Oktober (<a href="https://www.wherewindsmeetgame.com/news/official/1016patchnotes.html" target="_blank" rel="noreferrer" className="underline underline-offset-4">offiziell</a>):</strong> 25 Fehlerbehebungen, u. a. Echo-Bead-Anzeige auf PlayStation, Season-4-Titel, Graceful Melody, Dauer von Relaying Stone: Mirage (Tier 96), Seltenheit von Aureate Dominion, Inkbound-Order-Prüfungsfragen, Homestead-Kochen, Serene Breeze in der Arena, schnelleres Greed Bane – Soul der Infernal Twinblades, kürzere Super Armor von Talon Strike und Yaksha Rush, Rezept für Frost Paper und Controller-L3.</li>
+          <li><strong>Neue Outfits (<a href="https://www.wherewindsmeetgame.com/news/official/1015appearance.html" target="_blank" rel="noreferrer" className="underline underline-offset-4">offiziell</a>):</strong> Aureate Dominion über Fading Glory (bis 9. November), Blazing Sands (bis 13. Januar 2027), Veil of Lotus (bis 28. Dezember), Scarlet Whispers (Battle Pass, bis 14. November), Eastwind Soarer (Qingzhou, bis 13. Dezember) sowie Path of Youth ab 18. Oktober (Rabatt bis 1. November).</li>
         </ul>
       </section>
 

@@ -10,6 +10,33 @@ const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
   {
+    title: "Patch notes Version 2.3 ngày 16/10",
+    date: "2026-10-16",
+    source: "https://www.wherewindsmeetgame.com/news/official/1016patchnotes.html",
+    summary:
+      "25 bản sửa lỗi chính thức, gồm số Echo Bead trên PlayStation, danh hiệu Season 4 Forge Ahead, chấm điểm Graceful Melody, độ hiếm Aureate Dominion, câu hỏi thi nhập môn Inkbound Order, hàng chờ nấu ăn Homestead và nút L3 của tay cầm.",
+    playerAction:
+      "Infernal Twinblades: giai đoạn hai của Greed Bane – Soul tung chiêu nhanh hơn nhiều và kích hoạt Perfect Dodge trong dungeon Online Mode.",
+  },
+  {
+    title: "Patch notes Version 2.3 ngày 15/10",
+    date: "2026-10-15",
+    source: "https://www.wherewindsmeetgame.com/news/official/FriendsFromAfarPatchNotes.html",
+    summary:
+      "Các cải tiến của 2.3: Transdust Ruins Solo và Trio mở cả ngày, phát hiện AFK, Ready Check và yêu cầu vai trò tank trong Hero's Realm và Sword Trial, cọc gỗ nhiều người, nâng cấp avatar và nhuộm, điều chỉnh Guild War, Kho đồ và túi thú cưỡi.",
+    playerAction:
+      "Kho đồ mở từ Lv. 20 (tối đa 3 tab, mỗi tab 30 ô).",
+  },
+  {
+    title: "Trang phục mới Version 2.3 ngày 15 & 18/10",
+    date: "2026-10-15",
+    source: "https://www.wherewindsmeetgame.com/news/official/1015appearance.html",
+    summary:
+      "Aureate Dominion (quay Fading Glory, đến 09/11), kiểu tóc Blazing Sands (đến 13/01/2027), Veil of Lotus (đến 28/12), Scarlet Whispers của Battle Pass (đến 14/11), thú cưỡi Eastwind Soarer (chỉ ở Qingzhou, đến 13/12) và bộ Path of Youth từ 18/10.",
+    playerAction:
+      "Kiểm tra ngày kết thúc trước khi chi tiêu.",
+  },
+  {
     title: "Tổng quan bản cập nhật Version 2.3 [Friends from Afar] ngày 15/10",
     date: "2026-10-15",
     source: "https://store.steampowered.com/news/app/3564740/view/1846651706675921",
@@ -285,6 +312,12 @@ export default function PatchNotesViPage() {
           <li>Môn phái mới Inkbound Order (gia nhập qua kỳ thi Primary Exam); Gift of Gab: War of Words tại Qingzhou.</li>
           <li>Trang bị Tier 100, Gear Enhance Lv. 66–70, Solo Mode Level Lv. 18; giới hạn cấp vẫn là Lv. 100. Nội dung Lv. 100 mới: Sword Trial [Compass &amp; Chime] và Hero&apos;s Realm [Liminal Ascension].</li>
           <li>Mùa S5: Ever Aflame (Đấu trường và Taiping Mausoleum): 15/10/2026 05:00 – 26/11/2026 04:59:59.</li>
+        </ul>
+        <h3 id="version-2-3-patch-notes" className="pt-2 text-base font-semibold text-slate-100">Patch notes ngày 15/10 và 16/10</h3>
+        <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-200">
+          <li><strong>15/10 (<a href="https://www.wherewindsmeetgame.com/news/official/FriendsFromAfarPatchNotes.html" target="_blank" rel="noreferrer" className="underline underline-offset-4">chính thức</a>):</strong> Transdust Ruins Solo và Trio mở cả ngày; Hero&apos;s Realm và Sword Trial có phát hiện AFK (đội ghép trận), Ready Check, yêu cầu vai trò tank và cài đặt độ trong suốt hiệu ứng; cọc gỗ nhiều người với thống kê sát thương đội; Kho đồ (từ Lv. 20, tối đa 3 tab, mỗi tab 30 ô) và túi thú cưỡi; Modular Download trên launcher PC; điều chỉnh Guild War; cải tiến Gallery, Photo Mode, avatar và nhuộm; tùy chọn đồ họa mới trên di động.</li>
+          <li><strong>16/10 (<a href="https://www.wherewindsmeetgame.com/news/official/1016patchnotes.html" target="_blank" rel="noreferrer" className="underline underline-offset-4">chính thức</a>):</strong> 25 bản sửa lỗi, gồm số Echo Bead trên PlayStation, danh hiệu Season 4, Graceful Melody, thời hạn Relaying Stone: Mirage (Tier 96), độ hiếm Aureate Dominion, câu hỏi thi Inkbound Order, nấu ăn Homestead, Serene Breeze trong Đấu trường, Greed Bane – Soul của Infernal Twinblades nhanh hơn, Super Armor của Talon Strike và Yaksha Rush ngắn lại, công thức Frost Paper và nút L3.</li>
+          <li><strong>Trang phục mới (<a href="https://www.wherewindsmeetgame.com/news/official/1015appearance.html" target="_blank" rel="noreferrer" className="underline underline-offset-4">chính thức</a>):</strong> Aureate Dominion qua Fading Glory (đến 09/11), Blazing Sands (đến 13/01/2027), Veil of Lotus (đến 28/12), Scarlet Whispers (Battle Pass, đến 14/11), Eastwind Soarer (Qingzhou, đến 13/12) và Path of Youth từ 18/10 (giảm giá đến 01/11).</li>
         </ul>
       </section>
 

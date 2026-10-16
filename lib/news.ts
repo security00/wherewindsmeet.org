@@ -26,6 +26,30 @@ type OfficialNewsRow = [
 // site can pin items out of strict date order, so news pages should not sort it.
 const officialNewsRows: OfficialNewsRow[] = [
   [
+    "october-16-version-2-3-patch-notes",
+    "Version 2.3 Patch Notes: Optimizations and Bug Fixes (October 16, 2026)",
+    "2026-10-16",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/1016patchnotes.html",
+    "Official October 16 Version 2.3 fixes (25 items): PlayStation Echo Bead count, Season 4 Forge Ahead Sword Trial and Hero's Realm settlement titles, Graceful Melody judgment, Tier 96 Relaying Stone: Mirage duration, Aureate Dominion rarity and Elegance Score, Inkbound Order entrance-exam questions, Homestead cooking queues, Infernal Twinblades Greed Bane - Soul casting speed, Talon Strike and Yaksha Rush Super Armor duration, Frost Paper recipe, and controller L3.",
+  ],
+  [
+    "october-15-version-2-3-new-appearances",
+    "[Friends from Afar] Version 2.3 New Appearances Overview - October 15 & 18",
+    "2026-10-15",
+    "event",
+    "https://www.wherewindsmeetgame.com/news/official/1015appearance.html",
+    "Official Version 2.3 appearances: Aureate Dominion set via the Fading Glory draw (until November 9), Blazing Sands hairstyle (until January 13, 2027), Veil of Lotus draw set (until December 28), Scarlet Whispers Battle Pass appearance (until November 14), Crane Ascending: Chordsong Waist Drum VFX, Duskfall Verse set and Ode to the Feline Muse companion appearance, the Qingzhou-exclusive Eastwind Soarer mount (until December 13), Myriad Sounds sword and spear appearances, Tonight's Reverie Waist Drum appearance, and the Path of Youth set on October 18.",
+  ],
+  [
+    "october-15-version-2-3-patch-notes",
+    "Version 2.3 Patch Notes: Optimizations and Bug Fixes (October 15, 2026)",
+    "2026-10-15",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/FriendsFromAfarPatchNotes.html",
+    "Official October 15 Version 2.3 patch notes: Transdust Ruins Solo and Trio open all day, Hero's Realm and Sword Trial AFK detection, Ready Check and tank-role requests, Multiplayer Wooden Stake with team damage stats, avatar and dyeing upgrades, PC launcher Modular Download, Guild War adjustments, Gallery and Photo Mode upgrades, the new Warehouse (Lv. 20) and Mount Sack, and mobile graphics options.",
+  ],
+  [
     "october-15-version-2-3-update-overview",
     "Version 2.3 [Friends from Afar] Update Overview (October 15, 2026)",
     "2026-10-15",

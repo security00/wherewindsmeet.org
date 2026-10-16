@@ -11,8 +11,23 @@ const { deriveGameVersionFromTitle, updateEntry } = require("../scripts/update-c
 
 test("the public news feed starts with the latest verified official notices", () => {
   assert.deepEqual(
-    newsItems.slice(0, 3).map(({ id, date, officialUrl }) => ({ id, date, officialUrl })),
+    newsItems.slice(0, 6).map(({ id, date, officialUrl }) => ({ id, date, officialUrl })),
     [
+      {
+        id: "october-16-version-2-3-patch-notes",
+        date: "2026-10-16",
+        officialUrl: "https://www.wherewindsmeetgame.com/news/official/1016patchnotes.html",
+      },
+      {
+        id: "october-15-version-2-3-new-appearances",
+        date: "2026-10-15",
+        officialUrl: "https://www.wherewindsmeetgame.com/news/official/1015appearance.html",
+      },
+      {
+        id: "october-15-version-2-3-patch-notes",
+        date: "2026-10-15",
+        officialUrl: "https://www.wherewindsmeetgame.com/news/official/FriendsFromAfarPatchNotes.html",
+      },
       {
         id: "october-15-version-2-3-update-overview",
         date: "2026-10-15",
@@ -30,7 +45,7 @@ test("the public news feed starts with the latest verified official notices", ()
       },
     ],
   );
-  assert.equal(latestNewsDate, "2026-10-15");
+  assert.equal(latestNewsDate, "2026-10-16");
 });
 
 test("aggregate official update rows use the latest date shown by their source page", () => {

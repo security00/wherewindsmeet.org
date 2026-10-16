@@ -155,22 +155,31 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Đã rà soát theo {freshness?.gameVersion ?? "Version 2.3 / 15/10"}:  
+              Đã rà soát theo {freshness?.gameVersion ?? "Version 2.3 / 15/10"}:{' '}
               <a href="https://store.steampowered.com/news/app/3564740/view/1846651706675921" target="_blank" rel="noopener noreferrer" className="underline">tổng quan chính thức Version 2.3 ngày 15/10</a>
-               (cập nhật trực tiếp 5:00–12:00 UTC+8) thêm vùng mới Qingzhou – Eastern Peak, vũ khí Waist Drum với lưu phái Silkbind – Wings,
+              {' '}(cập nhật trực tiếp 5:00–12:00 UTC+8) thêm vùng mới Qingzhou – Eastern Peak, vũ khí Waist Drum với lưu phái Silkbind – Wings,
               môn phái Inkbound Order, ba world boss và mùa S5: Ever Aflame (15/10 đến 26/11).
             </p>
             <p className="mt-2 text-emerald-100/90">
-              Phiên bản trước: 
+              Phiên bản trước:{' '}
               <a href="https://store.steampowered.com/news/app/3564740/view/1843481262704696" target="_blank" rel="noopener noreferrer" className="underline">patch notes Version 2.2 ngày 16/09</a>
-               (cải tiến Bang hội, sửa lỗi; lối vào Reflection Temple tạm đóng và sẽ mở lại khi Jiangnan ra mắt, tiến độ được giữ nguyên) và 
+              {' '}(cải tiến Bang hội, sửa lỗi; lối vào Reflection Temple tạm đóng và sẽ mở lại khi Jiangnan ra mắt, tiến độ được giữ nguyên) và{' '}
               <a href="https://store.steampowered.com/news/app/3564740/view/1843481262704691" target="_blank" rel="noopener noreferrer" className="underline">tổng quan Version 2.2 [Perilous Eminence]</a>
-               với chương chính Hidden Mountain Bringer of Embers và chế độ extraction Transdust Ruins từ 23/09.
-              Version 2.1 với 
+              {' '}với chương chính Hidden Mountain Bringer of Embers và chế độ extraction Transdust Ruins từ 23/09.
+              Version 2.1 với{' '}
               <a href="https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html" target="_blank" rel="noopener noreferrer" className="underline">patch notes 05/09</a>
-               và 
+              {' '}và{' '}
               <a href="https://www.wherewindsmeetgame.com/news/official/903update.html" target="_blank" rel="noopener noreferrer" className="underline">tổng quan 03/09</a>
-               cùng các phiên bản cũ hơn vẫn nằm bên dưới dưới dạng nội dung lịch sử có ngày.
+              {' '}cùng các phiên bản cũ hơn vẫn nằm bên dưới dưới dạng nội dung lịch sử có ngày.
+            </p>
+            <p className="mt-2 text-emerald-100/90">
+              Mới trong Version 2.3:{' '}
+              <a href="https://www.wherewindsmeetgame.com/news/official/FriendsFromAfarPatchNotes.html" target="_blank" rel="noopener noreferrer" className="underline">patch notes 15/10</a>
+              {' '}(Transdust Ruins mở cả ngày, phát hiện AFK, Kho đồ từ Lv. 20),{' '}
+              <a href="https://www.wherewindsmeetgame.com/news/official/1016patchnotes.html" target="_blank" rel="noopener noreferrer" className="underline">patch notes 16/10</a>
+              {' '}(25 bản sửa lỗi) và{' '}
+              <a href="https://www.wherewindsmeetgame.com/news/official/1015appearance.html" target="_blank" rel="noopener noreferrer" className="underline">tổng quan trang phục mới</a>
+              {' '}(Aureate Dominion đến 09/11, Path of Youth từ 18/10).
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               <Link
