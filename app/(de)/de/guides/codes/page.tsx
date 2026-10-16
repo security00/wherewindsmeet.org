@@ -3,9 +3,9 @@ import CodesGuidePage from "@/components/guides/CodesGuidePage";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "WWM Codes September 2026: Where Winds Meet Codes (geprueft 2026-09-13)",
+  title: "Where Winds Meet Codes Oktober 2026: WWM Redeem-Codes & Einlösen",
   description:
-    "WWM Codes geprueft am 2026-09-13 (September 2026): gemeldete Where-Winds-Meet-Redeem-Codes mit Verify-in-Game, Einloese-Schritten, Expired-Warnungen und Links zu Outfit- oder Character-Codes.",
+    "Where Winds Meet Codes für Oktober 2026 (geprüft am 2026-10-17, Version 2.3): gemeldete WWM-Redeem-Codes zum Prüfen im Spiel, Einlöse-Schritte, Hinweise zu abgelaufenen Codes und Links zu Outfit- und Charakter-Codes.",
   alternates: buildHreflangAlternates("/guides/codes", { canonicalLanguage: "de" }),
 };
 
