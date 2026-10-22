@@ -1,3 +1,5 @@
+import { referrerPolicyForAssetSrc as referrerPolicyForAssetSrcImpl } from "./cdn-referrer-policy.mjs";
+
 /**
  * 图片路径辅助函数
  * 统一管理 CDN 资源地址，并提供「CDN 优先、失败回退到本地」所需的解析能力。
@@ -96,4 +98,8 @@ export function resolveCdnAssetSrc(src: string, fallbackSrc?: string): ResolvedA
     src,
     fallbackSrc: normalizedFallbackSrc,
   };
+}
+
+export function referrerPolicyForAssetSrc(src: string): "no-referrer" | undefined {
+  return referrerPolicyForAssetSrcImpl(src) === "no-referrer" ? "no-referrer" : undefined;
 }
