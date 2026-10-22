@@ -14,6 +14,16 @@ test("the public news feed starts with the latest verified official notices", ()
     newsItems.slice(0, 6).map(({ id, date, officialUrl }) => ({ id, date, officialUrl })),
     [
       {
+        id: "october-25-version-2-3-new-appearances",
+        date: "2026-10-25",
+        officialUrl: "https://www.wherewindsmeetgame.com/news/official/1025appearance.html",
+      },
+      {
+        id: "october-25-version-2-3-update-overview",
+        date: "2026-10-25",
+        officialUrl: "https://www.wherewindsmeetgame.com/news/official/1025update.html",
+      },
+      {
         id: "october-16-version-2-3-patch-notes",
         date: "2026-10-16",
         officialUrl: "https://www.wherewindsmeetgame.com/news/official/1016patchnotes.html",
@@ -31,21 +41,11 @@ test("the public news feed starts with the latest verified official notices", ()
       {
         id: "october-15-version-2-3-update-overview",
         date: "2026-10-15",
-        officialUrl: "https://store.steampowered.com/news/app/3564740/view/1846651706675921",
-      },
-      {
-        id: "september-16-version-2-2-patch-notes",
-        date: "2026-09-16",
-        officialUrl: "https://store.steampowered.com/news/app/3564740/view/1843481262704696",
-      },
-      {
-        id: "september-16-version-2-2-update-overview",
-        date: "2026-09-16",
-        officialUrl: "https://store.steampowered.com/news/app/3564740/view/1843481262704691",
+        officialUrl: "https://www.wherewindsmeetgame.com/news/official/FriendsFromAfar.html",
       },
     ],
   );
-  assert.equal(latestNewsDate, "2026-10-16");
+  assert.equal(latestNewsDate, "2026-10-25");
 });
 
 test("aggregate official update rows use the latest date shown by their source page", () => {
@@ -99,7 +99,7 @@ test("core update surfaces record the latest official Version 2.1 review", () =>
     const entry = byPath.get(path);
     assert.ok(entry, `missing freshness entry for ${path}`);
     if (version23Paths.has(path)) {
-      assert.equal(entry.lastChecked, path === "/guides/codes" ? "2026-10-21" : "2026-10-17", `${path} review date`);
+      assert.equal(entry.lastChecked, "2026-10-22", `${path} review date`);
       assert.match(entry.gameVersion, /Version 2\.3/, `${path} game version`);
       assert.ok(
         path === "/guides/codes" ||

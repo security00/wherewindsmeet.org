@@ -7,12 +7,12 @@ const baseUrl = "https://wherewindsmeet.org";
 const pageUrl = `${baseUrl}/guides/beta`;
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Beta Status: Still in Beta, Final Test & Launch",
+  title: "Where Winds Meet Beta Status: Is It Still in Beta After Launch?",
   description:
     "Is Where Winds Meet still in beta? Short answer based on official global-launch posts, how beta differs from the November 14, 2025 release, and what to check before you download or link accounts.",
   alternates: buildHreflangAlternates("/guides/beta"),
   openGraph: {
-    title: "Where Winds Meet Beta Status: Still in Beta, Final Test & Launch",
+    title: "Where Winds Meet Beta Status: Is It Still in Beta After Launch?",
     description:
       "Is Where Winds Meet still in beta? Official global materials describe a full worldwide launch, not an ongoing beta.",
     url: pageUrl,
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Where Winds Meet Beta Status: Still in Beta, Final Test & Launch",
+    title: "Where Winds Meet Beta Status: Is It Still in Beta After Launch?",
     description:
       "Is Where Winds Meet still in beta? November 14, 2025 worldwide launch per NetEase and Steam.",
   },

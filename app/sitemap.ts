@@ -44,6 +44,7 @@ const staticEntries: Entry[] = [
   { path: "/guides/wall-puzzle", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/woven-with-malice", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/mist-shrouded-prison", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/guides/qingzhou", changeFrequency: "daily", priority: 0.86, lastModified: newsLastModified },
   { path: "/guides/qinchuan", changeFrequency: "weekly", priority: 0.82 },
   { path: "/guides/jiangnan-hangzhou", changeFrequency: "daily", priority: 0.84 },
   { path: "/guides/imperial-decree", changeFrequency: "daily", priority: 0.82 },

@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { NewsType } from "@/lib/news";
 import { getContentFreshness } from "@/lib/contentFreshness";
 import { latestNewsDate, newsItems } from "@/lib/news.de";
+import { OfficialNewsCard } from "@/components/news/OfficialNewsCard";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
@@ -259,48 +260,13 @@ export default function NewsPage() {
 
           <div className="mt-8 space-y-4">
             {sortedNews.map((item) => (
-              <div
+              <OfficialNewsCard
                 key={item.id}
-                className="card-tablet deferred-news-card group flex flex-col gap-4 rounded-xl p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-900/10 sm:flex-row sm:items-start sm:justify-between"
-              >
-                <div className="space-y-2">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="w-full text-[10px] font-semibold uppercase tracking-wide text-slate-400">
-                      Offizieller englischer Titel
-                    </span>
-                    <h2 className="text-lg font-bold text-slate-50 group-hover:text-ink-jade transition-colors font-serif">
-                      {item.title}
-                    </h2>
-                    <span className="rounded-full border border-emerald-500/30 bg-emerald-950/30 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.1)]">
-                      {typeLabel[item.type] ?? item.type}
-                    </span>
-                  </div>
-                  <p className="text-xs font-medium text-slate-500 font-mono">
-                    {formatDateDe(item.date)}
-                    {item.tags && item.tags.length > 0 && (
-                      <>
-                        <span className="mx-2 text-slate-700">|</span>
-                        {item.tags.join(" · ")}
-                      </>
-                    )}
-                  </p>
-                  <p className="text-sm leading-relaxed text-slate-300/90 font-sans max-w-2xl">
-                    {item.summary}
-                  </p>
-                </div>
-                {item.officialUrl && (
-                  <div className="mt-2 flex shrink-0 sm:mt-0 sm:pl-4 self-start">
-                    <Link
-                      href={item.officialUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="btn-seal text-[10px] py-1 px-3"
-                    >
-                      Offizielle Quelle
-                    </Link>
-                  </div>
-                )}
-              </div>
+                item={{ ...item, date: formatDateDe(item.date) }}
+                typeLabel={typeLabel[item.type] ?? item.type}
+                titleNote="Offizieller englischer Titel"
+                officialCta="Offizielle Quelle"
+              />
             ))}
           </div>
         </div>

@@ -378,14 +378,20 @@ export default function MartialArtsWeaponsDePage() {
                   <tr key={weapon.id} className="align-top">
                     <td className="rounded-l-2xl border border-slate-800 bg-slate-950/80 px-4 py-3">
                       <div className="flex items-center gap-3">
-                        <div className="relative h-20 w-28 overflow-hidden rounded-xl border border-slate-800 bg-slate-900/80">
-                          <CdnImage
-                            src={weapon.image}
-                            alt={weapon.name}
-                            fill
-                            sizes="112px"
-                            className="object-contain p-2"
-                          />
+                        <div className="relative flex h-20 w-28 items-center justify-center overflow-hidden rounded-xl border border-slate-800 bg-slate-900/80">
+                          {weapon.image ? (
+                            <CdnImage
+                              src={weapon.image}
+                              alt={weapon.name}
+                              fill
+                              sizes="112px"
+                              className="object-contain p-2"
+                            />
+                          ) : (
+                            <span className="px-2 text-center text-[10px] font-semibold uppercase tracking-wide text-slate-400">
+                              Art pending
+                            </span>
+                          )}
                         </div>
                         <div>
                           <p className="text-sm font-semibold text-slate-50">{weapon.name}</p>

@@ -1,18 +1,43 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
+import { OfficialMediaFigure } from "@/components/guides/OfficialMediaFigure";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import Link from "next/link";
 import { getContentFreshness } from "@/lib/contentFreshness";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import {
+  appearanceDeerParture,
+  appearanceEtherealTrace,
+  appearanceLuckyLantern,
+  friendsFromAfarBanner,
+} from "@/lib/officialQingzhouMedia";
 
 const baseUrl = "https://wherewindsmeet.org";
 const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
   {
+    title: "October 25 Version 2.3 new appearances",
+    date: "2026-10-25",
+    source: "/news#october-25-version-2-3-new-appearances",
+    summary:
+      "Cosmetic / shop beat inside Friends From Afar (not a new version number). From Oct 25 00:00 UTC+8: Deer-parture Draw Shop mount (to Apr 23, 2027 04:59:59), Transcendence Gate Cloud Steps VFX (discount to Nov 25 04:59:59), Lucky Lantern umbrella appearance chest (to Nov 9 04:59:59; collect-all reward The Waddling Way), Ethereal Trace outfit, and Dawnflare Dragon gauntlets appearance.",
+    playerAction:
+      "Check end dates before spending Echo Bead / draw currency. Exact Echo Bead costs that appear only in in-game UI images should be verified in-client. Same-day overview: /news#october-25-version-2-3-update-overview",
+  },
+  {
+    title: "October 29 Qingzhou follow-up watch",
+    date: "2026-10-29",
+    source: "/news#october-14-dev-letter-v2-3-part-2",
+    summary:
+      "Official Dev Letter Part 2: Mount Tai Blizzard campaign arrives by the end of October. Mount Penglai open date of October 29, 2026 is repeated by RPGamer, 3DM EN, and Game8 (Game8 lists both beats on Oct 29). Treat the calendar day as Reported until official patch HTML confirms.",
+    playerAction:
+      "Keep materials flexible through late October; re-check official news on/after Oct 29. Deep unlock copy: /guides/qingzhou#upcoming.",
+  },
+  {
     title: "October 16 Version 2.3 patch notes",
     date: "2026-10-16",
-    source: "https://www.wherewindsmeetgame.com/news/official/1016patchnotes.html",
+    source: "/news#october-16-version-2-3-patch-notes",
     summary:
       "25 official fixes, including the PlayStation Echo Bead count, Season 4 Forge Ahead settlement titles, Graceful Melody judgment, Aureate Dominion rarity, Inkbound Order entrance-exam questions, Homestead cooking queues, and controller L3.",
     playerAction:
@@ -21,7 +46,7 @@ const latestUpdateCards = [
   {
     title: "October 15 Version 2.3 patch notes",
     date: "2026-10-15",
-    source: "https://www.wherewindsmeetgame.com/news/official/FriendsFromAfarPatchNotes.html",
+    source: "/news#october-15-version-2-3-patch-notes",
     summary:
       "Quality-of-life notes for the 2.3 update: Transdust Ruins Solo and Trio open all day, Hero's Realm and Sword Trial AFK detection, Ready Check and tank-role requests, Multiplayer Wooden Stake, avatar and dyeing upgrades, Guild War changes, Gallery and Photo Mode upgrades, Warehouse and Mount Sack.",
     playerAction:
@@ -30,7 +55,7 @@ const latestUpdateCards = [
   {
     title: "October 15 & 18 Version 2.3 new appearances",
     date: "2026-10-15",
-    source: "https://www.wherewindsmeetgame.com/news/official/1015appearance.html",
+    source: "/news#october-15-version-2-3-new-appearances",
     summary:
       "Aureate Dominion (Fading Glory draw, until November 9), Blazing Sands hairstyle (until January 13, 2027), Veil of Lotus draw set (until December 28), Scarlet Whispers Battle Pass (until November 14), Eastwind Soarer mount (Qingzhou only, until December 13), and the Path of Youth set on October 18.",
     playerAction:
@@ -39,7 +64,7 @@ const latestUpdateCards = [
   {
     title: "October 15 Version 2.3 [Friends from Afar] update overview",
     date: "2026-10-15",
-    source: "https://store.steampowered.com/news/app/3564740/view/1846651706675921",
+    source: "/news#october-15-version-2-3-update-overview",
     summary:
       "Current official update. Live update on October 15 from 5:00 to 12:00 (UTC+8): new region Qingzhou - Eastern Peak, the Waist Drum weapon and Silkbind - Wings path, the Inkbound Order sect, three world bosses, War of Words Gift of Gab, Tier 100 gear, and season S5: Ever Aflame.",
     playerAction:
@@ -48,7 +73,7 @@ const latestUpdateCards = [
   {
     title: "September 16 Version 2.2 patch notes",
     date: "2026-09-16",
-    source: "https://store.steampowered.com/news/app/3564740/view/1843481262704696",
+    source: "/news#september-16-version-2-2-patch-notes",
     summary:
       "Rolling maintenance on September 16 from 5:00 to 10:00 (UTC+8): Guild Roster, Guild War season stats, boss talent tracking, Guild honorary titles, Guild Base blacklist, the Reflection Temple entrance closure, and two bug fixes.",
     playerAction:
@@ -57,7 +82,7 @@ const latestUpdateCards = [
   {
     title: "September 16 Version 2.2 [Perilous Eminence] update overview",
     date: "2026-09-16",
-    source: "https://store.steampowered.com/news/app/3564740/view/1843481262704691",
+    source: "/news#september-16-version-2-2-update-overview",
     summary:
       "Previous content update: Hidden Mountain Main Chapter Bringer of Embers, the Skyward City Ruins campaign, Golden Colossus Taicu and Goshawk world bosses, the Transdust Ruins extraction match (from September 23), and Wildtrail Journal: Ruffled Up.",
     playerAction:
@@ -218,7 +243,7 @@ const latestUpdateCards = [
 ];
 
 const impactChecklist = [
-  "Where Winds Meet patch notes today / new update: lead with the October 15 Version 2.3 overview, then the September 16 Version 2.2 patch notes and overview, the September 5 Clouded Revelation section, the September 3 Version 2.1.3 overview, August 20 fixes on the same page, the August 14 aggregate page, and July 23 Path Balance history.",
+  "Where Winds Meet patch notes today / new update: lead with the October 25 appearance pack, the October 29 Qingzhou follow-up watch, then the October 16 hotfix list and the October 15 Version 2.3 Friends from Afar overview, with Version 2.2 / 2.1 history below.",
   "Boss and dungeon searches: mention Ghost Master, Hero's Realm, Sword Trial, Sandstorm Tavern, Sunken City Lake, and Lunar Eidolon where relevant.",
   "Build searches: call out cheaper Martial Art Reset and lower Inner Way Conversion cost before telling players to respec.",
   "Tier-list searches: re-test Version 2.1 Vernal Umbrella and Silkbind Jade attunement, while keeping the wider weapon baseline tied to the July 23 Path Balance.",
@@ -257,20 +282,20 @@ const upcomingNerfWatch = [
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Patch Notes Today - Version 2.3 Friends from Afar",
+  title: "Where Winds Meet Patch Notes Today — Version 2.3 & Oct 25–29 Watch",
   description:
-    "Where Winds Meet patch notes for Version 2.3 Friends from Afar (October 15) and Version 2.2 (September 16): Qingzhou, Waist Drum, Tier 100 gear, Guild changes, and the Reflection Temple closure, plus Version 2.1 history.",
+    "Where Winds Meet Version 2.3 Friends from Afar patch notes (October 15–16), the October 25 appearance pack (Deer-parture, Ethereal Trace, and more), and the reported October 29 Mount Penglai / Mount Tai Blizzard checkpoint—with official links.",
   alternates: buildHreflangAlternates("/guides/patch-notes"),
   openGraph: {
-    title: "Where Winds Meet Patch Notes Today - Version 2.3 Friends from Afar",
+    title: "Where Winds Meet Patch Notes Today — Version 2.3 & Oct 25–29 Watch",
     description:
-      "Where Winds Meet patch notes: Version 2.3 Friends from Afar, Version 2.2 Guild changes and fixes, plus Version 2.1 history.",
+      "October 25 appearances, October 29 Qingzhou follow-up watch, then October 16/15 Version 2.3 Friends from Afar notes.",
     url: `${baseUrl}/guides/patch-notes`,
   },
   twitter: {
-    title: "Where Winds Meet Patch Notes Today - Version 2.3 Friends from Afar",
+    title: "Where Winds Meet Patch Notes Today — Version 2.3 & Oct 25–29 Watch",
     description:
-      "Patch notes tracker: Version 2.3 (October 15), Version 2.2 (September 16), and Version 2.1 Clouded Revelation history.",
+      "Patch notes tracker: Oct 25 appearances, Oct 29 Qingzhou follow-up, Version 2.3 Friends from Afar.",
   },
 };
 
@@ -331,10 +356,10 @@ export default function PatchNotesPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet patch notes today: Version 2.3 Friends from Afar, Version 2.2, and Version 2.1 history.
+            Where Winds Meet patch notes today: Version 2.3 Friends from Afar, October 25 appearances, and the October 29 Qingzhou follow-up.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Updated {freshness?.lastChecked ?? "2026-10-17"}: Where Winds Meet is on {freshness?.gameVersion ?? "Version 2.3 / October 15 overview + Version 2.2 September 16 patch"}. Lead with the October 15 Version 2.3 overview, then the September 16 Version 2.2 patch notes and overview; keep the September 5 and August 20 Clouded Revelation sections as Version 2.1 history, and use the aggregate August 14 Version 2.0 page for older network and Path Balance history.
+            Updated {freshness?.lastChecked ?? "2026-10-22"}: lead with the <strong>October 25 appearances</strong> watch and the <strong>October 29 Qingzhou follow-up</strong>, then the October 16 Version 2.3 fixes and October 15 overview. Where Winds Meet is on {freshness?.gameVersion ?? "Version 2.3 / October 25 appearances + October 29 watch"}. Older Version 2.2 / 2.1 sections stay as history.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             We flag roadmap checkpoints, official news beats, and practical player impact so you know what to re-check: codes, quest bugs, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, boss guides, builds, and tier-list assumptions.
@@ -358,6 +383,15 @@ export default function PatchNotesPage() {
         </div>
       </section>
 
+      <section className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+        <OfficialMediaFigure item={friendsFromAfarBanner} priority />
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+          <OfficialMediaFigure item={appearanceDeerParture} aspectClassName="aspect-[16/10]" />
+          <OfficialMediaFigure item={appearanceEtherealTrace} aspectClassName="aspect-[16/10]" />
+        </div>
+      </section>
+      <OfficialMediaFigure item={appearanceLuckyLantern} className="max-w-3xl" />
+
       <section className="space-y-6 rounded-3xl border border-amber-400/30 bg-amber-500/10 p-6 shadow-lg shadow-amber-950/30">
         <div className="space-y-2">
           <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">Latest official update queue</p>
@@ -365,7 +399,7 @@ export default function PatchNotesPage() {
             What changed in the newest Where Winds Meet patch notes?
           </h2>
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-            If you searched for Where Winds Meet patch notes today, start here. These are the update beats that should drive the next round of guides, internal links, and title rewrites.
+            If you searched for Where Winds Meet patch notes today, start with the <strong>October 25 appearance pack</strong>, the <strong>October 29 Qingzhou follow-up watch</strong>, then the <strong>October 16</strong> hotfix list and the <strong>October 15</strong> Version 2.3 Friends from Afar overview.
           </p>
         </div>
         <div className="grid gap-4 lg:grid-cols-2">
@@ -375,14 +409,23 @@ export default function PatchNotesPage() {
                 <span className="rounded-full bg-amber-400/15 px-2.5 py-1 text-[11px] font-semibold text-amber-100">
                   {item.date}
                 </span>
-                <a
-                  href={item.source}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[11px] font-semibold text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
-                >
-                  Official source
-                </a>
+                {item.source.startsWith("/") ? (
+                  <Link
+                    href={item.source}
+                    className="text-[11px] font-semibold text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+                  >
+                    Our /news card
+                  </Link>
+                ) : (
+                  <a
+                    href={item.source}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[11px] font-semibold text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+                  >
+                    Official source
+                  </a>
+                )}
               </div>
               <h3 className="mt-3 text-base font-semibold text-slate-50">{item.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">{item.summary}</p>
@@ -397,7 +440,7 @@ export default function PatchNotesPage() {
       <section id="version-2-3" className="space-y-4 rounded-3xl border border-emerald-400/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/30">
         <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Current version - October 15, 2026</p>
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">Version 2.3 [Friends from Afar] patch notes summary</h2>
-        <p className="text-sm leading-relaxed text-slate-200">Live update on October 15, 2026, 5:00-12:00 (UTC+8). Summary of the official overview; open the <Link href="https://store.steampowered.com/news/app/3564740/view/1846651706675921" target="_blank" rel="noreferrer" className="text-emerald-300 underline underline-offset-4">official Steam announcement</Link> for every detail.</p>
+        <p className="text-sm leading-relaxed text-slate-200">Live update on October 15, 2026, 5:00-12:00 (UTC+8). Summary of the official overview; open our <Link href="/news#october-15-version-2-3-update-overview" className="text-emerald-300 underline underline-offset-4">/news Friends From Afar overview</Link> for every detail.</p>
         <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-200">
           <li><strong>New map: Qingzhou - Eastern Peak.</strong> Reach Lv. 32 and complete the Qinghe Main Chapter [Heaven Has No Pier] to accept the Lost Chapter [Away to Qingzhou]. Adds folk customs (Everbloom Spree, Exam Vigil), Injustice Quests, Qingzhou Meow Meow, and five Qingzhou Oddities.</li>
           <li><strong>New Jianghu Legacies:</strong> Volume 1 [Riddled Echoes] and Volume 2 [Sea Shepherd], both opened from Qingzhou&apos;s Journal.</li>
@@ -408,19 +451,40 @@ export default function PatchNotesPage() {
           <li><strong>Season progression:</strong> Solo Mode Level unlocks Lv. 18: Discernment; the level cap stays at Lv. 100. Tier 100 gear drops, Gear Enhance Lv. 66-70, Tier 100 Tuning and Attuning, Tier 96 Gear Relaying, Mystic Skills cap Tier 6 Stage 25, and Medicine Chest Lv. 18.</li>
           <li><strong>New Lv. 100 content:</strong> Sword Trial [Compass &amp; Chime] (5-player) and Hero&apos;s Realm [Liminal Ascension] (10-player); leaderboard rewards unlock October 16 at 05:00 server time.</li>
           <li><strong>Season S5: Ever Aflame</strong> for Arena and Taiping Mausoleum: October 15, 2026 05:00 - November 26, 2026 04:59:59. The Path Trial Challenge event runs until October 29, 2026 04:59:59.</li>
+          <li><strong>Path Balance (Oct 15):</strong> see our <Link href="/news#october-15-version-2-3-path-balance" className="underline underline-offset-4">/news Path Balance card</Link>. Do not invent buff/nerf percentages on this page.</li>
+          <li><strong>Related guides:</strong> <Link href="/guides/qingzhou" className="underline underline-offset-4">Qingzhou region guide</Link> · <Link href="/guides/martial-arts-weapons#silkbind-wings" className="underline underline-offset-4">Silkbind – Wings / Waist Drum</Link>.</li>
         </ul>
         <h3 id="version-2-3-patch-notes" className="pt-2 text-base font-semibold text-slate-100">October 15 and October 16 patch notes</h3>
         <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-200">
-          <li><strong>October 15 (<a href="https://www.wherewindsmeetgame.com/news/official/FriendsFromAfarPatchNotes.html" target="_blank" rel="noreferrer" className="underline underline-offset-4">official</a>):</strong> Transdust Ruins Solo and Trio are open all day; easier weekly tasks in Escape from Windkov; Hero&apos;s Realm and Sword Trial get AFK detection (matchmade teams), Ready Check, tank-role requests, VFX and umbrella transparency settings, and Claim All Rewards; Multiplayer Wooden Stake with real-time team damage stats; 1v1 Arena re-queue and auto-match; Warehouse (Lv. 20, up to 3 tabs of 30 slots) and Mount Sack; PC launcher Modular Download; Guild War Technique, Halftime Show and Guild Party changes; Gallery, Photo Mode, avatar and dyeing upgrades; mobile lighting and graphics options.</li>
-          <li><strong>October 16 (<a href="https://www.wherewindsmeetgame.com/news/official/1016patchnotes.html" target="_blank" rel="noreferrer" className="underline underline-offset-4">official</a>):</strong> 25 fixes, including the PlayStation Echo Bead count, Season 4 Forge Ahead settlement titles, Graceful Melody judgment, Tier 96 Relaying Stone: Mirage duration, Aureate Dominion rarity, Inkbound Order exam questions, Homestead cooking queues, Serene Breeze in Arena, faster Infernal Twinblades Greed Bane - Soul (also triggers Perfect Dodge in Online Mode Dungeons), shorter Talon Strike and Yaksha Rush Super Armor, Frost Paper recipe (Cocklebur replaced by Honeysuckle), and controller L3.</li>
-          <li><strong>New appearances (<a href="https://www.wherewindsmeetgame.com/news/official/1015appearance.html" target="_blank" rel="noreferrer" className="underline underline-offset-4">official</a>):</strong> Aureate Dominion via Fading Glory (until November 9), Blazing Sands (until January 13, 2027), Veil of Lotus (until December 28), Scarlet Whispers Battle Pass (until November 14), Crane Ascending: Chordsong Waist Drum VFX, Duskfall Verse and Ode to the Feline Muse, Eastwind Soarer mount (Qingzhou, until December 13), Myriad Sounds sword and spear, Tonight&apos;s Reverie, and Path of Youth from October 18 (discount until November 1).</li>
+          <li><strong>October 15 (<Link href="/news#october-15-version-2-3-patch-notes" className="underline underline-offset-4">our /news card</Link>):</strong> Transdust Ruins Solo and Trio are open all day; easier weekly tasks in Escape from Windkov; Hero&apos;s Realm and Sword Trial get AFK detection (matchmade teams), Ready Check, tank-role requests, VFX and umbrella transparency settings, and Claim All Rewards; Multiplayer Wooden Stake with real-time team damage stats; 1v1 Arena re-queue and auto-match; Warehouse (Lv. 20, up to 3 tabs of 30 slots) and Mount Sack; PC launcher Modular Download; Guild War Technique, Halftime Show and Guild Party changes; Gallery, Photo Mode, avatar and dyeing upgrades; mobile lighting and graphics options.</li>
+          <li><strong>October 16 (<Link href="/news#october-16-version-2-3-patch-notes" className="underline underline-offset-4">our /news card</Link>):</strong> 25 fixes, including the PlayStation Echo Bead count, Season 4 Forge Ahead settlement titles, Graceful Melody judgment, Tier 96 Relaying Stone: Mirage duration, Aureate Dominion rarity, Inkbound Order exam questions, Homestead cooking queues, Serene Breeze in Arena, faster Infernal Twinblades Greed Bane - Soul (also triggers Perfect Dodge in Online Mode Dungeons), shorter Talon Strike and Yaksha Rush Super Armor, Frost Paper recipe (Cocklebur replaced by Honeysuckle), and controller L3.</li>
+          <li><strong>New appearances (<Link href="/news#october-15-version-2-3-new-appearances" className="underline underline-offset-4">our /news card</Link>):</strong> Aureate Dominion via Fading Glory (until November 9), Blazing Sands (until January 13, 2027), Veil of Lotus (until December 28), Scarlet Whispers Battle Pass (until November 14), Crane Ascending: Chordsong Waist Drum VFX, Duskfall Verse and Ode to the Feline Muse, Eastwind Soarer mount (Qingzhou, until December 13), Myriad Sounds sword and spear, Tonight&apos;s Reverie, and Path of Youth from October 18 (discount until November 1).</li>
+          <li><strong>October 22 event cadence (Reported / X-transcribed):</strong> Merchant&apos;s Way and Bubble Party activity windows were described as starting around October 22, 05:00 UTC+8 (Bubble Party through ~Nov 14 on third-party mirrors). Treat as event cadence—do not invent reward tables here.</li>
         </ul>
+      </section>
+
+      <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">October 25 / October 29 FAQ</h2>
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+            <h3 className="font-semibold text-slate-50">Is October 25 a new version number?</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-300">
+              No. Official titling keeps <strong>Version 2.3 Friends From Afar</strong>; October 25 is an appearances / mid-version overview beat.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+            <h3 className="font-semibold text-slate-50">Should I rebuild for Silkbind – Wings because of Path Balance?</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-300">
+              Read our <Link href="/news#october-15-version-2-3-path-balance" className="text-emerald-300 underline underline-offset-4">/news Path Balance Oct 15</Link> card first. This page will not invent buff/nerf percentages. Test in Multiplayer Wooden Stake after any confirmed change.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section id="version-2-2" className="space-y-4 rounded-3xl border border-sky-400/30 bg-sky-500/10 p-6 shadow-lg shadow-sky-950/30">
         <p className="text-xs font-semibold uppercase tracking-wide text-sky-200">Previous version - September 16, 2026</p>
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">Version 2.2 [Perilous Eminence] and September 16 patch notes</h2>
-        <p className="text-sm leading-relaxed text-slate-200">Rolling maintenance on September 16, 2026, 5:00-10:00 (UTC+8). Sources: <Link href="https://store.steampowered.com/news/app/3564740/view/1843481262704696" target="_blank" rel="noreferrer" className="text-sky-300 underline underline-offset-4">official patch notes</Link> and <Link href="https://store.steampowered.com/news/app/3564740/view/1843481262704691" target="_blank" rel="noreferrer" className="text-sky-300 underline underline-offset-4">official update overview</Link>.</p>
+        <p className="text-sm leading-relaxed text-slate-200">Rolling maintenance on September 16, 2026, 5:00-10:00 (UTC+8). Sources: our <Link href="/news#september-16-version-2-2-patch-notes" className="text-sky-300 underline underline-offset-4">/news 2.2 patch notes</Link> and <Link href="/news#september-16-version-2-2-update-overview" className="text-sky-300 underline underline-offset-4">/news 2.2 overview</Link> cards.</p>
         <h3 className="text-base font-semibold text-slate-100">Patch notes</h3>
         <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-200">
           <li>Guild Roster homepage is editable: Guild Management can pin members to the top; others are sorted by last week&apos;s activity.</li>

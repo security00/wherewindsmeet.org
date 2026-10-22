@@ -6,6 +6,7 @@ export type MartialArtPathId =
   | "bamboocut-wind"
   | "bamboocut-kite"
   | "bamboocut-draught"
+  | "silkbind-wings"
   | "stonesplit-might";
 
 export type MartialArtPath = {
@@ -74,6 +75,14 @@ export const martialArtPaths: MartialArtPath[] = [
     relatedWeapons: ["Skystrike Gauntlets", "Riven Twinblades"],
   },
   {
+    id: "silkbind-wings",
+    name: "Silkbind - Wings",
+    focus: "Version 2.3 dance-like silk / drum / fan combat with drumbeat timing windows.",
+    flavor:
+      "Official Dev Letter Part 2 frames three drumbeat rhythms for offense, crowd control, and team support. Exact buff values stay Pending in-game capture—no DPS numbers here.",
+    relatedWeapons: ["Museflow Waist Drum", "Willowbend Fan"],
+  },
+  {
     id: "stonesplit-might",
     name: "Stonesplit - Might",
     focus: "Tanky posture, crowd-resistant tools, and easy AoE coverage.",
@@ -87,7 +96,7 @@ export type MartialArtWeapon = {
   id: string;
   name: string;
   pathId: MartialArtPathId;
-  image: string;
+  image?: string;
   mainSkills: string[];
   basicSkills: string[];
   chargedSkills: string[];
@@ -290,5 +299,32 @@ export const martialArtWeapons: MartialArtWeapon[] = [
     unlockMethods: [
       "Speak with Li Yangui north of Northern Vow Ruins (Revisit after Echoes of Old Battles).",
     ],
+  },
+  {
+    id: "museflow-waist-drum",
+    name: "Museflow Waist Drum",
+    pathId: "silkbind-wings",
+    image: "https://r.res.easebar.com/pic/20261014/60af5b15-0411-4444-bfef-47c06eb9f59a.gif",
+    mainSkills: ["Pending in-game capture — ribbon bind/control + drumbeat-timed strikes (Dev Letter Part 2)"],
+    basicSkills: ["Pending in-game capture"],
+    chargedSkills: ["Pending in-game capture"],
+    unlockMethods: [
+      "Unlock Qingzhou, then clear Qingzhou Journal Jianghu Legacy Volume 2 [Sea Shepherd].",
+      "See /guides/qingzhou for the region unlock checklist.",
+    ],
+    notes: "Version 2.3 Friends From Afar. Artwork Pending in-game capture.",
+  },
+  {
+    id: "willowbend-fan",
+    name: "Willowbend Fan",
+    pathId: "silkbind-wings",
+    mainSkills: ["Pending in-game capture — wind-channel spacing control that chains into follow-ups (Dev Letter Part 2)"],
+    basicSkills: ["Pending in-game capture"],
+    chargedSkills: ["Pending in-game capture"],
+    unlockMethods: [
+      "Unlock Qingzhou, then clear Qingzhou Journal Jianghu Legacy Volume 1 [Riddled Echoes].",
+      "See /guides/qingzhou for the region unlock checklist.",
+    ],
+    notes: "Version 2.3 Friends From Afar. Artwork Pending in-game capture.",
   },
 ];

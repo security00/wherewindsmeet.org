@@ -1,3 +1,14 @@
+import type { OfficialMediaItem } from "./officialQingzhouMedia.ts";
+import {
+  appearance1015Cover,
+  appearanceDeerParture,
+  friendsFromAfarBanner,
+  friendsFromAfarCover,
+  friendsFromAfarOct25UpdateStill,
+  qingzhouDevLetterHero,
+  devLetterPart2Hero,
+} from "./officialQingzhouMedia.ts";
+
 export type NewsType = "announcement" | "event" | "guide" | "beta";
 
 export type NewsItem = {
@@ -8,6 +19,8 @@ export type NewsItem = {
   summary: string;
   officialUrl?: string;
   tags?: string[];
+  /** Optional official / Steam CDN cover with attribution (OfficialMediaFigure). */
+  image?: OfficialMediaItem;
 };
 
 type OfficialNewsRow = [
@@ -25,6 +38,22 @@ type OfficialNewsRow = [
 // Keep this array in the same order as the official news index. The official
 // site can pin items out of strict date order, so news pages should not sort it.
 const officialNewsRows: OfficialNewsRow[] = [
+  [
+    "october-25-version-2-3-new-appearances",
+    "[Friends from Afar] Version 2.3 New Appearances Overview - October 25",
+    "2026-10-25",
+    "event",
+    "https://www.wherewindsmeetgame.com/news/official/1025appearance.html",
+    "Official Version 2.3 appearance pack from October 25, 00:00 UTC+8: Deer-parture Draw Shop mount (to April 23, 2027), Transcendence Gate Cloud Steps VFX (discount to November 25), Lucky Lantern umbrella appearance chest (to November 9; collect-all reward The Waddling Way), Ethereal Trace outfit, and Dawnflare Dragon gauntlets appearance.",
+  ],
+  [
+    "october-25-version-2-3-update-overview",
+    "[Friends From Afar] Version 2.3 Update Overview - October 25",
+    "2026-10-25",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/1025update.html",
+    "Official mid-Version 2.3 overview card for October 25 (image-led page on the news index). Pair with the New Appearances overview for cosmetic windows; not a new version number.",
+  ],
   [
     "october-16-version-2-3-patch-notes",
     "Version 2.3 Patch Notes: Optimizations and Bug Fixes (October 16, 2026)",
@@ -51,11 +80,35 @@ const officialNewsRows: OfficialNewsRow[] = [
   ],
   [
     "october-15-version-2-3-update-overview",
-    "Version 2.3 [Friends from Afar] Update Overview (October 15, 2026)",
+    "[Friends From Afar] Version 2.3 Update Overview",
     "2026-10-15",
     "announcement",
-    "https://store.steampowered.com/news/app/3564740/view/1846651706675921",
-    "Official Version 2.3 Friends from Afar overview for the October 15 live update (5:00-12:00 UTC+8): the new Qingzhou - Eastern Peak region and Lost Chapter Away to Qingzhou (Lv. 32 after Heaven Has No Pier), the Waist Drum weapon and Silkbind - Wings path with Museflow Waist Drum and Willowbend Fan, the Inkbound Order sect, Tidewatcher, Old Raftsman and Shuttlecock Champion world bosses, War of Words Gift of Gab, Tier 100 gear, and season S5: Ever Aflame (October 15 - November 26).",
+    "https://www.wherewindsmeetgame.com/news/official/FriendsFromAfar.html",
+    "Official Version 2.3 Friends From Afar overview for the October 15 live update (5:00-12:00 UTC+8; Eastwind Pavilion). The publisher page is image-led; matching Steam announcement facts include Qingzhou - Eastern Peak and Lost Chapter Away to Qingzhou (Lv. 32 after Heaven Has No Pier), Waist Drum with Silkbind - Wings (Museflow Waist Drum + Willowbend Fan), Inkbound Order, Tidewatcher / Old Raftsman / Shuttlecock Champion, Gift of Gab, Tier 100 gear, and season S5: Ever Aflame (October 15 - November 26). Steam mirror: store.steampowered.com/news/app/3564740/view/1846651706675921.",
+  ],
+  [
+    "october-14-dev-letter-v2-3-part-2",
+    "Dev Letter V2.3 (Part 2) | Dance, Drum, and Duel with Folk Masters",
+    "2026-10-14",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/1014devletter.html",
+    "Official Dev Letter Part 2 for Version 2.3: Qingzhou world bosses Old Raftsman, Tidewatcher, and Shuttlecock Champion; new path Silkbind - Wings with Museflow Waist Drum (three drumbeat rhythms) and Willowbend Fan; Inkbound Order campus life, Visiting Disciple dual-sect, and Gift of Gab debates; Mount Tai Blizzard closed-circle mystery chapter flagged for late October.",
+  ],
+  [
+    "october-15-version-2-3-path-balance",
+    "Version 2.3 Path Balance Adjustment Announcement (October 15)",
+    "2026-10-14",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/PathBalance1015.html",
+    "Official Version 2.3 path experience and balance announcement (posted October 14 for the October 15 window): broader Online Mode Boss / Boss Dummy skill-latency coverage, Tier 100 Helm & Chestpiece mystic-skill DMG attributes merged into All Mystic Skill DMG Boost, Deflection/Dodge pre-input toggle (on by default), mystic-skill and path-specific tweaks across Bellstrike / Silkbind / Stonesplit / Bamboocut lines, Perception Forest and Arena adjustments, plus listed bug fixes. Exact numbers stay on the official page.",
+  ],
+  [
+    "october-9-dev-letter-v2-3-part-1",
+    "Dev Letter V2.3 (Part 1) | Mount in the Mist, Qingzhou Awaits",
+    "2026-10-09",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/1009devletter.html",
+    "Official Dev Letter Part 1 announcing Qingzhou for October 15: Eastern Peak / Mount Tai climb into coastal Qingzhou (Shandong-inspired), Wellspring Town and Crownleek Terrace, Yellow River estuary murmurations, Mount Penglai academy imagery, and the new Local companion system for hospitality-led exploration. Part 2 is promised for gameplay systems.",
   ],
   [
     "september-16-version-2-2-patch-notes",
@@ -587,6 +640,18 @@ const officialNewsRows: OfficialNewsRow[] = [
   ],
 ];
 
+const officialNewsCovers: Partial<Record<string, OfficialMediaItem>> = {
+  "october-25-version-2-3-new-appearances": appearanceDeerParture,
+  "october-25-version-2-3-update-overview": friendsFromAfarOct25UpdateStill,
+  "october-16-version-2-3-patch-notes": friendsFromAfarCover,
+  "october-15-version-2-3-new-appearances": appearance1015Cover,
+  "october-15-version-2-3-patch-notes": friendsFromAfarBanner,
+  "october-15-version-2-3-update-overview": friendsFromAfarBanner,
+  "october-14-dev-letter-v2-3-part-2": devLetterPart2Hero,
+  "october-15-version-2-3-path-balance": friendsFromAfarCover,
+  "october-9-dev-letter-v2-3-part-1": qingzhouDevLetterHero,
+};
+
 export const newsItems: NewsItem[] = officialNewsRows.map(
   ([id, title, date, type, officialUrl, summary]) => ({
     id,
@@ -595,6 +660,7 @@ export const newsItems: NewsItem[] = officialNewsRows.map(
     type,
     officialUrl,
     summary,
+    ...(officialNewsCovers[id] ? { image: officialNewsCovers[id] } : {}),
   }),
 );
 
