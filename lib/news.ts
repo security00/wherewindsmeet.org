@@ -1,4 +1,4 @@
-import type { OfficialMediaItem } from "@/lib/officialQingzhouMedia";
+import type { OfficialMediaItem } from "./officialQingzhouMedia.ts";
 import {
   appearance1015Cover,
   appearanceDeerParture,
@@ -7,7 +7,7 @@ import {
   friendsFromAfarOct25UpdateStill,
   qingzhouDevLetterHero,
   devLetterPart2Hero,
-} from "@/lib/officialQingzhouMedia";
+} from "./officialQingzhouMedia.ts";
 
 export type NewsType = "announcement" | "event" | "guide" | "beta";
 

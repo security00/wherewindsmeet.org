@@ -41,7 +41,7 @@ test("the public news feed starts with the latest verified official notices", ()
       {
         id: "october-15-version-2-3-update-overview",
         date: "2026-10-15",
-        officialUrl: "https://store.steampowered.com/news/app/3564740/view/1846651706675921",
+        officialUrl: "https://www.wherewindsmeetgame.com/news/official/FriendsFromAfar.html",
       },
     ],
   );
