@@ -159,6 +159,31 @@ export const appearanceLuckyLantern: OfficialMediaItem = {
   sourceHref: APPEARANCE_1025,
 };
 
+
+export const devLetterPart2Hero: OfficialMediaItem = {
+  src: "https://r.res.easebar.com/pic/20261014/d2cf7839-5746-4577-ba48-2dc5be9dd2af.png",
+  alt: "Official Dev Letter Part 2 key art for Qingzhou folk masters",
+  caption: "Official Dev Letter V2.3 Part 2 key still introducing Qingzhou folk-master duels.",
+  sourceLabel: "Official Dev Letter V2.3 Part 2",
+  sourceHref: DEV_LETTER_2,
+};
+
+export const friendsFromAfarOct25UpdateStill: OfficialMediaItem = {
+  src: "https://r.res.easebar.com/pic/20261021/72830486-fe80-4c6a-9673-e14cad420196.png",
+  alt: "Official Friends From Afar October 25 update overview still",
+  caption: "Official mid-Version 2.3 overview still published with the October 25 update card.",
+  sourceLabel: "Official news · Oct 25 update overview",
+  sourceHref: `${OFFICIAL_SITE}/news/official/1025update.html`,
+};
+
+export const appearance1015Cover: OfficialMediaItem = {
+  src: "https://r.res.easebar.com/pic/20261015/30a0ea82-1624-4a24-945e-64a8afe5fbfb.png",
+  alt: "Official Version 2.3 New Appearances Overview cover (October 15 & 18)",
+  caption: "Official cover still from the October 15 & 18 Version 2.3 appearances overview.",
+  sourceLabel: "Official news · Oct 15 & 18 appearances",
+  sourceHref: `${OFFICIAL_SITE}/news/official/1015appearance.html`,
+};
+
 /** Official Where Winds Meet YouTube channel — Qingzhou announcement trailer. */
 export const qingzhouAnnouncementTrailer = {
   videoId: "8wq9AddMIfk",
