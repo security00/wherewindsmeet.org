@@ -304,6 +304,7 @@ export const martialArtWeapons: MartialArtWeapon[] = [
     id: "museflow-waist-drum",
     name: "Museflow Waist Drum",
     pathId: "silkbind-wings",
+    image: "https://r.res.easebar.com/pic/20261014/60af5b15-0411-4444-bfef-47c06eb9f59a.gif",
     mainSkills: ["Pending in-game capture — ribbon bind/control + drumbeat-timed strikes (Dev Letter Part 2)"],
     basicSkills: ["Pending in-game capture"],
     chargedSkills: ["Pending in-game capture"],

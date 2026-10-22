@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
+import { OfficialMediaFigure } from "@/components/guides/OfficialMediaFigure";
 import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import {
+  inkboundCampus,
+  inkboundCollegeLife,
+  inkboundVisitingDisciple,
+} from "@/lib/officialQingzhouMedia";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Sects Guide: Factions, Ideals & Inkbound Order",
@@ -192,6 +198,11 @@ export default function SectsPage() {
         <p className="text-sm leading-6 text-slate-200">
           <strong>Region home:</strong> Qingzhou (academies across the map). Live with Version 2.3 Friends From Afar (<strong>2026-10-15</strong>).
         </p>
+        <div className="grid gap-4 md:grid-cols-3">
+          <OfficialMediaFigure item={inkboundCampus} aspectClassName="aspect-[4/3]" />
+          <OfficialMediaFigure item={inkboundCollegeLife} aspectClassName="aspect-[4/3]" />
+          <OfficialMediaFigure item={inkboundVisitingDisciple} aspectClassName="aspect-[4/3]" />
+        </div>
         <h3 className="text-lg font-semibold text-slate-50">What they believe (official pitch)</h3>
         <p className="text-sm leading-6 text-slate-300">
           Inkbound Order is Qingzhou’s scholarly sect: academies, lectures, exams, and the idea that a fight should state its reasons before blades move. Official Dev Letter Part 2 frames it as “going to college in the Jianghu”—classrooms, dorms, dining hall, and debate culture alongside martial study. Campus marks called out in that letter include the main-island central campus and <strong>Pavilion of Tomes</strong>, <strong>Wellspring Town</strong> Primary Academy, <strong>Crownleek</strong> ecological agriculture branch, and athletic grounds.

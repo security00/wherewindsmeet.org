@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
+import { OfficialMediaFigure } from "@/components/guides/OfficialMediaFigure";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import Link from "next/link";
 import { getContentFreshness } from "@/lib/contentFreshness";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import {
+  appearanceDeerParture,
+  appearanceEtherealTrace,
+  appearanceLuckyLantern,
+  friendsFromAfarBanner,
+} from "@/lib/officialQingzhouMedia";
 
 const baseUrl = "https://wherewindsmeet.org";
 const freshness = getContentFreshness("/guides/patch-notes");
@@ -375,6 +382,15 @@ export default function PatchNotesPage() {
           </p>
         </div>
       </section>
+
+      <section className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+        <OfficialMediaFigure item={friendsFromAfarBanner} priority />
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+          <OfficialMediaFigure item={appearanceDeerParture} aspectClassName="aspect-[16/10]" />
+          <OfficialMediaFigure item={appearanceEtherealTrace} aspectClassName="aspect-[16/10]" />
+        </div>
+      </section>
+      <OfficialMediaFigure item={appearanceLuckyLantern} className="max-w-3xl" />
 
       <section className="space-y-6 rounded-3xl border border-amber-400/30 bg-amber-500/10 p-6 shadow-lg shadow-amber-950/30">
         <div className="space-y-2">

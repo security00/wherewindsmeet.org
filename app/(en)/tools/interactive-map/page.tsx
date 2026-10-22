@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { OfficialMediaFigure } from "@/components/guides/OfficialMediaFigure";
 import { InteractiveMapEmbed } from "@/components/InteractiveMapEmbed";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import { qingzhouMountTai, steamLibraryHero } from "@/lib/officialQingzhouMedia";
 
 const baseUrl = "https://wherewindsmeet.org";
 const pageUrl = `${baseUrl}/tools/interactive-map`;
@@ -22,6 +24,7 @@ export const metadata: Metadata = {
     url: pageUrl,
     siteName: "Where Winds Meet Hub",
     type: "website",
+    images: [{ url: steamLibraryHero.src, alt: steamLibraryHero.alt }],
   },
   twitter: {
     card: "summary",
@@ -227,6 +230,10 @@ export default function InteractiveMapPage() {
           <p className="mt-2 text-sm leading-6 text-slate-300">
             Landmarks named in the official Dev Letter (orientation only—not a pin guarantee): Mount Tai / Eastern Peak approach, Wellspring Town, Crownleek Terrace, Yellow River estuary bird murmurations, and Mount Penglai as a later mist-isle beat. Pins for <strong>Mount Penglai</strong> and campaign spaces tied to <strong>Mount Tai Blizzard</strong> may appear only after the late-October follow-up—see the Reported <strong>October 29</strong> watch on <Link href="/guides/patch-notes" className="text-emerald-300 hover:text-emerald-200">/guides/patch-notes</Link> and <Link href="/guides/qingzhou#upcoming" className="text-emerald-300 hover:text-emerald-200">/guides/qingzhou#upcoming</Link>.
           </p>
+          <div className="mt-4 grid gap-4 md:grid-cols-2">
+            <OfficialMediaFigure item={qingzhouMountTai} aspectClassName="aspect-[16/10]" />
+            <OfficialMediaFigure item={steamLibraryHero} aspectClassName="aspect-[16/10]" />
+          </div>
         </div>
 
         <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-emerald-200">Quick answer</p>

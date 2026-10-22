@@ -1,8 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import CdnImage from "@/components/CdnImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
+import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
+import { OfficialMediaFigure } from "@/components/guides/OfficialMediaFigure";
 import { getContentFreshness } from "@/lib/contentFreshness";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import {
+  bossOldRaftsman,
+  bossShuttlecock,
+  bossTidewatcher,
+  friendsFromAfarCover,
+  qingzhouAnnouncementTrailer,
+  qingzhouDevLetterHero,
+  qingzhouMountTai,
+  qingzhouPenglai,
+} from "@/lib/officialQingzhouMedia";
 
 const baseUrl = "https://wherewindsmeet.org";
 const slug = "qingzhou";
@@ -22,6 +35,7 @@ export const metadata: Metadata = {
     url: pageUrl,
     siteName: "Where Winds Meet Hub",
     type: "article",
+    images: [{ url: friendsFromAfarCover.src, alt: friendsFromAfarCover.alt }],
   },
   twitter: {
     card: "summary",
@@ -265,6 +279,43 @@ export default function QingzhouGuidePage() {
         </p>
       </section>
 
+      <section className="grid gap-4 lg:grid-cols-2">
+        <OfficialMediaFigure item={friendsFromAfarCover} priority aspectClassName="aspect-[16/9]" />
+        <OfficialMediaFigure item={qingzhouDevLetterHero} aspectClassName="aspect-[16/9]" />
+      </section>
+
+      <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/40 sm:p-8">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">Official trailer</p>
+            <h2 className="mt-1 text-2xl font-bold text-slate-50">Qingzhou announcement (publisher YouTube)</h2>
+            <p className="mt-2 text-sm leading-6 text-slate-300">
+              Embedded from the official Where Winds Meet YouTube channel. Deferred load — play only when you want the preview.
+            </p>
+          </div>
+          <a
+            href={qingzhouAnnouncementTrailer.watchUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex rounded-full border border-emerald-400/40 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-100"
+          >
+            Open on YouTube ↗
+          </a>
+        </div>
+        <LiteYouTubeEmbed
+          videoId={qingzhouAnnouncementTrailer.videoId}
+          title={qingzhouAnnouncementTrailer.title}
+          poster="/background/bg4.webp"
+          analytics={{ eventName: "guide_video_play", params: { guide: "qingzhou", source: "official_youtube" } }}
+        />
+        <p className="text-xs text-slate-400">
+          Attribution: {qingzhouAnnouncementTrailer.channel} ·{" "}
+          <a href={qingzhouAnnouncementTrailer.watchUrl} target="_blank" rel="noopener noreferrer" className="text-emerald-300 underline underline-offset-4">
+            {qingzhouAnnouncementTrailer.title}
+          </a>
+        </p>
+      </section>
+
       <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/40 sm:p-8">
         <h2 className="text-2xl font-bold text-slate-50">How to unlock Qingzhou (checklist)</h2>
         <ol className="mt-5 space-y-4">
@@ -372,10 +423,22 @@ export default function QingzhouGuidePage() {
           strategy pages stay on <Link href="/guides/bosses" className="text-emerald-300 underline underline-offset-4">/guides/bosses</Link> once thickened.
         </p>
         <div className="mt-5 grid gap-4 md:grid-cols-3">
-          {bosses.map((boss) => (
-            <article key={boss.name} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
-              <h3 className="text-base font-semibold text-slate-50">{boss.name}</h3>
-              <p className="mt-2 text-sm leading-6 text-slate-300">{boss.flavor}</p>
+          {[
+            { ...bosses[0], media: bossOldRaftsman },
+            { ...bosses[1], media: bossTidewatcher },
+            { ...bosses[2], media: bossShuttlecock },
+          ].map((boss) => (
+            <article key={boss.name} className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70">
+              <div className="relative aspect-[4/3] bg-slate-950">
+                <CdnImage src={boss.media.src} alt={boss.media.alt} fill sizes="33vw" className="object-cover" />
+              </div>
+              <div className="p-4">
+                <h3 className="text-base font-semibold text-slate-50">{boss.name}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-300">{boss.flavor}</p>
+                <a href={boss.media.sourceHref} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex text-xs font-semibold text-emerald-300 underline underline-offset-4">
+                  {boss.media.sourceLabel} ↗
+                </a>
+              </div>
             </article>
           ))}
         </div>
@@ -424,6 +487,17 @@ export default function QingzhouGuidePage() {
           <em>Reported for October 29, 2026 — confirm against the latest official news before you plan materials.</em>{" "}
           When official Oct 29 notes drop, replace Reported with Official and date-stamp Last checked.
         </p>
+      </section>
+
+      <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/40 sm:p-8">
+        <h2 className="text-2xl font-bold text-slate-50">Official Qingzhou location stills</h2>
+        <p className="text-sm leading-6 text-slate-300">
+          Publisher Dev Letter clips for orientation only—not a pin dump. Confirm fog and landmarks in-game.
+        </p>
+        <div className="grid gap-4 md:grid-cols-2">
+          <OfficialMediaFigure item={qingzhouMountTai} />
+          <OfficialMediaFigure item={qingzhouPenglai} />
+        </div>
       </section>
 
       <section className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/40 sm:p-8">

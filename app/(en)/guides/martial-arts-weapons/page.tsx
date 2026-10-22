@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
+import { OfficialMediaFigure } from "@/components/guides/OfficialMediaFigure";
 import Link from "next/link";
 import { martialArtPaths, martialArtWeapons } from "@/lib/martialArts";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import { waistDrumBeats, waistDrumCombat } from "@/lib/officialQingzhouMedia";
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Martial Arts Weapons List & Unlock Guide",
@@ -260,6 +262,19 @@ export default function MartialArtsWeaponsPage() {
             For pacing, farm Training Items from regular enemies while queuing
             for sect or Skill Theft runs so you never sit at a level cap.
           </p>
+        </div>
+      </section>
+
+      <section className="space-y-4 rounded-3xl border border-indigo-400/30 bg-indigo-500/10 p-6 shadow-lg shadow-indigo-950/30">
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+          Official Silkbind – Wings / Waist Drum media
+        </h2>
+        <p className="text-sm leading-6 text-slate-300">
+          Publisher Dev Letter Part 2 clips. Skill names and DPS numbers stay Pending in-game capture—these are orientation stills only.
+        </p>
+        <div className="grid gap-4 md:grid-cols-2">
+          <OfficialMediaFigure item={waistDrumCombat} />
+          <OfficialMediaFigure item={waistDrumBeats} />
         </div>
       </section>
 
