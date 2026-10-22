@@ -7,7 +7,7 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 export const metadata: Metadata = {
   title: "Where Winds Meet Martial Arts Weapons List & Unlock Guide",
   description:
-    "Full comparison table of martial art weapons in Where Winds Meet, including Version 2.0 Gauntlets and September 3 Drunken Fist, with images, path focus, and unlock methods.",
+    "Full comparison table of martial art weapons in Where Winds Meet, including Version 2.3 Silkbind – Wings (Museflow Waist Drum + Willowbend Fan), Version 2.0 Gauntlets, and Drunken Fist, with path focus and unlock methods.",
   alternates: buildHreflangAlternates("/guides/martial-arts-weapons"),
 };
 
@@ -71,7 +71,7 @@ export default function MartialArtsWeaponsPage() {
             Martial art paths at a glance.
           </h2>
           <p className="text-xs text-slate-400">
-            8 paths · 15 weapons · including Gauntlets and Drunken Fist
+            9 paths · 17 weapons · including Version 2.3 Silkbind – Wings
           </p>
         </div>
 
@@ -79,6 +79,7 @@ export default function MartialArtsWeaponsPage() {
           {martialArtPaths.map((path) => (
             <div
               key={path.id}
+              id={path.id}
               className="flex h-full flex-col gap-3 rounded-2xl border border-slate-800 bg-slate-950/70 p-4 shadow-sm shadow-slate-950/60"
             >
               <div className="flex items-center justify-between">
@@ -139,14 +140,20 @@ export default function MartialArtsWeaponsPage() {
                   <tr key={weapon.id} className="align-top">
                     <td className="rounded-l-2xl border border-slate-800 bg-slate-950/80 px-4 py-3">
                       <div className="flex items-center gap-3">
-                        <div className="relative h-20 w-28 overflow-hidden rounded-xl border border-slate-800 bg-slate-900/80">
-                          <CdnImage
-                            src={weapon.image}
-                            alt={weapon.name}
-                            fill
-                            sizes="112px"
-                            className="object-contain p-2"
-                          />
+                        <div className="relative flex h-20 w-28 items-center justify-center overflow-hidden rounded-xl border border-slate-800 bg-slate-900/80">
+                          {weapon.image ? (
+                            <CdnImage
+                              src={weapon.image}
+                              alt={weapon.name}
+                              fill
+                              sizes="112px"
+                              className="object-contain p-2"
+                            />
+                          ) : (
+                            <span className="px-2 text-center text-[10px] font-semibold uppercase tracking-wide text-slate-400">
+                              Art pending
+                            </span>
+                          )}
                         </div>
                         <div>
                           <p className="text-sm font-semibold text-slate-50">
@@ -254,6 +261,54 @@ export default function MartialArtsWeaponsPage() {
             for sect or Skill Theft runs so you never sit at a level cap.
           </p>
         </div>
+      </section>
+
+      <section id="silkbind-wings-faq" className="space-y-4 rounded-3xl border border-emerald-400/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/30">
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+          Silkbind – Wings / Waist Drum FAQ
+        </h2>
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4">
+            <h3 className="font-semibold text-slate-50">How do I unlock the Waist Drum in Where Winds Meet?</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-300">
+              Unlock Qingzhou, open Qingzhou&apos;s Journal, and clear Jianghu Legacy <strong>[Sea Shepherd]</strong> for{" "}
+              <strong>[Museflow Waist Drum]</strong>. The paired Fan <strong>[Willowbend Fan]</strong> comes from{" "}
+              <strong>[Riddled Echoes]</strong>. Region checklist:{" "}
+              <Link href="/guides/qingzhou" className="text-emerald-300 underline underline-offset-4">/guides/qingzhou</Link>.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4">
+            <h3 className="font-semibold text-slate-50">Is Silkbind – Wings the same as Silkbind – Jade or Silkbind – Deluge?</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-300">
+              No. Jade / Deluge are older Fan/Umbrella paths already on this table. <strong>Silkbind – Wings</strong> is the
+              Version 2.3 path for Waist Drum + Willowbend Fan.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4">
+            <h3 className="font-semibold text-slate-50">Should I respec immediately for Wings?</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-300">
+              Read official{" "}
+              <a href="https://www.wherewindsmeetgame.com/news/official/PathBalance1015.html" target="_blank" rel="noreferrer" className="text-emerald-300 underline underline-offset-4">
+                Path Balance Oct 15
+              </a>
+              , then test on the Multiplayer Wooden Stake added in the Oct 15 patch notes. This page will not publish an
+              unverified tier rank—see{" "}
+              <Link href="/guides/builds" className="text-emerald-300 underline underline-offset-4">/guides/builds</Link>{" "}
+              only after measured notes exist.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4">
+            <h3 className="font-semibold text-slate-50">Is there a Chordsong / Tonight&apos;s Reverie requirement?</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-300">
+              Those names appear as <strong>appearances / VFX</strong> on official appearance notes (for example Crane
+              Ascending: Chordsong Waist Drum VFX; Tonight&apos;s Reverie), not as unlock gates for the martial art itself.
+            </p>
+          </div>
+        </div>
+        <p className="text-xs text-slate-400">
+          Related systems named in the 2.3 overview (no stats): Legendary Inner Way [Harmony Song]; Epic [Zephyr Whispers],
+          [Melody of the Brush], [Blade&apos;s Will]; gear sets [Cloudshear], [Reinchime].
+        </p>
       </section>
     </article>
   );

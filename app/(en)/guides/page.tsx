@@ -34,22 +34,22 @@ const guideSections = [
   {
     title: "PVP Evidence Review",
     slug: "/guides/pvp-tier-list",
-    label: "Version 2.1",
+    label: "Evidence",
     icon: "⚔️",
     color: "text-red-400",
     size: "medium",
     description:
-      "Mode-specific Version 2.1 evidence and matchup checks; no letter rank is published without a reproducible sample.",
+      "Mode-specific evidence and matchup checks; no letter rank is published without a reproducible sample. Re-check after Version 2.3 Path Balance.",
   },
   {
     title: "Patch Notes / Current Baseline",
     slug: "/guides/patch-notes",
-    label: "Balance",
+    label: "Version 2.3",
     icon: "!",
     color: "text-red-300",
     size: "medium",
     description:
-      "Version 2.1 official updates, dated patch history, balance evidence, and build recheck steps.",
+      "Version 2.3 Friends From Afar, October 25 appearances, October 29 Qingzhou follow-up watch, and dated patch history.",
   },
   {
     title: "Best Builds",
@@ -64,12 +64,12 @@ const guideSections = [
   {
     title: "Weapon Evidence Review",
     slug: "/guides/weapons/tier-list",
-    label: "8 Weapons",
+    label: "Roster",
     icon: "🗡️",
     color: "text-blue-400",
     size: "medium",
     description:
-      "Version 2.1 roster coverage and mode-specific evidence without an unsupported universal ranking.",
+      "Current roster coverage and mode-specific evidence without an unsupported universal ranking. Silkbind – Wings notes live on martial arts.",
   },
   {
     title: "Weapon Encyclopedia",
@@ -84,11 +84,11 @@ const guideSections = [
   {
     title: "Martial Arts Weapons",
     slug: "/guides/martial-arts-weapons",
-    label: "Unlocks",
+    label: "9 Paths",
     icon: "🥋",
     color: "text-indigo-300",
     size: "medium",
-    description: "All 12 martial arts weapons with images, skills, and unlock routes.",
+    description: "9 paths · 17 weapons including Version 2.3 Silkbind – Wings (Waist Drum + Willowbend Fan).",
   },
   {
     title: "Skill Theft",
@@ -153,6 +153,15 @@ const guideSections = [
     color: "text-cyan-300",
     size: "small",
     description: "Mistveil Forest tomb: three-loop route with six chests, final treasure, and spawn fixes.",
+  },
+  {
+    title: "Qingzhou Eastern Peak",
+    slug: "/guides/qingzhou",
+    label: "Version 2.3",
+    icon: "🏔️",
+    color: "text-teal-300",
+    size: "large",
+    description: "Unlock Qingzhou: Lv. 32, Heaven Has No Pier, Away to Qingzhou, Waist Drum, Inkbound Order, bosses, and the October 29 Penglai / Mount Tai Blizzard watch.",
   },
   {
     title: "Qinchuan Guide Hub",
@@ -491,9 +500,19 @@ const guideSections = [
     description: "West of Heaven’s Threshold after Cloudstair, with the Bell Toller fight.",
   },
   {
+    title: "Friends From Afar Version 2.3",
+    slug: "/guides/patch-notes",
+    label: "Latest Update",
+    icon: "🌊",
+    color: "text-teal-300",
+    size: "wide",
+    description:
+      "Qingzhou – Eastern Peak, Silkbind – Wings, Inkbound Order, October 25 appearances, and the October 29 Penglai / Mount Tai Blizzard watch.",
+  },
+  {
     title: "Clouded Revelation Version 2.1.3",
     slug: "/guides/clouded-revelation",
-    label: "Latest Update",
+    label: "History",
     icon: "☁️",
     color: "text-sky-300",
     size: "wide",
@@ -586,16 +605,22 @@ export default function GuidesPage() {
             News: future draw previews and update watch
           </Link>
           <Link
-            href="/guides/tier-list#arena-ranks"
+            href="/guides/patch-notes"
             className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-red-400/60 bg-red-500/10 px-4 py-2 text-sm font-semibold text-red-100 transition hover:border-red-300/80 hover:text-red-50"
           >
-              Version 2.1 PVP evidence and balance watch
+              Version 2.3 patch notes / Oct 25–29 watch
+          </Link>
+          <Link
+            href="/guides/qingzhou"
+            className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-teal-400/60 bg-teal-500/10 px-4 py-2 text-sm font-semibold text-teal-100 transition hover:border-teal-300/80 hover:text-teal-50"
+          >
+              Qingzhou unlock · Eastern Peak
           </Link>
           <Link
             href="/guides/weapons/tier-list"
             className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-blue-400/60 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-100 transition hover:border-blue-300/80 hover:text-blue-50"
           >
-              🗡️ Version 2.1 weapon evidence and build checks
+              🗡️ Weapon evidence and build checks
           </Link>
         </div>
 

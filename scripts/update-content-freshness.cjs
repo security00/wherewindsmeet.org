@@ -45,6 +45,7 @@ const ALL_TRACKED_PATHS = [
   '/guides/builds',
   '/guides/pvp-tier-list',
   '/guides/weapons/tier-list',
+  '/guides/qingzhou',
   '/guides/qinchuan',
   '/guides/imperial-decree',
   '/guides/mist-shrouded-prison',

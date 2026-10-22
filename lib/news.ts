@@ -26,6 +26,22 @@ type OfficialNewsRow = [
 // site can pin items out of strict date order, so news pages should not sort it.
 const officialNewsRows: OfficialNewsRow[] = [
   [
+    "october-25-version-2-3-new-appearances",
+    "[Friends from Afar] Version 2.3 New Appearances Overview - October 25",
+    "2026-10-25",
+    "event",
+    "https://www.wherewindsmeetgame.com/news/official/1025appearance.html",
+    "Official Version 2.3 appearance pack from October 25, 00:00 UTC+8: Deer-parture Draw Shop mount (to April 23, 2027), Transcendence Gate Cloud Steps VFX (discount to November 25), Lucky Lantern umbrella appearance chest (to November 9; collect-all reward The Waddling Way), Ethereal Trace outfit, and Dawnflare Dragon gauntlets appearance.",
+  ],
+  [
+    "october-25-version-2-3-update-overview",
+    "[Friends From Afar] Version 2.3 Update Overview - October 25",
+    "2026-10-25",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/1025update.html",
+    "Official mid-Version 2.3 overview card for October 25 (image-led page on the news index). Pair with the New Appearances overview for cosmetic windows; not a new version number.",
+  ],
+  [
     "october-16-version-2-3-patch-notes",
     "Version 2.3 Patch Notes: Optimizations and Bug Fixes (October 16, 2026)",
     "2026-10-16",

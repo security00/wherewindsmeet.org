@@ -1,6 +1,7 @@
 const missingInDeAndVi = [
   "/guides/bosses/feng-ruzhi",
   "/guides/imperial-decree",
+  "/guides/qingzhou",
   "/guides/qinchuan",
   "/guides/pvp-tier-list",
   "/guides/sunken-city-lake",

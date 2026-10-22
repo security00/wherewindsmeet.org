@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
+import Link from "next/link";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Sects – Factions, Ideals & Playstyles",
+  title: "Where Winds Meet Sects Guide: Factions, Ideals & Inkbound Order",
   description:
-    "Overview of major sects in Where Winds Meet, their philosophies, typical roles, and which kinds of players they tend to suit, paired with in-game sect artwork.",
+    "Overview of major sects in Where Winds Meet, their philosophies, typical roles, and Version 2.3 Inkbound Order in Qingzhou—including Visiting Disciple dual-sect study.",
   alternates: buildHreflangAlternates("/guides/sects"),
 };
 
@@ -179,7 +180,55 @@ export default function SectsPage() {
             . Treat these as mood boards, not hard restrictions—your character
             can still surprise both the sect and the world.
           </p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
+            Version <strong>2.3 Friends From Afar</strong> adds the <strong>Inkbound Order</strong> in Qingzhou—the first dual-sect “Visiting Disciple” track called out in the official Dev Letter. See the dedicated section below; older mood-board cards keep their existing English names and are not remapped here.
+          </p>
         </div>
+      </section>
+
+      <section id="inkbound-order" className="space-y-4 rounded-3xl border border-emerald-400/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/30 sm:p-8">
+        <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Version 2.3 · Qingzhou</p>
+        <h2 className="text-2xl font-bold tracking-tight text-slate-50">Inkbound Order</h2>
+        <p className="text-sm leading-6 text-slate-200">
+          <strong>Region home:</strong> Qingzhou (academies across the map). Live with Version 2.3 Friends From Afar (<strong>2026-10-15</strong>).
+        </p>
+        <h3 className="text-lg font-semibold text-slate-50">What they believe (official pitch)</h3>
+        <p className="text-sm leading-6 text-slate-300">
+          Inkbound Order is Qingzhou’s scholarly sect: academies, lectures, exams, and the idea that a fight should state its reasons before blades move. Official Dev Letter Part 2 frames it as “going to college in the Jianghu”—classrooms, dorms, dining hall, and debate culture alongside martial study. Campus marks called out in that letter include the main-island central campus and <strong>Pavilion of Tomes</strong>, <strong>Wellspring Town</strong> Primary Academy, <strong>Crownleek</strong> ecological agriculture branch, and athletic grounds.
+        </p>
+        <h3 className="text-lg font-semibold text-slate-50">How you join (confirmed steps only)</h3>
+        <ol className="list-decimal space-y-2 pl-5 text-sm leading-6 text-slate-300">
+          <li>Obtain an <strong>admission / entry permit from Master Goose</strong>.</li>
+          <li>Sit the <strong>Primary Exam</strong>.</li>
+          <li>After enrollment, progress sect tasks to open campus spaces (classrooms, dorms, dining hall—per Dev Letter; exact quest IDs Pending official confirmation).</li>
+        </ol>
+        <p className="text-sm leading-6 text-slate-300">
+          <strong>Ranks</strong> called out in the Version 2.3 overview summary: <strong>Novice</strong> and <strong>Initiate</strong> are available with the update; higher ranks unlock after the <strong>Farm Recess</strong> (Farm Recess calendar Pending official confirmation).
+        </p>
+        <p className="text-sm leading-6 text-slate-300">
+          <strong>October 16 hotfix note:</strong> official fixes included Inkbound Order entrance-exam questions—if an exam prompt looked wrong on day-one clients, re-check after the Oct 16 patch.
+        </p>
+        <h3 className="text-lg font-semibold text-slate-50">Visiting Disciples (dual-sect)</h3>
+        <p className="text-sm leading-6 text-slate-300">
+          Already pledged elsewhere? Official Part 2 states Inkbound Order introduces the first <strong>Dual-Sect</strong> feature: keep your <strong>primary sect</strong> and study here as a <strong>Visiting Disciple</strong> (“second major”). Do not tell players they must abandon Mohist Hill / other homes to sample Inkbound coursework.
+        </p>
+        <h3 className="text-lg font-semibold text-slate-50">Combat &amp; social flavor (no numbers)</h3>
+        <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-slate-300">
+          <li>State a just cause before dueling; winners may leave calligraphy on the opponent’s face (Dev Letter flavor).</li>
+          <li>Discipline tools (wooden paddle) exist for troublemakers in the pitch text—treat as fantasy flavor until a systems guide is verified.</li>
+          <li>Words are gameplay: Gift of Gab’s new <strong>War of Words</strong> debate mode is unlocked through the <strong>Profession</strong> feature, played in Qingzhou, and <strong>keeps your existing Scholar rank</strong> (2.3 overview summary). Deep mode guide → <Link href="/guides/gift-of-gab" className="text-emerald-300 underline underline-offset-4">/guides/gift-of-gab</Link>.</li>
+        </ul>
+        <p className="text-sm leading-6 text-slate-300">
+          <strong>Who might feel at home:</strong> players who like investigation, lectures, debate minigames, and a campus rhythm between open-world fights—especially anyone who wants Qingzhou content without abandoning an existing sect identity.
+        </p>
+        <div className="flex flex-wrap gap-2 pt-2 text-sm">
+          <Link href="/guides/qingzhou" className="rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-emerald-200">Qingzhou unlock →</Link>
+          <Link href="/guides/patch-notes" className="rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-emerald-200">Patch notes →</Link>
+          <Link href="/guides/martial-arts-weapons#silkbind-wings" className="rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-emerald-200">Silkbind – Wings →</Link>
+        </div>
+        <p className="text-xs text-slate-400">
+          Sources: <a href="https://www.wherewindsmeetgame.com/news/official/1014devletter.html" target="_blank" rel="noreferrer" className="text-emerald-300 underline underline-offset-4">Dev Letter Part 2</a>, <a href="https://www.wherewindsmeetgame.com/news/official/FriendsFromAfar.html" target="_blank" rel="noreferrer" className="text-emerald-300 underline underline-offset-4">Friends From Afar</a>, <a href="https://www.wherewindsmeetgame.com/news/official/1016patchnotes.html" target="_blank" rel="noreferrer" className="text-emerald-300 underline underline-offset-4">Oct 16 patch</a>.
+        </p>
       </section>
 
       <section className="space-y-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">

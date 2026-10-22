@@ -10,7 +10,7 @@ const baseUrl = "https://wherewindsmeet.org";
 const weaponIntentAnswers = [
   {
     title: "All weapons",
-    body: "Current roster: Dual Blades, Sword, Spear, Mo Blade, Fan, Umbrella, Rope Dart, and Gauntlets. Drunken Fist / Skystrike Gauntlets are on the dedicated September 3 unlock page.",
+    body: "Current roster: Dual Blades, Sword, Spear, Mo Blade, Fan, Umbrella, Rope Dart, and Gauntlets. Drunken Fist / Skystrike Gauntlets are on the dedicated September 3 unlock page. Version 2.3: Waist Drum joins via path Silkbind – Wings—unlock steps live on the martial arts weapons table; this hub will not invent a tier placement until matched tests exist.",
   },
   {
     title: "Evidence-based tier review",
