@@ -238,7 +238,7 @@ export default function SectsPage() {
           <Link href="/guides/martial-arts-weapons#silkbind-wings" className="rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-emerald-200">Silkbind – Wings →</Link>
         </div>
         <p className="text-xs text-slate-400">
-          Sources: <a href="https://www.wherewindsmeetgame.com/news/official/1014devletter.html" target="_blank" rel="noreferrer" className="text-emerald-300 underline underline-offset-4">Dev Letter Part 2</a>, <a href="https://www.wherewindsmeetgame.com/news/official/FriendsFromAfar.html" target="_blank" rel="noreferrer" className="text-emerald-300 underline underline-offset-4">Friends From Afar</a>, <a href="https://www.wherewindsmeetgame.com/news/official/1016patchnotes.html" target="_blank" rel="noreferrer" className="text-emerald-300 underline underline-offset-4">Oct 16 patch</a>.
+          Sources: <Link href="/news#october-14-dev-letter-v2-3-part-2" className="text-emerald-300 underline underline-offset-4">Our /news · Dev Letter Part 2</Link>, <Link href="/news#october-15-version-2-3-update-overview" className="text-emerald-300 underline underline-offset-4">Friends From Afar</Link>, <Link href="/news#october-16-version-2-3-patch-notes" className="text-emerald-300 underline underline-offset-4">Oct 16 patch</Link>.
         </p>
       </section>
 

@@ -302,11 +302,11 @@ export default function MartialArtsWeaponsPage() {
           <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4">
             <h3 className="font-semibold text-slate-50">Should I respec immediately for Wings?</h3>
             <p className="mt-2 text-sm leading-6 text-slate-300">
-              Read official{" "}
-              <a href="https://www.wherewindsmeetgame.com/news/official/PathBalance1015.html" target="_blank" rel="noreferrer" className="text-emerald-300 underline underline-offset-4">
-                Path Balance Oct 15
-              </a>
-              , then test on the Multiplayer Wooden Stake added in the Oct 15 patch notes. This page will not publish an
+              Read our{" "}
+              <Link href="/news#october-15-version-2-3-path-balance" className="text-emerald-300 underline underline-offset-4">
+                /news Path Balance Oct 15
+              </Link>{" "}
+              card, then test on the Multiplayer Wooden Stake added in the Oct 15 patch notes. This page will not publish an
               unverified tier rank—see{" "}
               <Link href="/guides/builds" className="text-emerald-300 underline underline-offset-4">/guides/builds</Link>{" "}
               only after measured notes exist.

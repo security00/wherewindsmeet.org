@@ -72,7 +72,7 @@ const firstSessionRows = [
   {
     goal: "Learn the region tone",
     where: "Eastern Peak climb → town → coast",
-    related: { href: "https://www.wherewindsmeetgame.com/news/official/1009devletter.html", label: "Official Dev Letter Part 1", external: true },
+    related: { href: "/news#october-9-dev-letter-v2-3-part-1", label: "Our /news · Dev Letter Part 1", external: false },
   },
   {
     goal: "Unlock new martial arts",
@@ -171,44 +171,74 @@ const faqs = [
 
 const sources = [
   {
-    label: "Official Dev Letter V2.3 Part 1 (2026-10-09)",
-    href: "https://www.wherewindsmeetgame.com/news/official/1009devletter.html",
+    label: "Our /news · Dev Letter V2.3 Part 1 (2026-10-09)",
+    href: "/news#october-9-dev-letter-v2-3-part-1",
+    external: false,
   },
   {
-    label: "Official Dev Letter V2.3 Part 2 (2026-10-14)",
-    href: "https://www.wherewindsmeetgame.com/news/official/1014devletter.html",
+    label: "Our /news · Dev Letter V2.3 Part 2 (2026-10-14)",
+    href: "/news#october-14-dev-letter-v2-3-part-2",
+    external: false,
   },
   {
-    label: "Official Friends From Afar Version 2.3 Update Overview",
-    href: "https://www.wherewindsmeetgame.com/news/official/FriendsFromAfar.html",
+    label: "Our /news · Friends From Afar Version 2.3 Update Overview",
+    href: "/news#october-15-version-2-3-update-overview",
+    external: false,
   },
   {
-    label: "Official Version 2.3 patch notes (Oct 15)",
-    href: "https://www.wherewindsmeetgame.com/news/official/FriendsFromAfarPatchNotes.html",
+    label: "Our /news · Version 2.3 Path Balance (Oct 15)",
+    href: "/news#october-15-version-2-3-path-balance",
+    external: false,
   },
   {
-    label: "Official Oct 16 fixes",
-    href: "https://www.wherewindsmeetgame.com/news/official/1016patchnotes.html",
+    label: "Our /news · Version 2.3 patch notes (Oct 15)",
+    href: "/news#october-15-version-2-3-patch-notes",
+    external: false,
   },
   {
-    label: "Official Oct 25 appearances",
-    href: "https://www.wherewindsmeetgame.com/news/official/1025appearance.html",
+    label: "Our /news · Oct 16 fixes",
+    href: "/news#october-16-version-2-3-patch-notes",
+    external: false,
   },
   {
-    label: "Official interactive map",
+    label: "Our /news · Oct 15 & 18 appearances",
+    href: "/news#october-15-version-2-3-new-appearances",
+    external: false,
+  },
+  {
+    label: "Our /news · Oct 25 appearances",
+    href: "/news#october-25-version-2-3-new-appearances",
+    external: false,
+  },
+  {
+    label: "Our /news · Oct 25 update overview",
+    href: "/news#october-25-version-2-3-update-overview",
+    external: false,
+  },
+  {
+    label: "Official interactive map (publisher)",
     href: "https://www.wherewindsmeetgame.com/map/en/",
+    external: true,
+  },
+  {
+    label: "Official news index (publisher site)",
+    href: "https://www.wherewindsmeetgame.com/news/",
+    external: true,
   },
   {
     label: "RPGamer Qingzhou / Penglai Oct 29 (Reported date)",
     href: "https://rpgamer.com/2026/10/where-winds-meet-heads-to-qingzhou/",
+    external: true,
   },
   {
     label: "3DM EN Penglai Oct 29 (Reported date)",
     href: "https://en.3dmgame.com/news/6194",
+    external: true,
   },
   {
     label: "Game8 Ver 2.3 roadmap table (Reported date)",
     href: "https://game8.co/games/Where-Winds-Meet/archives/631037",
+    external: true,
   },
 ];
 
@@ -275,7 +305,7 @@ export default function QingzhouGuidePage() {
           follow-up beat.
         </p>
         <p className="mt-3 text-xs text-slate-500">
-          Last checked {lastChecked} · Unofficial fan hub. Prefer official news links in Sources for every number and date.
+          Last checked {lastChecked} · Unofficial fan hub. Prefer our /news cards in Sources for every number and date (they cite the official originals).
         </p>
       </section>
 
@@ -435,9 +465,9 @@ export default function QingzhouGuidePage() {
               <div className="p-4">
                 <h3 className="text-base font-semibold text-slate-50">{boss.name}</h3>
                 <p className="mt-2 text-sm leading-6 text-slate-300">{boss.flavor}</p>
-                <a href={boss.media.sourceHref} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex text-xs font-semibold text-emerald-300 underline underline-offset-4">
-                  {boss.media.sourceLabel} ↗
-                </a>
+                <Link href={boss.media.sourceHref} className="mt-2 inline-flex text-xs font-semibold text-emerald-300 underline underline-offset-4">
+                  {boss.media.sourceLabel} →
+                </Link>
               </div>
             </article>
           ))}
@@ -532,15 +562,22 @@ export default function QingzhouGuidePage() {
         <ul className="mt-3 list-disc space-y-1 pl-5">
           {sources.map((source) => (
             <li key={source.href}>
-              <a href={source.href} target="_blank" rel="noreferrer" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
-                {source.label}
-              </a>
+              {source.external ? (
+                <a href={source.href} target="_blank" rel="noreferrer" className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
+                  {source.label}
+                </a>
+              ) : (
+                <Link href={source.href} className="text-emerald-300 underline underline-offset-4 hover:text-emerald-200">
+                  {source.label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
         <p className="mt-4 text-xs text-slate-500">
-          Unofficial fan hub. Not affiliated with NetEase / Everstone. Always verify dates and unlock text in-game and on
-          official news.
+          Unofficial fan hub. Not affiliated with NetEase / Everstone. Official posts are summarized on our{" "}
+          <Link href="/news" className="text-emerald-300 underline underline-offset-4">/news</Link> cards—verify dates
+          and unlock text in-game.
         </p>
       </section>
     </article>
