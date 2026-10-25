@@ -99,7 +99,7 @@ test("core update surfaces record the latest official Version 2.1 review", () =>
     const entry = byPath.get(path);
     assert.ok(entry, `missing freshness entry for ${path}`);
     if (version23Paths.has(path)) {
-      assert.equal(entry.lastChecked, "2026-10-22", `${path} review date`);
+      assert.equal(entry.lastChecked, path === "/guides/codes" ? "2026-10-25" : "2026-10-22", `${path} review date`);
       assert.match(entry.gameVersion, /Version 2\.3/, `${path} game version`);
       assert.ok(
         path === "/guides/codes" ||
