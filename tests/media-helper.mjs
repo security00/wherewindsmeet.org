@@ -5,6 +5,47 @@
 import { existsSync } from "node:fs";
 
 const CDN_URL = "https://static.wherewindsmeet.org";
+const SITE_REFERRER = "https://wherewindsmeet.org/";
+
+/**
+ * static.wherewindsmeet.org returns 200 for an empty Referer and for
+ * https://wherewindsmeet.org/. Any other Referer (GitHub Actions, workers.dev)
+ * is Cloudflare 1010/1011 and HTTP 403. Same rule as lib/cdn-referrer-policy.mjs.
+ * HEAD is tried first; a rejected probe retries with the allowed site Referer,
+ * then a one-byte GET, so a single hotlink or challenge response is not a miss.
+ */
+const CDN_PROBES = [
+  { method: "HEAD", referrerPolicy: "no-referrer" },
+  { method: "HEAD", referrer: SITE_REFERRER, referrerPolicy: "unsafe-url" },
+  { method: "GET", referrerPolicy: "no-referrer", headers: { Range: "bytes=0-0" } },
+  {
+    method: "GET",
+    referrer: SITE_REFERRER,
+    referrerPolicy: "unsafe-url",
+    headers: { Range: "bytes=0-0" },
+  },
+];
+
+async function cdnProbeIsShipped(cdnUrl, publicPath) {
+  for (const init of CDN_PROBES) {
+    try {
+      const response = await fetch(cdnUrl, init);
+      const status = response.status;
+      try {
+        await response.body?.cancel?.();
+      } catch {
+        // Closing the body must not turn a successful probe into a miss.
+      }
+      if (response.ok || status === 206) return true;
+      if (response.status === 404) return false;
+      // Restricted publisher clips are on the CDN but not anonymously readable.
+      if (response.status === 403 && publicPath.endsWith(".mp4")) return true;
+    } catch {
+      // Try the next probe. A thrown request is not proof the object is absent.
+    }
+  }
+  return false;
+}
 
 /**
  * Check if a media file is shipped with the app.
@@ -23,17 +64,7 @@ export async function isMediaShipped(publicPath) {
   // Convert public/path/file.ext -> path/file.ext for CDN
   const cdnPath = publicPath.replace(/^public\//, "");
   const cdnUrl = `${CDN_URL}/${cdnPath}`;
-  
-  try {
-    const response = await fetch(cdnUrl, { method: "HEAD" });
-    // Video files may return 403 if R2 has access controls enabled;
-    // treat 403 as "shipped" for MP4 since they're on CDN but restricted
-    if (response.ok) return true; // 200-299
-    if (response.status === 403 && publicPath.endsWith(".mp4")) return true;
-    return false;
-  } catch {
-    return false;
-  }
+  return cdnProbeIsShipped(cdnUrl, publicPath);
 }
 
 /**
