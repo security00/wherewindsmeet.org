@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
-import { MediaPlaceholder } from "@/components/guides/MediaPlaceholder";
 import { OfficialMediaFigure } from "@/components/guides/OfficialMediaFigure";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import { castInCurrentsOfficialMapStill } from "@/lib/officialMapCaptures";
 import {
   castInCurrentsDream,
   castInCurrentsScholar,
@@ -86,11 +86,7 @@ export default function CastInCurrentsPage() {
           Whether membership is required is Pending in-game confirmation.
         </p>
         <OfficialMediaFigure item={inkboundCampus} />
-        <MediaPlaceholder
-          slot="Journal / map"
-          alt="Where Cast in Currents appears in Journal or on the map after October 29."
-          expectation="Pending an official map or in-client Journal capture. Do not invent coordinates."
-        />
+        <OfficialMediaFigure item={castInCurrentsOfficialMapStill} aspectClassName="aspect-[1920/1045]" />
       </section>
 
       <section className="grid gap-4 md:grid-cols-2">
