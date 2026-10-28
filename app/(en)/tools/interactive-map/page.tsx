@@ -3,7 +3,8 @@ import Link from "next/link";
 import { OfficialMediaFigure } from "@/components/guides/OfficialMediaFigure";
 import { InteractiveMapEmbed } from "@/components/InteractiveMapEmbed";
 import { buildHreflangAlternates } from "@/lib/hreflang";
-import { qingzhouMountTai, steamLibraryHero } from "@/lib/officialQingzhouMedia";
+import { MediaPlaceholder } from "@/components/guides/MediaPlaceholder";
+import { devLetter1028Cover, qingzhouMountTai, qingzhouPenglai, steamLibraryHero } from "@/lib/officialQingzhouMedia";
 
 const baseUrl = "https://wherewindsmeet.org";
 const pageUrl = `${baseUrl}/tools/interactive-map`;
@@ -13,14 +14,14 @@ const sixFastUrl = "https://yysls-map.6fast.com/yysls/maps/qinghe?lang=en";
 const map17173Url = "https://map.17173.com/yysls/maps/qinchuan";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Map — Qingzhou, Bosses, NPCs & Collectibles",
+  title: "Where Winds Meet Map — Qingzhou, Penglai, Bosses & Collectibles",
   description:
-    "Find Qingzhou on the Where Winds Meet map: use the official interactive map’s Qingzhou layer first, then MapGenie or a CN alternative for bosses, Locals/NPCs, oddities, and teleport pins. Coverage can lag Version 2.3—verify in-game.",
+    "Use the official Where Winds Meet interactive map for Qingzhou and Penglai (open October 29 with Mount Tai Blizzard and sister experiences). Prefer the official layer; third-party pins can lag—verify in-game.",
   alternates: buildHreflangAlternates("/tools/interactive-map"),
   openGraph: {
-    title: "Where Winds Meet Map — Qingzhou, Bosses, NPCs & Collectibles",
+    title: "Where Winds Meet Map — Qingzhou, Penglai, Bosses & Collectibles",
     description:
-      "Official Qingzhou layer first, then MapGenie or a CN map for bosses, Locals/NPCs, oddities, and teleport pins.",
+      "Official Qingzhou and Penglai layers first. Third-party pins can lag the October 29 batch.",
     url: pageUrl,
     siteName: "Where Winds Meet Hub",
     type: "website",
@@ -28,9 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Where Winds Meet Map — Qingzhou, Bosses, NPCs & Collectibles",
-    description:
-      "Qingzhou on the official interactive map, plus MapGenie and CN alternatives.",
+    title: "Where Winds Meet Map — Qingzhou, Penglai, Bosses & Collectibles",
+    description: "Qingzhou and Penglai on the official interactive map. This hub does not claim pin totals.",
   },
 };
 
@@ -135,9 +135,14 @@ const faqs = [
       "Lv. 32 + Qinghe Main Chapter [Heaven Has No Pier] → Lost Chapter [Away to Qingzhou]. Full checklist: /guides/qingzhou.",
   },
   {
-    question: "Will Penglai show before October 29?",
+    question: "Does the map include Penglai now?",
     answer:
-      "Treat Penglai’s calendar open day as Reported (Oct 29) until official notes confirm. The Dev Letter already describes Penglai as part of Qingzhou’s design; map FOW / pins may unlock with that follow-up.",
+      "Penglai opened October 29 per the official October 28 Dev Letter. Check the official map’s Qingzhou / Penglai controls first. If a third-party embed on this page lags, open the official map in a new tab and verify in-game. Region guides: /guides/penglai and /guides/qingzhou. This hub does not claim a marker total.",
+  },
+  {
+    question: "Where are Mount Tai Blizzard, Cast in Currents, and Spirit of the Grove on the map?",
+    answer:
+      "Campaign, Legacy, and exploration entries may appear as Journal content rather than overworld pins. Start from /guides/mount-tai-blizzard, /guides/cast-in-currents, and /guides/spirit-of-the-grove. Use the official map only for confirmed world markers.",
   },
 ];
 
@@ -176,7 +181,7 @@ export default function InteractiveMapPage() {
       <header className="rounded-3xl border border-slate-800/80 bg-slate-950/80 p-6 shadow-2xl shadow-slate-950/40 sm:p-8">
         <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">Tools</p>
         <h1 className="mt-2 text-balance text-3xl font-bold tracking-tight text-slate-50 sm:text-4xl">
-          Where is the Where Winds Meet interactive map for Qingzhou, bosses, NPCs, and collectibles?
+          Where is the Where Winds Meet interactive map for Qingzhou, Penglai, bosses, and collectibles?
         </h1>
         <div className="mt-4 max-w-3xl space-y-3 text-sm leading-relaxed text-slate-300">
           <p>
@@ -214,25 +219,33 @@ export default function InteractiveMapPage() {
         </div>
 
         <div id="qingzhou" className="mt-6 rounded-2xl border border-emerald-400/30 bg-slate-950/60 p-5">
-          <h3 className="text-lg font-bold text-slate-50">Qingzhou on the map (Version 2.3)</h3>
+          <h3 className="text-lg font-bold text-slate-50">Qingzhou and Penglai on the map (Version 2.3)</h3>
           <p className="mt-2 text-sm leading-6 text-slate-300">
-            Version <strong>2.3 Friends From Afar</strong> (live <strong>2026-10-15</strong>) adds the theme region <strong>Qingzhou – Eastern Peak</strong>. When you search <strong>Where Winds Meet Qingzhou map</strong>, start here:
+            Version <strong>2.3 Friends From Afar</strong> added <strong>Qingzhou – Eastern Peak</strong> on <strong>2026-10-15</strong>. On <strong>2026-10-29</strong>, official Dev Letter <em>Dreaming Paths, Murders in the Snow</em> opened <strong>Penglai</strong> alongside Campaign <strong>[Mount Tai Blizzard]</strong>, Jianghu Legacy <strong>[Cast in Currents]</strong>, and exploration <strong>[Spirit of the Grove]</strong>.
           </p>
           <ol className="mt-3 list-decimal space-y-1 pl-5 text-sm leading-6 text-slate-300">
-            <li>Open the <a href={officialMapUrl} target="_blank" rel="noopener noreferrer" className="text-emerald-300 hover:text-emerald-200">official interactive map</a> and select the <strong>Qingzhou</strong> layer / region control.</li>
-            <li>Cross-check English labels on <strong>MapGenie</strong> (third-party; may lag Version 2.3 pins).</li>
+            <li>Open the <a href={officialMapUrl} target="_blank" rel="noopener noreferrer" className="text-emerald-300 hover:text-emerald-200">official interactive map</a> and select <strong>Qingzhou</strong> (and <strong>Penglai</strong> if it is listed as a sub-layer).</li>
+            <li>Cross-check English labels on <strong>MapGenie</strong> only as a secondary opinion. Coverage can lag.</li>
             <li>Use a <strong>CN map</strong> alternative only as a second opinion—name strings may not match global English.</li>
-            <li>For unlock gates, story Lost Chapter, and “what is this region,” read <Link href="/guides/qingzhou" className="text-emerald-300 hover:text-emerald-200">/guides/qingzhou</Link> instead of duplicating that guide on this tool URL.</li>
+            <li>For unlock story and the October 29 experiences, read <Link href="/guides/qingzhou" className="text-emerald-300 hover:text-emerald-200">/guides/qingzhou</Link> and <Link href="/guides/penglai" className="text-emerald-300 hover:text-emerald-200">/guides/penglai</Link> instead of duplicating those guides here.</li>
           </ol>
           <p className="mt-3 text-sm leading-6 text-slate-300">
-            <strong>Official map confirmation (2026-10-22):</strong> the publisher map tool exposes a Qingzhou region with Boundary Stone, Encounter, Meow Meow, Cat Play, Universal Harmony, Treasure Chest, Oddity, Injustice Quest, Camp, and Antiques filters. This hub still does not claim a live marker total.
+            <strong>Official map confirmation (2026-10-22, still the last counted filter list):</strong> the publisher map tool exposes a Qingzhou region with Boundary Stone, Encounter, Meow Meow, Cat Play, Universal Harmony, Treasure Chest, Oddity, Injustice Quest, Camp, and Antiques filters. <strong>Last checked 2026-10-29:</strong> this hub still does not claim a live marker total for Qingzhou or Penglai.
           </p>
           <p className="mt-2 text-sm leading-6 text-slate-300">
-            Landmarks named in the official Dev Letter (orientation only—not a pin guarantee): Mount Tai / Eastern Peak approach, Wellspring Town, Crownleek Terrace, Yellow River estuary bird murmurations, and Mount Penglai as a later mist-isle beat. Pins for <strong>Mount Penglai</strong> and campaign spaces tied to <strong>Mount Tai Blizzard</strong> may appear only after the late-October follow-up—see the Reported <strong>October 29</strong> watch on <Link href="/guides/patch-notes" className="text-emerald-300 hover:text-emerald-200">/guides/patch-notes</Link> and <Link href="/guides/qingzhou#upcoming" className="text-emerald-300 hover:text-emerald-200">/guides/qingzhou#upcoming</Link>.
+            Landmarks named in official letters (orientation only—not a pin guarantee): Mount Tai / Eastern Peak, Wellspring Town, Crownleek Terrace, and Mount Penglai. Campaign and Legacy spaces may be Journal entries rather than overworld pins. Guides: <Link href="/guides/mount-tai-blizzard" className="text-emerald-300 hover:text-emerald-200">Mount Tai Blizzard</Link>, <Link href="/guides/cast-in-currents" className="text-emerald-300 hover:text-emerald-200">Cast in Currents</Link>, <Link href="/guides/spirit-of-the-grove" className="text-emerald-300 hover:text-emerald-200">Spirit of the Grove</Link>, <Link href="/guides/patch-notes" className="text-emerald-300 hover:text-emerald-200">patch notes</Link>.
           </p>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
+            <MediaPlaceholder
+              slot="M1 official map"
+              alt="Official Where Winds Meet interactive map — Qingzhou / Penglai layer selected."
+              expectation="Pending a capture from the official map after October 29. Do not paste a third-party map skin as official."
+            />
+            <OfficialMediaFigure item={qingzhouPenglai} aspectClassName="aspect-[16/10]" />
+          </div>
+          <div className="mt-4 grid gap-4 md:grid-cols-2">
+            <OfficialMediaFigure item={devLetter1028Cover} aspectClassName="aspect-[16/10]" />
             <OfficialMediaFigure item={qingzhouMountTai} aspectClassName="aspect-[16/10]" />
-            <OfficialMediaFigure item={steamLibraryHero} aspectClassName="aspect-[16/10]" />
           </div>
         </div>
 
@@ -420,6 +433,24 @@ export default function InteractiveMapPage() {
             className="rounded-2xl border border-slate-800 bg-slate-900/60 px-4 py-3 font-semibold text-slate-100 hover:border-emerald-500/40 hover:text-emerald-100"
           >
             NPC list & Old Friends &gt;
+          </Link>
+          <Link
+            href="/guides/penglai"
+            className="rounded-2xl border border-slate-800 bg-slate-900/60 px-4 py-3 font-semibold text-slate-100 hover:border-emerald-500/40 hover:text-emerald-100"
+          >
+            Penglai &gt;
+          </Link>
+          <Link
+            href="/guides/qingzhou"
+            className="rounded-2xl border border-slate-800 bg-slate-900/60 px-4 py-3 font-semibold text-slate-100 hover:border-emerald-500/40 hover:text-emerald-100"
+          >
+            Qingzhou unlock &gt;
+          </Link>
+          <Link
+            href="/guides/mount-tai-blizzard"
+            className="rounded-2xl border border-slate-800 bg-slate-900/60 px-4 py-3 font-semibold text-slate-100 hover:border-emerald-500/40 hover:text-emerald-100"
+          >
+            Mount Tai Blizzard &gt;
           </Link>
           <Link
             href="/guides/bosses"

@@ -20,6 +20,8 @@ const FRIENDS_OVERVIEW = "/news#october-15-version-2-3-update-overview";
 const APPEARANCE_1025 = "/news#october-25-version-2-3-new-appearances";
 const APPEARANCE_1015 = "/news#october-15-version-2-3-new-appearances";
 const UPDATE_1025 = "/news#october-25-version-2-3-update-overview";
+const DEV_LETTER_1028 = "/news#october-28-dev-letter-dreaming-paths";
+const PATCH_1029 = "/news#october-29-version-2-3-patch-notes";
 const STEAM_NEWS_23 =
   "https://store.steampowered.com/news/app/3564740/view/1846651706675921";
 const STEAM_LIBRARY =
@@ -69,7 +71,7 @@ export const qingzhouMountTai: OfficialMediaItem = {
 export const qingzhouPenglai: OfficialMediaItem = {
   src: "https://r.res.easebar.com/pic/20261009/bed793d1-9218-4526-8b35-8756b729952f.gif",
   alt: "Official Mount Penglai academy vista from Dev Letter Part 1",
-  caption: "Official Dev Letter Part 1 framing of Mount Penglai (open schedule still Reported).",
+  caption: "Official Dev Letter Part 1 framing of Mount Penglai. The October 28 letter sets the opening alongside October 29.",
   sourceLabel: "Our /news · Dev Letter V2.3 Part 1 (official)",
   sourceHref: DEV_LETTER_1,
 };
@@ -185,6 +187,97 @@ export const appearance1015Cover: OfficialMediaItem = {
   caption: "Official cover still from the October 15 & 18 Version 2.3 appearances overview.",
   sourceLabel: "Our /news · Oct 15 & 18 appearances (official)",
   sourceHref: APPEARANCE_1015,
+};
+
+/** October 28 Dev Letter stills (r.res.easebar.com, same publisher CDN as Part 1/2). */
+export const devLetter1028Cover: OfficialMediaItem = {
+  src: friendsFromAfarCover.src,
+  alt: "Official Version 2.3 Dev Letter page art for Dreaming Paths, Murders in the Snow",
+  caption:
+    "Shared official news key art on the October 28 Dev Letter page. It is the letter’s published og:image, not a Penglai-only still.",
+  sourceLabel: "Our /news · Oct 28 Dev Letter (official)",
+  sourceHref: DEV_LETTER_1028,
+};
+
+export const mountTaiBlizzardInn: OfficialMediaItem = {
+  src: "https://r.res.easebar.com/pic/20261028/bca8dcbf-e0dd-4923-a093-b37ea927ae48.png",
+  alt: "Official still for Campaign Mount Tai Blizzard, the snowbound inn mystery",
+  caption: "Official October 28 Dev Letter still published with the Mount Tai Blizzard / century-old feud passage.",
+  sourceLabel: "Our /news · Oct 28 Dev Letter (official)",
+  sourceHref: DEV_LETTER_1028,
+};
+
+export const gongNoteZitherStill: OfficialMediaItem = {
+  src: "https://r.res.easebar.com/pic/20261028/99be3417-654e-47f0-9107-8813ff27bf97.png",
+  alt: "Official still published with the Gong-Note Zither passage",
+  caption: "Official Dev Letter still next to the Gong-Note Zither description (past reconstructed in a freeze-frame space).",
+  sourceLabel: "Our /news · Oct 28 Dev Letter (official)",
+  sourceHref: DEV_LETTER_1028,
+};
+
+export const caseRoomClip: OfficialMediaItem = {
+  src: "https://r.res.easebar.com/pic/20261028/c5999e0b-d68d-4d3f-aed9-988a3e604b1b.gif",
+  alt: "Official clip published with the Case Room evidence passage",
+  caption: "Official Dev Letter clip published with the Case Room / scattered-evidence passage.",
+  sourceLabel: "Our /news · Oct 28 Dev Letter (official)",
+  sourceHref: DEV_LETTER_1028,
+};
+
+export const blizzardDeductionClip: OfficialMediaItem = {
+  src: "https://r.res.easebar.com/pic/20261028/c548d20a-c000-4562-9e82-6d6148a98b97.gif",
+  alt: "Official clip published with the Mount Tai Blizzard deduction passage",
+  caption: "Official Dev Letter clip published with the deduction-board / Reverse passage.",
+  sourceLabel: "Our /news · Oct 28 Dev Letter (official)",
+  sourceHref: DEV_LETTER_1028,
+};
+
+export const castInCurrentsDream: OfficialMediaItem = {
+  src: "https://r.res.easebar.com/pic/20261028/06b3a964-ad67-4578-b829-4b85e712386d.gif",
+  alt: "Official clip for Jianghu Legacy Cast in Currents dreamcore halls",
+  caption: "Official Dev Letter clip at the Cast in Currents dreamcore opening (empty classroom / infinite corridor).",
+  sourceLabel: "Our /news · Oct 28 Dev Letter (official)",
+  sourceHref: DEV_LETTER_1028,
+};
+
+export const castInCurrentsScholar: OfficialMediaItem = {
+  src: "https://r.res.easebar.com/pic/20261028/f9ad6d47-446d-4efb-83fa-ee466be824c1.png",
+  alt: "Official still for Zheng Sheng and the Cast in Currents dream",
+  caption: "Official Dev Letter still published with Zheng Sheng of the Inkbound Order in Cast in Currents.",
+  sourceLabel: "Our /news · Oct 28 Dev Letter (official)",
+  sourceHref: DEV_LETTER_1028,
+};
+
+export const castInCurrentsTime: OfficialMediaItem = {
+  src: "https://r.res.easebar.com/pic/20261028/d88c8616-3383-462c-a62b-8d6bc1daaf45.gif",
+  alt: "Official clip for Cast in Currents time-shift movement",
+  caption: "Official Dev Letter clip published with the forward/back time-shift mechanic.",
+  sourceLabel: "Our /news · Oct 28 Dev Letter (official)",
+  sourceHref: DEV_LETTER_1028,
+};
+
+export const spiritOfTheGroveHall: OfficialMediaItem = {
+  src: "https://r.res.easebar.com/pic/20261028/6771b9aa-a425-49a5-87ba-ef441e39c722.gif",
+  alt: "Official clip for Spirit of the Grove abandoned study hall",
+  caption: "Official Dev Letter clip published with the Spirit of the Grove abandoned-hall rumor.",
+  sourceLabel: "Our /news · Oct 28 Dev Letter (official)",
+  sourceHref: DEV_LETTER_1028,
+};
+
+export const spiritOfTheGroveMirror: OfficialMediaItem = {
+  src: "https://r.res.easebar.com/pic/20261028/dfe62245-55c5-4b71-a407-c8222211da82.png",
+  alt: "Official still for the Spirit of the Grove bronze-mirror passage",
+  caption: "Official Dev Letter still published with the bronze-mirror anomaly passage.",
+  sourceLabel: "Our /news · Oct 28 Dev Letter (official)",
+  sourceHref: DEV_LETTER_1028,
+};
+
+export const patchNotes1029Cover: OfficialMediaItem = {
+  src: friendsFromAfarCover.src,
+  alt: "Official October 29 Version 2.3 patch notes header art",
+  caption:
+    "Shared official news key art on the October 29 patch-notes page. The page itself has no separate stills.",
+  sourceLabel: "Our /news · Oct 29 patch notes (official)",
+  sourceHref: PATCH_1029,
 };
 
 /** Official Where Winds Meet YouTube channel — Qingzhou announcement trailer. */

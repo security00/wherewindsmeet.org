@@ -232,6 +232,23 @@ export default function SectsPage() {
         <p className="text-sm leading-6 text-slate-300">
           <strong>Who might feel at home:</strong> players who like investigation, lectures, debate minigames, and a campus rhythm between open-world fights—especially anyone who wants Qingzhou content without abandoning an existing sect identity.
         </p>
+        <div className="space-y-3 rounded-2xl border border-slate-800 bg-slate-950/60 p-4">
+          <h3 className="text-lg font-semibold text-slate-50">Related Qingzhou experiences (October 29)</h3>
+          <p className="text-sm leading-6 text-slate-300">
+            Two October 29 features are framed around Inkbound academy spaces. Whether either requires Inkbound membership, rather than Qingzhou access alone, is Pending in-game confirmation. Last checked 2026-10-29.
+          </p>
+          <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-slate-300">
+            <li><strong>[Cast in Currents]</strong> — Jianghu Legacy. Scholar Zheng Sheng; dreamscape master–disciple past. <Link href="/guides/cast-in-currents" className="text-emerald-300 underline underline-offset-4">/guides/cast-in-currents</Link></li>
+            <li><strong>[Spirit of the Grove]</strong> — featured light-horror exploration. Abandoned study hall; bronze mirror anomalies. <Link href="/guides/spirit-of-the-grove" className="text-emerald-300 underline underline-offset-4">/guides/spirit-of-the-grove</Link></li>
+          </ul>
+          <p className="text-sm leading-6 text-slate-300">
+            Regional gate the same day: <Link href="/guides/penglai" className="text-emerald-300 underline underline-offset-4">Penglai</Link>. Campaign sibling (inn mystery, not the campus): <Link href="/guides/mount-tai-blizzard" className="text-emerald-300 underline underline-offset-4">Mount Tai Blizzard</Link>. Neither experience replaces the Primary Exam.
+          </p>
+          <OfficialMediaFigure item={inkboundCampus} aspectClassName="aspect-[16/9]" />
+          <p className="text-xs text-slate-400">
+            Sources: <a className="text-emerald-300 underline underline-offset-4" href="https://www.wherewindsmeetgame.com/news/official/1028devletter.html" target="_blank" rel="noreferrer">October 28 Dev Letter</a> and Dev Letter Part 1.
+          </p>
+        </div>
         <div className="flex flex-wrap gap-2 pt-2 text-sm">
           <Link href="/guides/qingzhou" className="rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-emerald-200">Qingzhou unlock →</Link>
           <Link href="/guides/patch-notes" className="rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-emerald-200">Patch notes →</Link>

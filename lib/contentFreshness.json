@@ -6,10 +6,12 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-10-22",
-    "gameVersion": "Version 2.3 / October 25 appearances + October 29 watch",
+    "lastChecked": "2026-10-29",
+    "gameVersion": "Version 2.3 / October 29 Penglai",
     "priorityCluster": "main-keyword-recovery",
     "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/news/official/1028devletter.html",
+      "https://www.wherewindsmeetgame.com/news/official/1029patchnotes.html",
       "https://store.steampowered.com/news/app/3564740/view/1846651706675921",
       "https://store.steampowered.com/news/app/3564740/view/1843481262704696",
       "https://store.steampowered.com/news/app/3564740/view/1843481262704691",
@@ -68,14 +70,15 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-10-22",
-    "gameVersion": "Version 2.3 / Qingzhou layer",
+    "lastChecked": "2026-10-29",
+    "gameVersion": "Version 2.3 / Qingzhou + Penglai",
     "priorityCluster": "week-2-region-cluster",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/map/en/",
       "https://mapgenie.io/where-winds-meet/maps/world",
       "https://yysls-map.6fast.com/yysls/maps/qinghe?lang=en",
-      "https://www.wherewindsmeetgame.com/news/official/1009devletter.html"
+      "https://www.wherewindsmeetgame.com/news/official/1009devletter.html",
+      "https://www.wherewindsmeetgame.com/news/official/1028devletter.html"
     ]
   },
   {
@@ -108,10 +111,12 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-10-22",
-    "gameVersion": "Version 2.3 / Dev Letters + Oct 25 appearances",
+    "lastChecked": "2026-10-29",
+    "gameVersion": "Version 2.3 / October 29 Penglai",
     "priorityCluster": "week-2-region-cluster",
     "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/news/official/1028devletter.html",
+      "https://www.wherewindsmeetgame.com/news/official/1029patchnotes.html",
       "https://store.steampowered.com/news/app/3564740/view/1846651706675921",
       "https://store.steampowered.com/news/app/3564740/view/1843481262704696",
       "https://store.steampowered.com/news/app/3564740/view/1843481262704691",
@@ -156,10 +161,12 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-10-22",
-    "gameVersion": "Version 2.3 / October 25 appearances + October 29 watch",
+    "lastChecked": "2026-10-29",
+    "gameVersion": "Version 2.3 / October 29 Penglai",
     "priorityCluster": "week-2-region-cluster",
     "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/news/official/1028devletter.html",
+      "https://www.wherewindsmeetgame.com/news/official/1029patchnotes.html",
       "https://store.steampowered.com/news/app/3564740/view/1846651706675921",
       "https://store.steampowered.com/news/app/3564740/view/1843481262704696",
       "https://store.steampowered.com/news/app/3564740/view/1843481262704691",
@@ -613,15 +620,60 @@
     "languages": [
       "en"
     ],
-    "lastChecked": "2026-10-22",
-    "gameVersion": "Version 2.3 / Friends From Afar",
+    "lastChecked": "2026-10-29",
+    "gameVersion": "Version 2.3 / Penglai live",
     "priorityCluster": "version-2-3-qingzhou",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/news/official/1009devletter.html",
       "https://www.wherewindsmeetgame.com/news/official/1014devletter.html",
       "https://www.wherewindsmeetgame.com/news/official/FriendsFromAfar.html",
-      "https://www.wherewindsmeetgame.com/news/official/1025appearance.html"
+      "https://www.wherewindsmeetgame.com/news/official/1025appearance.html",
+      "https://www.wherewindsmeetgame.com/news/official/1028devletter.html",
+      "https://www.wherewindsmeetgame.com/news/official/1029patchnotes.html"
     ]
+  },
+  {
+    "basePath": "/guides/penglai",
+    "languages": ["en"],
+    "lastChecked": "2026-10-29",
+    "gameVersion": "Version 2.3 / October 29 Penglai",
+    "priorityCluster": "version-2-3-qingzhou",
+    "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/news/official/1028devletter.html",
+      "https://www.wherewindsmeetgame.com/news/official/1009devletter.html"
+    ]
+  },
+  {
+    "basePath": "/guides/mount-tai-blizzard",
+    "languages": ["en"],
+    "lastChecked": "2026-10-29",
+    "gameVersion": "Version 2.3 / October 29 Penglai",
+    "priorityCluster": "version-2-3-qingzhou",
+    "sourceUrls": ["https://www.wherewindsmeetgame.com/news/official/1028devletter.html"]
+  },
+  {
+    "basePath": "/guides/cast-in-currents",
+    "languages": ["en"],
+    "lastChecked": "2026-10-29",
+    "gameVersion": "Version 2.3 / October 29 Penglai",
+    "priorityCluster": "version-2-3-qingzhou",
+    "sourceUrls": ["https://www.wherewindsmeetgame.com/news/official/1028devletter.html"]
+  },
+  {
+    "basePath": "/guides/spirit-of-the-grove",
+    "languages": ["en"],
+    "lastChecked": "2026-10-29",
+    "gameVersion": "Version 2.3 / October 29 Penglai",
+    "priorityCluster": "version-2-3-qingzhou",
+    "sourceUrls": ["https://www.wherewindsmeetgame.com/news/official/1028devletter.html"]
+  },
+  {
+    "basePath": "/guides/warehouse",
+    "languages": ["en"],
+    "lastChecked": "2026-10-29",
+    "gameVersion": "Version 2.3 / Friends From Afar",
+    "priorityCluster": "version-2-3-qingzhou",
+    "sourceUrls": ["https://www.wherewindsmeetgame.com/news/official/FriendsFromAfarPatchNotes.html"]
   },
   {
     "basePath": "/guides/martial-arts-weapons",

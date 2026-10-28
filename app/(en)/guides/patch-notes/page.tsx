@@ -9,13 +9,33 @@ import {
   appearanceDeerParture,
   appearanceEtherealTrace,
   appearanceLuckyLantern,
+  devLetter1028Cover,
   friendsFromAfarBanner,
+  patchNotes1029Cover,
 } from "@/lib/officialQingzhouMedia";
 
 const baseUrl = "https://wherewindsmeet.org";
 const freshness = getContentFreshness("/guides/patch-notes");
 
 const latestUpdateCards = [
+  {
+    title: "October 28 Dev Letter — Penglai opens with three experiences (Official)",
+    date: "2026-10-28",
+    source: "/news#october-28-dev-letter-dreaming-paths",
+    summary:
+      "Official Dev Letter Dreaming Paths, Murders in the Snow: on October 29, alongside the opening of Penglai, the game adds Campaign [Mount Tai Blizzard] (Gong-Note Zither, Case Room, Reverse), Jianghu Legacy [Cast in Currents], and exploration [Spirit of the Grove].",
+    playerAction:
+      "Open Journal / map after the drop. How-tos: /guides/penglai, /guides/mount-tai-blizzard, /guides/cast-in-currents, /guides/spirit-of-the-grove.",
+  },
+  {
+    title: "October 29 Version 2.3 optimizations and bug fixes (Official)",
+    date: "2026-10-29",
+    source: "/news#october-29-version-2-3-patch-notes",
+    summary:
+      "Guild War opened early in Yunya, Yougu, and Linhe on October 18 because a time-offset merge failed; scores from that window were rolled back and compensation was sent. Guild War does not follow DST shifts. Battle Pass [Scarlet Whispers] now ends November 13 at 17:59:59 UTC+8 (was November 14 at 04:59:59). From October 29 the weekly Battle Pass EXP cap resets Monday 05:00 UTC+8, with a retroactive EXP grant. Qingzhou items: Zhao Laoliu’s General Store. Also: mail reclaim, some Qinghe Homestead quests, and titles Blooming Rebuttal, Unrivaled Cardmaster, and Cast the Cosmos.",
+    playerAction:
+      "Check the in-game Guild War panel after DST. Shop in Qingzhou at Zhao Laoliu’s General Store — exact pin Pending in-game confirmation (/guides/qingzhou).",
+  },
   {
     title: "October 25 Version 2.3 new appearances",
     date: "2026-10-25",
@@ -243,7 +263,7 @@ const latestUpdateCards = [
 ];
 
 const impactChecklist = [
-  "Where Winds Meet patch notes today / new update: lead with the October 25 appearance pack, the October 29 Qingzhou follow-up watch, then the October 16 hotfix list and the October 15 Version 2.3 Friends from Afar overview, with Version 2.2 / 2.1 history below.",
+  "Where Winds Meet patch notes today / new update: lead with the October 28 Dev Letter (Penglai live batch) and the October 29 optimizations, then October 25 appearances and the October 15–16 Version 2.3 baseline.",
   "Boss and dungeon searches: mention Ghost Master, Hero's Realm, Sword Trial, Sandstorm Tavern, Sunken City Lake, and Lunar Eidolon where relevant.",
   "Build searches: call out cheaper Martial Art Reset and lower Inner Way Conversion cost before telling players to respec.",
   "Tier-list searches: re-test Version 2.1 Vernal Umbrella and Silkbind Jade attunement, while keeping the wider weapon baseline tied to the July 23 Path Balance.",
@@ -282,20 +302,19 @@ const upcomingNerfWatch = [
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Patch Notes Today — Version 2.3 & Oct 25–29 Watch",
+  title: "Where Winds Meet Patch Notes — Oct 29 Penglai & Fixes",
   description:
-    "Where Winds Meet Version 2.3 Friends from Afar patch notes (October 15–16), the October 25 appearance pack (Deer-parture, Ethereal Trace, and more), and the reported October 29 Mount Penglai / Mount Tai Blizzard checkpoint—with official links.",
+    "Where Winds Meet official October 28 Dev Letter (Penglai + Mount Tai Blizzard + Cast in Currents + Spirit of the Grove) and October 29 patch notes: Guild War apology/DST, Battle Pass Scarlet Whispers end-time, Zhao Laoliu’s General Store.",
   alternates: buildHreflangAlternates("/guides/patch-notes"),
   openGraph: {
-    title: "Where Winds Meet Patch Notes Today — Version 2.3 & Oct 25–29 Watch",
+    title: "Where Winds Meet Patch Notes — Oct 29 Penglai & Fixes",
     description:
-      "October 25 appearances, October 29 Qingzhou follow-up watch, then October 16/15 Version 2.3 Friends from Afar notes.",
+      "October 28 Dev Letter (Penglai batch) and October 29 Guild War, Battle Pass, and Zhao Laoliu fixes.",
     url: `${baseUrl}/guides/patch-notes`,
   },
   twitter: {
-    title: "Where Winds Meet Patch Notes Today — Version 2.3 & Oct 25–29 Watch",
-    description:
-      "Patch notes tracker: Oct 25 appearances, Oct 29 Qingzhou follow-up, Version 2.3 Friends from Afar.",
+    title: "Where Winds Meet Patch Notes — Oct 29 Penglai & Fixes",
+    description: "October 28 Dev Letter and October 29 Version 2.3 fixes, then the October 25 appearance pack.",
   },
 };
 
@@ -356,10 +375,10 @@ export default function PatchNotesPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet patch notes today: Version 2.3 Friends from Afar, October 25 appearances, and the October 29 Qingzhou follow-up.
+            Where Winds Meet patch notes: October 29 Penglai opening, Mount Tai Blizzard, and Version 2.3 fixes.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Updated {freshness?.lastChecked ?? "2026-10-22"}: lead with the <strong>October 25 appearances</strong> watch and the <strong>October 29 Qingzhou follow-up</strong>, then the October 16 Version 2.3 fixes and October 15 overview. Where Winds Meet is on {freshness?.gameVersion ?? "Version 2.3 / October 25 appearances + October 29 watch"}. Older Version 2.2 / 2.1 sections stay as history.
+            Updated {freshness?.lastChecked ?? "2026-10-29"}: lead with the <strong>October 28 Dev Letter</strong> (Penglai live batch) and the <strong>October 29 optimizations</strong>, then October 25 appearances and October 15–16 Version 2.3 history. Where Winds Meet is on {freshness?.gameVersion ?? "Version 2.3 / October 29 Penglai"}. Older Version 2.2 / 2.1 sections stay as history.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             We flag roadmap checkpoints, official news beats, and practical player impact so you know what to re-check: codes, quest bugs, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, boss guides, builds, and tier-list assumptions.
@@ -399,7 +418,7 @@ export default function PatchNotesPage() {
             What changed in the newest Where Winds Meet patch notes?
           </h2>
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-            If you searched for Where Winds Meet patch notes today, start with the <strong>October 25 appearance pack</strong>, the <strong>October 29 Qingzhou follow-up watch</strong>, then the <strong>October 16</strong> hotfix list and the <strong>October 15</strong> Version 2.3 Friends from Afar overview.
+            If you searched for Where Winds Meet patch notes today, start with the <strong>October 28 Dev Letter</strong> (Penglai + three experiences), the <strong>October 29</strong> Guild War / Battle Pass / Zhao Laoliu fixes, then the <strong>October 25</strong> appearance pack and the <strong>October 15–16</strong> Friends From Afar baseline.
           </p>
         </div>
         <div className="grid gap-4 lg:grid-cols-2">
@@ -435,6 +454,10 @@ export default function PatchNotesPage() {
             </article>
           ))}
         </div>
+        <div className="grid gap-4 md:grid-cols-2">
+          <OfficialMediaFigure item={devLetter1028Cover} />
+          <OfficialMediaFigure item={patchNotes1029Cover} />
+        </div>
       </section>
 
       <section id="version-2-3" className="space-y-4 rounded-3xl border border-emerald-400/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/30">
@@ -466,6 +489,24 @@ export default function PatchNotesPage() {
       <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">October 25 / October 29 FAQ</h2>
         <div className="grid gap-4 md:grid-cols-2">
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+            <h3 className="font-semibold text-slate-50">Did Penglai actually open on October 29?</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-300">
+              Yes — Official via the October 28 Dev Letter (<em>alongside the opening of Penglai</em>). Guide: <Link href="/guides/penglai" className="text-emerald-300 underline underline-offset-4">/guides/penglai</Link>.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+            <h3 className="font-semibold text-slate-50">Why did Guild War times feel wrong after DST?</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-300">
+              Official October 29 notes: Guild War stays on set server times and does not follow daylight-saving shifts. A local clock may move one hour. Use the in-game event panel.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+            <h3 className="font-semibold text-slate-50">Where is Zhao Laoliu’s store?</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-300">
+              Qingzhou shop support was added in the October 29 notes. The exact map pin is Pending in-game confirmation. See <Link href="/guides/qingzhou" className="text-emerald-300 underline underline-offset-4">/guides/qingzhou</Link>.
+            </p>
+          </div>
           <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
             <h3 className="font-semibold text-slate-50">Is October 25 a new version number?</h3>
             <p className="mt-2 text-sm leading-6 text-slate-300">

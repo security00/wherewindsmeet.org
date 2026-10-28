@@ -3,6 +3,7 @@ import Link from "next/link";
 import CdnImage from "@/components/CdnImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
+import { MediaPlaceholder } from "@/components/guides/MediaPlaceholder";
 import { OfficialMediaFigure } from "@/components/guides/OfficialMediaFigure";
 import { getContentFreshness } from "@/lib/contentFreshness";
 import { buildHreflangAlternates } from "@/lib/hreflang";
@@ -10,6 +11,7 @@ import {
   bossOldRaftsman,
   bossShuttlecock,
   bossTidewatcher,
+  devLetter1028Cover,
   friendsFromAfarCover,
   qingzhouAnnouncementTrailer,
   qingzhouDevLetterHero,
@@ -21,17 +23,17 @@ const baseUrl = "https://wherewindsmeet.org";
 const slug = "qingzhou";
 const pageUrl = `${baseUrl}/guides/${slug}`;
 const freshness = getContentFreshness(`/guides/${slug}`);
-const lastChecked = freshness?.lastChecked ?? "2026-10-22";
+const lastChecked = freshness?.lastChecked ?? "2026-10-29";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Qingzhou Guide: How to Unlock Eastern Peak",
+  title: "Where Winds Meet Qingzhou Guide: Eastern Peak & Penglai",
   description:
-    "How to unlock Qingzhou in Where Winds Meet Version 2.3 Friends From Afar: Lv. 32, Heaven Has No Pier, Away to Qingzhou, Eastern Peak landmarks, Waist Drum, Inkbound Order, world bosses, and the October 29 Penglai / Mount Tai Blizzard checkpoint.",
+    "How to unlock Qingzhou in Where Winds Meet and what went live October 29: Mount Penglai, Mount Tai Blizzard, Cast in Currents, Spirit of the Grove—plus Eastern Peak unlock checklist and official sources.",
   alternates: buildHreflangAlternates(`/guides/${slug}`),
   openGraph: {
     title: "Where Winds Meet Qingzhou Guide: How to Unlock Eastern Peak",
     description:
-      "Unlock Qingzhou – Eastern Peak in Version 2.3: story gates, martial arts, Inkbound Order, bosses, and the reported October 29 follow-up.",
+      "Unlock Qingzhou – Eastern Peak, then the October 29 Penglai batch: Mount Tai Blizzard, Cast in Currents, and Spirit of the Grove.",
     url: pageUrl,
     siteName: "Where Winds Meet Hub",
     type: "article",
@@ -41,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Where Winds Meet Qingzhou Guide: How to Unlock Eastern Peak",
     description:
-      "Version 2.3 Qingzhou unlock checklist, Silkbind – Wings, Inkbound Order, and the October 29 Penglai / Mount Tai Blizzard watch.",
+      "Qingzhou Eastern Peak unlock plus the official October 29 Penglai, Mount Tai Blizzard, Cast in Currents, and Spirit of the Grove guides.",
   },
 };
 
@@ -121,23 +123,26 @@ const bosses = [
   },
 ];
 
-const upcomingRows = [
+const liveRows = [
   {
-    checkpoint: "Mount Tai Blizzard campaign",
-    detail:
-      "Closed-circle mystery / blizzard-sealed mountain framing arriving by the end of October.",
-    confidence: "Official (timing = “end of month”)",
+    name: "Mount Penglai",
+    type: "Sub-region / academy isle",
+    href: "/guides/penglai",
   },
   {
-    checkpoint: "Mount Penglai open",
-    detail:
-      "Named in Dev Letter Part 1 as Qingzhou’s mist-isle academy space. October 29, 2026 open date repeated by RPGamer, 3DM EN, and Game8’s 2.3 roadmap table.",
-    confidence: "Date = media consensus → Reported until official HTML confirms",
+    name: "[Mount Tai Blizzard]",
+    type: "Campaign — closed-circle detective",
+    href: "/guides/mount-tai-blizzard",
   },
   {
-    checkpoint: "Combined “Oct 29 batch”",
-    detail: "Game8 lists both Mount Penglai + Mount Tai Blizzard on October 29, 2026.",
-    confidence: "Third-party roadmap",
+    name: "[Cast in Currents]",
+    type: "Jianghu Legacy — dreamcore spatial puzzle",
+    href: "/guides/cast-in-currents",
+  },
+  {
+    name: "[Spirit of the Grove]",
+    type: "Exploration — light-horror Inkbound hall",
+    href: "/guides/spirit-of-the-grove",
   },
 ];
 
@@ -160,7 +165,16 @@ const faqs = [
   {
     question: "When do Penglai and Mount Tai Blizzard open?",
     answer:
-      "Official letter: Mount Tai Blizzard by end of October. Multiple English media roadmaps list October 29, 2026 for Penglai (and Game8 for both). Treat the calendar day as Reported until official patch text confirms.",
+      "Official (October 28 Dev Letter): October 29, alongside Penglai’s opening. The same letter launches Campaign [Mount Tai Blizzard], Jianghu Legacy [Cast in Currents], and exploration [Spirit of the Grove]. Social mirrors also cite 05:00 UTC+8 for related launches—confirm in the event UI. Guides: /guides/penglai, /guides/mount-tai-blizzard, /guides/cast-in-currents, /guides/spirit-of-the-grove.",
+  },
+  {
+    question: "Where do I shop in Qingzhou after October 29?",
+    answer: "Official October 29 patch notes: Zhao Laoliu’s General Store.",
+  },
+  {
+    question: "Are Cast in Currents and Spirit of the Grove part of Qingzhou?",
+    answer:
+      "Yes in the official October 29 batch framing (Inkbound academy, dream, and abandoned hall tied to the Penglai welcome).",
   },
   {
     question: "Are there Qingzhou redeem codes?",
@@ -226,27 +240,43 @@ const sources = [
     external: true,
   },
   {
-    label: "RPGamer Qingzhou / Penglai Oct 29 (Reported date)",
+    label: "October 28 Dev Letter — Penglai opening (Official)",
+    href: "/news#october-28-dev-letter-dreaming-paths",
+    external: false,
+  },
+  {
+    label: "October 29 patch notes (Official)",
+    href: "/news#october-29-version-2-3-patch-notes",
+    external: false,
+  },
+  {
+    label: "Historical cross-check only: RPGamer Qingzhou / Penglai date (no longer the date authority)",
     href: "https://rpgamer.com/2026/10/where-winds-meet-heads-to-qingzhou/",
     external: true,
   },
   {
-    label: "3DM EN Penglai Oct 29 (Reported date)",
+    label: "Historical cross-check only: 3DM EN Penglai date",
     href: "https://en.3dmgame.com/news/6194",
     external: true,
   },
   {
-    label: "Game8 Ver 2.3 roadmap table (Reported date)",
+    label: "Historical cross-check only: Game8 2.3 roadmap table",
     href: "https://game8.co/games/Where-Winds-Meet/archives/631037",
     external: true,
   },
 ];
 
 const related = [
-  { href: "/guides/patch-notes", label: "Patch notes · 2.3 / Oct 25 / Oct 29 watch" },
+  { href: "/guides/patch-notes", label: "Patch notes · Oct 28–29 official" },
   { href: "/guides/martial-arts-weapons#silkbind-wings", label: "Martial arts · Silkbind – Wings" },
   { href: "/guides/sects#inkbound-order", label: "Sects · Inkbound Order" },
   { href: "/guides/bosses", label: "Bosses hub" },
+  { href: "/guides/penglai", label: "Penglai" },
+  { href: "/guides/mount-tai-blizzard", label: "Mount Tai Blizzard" },
+  { href: "/guides/cast-in-currents", label: "Cast in Currents" },
+  { href: "/guides/spirit-of-the-grove", label: "Spirit of the Grove" },
+  { href: "/guides/mystic-arts#inkwash-splendor", label: "Inkwash Splendor / Dear Sword" },
+  { href: "/guides/warehouse", label: "Warehouse / Mount Sack" },
   { href: "/guides/gift-of-gab", label: "Gift of Gab / War of Words" },
   { href: "/tools/interactive-map", label: "Interactive map · Qingzhou" },
   { href: "/guides/codes", label: "Codes policy" },
@@ -258,7 +288,7 @@ export default function QingzhouGuidePage() {
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      headline: "How do you unlock Qingzhou in Where Winds Meet (Version 2.3 Eastern Peak)?",
+      headline: "How do you unlock Qingzhou in Where Winds Meet—and what opened with Penglai on October 29?",
       description: metadata.description,
       dateModified: lastChecked,
       mainEntityOfPage: pageUrl,
@@ -293,16 +323,17 @@ export default function QingzhouGuidePage() {
           Guides · Version 2.3 Friends From Afar
         </p>
         <h1 className="mt-3 text-balance text-3xl font-bold tracking-tight text-slate-50 sm:text-4xl">
-          How do you unlock Qingzhou in Where Winds Meet (Version 2.3 Eastern Peak)?
+          How do you unlock Qingzhou in Where Winds Meet—and what opened with Penglai on October 29?
         </h1>
         <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">
           Qingzhou is the Version <strong>2.3 Friends From Afar</strong> theme region that went live with the{" "}
           <strong>October 15, 2026</strong> update (maintenance <strong>05:00–12:00 UTC+8</strong> on the official overview).
           To enter, reach <strong>Lv. 32</strong>, finish the Qinghe Main Chapter <strong>[Heaven Has No Pier]</strong>, then
           accept the Lost Chapter <strong>[Away to Qingzhou]</strong>. The first open slice is framed as{" "}
-          <strong>Qingzhou – Eastern Peak</strong>; later in the same version window, media roadmaps and the official Dev
-          Letter point to <strong>Mount Penglai</strong> and the campaign <strong>[Mount Tai Blizzard]</strong> as a
-          follow-up beat.
+          <strong>Qingzhou – Eastern Peak</strong>. On <strong>October 29</strong>, official Dev Letter{" "}
+          <em>Dreaming Paths, Murders in the Snow</em> opened <strong>Mount Penglai</strong> with Campaign{" "}
+          <strong>[Mount Tai Blizzard]</strong>, Jianghu Legacy <strong>[Cast in Currents]</strong>, and exploration{" "}
+          <strong>[Spirit of the Grove]</strong>.
         </p>
         <p className="mt-3 text-xs text-slate-500">
           Last checked {lastChecked} · Unofficial fan hub. Prefer our /news cards in Sources for every number and date (they cite the official originals).
@@ -374,7 +405,7 @@ export default function QingzhouGuidePage() {
             Settlements called out in that letter include <strong>Wellspring Town</strong> (springs, brocade carp, kites)
             and <strong>Crownleek Terrace</strong> (leek fields and the Crownleek Contest). Further east, the letter frames{" "}
             <strong>Mount Penglai</strong> as a mist-shrouded immortal-mountain / academy space (Pavilion of Tomes, sage
-            statues)—treat Penglai’s open schedule separately under Upcoming.
+            statues). That slice opened October 29 — see the live batch below.
           </p>
           <p>
             Qingzhou also introduces a deeper <strong>Local</strong> companion system: befriend village Locals with
@@ -490,33 +521,48 @@ export default function QingzhouGuidePage() {
         </p>
       </section>
 
-      <section id="upcoming" className="rounded-3xl border border-amber-400/30 bg-amber-500/10 p-6 shadow-lg shadow-amber-950/30 sm:p-8">
-        <h2 className="text-2xl font-bold text-slate-50">Upcoming: Mount Penglai &amp; Mount Tai Blizzard</h2>
+      <section id="upcoming" className="rounded-3xl border border-emerald-400/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/30 sm:p-8">
+        <h2 className="text-2xl font-bold text-slate-50">Live with Penglai (October 29, 2026) — Official</h2>
+        <p className="mt-3 text-sm leading-6 text-slate-200">
+          Official Dev Letter <em>Dreaming Paths, Murders in the Snow</em> (published 2026-10-28) confirms that on
+          October 29, alongside the opening of Penglai, three experiences arrive. Confidence: Official. Eastern Peak
+          itself opened October 15 with the Lv. 32 / Heaven Has No Pier / Away to Qingzhou gates above.
+        </p>
         <div className="mt-5 overflow-x-auto">
           <table className="min-w-[720px] w-full text-left text-sm">
-            <thead className="bg-slate-900/80 text-xs uppercase tracking-wide text-amber-100/80">
+            <thead className="bg-slate-900/80 text-xs uppercase tracking-wide text-emerald-100/80">
               <tr>
-                <th className="px-4 py-3">Checkpoint</th>
-                <th className="px-4 py-3">What we can say today</th>
-                <th className="px-4 py-3">Confidence</th>
+                <th className="px-4 py-3">Experience</th>
+                <th className="px-4 py-3">Type</th>
+                <th className="px-4 py-3">Guide</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-amber-500/20 text-slate-200">
-              {upcomingRows.map((row) => (
-                <tr key={row.checkpoint}>
-                  <td className="px-4 py-3 font-semibold text-amber-50">{row.checkpoint}</td>
-                  <td className="px-4 py-3 leading-6 text-amber-50/90">{row.detail}</td>
-                  <td className="px-4 py-3 leading-6 text-amber-100/80">{row.confidence}</td>
+            <tbody className="divide-y divide-emerald-500/20 text-slate-200">
+              {liveRows.map((row) => (
+                <tr key={row.href}>
+                  <td className="px-4 py-3 font-semibold text-emerald-50">{row.name}</td>
+                  <td className="px-4 py-3 leading-6">{row.type}</td>
+                  <td className="px-4 py-3">
+                    <Link href={row.href} className="text-emerald-300 underline underline-offset-4">{row.href}</Link>
+                  </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <p className="mt-4 text-sm leading-6 text-amber-50/90">
-          <strong>Copy rule:</strong> treat the calendar day as{" "}
-          <em>Reported for October 29, 2026 — confirm against the latest official news before you plan materials.</em>{" "}
-          When official Oct 29 notes drop, replace Reported with Official and date-stamp Last checked.
+        <p className="mt-4 text-sm leading-6 text-slate-200">
+          October 29 shop note: buy Qingzhou items at <strong>Zhao Laoliu’s General Store</strong>. Battle Pass and
+          Guild War notes stay on <Link href="/guides/patch-notes" className="text-emerald-300 underline underline-offset-4">/guides/patch-notes</Link>.
+          The exact Penglai Journal door is Pending in-game confirmation.
         </p>
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
+          <OfficialMediaFigure item={devLetter1028Cover} />
+          <MediaPlaceholder
+            slot="Qingzhou / Penglai map"
+            alt="Official interactive map — Qingzhou with Penglai after October 29 (pin totals not claimed)."
+            expectation="Pending a capture of the official map layer. Do not invent marker counts."
+          />
+        </div>
       </section>
 
       <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/40 sm:p-8">

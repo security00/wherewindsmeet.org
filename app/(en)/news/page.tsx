@@ -3,7 +3,15 @@ import CdnImage from "@/components/CdnImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import Link from "next/link";
 import { getContentFreshness } from "@/lib/contentFreshness";
+import { MediaPlaceholder } from "@/components/guides/MediaPlaceholder";
+import { OfficialMediaFigure } from "@/components/guides/OfficialMediaFigure";
 import { OfficialNewsCard } from "@/components/news/OfficialNewsCard";
+import {
+  castInCurrentsScholar,
+  mountTaiBlizzardInn,
+  qingzhouPenglai,
+  spiritOfTheGroveHall,
+} from "@/lib/officialQingzhouMedia";
 import { latestNewsDate, newsItems } from "@/lib/news";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -13,7 +21,7 @@ const freshness = getContentFreshness("/news");
 export const metadata: Metadata = {
   title: "Where Winds Meet Next Update & News: Version 2.3 Live, What Comes Next",
   description:
-    "Where Winds Meet update today tracker for the October 15 Version 2.3 Friends from Afar update, Qingzhou, the Waist Drum and Silkbind - Wings path, plus the September 16 Version 2.2 patch notes.",
+    "Where Winds Meet update today: October 28 Dev Letter (Penglai, Mount Tai Blizzard, Cast in Currents, Spirit of the Grove) and October 29 fixes, plus the October 15 Version 2.3 Friends from Afar baseline.",
   alternates: buildHreflangAlternates("/news"),
   openGraph: {
     title: "Where Winds Meet Next Update & News: Version 2.3 Live, What Comes Next",
@@ -254,8 +262,8 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-3 leading-6 text-cyan-50/90">
-              The current checked update baseline is <strong>Version 2.3 Friends from Afar / October 15 overview</strong>,
-              followed by the September 16 Version 2.2 patch notes and Perilous Eminence overview, then Version 2.1 Clouded Revelation history. If you searched for
+              The current checked update baseline is the <strong>October 28 Dev Letter</strong> (Penglai plus three experiences) and the <strong>October 29</strong> Guild War / Battle Pass / Zhao Laoliu notes, on top of <strong>Version 2.3 Friends from Afar / October 15</strong>,
+              then the September 16 Version 2.2 notes and Version 2.1 Clouded Revelation history. If you searched for
               <span className="font-semibold"> where winds meet update today</span>, use the cards below to jump straight
               to official news, patch notes, and roadmap watch items.
             </p>
@@ -273,6 +281,60 @@ export default function NewsPage() {
                   <p className="mt-3 text-xs font-semibold text-cyan-200">{card.label}</p>
                 </Link>
               ))}
+            </div>
+          </div>
+
+          <div
+            id="october-29"
+            className="space-y-4 rounded-2xl border border-teal-400/40 bg-teal-500/10 p-4 text-sm text-teal-50"
+          >
+            <p className="text-xs font-semibold uppercase tracking-wide text-teal-200">October 29 · Last checked 2026-10-29</p>
+            <h2 className="text-xl font-bold text-slate-50">Penglai batch and the new mystic skills</h2>
+            <div className="grid gap-4 md:grid-cols-2">
+              <article className="overflow-hidden rounded-xl border border-slate-800 bg-slate-950/80">
+                <OfficialMediaFigure item={qingzhouPenglai} aspectClassName="aspect-[16/9]" />
+                <div className="p-4">
+                  <h3 className="font-semibold text-slate-50"><Link href="/guides/penglai" className="hover:text-emerald-200">Qingzhou: Penglai is open (October 29)</Link></h3>
+                  <p className="mt-2 text-xs leading-5 text-slate-300">Official Dev Letter confirms Penglai opens October 29 with three new experiences. Unlock Qingzhou first, then read the orientation guide.</p>
+                </div>
+              </article>
+              <article className="overflow-hidden rounded-xl border border-slate-800 bg-slate-950/80">
+                <OfficialMediaFigure item={mountTaiBlizzardInn} aspectClassName="aspect-[16/9]" />
+                <div className="p-4">
+                  <h3 className="font-semibold text-slate-50"><Link href="/guides/mount-tai-blizzard" className="hover:text-emerald-200">Campaign [Mount Tai Blizzard]</Link></h3>
+                  <p className="mt-2 text-xs leading-5 text-slate-300">Closed-circle detective Campaign: Gong-Note Zither freeze-frames, Case Room, and Reverse. No strategy sheet for the legendary foe yet.</p>
+                </div>
+              </article>
+              <article className="overflow-hidden rounded-xl border border-slate-800 bg-slate-950/80">
+                <OfficialMediaFigure item={castInCurrentsScholar} aspectClassName="aspect-[16/9]" />
+                <div className="p-4">
+                  <h3 className="font-semibold text-slate-50"><Link href="/guides/cast-in-currents" className="hover:text-emerald-200">Jianghu Legacy [Cast in Currents]</Link></h3>
+                  <p className="mt-2 text-xs leading-5 text-slate-300">Zheng Sheng’s dreamcore spatial Legacy. Movement advances or reverses time. Not Spirits of the Lake.</p>
+                </div>
+              </article>
+              <article className="overflow-hidden rounded-xl border border-slate-800 bg-slate-950/80">
+                <OfficialMediaFigure item={spiritOfTheGroveHall} aspectClassName="aspect-[16/9]" />
+                <div className="p-4">
+                  <h3 className="font-semibold text-slate-50"><Link href="/guides/spirit-of-the-grove" className="hover:text-emerald-200">[Spirit of the Grove]</Link></h3>
+                  <p className="mt-2 text-xs leading-5 text-slate-300">Looping corridors and a bronze mirror in an abandoned Inkbound study hall. Not Spirits of the Lake.</p>
+                </div>
+              </article>
+            </div>
+            <div className="rounded-xl border border-slate-800 bg-slate-950/80 p-4">
+              <h3 className="font-semibold text-slate-50">New mystic skills: Inkwash Splendor and Dear Sword</h3>
+              <p className="mt-2 text-xs leading-5 text-slate-300">
+                Official social posts, mirrored for English wording, schedule both Mystic Skills for October 29, 05:00 UTC+8. Inkwash: brush lunges in combat and calligraphy out of battle. Dear Sword: solo sword waves, or a synchronized dual attack with a companion. No cooldowns or damage numbers here.
+              </p>
+              <div className="mt-3">
+                <MediaPlaceholder
+                  slot="N5 mystic skills"
+                  alt="Official mystic skill announcement still for Inkwash Splendor and Dear Sword."
+                  expectation="Pending a publisher CDN or official social still. Do not hotlink community-mirror card art."
+                />
+              </div>
+              <Link href="/guides/mystic-arts#inkwash-splendor" className="mt-3 inline-flex text-xs font-semibold text-emerald-300 underline underline-offset-4">
+                /guides/mystic-arts#inkwash-splendor
+              </Link>
             </div>
           </div>
 

@@ -5,8 +5,10 @@ import {
   friendsFromAfarBanner,
   friendsFromAfarCover,
   friendsFromAfarOct25UpdateStill,
-  qingzhouDevLetterHero,
+  devLetter1028Cover,
   devLetterPart2Hero,
+  patchNotes1029Cover,
+  qingzhouDevLetterHero,
 } from "./officialQingzhouMedia.ts";
 
 export type NewsType = "announcement" | "event" | "guide" | "beta";
@@ -38,6 +40,22 @@ type OfficialNewsRow = [
 // Keep this array in the same order as the official news index. The official
 // site can pin items out of strict date order, so news pages should not sort it.
 const officialNewsRows: OfficialNewsRow[] = [
+  [
+    "october-29-version-2-3-patch-notes",
+    "Version 2.3 Patch Notes: Optimizations and Bug Fixes (October 29)",
+    "2026-10-28",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/1029patchnotes.html",
+    "Official October 29 Version 2.3 fixes (page dated 2026-10-28): Guild War time-offset rollback for Yunya, Yougu, and Linhe after the October 18 early open; Guild War does not follow daylight-saving shifts; Battle Pass Scarlet Whispers end time moves to November 13 17:59:59 UTC+8; weekly Battle Pass EXP resets Monday 05:00 UTC+8 from October 29 with a retroactive grant; Qingzhou items at Zhao Laoliu’s General Store; mail reclaim, some Qinghe Homestead quests, and titles Blooming Rebuttal, Unrivaled Cardmaster, and Cast the Cosmos.",
+  ],
+  [
+    "october-28-dev-letter-dreaming-paths",
+    "Version 2.3 Dev Letter | Dreaming Paths, Murders in the Snow",
+    "2026-10-28",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/1028devletter.html",
+    "Official October 28 Dev Letter: on October 29, alongside the opening of Penglai, Campaign [Mount Tai Blizzard], Jianghu Legacy [Cast in Currents], and exploration [Spirit of the Grove] arrive.",
+  ],
   [
     "october-25-version-2-3-new-appearances",
     "[Friends from Afar] Version 2.3 New Appearances Overview - October 25",
@@ -641,6 +659,8 @@ const officialNewsRows: OfficialNewsRow[] = [
 ];
 
 const officialNewsCovers: Partial<Record<string, OfficialMediaItem>> = {
+  "october-29-version-2-3-patch-notes": patchNotes1029Cover,
+  "october-28-dev-letter-dreaming-paths": devLetter1028Cover,
   "october-25-version-2-3-new-appearances": appearanceDeerParture,
   "october-25-version-2-3-update-overview": friendsFromAfarOct25UpdateStill,
   "october-16-version-2-3-patch-notes": friendsFromAfarCover,
