@@ -45,6 +45,11 @@ const staticEntries: Entry[] = [
   { path: "/guides/woven-with-malice", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/mist-shrouded-prison", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/qingzhou", changeFrequency: "daily", priority: 0.86, lastModified: newsLastModified },
+  { path: "/guides/penglai", changeFrequency: "daily", priority: 0.86, lastModified: newsLastModified },
+  { path: "/guides/mount-tai-blizzard", changeFrequency: "weekly", priority: 0.84, lastModified: newsLastModified },
+  { path: "/guides/cast-in-currents", changeFrequency: "weekly", priority: 0.84, lastModified: newsLastModified },
+  { path: "/guides/spirit-of-the-grove", changeFrequency: "weekly", priority: 0.84, lastModified: newsLastModified },
+  { path: "/guides/warehouse", changeFrequency: "weekly", priority: 0.8, lastModified: newsLastModified },
   { path: "/guides/qinchuan", changeFrequency: "weekly", priority: 0.82 },
   { path: "/guides/jiangnan-hangzhou", changeFrequency: "daily", priority: 0.84 },
   { path: "/guides/imperial-decree", changeFrequency: "daily", priority: 0.82 },
@@ -209,10 +214,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...vnWeaponEntries,
   ];
 
-  return entries.map((entry) => ({
-    url: `${baseUrl}${entry.path}`,
-    lastModified: entry.lastModified,
-    changeFrequency: entry.changeFrequency,
-    priority: entry.priority,
-  }));
+  const seen = new Set<string>();
+  return entries.flatMap((entry) => {
+    if (!entry.path?.startsWith("/")) return [];
+    const url = `${baseUrl}${entry.path}`;
+    if (seen.has(url)) return [];
+    seen.add(url);
+    const lastModified =
+      entry.lastModified instanceof Date && !Number.isNaN(entry.lastModified.getTime())
+        ? entry.lastModified
+        : undefined;
+    return [
+      {
+        url,
+        ...(lastModified ? { lastModified } : {}),
+        changeFrequency: entry.changeFrequency,
+        priority: entry.priority,
+      },
+    ];
+  });
 }

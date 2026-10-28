@@ -3,7 +3,10 @@ import CdnImage from "@/components/CdnImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import LiteMp4Embed from "@/components/LiteMp4Embed";
 import Link from "next/link";
+import { OfficialMediaFigure } from "@/components/guides/OfficialMediaFigure";
+import { MediaPlaceholder } from "@/components/guides/MediaPlaceholder";
 import { bosses } from "@/lib/bosses";
+import { bossOldRaftsman, bossShuttlecock, bossTidewatcher } from "@/lib/officialQingzhouMedia";
 import { getContentFreshness } from "@/lib/contentFreshness";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -71,7 +74,7 @@ const bossFaqs = [
 export const metadata: Metadata = {
   title: "Where Winds Meet Bosses: Full Boss List, Locations & How to Beat Them",
   description:
-    "Every Where Winds Meet boss in one list: locations, mechanics, dungeon prep for Hero's Realm and Sword Trial, recommended builds, and patch-verified fixes.",
+    "Every Where Winds Meet boss in one list, including Qingzhou world bosses Tidewatcher, Old Raftsman, and Shuttlecock Champion (strategy pages pending): locations, mechanics, and patch-verified fixes.",
   alternates: buildHreflangAlternates("/guides/bosses"),
 };
 
@@ -191,6 +194,55 @@ export default function BossesPage() {
             Boss information changes quickly after live-service patches. Official notes and in-game reward previews come first; this page helps you decide which encounter guide or build page to check next.
           </p>
         </div>
+      </section>
+
+      <section className="space-y-4 rounded-3xl border border-teal-400/30 bg-teal-500/10 p-6 shadow-lg shadow-teal-950/30">
+        <p className="text-xs font-semibold uppercase tracking-wide text-teal-100">Qingzhou · Last checked 2026-10-29</p>
+        <h2 className="text-xl font-semibold text-slate-50">Qingzhou world bosses — names only</h2>
+        <p className="text-sm leading-6 text-slate-200">
+          These three shipped with Version 2.3 Friends From Afar. This hub lists verified English names and official flavor only. Full fight guides stay unpublished until mechanics are confirmed. Prerequisite: Qingzhou unlocked (Lv. 32 + [Heaven Has No Pier] → [Away to Qingzhou]) — <Link href="/guides/qingzhou" className="text-emerald-300 underline underline-offset-4">/guides/qingzhou</Link>.
+        </p>
+        <div className="grid gap-4 md:grid-cols-3">
+          <OfficialMediaFigure item={bossOldRaftsman} />
+          <OfficialMediaFigure item={bossTidewatcher} />
+          <OfficialMediaFigure item={bossShuttlecock} />
+        </div>
+        <div className="overflow-x-auto">
+          <table className="min-w-[720px] w-full text-left text-sm">
+            <thead className="text-xs uppercase tracking-wide text-teal-100/80">
+              <tr>
+                <th className="px-3 py-2">Boss (official EN)</th>
+                <th className="px-3 py-2">What we publish today</th>
+                <th className="px-3 py-2">Strategy page</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-teal-500/20 text-slate-200">
+              <tr>
+                <td className="px-3 py-3 font-semibold">Old Raftsman</td>
+                <td className="px-3 py-3 leading-6">Ferryman look; raft duel on rapids; side-scrolling camera beat; drunken staff switch (Part 2 flavor, also on /guides/qingzhou).</td>
+                <td className="px-3 py-3 leading-6">Pending mechanics verification. Future page /guides/bosses/old-raftsman is not published. Priority once verified.</td>
+              </tr>
+              <tr>
+                <td className="px-3 py-3 font-semibold">Tidewatcher</td>
+                <td className="px-3 py-3 leading-6">Stilts, tasselled spear, street-performance energy, wave-phase Lightness checks (Part 2 flavor).</td>
+                <td className="px-3 py-3 leading-6">Pending. Future page /guides/bosses/tidewatcher is not published.</td>
+              </tr>
+              <tr>
+                <td className="px-3 py-3 font-semibold">Shuttlecock Champion</td>
+                <td className="px-3 py-3 leading-6">Feathered shuttlecock duel; close-range kicks; no conventional weapon. Some databases list a character name; the boss-facing official English name remains Shuttlecock Champion.</td>
+                <td className="px-3 py-3 leading-6">Pending. Future page /guides/bosses/shuttlecock-champion is not published.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <MediaPlaceholder
+          slot="B2 Qingzhou map"
+          alt="Official Qingzhou map context — boss pins only if visible on the official layer."
+          expectation="Pending an official map capture. Do not copy third-party pin packs."
+        />
+        <p className="text-xs text-slate-400">
+          Naming source: <a className="text-emerald-300 underline underline-offset-4" href="https://www.wherewindsmeetgame.com/news/official/1014devletter.html" target="_blank" rel="noreferrer">Dev Letter Part 2</a>. Penglai’s October 29 batch is separate: <Link href="/guides/penglai" className="text-emerald-300 underline underline-offset-4">/guides/penglai</Link>.
+        </p>
       </section>
 
       <section className="grid gap-4 rounded-3xl border border-emerald-500/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-950/30 md:grid-cols-3">

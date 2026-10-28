@@ -49,7 +49,7 @@ const guideSections = [
     color: "text-red-300",
     size: "medium",
     description:
-      "Version 2.3 Friends From Afar, October 25 appearances, October 29 Qingzhou follow-up watch, and dated patch history.",
+      "Version 2.3 Friends From Afar, the October 28 Penglai Dev Letter, October 29 fixes, and dated patch history.",
   },
   {
     title: "Best Builds",
@@ -161,7 +161,52 @@ const guideSections = [
     icon: "🏔️",
     color: "text-teal-300",
     size: "large",
-    description: "Unlock Qingzhou: Lv. 32, Heaven Has No Pier, Away to Qingzhou, Waist Drum, Inkbound Order, bosses, and the October 29 Penglai / Mount Tai Blizzard watch.",
+    description: "Unlock Qingzhou – Eastern Peak, then the official October 29 Penglai batch: Mount Tai Blizzard, Cast in Currents, and Spirit of the Grove.",
+  },
+  {
+    title: "Mount Penglai",
+    slug: "/guides/penglai",
+    label: "Oct 29",
+    icon: "🌫️",
+    color: "text-teal-200",
+    size: "medium",
+    description: "How to explore Mount Penglai after the October 29 opening. Official framing only; Journal steps still pending.",
+  },
+  {
+    title: "Mount Tai Blizzard",
+    slug: "/guides/mount-tai-blizzard",
+    label: "Campaign",
+    icon: "❄️",
+    color: "text-sky-200",
+    size: "medium",
+    description: "Closed-circle detective Campaign: Gong-Note Zither, Case Room, and Reverse. No culprit walkthrough.",
+  },
+  {
+    title: "Cast in Currents",
+    slug: "/guides/cast-in-currents",
+    label: "Jianghu Legacy",
+    icon: "🌊",
+    color: "text-cyan-200",
+    size: "small",
+    description: "Jianghu Legacy dreamscape with Zheng Sheng. Not Spirits of the Lake.",
+  },
+  {
+    title: "Spirit of the Grove",
+    slug: "/guides/spirit-of-the-grove",
+    label: "Exploration",
+    icon: "🪞",
+    color: "text-violet-200",
+    size: "small",
+    description: "Light-horror Inkbound hall: looping corridors and a bronze mirror. Not Spirits of the Lake.",
+  },
+  {
+    title: "Warehouse & Mount Sack",
+    slug: "/guides/warehouse",
+    label: "Lv. 20",
+    icon: "📦",
+    color: "text-amber-200",
+    size: "small",
+    description: "Level 20 storage and Mount Sack. Not the Zhao Feiyan warehouse key quest.",
   },
   {
     title: "Qinchuan Guide Hub",
@@ -608,13 +653,13 @@ export default function GuidesPage() {
             href="/guides/patch-notes"
             className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-red-400/60 bg-red-500/10 px-4 py-2 text-sm font-semibold text-red-100 transition hover:border-red-300/80 hover:text-red-50"
           >
-              Version 2.3 patch notes / Oct 25–29 watch
+              Version 2.3 patch notes / Oct 29 Penglai
           </Link>
           <Link
             href="/guides/qingzhou"
             className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-teal-400/60 bg-teal-500/10 px-4 py-2 text-sm font-semibold text-teal-100 transition hover:border-teal-300/80 hover:text-teal-50"
           >
-              Qingzhou unlock · Eastern Peak
+              Qingzhou · Penglai is live
           </Link>
           <Link
             href="/guides/weapons/tier-list"

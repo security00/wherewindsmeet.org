@@ -1,6 +1,8 @@
 import Link from "next/link";
 import CdnImage from "@/components/CdnImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
+import { MysticArtsOct29 } from "@/components/guides/MysticArtsOct29";
+import { QingzhouDivinecraftPending } from "@/components/guides/QingzhouDivinecraftPending";
 import { buildLocalizedPath } from "@/i18n/routing.mjs";
 import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
 
@@ -1484,6 +1486,9 @@ export default function IntentGuidePage({
           </div>
         </section>
       ) : null}
+
+      {kind === "mystic-arts" && language === "en" ? <MysticArtsOct29 /> : null}
+      {kind === "divinecraft-dungeons" && language === "en" ? <QingzhouDivinecraftPending /> : null}
 
       <section className="rounded-3xl border border-amber-400/30 bg-amber-500/10 p-6 sm:p-8">
         <h2 className="text-2xl font-bold text-slate-50">{page.blockerTitle}</h2>
