@@ -216,7 +216,7 @@ const copy = {
     h1Before: "WWM Codes ",
     h1Highlight: "October 2026",
     intro1: (checked: string, version: string) =>
-      `Updated ${checked}: Version 2.3 / Qingzhou week re-check for ${version}. Official Friends From Afar Steam / site announcements reviewed for this refresh still do not publish a new redeem-code list, so no Qingzhou week codes were added. Aggregator strings such as 1015QINGZHOU remain excluded until an official URL is attached. Codes below stay labeled Reported—not confirmed-active.`,
+      `Updated ${checked}: Version 2.3 / Qingzhou and Penglai-week re-check for ${version}. Official Friends From Afar, Qingzhou, and Penglai-week Steam and site posts reviewed for this refresh—including the October 28–29 official notes and the anniversary broadcast—still do not publish a new redeem-code list, so no new codes were added. Aggregator strings such as 1015QINGZHOU remain excluded until an official URL is attached. Codes below stay labeled Reported—not confirmed-active.`,
     intro2:
       "Important: the official news feed also reported that a leaked batch of 30 exchange codes was disabled in early May 2026. If a code from social media fails, it may simply be one of those disabled leak codes rather than a problem with your account.",
     reportedTitle: "Reported Codes ",
@@ -305,7 +305,7 @@ const copy = {
       },
       {
         q: "Is there a Where Winds Meet Qingzhou code for October 2026?",
-        a: " Not on this checklist. Official Version 2.3 Friends From Afar communications cited for the 2026-10-21 / 2026-10-22 refresh did not ship a new public redeem code. If an official news post or Steam community announcement later publishes one, we will add it as Reported with the source link—and you should still redeem in-game to confirm. Unlock help: /guides/qingzhou; what shipped: /guides/patch-notes.",
+        a: " Not on this checklist. Official Version 2.3 Friends From Afar, Qingzhou, and Penglai-week communications cited for the 2026-10-21 / 2026-10-22 / 2026-10-29 refresh did not ship a new public redeem code. If an official news post or Steam community announcement later publishes one, we will add it as Reported with the source link—and you should still redeem in-game to confirm. Unlock help: /guides/qingzhou; what shipped: /guides/patch-notes.",
       },
     ],
     strategyTitle: "Redemption Strategy",
