@@ -24,7 +24,8 @@
     "cf:smoke": "node scripts/static-smoke.mjs",
     "cf:deploy:artifact": "wrangler deploy && wrangler deploy --config workers/www-redirect/wrangler.toml",
     "cf:deploy": "npm run cf:build && npm run cf:deploy:artifact",
-    "cf:release": "npm run cf:deploy"
+    "cf:release": "npm run cf:deploy",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
