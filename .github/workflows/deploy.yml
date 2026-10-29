@@ -54,3 +54,12 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+
+      # IndexNow is a hint to participating engines. A failed submit must not fail deploy.
+      # Google Search Console and Bing Webmaster Tools stay manual.
+      - name: Submit sitemap URLs to IndexNow
+        if: success() && github.event_name != 'pull_request'
+        continue-on-error: true
+        env:
+          SITE_ORIGIN: https://wherewindsmeet.org
+        run: npm run indexnow
