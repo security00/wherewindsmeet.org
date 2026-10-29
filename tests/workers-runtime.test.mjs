@@ -108,7 +108,7 @@ test("deployment workflow validates on PRs and deploys static assets only from m
 test("static smoke QA exercises pages, redirects, 404, sitemap, www, and immutable assets", () => {
   const smoke = read("scripts/static-smoke.mjs");
 
-  for (const route of ["/", "/de", "/vn", "/sitemap.xml", "/robots.txt", "/not-a-real-page", "/guides/npc-list"]) {
+  for (const route of ["/", "/de", "/vn", "/sitemap.xml", "/robots.txt", "/llms.txt", "/not-a-real-page", "/guides/npc-list"]) {
     assert.match(smoke, new RegExp(route.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
   }
   assert.match(smoke, /\/vn\/guides\/one-leaf-one-life/);
