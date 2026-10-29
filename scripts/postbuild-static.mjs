@@ -16,6 +16,10 @@ assert.ok(existsSync(out), "Missing ./out. Run `npm run build:static` first.");
 assert.ok(existsSync(join(out, "404.html")), "Static export must contain 404.html");
 assert.ok(existsSync(join(out, "sitemap.xml")), "Static export must contain sitemap.xml");
 assert.ok(existsSync(join(out, "robots.txt")), "Static export must contain robots.txt");
+const llmsTxt = existsSync(join(out, "llms.txt")) ? readFileSync(join(out, "llms.txt"), "utf8") : "";
+assert.match(llmsTxt, /# Where Winds Meet Guides Hub/, "Static export must contain llms.txt");
+assert.match(llmsTxt, /https:\/\/wherewindsmeet\.org\/sitemap\.xml/);
+assert.match(llmsTxt, /https:\/\/wherewindsmeet\.org\/guides\/qingzhou/);
 
 function walk(dir) {
   const files = [];

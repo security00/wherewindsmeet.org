@@ -99,6 +99,12 @@ Routes map directly to the `app/` directory.
   - Generates `/sitemap.xml` including `/`, `/guides`, `/guides/tier-list`, `/guides/builds`,
     `/guides/codes`, `/news`, and other key entry points.
 
+- `app/llms.txt/route.ts`  
+  - Generates `/llms.txt` during the static export (`export const dynamic = "force-static"`),
+    the same way `robots.txt` and `sitemap.xml` are emitted into `out/`.
+  - Plain-text index of the fan hub: what the site is and is not, key guide URLs, and the sitemap.
+    Copy lives in `lib/llms-txt.ts`.
+
 ---
 
 ## Project Structure Overview

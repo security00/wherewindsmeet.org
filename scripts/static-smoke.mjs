@@ -106,6 +106,16 @@ async function run() {
   const robots = await get("/robots.txt");
   assert.equal(robots.status, 200);
   assert.match(await robots.text(), /Sitemap:\s*https:\/\/wherewindsmeet\.org\/sitemap\.xml/i);
+  const llms = await get("/llms.txt");
+  assert.equal(llms.status, 200);
+  assert.match(llms.headers.get("content-type") || "", /text\/plain/);
+  const llmsTxt = await llms.text();
+  assert.match(llmsTxt, /unofficial fan hub/i);
+  assert.match(llmsTxt, /https:\/\/wherewindsmeet\.org\/sitemap\.xml/);
+  assert.match(llmsTxt, /https:\/\/wherewindsmeet\.org\/guides\/codes/);
+  assert.match(llmsTxt, /https:\/\/wherewindsmeet\.org\/tools\/interactive-map/);
+  assert.match(llmsTxt, /https:\/\/wherewindsmeet\.org\/guides\/patch-notes/);
+  assert.match(llmsTxt, /https:\/\/wherewindsmeet\.org\/guides\/qingzhou/);
 
   // Locale fallback + legacy redirects (public/_redirects).
   await expectRedirect("/vn/guides/one-leaf-one-life", 301, "/guides/one-leaf-one-life");
@@ -127,7 +137,7 @@ async function run() {
   await stopChild(site);
   await expectCanonicalHostRedirect();
 
-  console.log("Static smoke OK: pages, locale/legacy redirects, trailing-slash 308, www canonical, 404, sitemap, robots, asset cache.");
+  console.log("Static smoke OK: pages, locale/legacy redirects, trailing-slash 308, www canonical, 404, sitemap, robots, llms.txt, asset cache.");
 }
 
 run()
