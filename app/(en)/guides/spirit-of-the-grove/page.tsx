@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
-import { MediaPlaceholder } from "@/components/guides/MediaPlaceholder";
 import { OfficialMediaFigure } from "@/components/guides/OfficialMediaFigure";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import { spiritOfTheGroveOfficialMapStill } from "@/lib/officialMapCaptures";
 import { inkboundCampus, spiritOfTheGroveHall, spiritOfTheGroveMirror } from "@/lib/officialQingzhouMedia";
 
 const pageUrl = "https://wherewindsmeet.org/guides/spirit-of-the-grove";
@@ -65,11 +65,7 @@ export default function SpiritOfTheGrovePage() {
           <li>Sect card — <Link href="/guides/sects#inkbound-order" className="text-emerald-300 underline underline-offset-4">Inkbound Order</Link></li>
         </ul>
         <OfficialMediaFigure item={inkboundCampus} />
-        <MediaPlaceholder
-          slot="map / Journal"
-          alt="Official map or Journal pointer for Spirit of the Grove."
-          expectation="Pending an official map capture after October 29. Do not invent coordinates or pin counts."
-        />
+        <OfficialMediaFigure item={spiritOfTheGroveOfficialMapStill} aspectClassName="aspect-[1188/937]" />
       </section>
 
       <section className="grid gap-4 md:grid-cols-2">
