@@ -42,7 +42,7 @@ export function OfficialNewsCard({
             </span>
           </div>
           <p className="font-mono text-xs font-medium text-slate-500">
-            {item.date}
+            {item.dateLabel ?? item.date}
             {item.tags && item.tags.length > 0 ? (
               <>
                 <span className="mx-2 text-slate-700">|</span>

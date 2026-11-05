@@ -6,6 +6,7 @@ import { getContentFreshness } from "@/lib/contentFreshness";
 import { MediaPlaceholder } from "@/components/guides/MediaPlaceholder";
 import { OfficialMediaFigure } from "@/components/guides/OfficialMediaFigure";
 import { OfficialNewsCard } from "@/components/news/OfficialNewsCard";
+import { PinnedAnnouncements } from "@/components/news/PinnedAnnouncements";
 import {
   castInCurrentsScholar,
   mountTaiBlizzardInn,
@@ -72,7 +73,7 @@ const todayStatusCards = [
   {
     title: "Next update: what is officially announced",
     detail:
-      "No Version 2.4 date has been announced yet. The Version 2.3 overview says new Solo Mode levels, character level caps, gear tiers, and progression systems are coming soon, and that higher Inkbound Order ranks unlock after the Farm Recess. Per the Version 2.2 notes, Reflection Temple reopens when Jiangnan arrives. Season S5: Ever Aflame runs until November 26, 2026 04:59:59 (server time).",
+      "The next announced major beat is the 1st Anniversary update Hutuo on November 13 (UTC date only; see the pinned card). It is not live. Dual Spears are late November, not that date. The Version 2.3 overview says new Solo Mode levels, character level caps, gear tiers, and progression systems are coming soon, and that higher Inkbound Order ranks unlock after the Farm Recess. Per the Version 2.2 notes, Reflection Temple reopens when Jiangnan arrives. Season S5: Ever Aflame runs until November 26, 2026 04:59:59 (server time).",
     href: steamVersion23Url,
     label: "Official Version 2.3 overview",
   },
@@ -190,6 +191,8 @@ export default function NewsPage() {
     links: [
       { href: "/guides/tier-list", label: "China tier list & balance notes" },
       { href: "/guides/patch-notes#version-2-3", label: "Version 2.3 patch notes" },
+      { href: "/guides/hutuo", label: "Hutuo announcement (not live)" },
+      { href: "/guides/anniversary", label: "Anniversary rewards (not live)" },
       { href: "/guides/clouded-revelation", label: "Version 2.1 Clouded Revelation" },
       { href: "/guides/jiangnan-hangzhou", label: "Jiangnan / Hangzhou Global watch" },
       { href: "/guides/bosses", label: "Boss list & changes" },
@@ -247,6 +250,8 @@ export default function NewsPage() {
               updates without reading every bullet, start here.
             </p>
           </div>
+
+          <PinnedAnnouncements />
 
           <div
             id="update-today"

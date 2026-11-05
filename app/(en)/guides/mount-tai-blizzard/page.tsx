@@ -124,6 +124,9 @@ export default function MountTaiBlizzardPage() {
           ["Can I finish without finding every clue?", "Yes per official text: conclude for now and revisit through Reverse."],
           ["Does it require Penglai?", "The letter schedules it alongside the opening of Penglai on October 29. The exact zone gate is Pending in-game confirmation."],
           ["Will this page list the killer?", "No. It stays on systems and official framing."],
+          ["Was Mount Tai Blizzard part of the October 29 Penglai batch?", "Yes. The official Dev Letter schedules Campaign [Mount Tai Blizzard] alongside Penglai’s October 29 opening, with Gong-Note Zither freeze-frames, Case Room deduction, and Reverse revisit framing."],
+          ["Any official PS5 fix players should know?", "October 29 patch notes include a fix for a PS5 issue that prevented completing dialogues during Campaign [Mount Tai Blizzard]."],
+          ["Final enemy or loot table?", "Still not published as verified numbers on this fan page. This page does not invent a final enemy name or drops."],
         ].map(([q, a]) => (
           <div key={q} className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4">
             <h2 className="font-semibold text-slate-50">{q}</h2>

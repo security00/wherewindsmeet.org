@@ -725,5 +725,34 @@
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/news/official/FriendsFromAfar.html"
     ]
+  },
+  {
+    "basePath": "/guides/hutuo",
+    "languages": ["en"],
+    "lastChecked": "2026-11-06",
+    "gameVersion": "Global announced Hutuo / November 13 UTC (not live)",
+    "priorityCluster": "announced-global-update",
+    "sourceUrls": [
+      "https://x.com/WhereWindsMeet_/status/2117934891497029783",
+      "https://x.com/WhereWindsMeet_/status/2117386268698943563",
+      "https://blog.playstation.com/2026/10/27/where-winds-meets-climactic-hutuo-battlefield-narrative-arc-revealed-out-nov-13/",
+      "https://x.com/WhereWindsMeet_/status/2115103980996919763",
+      "https://x.com/WhereWindsMeet_/status/2115104986929709317",
+      "https://www.wherewindsmeetgame.com/news/official/1028devletter.html"
+    ]
+  },
+  {
+    "basePath": "/guides/anniversary",
+    "languages": ["en"],
+    "lastChecked": "2026-11-06",
+    "gameVersion": "Global announced anniversary / November 13 UTC (not live)",
+    "priorityCluster": "announced-global-update",
+    "sourceUrls": [
+      "https://x.com/WhereWindsMeet_/status/2117386268698943563",
+      "https://x.com/WhereWindsMeet_/status/2117934891497029783",
+      "https://blog.playstation.com/2026/10/27/where-winds-meets-climactic-hutuo-battlefield-narrative-arc-revealed-out-nov-13/",
+      "https://x.com/WhereWindsMeet_/status/2118357684911042887",
+      "https://www.wherewindsmeetgame.com/news/official/1029patchnotes.html"
+    ]
   }
 ]

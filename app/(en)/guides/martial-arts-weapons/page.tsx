@@ -67,6 +67,40 @@ export default function MartialArtsWeaponsPage() {
         </div>
       </section>
 
+      <section
+        id="dual-spears-announced"
+        className="space-y-3 rounded-3xl border border-amber-400/30 bg-slate-950/80 p-6"
+      >
+        <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">
+          Announced martial art · not in the 9 paths / 17 weapons table
+        </p>
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+          When does Dual Spears unlock in Where Winds Meet?
+        </h2>
+        <p className="text-sm leading-6 text-slate-300">
+          Announced timing: late November 2026, after the November 13 Hutuo / first global anniversary update day,
+          per the PlayStation Blog. Official X may mention Dual Spears in the same “arriving soon” breath as
+          Campaign Hutuo. That sentence is not proof of a November 13 unlock hour. Dual Spears is not a row in the
+          table below, and this page does not open a separate Dual Spears URL.
+        </p>
+        <p className="text-sm leading-6 text-slate-300">
+          What was described: a Dual Spears martial art choreographed with Yuen Woo-ping. It alternates Light Spears
+          (offense) and Heavy Spears (stance-break), building Spear Stance for combo loops. Not published here:
+          unlock quest, vendor, level gate, skill UI names, or damage numbers.
+        </p>
+        <p className="text-sm leading-6 text-slate-300">
+          Related:{" "}
+          <Link href="/guides/hutuo#dual-spears" className="text-emerald-300 underline underline-offset-4">/guides/hutuo</Link>
+          {" · "}
+          <Link href="/guides/weapons/spear" className="text-emerald-300 underline underline-offset-4">/guides/weapons/spear</Link>
+          {" "}(existing spear weapons, not this announced Dual Spears art)
+          {" · "}
+          <Link href="/news#announced-dual-spears" className="text-emerald-300 underline underline-offset-4">/news</Link>
+          {" · "}
+          <a className="text-emerald-300 underline underline-offset-4" href="https://blog.playstation.com/2026/10/27/where-winds-meets-climactic-hutuo-battlefield-narrative-arc-revealed-out-nov-13/" target="_blank" rel="noreferrer">PlayStation Blog</a>
+        </p>
+      </section>
+
       <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-lg shadow-slate-950/60">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">

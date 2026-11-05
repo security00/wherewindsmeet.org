@@ -29,10 +29,10 @@ const latestUpdateCards = [
   },
   {
     title: "October 29 Version 2.3 optimizations and bug fixes (Official)",
-    date: "2026-10-29",
+    date: "Site 2026-10-30 · Steam 2026-10-29 16:38 UTC+8",
     source: "/news#october-29-version-2-3-patch-notes",
     summary:
-      "Guild War opened early in Yunya, Yougu, and Linhe on October 18 because a time-offset merge failed; scores from that window were rolled back and compensation was sent. Guild War does not follow DST shifts. Battle Pass [Scarlet Whispers] now ends November 13 at 17:59:59 UTC+8 (was November 14 at 04:59:59). From October 29 the weekly Battle Pass EXP cap resets Monday 05:00 UTC+8, with a retroactive EXP grant. Qingzhou items: Zhao Laoliu’s General Store. Also: mail reclaim, some Qinghe Homestead quests, and titles Blooming Rebuttal, Unrivaled Cardmaster, and Cast the Cosmos.",
+      "Body label: October 29, 2026 Fixes and Optimizations. Publication dates stay side by side: official site page date 2026-10-30 (date only, no clock) and Steam 2026-10-29 16:38:17 Asia/Shanghai. Six fixes at the top of the official list: Autumn Eve Whimsy could not be equipped after purchase and broke Wardrobe behavior; Autumn Eve Whimsy missing from the Shop for some Wanderers; Pristine Grace hairstyle display when equipped; activation conditions for certain Guild Techniques; Calligraphy Treasure settings for Inkwash Splendor failing to save; PS5 dialogues blocked in Campaign Mount Tai Blizzard. Then the already summarized block: Guild War opened early in Yunya, Yougu, and Linhe on October 18 because a time-offset merge failed; scores from that window were rolled back and compensation was sent. Guild War does not follow DST shifts. Battle Pass [Scarlet Whispers] now ends November 13 at 17:59:59 UTC+8 (was November 14 at 04:59:59). From October 29 the weekly Battle Pass EXP cap resets Monday 05:00:00 UTC+8, with a retroactive EXP grant. Qingzhou items: Zhao Laoliu’s General Store. Also: mail reclaim, some Qinghe Homestead quests, and titles Blooming Rebuttal, Unrivaled Cardmaster, and Cast the Cosmos.",
     playerAction:
       "Check the in-game Guild War panel after DST. Shop in Qingzhou at Zhao Laoliu’s General Store — exact pin Pending in-game confirmation (/guides/qingzhou).",
   },
@@ -77,7 +77,7 @@ const latestUpdateCards = [
     date: "2026-10-15",
     source: "/news#october-15-version-2-3-new-appearances",
     summary:
-      "Aureate Dominion (Fading Glory draw, until November 9), Blazing Sands hairstyle (until January 13, 2027), Veil of Lotus draw set (until December 28), Scarlet Whispers Battle Pass (until November 14), Eastwind Soarer mount (Qingzhou only, until December 13), and the Path of Youth set on October 18.",
+      "Aureate Dominion (Fading Glory draw, until November 9), Blazing Sands hairstyle (until January 13, 2027), Veil of Lotus draw set (until December 28), Scarlet Whispers Battle Pass (older copy said until November 14; [superseded] follow November 13, 17:59:59 UTC+8), Eastwind Soarer mount (Qingzhou only, until December 13), and the Path of Youth set on October 18.",
     playerAction:
       "Check end dates before spending; unused Sun-Raven Eyes are reclaimed when Fading Glory ends.",
   },
@@ -375,10 +375,15 @@ export default function PatchNotesPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet patch notes: October 29 Penglai opening, Mount Tai Blizzard, and Version 2.3 fixes.
+            Where Winds Meet patch notes: Version 2.3 is live, Hutuo is announced for November 13.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Updated {freshness?.lastChecked ?? "2026-10-29"}: lead with the <strong>October 28 Dev Letter</strong> (Penglai live batch) and the <strong>October 29 optimizations</strong>, then October 25 appearances and October 15–16 Version 2.3 history. Where Winds Meet is on {freshness?.gameVersion ?? "Version 2.3 / October 29 Penglai"}. Older Version 2.2 / 2.1 sections stay as history.
+            Where Winds Meet patch notes, verified <time dateTime="2026-11-06">2026-11-06 Asia/Shanghai</time> as an announcement check.
+            The live content baseline remains <strong>Version 2.3 Friends From Afar</strong> with the <strong>October 29 Penglai</strong> batch already shipped.
+            The next announced major update is anniversary <strong>Hutuo</strong> on <strong>November 13</strong> (<Link href="/guides/hutuo" className="text-emerald-300 underline underline-offset-4">/guides/hutuo</Link>). The cited posts do not give that update a version number.
+            <strong> Dual Spears</strong> are late November (<Link href="/guides/martial-arts-weapons#dual-spears-announced" className="text-emerald-300 underline underline-offset-4">martial arts</Link>).
+            <strong> DLSS 5</strong> is announced for November 23 (date only; PC/NVIDIA; not a lab benchmark).
+            Older Version 2.2 / 2.1 sections stay as history. Registry baseline on this page: {freshness?.gameVersion ?? "Version 2.3 / October 29 Penglai"}.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             We flag roadmap checkpoints, official news beats, and practical player impact so you know what to re-check: codes, quest bugs, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, boss guides, builds, and tier-list assumptions.
@@ -410,6 +415,53 @@ export default function PatchNotesPage() {
         </div>
       </section>
       <OfficialMediaFigure item={appearanceLuckyLantern} className="max-w-3xl" />
+
+      <section
+        id="announced-november"
+        className="space-y-4 rounded-3xl border border-amber-400/30 bg-slate-950/80 p-6 shadow-lg shadow-amber-950/20"
+      >
+        <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">
+          Upcoming watch · Announced, not the live October 29 baseline
+        </p>
+        <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+          What is announced after the October 29 patch notes?
+        </h2>
+        <p className="text-sm leading-6 text-slate-300">
+          Hutuo and the anniversary rewards are scheduled for November 13 (UTC date only) and are not live.
+          Dual Spears are late November, not November 13. The login choose-1 outfit is separate from in-game
+          Lingering Melody ×42 and Resonating Melody ×27. Those reward rows stay on the anniversary page.
+          The October 29 text fixes below remain the live baseline.
+        </p>
+        <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-slate-300">
+          <li>
+            <Link href="/guides/hutuo" className="text-emerald-300 underline underline-offset-4">/guides/hutuo</Link>
+            {" · "}
+            <Link href="/guides/anniversary" className="text-emerald-300 underline underline-offset-4">/guides/anniversary</Link>
+            {" · "}
+            <Link href="/guides/martial-arts-weapons#dual-spears-announced" className="text-emerald-300 underline underline-offset-4">Dual Spears</Link>
+          </li>
+          <li>[Frostbound Edge], new Battle Pass outfit: Nov 13, 23:00 – Dec 10, 04:59:59 (UTC+8). Not the free login outfit grant.</li>
+          <li>[Willow Breeze], Battle Pass appearance return: Nov 13, 23:00 – Jan 29, 2027, 04:59:59 (UTC+8). Not the free login outfit grant.</li>
+          <li>November 23: official account states NVIDIA DLSS 5 support, with texture and lighting improvements after NVIDIA optimization rounds. PC/NVIDIA date only. No timezone, minute, FPS percentage, or GPU floor is in that post.</li>
+          <li>November 1, 0:00 (UTC+8): draw set [Wraithflame], limited until February 1, 2027, 04:59:59 (UTC+8); set [Frost&apos;s Glow]; Heng Blade Myriad Sounds: Wrought Obsidian; Mo Blade Myriad Sounds: Azure Dragon.</li>
+          <li>November 8, 0:00 (UTC+8): set [Lotus Crane]; Golden Body mystic skill VFX [Mindful Joy].</li>
+          <li>
+            [Friends From Afar] Version 2.3 Update Overview - October 29:{" "}
+            <a className="text-emerald-300 underline underline-offset-4" href="https://www.wherewindsmeetgame.com/news/official/1029update.html" target="_blank" rel="noreferrer">
+              official page
+            </a>
+            . The page is image-led. This site does not transcribe a bullet summary from those graphics. Use the October 29 text patch notes for the fixes.
+          </li>
+        </ul>
+        <ul className="list-disc space-y-1 pl-5 text-xs leading-5 text-slate-400">
+          <li><a className="text-emerald-300 underline underline-offset-4" href="https://x.com/WhereWindsMeet_/status/2118357684911042887" target="_blank" rel="noreferrer">Frostbound Edge / Willow Breeze</a></li>
+          <li><a className="text-emerald-300 underline underline-offset-4" href="https://x.com/WhereWindsMeet_/status/2117837625855987918" target="_blank" rel="noreferrer">NVIDIA DLSS 5</a></li>
+          <li><a className="text-emerald-300 underline underline-offset-4" href="https://www.wherewindsmeetgame.com/news/official/1029appearance.html" target="_blank" rel="noreferrer">November 1 and November 8 appearances</a></li>
+          <li><a className="text-emerald-300 underline underline-offset-4" href="https://www.wherewindsmeetgame.com/news/official/1029patchnotes.html" target="_blank" rel="noreferrer">October 29 text patch notes</a></li>
+          <li><a className="text-emerald-300 underline underline-offset-4" href="https://store.steampowered.com/news/app/3564740/view/1847920302233930" target="_blank" rel="noreferrer">Steam twin of the October 29 notes</a></li>
+          <li><a className="text-emerald-300 underline underline-offset-4" href="https://blog.playstation.com/2026/10/27/where-winds-meets-climactic-hutuo-battlefield-narrative-arc-revealed-out-nov-13/" target="_blank" rel="noreferrer">PlayStation Blog: Dual Spears late November</a></li>
+        </ul>
+      </section>
 
       <section className="space-y-6 rounded-3xl border border-amber-400/30 bg-amber-500/10 p-6 shadow-lg shadow-amber-950/30">
         <div className="space-y-2">
@@ -481,7 +533,7 @@ export default function PatchNotesPage() {
         <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-200">
           <li><strong>October 15 (<Link href="/news#october-15-version-2-3-patch-notes" className="underline underline-offset-4">our /news card</Link>):</strong> Transdust Ruins Solo and Trio are open all day; easier weekly tasks in Escape from Windkov; Hero&apos;s Realm and Sword Trial get AFK detection (matchmade teams), Ready Check, tank-role requests, VFX and umbrella transparency settings, and Claim All Rewards; Multiplayer Wooden Stake with real-time team damage stats; 1v1 Arena re-queue and auto-match; Warehouse (Lv. 20, up to 3 tabs of 30 slots) and Mount Sack; PC launcher Modular Download; Guild War Technique, Halftime Show and Guild Party changes; Gallery, Photo Mode, avatar and dyeing upgrades; mobile lighting and graphics options.</li>
           <li><strong>October 16 (<Link href="/news#october-16-version-2-3-patch-notes" className="underline underline-offset-4">our /news card</Link>):</strong> 25 fixes, including the PlayStation Echo Bead count, Season 4 Forge Ahead settlement titles, Graceful Melody judgment, Tier 96 Relaying Stone: Mirage duration, Aureate Dominion rarity, Inkbound Order exam questions, Homestead cooking queues, Serene Breeze in Arena, faster Infernal Twinblades Greed Bane - Soul (also triggers Perfect Dodge in Online Mode Dungeons), shorter Talon Strike and Yaksha Rush Super Armor, Frost Paper recipe (Cocklebur replaced by Honeysuckle), and controller L3.</li>
-          <li><strong>New appearances (<Link href="/news#october-15-version-2-3-new-appearances" className="underline underline-offset-4">our /news card</Link>):</strong> Aureate Dominion via Fading Glory (until November 9), Blazing Sands (until January 13, 2027), Veil of Lotus (until December 28), Scarlet Whispers Battle Pass (until November 14), Crane Ascending: Chordsong Waist Drum VFX, Duskfall Verse and Ode to the Feline Muse, Eastwind Soarer mount (Qingzhou, until December 13), Myriad Sounds sword and spear, Tonight&apos;s Reverie, and Path of Youth from October 18 (discount until November 1).</li>
+          <li><strong>New appearances (<Link href="/news#october-15-version-2-3-new-appearances" className="underline underline-offset-4">our /news card</Link>):</strong> Aureate Dominion via Fading Glory (until November 9), Blazing Sands (until January 13, 2027), Veil of Lotus (until December 28), Scarlet Whispers Battle Pass (older copy said until November 14; [superseded] the October 29 patch notes set the end clock to November 13, 17:59:59 UTC+8), Crane Ascending: Chordsong Waist Drum VFX, Duskfall Verse and Ode to the Feline Muse, Eastwind Soarer mount (Qingzhou, until December 13), Myriad Sounds sword and spear, Tonight&apos;s Reverie, and Path of Youth from October 18 (discount until November 1).</li>
           <li><strong>October 22 event cadence (Reported / X-transcribed):</strong> Merchant&apos;s Way and Bubble Party activity windows were described as starting around October 22, 05:00 UTC+8 (Bubble Party through ~Nov 14 on third-party mirrors). Treat as event cadence—do not invent reward tables here.</li>
         </ul>
       </section>
