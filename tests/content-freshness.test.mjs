@@ -101,7 +101,7 @@ test("core update surfaces record the latest official Version 2.1 review", () =>
     if (version23Paths.has(path)) {
       assert.equal(
         entry.lastChecked,
-        path === "/guides/codes" ? "2026-11-01" : "2026-10-29",
+        path === "/guides/codes" ? "2026-11-05" : "2026-10-29",
         `${path} review date`,
       );
       assert.match(entry.gameVersion, /Version 2\.3/, `${path} game version`);

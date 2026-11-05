@@ -100,11 +100,17 @@ async function checkFreshnessRegistry(errors) {
 
   // Derive a dynamic freshness anchor from the core entries themselves.
   // This removes the need to manually bump a hardcoded date in the checker every patch.
+  // /guides/codes is rechecked on its own cadence and may lead the other core pages.
+  // It still must not lag those pages by more than DRIFT_DAYS. A codes-only date bump
+  // must not become the anchor that marks /, /news, and /guides/patch-notes stale.
   const coreEntries = REQUIRED_CORE_PATHS.map((p) => byPath.get(p)).filter(Boolean);
-  const coreDates = coreEntries.map((e) => e && e.lastChecked).filter((d) => typeof d === "string" && /^\d{4}-\d{2}-\d{2}$/.test(d));
-  const maxCoreDate = coreDates.length ? coreDates.sort().reverse()[0] : null;
+  const nonCodesDates = coreEntries
+    .filter((entry) => entry.basePath !== "/guides/codes")
+    .map((entry) => entry.lastChecked)
+    .filter((d) => typeof d === "string" && /^\d{4}-\d{2}-\d{2}$/.test(d));
+  const maxCoreDate = nonCodesDates.length ? nonCodesDates.sort().reverse()[0] : null;
 
-  // Acceptable drift: core pages should be refreshed within ~4 days of each other (or of the newest core signal).
+  // Acceptable drift: each core page should stay within ~4 days of the newest non-codes core page.
   const DRIFT_DAYS = 4;
 
   function isStaleComparedToAnchor(dateStr, anchor) {
