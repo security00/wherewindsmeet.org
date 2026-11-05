@@ -4,7 +4,7 @@ import { createRequire } from "node:module";
 import { spawnSync } from "node:child_process";
 import test from "node:test";
 
-import { latestNewsDate, newsItems } from "../lib/news.ts";
+import { newsItems } from "../lib/news.ts";
 
 const require = createRequire(import.meta.url);
 const { deriveGameVersionFromTitle, updateEntry } = require("../scripts/update-content-freshness.cjs");
@@ -15,7 +15,7 @@ test("the public news feed starts with the latest verified official notices", ()
     [
       {
         id: "october-29-version-2-3-patch-notes",
-        date: "2026-10-28",
+        date: "2026-10-30",
         officialUrl: "https://www.wherewindsmeetgame.com/news/official/1029patchnotes.html",
       },
       {
@@ -45,7 +45,10 @@ test("the public news feed starts with the latest verified official notices", ()
       },
     ],
   );
-  assert.equal(latestNewsDate, "2026-10-28");
+  const october29 = newsItems[0];
+  assert.equal(october29?.sourcePublications?.[0]?.date, "2026-10-30");
+  assert.equal(october29?.sourcePublications?.[0]?.dateTime, undefined);
+  assert.equal(october29?.sourcePublications?.[1]?.dateTime, "2026-10-29T16:38:17+08:00");
 });
 
 test("aggregate official update rows use the latest date shown by their source page", () => {

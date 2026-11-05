@@ -13,18 +13,35 @@ import {
 
 export type NewsType = "announcement" | "event" | "guide" | "beta";
 
+/** A publisher stamp. A date-only source must not gain an invented clock time. */
+export type SourcePublication = {
+  publisher: "official-site" | "steam";
+  /** Calendar date printed by that source, YYYY-MM-DD. */
+  date: string;
+  /** Included only when that source gives a clock time. */
+  dateTime?: string;
+  timeZone?: string;
+};
+
 export type NewsItem = {
   id: string;
   title: string;
-  date: string; // ISO date string, e.g. 2025-11-14
+  /**
+   * Official webpage publication date (YYYY-MM-DD) for the linked source.
+   * Manual array order is the feed order. This field is not a sort key and
+   * not this site's editorial revision date.
+   */
+  date: string;
   type: NewsType;
   summary: string;
   officialUrl?: string;
   tags?: string[];
   /** Optional official / Steam CDN cover with attribution (OfficialMediaFigure). */
   image?: OfficialMediaItem;
-  /** Visible date when the feed sort key is not the publisher stamp. */
+  /** Visible label when one card has more than one official stamp. */
   dateLabel?: string;
+  /** Every official stamp for this row. Clocks appear only when the source gave one. */
+  sourcePublications?: SourcePublication[];
 };
 
 type OfficialNewsRow = [
@@ -45,7 +62,7 @@ const officialNewsRows: OfficialNewsRow[] = [
   [
     "october-29-version-2-3-patch-notes",
     "Version 2.3 Patch Notes: Optimizations and Bug Fixes (October 29)",
-    "2026-10-28",
+    "2026-10-30",
     "announcement",
     "https://www.wherewindsmeetgame.com/news/official/1029patchnotes.html",
     "October 29, 2026 Fixes and Optimizations. Publication dates, kept side by side: official site page date 2026-10-30 (date only); Steam announcement 2026-10-29 16:38:17 Asia/Shanghai. Fixes first: Autumn Eve Whimsy could not be equipped and broke Wardrobe behavior; Autumn Eve Whimsy missing from the Shop for some Wanderers; Pristine Grace hairstyle display; Guild Techniques activation conditions; Inkwash Splendor Calligraphy Treasure settings failing to save; PS5 dialogues blocked in Campaign Mount Tai Blizzard. Also: Guild War time-offset rollback for Yunya, Yougu, and Linhe after the October 18 early open; Guild War does not follow daylight-saving shifts; Battle Pass Scarlet Whispers end time moves to November 13 17:59:59 UTC+8; weekly Battle Pass EXP resets Monday 05:00 UTC+8 from October 29 with a retroactive grant; Qingzhou items at Zhao Laoliu’s General Store; mail reclaim, some Qinghe Homestead quests, and titles Blooming Rebuttal, Unrivaled Cardmaster, and Cast the Cosmos. Steam: https://store.steampowered.com/news/app/3564740/view/1847920302233930",
@@ -684,12 +701,18 @@ export const newsItems: NewsItem[] = officialNewsRows.map(
     summary,
     ...(officialNewsCovers[id] ? { image: officialNewsCovers[id] } : {}),
     ...(id === "october-29-version-2-3-patch-notes"
-      ? { dateLabel: "Site 2026-10-30 · Steam 2026-10-29 16:38 UTC+8" }
+      ? {
+          dateLabel: "Official site 2026-10-30 (date only) · Steam 2026-10-29 16:38:17 UTC+8",
+          sourcePublications: [
+            { publisher: "official-site" as const, date: "2026-10-30" },
+            {
+              publisher: "steam" as const,
+              date: "2026-10-29",
+              dateTime: "2026-10-29T16:38:17+08:00",
+              timeZone: "Asia/Shanghai",
+            },
+          ],
+        }
       : {}),
   }),
-);
-
-export const latestNewsDate = newsItems.reduce(
-  (latest, item) => (item.date > latest ? item.date : latest),
-  newsItems[0]?.date ?? "2025-01-01",
 );

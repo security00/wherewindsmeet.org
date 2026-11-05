@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
+import { LAST_VERIFIED } from "@/lib/globalAnnouncements";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
@@ -135,6 +136,7 @@ export default function FreeOutfitsPage() {
       name: metadata.title,
       description: metadata.description,
       url: `${baseUrl}/guides/free-outfits`,
+      dateModified: LAST_VERIFIED,
     },
     {
       "@context": "https://schema.org",

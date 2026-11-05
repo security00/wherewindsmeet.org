@@ -4,6 +4,7 @@ import { OfficialMediaFigure } from "@/components/guides/OfficialMediaFigure";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import Link from "next/link";
 import { getContentFreshness } from "@/lib/contentFreshness";
+import { LAST_VERIFIED } from "@/lib/globalAnnouncements";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 import {
   appearanceDeerParture,
@@ -328,6 +329,7 @@ export default function PatchNotesPage() {
       name: metadata.title,
       description: metadata.description,
       url: `${baseUrl}/guides/patch-notes`,
+      dateModified: LAST_VERIFIED,
     },
     {
       "@context": "https://schema.org",

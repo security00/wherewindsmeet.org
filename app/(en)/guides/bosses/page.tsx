@@ -7,11 +7,10 @@ import { OfficialMediaFigure } from "@/components/guides/OfficialMediaFigure";
 import { MediaPlaceholder } from "@/components/guides/MediaPlaceholder";
 import { bosses } from "@/lib/bosses";
 import { bossOldRaftsman, bossShuttlecock, bossTidewatcher } from "@/lib/officialQingzhouMedia";
-import { getContentFreshness } from "@/lib/contentFreshness";
+import { LAST_VERIFIED } from "@/lib/globalAnnouncements";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
-const freshness = getContentFreshness("/guides/bosses");
 
 const versionBossWatch = [
   {
@@ -86,7 +85,7 @@ export default function BossesPage() {
       name: metadata.title,
       description: metadata.description,
       url: `${baseUrl}/guides/bosses`,
-      dateModified: freshness?.lastChecked ?? "2026-06-03",
+      dateModified: LAST_VERIFIED,
     },
     {
       "@context": "https://schema.org",

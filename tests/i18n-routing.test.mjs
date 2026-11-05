@@ -240,7 +240,10 @@ test("Jiangnan shared guide localizes visible chrome, schema language, and inter
   assert.equal((source.match(/inLanguage: t\.inLanguage/g) ?? []).length, 3);
   assert.match(source, /author: siteIdentity/);
   assert.match(source, /publisher: siteIdentity/);
-  assert.match(source, /dateModified: freshness\?\.lastChecked \?\? "2026-08-23"/);
+  assert.match(
+    source,
+    /dateModified: locale === "en" \? LAST_VERIFIED : \(freshness\?\.lastChecked \?\? "2026-08-23"\)/,
+  );
   assert.match(source, /buildLocalizedPath\(path, locale\) \?\? path/);
   for (const path of [
     "/tools/interactive-map",

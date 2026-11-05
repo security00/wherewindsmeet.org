@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { bosses } from "@/lib/bosses";
-import { latestNewsDate } from "@/lib/news";
+import { PRIOR_SHARED_LAST_MODIFIED, sitemapLastModifiedDay } from "@/lib/sitemap-lastmod";
 import { weapons } from "@/lib/weapons";
 import { getAvailableLocales } from "@/i18n/routing.mjs";
 
@@ -15,11 +15,12 @@ type Entry = {
   lastModified?: MetadataRoute.Sitemap[0]["lastModified"];
 };
 
-const newsLastModified = new Date(latestNewsDate);
+/** Lastmod already published for routes this batch did not revise. */
+const priorSharedLastModified = new Date(PRIOR_SHARED_LAST_MODIFIED);
 const videosLastModified = new Date("2026-09-04");
 
 const staticEntries: Entry[] = [
-  { path: "/", changeFrequency: "daily", priority: 1, lastModified: newsLastModified },
+  { path: "/", changeFrequency: "daily", priority: 1, lastModified: priorSharedLastModified },
   { path: "/guides", changeFrequency: "daily", priority: 0.9 },
   { path: "/guides/platforms", changeFrequency: "weekly", priority: 0.86 },
   { path: "/guides/release-date", changeFrequency: "weekly", priority: 0.86 },
@@ -44,14 +45,14 @@ const staticEntries: Entry[] = [
   { path: "/guides/wall-puzzle", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/woven-with-malice", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/mist-shrouded-prison", changeFrequency: "weekly", priority: 0.8 },
-  { path: "/guides/qingzhou", changeFrequency: "daily", priority: 0.86, lastModified: newsLastModified },
-  { path: "/guides/penglai", changeFrequency: "daily", priority: 0.86, lastModified: newsLastModified },
+  { path: "/guides/qingzhou", changeFrequency: "daily", priority: 0.86, lastModified: priorSharedLastModified },
+  { path: "/guides/penglai", changeFrequency: "daily", priority: 0.86, lastModified: priorSharedLastModified },
   { path: "/guides/hutuo", changeFrequency: "daily", priority: 0.86, lastModified: new Date("2026-11-06") },
   { path: "/guides/anniversary", changeFrequency: "daily", priority: 0.86, lastModified: new Date("2026-11-06") },
-  { path: "/guides/mount-tai-blizzard", changeFrequency: "weekly", priority: 0.84, lastModified: newsLastModified },
-  { path: "/guides/cast-in-currents", changeFrequency: "weekly", priority: 0.84, lastModified: newsLastModified },
-  { path: "/guides/spirit-of-the-grove", changeFrequency: "weekly", priority: 0.84, lastModified: newsLastModified },
-  { path: "/guides/warehouse", changeFrequency: "weekly", priority: 0.8, lastModified: newsLastModified },
+  { path: "/guides/mount-tai-blizzard", changeFrequency: "weekly", priority: 0.84, lastModified: priorSharedLastModified },
+  { path: "/guides/cast-in-currents", changeFrequency: "weekly", priority: 0.84, lastModified: priorSharedLastModified },
+  { path: "/guides/spirit-of-the-grove", changeFrequency: "weekly", priority: 0.84, lastModified: priorSharedLastModified },
+  { path: "/guides/warehouse", changeFrequency: "weekly", priority: 0.8, lastModified: priorSharedLastModified },
   { path: "/guides/qinchuan", changeFrequency: "weekly", priority: 0.82 },
   { path: "/guides/jiangnan-hangzhou", changeFrequency: "daily", priority: 0.84 },
   { path: "/guides/imperial-decree", changeFrequency: "daily", priority: 0.82 },
@@ -63,7 +64,7 @@ const staticEntries: Entry[] = [
   { path: "/guides/one-leaf-one-life", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/the-great-faceologist", changeFrequency: "weekly", priority: 0.8 },
   { path: "/guides/flicker-of-faces", changeFrequency: "weekly", priority: 0.78 },
-  { path: "/guides/patch-notes", changeFrequency: "weekly", priority: 0.8, lastModified: newsLastModified },
+  { path: "/guides/patch-notes", changeFrequency: "weekly", priority: 0.8, lastModified: priorSharedLastModified },
   { path: "/guides/clouded-revelation", changeFrequency: "daily", priority: 0.84 },
   { path: "/guides/hidden-mountain", changeFrequency: "daily", priority: 0.84 },
   { path: "/guides/heavens-threshold-cloudstair", changeFrequency: "daily", priority: 0.82 },
@@ -97,7 +98,7 @@ const staticEntries: Entry[] = [
   { path: "/guides/sects", changeFrequency: "weekly", priority: 0.75 },
   { path: "/guides/desktop-widget", changeFrequency: "weekly", priority: 0.78 },
   { path: "/guides/xiangqi", changeFrequency: "weekly", priority: 0.7 },
-  { path: "/news", changeFrequency: "daily", priority: 0.7, lastModified: newsLastModified },
+  { path: "/news", changeFrequency: "daily", priority: 0.7, lastModified: priorSharedLastModified },
   { path: "/videos", changeFrequency: "weekly", priority: 0.65, lastModified: videosLastModified },
   { path: "/privacy", changeFrequency: "yearly", priority: 0.4 },
   { path: "/terms", changeFrequency: "yearly", priority: 0.4 },
@@ -132,7 +133,7 @@ const vnEntries: Entry[] = ([
   { path: "/vn/guides/free-outfits", changeFrequency: "weekly", priority: 0.7 },
   { path: "/vn/guides/skill-theft", changeFrequency: "weekly", priority: 0.73 },
   { path: "/vn/guides/new-players", changeFrequency: "weekly", priority: 0.73 },
-  { path: "/vn/guides/patch-notes", changeFrequency: "weekly", priority: 0.72, lastModified: newsLastModified },
+  { path: "/vn/guides/patch-notes", changeFrequency: "weekly", priority: 0.72, lastModified: priorSharedLastModified },
   { path: "/vn/guides/clouded-revelation", changeFrequency: "daily", priority: 0.76 },
   { path: "/vn/guides/hidden-mountain", changeFrequency: "daily", priority: 0.76 },
   { path: "/vn/guides/heavens-threshold-cloudstair", changeFrequency: "daily", priority: 0.74 },
@@ -169,7 +170,7 @@ const vnEntries: Entry[] = ([
   { path: "/vn/guides/endgame", changeFrequency: "weekly", priority: 0.7 },
   { path: "/vn/guides/desktop-widget", changeFrequency: "weekly", priority: 0.66 },
   { path: "/vn/guides/xiangqi", changeFrequency: "weekly", priority: 0.66 },
-  { path: "/vn/news", changeFrequency: "daily", priority: 0.6, lastModified: newsLastModified },
+  { path: "/vn/news", changeFrequency: "daily", priority: 0.6, lastModified: priorSharedLastModified },
   { path: "/vn/privacy", changeFrequency: "yearly", priority: 0.35 },
   { path: "/vn/terms", changeFrequency: "yearly", priority: 0.35 },
   { path: "/vn/videos", changeFrequency: "weekly", priority: 0.55, lastModified: videosLastModified },
@@ -222,10 +223,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const url = `${baseUrl}${entry.path}`;
     if (seen.has(url)) return [];
     seen.add(url);
-    const lastModified =
+    const inheritedDay =
       entry.lastModified instanceof Date && !Number.isNaN(entry.lastModified.getTime())
-        ? entry.lastModified
+        ? entry.lastModified.toISOString().slice(0, 10)
         : undefined;
+    const revisedDay = sitemapLastModifiedDay(entry.path, inheritedDay);
+    const lastModified = revisedDay ? new Date(revisedDay) : undefined;
     return [
       {
         url,

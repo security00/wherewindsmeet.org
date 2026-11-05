@@ -13,7 +13,8 @@ import {
   qingzhouPenglai,
   spiritOfTheGroveHall,
 } from "@/lib/officialQingzhouMedia";
-import { latestNewsDate, newsItems } from "@/lib/news";
+import { LAST_VERIFIED } from "@/lib/globalAnnouncements";
+import { newsItems } from "@/lib/news";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
@@ -153,7 +154,7 @@ export default function NewsPage() {
   const older2026News = olderNews.filter((item) => item.date.startsWith("2026"));
   const archive2025News = olderNews.filter((item) => item.date.startsWith("2025"));
 
-  const lastUpdatedLabel = `Updated ${latestNewsDate}`;
+  const lastUpdatedLabel = `Updated ${LAST_VERIFIED}`;
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -161,7 +162,7 @@ export default function NewsPage() {
       name: metadata.title,
       description: metadata.description,
       url: `${baseUrl}/news`,
-      dateModified: latestNewsDate,
+      dateModified: LAST_VERIFIED,
     },
     {
       "@context": "https://schema.org",
