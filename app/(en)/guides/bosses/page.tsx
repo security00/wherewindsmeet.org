@@ -7,11 +7,10 @@ import { OfficialMediaFigure } from "@/components/guides/OfficialMediaFigure";
 import { MediaPlaceholder } from "@/components/guides/MediaPlaceholder";
 import { bosses } from "@/lib/bosses";
 import { bossOldRaftsman, bossShuttlecock, bossTidewatcher } from "@/lib/officialQingzhouMedia";
-import { getContentFreshness } from "@/lib/contentFreshness";
+import { LAST_VERIFIED } from "@/lib/globalAnnouncements";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
-const freshness = getContentFreshness("/guides/bosses");
 
 const versionBossWatch = [
   {
@@ -86,7 +85,7 @@ export default function BossesPage() {
       name: metadata.title,
       description: metadata.description,
       url: `${baseUrl}/guides/bosses`,
-      dateModified: freshness?.lastChecked ?? "2026-06-03",
+      dateModified: LAST_VERIFIED,
     },
     {
       "@context": "https://schema.org",
@@ -145,13 +144,13 @@ export default function BossesPage() {
         <div className="relative">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-200">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            Version 2.1 boss-guide review
+            Updated 2026-11-06 · announcement verification
           </div>
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
             Where Winds Meet boss list, Ghost Master watch, and dungeon boss prep.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Updated {freshness?.lastChecked ?? "2026-08-26"} for {freshness?.gameVersion ?? "Version 2.1 / boss-guide wording review"}: this page answers high-demand Where Winds Meet boss searches with a curated starter list, verified historical patch notes, and links into builds and weapon prep. It does not claim to list every Hidden Mountain encounter; check official notes and the in-game journal for bosses not yet documented here.
+            Updated 2026-11-06 (announcement verification). Baseline: Version 2.3 Friends From Afar (Qingzhou from October 15; Penglai batch October 29). Historical note: Version 2.1.3 / September 2026 patch citations below remain for older Ghost Master, Hero&apos;s Realm, and Sword Trial watch items. They are not claimed as freshly re-tested boss mechanics on this edit. This page answers high-demand boss searches with a curated starter list and links into builds and weapon prep. It does not claim to list every Hidden Mountain encounter.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Use it alongside the{" "}
@@ -242,6 +241,17 @@ export default function BossesPage() {
         />
         <p className="text-xs text-slate-400">
           Naming source: <a className="text-emerald-300 underline underline-offset-4" href="https://www.wherewindsmeetgame.com/news/official/1014devletter.html" target="_blank" rel="noreferrer">Dev Letter Part 2</a>. Penglai’s October 29 batch is separate: <Link href="/guides/penglai" className="text-emerald-300 underline underline-offset-4">/guides/penglai</Link>.
+        </p>
+      </section>
+
+      <section id="hutuo-announced" className="rounded-3xl border border-amber-400/30 bg-slate-950/80 p-6">
+        <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">Upcoming · not a boss list</p>
+        <h2 className="mt-2 text-xl font-semibold text-slate-50">Hutuo is announced, without a boss roster</h2>
+        <p className="mt-2 text-sm leading-6 text-slate-300">
+          First global anniversary / Campaign Hutuo is scheduled for November 13. See{" "}
+          <Link href="/guides/hutuo" className="text-emerald-300 underline underline-offset-4">/guides/hutuo</Link>.
+          No Hutuo boss names are added here. The cited announcements do not supply a verified Global English boss
+          roster, raid list, drop table, or entrance requirement for this hub.
         </p>
       </section>
 

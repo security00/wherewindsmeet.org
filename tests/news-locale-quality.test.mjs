@@ -2,18 +2,15 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
-import {
-  latestNewsDate as officialLatestNewsDate,
-  newsItems as officialNewsItems,
-} from "../lib/news.ts";
+import { newsItems as officialNewsItems } from "../lib/news.ts";
 
 const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
 
 const loadLocalizedNews = async (path) => {
   const source = read(path)
     .replace(
-      /^import \{ latestNewsDate, newsItems as officialNewsItems \} from "\.\/news";$/m,
-      `const officialNewsItems = ${JSON.stringify(officialNewsItems)}; const latestNewsDate = ${JSON.stringify(officialLatestNewsDate)};`,
+      /^import \{ newsItems as officialNewsItems \} from "\.\/news";$/m,
+      `const officialNewsItems = ${JSON.stringify(officialNewsItems)};`,
     )
     .replace("iso: string", "iso");
   return import(`data:text/javascript,${encodeURIComponent(source)}`);

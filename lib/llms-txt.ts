@@ -34,7 +34,7 @@ A fan-made guides hub. It collects guides, builds, patch-note summaries, videos,
 
 - [Home](https://wherewindsmeet.org/): Version 2.3 guides hub. Entry points for platforms, news, codes, tier lists, builds, the interactive map, patch notes, bosses, and videos.
 - [Guides](https://wherewindsmeet.org/guides): Index of beginner routes, platforms, evidence reviews, patch notes, regions, and quest pages.
-- [News](https://wherewindsmeet.org/news): October 28 Dev Letter (Penglai, Mount Tai Blizzard, Cast in Currents, Spirit of the Grove), October 29 fixes, and the October 15 Version 2.3 Friends from Afar baseline.
+- [News](https://wherewindsmeet.org/news): October 28 Dev Letter (Penglai, Mount Tai Blizzard, Cast in Currents, Spirit of the Grove), October 29 fixes, and the October 15 Version 2.3 Friends from Afar baseline. A pinned card tracks the announced global Hutuo update for November 13 (UTC, date only) and points at the anniversary reward split. Announced is not live. Dual Spears stay late November.
 - [Videos](https://wherewindsmeet.org/videos): Click-to-load gallery. The page describes videos for Version 2.1.3, Heaven's Threshold, Drunken Fist, Hidden Mountain, Xbox gameplay, and current guide checks.
 - [German home](https://wherewindsmeet.org/de): Reviewed German homepage. Its own title still says Version 2.1. Use the English page, or the sitemap, when a German URL is missing.
 - [Vietnamese home](https://wherewindsmeet.org/vn): Reviewed Vietnamese homepage. Its own title still says Version 2.1. Use the English page, or the sitemap, when a Vietnamese URL is missing.
@@ -50,17 +50,19 @@ A fan-made guides hub. It collects guides, builds, patch-note summaries, videos,
 - [Tools](https://wherewindsmeet.org/tools): Interactive map, reset timer, and checklist.
 - [Reset timer](https://wherewindsmeet.org/tools/reset-timer): Daily and weekly reset countdown with a time-zone display.
 - [Checklist](https://wherewindsmeet.org/tools/checklist): Custom daily and weekly checklist saved locally.
-- [Patch notes](https://wherewindsmeet.org/guides/patch-notes): Official October 28 Dev Letter (Penglai, Mount Tai Blizzard, Cast in Currents, Spirit of the Grove) and October 29 patch notes. The page summary names the Guild War apology and DST note, the Battle Pass Scarlet Whispers end time, and Zhao Laoliu's General Store. Read the page for the dated history. Do not fill gaps the page marks as pending in-game confirmation.
+- [Patch notes](https://wherewindsmeet.org/guides/patch-notes): Live baseline is Version 2.3 Friends From Afar and the October 29 Penglai batch. The October 29 card lists six additional fixes (Autumn Eve Whimsy, Pristine Grace, Guild Techniques, Inkwash Splendor settings, and a PS5 Mount Tai Blizzard dialogue block) plus the Guild War apology, Scarlet Whispers end time of November 13, 17:59:59 UTC+8, and Zhao Laoliu's General Store. The October 29 update overview is linked by title only. Hutuo is announced for November 13 and is not live. Dual Spears are late November.
 
 ## Qingzhou and regions
 
 - [Qingzhou](https://wherewindsmeet.org/guides/qingzhou): How to unlock Qingzhou, and what the page says went live on October 29: Mount Penglai, Mount Tai Blizzard, Cast in Currents, and Spirit of the Grove, plus an Eastern Peak unlock checklist and official sources.
 - [Mount Penglai](https://wherewindsmeet.org/guides/penglai): How to explore Mount Penglai after the October 29 opening. The guides index says the page uses official framing only, and that Journal steps are still pending.
+- [Hutuo](https://wherewindsmeet.org/guides/hutuo): Global-server announcement only. The page dates Hutuo to November 13 (UTC, no clock time), says it is not live, and dates Dual Spears to late November rather than November 13. It does not name a boss, raid, drop, or entrance requirement. Last verified 2026-11-06 (Asia/Shanghai).
+- [Anniversary rewards](https://wherewindsmeet.org/guides/anniversary): Global-server announcement for November 13 (UTC, date only), not live. Login is choose 1 of 12 outfits. That pick is separate from in-game Lingering Melody ×42 and Resonating Melody ×27. Outfit names for the extra November and December sets are not listed. Last verified 2026-11-06 (Asia/Shanghai).
 - [Mount Tai Blizzard](https://wherewindsmeet.org/guides/mount-tai-blizzard): Campaign page for a closed-circle detective story: Gong-Note Zither, Case Room, and Reverse. The guides index says this page has no culprit walkthrough.
 - [Cast in Currents](https://wherewindsmeet.org/guides/cast-in-currents): Jianghu Legacy dreamscape with Zheng Sheng. The guides index says this is not Spirits of the Lake.
 - [Spirit of the Grove](https://wherewindsmeet.org/guides/spirit-of-the-grove): Exploration page for a light-horror Inkbound hall with looping corridors and a bronze mirror. The guides index says this is not Spirits of the Lake.
 - [Qinchuan](https://wherewindsmeet.org/guides/qinchuan): Qinchuan Path hub for unlocks, Sunken City Lake, Travel Permit, To Friends to the End, and exploration priorities.
-- [Jiangnan and Hangzhou](https://wherewindsmeet.org/guides/jiangnan-hangzhou): The page says Jiangnan is live in China with Hangzhou first (June 26 CN release) and tracks the Global release as unannounced. Its English FAQ says no official Global launch had been announced as of August 23, 2026, and that the region is live on the China server.
+- [Jiangnan and Hangzhou](https://wherewindsmeet.org/guides/jiangnan-hangzhou): The page says Jiangnan is live in China with Hangzhou first (June 26 CN release). Its English FAQ says that, as of 2026-11-06, the reviewed Global English official sources do not confirm a Global Jiangnan/Hangzhou launch. Global play is described as the Version 2.3 Friends From Afar era. China-server Hangzhou is a different track.
 
 ## Builds, weapons, bosses, and getting started
 

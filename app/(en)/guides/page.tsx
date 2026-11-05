@@ -52,6 +52,26 @@ const guideSections = [
       "Version 2.3 Friends From Afar, the October 28 Penglai Dev Letter, October 29 fixes, and dated patch history.",
   },
   {
+    title: "Hutuo (announced)",
+    slug: "/guides/hutuo",
+    label: "Nov 13 UTC",
+    icon: "📯",
+    color: "text-amber-200",
+    size: "medium",
+    description:
+      "Global server only. Hutuo is announced for November 13 (UTC, no clock time) and is not live. Dual Spears are late November, not that date.",
+  },
+  {
+    title: "Anniversary rewards (announced)",
+    slug: "/guides/anniversary",
+    label: "Not live",
+    icon: "🎁",
+    color: "text-amber-300",
+    size: "medium",
+    description:
+      "Login is choose 1 of 12 outfits. That pick is separate from in-game Lingering Melody ×42 and Resonating Melody ×27. Announced for November 13 (UTC), not live.",
+  },
+  {
     title: "Best Builds",
     slug: "/guides/builds",
     label: "PVE & PVP",
@@ -654,6 +674,12 @@ export default function GuidesPage() {
             className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-red-400/60 bg-red-500/10 px-4 py-2 text-sm font-semibold text-red-100 transition hover:border-red-300/80 hover:text-red-50"
           >
               Version 2.3 patch notes / Oct 29 Penglai
+          </Link>
+          <Link
+            href="/guides/hutuo"
+            className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-amber-400/60 bg-amber-500/10 px-4 py-2 text-sm font-semibold text-amber-100 transition hover:border-amber-300/80 hover:text-amber-50"
+          >
+              Announced: Hutuo, November 13 UTC (not live)
           </Link>
           <Link
             href="/guides/qingzhou"

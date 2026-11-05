@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
+import { LAST_VERIFIED } from "@/lib/globalAnnouncements";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
@@ -135,6 +136,7 @@ export default function FreeOutfitsPage() {
       name: metadata.title,
       description: metadata.description,
       url: `${baseUrl}/guides/free-outfits`,
+      dateModified: LAST_VERIFIED,
     },
     {
       "@context": "https://schema.org",
@@ -272,6 +274,29 @@ export default function FreeOutfitsPage() {
           <p className="text-xs text-slate-400">
             Note: rewards shift with patches. Always claim the free tier first, then decide if paid upgrades are worth it. In-game notices and official posts take priority if details change.
           </p>
+          <div
+            id="anniversary-login-outfit"
+            className="space-y-3 rounded-2xl border border-amber-400/30 bg-slate-950/70 p-4 text-sm leading-6 text-slate-200"
+          >
+            <p>
+              <strong>Anniversary (Hutuo) — read before assuming every free outfit is a login reward.</strong>{" "}
+              Official anniversary rewards split a login pick of 1 of 12 outfits from in-game Lingering Melody ×42
+              and Resonating Melody ×27. More November and December free outfits are summarized without full names.
+              Those outfits are not added to the tables below. Details:{" "}
+              <Link href="/guides/anniversary" className="text-emerald-300 underline underline-offset-4">/guides/anniversary</Link>.
+              Update hub:{" "}
+              <Link href="/guides/hutuo" className="text-emerald-300 underline underline-offset-4">/guides/hutuo</Link>.
+            </p>
+            <p>
+              <strong>Swallow&apos;s Pact / Radiant Attire:</strong> an official notice says release of certain
+              new-player benefits, including Swallow&apos;s Pact and Radiant Attire, was delayed. They go live after
+              optimizations, and the new time will be announced when confirmed. Do not keep an October 26 “now live”
+              promise.{" "}
+              <a className="text-emerald-300 underline underline-offset-4" href="https://x.com/WhereWindsMeet_/status/2114750643663716620" target="_blank" rel="noreferrer">
+                Official delay post
+              </a>.
+            </p>
+          </div>
           <div className="flex flex-wrap gap-3 text-xs text-emerald-200">
             <Link
               href="/guides/codes"

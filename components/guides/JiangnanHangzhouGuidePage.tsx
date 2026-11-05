@@ -5,6 +5,7 @@ import LiteMp4Embed from "@/components/LiteMp4Embed";
 import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
 import { buildLocalizedPath } from "@/i18n/routing.mjs";
 import { getContentFreshness } from "@/lib/contentFreshness";
+import { LAST_VERIFIED } from "@/lib/globalAnnouncements";
 
 type Locale = "en" | "vi" | "de";
 
@@ -104,14 +105,14 @@ const copy = {
   en: {
     language: "en",
     inLanguage: "en-US",
-    eyebrow: "CN live · Global release watch · Checked August 23, 2026",
+    eyebrow: "CN live · Global release watch · Global sources checked 2026-11-06",
     title: "Where Winds Meet Jiangnan & Hangzhou map: CN release and Global status",
     intro:
-      "Jiangnan is real and playable on the China server: its first region, Hangzhou, opened on June 26, 2026. It is not yet announced as a live Global region. This tracker separates confirmed CN content from Global expectations so players can follow the new map without mistaking previews for a release date.",
+      "Jiangnan is real and playable on the China server: its first region, Hangzhou, opened on June 26, 2026. A 2026-11-06 check of the Global English posts used for the Hutuo and Version 2.3 evidence pack did not find an official post confirming Jiangnan or Hangzhou as a live Global region. That is a statement about what those posts cover. Global play is already in the Version 2.3 Friends From Afar era (Qingzhou / Penglai). Jiangnan on Global is a separate question from that baseline.",
     statusTitle: "Is the Jiangnan map available now?",
     statuses: [
       ["China server", "Live", "Hangzhou opened June 26, 2026, with the Jiangnan story prologue and its first playable area."],
-      ["Global server", "Not announced", "The current official Global news trail is Version 2.1 / Hidden Mountain; no Jiangnan launch date is listed."],
+      ["Global server", "Not confirmed in reviewed posts", "Through 2026-11-06, the Global English official posts reviewed for this edit do not confirm Jiangnan or Hangzhou as a live Global region. Re-check wherewindsmeetgame.com/news and @WhereWindsMeet_ before claiming a Global open date. This is coverage, not proof that no announcement exists outside that set."],
       ["Hangzhou interactive map", "Not verified", "The supplied 17173 URL opens Qinchuan. Its current region selector does not list Jiangnan or Hangzhou."],
     ],
     evidenceTitle: "What the official Jiangnan announcement confirms",
@@ -144,7 +145,7 @@ const copy = {
       "The CN release makes Jiangnan a credible future Global destination, but release order and timing can differ. A safe watchlist is Hangzhou, its story prologue, waterways and harbor districts, West Lake expansion, bosses, quests, collectibles, and any new progression systems. There is no responsible basis for publishing a specific Global date until it appears in official Global news or patch notes.",
     faqTitle: "Jiangnan and Hangzhou FAQ",
     faq: [
-      ["Is Jiangnan available in Where Winds Meet Global?", "No official Global launch has been announced as of August 23, 2026. It is live on the China server."],
+      ["Is Jiangnan available in Where Winds Meet Global?", "As of 2026-11-06, this page’s reviewed Global English official sources do not confirm a Global Jiangnan/Hangzhou launch. China-server Hangzhou content is a different track. We will update when a Global official launch post is verified."],
       ["Is Hangzhou the first Jiangnan map?", "Yes. Official CN announcements call Hangzhou the first region and the starting point of the Jiangnan chapter."],
       ["When will Jiangnan release globally?", "Unknown. Community guesses are not a release date; wait for the official Global news feed or patch notes."],
       ["Does the 17173 link show Hangzhou?", "No. The linked route is /maps/qinchuan, and its current region selector does not list Hangzhou."],
@@ -167,7 +168,7 @@ const copy = {
     relatedQinchuan: "Qinchuan guide (English) →",
     relatedUpdates: "Update tracker →",
     sourcesNote:
-      "CN launch and region details are sourced from official yysls.cn announcements. Global status is checked against the official Global news feed. The 17173 map status was checked directly on August 23, 2026.",
+      "CN launch and region details are sourced from official yysls.cn announcements. The Global status sentence was checked on 2026-11-06 against the Global English posts in the Hutuo / Version 2.3 evidence pack, plus https://www.wherewindsmeetgame.com/news/. The 17173 map status was checked directly on August 23, 2026.",
   },
   vi: {
     language: "vi",
@@ -325,7 +326,7 @@ export function JiangnanHangzhouGuidePage({ locale }: { locale: Locale }) {
       "@type": "Article",
       headline: t.title,
       datePublished: "2026-08-23",
-      dateModified: freshness?.lastChecked ?? "2026-08-23",
+      dateModified: locale === "en" ? LAST_VERIFIED : (freshness?.lastChecked ?? "2026-08-23"),
       mainEntityOfPage: pageUrl,
       image: [heroImage],
       author: siteIdentity,

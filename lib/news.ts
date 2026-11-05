@@ -13,16 +13,35 @@ import {
 
 export type NewsType = "announcement" | "event" | "guide" | "beta";
 
+/** A publisher stamp. A date-only source must not gain an invented clock time. */
+export type SourcePublication = {
+  publisher: "official-site" | "steam";
+  /** Calendar date printed by that source, YYYY-MM-DD. */
+  date: string;
+  /** Included only when that source gives a clock time. */
+  dateTime?: string;
+  timeZone?: string;
+};
+
 export type NewsItem = {
   id: string;
   title: string;
-  date: string; // ISO date string, e.g. 2025-11-14
+  /**
+   * Official webpage publication date (YYYY-MM-DD) for the linked source.
+   * Manual array order is the feed order. This field is not a sort key and
+   * not this site's editorial revision date.
+   */
+  date: string;
   type: NewsType;
   summary: string;
   officialUrl?: string;
   tags?: string[];
   /** Optional official / Steam CDN cover with attribution (OfficialMediaFigure). */
   image?: OfficialMediaItem;
+  /** Visible label when one card has more than one official stamp. */
+  dateLabel?: string;
+  /** Every official stamp for this row. Clocks appear only when the source gave one. */
+  sourcePublications?: SourcePublication[];
 };
 
 type OfficialNewsRow = [
@@ -43,10 +62,10 @@ const officialNewsRows: OfficialNewsRow[] = [
   [
     "october-29-version-2-3-patch-notes",
     "Version 2.3 Patch Notes: Optimizations and Bug Fixes (October 29)",
-    "2026-10-28",
+    "2026-10-30",
     "announcement",
     "https://www.wherewindsmeetgame.com/news/official/1029patchnotes.html",
-    "Official October 29 Version 2.3 fixes (page dated 2026-10-28): Guild War time-offset rollback for Yunya, Yougu, and Linhe after the October 18 early open; Guild War does not follow daylight-saving shifts; Battle Pass Scarlet Whispers end time moves to November 13 17:59:59 UTC+8; weekly Battle Pass EXP resets Monday 05:00 UTC+8 from October 29 with a retroactive grant; Qingzhou items at Zhao Laoliu’s General Store; mail reclaim, some Qinghe Homestead quests, and titles Blooming Rebuttal, Unrivaled Cardmaster, and Cast the Cosmos.",
+    "October 29, 2026 Fixes and Optimizations. Publication dates, kept side by side: official site page date 2026-10-30 (date only); Steam announcement 2026-10-29 16:38:17 Asia/Shanghai. Fixes first: Autumn Eve Whimsy could not be equipped and broke Wardrobe behavior; Autumn Eve Whimsy missing from the Shop for some Wanderers; Pristine Grace hairstyle display; Guild Techniques activation conditions; Inkwash Splendor Calligraphy Treasure settings failing to save; PS5 dialogues blocked in Campaign Mount Tai Blizzard. Also: Guild War time-offset rollback for Yunya, Yougu, and Linhe after the October 18 early open; Guild War does not follow daylight-saving shifts; Battle Pass Scarlet Whispers end time moves to November 13 17:59:59 UTC+8; weekly Battle Pass EXP resets Monday 05:00 UTC+8 from October 29 with a retroactive grant; Qingzhou items at Zhao Laoliu’s General Store; mail reclaim, some Qinghe Homestead quests, and titles Blooming Rebuttal, Unrivaled Cardmaster, and Cast the Cosmos. Steam: https://store.steampowered.com/news/app/3564740/view/1847920302233930",
   ],
   [
     "october-28-dev-letter-dreaming-paths",
@@ -86,7 +105,7 @@ const officialNewsRows: OfficialNewsRow[] = [
     "2026-10-15",
     "event",
     "https://www.wherewindsmeetgame.com/news/official/1015appearance.html",
-    "Official Version 2.3 appearances: Aureate Dominion set via the Fading Glory draw (until November 9), Blazing Sands hairstyle (until January 13, 2027), Veil of Lotus draw set (until December 28), Scarlet Whispers Battle Pass appearance (until November 14), Crane Ascending: Chordsong Waist Drum VFX, Duskfall Verse set and Ode to the Feline Muse companion appearance, the Qingzhou-exclusive Eastwind Soarer mount (until December 13), Myriad Sounds sword and spear appearances, Tonight's Reverie Waist Drum appearance, and the Path of Youth set on October 18.",
+    "Official Version 2.3 appearances: Aureate Dominion set via the Fading Glory draw (until November 9), Blazing Sands hairstyle (until January 13, 2027), Veil of Lotus draw set (until December 28), Scarlet Whispers Battle Pass appearance (older copy said until November 14; [superseded] the October 29 patch notes move that end clock to November 13, 17:59:59 UTC+8), Crane Ascending: Chordsong Waist Drum VFX, Duskfall Verse set and Ode to the Feline Muse companion appearance, the Qingzhou-exclusive Eastwind Soarer mount (until December 13), Myriad Sounds sword and spear appearances, Tonight's Reverie Waist Drum appearance, and the Path of Youth set on October 18.",
   ],
   [
     "october-15-version-2-3-patch-notes",
@@ -681,10 +700,19 @@ export const newsItems: NewsItem[] = officialNewsRows.map(
     officialUrl,
     summary,
     ...(officialNewsCovers[id] ? { image: officialNewsCovers[id] } : {}),
+    ...(id === "october-29-version-2-3-patch-notes"
+      ? {
+          dateLabel: "Official site 2026-10-30 (date only) · Steam 2026-10-29 16:38:17 UTC+8",
+          sourcePublications: [
+            { publisher: "official-site" as const, date: "2026-10-30" },
+            {
+              publisher: "steam" as const,
+              date: "2026-10-29",
+              dateTime: "2026-10-29T16:38:17+08:00",
+              timeZone: "Asia/Shanghai",
+            },
+          ],
+        }
+      : {}),
   }),
-);
-
-export const latestNewsDate = newsItems.reduce(
-  (latest, item) => (item.date > latest ? item.date : latest),
-  newsItems[0]?.date ?? "2025-01-01",
 );
