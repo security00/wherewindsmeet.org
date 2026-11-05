@@ -216,7 +216,7 @@ const copy = {
     h1Before: "WWM Codes ",
     h1Highlight: "November 2026",
     intro1: (checked: string, version: string) =>
-      `Updated ${checked}: November 1 re-check for ${version}. Steam news (app 3564740) and official site posts reviewed for this refresh—including the October 28–29 notes, the anniversary broadcast, Friends From Afar, and the Qingzhou–Penglai week—still publish no new redeem-code list, so no new codes were added. Aggregator strings such as 1015QINGZHOU remain excluded until an official URL is attached. Codes below stay labeled Reported—not confirmed-active.`,
+      `Updated ${checked}: November 5 re-check for ${version}. Steam news (app 3564740) and official site posts reviewed for this refresh—including the November 3 Hutuo anniversary note, the October 29 Version 2.3 patch notes, and the October 27 anniversary broadcast—still publish no new redeem-code list, so no new codes were added. Aggregator strings such as 1015QINGZHOU remain excluded until an official URL is attached. Codes below stay labeled Reported—not confirmed-active.`,
     intro2:
       "Important: the official news feed also reported that a leaked batch of 30 exchange codes was disabled in early May 2026. If a code from social media fails, it may simply be one of those disabled leak codes rather than a problem with your account.",
     reportedTitle: "Reported Codes ",
@@ -305,7 +305,7 @@ const copy = {
       },
       {
         q: "Is there a Where Winds Meet Qingzhou code for October 2026?",
-        a: " Not on this checklist. Official Version 2.3 Friends From Afar, Qingzhou, and Penglai-week communications cited for the 2026-10-21 / 2026-10-22 / 2026-10-29 / 2026-11-01 refresh did not ship a new public redeem code. If an official news post or Steam community announcement later publishes one, we will add it as Reported with the source link—and you should still redeem in-game to confirm. Unlock help: /guides/qingzhou; what shipped: /guides/patch-notes.",
+        a: " Not on this checklist. Official Version 2.3 Friends From Afar, Qingzhou, and Penglai-week communications cited for the 2026-10-21 / 2026-10-22 / 2026-10-29 / 2026-11-01 / 2026-11-05 refresh did not ship a new public redeem code. If an official news post or Steam community announcement later publishes one, we will add it as Reported with the source link—and you should still redeem in-game to confirm. Unlock help: /guides/qingzhou; what shipped: /guides/patch-notes.",
       },
     ],
     strategyTitle: "Redemption Strategy",
@@ -322,7 +322,7 @@ const copy = {
     h1Before: "WWM Codes ",
     h1Highlight: "November 2026",
     intro1: (checked: string, version: string) =>
-      `Aktualisiert ${checked}: erneute Pruefung am 1. November fuer ${version}. Steam-News (App 3564740) und Beitraege der offiziellen Website—einschliesslich der Notizen vom 28.–29. Oktober, der Anniversary-Uebertragung, Friends From Afar und der Qingzhou–Penglai-Woche—veroeffentlichen weiterhin keine neue Redeem-Code-Liste, daher wurden keine neuen Codes hinzugefuegt. Aggregator-Strings wie 1015QINGZHOU bleiben ausgeschlossen, bis eine offizielle URL vorliegt. Codes unten bleiben als Gemeldet gekennzeichnet—nicht als bestaetigt-aktiv.`,
+      `Aktualisiert ${checked}: erneute Pruefung am 5. November fuer ${version}. Steam-News (App 3564740) und Beitraege der offiziellen Website—einschliesslich der Hutuo-Anniversary-Notiz vom 3. November, der Version-2.3-Patchnotes vom 29. Oktober und der Anniversary-Uebertragung vom 27. Oktober—veroeffentlichen weiterhin keine neue Redeem-Code-Liste, daher wurden keine neuen Codes hinzugefuegt. Aggregator-Strings wie 1015QINGZHOU bleiben ausgeschlossen, bis eine offizielle URL vorliegt. Codes unten bleiben als Gemeldet gekennzeichnet—nicht als bestaetigt-aktiv.`,
     intro2:
       "Wichtig: Der offizielle News-Feed meldete auch, dass ein geleakter Batch von 30 Exchange Codes Anfang Mai 2026 deaktiviert wurde. Scheitert ein Social-Media-Code, kann es einer dieser deaktivierten Leak-Codes sein—nicht zwingend ein Account-Problem.",
     reportedTitle: "Gemeldete Codes ",
@@ -424,7 +424,7 @@ const copy = {
     h1Before: "WWM Codes ",
     h1Highlight: "Tháng 11/2026",
     intro1: (checked: string, version: string) =>
-      `Cập nhật ${checked}: kiểm tra lại ngày 1/11 cho ${version}. Tin Steam (app 3564740) và bài trên trang chính thức—gồm ghi chú 28–29/10, buổi phát sóng kỷ niệm, Friends From Afar và tuần Qingzhou–Penglai—vẫn không công bố danh sách redeem code mới, nên không thêm mã mới. Chuỗi chỉ có trên aggregator như 1015QINGZHOU vẫn bị loại cho đến khi có URL chính thức. Các mã bên dưới vẫn gắn nhãn Đã báo cáo—không phải đã xác nhận còn hiệu lực.`,
+      `Cập nhật ${checked}: kiểm tra lại ngày 5/11 cho ${version}. Tin Steam (app 3564740) và bài trên trang chính thức—gồm ghi chú kỷ niệm Hutuo ngày 3/11, patch notes Version 2.3 ngày 29/10 và buổi phát sóng kỷ niệm ngày 27/10—vẫn không công bố danh sách redeem code mới, nên không thêm mã mới. Chuỗi chỉ có trên aggregator như 1015QINGZHOU vẫn bị loại cho đến khi có URL chính thức. Các mã bên dưới vẫn gắn nhãn Đã báo cáo—không phải đã xác nhận còn hiệu lực.`,
     intro2:
       "Quan trọng: feed tin chính thức cũng báo một lô 30 exchange code bị lộ đã bị vô hiệu hóa đầu tháng 5/2026. Nếu mã từ mạng xã hội thất bại, có thể chỉ là một trong các mã leak đó chứ không phải lỗi tài khoản.",
     reportedTitle: "Mã đã báo cáo ",
