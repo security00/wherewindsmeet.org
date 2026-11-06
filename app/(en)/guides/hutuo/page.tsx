@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
-import { MediaPlaceholder } from "@/components/guides/MediaPlaceholder";
+import { OfficialGraphicFigure } from "@/components/guides/OfficialGraphicFigure";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 import {
   HUB_OG_IMAGE,
@@ -218,10 +218,14 @@ export default function HutuoGuidePage() {
           A separate post also says Campaign [Hutuo River] and “rally at Zhongdu Bridge on November 13.” Treat that
           wording as the same Hutuo anniversary beat, not as an extra dungeon name.
         </p>
-        <MediaPlaceholder
-          slot="Hutuo key art"
-          alt="Official Hutuo announcement still. Not stored on this hub."
-          expectation="Pending an official still this hub can host. The fan-hub social image is not Hutuo key art."
+        <OfficialGraphicFigure
+          src="/guides/hutuo/roadmap.webp"
+          width={1920}
+          height={1414}
+          alt="Official Hutuo roadmap graphic from Where Winds Meet. Publisher layout of the announced update, not a photograph and not key art."
+          caption="Official roadmap graphic from the Hutuo announcement post, shown complete and uncropped. Printed names, dates, and codes stay inside the graphic. This page does not add them to the written guide."
+          sourceHref="https://x.com/WhereWindsMeet_/status/2117934891497029783"
+          sourceLabel="Official Hutuo announcement on X"
         />
       </section>
 

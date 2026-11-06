@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
-import { MediaPlaceholder } from "@/components/guides/MediaPlaceholder";
+import { OfficialGraphicFigure } from "@/components/guides/OfficialGraphicFigure";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 import {
   ANNIVERSARY_SOURCES,
@@ -232,10 +232,14 @@ export default function AnniversaryGuidePage() {
           <p><strong>In-game — Melodies.</strong> Lingering Melody ×42 and Resonating Melody ×27 are listed under “Easy In-Game Rewards,” separate from the login outfit line.</p>
           <p><strong>November and December — 5 free outfits plus accessories.</strong> Confirmed only at that summary level. Set names, shop paths, and claim windows are unknown here. Do not assume they all unlock at the Hutuo launch minute.</p>
         </div>
-        <MediaPlaceholder
-          slot="Anniversary reward still"
-          alt="Official anniversary reward still. Not stored on this hub."
-          expectation="Pending an official still. Older outfit grids on this site are not this reward list."
+        <OfficialGraphicFigure
+          src="/guides/anniversary/rewards.webp"
+          width={1920}
+          height={1080}
+          alt="Official anniversary rewards graphic from Where Winds Meet, with a login outfit choice beside separate in-game melody counts."
+          caption="Official rewards graphic from the anniversary post, shown complete and uncropped. Promotional figures and names printed on the graphic are the publisher's layout. They are not restated as claims on this page."
+          sourceHref="https://x.com/WhereWindsMeet_/status/2117386268698943563"
+          sourceLabel="Official anniversary rewards post on X"
         />
       </section>
 
