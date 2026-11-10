@@ -18,8 +18,9 @@ test("Hutuo and anniversary replace pending stills with local full-frame graphic
     assert.doesNotMatch(source, /MediaPlaceholder|Pending official still/);
     assert.doesNotMatch(source, /twimg\.com|pbs\.twimg/);
     assert.match(source, /OfficialGraphicFigure/);
-    assert.match(source, /late November/);
+    assert.match(source, /November 26 \(UTC\)/);
   }
+  assert.match(hutuo, /late November/);
   assert.match(figure, /Open the full-size graphic/);
 
   assert.match(hutuo, /\/guides\/hutuo\/roadmap\.webp/);
