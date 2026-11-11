@@ -33,7 +33,11 @@ test("Hutuo and anniversary ship English metadata without placeholder copy", () 
     assert.match(source, /Sources/);
     assert.equal((source.match(/<h1 /g) ?? []).length, 1);
     assert.doesNotMatch(source, /EditorialPlaceholder|data-editorial-placeholder|\[WRITER\]/);
-    assert.doesNotMatch(source, /2\.4/);
+    assert.match(source, /Version 2\.4/);
+    assert.match(source, /2026-11-10 \(Asia\/Shanghai\)/);
+    assert.match(source, /datePublished: PAGE_PUBLISHED/);
+    assert.match(source, /dateModified: PAGE_MODIFIED/);
+    assert.doesNotMatch(source, /x-topup-2026-11-09/);
     assert.doesNotMatch(source, /\/(?:de|vn)\/guides\/(?:hutuo|anniversary)/);
   }
 
@@ -42,21 +46,43 @@ test("Hutuo and anniversary ship English metadata without placeholder copy", () 
   assert.doesNotMatch(anniversary, /\$150|150/);
 });
 
-test("Dual Spears stay late November and anniversary rewards stay split", () => {
+test("Dual Spears use November 26 (UTC) and anniversary rewards stay split from paid top-up", () => {
   assert.match(hutuo, /late November/);
-  assert.match(hutuo, /not confirmed as a November 13 same-day unlock/);
+  assert.match(hutuo, /November 26 \(UTC\)/);
+  assert.match(hutuo, /a November 13 same-day unlock/);
+  assert.match(hutuo, /arrive soon!/);
+  assert.match(hutuo, /raid supplies/);
+  assert.match(hutuo, /a raid dungeon/);
   assert.match(hutuo, /Yuen Woo-ping/);
-  assert.match(hutuo, /2117934891497029783|HUTUO_SOURCES/);
+  assert.match(hutuo, /2117934891497029783/);
+  assert.match(hutuo, /1109devletter\.html/);
   assert.match(hutuo, /Zhongdu Bridge/);
   assert.doesNotMatch(hutuo, /entrance requirement is Lv|Hutuo boss named/);
+  assert.doesNotMatch(hutuo, /does not give a version number/);
 
   assert.match(anniversary, /pick 1 of 12 outfits/i);
   assert.match(anniversary, /Lingering Melody ×42/);
   assert.match(anniversary, /Resonating Melody ×27/);
   assert.match(anniversary, /does not mean you automatically receive every Melody/);
-  assert.match(anniversary, /2117386268698943563|ANNIVERSARY_SOURCES/);
+  assert.match(anniversary, /2117386268698943563/);
+  assert.match(anniversary, /2119761940117332319/);
+  assert.match(anniversary, /Paid top-up events \(not free login rewards\)/);
+  assert.match(anniversary, /Nov 13 at 23:00 \(UTC\+8\)/);
+  assert.match(anniversary, /Dec 18 at 04:59:59 \(UTC\+8\)/);
+  assert.match(anniversary, /November 26 \(UTC\)/);
+  assert.match(anniversary, /merge[\s\S]{0,80}body-text name/);
+  assert.match(anniversary, /into one set/);
   assert.match(anniversary, /Frostbound Edge/);
   assert.match(anniversary, /17:59:59 \(UTC\+8\)/);
+  assert.doesNotMatch(anniversary, /\$150|150/);
+  assert.doesNotMatch(anniversary, /Flowing Clarity|Spectral Scroll/);
+
+  const versionRow = anniversary.slice(
+    anniversary.indexOf("Anniversary version name"),
+    anniversary.indexOf("Launch date"),
+  );
+  assert.match(versionRow, /\[7,\s*1,\s*2\]/);
+  assert.doesNotMatch(versionRow, /\[8\]/);
 });
 
 test("existing English pages carry the correction pack and not the old lead", () => {

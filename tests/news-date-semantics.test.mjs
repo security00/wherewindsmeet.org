@@ -102,13 +102,14 @@ test("only the English pages edited in this batch move to 2026-11-06", () => {
     "/guides/free-outfits",
     "/guides/jiangnan-hangzhou",
     "/guides/mount-tai-blizzard",
-    "/guides/hutuo",
-    "/guides/anniversary",
   ];
 
   for (const path of revised) {
     assert.equal(sitemapLastModifiedDay(path, "2026-10-28"), "2026-11-06", path);
   }
+
+  assert.equal(sitemapLastModifiedDay("/guides/hutuo", "2026-11-06"), "2026-11-10");
+  assert.equal(sitemapLastModifiedDay("/guides/anniversary", "2026-11-06"), "2026-11-10");
 
   assert.equal(sitemapLastModifiedDay("/de/guides/jiangnan-hangzhou"), undefined);
   assert.equal(sitemapLastModifiedDay("/vn/guides/jiangnan-hangzhou"), undefined);
