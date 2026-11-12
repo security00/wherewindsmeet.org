@@ -54,9 +54,12 @@ test("English news and patch notes use the 2026-11-06 editorial revision", () =>
 
   assert.doesNotMatch(newsPage, /latestNewsDate/);
   assert.match(newsPage, /Updated \$\{LAST_VERIFIED\}/);
-  assert.match(newsPage, /dateModified: LAST_VERIFIED/);
+  assert.match(newsPage, /Updated \{NEWS_COPY_MODIFIED\}/);
+  assert.match(newsPage, /const NEWS_COPY_MODIFIED = "2026-11-12"/);
+  assert.match(newsPage, /dateModified: NEWS_COPY_MODIFIED/);
+  assert.doesNotMatch(newsPage, /dateModified: LAST_VERIFIED/);
   assert.match(patchNotes, /dateModified: LAST_VERIFIED/);
-  assert.equal(sitemapLastModifiedDay("/news", "2026-10-28"), "2026-11-06");
+  assert.equal(sitemapLastModifiedDay("/news", "2026-10-28"), "2026-11-12");
   assert.equal(sitemapLastModifiedDay("/guides/patch-notes", "2026-10-28"), "2026-11-06");
 });
 
@@ -94,7 +97,6 @@ test("translated and unrelated sitemap lastmods stay on their previous stamps", 
 
 test("only the English pages edited in this batch move to 2026-11-06", () => {
   const revised = [
-    "/news",
     "/guides",
     "/guides/patch-notes",
     "/guides/bosses",
@@ -108,8 +110,9 @@ test("only the English pages edited in this batch move to 2026-11-06", () => {
     assert.equal(sitemapLastModifiedDay(path, "2026-10-28"), "2026-11-06", path);
   }
 
-  assert.equal(sitemapLastModifiedDay("/guides/hutuo", "2026-11-06"), "2026-11-10");
-  assert.equal(sitemapLastModifiedDay("/guides/anniversary", "2026-11-06"), "2026-11-10");
+  assert.equal(sitemapLastModifiedDay("/guides/hutuo", "2026-11-06"), "2026-11-12");
+  assert.equal(sitemapLastModifiedDay("/guides/anniversary", "2026-11-06"), "2026-11-12");
+  assert.equal(sitemapLastModifiedDay("/news", "2026-11-06"), "2026-11-12");
 
   assert.equal(sitemapLastModifiedDay("/de/guides/jiangnan-hangzhou"), undefined);
   assert.equal(sitemapLastModifiedDay("/vn/guides/jiangnan-hangzhou"), undefined);

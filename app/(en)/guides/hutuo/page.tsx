@@ -10,13 +10,13 @@ const baseUrl = "https://wherewindsmeet.org";
 const guidePath = "/guides/hutuo";
 const pageUrl = `${baseUrl}${guidePath}`;
 
-const LAST_VERIFIED = "2026-11-10";
-const LAST_VERIFIED_LABEL = "2026-11-10 (Asia/Shanghai)";
-const PAGE_MODIFIED = "2026-11-10";
+const LAST_VERIFIED = "2026-11-12";
+const LAST_VERIFIED_LABEL = "2026-11-12 (Asia/Shanghai)";
+const PAGE_MODIFIED = "2026-11-12";
 
-const metaTitle = "When Does Hutuo Open in Where Winds Meet? Version 2.4 on Nov 13";
+const metaTitle = "When Does Hutuo Open in Where Winds Meet? After the Nov 13 18:00–23:00 (UTC+8) Update";
 const metaDescription =
-  "Hutuo is Where Winds Meet’s announced Version 2.4 anniversary region. Official posts date the opening to November 13. What’s confirmed for Campaign [Hutuo River], Jianghu Legacies, World Bosses, and Dual Spears on November 26 (UTC).";
+  "Hutuo (Version 2.4) goes live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8). Earlier November 13 date-only labels are superseded by this window. Dual Spears still arrives on November 26 (UTC).";
 
 const SOURCE_URLS = [
   "https://x.com/WhereWindsMeet_/status/2117934891497029783",
@@ -29,6 +29,8 @@ const SOURCE_URLS = [
   "https://x.com/WhereWindsMeet_/status/2119802839061151868",
   "https://x.com/WhereWindsMeet_/status/2119731727761572141",
   "https://x.com/WhereWindsMeet_/status/2118548827586372057",
+  "https://x.com/WhereWindsMeet_/status/2120532003351048535",
+  "https://x.com/WhereWindsMeet_/status/2120637700524904525",
 ] as const;
 
 const sources: { href: string; text: string }[] = [
@@ -72,6 +74,14 @@ const sources: { href: string; text: string }[] = [
     href: SOURCE_URLS[9],
     text: "Official X: “Dual Spears officially arrives on November 26 (UTC)” (posted 2026-11-06 11:39:35 Asia/Shanghai). No clock time; do not rewrite as Beijing midnight.",
   },
+  {
+    href: SOURCE_URLS[10],
+    text: "Official X: “Where Winds Meet's major 1st Anniversary update: Hutuo will officially go live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8)!” Graphic title: “1ST ANNIVERSARY: HUTUO GLOBAL LAUNCH,” single moment 11PM UTC+8 on November 13 (15:00 UTC); KST / JST 12AM, AEDT 2AM, NZDT 4AM on November 14; CST on the graphic is US Central Time, not Beijing time; the graphic does not print 18:00. Posted 2026-11-11 23:00:01 Asia/Shanghai (2026-11-11T15:00:01Z).",
+  },
+  {
+    href: SOURCE_URLS[11],
+    text: "Official X scenery post. Full text: “The Anniversary Version: Hutuo arrives on November 13 (UTC)!” On-timeline display is cut to “November 13,” with no clock. Posted 2026-11-12 06:00:02 Asia/Shanghai (2026-11-11T22:00:02Z). Do not use this post to overwrite source [11].",
+  },
 ];
 
 function Cite({ n }: { n: number | readonly number[] }) {
@@ -96,11 +106,23 @@ function Cite({ n }: { n: number | readonly number[] }) {
 const faqs = [
   {
     q: "When does Hutuo open?",
-    a: "November 13. The Version 2.4 Dev Letter uses November 13 with no time zone or clock time.[7] A rewards announcement specifies November 13 (UTC) without a clock time.[2] This page keeps both labels and does not invent a Beijing midnight start.",
+    a: "Hutuo officially goes live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8).[11] That span is the update window, not a go-live time at 18:00, and 23:00 is not the start of the update. The same post’s launch graphic gives a single moment of 11PM UTC+8 on November 13 (15:00 UTC). On that graphic, 12AM KST, 12AM JST, 2AM AEDT, and 4AM NZDT fall on November 14. CST on the graphic is US Central Time, not Beijing time.[11] Earlier official posts that only said November 13, or November 13 (UTC), without a clock are kept and marked as superseded by this window.[7][2][12]",
   },
   {
-    q: "Is Hutuo live today (2026-11-10)?",
-    a: "No. Treat it as a scheduled global anniversary update—Version 2.4—not a completed live claim on this page.[7][1][2][3]",
+    q: "Is Hutuo live today (2026-11-12)?",
+    a: "No. Treat it as a scheduled global anniversary update—Version 2.4—not a completed live claim on this page.[11][7][1][2][3]",
+  },
+  {
+    q: "Does Hutuo open at 18:00 (UTC+8) on November 13?",
+    a: "No. 18:00–23:00 (UTC+8) is a non-downtime update window. Official copy says Hutuo goes live following that update.[11]",
+  },
+  {
+    q: "Does the update start at 23:00 (UTC+8)?",
+    a: "No. 23:00 (UTC+8) is the end of the published non-downtime update window, not the time the update starts. The same post’s launch graphic shows a single global-launch moment of 11PM UTC+8 on November 13.[11]",
+  },
+  {
+    q: "What about official posts that only say November 13, or November 13 (UTC)?",
+    a: "Those earlier labels are still official wording, including a later scenery post whose full text says “Hutuo arrives on November 13 (UTC)!” This page keeps them and treats the 18:00–23:00 (UTC+8) window, plus “go live following,” as the more precise later announcement. It does not use the scenery post to overwrite that window, and it does not rewrite a date-only label as Beijing midnight.[7][2][12]",
   },
   {
     q: "Is Dual Spears part of day-one Hutuo on November 13?",
@@ -247,20 +269,31 @@ export default function HutuoGuidePage() {
           When does Hutuo open in Where Winds Meet?
         </h1>
         <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">
-          Hutuo opens on November 13 as Where Winds Meet’s first global anniversary major update—<strong>Version 2.4</strong>—the
+          Hutuo opens as Where Winds Meet’s first global anniversary major update—<strong>Version 2.4</strong>—the
           third region of Hidden Mountain, a war-themed narrative arc, and a new Campaign, <strong>[Hutuo River]</strong>,
           framed around a battlefield frontier.
           <Cite n={[7, 8]} />
         </p>
         <p className="mt-3 max-w-3xl text-base leading-7 text-slate-300">
-          Official posts give the calendar date, but they do not all label it the same way. The official Version 2.4
-          Dev Letter says: “On November 13, Hutuo, the third region of Hidden Mountain, will officially open.” That
-          sentence has <strong>no time zone and no clock time</strong>.
-          <Cite n={7} /> A separate rewards post labels the anniversary version <strong>November 13 (UTC)</strong> and
-          also does not publish a clock time.
-          <Cite n={2} /> This page keeps <strong>both</strong> wordings. It does <strong>not</strong> rewrite either
-          label as a Beijing midnight start, and it does <strong>not</strong> use the Dev Letter date to overwrite the
-          rewards post’s UTC label.
+          Official copy now gives a clock window. An official X post published on 2026-11-11 says: “Where Winds Meet&apos;s major 1st Anniversary update: Hutuo will officially go live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8)!”
+          <Cite n={11} /> The <strong>18:00–23:00 (UTC+8)</strong> span is a <strong>non-downtime update</strong> window.
+          Hutuo <strong>goes live following</strong> that update: this page does <strong>not</strong> treat <strong>18:00</strong> as
+          the go-live time, and it does <strong>not</strong> treat <strong>23:00</strong> as the start of the update. The
+          same post’s graphic is titled “1ST ANNIVERSARY: HUTUO GLOBAL LAUNCH” and shows a <strong>single</strong> moment:{" "}
+          <strong>11PM UTC+8 on November 13</strong> (that moment is 15:00 UTC). On that graphic, 12AM KST, 12AM JST, 2AM AEDT,
+          and 4AM NZDT fall on <strong>November 14</strong>. The label <strong>CST</strong> on the graphic is <strong>US Central Time</strong>,
+          not Beijing time. The graphic does <strong>not</strong> print the 18:00 start of the update window.
+          <Cite n={11} />
+        </p>
+        <p className="mt-3 max-w-3xl text-base leading-7 text-slate-300">
+          Earlier official wordings that only gave a calendar date—the Version 2.4 Dev Letter’s “On November 13, Hutuo,
+          the third region of Hidden Mountain, will officially open” (no time zone and no clock),
+          <Cite n={7} /> the rewards post’s <strong>November 13 (UTC)</strong> (also no clock),
+          <Cite n={2} /> and a later scenery post whose full text still says “The Anniversary Version: Hutuo arrives on
+          November 13 (UTC)!” (the on-timeline display is cut to “November 13”)
+          <Cite n={12} />—are <strong>kept</strong> on this page and <strong>marked as superseded</strong> by the more
+          precise window above. This page does <strong>not</strong> use the scenery post to overwrite that window, and
+          it still does <strong>not</strong> rewrite a date-only label as a Beijing midnight start.
         </p>
         <p className="mt-3 max-w-3xl text-base leading-7 text-slate-300">
           This guide is an announcement hub, not a live walkthrough. Entrance steps, unlock gates, World Boss drop
@@ -286,12 +319,16 @@ export default function HutuoGuidePage() {
             <Cite n={[7, 8, 1, 3]} />
           </li>
           <li>
-            <strong>When:</strong> November 13. The Version 2.4 Dev Letter dates the opening to <strong>November 13</strong> with
-            no time zone or clock time.
-            <Cite n={7} /> The rewards post says <strong>November 13 (UTC)</strong>.
-            <Cite n={2} /> No minute or hour is given in either wording.
+            <strong>When:</strong> Hutuo officially goes live <strong>following</strong> a non-downtime update on November 13,
+            from <strong>18:00 to 23:00 (UTC+8)</strong>.
+            <Cite n={11} /> That span is the update window, not a go-live time at 18:00, and 23:00 is not the start of the
+            update. The same post’s launch graphic gives a single moment of <strong>11PM UTC+8 on November 13</strong> (15:00 UTC).
+            <Cite n={11} /> Earlier official labels—<strong>November 13</strong> with no time zone or clock in the Dev Letter,
+            and <strong>November 13 (UTC)</strong> on the rewards post and on a later scenery post—are kept and marked as
+            superseded by this window.
+            <Cite n={[7, 2, 12]} />
           </li>
-          <li><strong>Status on 2026-11-10:</strong> global preview / pre-launch. Not treated as already live.</li>
+          <li><strong>Status on 2026-11-12:</strong> global preview / pre-launch. Not treated as already live.</li>
           <li>
             <strong>Dual Spears:</strong> an announced martial art that “officially arrives on <strong>November 26 (UTC)</strong>.”
             That post does not give a clock time, and the date is <strong>not</strong> a November 13 same-day unlock. Do not
@@ -304,6 +341,45 @@ export default function HutuoGuidePage() {
             <Cite n={[7, 8]} />
           </li>
         </ul>
+      </section>
+
+      <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-8">
+        <h2 className="text-2xl font-bold text-slate-50">When Hutuo goes live on November 13</h2>
+        <p className="text-sm leading-6 text-slate-300">
+          The governing official wording, from an official X post published 2026-11-11 23:00:01 Asia/Shanghai (2026-11-11T15:00:01Z), is:
+        </p>
+        <blockquote className="border-l-2 border-amber-400/60 pl-4 text-sm leading-6 text-slate-200">
+          Where Winds Meet&apos;s major 1st Anniversary update: Hutuo will officially go live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8)!
+          <Cite n={11} />
+        </blockquote>
+        <p className="text-sm leading-6 text-slate-300">Read that sentence in this order:</p>
+        <ol className="list-decimal space-y-2 pl-5 text-sm leading-6 text-slate-300">
+          <li><strong>18:00–23:00 (UTC+8)</strong> is a <strong>non-downtime update</strong> on November 13. It is not downtime, and it is not the go-live moment.</li>
+          <li>Hutuo <strong>goes live following</strong> that update—after the window, not at 18:00.</li>
+          <li><strong>23:00 (UTC+8)</strong> is the <strong>end</strong> of the stated update window. It is not the time the update starts.</li>
+        </ol>
+        <p className="text-sm leading-6 text-slate-300">
+          The same post’s graphic is titled <strong>“1ST ANNIVERSARY: HUTUO GLOBAL LAUNCH.”</strong> It prints one moment,{" "}
+          <strong>11PM UTC+8 on November 13</strong>, which is <strong>15:00 UTC</strong>. The graphic’s other clocks for
+          that same moment, as printed, are: 7AM PST, 9AM CST, 10AM EST, 12PM BRT, 3PM GMT, 4PM CET, 4PM WAT, 5PM EET on{" "}
+          <strong>November 13</strong>; and 12AM KST, 12AM JST, 2AM AEDT, and 4AM NZDT on <strong>November 14</strong>. The
+          dashed date line on the graphic is labeled <strong>NOVEMBER 13TH | NOVEMBER 14TH</strong>. <strong>CST</strong> on
+          this graphic is <strong>US Central Time</strong> (shown over the central United States), not Beijing time. The
+          graphic does <strong>not</strong> print 18:00, and this page does not add 18:00 onto the graphic.
+          <Cite n={11} />
+        </p>
+        <p className="text-sm leading-6 text-slate-300">
+          A later official scenery post, published 2026-11-12 06:00:02 Asia/Shanghai, still says in its full text “The
+          Anniversary Version: Hutuo arrives on November 13 (UTC)!” The shortened on-timeline text is “November 13,” with
+          no clock. That wording matches the earlier rewards post. This page <strong>does not</strong> use it to overwrite
+          or cancel the 18:00–23:00 (UTC+8) window.
+          <Cite n={[12, 2]} />
+        </p>
+        <p className="text-sm leading-6 text-slate-300">
+          Steam’s latest official community announcement remains gid <strong>1847920302233930</strong> (Version 2.3 Patch
+          Notes, October 29; Steam timestamp 2026-10-29 16:38:17 Asia/Shanghai). This page does <strong>not</strong> write
+          that Steam has published Version 2.4.
+        </p>
       </section>
 
       <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-8">
@@ -447,11 +523,16 @@ export default function HutuoGuidePage() {
               <tr>
                 <td className="px-3 py-3 font-semibold text-slate-50">Hutuo / Version 2.4 / first global anniversary major update</td>
                 <td className="px-3 py-3 leading-6">
-                  Dev Letter: <strong>November 13</strong> (no time zone or clock time). Rewards post: <strong>November 13 (UTC)</strong>, no clock time.
+                  Goes live <strong>following</strong> a non-downtime update on November 13, from <strong>18:00 to 23:00 (UTC+8)</strong>.
+                  <Cite n={11} /> Launch graphic: single moment <strong>11PM UTC+8 on November 13</strong> (15:00 UTC); KST / JST 12AM, AEDT 2AM, and NZDT 4AM are <strong>November 14</strong>. CST on the graphic is US Central Time, not Beijing time.
+                  <Cite n={11} />
                 </td>
                 <td className="px-3 py-3 leading-6 text-slate-300">
-                  Both wordings are kept. Pre-launch as of 2026-11-10.
-                  <Cite n={[7, 2, 1, 3]} />
+                  Earlier date-only labels—Dev Letter <strong>November 13</strong> (no time zone or clock),
+                  <Cite n={7} /> rewards post <strong>November 13 (UTC)</strong>,
+                  <Cite n={2} /> later scenery post “November 13 (UTC)!”
+                  <Cite n={12} />—are kept and marked as superseded by this window. Pre-launch as of 2026-11-12.
+                  <Cite n={[11, 7, 2, 1, 3]} />
                 </td>
               </tr>
               <tr>
@@ -511,8 +592,9 @@ export default function HutuoGuidePage() {
         <h2 className="text-2xl font-bold text-slate-50">Not published, so not invented</h2>
         <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-slate-300">
           <li>
-            An exact maintenance window or local clock time beyond the published date labels: the Dev Letter’s <strong>November 13</strong> (no time zone) and the rewards post’s <strong>November 13 (UTC)</strong>.
-            <Cite n={[7, 2]} />
+            A go-live minute <strong>other than</strong> what the 2026-11-11 official post already published: Hutuo goes live <strong>following</strong> a non-downtime update on November 13, from <strong>18:00 to 23:00 (UTC+8)</strong>, and the same post’s graphic gives a single launch moment of <strong>11PM UTC+8 on November 13</strong>.
+            <Cite n={11} /> This page does not invent a start time at 18:00, an update-start time at 23:00, or a clock that is not in that post or graphic. Earlier date-only labels are superseded by this window; they are not treated as a second, conflicting opening hour.
+            <Cite n={[7, 2, 12]} />
           </li>
           <li>An in-client entrance path, map pins, or an unlock level.</li>
           <li>
@@ -542,7 +624,10 @@ export default function HutuoGuidePage() {
             Expect <strong>November 26 (UTC)</strong>, not an automatic November 13 unlock, and not a Beijing midnight rewrite.
             <Cite n={10} />
           </li>
-          <li>Re-check official X and the Version 2.4 Dev Letter closer to November 13. This page’s last verified date is an announcement check.</li>
+          <li>
+            For the opening clock, use the official 18:00–23:00 (UTC+8) non-downtime update and the “go live following” wording above, not a Beijing midnight rewrite of an older date-only post.
+            <Cite n={11} /> This page’s last verified date is an announcement check, not a live-client test.
+          </li>
         </ol>
       </section>
 

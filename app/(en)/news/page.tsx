@@ -14,6 +14,8 @@ import {
   spiritOfTheGroveHall,
 } from "@/lib/officialQingzhouMedia";
 import { LAST_VERIFIED } from "@/lib/globalAnnouncements";
+
+const NEWS_COPY_MODIFIED = "2026-11-12";
 import { newsItems } from "@/lib/news";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -74,7 +76,7 @@ const todayStatusCards = [
   {
     title: "Next update: what is officially announced",
     detail:
-      "The next announced major beat is the 1st Anniversary update Hutuo on November 13 (UTC date only; see the pinned card). It is not live. Dual Spears are late November, not that date. The Version 2.3 overview says new Solo Mode levels, character level caps, gear tiers, and progression systems are coming soon, and that higher Inkbound Order ranks unlock after the Farm Recess. Per the Version 2.2 notes, Reflection Temple reopens when Jiangnan arrives. Season S5: Ever Aflame runs until November 26, 2026 04:59:59 (server time).",
+      "The next announced major beat is the 1st Anniversary update Hutuo (Version 2.4), which officially goes live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8) (see the pinned card and /guides/hutuo). It is not live as of 2026-11-12. Dual Spears officially arrives on November 26 (UTC), not on November 13. Steam has not published a Version 2.4 community announcement; its latest official community announcement remains the October 29 Version 2.3 patch notes (gid 1847920302233930). The Version 2.3 overview says new Solo Mode levels, character level caps, gear tiers, and progression systems are coming soon, and that higher Inkbound Order ranks unlock after the Farm Recess. Per the Version 2.2 notes, Reflection Temple reopens when Jiangnan arrives. Season S5: Ever Aflame runs until November 26, 2026 04:59:59 (server time).",
     href: steamVersion23Url,
     label: "Official Version 2.3 overview",
   },
@@ -162,7 +164,7 @@ export default function NewsPage() {
       name: metadata.title,
       description: metadata.description,
       url: `${baseUrl}/news`,
-      dateModified: LAST_VERIFIED,
+      dateModified: NEWS_COPY_MODIFIED,
     },
     {
       "@context": "https://schema.org",
@@ -264,7 +266,7 @@ export default function NewsPage() {
                 <h2 className="mt-1 text-xl font-bold text-slate-50">What is the latest Where Winds Meet update today?</h2>
               </div>
               <span className="rounded-full bg-cyan-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-cyan-100">
-                {lastUpdatedLabel}
+                Updated {NEWS_COPY_MODIFIED}
               </span>
             </div>
             <p className="mt-3 leading-6 text-cyan-50/90">

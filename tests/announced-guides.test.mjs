@@ -34,7 +34,9 @@ test("Hutuo and anniversary ship English metadata without placeholder copy", () 
     assert.equal((source.match(/<h1 /g) ?? []).length, 1);
     assert.doesNotMatch(source, /EditorialPlaceholder|data-editorial-placeholder|\[WRITER\]/);
     assert.match(source, /Version 2\.4/);
-    assert.match(source, /2026-11-10 \(Asia\/Shanghai\)/);
+    assert.match(source, /2026-11-12 \(Asia\/Shanghai\)/);
+    assert.match(source, /PAGE_PUBLISHED/);
+    assert.doesNotMatch(source, /x-hutuo-launch-window/);
     assert.match(source, /datePublished: PAGE_PUBLISHED/);
     assert.match(source, /dateModified: PAGE_MODIFIED/);
     assert.doesNotMatch(source, /x-topup-2026-11-09/);
@@ -42,7 +44,10 @@ test("Hutuo and anniversary ship English metadata without placeholder copy", () 
   }
 
   assert.match(hutuo, /When does Hutuo open in Where Winds Meet\?/);
+  assert.match(hutuo, /After the Nov 13 18:00–23:00 \(UTC\+8\) Update/);
+  assert.doesNotMatch(hutuo, /opens at 18:00|opens at 23:00/);
   assert.match(anniversary, /What are the Where Winds Meet 1st anniversary rewards\?/);
+  assert.match(anniversary, /Login, Melodies, Top-Up, and Appearances/);
   assert.doesNotMatch(anniversary, /\$150|150/);
 });
 
@@ -74,12 +79,30 @@ test("Dual Spears use November 26 (UTC) and anniversary rewards stay split from 
   assert.match(anniversary, /into one set/);
   assert.match(anniversary, /Frostbound Edge/);
   assert.match(anniversary, /17:59:59 \(UTC\+8\)/);
+  assert.match(anniversary, /Dec 10, 04:59:59 \(UTC\+8\)/);
   assert.doesNotMatch(anniversary, /\$150|150/);
-  assert.doesNotMatch(anniversary, /Flowing Clarity|Spectral Scroll/);
+  assert.match(anniversary, /Flowing Clarity/);
+  assert.match(anniversary, /Dec 7, 4:59:59 \(UTC\+8\)/);
+  assert.match(anniversary, /Plumed Opulence/);
+  assert.match(anniversary, /Dec 18, 4:59:59 \(UTC\+8\)/);
+  assert.match(anniversary, /Bound Majesty/);
+  assert.match(anniversary, /Feb 12, 2027, 4:59:59 \(UTC\+8\)/);
+  assert.match(anniversary, /Iris Herald/);
+  assert.match(anniversary, /Mar 22, 2027/);
+  assert.match(anniversary, /Spectral Scroll/);
+  assert.match(anniversary, /Nov 28 at 4:59:59 \(UTC\+8\)/);
+  assert.match(anniversary, /Willow Breeze/);
+  assert.match(anniversary, /Jan 29, 2027, 4:59:59 \(UTC\+8\)/);
+  assert.match(anniversary, /does <strong>not<\/strong> restate a time zone immediately after 23:00/);
+  assert.match(anniversary, /Nov 9, 2027/);
+  assert.match(anniversary, /no contents list/);
+  assert.equal((anniversary.match(/Radiance Boat/g) ?? []).length, 1);
+  assert.equal((anniversary.match(/Goose Gifts Galore/g) ?? []).length, 1);
+  assert.match(anniversary, /Radiance Boat, Goose Gifts Galore, or other events not named on this page/);
 
   const versionRow = anniversary.slice(
     anniversary.indexOf("Anniversary version name"),
-    anniversary.indexOf("Launch date"),
+    anniversary.indexOf("Launch window"),
   );
   assert.match(versionRow, /\[7,\s*1,\s*2\]/);
   assert.doesNotMatch(versionRow, /\[8\]/);
@@ -90,9 +113,21 @@ test("existing English pages carry the correction pack and not the old lead", ()
   assert.match(news, /PinnedAnnouncements/);
   assert.match(pinned, /id="announced-hutuo"/);
   assert.match(pinned, /Next announced major beat: Hutuo/);
-  assert.match(pinned, /late November/);
+  assert.match(pinned, /Version 2\.4/);
+  assert.match(pinned, /18:00–23:00 \(UTC\+8\)/);
+  assert.match(pinned, /November 26 \(UTC\)/);
+  assert.match(pinned, /page date 2026-11-11/);
+  assert.match(pinned, /does not restate a time zone immediately after 23:00/);
+  assert.match(pinned, /1847920302233930/);
+  assert.match(pinned, /PINNED_LAST_VERIFIED_LABEL = "2026-11-12 \(Asia\/Shanghai\)"/);
+  assert.match(pinned, /Last verified \{PINNED_LAST_VERIFIED_LABEL\}/);
+  assert.match(pinned, /scheduled, not live/);
+  assert.doesNotMatch(pinned, /late-November martial art|Dual Spears: late November|does not number the update/);
   assert.doesNotMatch(news, /No Version 2\.4 date has been announced yet/);
-  assert.doesNotMatch(pinned, /2\.4/);
+  assert.doesNotMatch(news, /Version 2\.4 is live|Hutuo is already live/);
+  assert.match(news, /Version 2\.3 is live/);
+  assert.match(news, /November 26 \(UTC\), not on November 13/);
+  assert.match(news, /Steam has not published a Version 2\.4/);
 
   assert.match(patchNotes, /id="announced-november"/);
   assert.match(patchNotes, /Autumn Eve Whimsy/);
@@ -127,4 +162,71 @@ test("existing English pages carry the correction pack and not the old lead", ()
   assert.doesNotMatch(englishJiangnan, /Version 2\.1 \/ Hidden Mountain/);
   assert.match(englishJiangnan, /2026-11-06/);
   assert.match(englishJiangnan, /June 26, 2026/);
+});
+
+test("launch-window citations are appended and 18:00 is not the go-live time", () => {
+  const pinned = read("components/news/PinnedAnnouncements.tsx");
+
+  function urlsInOrder(source, urls) {
+    let cursor = -1;
+    for (const url of urls) {
+      const at = source.indexOf(url);
+      assert.ok(at > cursor, url);
+      cursor = at;
+    }
+  }
+
+  urlsInOrder(hutuo, [
+    "https://x.com/WhereWindsMeet_/status/2117934891497029783",
+    "https://x.com/WhereWindsMeet_/status/2117386268698943563",
+    "https://blog.playstation.com/2026/10/27/where-winds-meets-climactic-hutuo-battlefield-narrative-arc-revealed-out-nov-13/",
+    "https://x.com/WhereWindsMeet_/status/2115103980996919763",
+    "https://x.com/WhereWindsMeet_/status/2115104986929709317",
+    "https://www.wherewindsmeetgame.com/news/official/1028devletter.html",
+    "https://www.wherewindsmeetgame.com/news/official/1109devletter.html",
+    "https://x.com/WhereWindsMeet_/status/2119802839061151868",
+    "https://x.com/WhereWindsMeet_/status/2119731727761572141",
+    "https://x.com/WhereWindsMeet_/status/2118548827586372057",
+    "https://x.com/WhereWindsMeet_/status/2120532003351048535",
+    "https://x.com/WhereWindsMeet_/status/2120637700524904525",
+  ]);
+  urlsInOrder(anniversary, [
+    "https://x.com/WhereWindsMeet_/status/2117386268698943563",
+    "https://x.com/WhereWindsMeet_/status/2117934891497029783",
+    "https://blog.playstation.com/2026/10/27/where-winds-meets-climactic-hutuo-battlefield-narrative-arc-revealed-out-nov-13/",
+    "https://x.com/WhereWindsMeet_/status/2118357684911042887",
+    "https://www.wherewindsmeetgame.com/news/official/1029patchnotes.html",
+    "https://x.com/WhereWindsMeet_/status/2119761940117332319",
+    "https://www.wherewindsmeetgame.com/news/official/1109devletter.html",
+    "https://x.com/WhereWindsMeet_/status/2118548827586372057",
+    "https://www.wherewindsmeetgame.com/news/official/1113appearance.html",
+    "https://x.com/WhereWindsMeet_/status/2120501807055040709",
+    "https://x.com/WhereWindsMeet_/status/2120532003351048535",
+    "https://x.com/WhereWindsMeet_/status/2120637700524904525",
+  ]);
+  const pinnedSources = pinned.slice(pinned.indexOf("const SOURCE_URLS"), pinned.indexOf("const MOUNT_SYNC_URL"));
+  urlsInOrder(pinnedSources, [
+    "HUTUO_POST.url",
+    "ANNIVERSARY_POST.url",
+    "PLAYSTATION_HUTUO_POST.url",
+    "BATTLE_PASS_POST.url",
+    "PATCH_NOTES_1029.url",
+    "APPEARANCES_1029.url",
+    "DLSS_POST.url",
+    "https://www.wherewindsmeetgame.com/news/official/1109devletter.html",
+    "https://x.com/WhereWindsMeet_/status/2120532003351048535",
+    "https://x.com/WhereWindsMeet_/status/2120637700524904525",
+    "https://x.com/WhereWindsMeet_/status/2118548827586372057",
+    "https://www.wherewindsmeetgame.com/news/official/1113appearance.html",
+  ]);
+
+  assert.match(hutuo, /goes live following/);
+  assert.match(hutuo, /23:00 is not the start of the update/);
+  assert.match(hutuo, /US Central Time/);
+  assert.match(hutuo, /November 14/);
+  assert.match(hutuo, /does <strong>not<\/strong> write[\s\S]{0,80}that Steam has published Version 2\.4/);
+  assert.match(hutuo, /Is Hutuo live today \(2026-11-12\)/);
+  assert.match(hutuo, /already live on 2026-11-10/);
+  assert.match(hutuo, /<h1[^>]*>\s*When does Hutuo open in Where Winds Meet\?/);
+  assert.equal((hutuo.match(/<h1 /g) ?? []).length, 1);
 });
