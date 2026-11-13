@@ -15,7 +15,7 @@ import {
 } from "@/lib/officialQingzhouMedia";
 import { LAST_VERIFIED } from "@/lib/globalAnnouncements";
 
-const NEWS_COPY_MODIFIED = "2026-11-12";
+const NEWS_COPY_MODIFIED = "2026-11-13";
 import { newsItems } from "@/lib/news";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
@@ -76,7 +76,7 @@ const todayStatusCards = [
   {
     title: "Next update: what is officially announced",
     detail:
-      "The next announced major beat is the 1st Anniversary update Hutuo (Version 2.4), which officially goes live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8) (see the pinned card and /guides/hutuo). It is not live as of 2026-11-12. Dual Spears officially arrives on November 26 (UTC), not on November 13. Steam has not published a Version 2.4 community announcement; its latest official community announcement remains the October 29 Version 2.3 patch notes (gid 1847920302233930). The Version 2.3 overview says new Solo Mode levels, character level caps, gear tiers, and progression systems are coming soon, and that higher Inkbound Order ranks unlock after the Farm Recess. Per the Version 2.2 notes, Reflection Temple reopens when Jiangnan arrives. Season S5: Ever Aflame runs until November 26, 2026 04:59:59 (server time).",
+      "The next announced major beat is the 1st Anniversary update Hutuo (Version 2.4), which officially goes live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8) (see the pinned card and /guides/hutuo). It is not live as of 2026-11-13. Dual Spears officially arrives on November 26 (UTC), not on November 13. Steam has published Version 2.4 [Across Autumn Waters] Update Overview (gid 1849192144183182, 2026-11-12 22:43:09 UTC+8) and Version 2.4 Path Balance Adjustment Announcement (November 13) (gid 1849192144183200, 2026-11-12 22:46:44 UTC+8). The Version 2.3 overview says new Solo Mode levels, character level caps, gear tiers, and progression systems are coming soon, and that higher Inkbound Order ranks unlock after the Farm Recess. Per the Version 2.2 notes, Reflection Temple reopens when Jiangnan arrives. Season S5: Ever Aflame runs until November 26, 2026 04:59:59 (server time).",
     href: steamVersion23Url,
     label: "Official Version 2.3 overview",
   },

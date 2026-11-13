@@ -735,8 +735,8 @@
   {
     "basePath": "/guides/hutuo",
     "languages": ["en"],
-    "lastChecked": "2026-11-12",
-    "gameVersion": "Global announced Version 2.4 Hutuo / goes live following Nov 13 18:00–23:00 (UTC+8) update (not live)",
+    "lastChecked": "2026-11-13",
+    "gameVersion": "Global announced Version 2.4 Hutuo / 18:00–23:00 and 18:00:00–22:59:59 (UTC+8), not live as of 2026-11-13",
     "priorityCluster": "announced-global-update",
     "sourceUrls": [
       "https://x.com/WhereWindsMeet_/status/2117934891497029783",
@@ -750,14 +750,19 @@
       "https://x.com/WhereWindsMeet_/status/2119731727761572141",
       "https://x.com/WhereWindsMeet_/status/2118548827586372057",
       "https://x.com/WhereWindsMeet_/status/2120532003351048535",
-      "https://x.com/WhereWindsMeet_/status/2120637700524904525"
+      "https://x.com/WhereWindsMeet_/status/2120637700524904525",
+      "https://www.wherewindsmeetgame.com/news/official/AcrossAutumnWaters.html",
+      "https://store.steampowered.com/news/app/3564740/view/1849192144183182",
+      "https://x.com/WhereWindsMeet_/status/2120894399613677895",
+      "https://www.wherewindsmeetgame.com/news/official/1113PathBalance.html",
+      "https://x.com/WhereWindsMeet_/status/2120862819897970969"
     ]
   },
   {
     "basePath": "/guides/anniversary",
     "languages": ["en"],
-    "lastChecked": "2026-11-12",
-    "gameVersion": "Global announced Version 2.4 anniversary / launch window and appearances (not live)",
+    "lastChecked": "2026-11-13",
+    "gameVersion": "Global announced Version 2.4 anniversary / Windtail Express, shop prices, Willow Breeze both end dates (not live)",
     "priorityCluster": "announced-global-update",
     "sourceUrls": [
       "https://x.com/WhereWindsMeet_/status/2117386268698943563",
@@ -771,7 +776,9 @@
       "https://www.wherewindsmeetgame.com/news/official/1113appearance.html",
       "https://x.com/WhereWindsMeet_/status/2120501807055040709",
       "https://x.com/WhereWindsMeet_/status/2120532003351048535",
-      "https://x.com/WhereWindsMeet_/status/2120637700524904525"
+      "https://x.com/WhereWindsMeet_/status/2120637700524904525",
+      "https://www.wherewindsmeetgame.com/news/official/AcrossAutumnWaters.html",
+      "https://store.steampowered.com/news/app/3564740/view/1849192144183182"
     ]
   }
 ]

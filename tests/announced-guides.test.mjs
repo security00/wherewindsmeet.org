@@ -34,7 +34,7 @@ test("Hutuo and anniversary ship English metadata without placeholder copy", () 
     assert.equal((source.match(/<h1 /g) ?? []).length, 1);
     assert.doesNotMatch(source, /EditorialPlaceholder|data-editorial-placeholder|\[WRITER\]/);
     assert.match(source, /Version 2\.4/);
-    assert.match(source, /2026-11-12 \(Asia\/Shanghai\)/);
+    assert.match(source, /2026-11-13 \(Asia\/Shanghai\)/);
     assert.match(source, /PAGE_PUBLISHED/);
     assert.doesNotMatch(source, /x-hutuo-launch-window/);
     assert.match(source, /datePublished: PAGE_PUBLISHED/);
@@ -47,7 +47,7 @@ test("Hutuo and anniversary ship English metadata without placeholder copy", () 
   assert.match(hutuo, /After the Nov 13 18:00–23:00 \(UTC\+8\) Update/);
   assert.doesNotMatch(hutuo, /opens at 18:00|opens at 23:00/);
   assert.match(anniversary, /What are the Where Winds Meet 1st anniversary rewards\?/);
-  assert.match(anniversary, /Login, Melodies, Top-Up, and Appearances/);
+  assert.match(anniversary, /Windtail Express 12-Outfit Pick, Events, and Shop Prices/);
   assert.doesNotMatch(anniversary, /\$150|150/);
 });
 
@@ -75,7 +75,7 @@ test("Dual Spears use November 26 (UTC) and anniversary rewards stay split from 
   assert.match(anniversary, /Nov 13 at 23:00 \(UTC\+8\)/);
   assert.match(anniversary, /Dec 18 at 04:59:59 \(UTC\+8\)/);
   assert.match(anniversary, /November 26 \(UTC\)/);
-  assert.match(anniversary, /merge[\s\S]{0,80}body-text name/);
+  assert.match(anniversary, /does not merge the two names into one set/);
   assert.match(anniversary, /into one set/);
   assert.match(anniversary, /Frostbound Edge/);
   assert.match(anniversary, /17:59:59 \(UTC\+8\)/);
@@ -92,13 +92,14 @@ test("Dual Spears use November 26 (UTC) and anniversary rewards stay split from 
   assert.match(anniversary, /Spectral Scroll/);
   assert.match(anniversary, /Nov 28 at 4:59:59 \(UTC\+8\)/);
   assert.match(anniversary, /Willow Breeze/);
-  assert.match(anniversary, /Jan 29, 2027, 4:59:59 \(UTC\+8\)/);
-  assert.match(anniversary, /does <strong>not<\/strong> restate a time zone immediately after 23:00/);
+  assert.match(anniversary, /Jan 29, 2027, 04:59:59 \(UTC\+8\)/);
+  assert.match(anniversary, /January 28, 2027, 04:59:59/);
+  assert.match(anniversary, /does not add one after 23:00/);
   assert.match(anniversary, /Nov 9, 2027/);
-  assert.match(anniversary, /no contents list/);
+  assert.match(anniversary, /no item-by-item list/);
   assert.equal((anniversary.match(/Radiance Boat/g) ?? []).length, 1);
   assert.equal((anniversary.match(/Goose Gifts Galore/g) ?? []).length, 1);
-  assert.match(anniversary, /Radiance Boat, Goose Gifts Galore, or other events not named on this page/);
+  assert.match(anniversary, /Goose Gifts Galore or other events not named on this page/);
 
   const versionRow = anniversary.slice(
     anniversary.indexOf("Anniversary version name"),
@@ -118,8 +119,10 @@ test("existing English pages carry the correction pack and not the old lead", ()
   assert.match(pinned, /November 26 \(UTC\)/);
   assert.match(pinned, /page date 2026-11-11/);
   assert.match(pinned, /does not restate a time zone immediately after 23:00/);
-  assert.match(pinned, /1847920302233930/);
-  assert.match(pinned, /PINNED_LAST_VERIFIED_LABEL = "2026-11-12 \(Asia\/Shanghai\)"/);
+  assert.match(pinned, /1849192144183182/);
+  assert.match(pinned, /1849192144183200/);
+  assert.doesNotMatch(pinned, /remains gid[\s\S]{0,40}1847920302233930/);
+  assert.match(pinned, /PINNED_LAST_VERIFIED_LABEL = "2026-11-13 \(Asia\/Shanghai\)"/);
   assert.match(pinned, /Last verified \{PINNED_LAST_VERIFIED_LABEL\}/);
   assert.match(pinned, /scheduled, not live/);
   assert.doesNotMatch(pinned, /late-November martial art|Dual Spears: late November|does not number the update/);
@@ -127,7 +130,9 @@ test("existing English pages carry the correction pack and not the old lead", ()
   assert.doesNotMatch(news, /Version 2\.4 is live|Hutuo is already live/);
   assert.match(news, /Version 2\.3 is live/);
   assert.match(news, /November 26 \(UTC\), not on November 13/);
-  assert.match(news, /Steam has not published a Version 2\.4/);
+  assert.match(news, /gid 1849192144183182/);
+  assert.match(news, /gid 1849192144183200/);
+  assert.doesNotMatch(news, /Steam has not published a Version 2\.4/);
 
   assert.match(patchNotes, /id="announced-november"/);
   assert.match(patchNotes, /Autumn Eve Whimsy/);
@@ -221,12 +226,15 @@ test("launch-window citations are appended and 18:00 is not the go-live time", (
   ]);
 
   assert.match(hutuo, /goes live following/);
-  assert.match(hutuo, /23:00 is not the start of the update/);
+  assert.match(hutuo, /23:00 \/ 22:59:59 is the <strong>end<\/strong> of[\s\S]{0,80}not its start/);
   assert.match(hutuo, /US Central Time/);
   assert.match(hutuo, /November 14/);
-  assert.match(hutuo, /does <strong>not<\/strong> write[\s\S]{0,80}that Steam has published Version 2\.4/);
-  assert.match(hutuo, /Is Hutuo live today \(2026-11-12\)/);
-  assert.match(hutuo, /already live on 2026-11-10/);
+  assert.match(hutuo, /Steam has now published Version 2\.4/);
+  assert.match(hutuo, /1849192144183182/);
+  assert.match(hutuo, /1849192144183200/);
+  assert.doesNotMatch(hutuo, /does <strong>not<\/strong> write[\s\S]{0,80}that Steam has published Version 2\.4/);
+  assert.match(hutuo, /Is Hutuo live today \(2026-11-13\)/);
+  assert.match(hutuo, /Not as of this page’s check on 2026-11-13, before the update window/);
   assert.match(hutuo, /<h1[^>]*>\s*When does Hutuo open in Where Winds Meet\?/);
   assert.equal((hutuo.match(/<h1 /g) ?? []).length, 1);
 });
