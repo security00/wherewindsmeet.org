@@ -11,8 +11,8 @@ import {
   PLAYSTATION_HUTUO_POST,
 } from "@/lib/globalAnnouncements";
 
-const PINNED_LAST_VERIFIED = "2026-11-12";
-const PINNED_LAST_VERIFIED_LABEL = "2026-11-12 (Asia/Shanghai)";
+const PINNED_LAST_VERIFIED = "2026-11-13";
+const PINNED_LAST_VERIFIED_LABEL = "2026-11-13 (Asia/Shanghai)";
 
 const PAID_TOPUP_URL = "https://x.com/WhereWindsMeet_/status/2119761940117332319";
 
@@ -95,7 +95,7 @@ const watchRows: { key: string; date: ReactNode; item: ReactNode; source: ReactN
     key: "hutuo",
     date: (
       <>
-        Nov 13, <strong>18:00–23:00 (UTC+8)</strong>, then go live <strong>following</strong>
+        Nov 13, <strong>18:00–23:00 (UTC+8)</strong>; also <strong>18:00:00–22:59:59 (UTC+8)</strong> per the Version 2.4 overview, then go live <strong>following</strong>
       </>
     ),
     item: (
@@ -103,7 +103,7 @@ const watchRows: { key: string; date: ReactNode; item: ReactNode; source: ReactN
         <strong>Hutuo / Version 2.4</strong> 1st anniversary major update. This is a <strong>non-downtime update</strong> window.
         Official copy says Hutuo goes live <strong>following</strong> it—not at 18:00, and 23:00 is not the start of the update.
         Launch graphic: single moment <strong>11PM UTC+8 on November 13</strong> (15:00 UTC); KST / JST 12AM, AEDT 2AM, NZDT 4AM are <strong>November 14</strong>; CST on the graphic is US Central Time, not Beijing time.
-        Earlier “November 13” / “November 13 (UTC)” date-only labels are superseded by this window. Announced, <strong>not live</strong> as of 2026-11-12.
+        Earlier “November 13” / “November 13 (UTC)” date-only labels are superseded by this window. Announced, <strong>not live</strong> as of 2026-11-13.
       </>
     ),
     source: (
@@ -135,7 +135,7 @@ const watchRows: { key: string; date: ReactNode; item: ReactNode; source: ReactN
     date: "Nov 13, 23:00 UTC+8 (item windows differ)",
     item: (
       <>
-        Version 2.4 new appearances, from the official overview (page date 2026-11-11, date only): <strong>[Silent Voice: Twin Sentinels]</strong> (Mo Blade, Draw Shop, to Nov 9, <strong>2027</strong>, 04:59:59 UTC+8); <strong>[Wrathful Lord: Masked Fury]</strong> and <strong>[Gale Steed]</strong> VFX (arrival only, no end published); <strong>[Astral Array: Celestial Drift]</strong> (to May 13, 2027, 04:59:59 UTC+8; limited-time discount until Dec 26, 2026, 04:59:59 UTC+8, no amount published); <strong>[Radiant Charger]</strong> chest (arrival only; no contents list); mount <strong>[Peli-can-eat]</strong> (discount until Dec 14, 04:59:59 UTC+8—not written as a delist date; official wording does not restate a time zone immediately after 23:00). No prices published. Full table and limits: <Link href="/guides/anniversary" className="text-emerald-300 underline underline-offset-4">/guides/anniversary</Link>.
+        Version 2.4 new appearances, from the official overview (page date 2026-11-11, date only): <strong>[Silent Voice: Twin Sentinels]</strong> (Mo Blade, Draw Shop, to Nov 9, <strong>2027</strong>, 04:59:59 UTC+8); <strong>[Wrathful Lord: Masked Fury]</strong> and <strong>[Gale Steed]</strong> VFX (arrival only, no end published); <strong>[Astral Array: Celestial Drift]</strong> (to May 13, 2027, 04:59:59 UTC+8; limited-time discount until Dec 26, 2026, 04:59:59 UTC+8, no amount published); <strong>[Radiant Charger]</strong> chest (arrival only; no contents list); mount <strong>[Peli-can-eat]</strong> (discount until Dec 14, 04:59:59 UTC+8—not written as a delist date; official wording does not restate a time zone immediately after 23:00). Prices are on /guides/anniversary. Full table and limits: <Link href="/guides/anniversary" className="text-emerald-300 underline underline-offset-4">/guides/anniversary</Link>.
       </>
     ),
     source: (
@@ -178,7 +178,7 @@ const watchRows: { key: string; date: ReactNode; item: ReactNode; source: ReactN
     date: "Nov 13, 23:00 – Jan 29, 2027, 04:59:59 UTC+8",
     item: (
       <>
-        Battle Pass appearance Willow Breeze (return). Not the free login outfit choice. <strong>Unchanged.</strong>
+        Battle Pass appearance Willow Breeze (return). Not the free login outfit choice. Also January 28, 2027, 04:59:59 (no time zone stated) per the Version 2.4 [Across Autumn Waters] overview.
       </>
     ),
     source: <Ext href={BATTLE_PASS_POST.url}>Official X: Frostbound Edge and Willow Breeze</Ext>,
@@ -255,7 +255,7 @@ const moduleSources: { id: string; label: string; url: string; published: string
     label: "https://www.wherewindsmeetgame.com/news/official/1113appearance.html",
     url: "https://www.wherewindsmeetgame.com/news/official/1113appearance.html",
     published:
-      "Official Version 2.4 New Appearances Overview (page date 2026-11-11, date only; HTTP 200 on 2026-11-12). Mount sync: https://x.com/WhereWindsMeet_/status/2120501807055040709 (posted 2026-11-11 21:00:02 Asia/Shanghai). Body and graphics publish no prices. Full tables and evidence limits: /guides/anniversary.",
+      "Official Version 2.4 New Appearances Overview (page date 2026-11-11, date only; HTTP 200 on 2026-11-12). Mount sync: https://x.com/WhereWindsMeet_/status/2120501807055040709 (posted 2026-11-11 21:00:02 Asia/Shanghai). Prices are published in the Version 2.4 [Across Autumn Waters] overview and on /guides/anniversary. Full tables and evidence limits: /guides/anniversary.",
   },
 ];
 
@@ -289,8 +289,8 @@ export function PinnedAnnouncements() {
       </p>
       <p className="leading-6 text-amber-50/90">
         Earlier official posts that only said <strong>November 13</strong>, or <strong>November 13 (UTC)</strong>, without a clock—including a later scenery post whose full text still says “Hutuo arrives on November 13 (UTC)!”—are kept and marked as <strong>superseded</strong> by this window. This page does not use the scenery post to overwrite the window, and it does not rewrite a date-only label as Beijing midnight.
-        <Cite n={[2, 10]} /> The Version 2.4 label comes from the official Global Dev Letter, <strong>not</strong> from Steam. Steam’s latest official community announcement remains gid <strong>1847920302233930</strong> (Version 2.3 Patch Notes, October 29; 2026-10-29 16:38:17 Asia/Shanghai).
-        <Cite n={5} /> Announcement check only, not an in-game test. As of 2026-11-12, Hutuo is scheduled, not live.
+        <Cite n={[2, 10]} /> The Version 2.4 label comes from the official Global Dev Letter, <strong>not</strong> from Steam. Steam has published Version 2.4 [Across Autumn Waters] Update Overview (gid <strong>1849192144183182</strong>, 2026-11-12 22:43:09 UTC+8) and Version 2.4 Path Balance Adjustment Announcement (November 13) (gid <strong>1849192144183200</strong>, 2026-11-12 22:46:44 UTC+8).
+        <Cite n={5} /> Announcement check only, not an in-game test. As of 2026-11-13, Hutuo is scheduled, not live.
       </p>
       <p id="announced-anniversary" className="leading-6 text-slate-200">
         Reward categories, paid top-up events, and Version 2.4 appearance windows are on{" "}

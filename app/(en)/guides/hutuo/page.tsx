@@ -10,13 +10,13 @@ const baseUrl = "https://wherewindsmeet.org";
 const guidePath = "/guides/hutuo";
 const pageUrl = `${baseUrl}${guidePath}`;
 
-const LAST_VERIFIED = "2026-11-12";
-const LAST_VERIFIED_LABEL = "2026-11-12 (Asia/Shanghai)";
-const PAGE_MODIFIED = "2026-11-12";
+const LAST_VERIFIED = "2026-11-13";
+const LAST_VERIFIED_LABEL = "2026-11-13 (Asia/Shanghai)";
+const PAGE_MODIFIED = "2026-11-13";
 
 const metaTitle = "When Does Hutuo Open in Where Winds Meet? After the Nov 13 18:00–23:00 (UTC+8) Update";
 const metaDescription =
-  "Hutuo (Version 2.4) goes live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8). Earlier November 13 date-only labels are superseded by this window. Dual Spears still arrives on November 26 (UTC).";
+  "Hutuo (Version 2.4) goes live following a non-downtime update on Nov 13 (18:00:00–22:59:59 UTC+8 per the official overview). World Boss first-clear rewards, the Kindle the Void 6,000 exploration requirement, and Campaign [Hutuo River] rewards.";
 
 const SOURCE_URLS = [
   "https://x.com/WhereWindsMeet_/status/2117934891497029783",
@@ -31,6 +31,11 @@ const SOURCE_URLS = [
   "https://x.com/WhereWindsMeet_/status/2118548827586372057",
   "https://x.com/WhereWindsMeet_/status/2120532003351048535",
   "https://x.com/WhereWindsMeet_/status/2120637700524904525",
+  "https://www.wherewindsmeetgame.com/news/official/AcrossAutumnWaters.html",
+  "https://store.steampowered.com/news/app/3564740/view/1849192144183182",
+  "https://x.com/WhereWindsMeet_/status/2120894399613677895",
+  "https://www.wherewindsmeetgame.com/news/official/1113PathBalance.html",
+  "https://x.com/WhereWindsMeet_/status/2120862819897970969",
 ] as const;
 
 const sources: { href: string; text: string }[] = [
@@ -82,6 +87,26 @@ const sources: { href: string; text: string }[] = [
     href: SOURCE_URLS[11],
     text: "Official X scenery post. Full text: “The Anniversary Version: Hutuo arrives on November 13 (UTC)!” On-timeline display is cut to “November 13,” with no clock. Posted 2026-11-12 06:00:02 Asia/Shanghai (2026-11-11T22:00:02Z). Do not use this post to overwrite source [11].",
   },
+  {
+    href: SOURCE_URLS[12],
+    text: "Official “[Across Autumn Waters] Version 2.4 Update Overview” (Global site; page date 2026-11-12, date only, no time zone or clock; HTTP 200 on 2026-11-13). Image-led page (three long images). Source for the 18:00:00–22:59:59 (UTC+8) live update, the Live Maintenance Schedule (18:01:00 / 23:00:00 / 00:00:00, printed without a restated time zone; the 00:00:00 line has no calendar date), Hutuo access via Enduring Flame, Campaign [Hutuo River], Jianghu Legacy requirements (Kindle the Void: 6,000 Hidden Mountain exploration progress), World Boss first-defeat rewards, and the Radiance Boat.",
+  },
+  {
+    href: SOURCE_URLS[13],
+    text: "Official Steam community announcement “Version 2.4 [Across Autumn Waters] Update Overview,” gid 1849192144183182, posted 2026-11-12 22:43:09 Asia/Shanghai (Steam API timestamp). Same three images as source [13].",
+  },
+  {
+    href: SOURCE_URLS[14],
+    text: "Official X maintenance notice: “The Eastwind Pavilion will undergo a live update on November 13, 2026, from 18:00:00 to 22:59:59 (UTC+8)…”; links sources [13] and [16]. Posted 2026-11-12 23:00:03 Asia/Shanghai.",
+  },
+  {
+    href: SOURCE_URLS[15],
+    text: "Official “Version 2.4 Path Balance Adjustment Announcement (November 13)” (Global site; page date 2026-11-12, date only). Steam copy: https://store.steampowered.com/news/app/3564740/view/1849192144183200 (gid 1849192144183200, posted 2026-11-12 22:46:44 Asia/Shanghai). Numeric balance and system adjustments; no Dual Spears date change.",
+  },
+  {
+    href: SOURCE_URLS[16],
+    text: "Official X: creator livestreams starting November 13, “fight alongside Jiang Yan at Zhongdu Bridge” (livestream rally; no clock, gate, or reward; not a Boss announcement). Posted 2026-11-12 20:54:34 Asia/Shanghai.",
+  },
 ];
 
 function Cite({ n }: { n: number | readonly number[] }) {
@@ -103,14 +128,16 @@ function Cite({ n }: { n: number | readonly number[] }) {
   );
 }
 
-const faqs = [
+const faqs: { q: string; a: string; ld?: string }[] = [
   {
     q: "When does Hutuo open?",
-    a: "Hutuo officially goes live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8).[11] That span is the update window, not a go-live time at 18:00, and 23:00 is not the start of the update. The same post’s launch graphic gives a single moment of 11PM UTC+8 on November 13 (15:00 UTC). On that graphic, 12AM KST, 12AM JST, 2AM AEDT, and 4AM NZDT fall on November 14. CST on the graphic is US Central Time, not Beijing time.[11] Earlier official posts that only said November 13, or November 13 (UTC), without a clock are kept and marked as superseded by this window.[7][2][12]",
+    a: "Hutuo officially goes live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8).[11] The Version 2.4 overview gives that live update as 18:00:00 to 22:59:59 (UTC+8).[13] That span is the update window: 18:00 is not go-live, and 23:00 / 22:59:59 is the end of the window, not its start. The launch graphic gives a single moment of 11PM UTC+8 on November 13 (15:00 UTC); 12AM KST, 12AM JST, 2AM AEDT, and 4AM NZDT fall on November 14, and CST on the graphic is US Central Time, not Beijing time.[11] Earlier posts that only said November 13, or November 13 (UTC), are kept and marked as superseded.[7][2][12]",
+    ld: "Hutuo officially goes live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8). The Version 2.4 overview gives that live update as 18:00:00 to 22:59:59 (UTC+8). That span is the update window: 18:00 is not go-live, and 23:00 / 22:59:59 is the end of the window, not its start. The launch graphic gives a single moment of 11PM UTC+8 on November 13 (15:00 UTC); 12AM KST, 12AM JST, 2AM AEDT, and 4AM NZDT fall on November 14, and CST on the graphic is US Central Time, not Beijing time. Earlier posts that only said November 13, or November 13 (UTC), are kept and marked as superseded.",
   },
   {
-    q: "Is Hutuo live today (2026-11-12)?",
-    a: "No. Treat it as a scheduled global anniversary update—Version 2.4—not a completed live claim on this page.[11][7][1][2][3]",
+    q: "Is Hutuo live today (2026-11-13)?",
+    a: "Not as of this page’s check on 2026-11-13 (about 10:10 Asia/Shanghai), which was before the 18:00:00 (UTC+8) start of the live update. Treat it as scheduled for after the update window, not as a completed live claim.[11][13]",
+    ld: "Not as of this page's check on 2026-11-13 (about 10:10 Asia/Shanghai), which was before the 18:00:00 (UTC+8) start of the live update. Treat it as scheduled for after the update window, not as a completed live claim.",
   },
   {
     q: "Does Hutuo open at 18:00 (UTC+8) on November 13?",
@@ -118,7 +145,23 @@ const faqs = [
   },
   {
     q: "Does the update start at 23:00 (UTC+8)?",
-    a: "No. 23:00 (UTC+8) is the end of the published non-downtime update window, not the time the update starts. The same post’s launch graphic shows a single global-launch moment of 11PM UTC+8 on November 13.[11]",
+    a: "No. 23:00 (UTC+8) is the end of the published non-downtime update window; the Version 2.4 overview writes the end as 22:59:59 (UTC+8), and says the update is expected to become available after 23:00:00.[11][13]",
+    ld: "No. 23:00 (UTC+8) is the end of the published non-downtime update window; the Version 2.4 overview writes the end as 22:59:59 (UTC+8), and says the update is expected to become available after 23:00:00.",
+  },
+  {
+    q: "Has Steam published Version 2.4?",
+    a: "Yes. The official Steam announcement “Version 2.4 [Across Autumn Waters] Update Overview” (gid 1849192144183182) was posted at 2026-11-12 22:43:09 Asia/Shanghai, and “Version 2.4 Path Balance Adjustment Announcement (November 13)” (gid 1849192144183200) at 2026-11-12 22:46:44 Asia/Shanghai.[14][16]",
+    ld: "Yes. The official Steam announcement \"Version 2.4 [Across Autumn Waters] Update Overview\" (gid 1849192144183182) was posted at 2026-11-12 22:43:09 Asia/Shanghai, and \"Version 2.4 Path Balance Adjustment Announcement (November 13)\" (gid 1849192144183200) at 2026-11-12 22:46:44 Asia/Shanghai.",
+  },
+  {
+    q: "When are players forcibly disconnected for the update?",
+    a: "The overview says: “At 00:00:00, wanderers who have not relogged will be forcibly disconnected.” It does not say which calendar day that is, so this page does not assign one. It recommends relogging in advance.[13]",
+    ld: "The overview says: \"At 00:00:00, wanderers who have not relogged will be forcibly disconnected.\" It does not say which calendar day that is, so this page does not assign one. It recommends relogging in advance.",
+  },
+  {
+    q: "How do I unlock Hutuo?",
+    a: "During the Enduring Flame event, reach Lv. 32 and complete the Kaifeng Main Chapter [New Arrival in Kaifeng]. That unlocks the prerequisite quest [Hutuo Memories]; completing it grants access to the Hutuo region.[13]",
+    ld: "During the Enduring Flame event, reach Lv. 32 and complete the Kaifeng Main Chapter [New Arrival in Kaifeng]. That unlocks the prerequisite quest [Hutuo Memories]; completing it grants access to the Hutuo region.",
   },
   {
     q: "What about official posts that only say November 13, or November 13 (UTC)?",
@@ -129,8 +172,19 @@ const faqs = [
     a: "No. Official copy says Dual Spears officially arrives on November 26 (UTC), with no clock time published. That is not November 13, and it should not be rewritten as Beijing midnight.[10]",
   },
   {
-    q: "What is the Campaign [Hutuo River] entrance or unlock requirement?",
-    a: "Not published in the cited announcements. This page does not invent UI paths or level gates. The Campaign name is [Hutuo River]; story paths converge at Zhongdu Bridge, which is a narrative battlefield, not a Boss.[7]",
+    q: "What is the Campaign [Hutuo River] requirement, and what is the first-clear reward?",
+    a: "The participation requirement is “Unlock the Hutuo region in Hidden Mountain.” The first clear awards the accessory [Winter's Defiance]; later clears offer a chance at the accessory [Direwolf Spine], which can also be exchanged in the Season Shop.[13] Story paths converge at Zhongdu Bridge, which is a narrative battlefield, not a Boss.[7]",
+    ld: "The participation requirement is \"Unlock the Hutuo region in Hidden Mountain.\" The first clear awards the accessory [Winter's Defiance]; later clears offer a chance at the accessory [Direwolf Spine], which can also be exchanged in the Season Shop. Story paths converge at Zhongdu Bridge, which is a narrative battlefield, not a Boss.",
+  },
+  {
+    q: "What is the Kindle the Void requirement?",
+    a: "Unlock the Hutuo region in Hidden Mountain and reach an exploration progress of 6,000 in Hidden Mountain. The first completion awards the accessory [Dragonbend Token], [Medicinal Tales], [Echo Jade], and other rewards.[13]",
+    ld: "Unlock the Hutuo region in Hidden Mountain and reach an exploration progress of 6,000 in Hidden Mountain. The first completion awards the accessory [Dragonbend Token], [Medicinal Tales], [Echo Jade], and other rewards.",
+  },
+  {
+    q: "How many players can build on the Radiance Boat together?",
+    a: "The boat owner can invite up to 4 wanderers to dismantle, assemble, and modify components together in Free Build. That is the published co-building limit; the overview does not publish a riding or passenger capacity.[13]",
+    ld: "The boat owner can invite up to 4 wanderers to dismantle, assemble, and modify components together in Free Build. That is the published co-building limit; the overview does not publish a riding or passenger capacity.",
   },
   {
     q: "Are Horse Racing Chess and Jianghu Tactics full board-game guides here?",
@@ -138,11 +192,18 @@ const faqs = [
   },
   {
     q: "Are Wayfarer Bingshen and Yelu Abuli already live? Do they start on November 13?",
-    a: "They are announced World Bosses in the Version 2.4 Dev Letter.[7] A separate official post only says they “arrive soon!” and does not give a date or clock time. This page does not treat “arrive soon!” as November 13, and it does not treat them as already live on 2026-11-10.[9]",
+    a: "Not as of this page’s check on 2026-11-13, before the update window. The Version 2.4 overview lists both World Bosses with the requirement “Unlock the Hutuo region in Hidden Mountain,” but it does not give either one its own start clock, and the earlier teaser only said they “arrive soon!”[13][9]",
+    ld: "Not as of this page's check on 2026-11-13, before the update window. The Version 2.4 overview lists both World Bosses with the requirement \"Unlock the Hutuo region in Hidden Mountain,\" but it does not give either one its own start clock, and the earlier teaser only said they \"arrive soon!\"",
+  },
+  {
+    q: "What are the Hutuo World Boss first-clear rewards?",
+    a: "Yelu Abuli: decoration [Fire Offering], special item [Shaman Bell], [Medicinal Tales] ×3, [Inner Way Note: Custom Chest] ×5, and [Echo Jade] ×20. Bingshen (Wayfarer Bingshen): accessory [Lost Wayfarer], [Medicinal Tales] ×3, [Inner Way Note: Custom Chest] ×5, [Echo Jade] ×20, and other rewards. Sword Forge Challenges add avatars and badges for each boss.[13]",
+    ld: "Yelu Abuli: decoration [Fire Offering], special item [Shaman Bell], [Medicinal Tales] ×3, [Inner Way Note: Custom Chest] ×5, and [Echo Jade] ×20. Bingshen (Wayfarer Bingshen): accessory [Lost Wayfarer], [Medicinal Tales] ×3, [Inner Way Note: Custom Chest] ×5, [Echo Jade] ×20, and other rewards. Sword Forge Challenges add avatars and badges for each boss.",
   },
   {
     q: "Are the new World Bosses raids?",
-    a: "No. Official copy calls them World Bosses, not raids. Drops, player counts, level gates, and refresh times are not published in the cited sources.[7][9]",
+    a: "No. Official copy calls them World Bosses, not raids. Their published requirement is unlocking the Hutuo region; level requirements, player counts, refresh times, and full drop tables are not published.[7][13]",
+    ld: "No. Official copy calls them World Bosses, not raids. Their published requirement is unlocking the Hutuo region; level requirements, player counts, refresh times, and full drop tables are not published.",
   },
   {
     q: "Does “raid supplies” mean a Hutuo raid dungeon?",
@@ -237,7 +298,7 @@ export default function HutuoGuidePage() {
       mainEntity: faqs.map((item) => ({
         "@type": "Question",
         name: item.q,
-        acceptedAnswer: { "@type": "Answer", text: item.a },
+        acceptedAnswer: { "@type": "Answer", text: item.ld ?? item.a },
       })),
     },
   ];
@@ -296,9 +357,14 @@ export default function HutuoGuidePage() {
           it still does <strong>not</strong> rewrite a date-only label as a Beijing midnight start.
         </p>
         <p className="mt-3 max-w-3xl text-base leading-7 text-slate-300">
-          This guide is an announcement hub, not a live walkthrough. Entrance steps, unlock gates, World Boss drop
-          tables, player counts, level requirements, and refresh times are <strong>not published</strong> in the sources
-          below, so they are not invented here.
+          The official <strong>Version 2.4 [Across Autumn Waters] Update Overview</strong>, published on the Global site
+          (page date 2026-11-12, date only) and on Steam (2026-11-12 22:43:09 Asia/Shanghai), adds the details this page
+          was waiting for: the live-update window down to the second (<strong>18:00:00 to 22:59:59 (UTC+8)</strong> on
+          November 13), participation requirements for the new Campaign, Jianghu Legacies, and World Bosses, and
+          first-clear rewards.
+          <Cite n={[13, 14]} /> This guide is still an announcement hub, not a live walkthrough. World Boss level
+          requirements, player counts, refresh times, and full drop tables are <strong>still not published</strong>, so
+          they are not invented here.
         </p>
         <p className="mt-3 text-xs text-slate-500">
           Last verified <time dateTime={LAST_VERIFIED}>{LAST_VERIFIED_LABEL}</time>
@@ -321,14 +387,15 @@ export default function HutuoGuidePage() {
           <li>
             <strong>When:</strong> Hutuo officially goes live <strong>following</strong> a non-downtime update on November 13,
             from <strong>18:00 to 23:00 (UTC+8)</strong>.
-            <Cite n={11} /> That span is the update window, not a go-live time at 18:00, and 23:00 is not the start of the
-            update. The same post’s launch graphic gives a single moment of <strong>11PM UTC+8 on November 13</strong> (15:00 UTC).
-            <Cite n={11} /> Earlier official labels—<strong>November 13</strong> with no time zone or clock in the Dev Letter,
-            and <strong>November 13 (UTC)</strong> on the rewards post and on a later scenery post—are kept and marked as
-            superseded by this window.
+            <Cite n={11} /> The later Version 2.4 overview gives the same live update to the second: <strong>18:00:00 to 22:59:59 (UTC+8)</strong>,
+            and says it “may end early or be extended depending on server conditions.”
+            <Cite n={[13, 14, 15]} /> That span is the update window. 18:00 is not the go-live time, and 23:00 / 22:59:59 is the <strong>end</strong> of
+            the window, not its start. The launch graphic on source [11] gives a single moment of <strong>11PM UTC+8 on November 13</strong> (15:00 UTC).
+            <Cite n={11} /> Earlier date-only labels—<strong>November 13</strong> in the Dev Letter, <strong>November 13 (UTC)</strong> on the rewards
+            post and on a later scenery post—are kept and marked as superseded.
             <Cite n={[7, 2, 12]} />
           </li>
-          <li><strong>Status on 2026-11-12:</strong> global preview / pre-launch. Not treated as already live.</li>
+          <li><strong>Status on 2026-11-13 (checked about 10:10 Asia/Shanghai, before the update window):</strong> global preview / pre-launch. Not treated as already live.</li>
           <li>
             <strong>Dual Spears:</strong> an announced martial art that “officially arrives on <strong>November 26 (UTC)</strong>.”
             That post does not give a clock time, and the date is <strong>not</strong> a November 13 same-day unlock. Do not
@@ -376,9 +443,53 @@ export default function HutuoGuidePage() {
           <Cite n={[12, 2]} />
         </p>
         <p className="text-sm leading-6 text-slate-300">
-          Steam’s latest official community announcement remains gid <strong>1847920302233930</strong> (Version 2.3 Patch
-          Notes, October 29; Steam timestamp 2026-10-29 16:38:17 Asia/Shanghai). This page does <strong>not</strong> write
-          that Steam has published Version 2.4.
+          Steam has now published Version 2.4. The official Steam community announcement <strong>“Version 2.4 [Across Autumn Waters] Update Overview”</strong> (gid <strong>1849192144183182</strong>) went up at <strong>2026-11-12 22:43:09 Asia/Shanghai</strong>, followed by <strong>“Version 2.4 Path Balance Adjustment Announcement (November 13)”</strong> (gid <strong>1849192144183200</strong>) at <strong>2026-11-12 22:46:44 Asia/Shanghai</strong>.
+          <Cite n={[14, 16]} /> The Steam overview carries the same three long images as the Global site’s overview page.
+          <Cite n={[13, 14]} /> The earlier note on this page that Steam’s latest announcement was the Version 2.3 patch notes (gid 1847920302233930, 2026-10-29 16:38:17 Asia/Shanghai) is <strong>superseded</strong>.
+        </p>
+        <h3 className="text-xl font-bold text-slate-50">Live update schedule (Version 2.4 overview)</h3>
+        <p className="text-sm leading-6 text-slate-300">
+          The overview opens with: “The Eastwind Pavilion will undergo a live update on November 13, 2026, from <strong>18:00:00 to 22:59:59 (UTC+8)</strong>. You can remain logged in and continue playing as usual, although some features and game modes may be temporarily unavailable.” The same wording is in an official X maintenance notice posted 2026-11-12 23:00:03 Asia/Shanghai, which links to both the overview and the Path Balance announcement.
+          <Cite n={[13, 14, 15]} />
+        </p>
+        <p className="text-sm leading-6 text-slate-300">
+          This matches the earlier official post—go live <strong>following</strong> a non-downtime update on November 13, <strong>18:00 to 23:00 (UTC+8)</strong>—and is more precise about the last second. This page keeps both wordings.
+          <Cite n={[11, 13]} />
+        </p>
+        <p className="text-sm leading-6 text-slate-300">
+          The overview’s <strong>Live Maintenance Schedule</strong> section lists these clock times. That section does <strong>not</strong> restate a time zone after each clock; the only time zone in the document is the <strong>UTC+8</strong> on the opening window. They are quoted as printed:
+        </p>
+        <div className="overflow-x-auto">
+          <table className="min-w-[680px] w-full text-left text-sm">
+            <thead className="text-xs uppercase tracking-wide text-slate-400">
+              <tr>
+                <th className="px-3 py-2">Clock as printed</th>
+                <th className="px-3 py-2">What the overview says</th>
+                <th className="px-3 py-2">Limits of evidence</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-800 text-slate-200">
+              <tr>
+                <td className="px-3 py-3 font-semibold"><strong>After 18:01:00</strong></td>
+                <td className="px-3 py-3 leading-6">Live maintenance begins. Most features and modes stay available; some are temporarily unavailable and come back gradually (examples include chat, friends, gifting, Gallery actions, Bounties, Guild management, Guild Parties, Showdown, Breaking Army, Painted Boat construction and travel bidding, Sponsored Firework auctions, and Homestead actions).<Cite n={13} /></td>
+                <td className="px-3 py-3 leading-6 text-slate-300">This is maintenance starting, <strong>not</strong> Hutuo going live.</td>
+              </tr>
+              <tr>
+                <td className="px-3 py-3 font-semibold"><strong>After 23:00:00</strong></td>
+                <td className="px-3 py-3 leading-6">“This week&apos;s update is expected to become available after 23:00:00, though its availability may be delayed if issues arise. Relog to install it.” After installing, you can no longer play with wanderers who have not updated.<Cite n={13} /></td>
+                <td className="px-3 py-3 leading-6 text-slate-300">“Expected,” “may be delayed.” Some features stay unavailable for a while after installing.</td>
+              </tr>
+              <tr>
+                <td className="px-3 py-3 font-semibold"><strong>00:00:00</strong></td>
+                <td className="px-3 py-3 leading-6">“At 00:00:00, wanderers who have not relogged will be forcibly disconnected.” The overview recommends relogging in advance.<Cite n={13} /></td>
+                <td className="px-3 py-3 leading-6 text-slate-300">The overview does <strong>not</strong> say which calendar day this 00:00:00 falls on. This page does not assign it a date.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-sm leading-6 text-slate-300">
+          If a Monthly Pass or Battle Pass gift fails during the live maintenance, the overview says the item returns to your Bag and can be sent again after you install the update.
+          <Cite n={13} />
         </p>
       </section>
 
@@ -418,6 +529,27 @@ export default function HutuoGuidePage() {
       </section>
 
       <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-8">
+        <h2 className="text-2xl font-bold text-slate-50">How to unlock Hutuo</h2>
+        <p className="text-sm leading-6 text-slate-300">
+          The Version 2.4 overview ties Hutuo access to the anniversary event <strong>Enduring Flame</strong> (After the version update on November 13, 2026 to December 10, 2026, 04:59:59 — no time zone is stated for that end time):
+          <Cite n={13} />
+        </p>
+        <ol className="list-decimal space-y-2 pl-5 text-sm leading-6 text-slate-300">
+          <li>Reach <strong>Lv. 32</strong>.</li>
+          <li>Complete the Kaifeng Main Chapter <strong>[New Arrival in Kaifeng]</strong>.</li>
+          <li>This unlocks the prerequisite quest <strong>[Hutuo Memories]</strong>. Completing it grants access to the Hutuo region.<Cite n={13} /></li>
+        </ol>
+        <p className="text-sm leading-6 text-slate-300">
+          The overview also describes <strong>Lost Chapter: Hutuo Memories</strong>, which awards the outfit <strong>[Bleak Nocturne]</strong> on completion.
+          <Cite n={13} /> Most new Hutuo content below lists “Unlock the Hutuo region in Hidden Mountain” as its participation requirement.
+          <Cite n={13} />
+        </p>
+        <p className="text-sm leading-6 text-slate-300">
+          Map pins and a click-by-click UI path are not published, so they are not added here.
+        </p>
+      </section>
+
+      <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-8">
         <h2 className="text-2xl font-bold text-slate-50">New Campaign [Hutuo River]</h2>
         <p className="text-sm leading-6 text-slate-300">
           The official Version 2.4 Dev Letter calls <strong>[Hutuo River]</strong> the centerpiece of this anniversary
@@ -432,6 +564,11 @@ export default function HutuoGuidePage() {
           page does not invent them.
         </p>
         <p className="text-sm leading-6 text-slate-300">
+          <strong>Requirement and rewards (Version 2.4 overview):</strong> Participation requirement: “Unlock the Hutuo region in Hidden Mountain.” Wanderers who complete <strong>Campaign: Hutuo River</strong> for the first time receive the accessory <strong>[Winter&apos;s Defiance]</strong>. Subsequent clears offer a chance to obtain the accessory <strong>[Direwolf Spine]</strong>, which can also be exchanged in the <strong>Season Shop</strong>.
+          <Cite n={13} /> The overview does not publish a drop rate for [Direwolf Spine], a player count, or a level requirement for the Campaign. Its story text names Wang Qing, Du Chongwei, and “The General,” with Zhongdu besieged; those are narrative characters, not new Boss names.
+          <Cite n={13} />
+        </p>
+        <p className="text-sm leading-6 text-slate-300">
           One Dev Letter sentence describes heroes who “infiltrated behind enemy lines to <strong>raid supplies</strong>.”
           In that official wording, “raid supplies” is a <strong>narrative beat</strong> (raiding enemy provisions as
           part of the story). It is <strong>not</strong> a raid dungeon, a raid mode, or a published group-size or unlock
@@ -444,9 +581,9 @@ export default function HutuoGuidePage() {
         <h2 className="text-2xl font-bold text-slate-50">Three new Jianghu Legacies</h2>
         <p className="text-sm leading-6 text-slate-300">
           The same Dev Letter announces three new Jianghu Legacies. Official full titles, named characters, and
-          locations are listed below. This page does <strong>not</strong> invent quest steps, puzzle solutions, or
-          unlock requirements.
-          <Cite n={7} />
+          locations are listed below.
+          <Cite n={7} /> The Version 2.4 overview adds participation requirements and rewards (table after the list).
+          <Cite n={13} /> This page does <strong>not</strong> invent quest steps or puzzle solutions.
         </p>
         <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-slate-300">
           <li>
@@ -464,6 +601,38 @@ export default function HutuoGuidePage() {
             <Cite n={7} />
           </li>
         </ul>
+        <div className="overflow-x-auto">
+          <table className="min-w-[680px] w-full text-left text-sm">
+            <thead className="text-xs uppercase tracking-wide text-slate-400">
+              <tr>
+                <th className="px-3 py-2">Jianghu Legacy</th>
+                <th className="px-3 py-2">Participation requirement (Version 2.4 overview)</th>
+                <th className="px-3 py-2">Rewards as published</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-800 text-slate-200">
+              <tr>
+                <td className="px-3 py-3 font-semibold"><strong>The Deepest Cut</strong></td>
+                <td className="px-3 py-3 leading-6">“Enter the Hidden Mountain Journal to view Jianghu Legacy details.”<Cite n={13} /></td>
+                <td className="px-3 py-3 leading-6">[Medicinal Tales], [Echo Jade], and other rewards.<Cite n={13} /></td>
+              </tr>
+              <tr>
+                <td className="px-3 py-3 font-semibold"><strong>Melody Amid Reeds</strong></td>
+                <td className="px-3 py-3 leading-6">“Enter the Hidden Mountain Journal to view Jianghu Legacy details.”<Cite n={13} /></td>
+                <td className="px-3 py-3 leading-6">[Medicinal Tales], [Echo Jade], and other rewards.<Cite n={13} /></td>
+              </tr>
+              <tr>
+                <td className="px-3 py-3 font-semibold"><strong>Kindle the Void</strong></td>
+                <td className="px-3 py-3 leading-6">“Unlock the Hutuo region in Hidden Mountain and reach an exploration progress of <strong>6,000</strong> in Hidden Mountain.”<Cite n={13} /></td>
+                <td className="px-3 py-3 leading-6">First completion: accessory <strong>[Dragonbend Token]</strong>, [Medicinal Tales], [Echo Jade], and other rewards.<Cite n={13} /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-sm leading-6 text-slate-300">
+          The <strong>6,000</strong> figure is a Hidden Mountain <strong>exploration progress</strong> requirement. It is not a level gate and not a group-size requirement.
+          <Cite n={13} />
+        </p>
       </section>
 
       <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-8">
@@ -489,14 +658,72 @@ export default function HutuoGuidePage() {
         </ul>
         <p className="text-sm leading-6 text-slate-300">
           A separate official teaser post says new World Bosses [Yelu Abuli] and [Wayfarer Bingshen] “<strong>arrive soon!</strong>”
-          That post does <strong>not</strong> give a date or clock time, and this page does <strong>not</strong> fill
-          “arrive soon!” in as November 13.
-          <Cite n={9} />
+          <Cite n={9} /> The Version 2.4 overview now lists both under World Boss in its Major Updates. It does not give either boss its own start clock, so this page does not attach one.
+          <Cite n={13} />
+        </p>
+        <h3 className="text-xl font-bold text-slate-50">What are the Hutuo World Boss first-clear rewards?</h3>
+        <p className="text-sm leading-6 text-slate-300">
+          Both World Bosses have the same participation requirement: “Unlock the Hutuo region in Hidden Mountain.” Both are “recorded in the Journal.”
+          <Cite n={13} />
+        </p>
+        <div className="overflow-x-auto">
+          <table className="min-w-[680px] w-full text-left text-sm">
+            <thead className="text-xs uppercase tracking-wide text-slate-400">
+              <tr>
+                <th className="px-3 py-2">World Boss (heading as printed in the overview)</th>
+                <th className="px-3 py-2">First-defeat rewards as published</th>
+                <th className="px-3 py-2">Sword Forge Challenges (Trial interface)</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-800 text-slate-200">
+              <tr>
+                <td className="px-3 py-3 font-semibold"><strong>Yelu Abuli</strong></td>
+                <td className="px-3 py-3 leading-6">Decoration <strong>[Fire Offering]</strong>, special item <strong>[Shaman Bell]</strong>, <strong>[Medicinal Tales] ×3</strong>, <strong>[Inner Way Note: Custom Chest] ×5</strong>, <strong>[Echo Jade] ×20</strong>.<Cite n={13} /></td>
+                <td className="px-3 py-3 leading-6">Avatar <strong>[Shaman&apos;s Blessing]</strong>, badge <strong>[Trial: Shaman&apos;s Call]</strong>, [Echo Jade], and other rewards.<Cite n={13} /></td>
+              </tr>
+              <tr>
+                <td className="px-3 py-3 font-semibold"><strong>Bingshen</strong></td>
+                <td className="px-3 py-3 leading-6">Accessory <strong>[Lost Wayfarer]</strong>, <strong>[Medicinal Tales] ×3</strong>, <strong>[Inner Way Note: Custom Chest] ×5</strong>, <strong>[Echo Jade] ×20</strong>, “and other generous rewards.”<Cite n={13} /></td>
+                <td className="px-3 py-3 leading-6">Avatar <strong>[Wayfarer Bingshen]</strong>, badge <strong>[Trial: Inches Apart]</strong>, [Echo Jade], and other rewards.<Cite n={13} /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-sm leading-6 text-slate-300">
+          The overview’s section heading reads <strong>Bingshen</strong>; the Dev Letter and the teaser post call him <strong>Wayfarer Bingshen</strong>.
+          <Cite n={[7, 9, 13]} /> This page treats them as the same World Boss and does not read the shorter heading as a rename.
         </p>
         <p className="text-sm leading-6 text-slate-300">
-          Drops, player counts, level gates, and refresh times are <strong>not published</strong> in the cited sources,
-          so they are not listed here.
+          Still <strong>not published</strong>: level requirements, player counts, refresh times, and full drop tables beyond the first-defeat lists above. These are World Bosses, not raids, and no raid group size appears in the cited sources.
+          <Cite n={[7, 13]} />
         </p>
+      </section>
+
+      <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-8">
+        <h2 className="text-2xl font-bold text-slate-50">Radiance Boat: how many players can build together?</h2>
+        <p className="text-sm leading-6 text-slate-300">
+          Wanderers who own the <strong>[Mirage Boat]</strong> can consume <strong>[Mirage Stardream Page]</strong> and <strong>[Keel Rebirth Blueprint]</strong> to remodel it into the new <strong>[Radiance Boat]</strong>. You can switch between the two Painted Boats at any time.
+          <Cite n={13} />
+        </p>
+        <p className="text-sm leading-6 text-slate-300">
+          The overview says the Radiance Boat “fully supports Free Build. Boat owners can invite <strong>up to 4 wanderers</strong> to dismantle, assemble, and modify components together.”
+          <Cite n={13} /> That limit is for <strong>co-building</strong> with the owner. The overview does <strong>not</strong> publish a passenger or riding capacity, so this page does not state one.
+        </p>
+        <p className="text-sm leading-6 text-slate-300">
+          Other points as published: custom boat names, sails, and hull effects; new routes, weather, and docking; build plans shared through the Gallery; <strong>[Crowd&apos;s Favor]</strong> levels that unlock more weather, waterways, and components; new features such as <strong>[Washroom]</strong>, <strong>[Leisure Chair]</strong>, <strong>[Tai Chi Tidecatch]</strong>, <strong>[Ultra Leap of Faith]</strong>, and <strong>[Shared Fortune]</strong>. Owning the boat also unlocks the outfit <strong>[Monarch of Heavens]</strong>, with a [Victory Cutscene], the idle showcase [Mountain Suppressor], a [Scenario Background], a [Player Dynamic Avatar], [Face Makeup], and the title <strong>[Regal: Gilded Cloudpiercer]</strong>.
+          <Cite n={13} /> The overview does not give the Radiance Boat a separate clock or a price.
+        </p>
+      </section>
+
+      <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-8">
+        <h2 className="text-2xl font-bold text-slate-50">Other Hutuo additions in the Version 2.4 overview</h2>
+        <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-slate-300">
+          <li><strong>New Outpost [Sheathed Passage]:</strong> clearing it for the first time grants the item needed to tame the rare wild mount <strong>[Gem Snow]</strong>, plus [Medicinal Tales], [Constitution], and [Echo Jade].<Cite n={13} /></li>
+          <li><strong>Hidden Mountain Exploration [Names That Endure]:</strong> awards the functional item <strong>[Tuo&apos;s Carving Knife]</strong> and unlocks <strong>Stele Inscription</strong>, used to record names on the <strong>Zhongdu Bridge Memorial Stele</strong>. This is an exploration feature, not a Boss.<Cite n={13} /></li>
+          <li><strong>Omni-Weapon Skills:</strong> <strong>Sky Tether</strong> (Gauntlets) — acquire [Heavenwill Gauntlets], then complete the Hidden Mountain Wandering Tale [Bound for the Sky]. <strong>Silken Step</strong> (Waist Drum) — acquire [Museflow Waist Drum], then complete the Qingzhou Exploration [Rhythm of the Waves].<Cite n={13} /></li>
+          <li><strong>Meow Meow gameplay:</strong> Marching Simulation and Meow Pole.<Cite n={13} /></li>
+          <li><strong>New features:</strong> Earth-Listening Urn, Topple Chest, Swallowgram, Shadow Play Tales, and Mounted Archery Challenge.<Cite n={13} /></li>
+        </ul>
       </section>
 
       <section id="dual-spears" className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-8">
@@ -521,18 +748,17 @@ export default function HutuoGuidePage() {
             </thead>
             <tbody className="divide-y divide-slate-800 text-slate-200">
               <tr>
-                <td className="px-3 py-3 font-semibold text-slate-50">Hutuo / Version 2.4 / first global anniversary major update</td>
+                <td className="px-3 py-3 font-semibold text-slate-50">Hutuo / Version 2.4 [Across Autumn Waters] / first global anniversary major update</td>
                 <td className="px-3 py-3 leading-6">
                   Goes live <strong>following</strong> a non-downtime update on November 13, from <strong>18:00 to 23:00 (UTC+8)</strong>.
-                  <Cite n={11} /> Launch graphic: single moment <strong>11PM UTC+8 on November 13</strong> (15:00 UTC); KST / JST 12AM, AEDT 2AM, and NZDT 4AM are <strong>November 14</strong>. CST on the graphic is US Central Time, not Beijing time.
+                  <Cite n={11} /> The Version 2.4 overview gives the live update as <strong>18:00:00 to 22:59:59 (UTC+8)</strong>; the update is “expected to become available after 23:00:00.”
+                  <Cite n={[13, 14]} /> Launch graphic: single moment <strong>11PM UTC+8 on November 13</strong> (15:00 UTC); KST / JST 12AM, AEDT 2AM, NZDT 4AM are <strong>November 14</strong>. CST on the graphic is US Central Time.
                   <Cite n={11} />
                 </td>
                 <td className="px-3 py-3 leading-6 text-slate-300">
-                  Earlier date-only labels—Dev Letter <strong>November 13</strong> (no time zone or clock),
-                  <Cite n={7} /> rewards post <strong>November 13 (UTC)</strong>,
-                  <Cite n={2} /> later scenery post “November 13 (UTC)!”
-                  <Cite n={12} />—are kept and marked as superseded by this window. Pre-launch as of 2026-11-12.
-                  <Cite n={[11, 7, 2, 1, 3]} />
+                  18:00 is not go-live; 23:00 / 22:59:59 is the end of the window. Earlier date-only labels (Dev Letter November 13; rewards post and scenery post November 13 (UTC)) are kept and marked as superseded.
+                  <Cite n={[7, 2, 12]} /> Pre-launch as of 2026-11-13 (checked before the window).
+                  <Cite n={[13, 11]} />
                 </td>
               </tr>
               <tr>
@@ -572,6 +798,11 @@ export default function HutuoGuidePage() {
             /guides/martial-arts-weapons#dual-spears-announced
           </Link>.
         </p>
+        <p className="text-sm leading-6 text-slate-300">
+          The official <strong>Version 2.4 Path Balance Adjustment Announcement (November 13)</strong> (Global site, page date 2026-11-12; Steam gid 1849192144183200, 2026-11-12 22:46:44 Asia/Shanghai) is a list of <strong>numeric balance and system adjustments</strong>: progression changes for gear (for example Modulated Gear Recovery, free switching between already-unlocked gear sets, and a shorter Reset Tuning / Retuning Correction cooldown), martial-art and Inner Way value changes across paths, Arena / Guild War / Perception Forest tuning, and bug fixes.
+          <Cite n={16} /> It does <strong>not</strong> mention Dual Spears or change its date. Dual Spears still officially arrives on <strong>November 26 (UTC)</strong>.
+          <Cite n={[10, 16]} />
+        </p>
       </section>
 
       <section className="space-y-3 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-8">
@@ -592,25 +823,40 @@ export default function HutuoGuidePage() {
         <h2 className="text-2xl font-bold text-slate-50">Not published, so not invented</h2>
         <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-slate-300">
           <li>
-            A go-live minute <strong>other than</strong> what the 2026-11-11 official post already published: Hutuo goes live <strong>following</strong> a non-downtime update on November 13, from <strong>18:00 to 23:00 (UTC+8)</strong>, and the same post’s graphic gives a single launch moment of <strong>11PM UTC+8 on November 13</strong>.
-            <Cite n={11} /> This page does not invent a start time at 18:00, an update-start time at 23:00, or a clock that is not in that post or graphic. Earlier date-only labels are superseded by this window; they are not treated as a second, conflicting opening hour.
-            <Cite n={[7, 2, 12]} />
+            A go-live minute <strong>other than</strong> what official copy already published: Hutuo goes live <strong>following</strong> a non-downtime update on November 13, <strong>18:00 to 23:00 (UTC+8)</strong>;
+            <Cite n={11} /> the Version 2.4 overview gives the live update as <strong>18:00:00 to 22:59:59 (UTC+8)</strong> and says the update is expected to be available after 23:00:00.
+            <Cite n={13} /> This page does not invent a go-live time at 18:00 or an update start at 23:00.
           </li>
-          <li>An in-client entrance path, map pins, or an unlock level.</li>
           <li>
-            World Boss <strong>drop tables, player counts, level gates, or refresh times</strong>. Official names and the “arrive soon!” teaser are cited above; this page does not turn “arrive soon!” into a November 13 start clock.
-            <Cite n={[7, 9]} />
+            Map pins or a click-by-click entrance path. The published access route (Lv. 32, [New Arrival in Kaifeng], then [Hutuo Memories]) is in <strong>How to unlock Hutuo</strong> above.
+            <Cite n={13} />
+          </li>
+          <li>
+            World Boss <strong>level gates, player counts, refresh times, or full drop tables</strong>. Only the first-defeat rewards and Sword Forge Challenge rewards listed above are published, and the overview does not give either boss its own start clock.
+            <Cite n={[13, 9]} />
           </li>
           <li>
             Reward names or quantities for relics gathered after Campaign <strong>[Hutuo River]</strong>.
             <Cite n={7} />
           </li>
           <li>
-            Quest-by-quest walkthroughs or unlock gates for the three Jianghu Legacies.
-            <Cite n={7} />
+            Quest-by-quest walkthroughs for the three Jianghu Legacies. Their published participation requirements, including <strong>Kindle the Void</strong>’s 6,000 Hidden Mountain exploration progress, are in the table above.
+            <Cite n={13} />
           </li>
           <li>Full rules for Horse Racing Chess or Jianghu Tactics.</li>
           <li>China-server and Global same-day confirmation. That comparison is not in the cited Global English sources.</li>
+          <li>
+            A calendar date for the overview’s “At 00:00:00 … forcibly disconnected” line. The overview does not say which day that 00:00:00 is.
+            <Cite n={13} />
+          </li>
+          <li>
+            A passenger or riding capacity for the <strong>[Radiance Boat]</strong>. Only the co-building limit (the owner can invite up to 4 wanderers) is published.
+            <Cite n={13} />
+          </li>
+          <li>
+            New Boss names or a raid. The creator livestream call to “fight alongside Jiang Yan at Zhongdu Bridge” starting November 13 is a livestream rally, not a Boss announcement, and it gives no clock, gate, or reward.
+            <Cite n={17} />
+          </li>
         </ul>
       </section>
 
@@ -625,8 +871,12 @@ export default function HutuoGuidePage() {
             <Cite n={10} />
           </li>
           <li>
-            For the opening clock, use the official 18:00–23:00 (UTC+8) non-downtime update and the “go live following” wording above, not a Beijing midnight rewrite of an older date-only post.
-            <Cite n={11} /> This page’s last verified date is an announcement check, not a live-client test.
+            For the opening clock, use the official non-downtime update (18:00–23:00 (UTC+8); 18:00:00–22:59:59 (UTC+8) in the Version 2.4 overview) and the “go live following” wording above, not a Beijing midnight rewrite of an older date-only post.
+            <Cite n={[11, 13]} /> This page’s last verified date is an announcement check, not a live-client test.
+          </li>
+          <li>
+            Relog after the update becomes available. The overview says relogging installs it, that you cannot play with wanderers who have not updated, and that wanderers who have not relogged by its 00:00:00 line are disconnected. It recommends relogging in advance.
+            <Cite n={13} />
           </li>
         </ol>
       </section>
