@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import CdnImage from "@/components/CdnImage";
@@ -27,14 +28,29 @@ export function OfficialMediaFigure({
       className={`overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/80 shadow-lg shadow-slate-950/40 ${className}`}
     >
       <div className={`relative ${aspectClassName} bg-slate-900`}>
-        <CdnImage
-          src={item.src}
-          alt={item.alt}
-          fill
-          priority={priority}
-          sizes="(min-width: 1024px) 48vw, 100vw"
-          className="object-cover"
-        />
+        {item.src.startsWith("/") ? (
+          // Keep public/ stills on this origin. CdnImage rewrites "/" paths to
+          // static.wherewindsmeet.org, which 404s until a separate CDN upload
+          // and does not load on workers.dev previews.
+          <Image
+            src={item.src}
+            alt={item.alt}
+            fill
+            priority={priority}
+            unoptimized
+            sizes="(min-width: 1024px) 48vw, 100vw"
+            className="object-cover"
+          />
+        ) : (
+          <CdnImage
+            src={item.src}
+            alt={item.alt}
+            fill
+            priority={priority}
+            sizes="(min-width: 1024px) 48vw, 100vw"
+            className="object-cover"
+          />
+        )}
       </div>
       <figcaption className="space-y-1 border-t border-slate-800 px-4 py-3 text-xs leading-5 text-slate-400">
         <span className="block text-slate-300">{item.caption}</span>
