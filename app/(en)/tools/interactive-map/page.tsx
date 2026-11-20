@@ -3,7 +3,7 @@ import Link from "next/link";
 import { OfficialMediaFigure } from "@/components/guides/OfficialMediaFigure";
 import { InteractiveMapEmbed } from "@/components/InteractiveMapEmbed";
 import { buildHreflangAlternates } from "@/lib/hreflang";
-import { MediaPlaceholder } from "@/components/guides/MediaPlaceholder";
+import { interactiveMapOfficialQingzhouStill } from "@/lib/officialMapCaptures";
 import { devLetter1028Cover, qingzhouMountTai, qingzhouPenglai, steamLibraryHero } from "@/lib/officialQingzhouMedia";
 
 const baseUrl = "https://wherewindsmeet.org";
@@ -16,12 +16,12 @@ const map17173Url = "https://map.17173.com/yysls/maps/qinchuan";
 export const metadata: Metadata = {
   title: "Where Winds Meet Map — Qingzhou, Penglai, Bosses & Collectibles",
   description:
-    "Use the official Where Winds Meet interactive map for Qingzhou and Penglai (open October 29 with Mount Tai Blizzard and sister experiences). Prefer the official layer; third-party pins can lag—verify in-game.",
+    "Use the official Where Winds Meet interactive map for the Qingzhou layer. Penglai is not a separately labeled layer on the official map UI captured here. Third-party pins can lag—verify in-game.",
   alternates: buildHreflangAlternates("/tools/interactive-map"),
   openGraph: {
     title: "Where Winds Meet Map — Qingzhou, Penglai, Bosses & Collectibles",
     description:
-      "Official Qingzhou and Penglai layers first. Third-party pins can lag the October 29 batch.",
+      "Official Qingzhou map layer first. The captured official UI does not label Penglai as its own layer. Third-party pins can lag the October 29 batch.",
     url: pageUrl,
     siteName: "Where Winds Meet Hub",
     type: "website",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "Where Winds Meet Map — Qingzhou, Penglai, Bosses & Collectibles",
-    description: "Qingzhou and Penglai on the official interactive map. This hub does not claim pin totals.",
+    description: "Official Qingzhou map layer. Penglai is not a separately labeled layer in this capture. No pin totals.",
   },
 };
 
@@ -137,7 +137,7 @@ const faqs = [
   {
     question: "Does the map include Penglai now?",
     answer:
-      "Penglai opened October 29 per the official October 28 Dev Letter. Check the official map’s Qingzhou / Penglai controls first. If a third-party embed on this page lags, open the official map in a new tab and verify in-game. Region guides: /guides/penglai and /guides/qingzhou. This hub does not claim a marker total.",
+      "Penglai opened October 29 per the official October 28 Dev Letter. On the official map UI captured for this page (Qingzhou selected), Penglai is not a separately labeled layer or control. If a third-party embed lags, open the official map in a new tab and verify in-game. Region guides: /guides/penglai and /guides/qingzhou. This hub does not claim a marker total.",
   },
   {
     question: "Where are Mount Tai Blizzard, Cast in Currents, and Spirit of the Grove on the map?",
@@ -224,7 +224,7 @@ export default function InteractiveMapPage() {
             Version <strong>2.3 Friends From Afar</strong> added <strong>Qingzhou – Eastern Peak</strong> on <strong>2026-10-15</strong>. On <strong>2026-10-29</strong>, official Dev Letter <em>Dreaming Paths, Murders in the Snow</em> opened <strong>Penglai</strong> alongside Campaign <strong>[Mount Tai Blizzard]</strong>, Jianghu Legacy <strong>[Cast in Currents]</strong>, and exploration <strong>[Spirit of the Grove]</strong>.
           </p>
           <ol className="mt-3 list-decimal space-y-1 pl-5 text-sm leading-6 text-slate-300">
-            <li>Open the <a href={officialMapUrl} target="_blank" rel="noopener noreferrer" className="text-emerald-300 hover:text-emerald-200">official interactive map</a> and select <strong>Qingzhou</strong> (and <strong>Penglai</strong> if it is listed as a sub-layer).</li>
+            <li>Open the <a href={officialMapUrl} target="_blank" rel="noopener noreferrer" className="text-emerald-300 hover:text-emerald-200">official interactive map</a> and select <strong>Qingzhou</strong>. The official map UI captured below does not list Penglai as a separately labeled layer.</li>
             <li>Cross-check English labels on <strong>MapGenie</strong> only as a secondary opinion. Coverage can lag.</li>
             <li>Use a <strong>CN map</strong> alternative only as a second opinion—name strings may not match global English.</li>
             <li>For unlock story and the October 29 experiences, read <Link href="/guides/qingzhou" className="text-emerald-300 hover:text-emerald-200">/guides/qingzhou</Link> and <Link href="/guides/penglai" className="text-emerald-300 hover:text-emerald-200">/guides/penglai</Link> instead of duplicating those guides here.</li>
@@ -236,11 +236,7 @@ export default function InteractiveMapPage() {
             Landmarks named in official letters (orientation only—not a pin guarantee): Mount Tai / Eastern Peak, Wellspring Town, Crownleek Terrace, and Mount Penglai. Campaign and Legacy spaces may be Journal entries rather than overworld pins. Guides: <Link href="/guides/mount-tai-blizzard" className="text-emerald-300 hover:text-emerald-200">Mount Tai Blizzard</Link>, <Link href="/guides/cast-in-currents" className="text-emerald-300 hover:text-emerald-200">Cast in Currents</Link>, <Link href="/guides/spirit-of-the-grove" className="text-emerald-300 hover:text-emerald-200">Spirit of the Grove</Link>, <Link href="/guides/patch-notes" className="text-emerald-300 hover:text-emerald-200">patch notes</Link>.
           </p>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
-            <MediaPlaceholder
-              slot="M1 official map"
-              alt="Official Where Winds Meet interactive map — Qingzhou / Penglai layer selected."
-              expectation="Pending a capture from the official map after October 29. Do not paste a third-party map skin as official."
-            />
+            <OfficialMediaFigure item={interactiveMapOfficialQingzhouStill} aspectClassName="aspect-[1920/1045]" />
             <OfficialMediaFigure item={qingzhouPenglai} aspectClassName="aspect-[16/10]" />
           </div>
           <div className="mt-4 grid gap-4 md:grid-cols-2">

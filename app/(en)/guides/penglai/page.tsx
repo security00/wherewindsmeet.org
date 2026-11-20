@@ -3,9 +3,9 @@ import Link from "next/link";
 
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
-import { MediaPlaceholder } from "@/components/guides/MediaPlaceholder";
 import { OfficialMediaFigure } from "@/components/guides/OfficialMediaFigure";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+import { penglaiOfficialMapStill } from "@/lib/officialMapCaptures";
 import {
   devLetter1028Cover,
   qingzhouAnnouncementTrailer,
@@ -196,11 +196,7 @@ export default function PenglaiGuidePage() {
           <li>Pick one door first: snowbound inn, dream-spun academy, or abandoned hall.</li>
         </ol>
         <div className="mt-4">
-          <MediaPlaceholder
-            slot="map layer"
-            alt="Official interactive map — Qingzhou / Penglai layer (pin counts not claimed on this fan page)."
-            expectation="Pending a capture of the official map Penglai layer after October 29. Do not invent pin counts."
-          />
+          <OfficialMediaFigure item={penglaiOfficialMapStill} aspectClassName="aspect-[1188/937]" />
         </div>
       </section>
 
