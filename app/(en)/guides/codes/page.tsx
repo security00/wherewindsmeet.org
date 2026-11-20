@@ -5,7 +5,7 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 export const metadata: Metadata = {
   title: "Where Winds Meet Codes November 2026: WWM Redeem Codes & How to Redeem",
   description:
-    "Where Winds Meet codes for November 2026 (checked 2026-11-13, Version 2.3): reported WWM redeem codes to verify in-game, how to redeem, expired and leaked-code warnings, plus outfit and character code links.",
+    "Where Winds Meet codes and WWM redeem codes (last code-list check 2026-11-13). Official Version 2.4 posts published no new redeem-code list. Reported codes still need in-game verification; leaked or expired codes are flagged on this page.",
   alternates: buildHreflangAlternates("/guides/codes"),
 };
 

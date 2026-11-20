@@ -14,9 +14,9 @@ const LAST_VERIFIED = "2026-11-13";
 const LAST_VERIFIED_LABEL = "2026-11-13 (Asia/Shanghai)";
 const PAGE_MODIFIED = "2026-11-13";
 
-const metaTitle = "When Does Hutuo Open in Where Winds Meet? After the Nov 13 18:00–23:00 (UTC+8) Update";
+const metaTitle = "What is the official Hutuo go-live window in Where Winds Meet? After the Nov 13 18:00–23:00 (UTC+8) update";
 const metaDescription =
-  "Hutuo (Version 2.4) goes live following a non-downtime update on Nov 13 (18:00:00–22:59:59 UTC+8 per the official overview). World Boss first-clear rewards, the Kindle the Void 6,000 exploration requirement, and Campaign [Hutuo River] rewards.";
+  "Official copy said Hutuo (Version 2.4) goes live following a non-downtime update on Nov 13 (18:00:00–22:59:59 UTC+8 per the official overview). This page’s last verification is 2026-11-13; it has not published a later in-game check. World Boss first-clear rewards, the Kindle the Void 6,000 exploration requirement, and Campaign [Hutuo River] rewards are summarized here.";
 
 const SOURCE_URLS = [
   "https://x.com/WhereWindsMeet_/status/2117934891497029783",
@@ -130,14 +130,14 @@ function Cite({ n }: { n: number | readonly number[] }) {
 
 const faqs: { q: string; a: string; ld?: string }[] = [
   {
-    q: "When does Hutuo open?",
-    a: "Hutuo officially goes live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8).[11] The Version 2.4 overview gives that live update as 18:00:00 to 22:59:59 (UTC+8).[13] That span is the update window: 18:00 is not go-live, and 23:00 / 22:59:59 is the end of the window, not its start. The launch graphic gives a single moment of 11PM UTC+8 on November 13 (15:00 UTC); 12AM KST, 12AM JST, 2AM AEDT, and 4AM NZDT fall on November 14, and CST on the graphic is US Central Time, not Beijing time.[11] Earlier posts that only said November 13, or November 13 (UTC), are kept and marked as superseded.[7][2][12]",
-    ld: "Hutuo officially goes live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8). The Version 2.4 overview gives that live update as 18:00:00 to 22:59:59 (UTC+8). That span is the update window: 18:00 is not go-live, and 23:00 / 22:59:59 is the end of the window, not its start. The launch graphic gives a single moment of 11PM UTC+8 on November 13 (15:00 UTC); 12AM KST, 12AM JST, 2AM AEDT, and 4AM NZDT fall on November 14, and CST on the graphic is US Central Time, not Beijing time. Earlier posts that only said November 13, or November 13 (UTC), are kept and marked as superseded.",
+    q: "What is the official Hutuo go-live window?",
+    a: "Official copy said Hutuo will officially go live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8). The Version 2.4 overview gives that live update as 18:00:00 to 22:59:59 (UTC+8). That span is the update window: 18:00 is not go-live, and 23:00 / 22:59:59 is the end of the window, not its start. The launch graphic gives a single moment of 11PM UTC+8 on November 13 (15:00 UTC); 12AM KST, 12AM JST, 2AM AEDT, and 4AM NZDT fall on November 14, and CST on the graphic is US Central Time, not Beijing time. This page’s last verification is 2026-11-13 (Asia/Shanghai). It has not published a later in-game check and does not claim that Hutuo is live.",
+    ld: "Official copy said Hutuo will officially go live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8). The Version 2.4 overview gives that live update as 18:00:00 to 22:59:59 (UTC+8). That span is the update window: 18:00 is not go-live, and 23:00 / 22:59:59 is the end of the window, not its start. The launch graphic gives a single moment of 11PM UTC+8 on November 13 (15:00 UTC); 12AM KST, 12AM JST, 2AM AEDT, and 4AM NZDT fall on November 14, and CST on the graphic is US Central Time, not Beijing time. This page’s last verification is 2026-11-13 (Asia/Shanghai). It has not published a later in-game check and does not claim that Hutuo is live.",
   },
   {
-    q: "Is Hutuo live today (2026-11-13)?",
-    a: "Not as of this page’s check on 2026-11-13 (about 10:10 Asia/Shanghai), which was before the 18:00:00 (UTC+8) start of the live update. Treat it as scheduled for after the update window, not as a completed live claim.[11][13]",
-    ld: "Not as of this page's check on 2026-11-13 (about 10:10 Asia/Shanghai), which was before the 18:00:00 (UTC+8) start of the live update. Treat it as scheduled for after the update window, not as a completed live claim.",
+    q: "Has this page confirmed that Hutuo is live?",
+    a: "No. The last verification on this page is 2026-11-13 (about 10:10 Asia/Shanghai), which was before the 18:00:00 (UTC+8) start of the official update window. This page has not published a later in-game check and does not claim that Hutuo is live.",
+    ld: "No. The last verification on this page is 2026-11-13 (about 10:10 Asia/Shanghai), which was before the 18:00:00 (UTC+8) start of the official update window. This page has not published a later in-game check and does not claim that Hutuo is live.",
   },
   {
     q: "Does Hutuo open at 18:00 (UTC+8) on November 13?",
@@ -324,10 +324,10 @@ export default function HutuoGuidePage() {
 
       <section className="rounded-3xl border border-amber-500/30 bg-slate-950/85 p-6 shadow-2xl sm:p-8">
         <p className="text-xs font-semibold uppercase tracking-[0.25em] text-amber-200">
-          Guides · Global server · Announced, not live
+          Guides · Global server
         </p>
         <h1 className="mt-3 text-balance text-3xl font-bold tracking-tight text-slate-50 sm:text-4xl">
-          When does Hutuo open in Where Winds Meet?
+          What is the official Hutuo go-live window in Where Winds Meet?
         </h1>
         <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">
           Hutuo opens as Where Winds Meet’s first global anniversary major update—<strong>Version 2.4</strong>—the

@@ -9,14 +9,14 @@ import { npcMapPath, npcPortraitPath } from "@/lib/npc-media";
 const baseUrl = "https://wherewindsmeet.org";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Characters & NPC List: Old Friends Locations by Region",
+  title: "Who are the Where Winds Meet characters and NPCs? (Old Friends list and locations)",
   description:
-    "Find every Where Winds Meet character fast: Old Friends NPC list by region with map locations, portraits, AI Chat tips, and service NPCs. Check pins against your current client.",
+    "Dated Where Winds Meet NPC and Old Friends directory, listed by region, with map locations, AI Chat notes, and service NPCs. Confirm every pin in your current client — locations can move with patches.",
   alternates: buildHreflangAlternates("/guides/npc-list"),
   openGraph: {
-    title: "Where Winds Meet Characters & NPC List: Old Friends Locations by Region",
+    title: "Who are the Where Winds Meet characters and NPCs? (Old Friends list and locations)",
     description:
-      "Browse a dated editorial snapshot of Where Winds Meet characters, Old Friends NPC location notes and AI Chat tips.",
+      "Dated Where Winds Meet NPC and Old Friends directory, listed by region, with map locations, AI Chat notes, and service NPCs. Confirm every pin in your current client — locations can move with patches.",
     url: `${baseUrl}/guides/npc-list`,
     siteName: "Where Winds Meet Hub",
     images: [
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Where Winds Meet Characters & NPC List: Old Friends Locations by Region",
+    title: "Who are the Where Winds Meet characters and NPCs? (Old Friends list and locations)",
     description:
-      "Browse a dated editorial snapshot of Old Friends NPC location notes and AI Chat tips.",
+      "Dated Where Winds Meet NPC and Old Friends directory, listed by region, with map locations, AI Chat notes, and service NPCs. Confirm every pin in your current client — locations can move with patches.",
   },
 };
 

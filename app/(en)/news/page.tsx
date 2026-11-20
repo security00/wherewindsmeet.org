@@ -22,21 +22,22 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 const baseUrl = "https://wherewindsmeet.org";
 const freshness = getContentFreshness("/news");
 
+const newsTitle = "What is the latest Where Winds Meet update? (Hutuo / Version 2.4 window and what’s next)";
+const newsDescription =
+  "Official Hutuo (Version 2.4) copy said the update goes live following a non-downtime window on November 13, 18:00–23:00 (UTC+8). This news hub was last verified 2026-11-13 and has not published a later in-game check. Dual Spears is announced for November 26 (UTC); NVIDIA DLSS 5 for November 23 (date only).";
+
 export const metadata: Metadata = {
-  title: "Where Winds Meet Next Update & News: Version 2.3 Live, What Comes Next",
-  description:
-    "Where Winds Meet update today: October 28 Dev Letter (Penglai, Mount Tai Blizzard, Cast in Currents, Spirit of the Grove) and October 29 fixes, plus the October 15 Version 2.3 Friends from Afar baseline.",
+  title: newsTitle,
+  description: newsDescription,
   alternates: buildHreflangAlternates("/news"),
   openGraph: {
-    title: "Where Winds Meet Next Update & News: Version 2.3 Live, What Comes Next",
-    description:
-      "Where Winds Meet update today tracker for Version 2.3 Friends from Afar (October 15), Qingzhou, and the Version 2.2 patch notes.",
+    title: newsTitle,
+    description: newsDescription,
     url: `${baseUrl}/news`,
   },
   twitter: {
-    title: "Where Winds Meet Next Update & News: Version 2.3 Live, What Comes Next",
-    description:
-      "Where Winds Meet update today tracker for the official October 15 Version 2.3 overview and the September 16 Version 2.2 patch notes.",
+    title: newsTitle,
+    description: newsDescription,
   },
 };
 
@@ -46,7 +47,7 @@ const steamVersion22OverviewUrl = "https://store.steampowered.com/news/app/35647
 
 const todayStatusCards = [
   {
-    title: "CURRENT: Version 2.3 Friends from Afar",
+    title: "Version 2.3 Friends from Afar (October 15 overview)",
     detail:
       "Official October 15 overview (live update 5:00-12:00 UTC+8): new region Qingzhou - Eastern Peak via the Lost Chapter Away to Qingzhou (Lv. 32 and Qinghe Main Chapter Heaven Has No Pier), the Waist Drum weapon and Silkbind - Wings path (Museflow Waist Drum + Willowbend Fan), the Inkbound Order sect, three world bosses, War of Words Gift of Gab, Tier 100 gear, and season S5: Ever Aflame.",
     href: steamVersion23Url,
@@ -76,7 +77,7 @@ const todayStatusCards = [
   {
     title: "Next update: what is officially announced",
     detail:
-      "The next announced major beat is the 1st Anniversary update Hutuo (Version 2.4), which officially goes live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8) (see the pinned card and /guides/hutuo). It is not live as of 2026-11-13. Dual Spears officially arrives on November 26 (UTC), not on November 13. Steam has published Version 2.4 [Across Autumn Waters] Update Overview (gid 1849192144183182, 2026-11-12 22:43:09 UTC+8) and Version 2.4 Path Balance Adjustment Announcement (November 13) (gid 1849192144183200, 2026-11-12 22:46:44 UTC+8). The Version 2.3 overview says new Solo Mode levels, character level caps, gear tiers, and progression systems are coming soon, and that higher Inkbound Order ranks unlock after the Farm Recess. Per the Version 2.2 notes, Reflection Temple reopens when Jiangnan arrives. Season S5: Ever Aflame runs until November 26, 2026 04:59:59 (server time).",
+      "The next announced major beat is the 1st Anniversary update Hutuo (Version 2.4), which officially goes live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8) (see the pinned card and /guides/hutuo). This news hub was last verified 2026-11-13 and has not published a later in-game check. Dual Spears officially arrives on November 26 (UTC), not on November 13. Steam has published Version 2.4 [Across Autumn Waters] Update Overview (gid 1849192144183182, 2026-11-12 22:43:09 UTC+8) and Version 2.4 Path Balance Adjustment Announcement (November 13) (gid 1849192144183200, 2026-11-12 22:46:44 UTC+8). The Version 2.3 overview says new Solo Mode levels, character level caps, gear tiers, and progression systems are coming soon, and that higher Inkbound Order ranks unlock after the Farm Recess. Per the Version 2.2 notes, Reflection Temple reopens when Jiangnan arrives. Season S5: Ever Aflame runs until November 26, 2026 04:59:59 (server time).",
     href: steamVersion23Url,
     label: "Official Version 2.3 overview",
   },
@@ -184,6 +185,20 @@ export default function NewsPage() {
         },
       ],
     },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What is the latest Where Winds Meet update today?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The official post said Hutuo (Version 2.4) “will officially go live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8).” That span is the update window, not a go-live time at 18:00. This page’s last verification is 2026-11-13 (Asia/Shanghai). It has not published a later in-game check, so it does not claim a new live-build test and it no longer describes Hutuo as a future “not live” event. Dual Spears officially arrives on November 26 (UTC), with no clock published. NVIDIA DLSS 5 remains announced for November 23 (date only). For the window and campaign notes see /guides/hutuo; for anniversary rewards see /guides/anniversary.",
+          },
+        },
+      ],
+    },
   ];
 
   const roadmapBlock = {
@@ -194,8 +209,8 @@ export default function NewsPage() {
     links: [
       { href: "/guides/tier-list", label: "China tier list & balance notes" },
       { href: "/guides/patch-notes#version-2-3", label: "Version 2.3 patch notes" },
-      { href: "/guides/hutuo", label: "Hutuo announcement (not live)" },
-      { href: "/guides/anniversary", label: "Anniversary rewards (not live)" },
+      { href: "/guides/hutuo", label: "Hutuo go-live window" },
+      { href: "/guides/anniversary", label: "Anniversary rewards" },
       { href: "/guides/clouded-revelation", label: "Version 2.1 Clouded Revelation" },
       { href: "/guides/jiangnan-hangzhou", label: "Jiangnan / Hangzhou Global watch" },
       { href: "/guides/bosses", label: "Boss list & changes" },
@@ -235,7 +250,7 @@ export default function NewsPage() {
 
         <div className="relative space-y-6 z-10 max-w-3xl">
           <h1 className="text-balance text-4xl font-bold tracking-tight text-slate-50 sm:text-5xl font-serif">
-            <span className="text-ink-gold">Where Winds Meet</span> next update: Version 2.3 is live, here is what is officially announced next.
+            What is the latest Where Winds Meet update?
           </h1>
           <div className="space-y-4 text-slate-200/90 font-sans text-lg leading-relaxed">
             <p>
@@ -270,10 +285,10 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-3 leading-6 text-cyan-50/90">
-              The current checked update baseline is the <strong>October 28 Dev Letter</strong> (Penglai plus three experiences) and the <strong>October 29</strong> Guild War / Battle Pass / Zhao Laoliu notes, on top of <strong>Version 2.3 Friends from Afar / October 15</strong>,
-              then the September 16 Version 2.2 notes and Version 2.1 Clouded Revelation history. If you searched for
-              <span className="font-semibold"> where winds meet update today</span>, use the cards below to jump straight
-              to official news, patch notes, and roadmap watch items.
+              The official post said Hutuo (Version 2.4) “will officially go live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8).” That span is the update window, not a go-live time at 18:00. This page’s last verification is 2026-11-13 (Asia/Shanghai). It has not published a later in-game check, so it does not claim a new live-build test and it no longer describes Hutuo as a future “not live” event. Dual Spears officially arrives on November 26 (UTC), with no clock published. NVIDIA DLSS 5 remains announced for November 23 (date only). For the window and campaign notes see{" "}
+              <Link href="/guides/hutuo" className="font-semibold text-cyan-100 underline underline-offset-4">/guides/hutuo</Link>
+              ; for anniversary rewards see{" "}
+              <Link href="/guides/anniversary" className="font-semibold text-cyan-100 underline underline-offset-4">/guides/anniversary</Link>.
             </p>
             <div className="mt-4 grid gap-3 md:grid-cols-3">
               {todayStatusCards.map((card) => (
@@ -388,7 +403,7 @@ export default function NewsPage() {
               </span>
             </div>
             <p className="mt-3 leading-6 text-violet-50/90">
-              Version 2.3 Friends from Afar is the current playable layer. Version 2.2 continued Hidden Mountain with the Bringer of Embers main chapter and Skyward City Ruins, on top of the Version 2.0 expansion baseline. Use the official overviews first, then the video hub for official footage.
+              Version 2.2 continued Hidden Mountain with the Bringer of Embers main chapter and Skyward City Ruins, on top of the Version 2.0 expansion baseline. Use the official overviews first, then the video hub for official footage.
             </p>
             <div className="mt-4 flex flex-wrap gap-2 text-xs">
               <Link href="/videos" className="rounded-full border border-violet-300/60 px-3 py-1 font-semibold text-violet-50 hover:border-violet-200">
@@ -417,7 +432,7 @@ export default function NewsPage() {
             <div className="mt-3 grid gap-2 text-xs text-slate-300 sm:grid-cols-3">
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
                 <p className="font-semibold text-slate-100">Current update</p>
-                <p className="mt-1">The October 15 Version 2.3 overview is the current update anchor, with the September 16 Version 2.2 patch notes and overview as the previous version. Version 2.1 Clouded Revelation (September 5 and August 20 sections) and Version 2.0 notes remain historical context.</p>
+                <p className="mt-1">The October 15 Version 2.3 overview, the September 16 Version 2.2 patch notes and overview, Version 2.1 Clouded Revelation (September 5 and August 20 sections), and Version 2.0 notes remain earlier version context.</p>
               </div>
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3">
                 <p className="font-semibold text-slate-100">Next watch</p>

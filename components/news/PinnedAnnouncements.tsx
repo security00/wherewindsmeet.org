@@ -103,7 +103,7 @@ const watchRows: { key: string; date: ReactNode; item: ReactNode; source: ReactN
         <strong>Hutuo / Version 2.4</strong> 1st anniversary major update. This is a <strong>non-downtime update</strong> window.
         Official copy says Hutuo goes live <strong>following</strong> it—not at 18:00, and 23:00 is not the start of the update.
         Launch graphic: single moment <strong>11PM UTC+8 on November 13</strong> (15:00 UTC); KST / JST 12AM, AEDT 2AM, NZDT 4AM are <strong>November 14</strong>; CST on the graphic is US Central Time, not Beijing time.
-        Earlier “November 13” / “November 13 (UTC)” date-only labels are superseded by this window. Announced, <strong>not live</strong> as of 2026-11-13.
+        Earlier “November 13” / “November 13 (UTC)” date-only labels are superseded by this window. Last verified 2026-11-13 (Asia/Shanghai). This page has not published a later in-game check, so it does not claim that Hutuo is live and it no longer describes the window as a future “not live” event.
       </>
     ),
     source: (
@@ -268,7 +268,7 @@ export function PinnedAnnouncements() {
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">
-            Pinned · Scheduled global update · Not live
+            Pinned · Last verified 2026-11-13
           </p>
           <h2 id="announced-hutuo" className="mt-1 text-xl font-bold text-slate-50">
             Next announced major beat: Hutuo, November 13 (Version 2.4)
@@ -282,6 +282,12 @@ export function PinnedAnnouncements() {
         </time>
       </div>
       <p className="leading-6 text-amber-50/90">
+        Official copy said Hutuo (Version 2.4) will officially go live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8). That span is the update window, not a go-live time at 18:00, and 23:00 is not the start of the update. Last verified 2026-11-13 (Asia/Shanghai). This page has not published a later in-game check, so it does not claim that Hutuo is live and it no longer describes the window as a future “not live” event. What’s next: Dual Spears officially arrives on November 26 (UTC), with no clock published. NVIDIA DLSS 5 remains announced for November 23 (date only). Reward categories are on{" "}
+        <Link href="/guides/anniversary" className="text-emerald-300 underline underline-offset-4">/guides/anniversary</Link>.
+        Battlefield and Campaign context is on{" "}
+        <Link href="/guides/hutuo" className="text-emerald-300 underline underline-offset-4">/guides/hutuo</Link>.
+      </p>
+      <p className="leading-6 text-amber-50/90">
         Where Winds Meet’s 1st Anniversary major update <strong>Hutuo</strong> is the official <strong>Version 2.4</strong> update.
         <Cite n={8} /> Official copy now says Hutuo will officially go live <strong>following</strong> a non-downtime update on November 13, from <strong>18:00 to 23:00 (UTC+8)</strong>.
         <Cite n={9} /> That span is the update window, not a go-live time at 18:00, and 23:00 is not the start of the update. The same post’s launch graphic is titled “1ST ANNIVERSARY: HUTUO GLOBAL LAUNCH” and shows a <strong>single</strong> moment: <strong>11PM UTC+8 on November 13</strong> (15:00 UTC); 12AM KST, 12AM JST, 2AM AEDT, and 4AM NZDT fall on <strong>November 14</strong>. CST on that graphic is <strong>US Central Time</strong>, not Beijing time.
@@ -290,7 +296,7 @@ export function PinnedAnnouncements() {
       <p className="leading-6 text-amber-50/90">
         Earlier official posts that only said <strong>November 13</strong>, or <strong>November 13 (UTC)</strong>, without a clock—including a later scenery post whose full text still says “Hutuo arrives on November 13 (UTC)!”—are kept and marked as <strong>superseded</strong> by this window. This page does not use the scenery post to overwrite the window, and it does not rewrite a date-only label as Beijing midnight.
         <Cite n={[2, 10]} /> The Version 2.4 label comes from the official Global Dev Letter, <strong>not</strong> from Steam. Steam has published Version 2.4 [Across Autumn Waters] Update Overview (gid <strong>1849192144183182</strong>, 2026-11-12 22:43:09 UTC+8) and Version 2.4 Path Balance Adjustment Announcement (November 13) (gid <strong>1849192144183200</strong>, 2026-11-12 22:46:44 UTC+8).
-        <Cite n={5} /> Announcement check only, not an in-game test. As of 2026-11-13, Hutuo is scheduled, not live.
+        <Cite n={5} /> Announcement check only, not an in-game test. Last verified 2026-11-13 (Asia/Shanghai). This page has not published a later in-game check and does not claim that Hutuo is live.
       </p>
       <p id="announced-anniversary" className="leading-6 text-slate-200">
         Reward categories, paid top-up events, and Version 2.4 appearance windows are on{" "}
