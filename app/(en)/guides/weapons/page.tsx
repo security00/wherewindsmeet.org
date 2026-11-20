@@ -38,20 +38,20 @@ const weaponFaqs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Weapons Guide: Best Weapons, Roles & Tier List",
+  title: "What weapons are in Where Winds Meet? (roles and weapon guides)",
   description:
-    "All 8 Where Winds Meet Version 2.1 weapons in one guide: Gauntlets, Dual Blades, Sword, Spear, Mo Blade, Fan, Umbrella, Rope Dart, roles, guides, and sourced tier evidence.",
+    "The eight published weapon families on this hub: Spear, Sword, Dual Blades, Mo Blade, Fan, Umbrella, Rope Dart, and Gauntlets, with roles and guide links. Version 2.3’s Waist Drum path is noted here without an invented tier rank. For a versioned comparison, use the weapons tier list.",
   alternates: buildHreflangAlternates("/guides/weapons"),
   openGraph: {
-    title: "Where Winds Meet Weapons Guide: Best Weapons, Roles & Tier List",
+    title: "What weapons are in Where Winds Meet? (roles and weapon guides)",
     description:
-      "All 8 current Where Winds Meet weapons, with roles, guide coverage, Gauntlets confirmation, and sourced PvE/PvP review status.",
+      "The eight published weapon families on this hub: Spear, Sword, Dual Blades, Mo Blade, Fan, Umbrella, Rope Dart, and Gauntlets, with roles and guide links. Version 2.3’s Waist Drum path is noted here without an invented tier rank. For a versioned comparison, use the weapons tier list.",
     url: `${baseUrl}/guides/weapons`,
   },
   twitter: {
-    title: "Where Winds Meet Weapons Guide: Best Weapons & Roles",
+    title: "What weapons are in Where Winds Meet? (roles and weapon guides)",
     description:
-      "Compare every current Where Winds Meet weapon by role, guide coverage, and sourced review status.",
+      "The eight published weapon families on this hub: Spear, Sword, Dual Blades, Mo Blade, Fan, Umbrella, Rope Dart, and Gauntlets, with roles and guide links. Version 2.3’s Waist Drum path is noted here without an invented tier rank. For a versioned comparison, use the weapons tier list.",
   },
 };
 
@@ -123,9 +123,12 @@ export default function WeaponsPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet weapons guide: best weapons, roles, and tier-list links.
+            What weapons are in Where Winds Meet?
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
+            Start here for the published weapon families and their roles; open the weapons tier list when you want the versioned comparison.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Evidence checked {weaponTierMeta.updatedAt} for {weaponTierMeta.gameVersion}: this guide tracks all{" "}
             {currentWeaponRoster.length} current weapon families—Spear, Sword, Dual Blades, Mo Blade, Fan, Umbrella,
             Rope Dart, and the officially confirmed Gauntlets. Compare role, guide coverage, build fit, and how each

@@ -594,6 +594,30 @@ export default function CodesGuidePage({ language }: { language: CodesGuideLangu
         <p className="text-xs text-slate-500 italic">{t.footnote}</p>
       </section>
 
+      {language === "en" ? (
+        <section
+          aria-label="Related reading"
+          className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6"
+        >
+          <h2 className="text-xl font-bold text-slate-100">Related reading</h2>
+          <p className="mt-3 text-sm leading-6 text-slate-300">
+            Looking for free cosmetics you can claim without waiting for a new code? See the free outfits guide.
+          </p>
+          <ul className="mt-4 space-y-2 text-sm">
+            <li>
+              <Link href="/guides/free-outfits" className="text-emerald-300 underline underline-offset-4">
+                Free outfits and cosmetics
+              </Link>
+            </li>
+            <li>
+              <Link href="/guides/free-outfits" className="text-emerald-300 underline underline-offset-4">
+                How do you get free outfits in Where Winds Meet?
+              </Link>
+            </li>
+          </ul>
+        </section>
+      ) : null}
+
       <section className="rounded-3xl border border-cyan-400/30 bg-cyan-500/10 p-6 shadow-lg shadow-cyan-950/30">
         <p className="text-xs font-semibold uppercase tracking-wide text-cyan-200">{t.typeEyebrow}</p>
         <h2 className="mt-2 text-2xl font-bold text-slate-50">{t.typeTitle}</h2>

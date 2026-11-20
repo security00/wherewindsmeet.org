@@ -7,20 +7,20 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 const baseUrl = "https://wherewindsmeet.org";
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Free Outfits & Cosmetics Guide",
+  title: "How do you get free outfits in Where Winds Meet?",
   description:
-    "Free outfits, sets, cosmetics, and hairstyles in Where Winds Meet (WWM), with where to get each one (events, quests, redeem codes, shops, and social rewards).",
+    "Paths for free Where Winds Meet outfits, sets, and hairstyles from events, quests, redeem codes, and social rewards. The official anniversary 12-outfit pick is summarized on the anniversary page and is not copied into the tables here. Claim the free tier first; rewards can change with patches.",
   alternates: buildHreflangAlternates("/guides/free-outfits"),
   openGraph: {
-    title: "Where Winds Meet Free Outfits & Cosmetics Guide",
+    title: "How do you get free outfits in Where Winds Meet?",
     description:
-      "Free outfits, sets, cosmetics, and hairstyles in Where Winds Meet (WWM), with where to get each one (events, quests, redeem codes, shops, and social rewards).",
+      "Paths for free Where Winds Meet outfits, sets, and hairstyles from events, quests, redeem codes, and social rewards. The official anniversary 12-outfit pick is summarized on the anniversary page and is not copied into the tables here. Claim the free tier first; rewards can change with patches.",
     url: `${baseUrl}/guides/free-outfits`,
   },
   twitter: {
-    title: "Where Winds Meet Free Outfits & Cosmetics Guide",
+    title: "How do you get free outfits in Where Winds Meet?",
     description:
-      "Free outfits, sets, cosmetics, and hairstyles in Where Winds Meet (WWM), with where to get each one (events, quests, redeem codes, shops, and social rewards).",
+      "Paths for free Where Winds Meet outfits, sets, and hairstyles from events, quests, redeem codes, and social rewards. The official anniversary 12-outfit pick is summarized on the anniversary page and is not copied into the tables here. Claim the free tier first; rewards can change with patches.",
   },
 };
 
@@ -265,7 +265,7 @@ export default function FreeOutfitsPage() {
 
         <div className="relative space-y-4">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet free outfits, cosmetics, and hairstyles.
+            How do you get free outfits in Where Winds Meet?
           </h1>
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
             A concise hub for zero-cost or low-cost outfits, accessories, hairstyles, and dyes—prioritizing current events, codes, achievements, and social rewards so you don’t waste premium currency on items you can earn for free.
