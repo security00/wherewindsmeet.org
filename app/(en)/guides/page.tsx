@@ -44,32 +44,42 @@ const guideSections = [
   {
     title: "Patch Notes / Current Baseline",
     slug: "/guides/patch-notes",
-    label: "Version 2.3",
+    label: "Version 2.4",
     icon: "!",
     color: "text-red-300",
     size: "medium",
     description:
-      "Version 2.3 Friends From Afar, the October 28 Penglai Dev Letter, October 29 fixes, and dated patch history.",
+      "Version 2.4 Across Autumn Waters: the November 13 Hutuo update, Path Balance, the November 22 overview, DLSS 5, and the November 26 update, plus dated Version 2.3 history.",
   },
   {
-    title: "Hutuo (announced)",
+    title: "How do I unlock Hutuo?",
     slug: "/guides/hutuo",
-    label: "Nov 13 UTC",
+    label: "Live · 2.4",
     icon: "📯",
     color: "text-amber-200",
     size: "medium",
     description:
-      "Global server only. Hutuo is announced for November 13 (UTC, no clock time) and is not live. Dual Spears are late November, not that date.",
+      "Global server. Hutuo opened after the November 13 Version 2.4 update. Reach Lv. 32, finish [New Arrival in Kaifeng], then complete [Hutuo Memories].",
   },
   {
-    title: "Anniversary rewards (announced)",
+    title: "What are the 1st anniversary rewards?",
     slug: "/guides/anniversary",
-    label: "Not live",
+    label: "Version 2.4",
     icon: "🎁",
     color: "text-amber-300",
     size: "medium",
     description:
-      "Login is choose 1 of 12 outfits. That pick is separate from in-game Lingering Melody ×42 and Resonating Melody ×27. Announced for November 13 (UTC), not live.",
+      "Login is choose 1 of 12 outfits. That pick is separate from in-game Lingering Melody ×42 and Resonating Melody ×27. The anniversary events run from the November 13 update.",
+  },
+  {
+    title: "Bellstrike - Bolt: dual spears",
+    slug: "/guides/martial-arts-weapons#dual-spears-announced",
+    label: "Nov 26 update",
+    icon: "🔱",
+    color: "text-amber-200",
+    size: "medium",
+    description:
+      "The dual spear Path [Bellstrike - Bolt] is scheduled for the November 26 update (05:00–10:00 UTC+8): [Trialedge Spear] + [Peakwane Spear].",
   },
   {
     title: "Best Builds",

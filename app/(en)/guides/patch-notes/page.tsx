@@ -4,7 +4,6 @@ import { OfficialMediaFigure } from "@/components/guides/OfficialMediaFigure";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import Link from "next/link";
 import { getContentFreshness } from "@/lib/contentFreshness";
-import { LAST_VERIFIED } from "@/lib/globalAnnouncements";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 import {
   appearanceDeerParture,
@@ -17,8 +16,64 @@ import {
 
 const baseUrl = "https://wherewindsmeet.org";
 const freshness = getContentFreshness("/guides/patch-notes");
+const PAGE_MODIFIED = "2026-11-26";
 
 const latestUpdateCards = [
+  {
+    title: "November 26 Version 2.4 update overview (Official)",
+    date: "Site 2026-11-25 · Steam 2026-11-25 20:59 UTC+8",
+    source: "https://www.wherewindsmeetgame.com/news/official/1126update.html",
+    summary:
+      "Live update on November 26, 2026, from 05:00 to 10:00 (UTC+8), with no forced logout; some features may be briefly unavailable. It adds the board mode [Jianghu Tactics], which needs Qinghe Main Chapter: Another New Wing. The mode is permanent and updated by season, and it has an Encounter Token reward window to January 14, 04:59:59. It also adds the dual spear Path [Bellstrike - Bolt]: [Trialedge Spear] comes from defeating [Ding Yuan] in the Martial Fellowship in Kaifeng, and [Peakwane Spear] from exploring [Fairgrounds - Beast Reverie] in Kaifeng. An Armament Drill trial runs to December 3, 2026, 04:59:59, and Phase 2 of [Taiping Mausoleum - Path Trial] for S5 starts November 26 at 05:00:00.",
+    playerAction:
+      "To try [Bellstrike - Bolt] before you farm it, use the Armament Drill event (to Dec 3, 04:59:59). Where to get the spears: /guides/martial-arts-weapons#dual-spears-announced.",
+  },
+  {
+    title: "November 25 Dev Letter: [Bellstrike - Bolt] (Official)",
+    date: "2026-11-25",
+    source: "https://www.wherewindsmeetgame.com/news/official/1125devletter.html",
+    summary:
+      "The new Path [Bellstrike - Bolt] pairs the Light Spear [Trialedge Spear] (pursuit, the Varied Combo [Rainhush Verdict]) with the Heavy Spear [Peakwane Spear] (parry and counter, the Varied Combo [Windcalm Plunder]). Varied Combos build shared Spear Momentum, and at maximum a Varied Combo triggers the [Lethal] state. The letter says the Path \"officially makes its debut\" on November 26.",
+    playerAction: "Mechanics from the Dev Letter only. No damage numbers are published.",
+  },
+  {
+    title: "DLSS 5 support (Official)",
+    date: "Site 2026-11-23",
+    source: "https://www.wherewindsmeetgame.com/news/official/1123DLSS5.html",
+    summary:
+      "NVIDIA DLSS 5 support for GeForce RTX 50 Series GPUs on PC, and it can be toggled on or off. The DLSS post gives November 23. The November 26 overview says DLSS 5 \"launched globally on November 24 at 10:00 (UTC+8)\". Both dates are kept as each post prints them.",
+    playerAction: "Update your NVIDIA driver from NVIDIA's official site, then enable DLSS in the graphics settings. No FPS figures are published.",
+  },
+  {
+    title: "November 22 Version 2.4 update overview (Official)",
+    date: "2026-11-18",
+    source: "https://www.wherewindsmeetgame.com/news/official/1122update.html",
+    summary:
+      "New weapon appearances from November 22, 2026 00:00:00. The umbrella [Duskgem: Cosmic Canopy] and the fan [Duskgem: Swaying Moon] are in Draw - Echo Shop until January 20, 2027 04:59:59, at [Sound Jade] ×2 (normally ×3). The gauntlets [Hawk and Hound] cost 60 [Echo Bead] in the Shop.",
+    playerAction: "Check the end date before you spend Sound Jade.",
+  },
+  {
+    title: "November 13 Version 2.4 [Across Autumn Waters] + Path Balance (Official)",
+    date: "Site 2026-11-12 · Steam 2026-11-12 22:43 / 22:46 UTC+8",
+    source: "https://www.wherewindsmeetgame.com/news/official/AcrossAutumnWaters.html",
+    summary:
+      "Version 2.4 opened with a non-downtime update on November 13, 18:00:00–22:59:59 (UTC+8). Following it, the Hutuo region opened. Unlock: Lv. 32 → [New Arrival in Kaifeng] → [Hutuo Memories]. The same day's Path Balance post adds [Modulated Gear Recovery] (fully tuned Legendary gear used as Modulating material can be recovered within 7 days) and [Free Unlocked Set Switching].",
+    playerAction: "Hutuo unlock steps and the Campaign [Hutuo River]: /guides/hutuo. Anniversary rewards: /guides/anniversary.",
+  },
+  {
+    title: "Version 2.4 New Appearances Overview - November 26 (Official)",
+    date: "2026-11-24",
+    source: "https://www.wherewindsmeetgame.com/news/official/1126appearance.html",
+    summary: "Title only. See the official post for items and end dates.",
+    playerAction: "Open the official post before spending.",
+  },
+  {
+    title: "Version 2.4 New Appearances Overview - November 13&22 (Official)",
+    date: "2026-11-19",
+    source: "https://www.wherewindsmeetgame.com/news/official/1113appearance.html",
+    summary: "Title only. See the official post for items and end dates.",
+    playerAction: "Open the official post before spending.",
+  },
   {
     title: "October 28 Dev Letter — Penglai opens with three experiences (Official)",
     date: "2026-10-28",
@@ -87,7 +142,7 @@ const latestUpdateCards = [
     date: "2026-10-15",
     source: "/news#october-15-version-2-3-update-overview",
     summary:
-      "Current official update. Live update on October 15 from 5:00 to 12:00 (UTC+8): new region Qingzhou - Eastern Peak, the Waist Drum weapon and Silkbind - Wings path, the Inkbound Order sect, three world bosses, War of Words Gift of Gab, Tier 100 gear, and season S5: Ever Aflame.",
+      "Previous official update. Live update on October 15 from 5:00 to 12:00 (UTC+8): new region Qingzhou - Eastern Peak, the Waist Drum weapon and Silkbind - Wings path, the Inkbound Order sect, three world bosses, War of Words Gift of Gab, Tier 100 gear, and season S5: Ever Aflame.",
     playerAction:
       "Reach Lv. 32 and finish the Qinghe Main Chapter Heaven Has No Pier to start Away to Qingzhou, then use the Version 2.3 section below for weapons, gear and season dates.",
   },
@@ -303,19 +358,19 @@ const upcomingNerfWatch = [
 ];
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Patch Notes — Oct 29 Penglai & Fixes",
+  title: "What's in the latest Where Winds Meet patch? Version 2.4 notes (Nov 26)",
   description:
-    "Where Winds Meet official October 28 Dev Letter (Penglai + Mount Tai Blizzard + Cast in Currents + Spirit of the Grove) and October 29 patch notes: Guild War apology/DST, Battle Pass Scarlet Whispers end-time, Zhao Laoliu’s General Store.",
+    "Where Winds Meet Version 2.4 [Across Autumn Waters] patch notes from the official posts: Hutuo and the November 13 update, Path Balance changes, the November 22 appearances, DLSS 5, and the November 26 update with Jianghu Tactics and the dual spear Path [Bellstrike - Bolt].",
   alternates: buildHreflangAlternates("/guides/patch-notes"),
   openGraph: {
-    title: "Where Winds Meet Patch Notes — Oct 29 Penglai & Fixes",
+    title: "What's in the latest Where Winds Meet patch? Version 2.4 notes (Nov 26)",
     description:
-      "October 28 Dev Letter (Penglai batch) and October 29 Guild War, Battle Pass, and Zhao Laoliu fixes.",
+      "Version 2.4 [Across Autumn Waters] patch notes: Nov 13 Hutuo, Path Balance, Nov 22, DLSS 5 and the Nov 26 update.",
     url: `${baseUrl}/guides/patch-notes`,
   },
   twitter: {
-    title: "Where Winds Meet Patch Notes — Oct 29 Penglai & Fixes",
-    description: "October 28 Dev Letter and October 29 Version 2.3 fixes, then the October 25 appearance pack.",
+    title: "What's in the latest Where Winds Meet patch? Version 2.4 notes (Nov 26)",
+    description: "Version 2.4 [Across Autumn Waters] patch notes: Nov 13 Hutuo, Path Balance, Nov 22, DLSS 5 and the Nov 26 update.",
   },
 };
 
@@ -329,7 +384,7 @@ export default function PatchNotesPage() {
       name: metadata.title,
       description: metadata.description,
       url: `${baseUrl}/guides/patch-notes`,
-      dateModified: LAST_VERIFIED,
+      dateModified: PAGE_MODIFIED,
     },
     {
       "@context": "https://schema.org",
@@ -377,15 +432,10 @@ export default function PatchNotesPage() {
 
         <div className="relative">
           <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">
-            Where Winds Meet patch notes: Version 2.3 is live, Hutuo is announced for November 13.
+            Where Winds Meet patch notes: what changed in Version 2.4?
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Where Winds Meet patch notes, verified <time dateTime="2026-11-06">2026-11-06 Asia/Shanghai</time> as an announcement check.
-            The live content baseline remains <strong>Version 2.3 Friends From Afar</strong> with the <strong>October 29 Penglai</strong> batch already shipped.
-            The next announced major update is anniversary <strong>Hutuo</strong> on <strong>November 13</strong> (<Link href="/guides/hutuo" className="text-emerald-300 underline underline-offset-4">/guides/hutuo</Link>). The cited posts do not give that update a version number.
-            <strong> Dual Spears</strong> are late November (<Link href="/guides/martial-arts-weapons#dual-spears-announced" className="text-emerald-300 underline underline-offset-4">martial arts</Link>).
-            <strong> DLSS 5</strong> is announced for November 23 (date only; PC/NVIDIA; not a lab benchmark).
-            Older Version 2.2 / 2.1 sections stay as history. Registry baseline on this page: {freshness?.gameVersion ?? "Version 2.3 / October 29 Penglai"}.
+            The current version is <strong>Version 2.4 [Across Autumn Waters]</strong>. It started with the November 13 update, which opened Hutuo (<Link href="/guides/hutuo" className="text-emerald-300 underline underline-offset-4">/guides/hutuo</Link>). The latest official overview covers the <strong>November 26</strong> live update, <strong>05:00–10:00 (UTC+8)</strong>. That update adds the board mode [Jianghu Tactics] and the dual spear Path <strong>[Bellstrike - Bolt]</strong> (<Link href="/guides/martial-arts-weapons#dual-spears-announced" className="text-emerald-300 underline underline-offset-4">martial arts</Link>). NVIDIA DLSS 5 support is out on PC (details in the DLSS card below). Patch notes checked <time dateTime="2026-11-26">2026-11-26 Asia/Shanghai</time> against official posts only, not an in-game test. Version 2.3 and older sections stay below as history. Registry baseline on this page: {freshness?.gameVersion ?? "Version 2.4 [Across Autumn Waters]"}.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             We flag roadmap checkpoints, official news beats, and practical player impact so you know what to re-check: codes, quest bugs, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, boss guides, builds, and tier-list assumptions.
@@ -423,16 +473,16 @@ export default function PatchNotesPage() {
         className="space-y-4 rounded-3xl border border-amber-400/30 bg-slate-950/80 p-6 shadow-lg shadow-amber-950/20"
       >
         <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">
-          Upcoming watch · Announced, not the live October 29 baseline
+          Version 2.4 · what shipped after October 29
         </p>
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-          What is announced after the October 29 patch notes?
+          What shipped after the October 29 patch notes?
         </h2>
         <p className="text-sm leading-6 text-slate-300">
-          Hutuo and the anniversary rewards are scheduled for November 13 (UTC date only) and are not live.
-          Dual Spears are late November, not November 13. The login choose-1 outfit is separate from in-game
+          Hutuo and Version 2.4 arrived with the November 13 update. The November 26 update (05:00–10:00 UTC+8) is the latest official overview. Its card is at the top of this page.
+          The login choose-1 outfit is separate from in-game
           Lingering Melody ×42 and Resonating Melody ×27. Those reward rows stay on the anniversary page.
-          The October 29 text fixes below remain the live baseline.
+          The October 29 text fixes below stay as Version 2.3 history.
         </p>
         <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-slate-300">
           <li>
@@ -444,7 +494,7 @@ export default function PatchNotesPage() {
           </li>
           <li>[Frostbound Edge], new Battle Pass outfit: Nov 13, 23:00 – Dec 10, 04:59:59 (UTC+8). Not the free login outfit grant.</li>
           <li>[Willow Breeze], Battle Pass appearance return: Nov 13, 23:00 – Jan 29, 2027, 04:59:59 (UTC+8). Not the free login outfit grant.</li>
-          <li>November 23: official account states NVIDIA DLSS 5 support, with texture and lighting improvements after NVIDIA optimization rounds. PC/NVIDIA date only. No timezone, minute, FPS percentage, or GPU floor is in that post.</li>
+          <li>NVIDIA DLSS 5 support is out on PC. The DLSS post gives November 23. The November 26 overview says DLSS 5 launched globally on November 24 at 10:00 (UTC+8). Both dates are kept as each post prints them. No FPS percentage or driver number is published here.</li>
           <li>November 1, 0:00 (UTC+8): draw set [Wraithflame], limited until February 1, 2027, 04:59:59 (UTC+8); set [Frost&apos;s Glow]; Heng Blade Myriad Sounds: Wrought Obsidian; Mo Blade Myriad Sounds: Azure Dragon.</li>
           <li>November 8, 0:00 (UTC+8): set [Lotus Crane]; Golden Body mystic skill VFX [Mindful Joy].</li>
           <li>
@@ -461,7 +511,7 @@ export default function PatchNotesPage() {
           <li><a className="text-emerald-300 underline underline-offset-4" href="https://www.wherewindsmeetgame.com/news/official/1029appearance.html" target="_blank" rel="noreferrer">November 1 and November 8 appearances</a></li>
           <li><a className="text-emerald-300 underline underline-offset-4" href="https://www.wherewindsmeetgame.com/news/official/1029patchnotes.html" target="_blank" rel="noreferrer">October 29 text patch notes</a></li>
           <li><a className="text-emerald-300 underline underline-offset-4" href="https://store.steampowered.com/news/app/3564740/view/1847920302233930" target="_blank" rel="noreferrer">Steam twin of the October 29 notes</a></li>
-          <li><a className="text-emerald-300 underline underline-offset-4" href="https://blog.playstation.com/2026/10/27/where-winds-meets-climactic-hutuo-battlefield-narrative-arc-revealed-out-nov-13/" target="_blank" rel="noreferrer">PlayStation Blog: Dual Spears late November</a></li>
+          <li><a className="text-emerald-300 underline underline-offset-4" href="https://blog.playstation.com/2026/10/27/where-winds-meets-climactic-hutuo-battlefield-narrative-arc-revealed-out-nov-13/" target="_blank" rel="noreferrer">PlayStation Blog: Hutuo narrative arc</a></li>
         </ul>
       </section>
 

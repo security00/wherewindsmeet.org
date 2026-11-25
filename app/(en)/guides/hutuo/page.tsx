@@ -10,13 +10,13 @@ const baseUrl = "https://wherewindsmeet.org";
 const guidePath = "/guides/hutuo";
 const pageUrl = `${baseUrl}${guidePath}`;
 
-const LAST_VERIFIED = "2026-11-13";
-const LAST_VERIFIED_LABEL = "2026-11-13 (Asia/Shanghai)";
-const PAGE_MODIFIED = "2026-11-13";
+const LAST_VERIFIED = "2026-11-26";
+const LAST_VERIFIED_LABEL = "2026-11-26 (Asia/Shanghai)";
+const PAGE_MODIFIED = "2026-11-26";
 
-const metaTitle = "What is the official Hutuo go-live window in Where Winds Meet? After the Nov 13 18:00–23:00 (UTC+8) update";
+const metaTitle = "How do I unlock Hutuo in Where Winds Meet? (Version 2.4, live since Nov 13)";
 const metaDescription =
-  "Official copy said Hutuo (Version 2.4) goes live following a non-downtime update on Nov 13 (18:00:00–22:59:59 UTC+8 per the official overview). This page’s last verification is 2026-11-13; it has not published a later in-game check. World Boss first-clear rewards, the Kindle the Void 6,000 exploration requirement, and Campaign [Hutuo River] rewards are summarized here.";
+  "Hutuo is live in Where Winds Meet Version 2.4 [Across Autumn Waters], opened after the November 13 update. To enter, reach Lv. 32, finish [New Arrival in Kaifeng], then complete [Hutuo Memories]. The World Bosses, the Campaign [Hutuo River] and the exploration rewards are covered below, with official sources.";
 
 const SOURCE_URLS = [
   "https://x.com/WhereWindsMeet_/status/2117934891497029783",
@@ -36,6 +36,9 @@ const SOURCE_URLS = [
   "https://x.com/WhereWindsMeet_/status/2120894399613677895",
   "https://www.wherewindsmeetgame.com/news/official/1113PathBalance.html",
   "https://x.com/WhereWindsMeet_/status/2120862819897970969",
+  "https://www.wherewindsmeetgame.com/news/official/1122update.html",
+  "https://www.wherewindsmeetgame.com/news/official/1125devletter.html",
+  "https://www.wherewindsmeetgame.com/news/official/1126update.html",
 ] as const;
 
 const sources: { href: string; text: string }[] = [
@@ -107,6 +110,18 @@ const sources: { href: string; text: string }[] = [
     href: SOURCE_URLS[16],
     text: "Official X: creator livestreams starting November 13, “fight alongside Jiang Yan at Zhongdu Bridge” (livestream rally; no clock, gate, or reward; not a Boss announcement). Posted 2026-11-12 20:54:34 Asia/Shanghai.",
   },
+  {
+    href: SOURCE_URLS[17],
+    text: "Official site: [Across Autumn Waters] Version 2.4 Update Overview - November 22 (news index date 11.18).",
+  },
+  {
+    href: SOURCE_URLS[18],
+    text: "Official site: Dev Letter | New Path [Bellstrike - Bolt] Arrives Nov 26 (11.25).",
+  },
+  {
+    href: SOURCE_URLS[19],
+    text: "Official site: [Across Autumn Waters] Version 2.4 Update Overview - November 26 (11.25); Steam gid 1850460852981100 (2026-11-25 20:59 UTC+8).",
+  },
 ];
 
 function Cite({ n }: { n: number | readonly number[] }) {
@@ -130,18 +145,18 @@ function Cite({ n }: { n: number | readonly number[] }) {
 
 const faqs: { q: string; a: string; ld?: string }[] = [
   {
-    q: "What is the official Hutuo go-live window?",
-    a: "Official copy said Hutuo will officially go live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8). The Version 2.4 overview gives that live update as 18:00:00 to 22:59:59 (UTC+8). That span is the update window: 18:00 is not go-live, and 23:00 / 22:59:59 is the end of the window, not its start. The launch graphic gives a single moment of 11PM UTC+8 on November 13 (15:00 UTC); 12AM KST, 12AM JST, 2AM AEDT, and 4AM NZDT fall on November 14, and CST on the graphic is US Central Time, not Beijing time. This page’s last verification is 2026-11-13 (Asia/Shanghai). It has not published a later in-game check and does not claim that Hutuo is live.",
-    ld: "Official copy said Hutuo will officially go live following a non-downtime update on November 13, from 18:00 to 23:00 (UTC+8). The Version 2.4 overview gives that live update as 18:00:00 to 22:59:59 (UTC+8). That span is the update window: 18:00 is not go-live, and 23:00 / 22:59:59 is the end of the window, not its start. The launch graphic gives a single moment of 11PM UTC+8 on November 13 (15:00 UTC); 12AM KST, 12AM JST, 2AM AEDT, and 4AM NZDT fall on November 14, and CST on the graphic is US Central Time, not Beijing time. This page’s last verification is 2026-11-13 (Asia/Shanghai). It has not published a later in-game check and does not claim that Hutuo is live.",
+    q: "Is Hutuo live in Where Winds Meet?",
+    a: "Yes. Hutuo opened after the November 13 update as part of Version 2.4 [Across Autumn Waters]. The overview gives that update as 18:00:00–22:59:59 (UTC+8). Later official 2.4 overviews dated November 22 and November 26 continue the version.[13][18][20] This page checks official posts. It does not report its own in-game test.",
+    ld: "Yes. Hutuo opened after the November 13 update as part of Version 2.4 [Across Autumn Waters]. The overview gives that update as 18:00:00–22:59:59 (UTC+8). Later official 2.4 overviews dated November 22 and November 26 continue the version. This page checks official posts. It does not report its own in-game test.",
   },
   {
-    q: "Has this page confirmed that Hutuo is live?",
-    a: "No. The last verification on this page is 2026-11-13 (about 10:10 Asia/Shanghai), which was before the 18:00:00 (UTC+8) start of the official update window. This page has not published a later in-game check and does not claim that Hutuo is live.",
-    ld: "No. The last verification on this page is 2026-11-13 (about 10:10 Asia/Shanghai), which was before the 18:00:00 (UTC+8) start of the official update window. This page has not published a later in-game check and does not claim that Hutuo is live.",
+    q: "How do I unlock Hutuo?",
+    a: "Reach Lv. 32, complete the Kaifeng Main Chapter [New Arrival in Kaifeng], then complete the quest [Hutuo Memories]. Completing it grants access to the Hutuo region.[13]",
+    ld: "Reach Lv. 32, complete the Kaifeng Main Chapter [New Arrival in Kaifeng], then complete the quest [Hutuo Memories]. Completing it grants access to the Hutuo region.",
   },
   {
     q: "Does Hutuo open at 18:00 (UTC+8) on November 13?",
-    a: "No. 18:00–23:00 (UTC+8) is a non-downtime update window. Official copy says Hutuo goes live following that update.[11]",
+    a: "No. 18:00–23:00 (UTC+8) was the non-downtime update window. Official copy said Hutuo would open following that update.[11]",
   },
   {
     q: "Does the update start at 23:00 (UTC+8)?",
@@ -159,7 +174,7 @@ const faqs: { q: string; a: string; ld?: string }[] = [
     ld: "The overview says: \"At 00:00:00, wanderers who have not relogged will be forcibly disconnected.\" It does not say which calendar day that is, so this page does not assign one. It recommends relogging in advance.",
   },
   {
-    q: "How do I unlock Hutuo?",
+    q: "What does the Enduring Flame event add to the unlock?",
     a: "During the Enduring Flame event, reach Lv. 32 and complete the Kaifeng Main Chapter [New Arrival in Kaifeng]. That unlocks the prerequisite quest [Hutuo Memories]; completing it grants access to the Hutuo region.[13]",
     ld: "During the Enduring Flame event, reach Lv. 32 and complete the Kaifeng Main Chapter [New Arrival in Kaifeng]. That unlocks the prerequisite quest [Hutuo Memories]; completing it grants access to the Hutuo region.",
   },
@@ -188,12 +203,12 @@ const faqs: { q: string; a: string; ld?: string }[] = [
   },
   {
     q: "Are Horse Racing Chess and Jianghu Tactics full board-game guides here?",
-    a: "No. Only the announced names tied to the anniversary update are confirmed here.[3]",
+    a: "Not here. [Jianghu Tactics] arrives with the November 26 update, according to the official overview. This page only names it.[20]",
   },
   {
     q: "Are Wayfarer Bingshen and Yelu Abuli already live? Do they start on November 13?",
-    a: "Not as of this page’s check on 2026-11-13, before the update window. The Version 2.4 overview lists both World Bosses with the requirement “Unlock the Hutuo region in Hidden Mountain,” but it does not give either one its own start clock, and the earlier teaser only said they “arrive soon!”[13][9]",
-    ld: "Not as of this page's check on 2026-11-13, before the update window. The Version 2.4 overview lists both World Bosses with the requirement \"Unlock the Hutuo region in Hidden Mountain,\" but it does not give either one its own start clock, and the earlier teaser only said they \"arrive soon!\"",
+    a: "The Version 2.4 overview lists both World Bosses with the requirement “Unlock the Hutuo region in Hidden Mountain.” It does not give either one its own start clock. This page has not tested them in game.[13]",
+    ld: "The Version 2.4 overview lists both World Bosses with the requirement \"Unlock the Hutuo region in Hidden Mountain.\" It does not give either one its own start clock. This page has not tested them in game.",
   },
   {
     q: "What are the Hutuo World Boss first-clear rewards?",
@@ -324,15 +339,14 @@ export default function HutuoGuidePage() {
 
       <section className="rounded-3xl border border-amber-500/30 bg-slate-950/85 p-6 shadow-2xl sm:p-8">
         <p className="text-xs font-semibold uppercase tracking-[0.25em] text-amber-200">
-          Guides · Global server
+          Guides · Global server · Version 2.4, live
         </p>
         <h1 className="mt-3 text-balance text-3xl font-bold tracking-tight text-slate-50 sm:text-4xl">
-          What is the official Hutuo go-live window in Where Winds Meet?
+          How do I unlock Hutuo in Where Winds Meet?
         </h1>
         <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">
-          Hutuo opens as Where Winds Meet’s first global anniversary major update—<strong>Version 2.4</strong>—the
-          third region of Hidden Mountain, a war-themed narrative arc, and a new Campaign, <strong>[Hutuo River]</strong>,
-          framed around a battlefield frontier.
+          Hutuo is live. It opened after the November 13 update as part of <strong>Version 2.4 [Across Autumn Waters]</strong>. To get in, reach <strong>Lv. 32</strong>, finish the Kaifeng Main Chapter <strong>[New Arrival in Kaifeng]</strong>, then complete <strong>[Hutuo Memories]</strong>.
+          <Cite n={13} /> Hutuo is the third region of Hidden Mountain. It comes with a war-themed story arc and a new Campaign, <strong>[Hutuo River]</strong>.
           <Cite n={[7, 8]} />
         </p>
         <p className="mt-3 max-w-3xl text-base leading-7 text-slate-300">
@@ -379,39 +393,33 @@ export default function HutuoGuidePage() {
         <h2 className="text-2xl font-bold text-slate-50">Direct answer</h2>
         <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-slate-300">
           <li>
-            <strong>What:</strong> Hutuo is announced as <strong>Version 2.4</strong>: the third region of Hidden Mountain,
-            a sprawling new region and climactic battlefield narrative arc, including a new Campaign, <strong>[Hutuo River]</strong>,
-            tied to the first global anniversary update.
+            <strong>Status:</strong> Hutuo is live on the Global server. The official Version 2.4 overview says that following the November 13 version update, “the Hutuo region … will be revealed to all wanderers once more.” Later 2.4 overviews (November 22 and November 26) treat 2.4 as the current version.
+            <Cite n={[13, 18, 20]} /> This page&apos;s check uses official posts only. It is not an in-game test.
+          </li>
+          <li>
+            <strong>What:</strong> Hutuo is <strong>Version 2.4</strong>: the third region of Hidden Mountain, a battlefield story arc, and the Campaign <strong>[Hutuo River]</strong>. These are tied to the first global anniversary update.
             <Cite n={[7, 8, 1, 3]} />
           </li>
           <li>
-            <strong>When:</strong> Hutuo officially goes live <strong>following</strong> a non-downtime update on November 13,
-            from <strong>18:00 to 23:00 (UTC+8)</strong>.
-            <Cite n={11} /> The later Version 2.4 overview gives the same live update to the second: <strong>18:00:00 to 22:59:59 (UTC+8)</strong>,
-            and says it “may end early or be extended depending on server conditions.”
-            <Cite n={[13, 14, 15]} /> That span is the update window. 18:00 is not the go-live time, and 23:00 / 22:59:59 is the <strong>end</strong> of
-            the window, not its start. The launch graphic on source [11] gives a single moment of <strong>11PM UTC+8 on November 13</strong> (15:00 UTC).
-            <Cite n={11} /> Earlier date-only labels—<strong>November 13</strong> in the Dev Letter, <strong>November 13 (UTC)</strong> on the rewards
-            post and on a later scenery post—are kept and marked as superseded.
-            <Cite n={[7, 2, 12]} />
-          </li>
-          <li><strong>Status on 2026-11-13 (checked about 10:10 Asia/Shanghai, before the update window):</strong> global preview / pre-launch. Not treated as already live.</li>
-          <li>
-            <strong>Dual Spears:</strong> an announced martial art that “officially arrives on <strong>November 26 (UTC)</strong>.”
-            That post does not give a clock time, and the date is <strong>not</strong> a November 13 same-day unlock. Do not
-            rewrite it as Beijing midnight.
-            <Cite n={10} />
+            <strong>When it opened:</strong> after the non-downtime update on November 13. The overview gives that update as <strong>18:00:00 to 22:59:59 (UTC+8)</strong>.
+            <Cite n={13} /> The earlier “November 13” and “November 13 (UTC)” date-only labels are kept below as history. 23:00 / 22:59:59 is the <strong>end</strong> of the window, not its start.
           </li>
           <li>
-            <strong>Version label:</strong> Official <strong>Version 2.4</strong> Dev Letter on the Global site (page date <strong>2026-11-09</strong>,
-            date only, no time zone or clock time) and the matching official X Article (posted 2026-11-09 22:42:35 Asia/Shanghai).
-            <Cite n={[7, 8]} />
+            <strong>How to unlock:</strong> reach Lv. 32 → complete [New Arrival in Kaifeng] → complete [Hutuo Memories]. See <Link href="#how-to-unlock-hutuo" className="text-emerald-300 underline underline-offset-4">How to unlock Hutuo</Link>.
+            <Cite n={13} />
+          </li>
+          <li>
+            <strong>Next:</strong> The dual spear Path, <strong>[Bellstrike - Bolt]</strong>, is scheduled for the <strong>November 26</strong> update, from <strong>05:00 to 10:00 (UTC+8)</strong>. It pairs [Trialedge Spear] with [Peakwane Spear].
+            <Cite n={[20, 19]} />
           </li>
         </ul>
       </section>
 
       <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-8">
-        <h2 className="text-2xl font-bold text-slate-50">When Hutuo goes live on November 13</h2>
+        <h2 className="text-2xl font-bold text-slate-50">When did Hutuo open?</h2>
+        <p className="text-sm leading-6 text-slate-300">
+          Hutuo opened after the November 13 non-downtime update (18:00:00–22:59:59 UTC+8 in the Version 2.4 overview). Before launch, the official X post below described the same update. It is kept as the pre-launch wording.
+        </p>
         <p className="text-sm leading-6 text-slate-300">
           The governing official wording, from an official X post published 2026-11-11 23:00:01 Asia/Shanghai (2026-11-11T15:00:01Z), is:
         </p>
@@ -494,7 +502,7 @@ export default function HutuoGuidePage() {
       </section>
 
       <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-8">
-        <h2 className="text-2xl font-bold text-slate-50">What the announcements confirmed</h2>
+        <h2 className="text-2xl font-bold text-slate-50">What did the official Version 2.4 posts confirm?</h2>
         <p className="text-sm leading-6 text-slate-300">
           The PlayStation Blog piece by publishing lead Eric Zheng is dated October 27, 2026. That stamp is a page
           date only, with no time zone.
@@ -529,9 +537,9 @@ export default function HutuoGuidePage() {
       </section>
 
       <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-8">
-        <h2 className="text-2xl font-bold text-slate-50">How to unlock Hutuo</h2>
+        <h2 id="how-to-unlock-hutuo" className="text-2xl font-bold text-slate-50">How to unlock Hutuo</h2>
         <p className="text-sm leading-6 text-slate-300">
-          The Version 2.4 overview ties Hutuo access to the anniversary event <strong>Enduring Flame</strong> (After the version update on November 13, 2026 to December 10, 2026, 04:59:59 — no time zone is stated for that end time):
+          Hutuo access runs through the anniversary event <strong>Enduring Flame</strong>, which lasts from the November 13 update to December 10, 2026, 04:59:59 (no time zone is stated for that end time).
           <Cite n={13} />
         </p>
         <ol className="list-decimal space-y-2 pl-5 text-sm leading-6 text-slate-300">
@@ -730,11 +738,11 @@ export default function HutuoGuidePage() {
         <h2 className="text-2xl font-bold text-slate-50">November 13 versus Dual Spears on November 26 (UTC)</h2>
         <p className="text-sm leading-6 text-slate-300">
           Official X sometimes mentions Campaign Hutuo and Dual Spears in one “arriving soon” sentence.
-          <Cite n={1} /> For calendar planning, this hub now follows the later official post: “Dual Spears officially
+          <Cite n={1} /> For calendar planning, the dual spear Path [Bellstrike - Bolt] is scheduled for the November 26 update, 05:00–10:00 (UTC+8).
+          <Cite n={20} /> The earlier official post said “Dual Spears officially
           arrives on <strong>November 26 (UTC)</strong>.” That post does not give a clock time, and this page does not
-          rewrite it as Beijing midnight. <strong>November 26 (UTC) is not November 13.</strong>
-          <Cite n={10} /> The earlier PlayStation Blog wording was “late November”; the November 26 (UTC) date is the
-          more specific official calendar label, not a same-day merge with Hutuo’s opening.
+          rewrite it as Beijing midnight. <strong>November 26 (UTC) is not November 13</strong>, and it is not a November 13 same-day unlock.
+          <Cite n={10} /> The earlier PlayStation Blog wording was “late November”; the November 26 overview window supersedes that label.
           <Cite n={[3, 10]} />
         </p>
         <div className="overflow-x-auto">
@@ -757,7 +765,7 @@ export default function HutuoGuidePage() {
                 </td>
                 <td className="px-3 py-3 leading-6 text-slate-300">
                   18:00 is not go-live; 23:00 / 22:59:59 is the end of the window. Earlier date-only labels (Dev Letter November 13; rewards post and scenery post November 13 (UTC)) are kept and marked as superseded.
-                  <Cite n={[7, 2, 12]} /> Pre-launch as of 2026-11-13 (checked before the window).
+                  <Cite n={[7, 2, 12]} /> Hutuo opened after this update. This page checks official posts, not an in-game test.
                   <Cite n={[13, 11]} />
                 </td>
               </tr>
@@ -773,11 +781,9 @@ export default function HutuoGuidePage() {
                 <td className="px-3 py-3 font-semibold text-slate-50">Dual Spears martial art</td>
                 <td className="px-3 py-3 leading-6"><strong>November 26 (UTC)</strong>; no clock time</td>
                 <td className="px-3 py-3 leading-6 text-slate-300">
-                  <strong>Not November 13.</strong> Do not rewrite as Beijing midnight. Light Spears (offense) and Heavy
-                  Spears (stance-break), with Spear Stance loops; choreography credited to Yuen Woo-ping, per the
-                  PlayStation Blog.
-                  <Cite n={3} /> The November 26 (UTC) post also names the Martial Art Path <strong>[Bellstrike - Bolt]</strong>;
-                  it does not mention Spear Stance, and this page does not treat the older Spear Stance note as withdrawn.
+                  <strong>Not November 13.</strong> The earlier “November 26 (UTC)” label is superseded by the November 26 update window, 05:00–10:00 (UTC+8). The dual spear Path is <strong>[Bellstrike - Bolt]</strong>, scheduled for that window: [Trialedge Spear] + [Peakwane Spear].
+                  <Cite n={[20, 19]} /> The Dev Letter calls the shared resource Spear Momentum. Choreography credited to Yuen Woo-ping, per the PlayStation Blog.
+                  <Cite n={3} /> The November 26 (UTC) post is kept as the earlier label.
                   <Cite n={10} />
                 </td>
               </tr>

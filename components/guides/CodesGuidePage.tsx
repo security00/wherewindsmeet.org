@@ -196,17 +196,17 @@ const liveCodeFacts = [
     en: {
       label: "Global launch YouTube campaign",
       notes:
-        "Older launch campaign code that some lists still report as active. Try it after newer Palace/Qinchuan/Hexi codes.",
+        "Older launch campaign code that some lists still report as active. Try it after the official Hutuo code 1113HUTUOGO.",
     },
     de: {
       label: "Global-Launch-YouTube-Kampagne",
       notes:
-        "Aelterer Launch-Kampagnen-Code, den manche Listen noch als aktiv melden. Nach neueren Palace/Qinchuan/Hexi-Codes versuchen.",
+        "Aelterer Launch-Kampagnen-Code, den manche Listen noch als aktiv melden. Nach dem offiziellen Hutuo-Code 1113HUTUOGO versuchen.",
     },
     vi: {
       label: "Chiến dịch YouTube ra mắt toàn cầu",
       notes:
-        "Mã chiến dịch ra mắt cũ mà một số danh sách vẫn báo còn hiệu lực. Thử sau các mã Palace/Qinchuan/Hexi mới hơn.",
+        "Mã chiến dịch ra mắt cũ mà một số danh sách vẫn báo còn hiệu lực. Thử sau mã Hutuo chính thức 1113HUTUOGO.",
     },
   },
 ] as const;
@@ -236,7 +236,7 @@ const copy = {
     appearance: "Appearance and customization",
     warningTitle: "Exchange-code warning",
     warningBody:
-      "The official mobile news feed posted an Exchange Code Announcement on May 3, 2026 saying that a leaked batch of 30 codes had been disabled. That means some very large social-media lists may be noisy. Use this page as a practical checklist: try the most recent Qinchuan/Hexi codes first, then treat failed leaked codes as expired instead of retrying them for days.",
+      "The official mobile news feed posted an Exchange Code Announcement on May 3, 2026 saying that a leaked batch of 30 codes had been disabled. That means some very large social-media lists may be noisy. Use this page as a practical checklist: try the official Hutuo code 1113HUTUOGO first, then treat failed leaked codes as expired instead of retrying them for days.",
     howTitle: "How Codes Work · redeem path",
     howBodyBefore: "Practical redeem path for reward codes: ",
     howPath: "Settings → Other → Exchange Code",
@@ -306,8 +306,8 @@ const copy = {
         a: " Those are not redeem codes—use the separate character-creation and cosmetics guides linked above.",
       },
       {
-        q: "Is there a Where Winds Meet Qingzhou code for October 2026?",
-        a: " Not on this checklist. Official Version 2.3 Friends From Afar, Qingzhou, and Penglai-week communications cited for the 2026-10-21 / 2026-10-22 / 2026-10-29 / 2026-11-01 / 2026-11-05 / 2026-11-09 / 2026-11-13 / 2026-11-21 / 2026-11-25 refresh did not ship a new public redeem code. If an official news post or Steam community announcement later publishes one, we will add it as Reported with the source link—and you should still redeem in-game to confirm. Unlock help: /guides/qingzhou; what shipped: /guides/patch-notes.",
+        q: "Is there a new Where Winds Meet code for Version 2.4 (Hutuo)?",
+        a: " Yes, one official code: 1113HUTUOGO, printed on the official 1st Anniversary Hutuo roadmap. Try it first. The roadmap gives no expiry date, so redeem it in game to see whether it still works. The Version 2.4 overviews for November 13, November 22 and November 26 don't print another public redeem code. If an official post publishes one later, we'll add it with the source link. Unlock help: /guides/hutuo; what shipped: /guides/patch-notes. For October 2026 (Version 2.3, Qingzhou), the cited official posts did not ship a public redeem code.",
       },
     ],
     strategyTitle: "Redemption Strategy",
@@ -344,7 +344,7 @@ const copy = {
     appearance: "Appearance und Customization",
     warningTitle: "Exchange-Code-Warnung",
     warningBody:
-      "Der offizielle Mobile-News-Feed veroeffentlichte am 3. Mai 2026 eine Exchange Code Announcement: ein geleakter Batch von 30 Codes wurde deaktiviert. Sehr grosse Social-Media-Listen koennen daher rauschen. Nutze diese Seite als praktische Checkliste: zuerst die neuesten Qinchuan/Hexi-Codes, fehlgeschlagene Leak-Codes als abgelaufen behandeln statt tagelang neu zu versuchen.",
+      "Der offizielle Mobile-News-Feed veroeffentlichte am 3. Mai 2026 eine Exchange Code Announcement: ein geleakter Batch von 30 Codes wurde deaktiviert. Sehr grosse Social-Media-Listen koennen daher rauschen. Nutze diese Seite als praktische Checkliste: zuerst den offiziellen Hutuo-Code 1113HUTUOGO, fehlgeschlagene Leak-Codes als abgelaufen behandeln statt tagelang neu zu versuchen.",
     howTitle: "So funktionieren Codes · Einloesepfad",
     howBodyBefore: "Praktischer Einloesepfad fuer Reward-Codes: ",
     howPath: "Settings → Other → Exchange Code",
@@ -448,7 +448,7 @@ const copy = {
     appearance: "Appearance và tùy chỉnh",
     warningTitle: "Cảnh báo exchange code",
     warningBody:
-      "Feed tin mobile chính thức đăng Exchange Code Announcement ngày 3/5/2026 nói một lô 30 mã bị lộ đã bị vô hiệu hóa. Nghĩa là một số danh sách mạng xã hội rất lớn có thể nhiễu. Dùng trang này như checklist thực dụng: thử mã Qinchuan/Hexi mới nhất trước, rồi coi mã leak thất bại là hết hạn thay vì thử lại nhiều ngày.",
+      "Feed tin mobile chính thức đăng Exchange Code Announcement ngày 3/5/2026 nói một lô 30 mã bị lộ đã bị vô hiệu hóa. Nghĩa là một số danh sách mạng xã hội rất lớn có thể nhiễu. Dùng trang này như checklist thực dụng: thử mã Hutuo chính thức 1113HUTUOGO trước, rồi coi mã leak thất bại là hết hạn thay vì thử lại nhiều ngày.",
     howTitle: "Cách mã hoạt động · đường đổi thưởng",
     howBodyBefore: "Đường đổi thưởng thực dụng cho reward code: ",
     howPath: "Settings → Other → Exchange Code",

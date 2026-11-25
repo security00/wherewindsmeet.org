@@ -1,13 +1,12 @@
 /**
  * Sourced global-server announcements for the November 2026 Hutuo / anniversary batch.
- * Announced is not live. Do not add a version number, Hutuo boss, raid, drop,
- * entrance requirement, or a Dual Spears date of November 13.
+ * Hutuo / Version 2.4 is live since the November 13 update (official 2.4 overview). Do not claim in-game tests; cite official posts. Do not write Bellstrike - Bolt as live before the November 26 update window ends.
  */
 
-export const LAST_VERIFIED = "2026-11-06";
-export const LAST_VERIFIED_LABEL = "2026-11-06 (Asia/Shanghai)";
+export const LAST_VERIFIED = "2026-11-26";
+export const LAST_VERIFIED_LABEL = "2026-11-26 (Asia/Shanghai)";
 export const PAGE_PUBLISHED = "2026-11-06";
-export const PAGE_MODIFIED = "2026-11-06";
+export const PAGE_MODIFIED = "2026-11-26";
 
 export const HUB_OG_IMAGE = {
   url: "https://static.wherewindsmeet.org/background/bg.jpg",

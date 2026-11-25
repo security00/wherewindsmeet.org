@@ -5,7 +5,8 @@ import LiteMp4Embed from "@/components/LiteMp4Embed";
 import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
 import { buildLocalizedPath } from "@/i18n/routing.mjs";
 import { getContentFreshness } from "@/lib/contentFreshness";
-import { LAST_VERIFIED } from "@/lib/globalAnnouncements";
+
+const JIANGNAN_PAGE_MODIFIED = "2026-11-06";
 
 type Locale = "en" | "vi" | "de";
 
@@ -326,7 +327,7 @@ export function JiangnanHangzhouGuidePage({ locale }: { locale: Locale }) {
       "@type": "Article",
       headline: t.title,
       datePublished: "2026-08-23",
-      dateModified: locale === "en" ? LAST_VERIFIED : (freshness?.lastChecked ?? "2026-08-23"),
+      dateModified: locale === "en" ? JIANGNAN_PAGE_MODIFIED : (freshness?.lastChecked ?? "2026-08-23"),
       mainEntityOfPage: pageUrl,
       image: [heroImage],
       author: siteIdentity,

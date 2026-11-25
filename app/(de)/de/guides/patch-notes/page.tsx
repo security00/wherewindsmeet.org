@@ -41,7 +41,7 @@ const latestUpdateCards = [
     date: "2026-10-15",
     source: "https://store.steampowered.com/news/app/3564740/view/1846651706675921",
     summary:
-      "Aktuelle Version. Live-Update am 15. Oktober von 5:00 bis 12:00 Uhr (UTC+8): neue Region Qingzhou – Eastern Peak, Waffe Waist Drum und Pfad Silkbind – Wings, Sekte Inkbound Order, drei Weltbosse, Gift of Gab: War of Words, Tier-100-Ausrüstung und Saison S5: Ever Aflame.",
+      "Live-Update am 15. Oktober von 5:00 bis 12:00 Uhr (UTC+8): neue Region Qingzhou – Eastern Peak, Waffe Waist Drum und Pfad Silkbind – Wings, Sekte Inkbound Order, drei Weltbosse, Gift of Gab: War of Words, Tier-100-Ausrüstung und Saison S5: Ever Aflame.",
     playerAction:
       "Erreiche Lv. 32 und schließe das Qinghe-Hauptkapitel Heaven Has No Pier ab, um Away to Qingzhou zu starten.",
   },
@@ -266,7 +266,7 @@ export default function PatchNotesDePage() {
             Where Winds Meet Patch Notes heute: Version 2.3, Version 2.2 und datierte Update-Historie.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Aktualisiert {freshness?.lastChecked ?? "2026-10-17"}: Überprüfter Stand ist {freshness?.gameVersion ?? "Version 2.3 / 15. Oktober"}. Die aktuelle Update-Spur beginnt mit der offiziellen Übersicht zu Version 2.3 vom 15. Oktober, gefolgt von den Patch Notes und der Übersicht zu Version 2.2 vom 16. September. Version 2.1 (Übersicht 27. August, Stand 2026-08-26, Patch Notes 20. August), Version 2.0, Version 1.8 und Palace-Inhalte bleiben als datierte Historie erhalten.
+            Aktualisiert {freshness?.lastChecked ?? "2026-10-17"}: Aktuelle Version: 2.4 [Across Autumn Waters] (seit dem Update am 13. November). Die englische Seite listet die 2.4-Patchnotes. Überprüfter Stand ist {freshness?.gameVersion ?? "Version 2.3 / 15. Oktober"}. Die Übersicht zu Version 2.3 vom 15. Oktober, die Patch Notes und die Übersicht zu Version 2.2 vom 16. September sowie Version 2.1 (Übersicht 27. August, Stand 2026-08-26, Patch Notes 20. August), Version 2.0, Version 1.8 und Palace-Inhalte bleiben als datierte Historie erhalten.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Diese Seite markiert die Punkte, die du neu prüfen solltest: Codes, Quest-Bugs, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, Boss-Guides, Builds und Tier-List-Annahmen.
@@ -311,7 +311,7 @@ export default function PatchNotesDePage() {
       </section>
 
       <section id="version-2-3" className="space-y-4 rounded-3xl border border-emerald-400/30 bg-emerald-500/10 p-6">
-        <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Aktuelle Version – 15. Oktober 2026</p>
+        <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Version 2.3 – 15. Oktober 2026</p>
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">Version 2.3 [Friends from Afar] – Zusammenfassung</h2>
         <p className="text-sm leading-relaxed text-slate-200">Live-Update am 15. Oktober 2026, 5:00–12:00 Uhr (UTC+8). Alle Details stehen in der <a href="https://store.steampowered.com/news/app/3564740/view/1846651706675921" target="_blank" rel="noreferrer" className="underline underline-offset-4">offiziellen Steam-Ankündigung</a> (Englisch).</p>
         <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-200">

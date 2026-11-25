@@ -16,7 +16,7 @@ const map17173Url = "https://map.17173.com/yysls/maps/qinchuan";
 export const metadata: Metadata = {
   title: "Where Winds Meet Map — Qingzhou, Penglai, Bosses & Collectibles",
   description:
-    "Use the official Where Winds Meet interactive map for Qingzhou and Penglai (open October 29 with Mount Tai Blizzard and sister experiences). Prefer the official layer; third-party pins can lag—verify in-game.",
+    "Use the official Where Winds Meet interactive map for Qingzhou and Penglai (open October 29 with Mount Tai Blizzard and sister experiences). Prefer the official layer; third-party pins can lag—verify in-game. Hutuo opened with Version 2.4 on November 13; this page has not yet checked the official map for a Hutuo layer.",
   alternates: buildHreflangAlternates("/tools/interactive-map"),
   openGraph: {
     title: "Where Winds Meet Map — Qingzhou, Penglai, Bosses & Collectibles",
@@ -127,7 +127,7 @@ const faqs = [
   {
     question: "Does the interactive map include Qingzhou yet?",
     answer:
-      "Yes on the official map tool: a Qingzhou region layer is live after Version 2.3 with Eastern Peak pin categories. Third-party embeds on this page can lag; if Qingzhou pins are missing, open the official map in a new tab and verify in-game.",
+      "Yes on the official map tool: a Qingzhou region layer is live after Version 2.3 with Eastern Peak pin categories. Third-party embeds on this page can lag; if Qingzhou pins are missing, open the official map in a new tab and verify in-game. Version 2.4 added the Hutuo region on November 13. A Hutuo layer on the official map has not been checked here yet.",
   },
   {
     question: "Where do I unlock Qingzhou before map pins matter?",
@@ -229,6 +229,9 @@ export default function InteractiveMapPage() {
             <li>Use a <strong>CN map</strong> alternative only as a second opinion—name strings may not match global English.</li>
             <li>For unlock story and the October 29 experiences, read <Link href="/guides/qingzhou" className="text-emerald-300 hover:text-emerald-200">/guides/qingzhou</Link> and <Link href="/guides/penglai" className="text-emerald-300 hover:text-emerald-200">/guides/penglai</Link> instead of duplicating those guides here.</li>
           </ol>
+          <p className="mt-3 text-sm leading-6 text-slate-300">
+            Current version: 2.4 Across Autumn Waters (Hutuo opened November 13). The layer list below was last counted on 2026-10-22, before Hutuo.
+          </p>
           <p className="mt-3 text-sm leading-6 text-slate-300">
             <strong>Official map confirmation (2026-10-22, still the last counted filter list):</strong> the publisher map tool exposes a Qingzhou region with Boundary Stone, Encounter, Meow Meow, Cat Play, Universal Harmony, Treasure Chest, Oddity, Injustice Quest, Camp, and Antiques filters. <strong>Last checked 2026-10-29:</strong> this hub still does not claim a live marker total for Qingzhou or Penglai.
           </p>

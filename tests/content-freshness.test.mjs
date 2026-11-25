@@ -14,38 +14,38 @@ test("the public news feed starts with the latest verified official notices", ()
     newsItems.slice(0, 6).map(({ id, date, officialUrl }) => ({ id, date, officialUrl })),
     [
       {
-        id: "october-29-version-2-3-patch-notes",
-        date: "2026-10-30",
-        officialUrl: "https://www.wherewindsmeetgame.com/news/official/1029patchnotes.html",
+        id: "november-26-version-2-4-update-overview",
+        date: "2026-11-25",
+        officialUrl: "https://www.wherewindsmeetgame.com/news/official/1126update.html",
       },
       {
-        id: "october-28-dev-letter-dreaming-paths",
-        date: "2026-10-28",
-        officialUrl: "https://www.wherewindsmeetgame.com/news/official/1028devletter.html",
+        id: "november-25-dev-letter-bellstrike-bolt",
+        date: "2026-11-25",
+        officialUrl: "https://www.wherewindsmeetgame.com/news/official/1125devletter.html",
       },
       {
-        id: "october-25-version-2-3-new-appearances",
-        date: "2026-10-25",
-        officialUrl: "https://www.wherewindsmeetgame.com/news/official/1025appearance.html",
+        id: "november-26-version-2-4-new-appearances",
+        date: "2026-11-24",
+        officialUrl: "https://www.wherewindsmeetgame.com/news/official/1126appearance.html",
       },
       {
-        id: "october-25-version-2-3-update-overview",
-        date: "2026-10-25",
-        officialUrl: "https://www.wherewindsmeetgame.com/news/official/1025update.html",
+        id: "november-23-dlss-5",
+        date: "2026-11-23",
+        officialUrl: "https://www.wherewindsmeetgame.com/news/official/1123DLSS5.html",
       },
       {
-        id: "october-16-version-2-3-patch-notes",
-        date: "2026-10-16",
-        officialUrl: "https://www.wherewindsmeetgame.com/news/official/1016patchnotes.html",
+        id: "november-13-22-version-2-4-new-appearances",
+        date: "2026-11-19",
+        officialUrl: "https://www.wherewindsmeetgame.com/news/official/1113appearance.html",
       },
       {
-        id: "october-15-version-2-3-new-appearances",
-        date: "2026-10-15",
-        officialUrl: "https://www.wherewindsmeetgame.com/news/official/1015appearance.html",
+        id: "november-22-version-2-4-update-overview",
+        date: "2026-11-18",
+        officialUrl: "https://www.wherewindsmeetgame.com/news/official/1122update.html",
       },
     ],
   );
-  const october29 = newsItems[0];
+  const october29 = newsItems.find((item) => item.id === "october-29-version-2-3-patch-notes");
   assert.equal(october29?.sourcePublications?.[0]?.date, "2026-10-30");
   assert.equal(october29?.sourcePublications?.[0]?.dateTime, undefined);
   assert.equal(october29?.sourcePublications?.[1]?.dateTime, "2026-10-29T16:38:17+08:00");
@@ -97,22 +97,23 @@ test("core update surfaces record the latest official Version 2.1 review", () =>
   const byPath = new Map(registry.map((entry) => [entry.basePath, entry]));
   const officialUpdateUrl = "https://www.wherewindsmeetgame.com/news/official/CloudedRevelationPatchNotes.html";
 
-  const version23Paths = new Set(["/", "/news", "/guides/patch-notes", "/guides/codes"]);
+  const version24Paths = new Set(["/", "/news", "/guides/patch-notes", "/guides/codes"]);
   for (const path of ["/", "/news", "/guides/patch-notes", "/guides/codes", "/guides/bosses"]) {
     const entry = byPath.get(path);
     assert.ok(entry, `missing freshness entry for ${path}`);
-    if (version23Paths.has(path)) {
-      assert.equal(
-        entry.lastChecked,
-        path === "/guides/codes" ? "2026-11-26" : "2026-10-29",
-        `${path} review date`,
-      );
-      assert.match(entry.gameVersion, path === "/guides/codes" ? /Version 2\.4/ : /Version 2\.3/, `${path} game version`);
-      assert.ok(
-        path === "/guides/codes" ||
-          entry.sourceUrls.includes("https://store.steampowered.com/news/app/3564740/view/1846651706675921"),
-        `${path} should cite the official Version 2.3 overview`,
-      );
+    if (version24Paths.has(path)) {
+      assert.equal(entry.lastChecked, "2026-11-26", `${path} review date`);
+      assert.match(entry.gameVersion, /Version 2\.4/, `${path} game version`);
+      if (path === "/" ) {
+        assert.equal(entry.gameVersion, "Version 2.4 / Across Autumn Waters (Hutuo, November 13)");
+      }
+      if (path === "/news" || path === "/guides/patch-notes") {
+        assert.equal(entry.gameVersion, "Version 2.4 / Across Autumn Waters (November 26 overview)");
+        assert.ok(
+          entry.sourceUrls.includes("https://www.wherewindsmeetgame.com/news/official/1126update.html"),
+          `${path} should cite the November 26 overview`,
+        );
+      }
     } else {
       assert.equal(entry.lastChecked, "2026-09-13", `${path} review date`);
       assert.match(entry.gameVersion, /Version 2\.1/, `${path} game version`);
@@ -199,7 +200,12 @@ test("German and Vietnamese current-state hubs use the shared Version 2.1 baseli
   for (const { path, staleCurrentCopy } of localizedSurfaces) {
     const source = read(path);
     assert.doesNotMatch(source, staleCurrentCopy, `${path} should not label Version 1.7/1.8 as current`);
-    assert.match(source, /Version 2\.1/, `${path} should expose the reviewed Version 2.1 baseline`);
+    if (path === "app/(de)/de/page.tsx" || path === "app/(vn)/vn/page.tsx") {
+      assert.match(source, /Version 2\.4/, `${path} should expose the Version 2.4 homepage`);
+      assert.doesNotMatch(source, /Version 2\.1/, `${path} homepage title is no longer Version 2.1`);
+    } else {
+      assert.match(source, /Version 2\.1/, `${path} should expose the reviewed Version 2.1 baseline`);
+    }
   }
 });
 

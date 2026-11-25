@@ -6,10 +6,12 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-10-29",
-    "gameVersion": "Version 2.3 / October 29 Penglai",
+    "lastChecked": "2026-11-26",
+    "gameVersion": "Version 2.4 / Across Autumn Waters (Hutuo, November 13)",
     "priorityCluster": "main-keyword-recovery",
     "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/news/official/1126update.html",
+      "https://www.wherewindsmeetgame.com/news/official/AcrossAutumnWaters.html",
       "https://www.wherewindsmeetgame.com/news/official/1028devletter.html",
       "https://www.wherewindsmeetgame.com/news/official/1029patchnotes.html",
       "https://store.steampowered.com/news/app/3564740/view/1846651706675921",
@@ -111,10 +113,16 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-10-29",
-    "gameVersion": "Version 2.3 / October 29 Penglai",
+    "lastChecked": "2026-11-26",
+    "gameVersion": "Version 2.4 / Across Autumn Waters (November 26 overview)",
     "priorityCluster": "week-2-region-cluster",
     "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/news/official/1126update.html",
+      "https://www.wherewindsmeetgame.com/news/official/1125devletter.html",
+      "https://www.wherewindsmeetgame.com/news/official/1123DLSS5.html",
+      "https://www.wherewindsmeetgame.com/news/official/1122update.html",
+      "https://www.wherewindsmeetgame.com/news/official/AcrossAutumnWaters.html",
+      "https://store.steampowered.com/news/app/3564740/view/1850460852981100",
       "https://www.wherewindsmeetgame.com/news/official/1028devletter.html",
       "https://www.wherewindsmeetgame.com/news/official/1029patchnotes.html",
       "https://store.steampowered.com/news/app/3564740/view/1846651706675921",
@@ -167,10 +175,16 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-10-29",
-    "gameVersion": "Version 2.3 / October 29 Penglai",
+    "lastChecked": "2026-11-26",
+    "gameVersion": "Version 2.4 / Across Autumn Waters (November 26 overview)",
     "priorityCluster": "week-2-region-cluster",
     "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/news/official/1126update.html",
+      "https://www.wherewindsmeetgame.com/news/official/1125devletter.html",
+      "https://www.wherewindsmeetgame.com/news/official/1123DLSS5.html",
+      "https://www.wherewindsmeetgame.com/news/official/1122update.html",
+      "https://www.wherewindsmeetgame.com/news/official/AcrossAutumnWaters.html",
+      "https://store.steampowered.com/news/app/3564740/view/1850460852981100",
       "https://www.wherewindsmeetgame.com/news/official/1028devletter.html",
       "https://www.wherewindsmeetgame.com/news/official/1029patchnotes.html",
       "https://store.steampowered.com/news/app/3564740/view/1846651706675921",
@@ -737,8 +751,8 @@
       "vi",
       "de"
     ],
-    "lastChecked": "2026-10-22",
-    "gameVersion": "Version 2.3",
+    "lastChecked": "2026-11-26",
+    "gameVersion": "Version 2.4",
     "priorityCluster": "week-2-region-cluster",
     "sourceUrls": [
       "https://www.wherewindsmeetgame.com/news/official/FriendsFromAfar.html"
@@ -747,10 +761,14 @@
   {
     "basePath": "/guides/hutuo",
     "languages": ["en"],
-    "lastChecked": "2026-11-13",
-    "gameVersion": "Global announced Version 2.4 Hutuo / 18:00–23:00 and 18:00:00–22:59:59 (UTC+8), not live as of 2026-11-13",
+    "lastChecked": "2026-11-26",
+    "gameVersion": "Global Version 2.4 Hutuo (live since the November 13 update)",
     "priorityCluster": "announced-global-update",
     "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/news/official/1126update.html",
+      "https://www.wherewindsmeetgame.com/news/official/1125devletter.html",
+      "https://www.wherewindsmeetgame.com/news/official/1122update.html",
+      "https://store.steampowered.com/news/app/3564740/view/1850460852981100",
       "https://x.com/WhereWindsMeet_/status/2117934891497029783",
       "https://x.com/WhereWindsMeet_/status/2117386268698943563",
       "https://blog.playstation.com/2026/10/27/where-winds-meets-climactic-hutuo-battlefield-narrative-arc-revealed-out-nov-13/",
@@ -773,10 +791,12 @@
   {
     "basePath": "/guides/anniversary",
     "languages": ["en"],
-    "lastChecked": "2026-11-13",
-    "gameVersion": "Global announced Version 2.4 anniversary / Windtail Express, shop prices, Willow Breeze both end dates (not live)",
+    "lastChecked": "2026-11-26",
+    "gameVersion": "Global Version 2.4 anniversary (events from the November 13 update)",
     "priorityCluster": "announced-global-update",
     "sourceUrls": [
+      "https://www.wherewindsmeetgame.com/news/official/1126update.html",
+      "https://www.wherewindsmeetgame.com/news/official/1125devletter.html",
       "https://x.com/WhereWindsMeet_/status/2117386268698943563",
       "https://x.com/WhereWindsMeet_/status/2117934891497029783",
       "https://blog.playstation.com/2026/10/27/where-winds-meets-climactic-hutuo-battlefield-narrative-arc-revealed-out-nov-13/",

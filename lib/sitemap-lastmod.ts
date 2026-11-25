@@ -22,11 +22,24 @@ export const ENGLISH_BATCH_REVISED_PATHS = [
 
 const revised = new Set<string>(ENGLISH_BATCH_REVISED_PATHS);
 
-/** Hutuo, anniversary, and the English news pinned module revised 2026-11-13. Other 2026-11-06 routes stay on LAST_VERIFIED. */
-const WINDOW_PAGE_PATHS = new Set<string>(["/guides/hutuo", "/guides/anniversary", "/news"]);
+/** 2026-11-13 window pages moved onto the 2026-11-26 landing list below. */
+const WINDOW_PAGE_PATHS = new Set<string>([]);
 const WINDOW_PAGE_MODIFIED = "2026-11-13";
 
+/**
+ * Bosses and Jiangnan keep the 2026-11-06 stamp. LAST_VERIFIED is now the
+ * 2026-11-26 Hutuo refresh, and those two pages were not re-dated.
+ */
+const NOVEMBER_06_FROZEN = new Set<string>(["/guides/bosses", "/guides/jiangnan-hangzhou"]);
+const NOVEMBER_06 = "2026-11-06";
+
 const NOVEMBER_26_PATHS = new Set([
+  "/",
+  "/news",
+  "/guides",
+  "/guides/patch-notes",
+  "/guides/hutuo",
+  "/guides/martial-arts-weapons",
   "/guides/inn-character-record", "/guides/npc-list", "/guides/mount-tai-blizzard",
   "/guides/free-outfits", "/guides/anniversary", "/guides/cosmetics", "/guides/flicker-of-faces",
   "/guides/codes", "/vn/guides/codes", "/de/guides/codes",
@@ -35,6 +48,7 @@ const NOVEMBER_26_PATHS = new Set([
 /** Calendar day for a sitemap path. Inherited dates stay put unless the path itself was revised. */
 export function sitemapLastModifiedDay(path: string, inheritedDay?: string): string | undefined {
   if (NOVEMBER_26_PATHS.has(path)) return "2026-11-26";
+  if (NOVEMBER_06_FROZEN.has(path)) return NOVEMBER_06;
   if (WINDOW_PAGE_PATHS.has(path)) return WINDOW_PAGE_MODIFIED;
   if (revised.has(path)) return LAST_VERIFIED;
   return inheritedDay;

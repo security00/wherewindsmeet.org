@@ -41,7 +41,7 @@ const latestUpdateCards = [
     date: "2026-10-15",
     source: "https://store.steampowered.com/news/app/3564740/view/1846651706675921",
     summary:
-      "Phiên bản hiện tại. Cập nhật trực tiếp ngày 15/10 từ 5:00 đến 12:00 (UTC+8): vùng mới Qingzhou – Eastern Peak, vũ khí Waist Drum và lưu phái Silkbind – Wings, môn phái Inkbound Order, ba world boss, Gift of Gab: War of Words, trang bị Tier 100 và mùa S5: Ever Aflame.",
+      "Cập nhật trực tiếp ngày 15/10 từ 5:00 đến 12:00 (UTC+8): vùng mới Qingzhou – Eastern Peak, vũ khí Waist Drum và lưu phái Silkbind – Wings, môn phái Inkbound Order, ba world boss, Gift of Gab: War of Words, trang bị Tier 100 và mùa S5: Ever Aflame.",
     playerAction:
       "Đạt Lv. 32 và hoàn thành chương chính Qinghe Heaven Has No Pier để nhận Lost Chapter Away to Qingzhou.",
   },
@@ -257,7 +257,7 @@ export default function PatchNotesViPage() {
             Where Winds Meet patch notes hôm nay: Version 2.3, Version 2.2 và lịch sử cập nhật có ngày.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-200 sm:text-base">
-            Cập nhật {freshness?.lastChecked ?? "2026-10-17"}: mốc đã được kiểm tra là {freshness?.gameVersion ?? "Version 2.3 / 15/10"}. Chuỗi cập nhật hiện tại bắt đầu với tổng quan chính thức Version 2.3 ngày 15/10, tiếp theo là patch notes và tổng quan Version 2.2 ngày 16/09. Version 2.1 (tổng quan 27/08, mốc 2026-08-26, patch notes 20/08), Version 2.0, Version 1.8 và Palace được giữ lại như lịch sử có ngày.
+            Phiên bản hiện tại: 2.4 [Across Autumn Waters] (từ bản cập nhật ngày 13/11). Patch notes 2.4 xem ở trang tiếng Anh. Cập nhật {freshness?.lastChecked ?? "2026-10-17"}: mốc đã được kiểm tra là {freshness?.gameVersion ?? "Version 2.3 / 15/10"}. Tổng quan Version 2.3 ngày 15/10, patch notes và tổng quan Version 2.2 ngày 16/09, cùng Version 2.1 (tổng quan 27/08, mốc 2026-08-26, patch notes 20/08), Version 2.0, Version 1.8 và Palace được giữ lại như lịch sử có ngày.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
             Trang này đánh dấu các điểm cần kiểm tra lại: codes, lỗi quest, Ghost Master, Hero&apos;s Realm, Sword Trial, Sandstorm Tavern, boss guides, builds và tier list.
@@ -302,7 +302,7 @@ export default function PatchNotesViPage() {
       </section>
 
       <section id="version-2-3" className="space-y-4 rounded-3xl border border-emerald-400/30 bg-emerald-500/10 p-6">
-        <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Phiên bản hiện tại – 15/10/2026</p>
+        <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Version 2.3 – 15/10/2026</p>
         <h2 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">Tóm tắt Version 2.3 [Friends from Afar]</h2>
         <p className="text-sm leading-relaxed text-slate-200">Cập nhật trực tiếp ngày 15/10/2026, 5:00–12:00 (UTC+8). Xem toàn bộ chi tiết trong <a href="https://store.steampowered.com/news/app/3564740/view/1846651706675921" target="_blank" rel="noreferrer" className="underline underline-offset-4">thông báo chính thức trên Steam</a> (tiếng Anh).</p>
         <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-200">
