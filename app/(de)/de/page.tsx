@@ -9,14 +9,14 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 const freshness = getContentFreshness("/");
 
 export const metadata: Metadata = {
-  title: "Where Winds Meet Guide-Hub Deutsch - Version 2.1",
+  title: "Where Winds Meet Guide-Hub Deutsch - Version 2.4",
   description:
-    "Deutscher Where Winds Meet Guide-Hub für Version 2.1: Codes, Patch Notes, Tierliste, Builds, Bosse, interaktive Karte und Plattformen.",
+    "Deutscher Where Winds Meet Guide-Hub für Version 2.4 (Hutuo): Codes, Patch Notes, Tierliste, Builds, Bosse, interaktive Karte und Plattformen.",
   alternates: buildHreflangAlternates("/", { canonicalLanguage: "de" }),
   openGraph: {
-    title: "Where Winds Meet Guide-Hub Deutsch - Version 2.1",
+    title: "Where Winds Meet Guide-Hub Deutsch - Version 2.4",
     description:
-      "Deutscher Where Winds Meet Guide-Hub für Version 2.1: Codes, Patch Notes, Tierliste, Builds, Bosse, interaktive Karte und Plattformen.",
+      "Deutscher Where Winds Meet Guide-Hub für Version 2.4 (Hutuo): Codes, Patch Notes, Tierliste, Builds, Bosse, interaktive Karte und Plattformen.",
     url: "https://wherewindsmeet.org/de",
     images: [
       {
@@ -43,7 +43,7 @@ export default function Home() {
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1.4fr)] lg:items-start">
           <div className="space-y-6">
             <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-              Version 2.1 <span className="text-ink-gold">Guide-Hub</span>
+              Version 2.4 <span className="text-ink-gold">Guide-Hub</span>
             </h2>
             <div className="space-y-4 text-slate-300 leading-relaxed">
               <p>
@@ -53,7 +53,7 @@ export default function Home() {
                 zwischen wanderndem Held, Hofintrigen und freier Erkundung.
               </p>
               <p>
-                Dieser Hub wurde für {freshness?.gameVersion ?? "Version 2.1 / August 27"} geprüft. Aktuelle
+                Dieser Hub wurde für {freshness?.gameVersion ?? "Version 2.4 / 13. November"} geprüft. Aktuelle
                 Patch Notes, Builds und Tierlisten stehen neben datierten Palace-, Qinchuan- und Hexi-Catch-up-Guides,
                 damit ältere Inhalte nicht als heutiger Patch-Stand gelesen werden.
               </p>
@@ -109,7 +109,7 @@ export default function Home() {
               href="/de/news#next-update"
               className="rounded-full border border-emerald-500/50 bg-emerald-500/10 px-3 py-1 font-semibold text-emerald-50 hover:border-emerald-300/70"
             >
-                  {freshness?.gameVersion ?? "Version 2.1"} Refresh
+                  {freshness?.gameVersion ?? "Version 2.4"} Refresh
             </Link>
             <Link
               href="/de/news#organic-search-watch"

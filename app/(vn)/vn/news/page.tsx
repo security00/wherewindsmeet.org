@@ -3,13 +3,11 @@ import CdnImage from "@/components/CdnImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import Link from "next/link";
 import type { NewsType } from "@/lib/news";
-import { getContentFreshness } from "@/lib/contentFreshness";
 import { latestNewsDate, newsItems } from "@/lib/news.vi";
 import { OfficialNewsCard } from "@/components/news/OfficialNewsCard";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
-const freshness = getContentFreshness("/news");
 
 export const metadata: Metadata = {
   title: "Tin tức Where Winds Meet, roadmap & patch notes",
@@ -150,16 +148,13 @@ export default function NewsPage() {
             className="rounded-2xl border border-emerald-500/40 bg-emerald-500/10 p-4 text-sm text-emerald-50 shadow-inner shadow-emerald-900/40"
           >
             <div className="flex items-center justify-between gap-2">
-              <p className="font-semibold">HIỆN TẠI: Version 2.3 / Friends from Afar (15/10/2026)</p>
+              <p className="font-semibold">Phiên bản hiện tại: 2.4 [Across Autumn Waters]</p>
               <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
                 {lastUpdatedLabel}
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Đã rà soát theo {freshness?.gameVersion ?? "Version 2.3 / 15/10"}:{' '}
-              <a href="https://store.steampowered.com/news/app/3564740/view/1846651706675921" target="_blank" rel="noopener noreferrer" className="underline">tổng quan chính thức Version 2.3 ngày 15/10</a>
-              {' '}(cập nhật trực tiếp 5:00–12:00 UTC+8) thêm vùng mới Qingzhou – Eastern Peak, vũ khí Waist Drum với lưu phái Silkbind – Wings,
-              môn phái Inkbound Order, ba world boss và mùa S5: Ever Aflame (15/10 đến 26/11).
+              Phiên bản hiện tại: 2.4 [Across Autumn Waters]. Hutuo mở sau bản cập nhật ngày 13/11. Chi tiết và nguồn chính thức xem trang News tiếng Anh.
             </p>
             <p className="mt-2 text-emerald-100/90">
               Phiên bản trước:{' '}
@@ -174,7 +169,9 @@ export default function NewsPage() {
               {' '}cùng các phiên bản cũ hơn vẫn nằm bên dưới dưới dạng nội dung lịch sử có ngày.
             </p>
             <p className="mt-2 text-emerald-100/90">
-              Mới trong Version 2.3:{' '}
+              Lịch sử Version 2.3:{' '}
+              <a href="https://store.steampowered.com/news/app/3564740/view/1846651706675921" target="_blank" rel="noopener noreferrer" className="underline">tổng quan 15/10</a>
+              {', '}
               <a href="https://www.wherewindsmeetgame.com/news/official/FriendsFromAfarPatchNotes.html" target="_blank" rel="noopener noreferrer" className="underline">patch notes 15/10</a>
               {' '}(Transdust Ruins mở cả ngày, phát hiện AFK, Kho đồ từ Lv. 20),{' '}
               <a href="https://www.wherewindsmeetgame.com/news/official/1016patchnotes.html" target="_blank" rel="noopener noreferrer" className="underline">patch notes 16/10</a>
@@ -260,7 +257,7 @@ export default function NewsPage() {
             Phần mô tả cho biết bài gốc dùng tiếng Anh và dẫn thẳng tới nguồn. Nội dung, phạm vi thay đổi và điều kiện sự kiện phải được kiểm tra trên trang chính thức.
           </p>
           <p>
-            Các trang hướng dẫn liên quan chỉ được cập nhật sau khi thông tin có thể đối chiếu với nguồn chính thức; mốc hiện tại của trang tin là Version 2.3 (15/10), phiên bản trước là Version 2.2 (16/09); Version 2.1 với patch notes 05/09 và tổng quan 03/09 là lịch sử.
+            Các trang hướng dẫn liên quan chỉ được cập nhật sau khi thông tin có thể đối chiếu với nguồn chính thức; mốc hiện tại của trang tin là Version 2.4 [Across Autumn Waters] (Hutuo từ 13/11). Version 2.3 (15/10) và Version 2.2 (16/09) là lịch sử; Version 2.1 với patch notes 05/09 và tổng quan 03/09 cũng là lịch sử.
           </p>
         </div>
       </section>

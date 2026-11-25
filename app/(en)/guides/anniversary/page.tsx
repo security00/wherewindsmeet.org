@@ -10,8 +10,8 @@ const baseUrl = "https://wherewindsmeet.org";
 const guidePath = "/guides/anniversary";
 const pageUrl = `${baseUrl}${guidePath}`;
 
-const LAST_VERIFIED = "2026-11-13";
-const LAST_VERIFIED_LABEL = "2026-11-13 (Asia/Shanghai)";
+const LAST_VERIFIED = "2026-11-26";
+const LAST_VERIFIED_LABEL = "2026-11-26 (Asia/Shanghai)";
 const PAGE_MODIFIED = "2026-11-26";
 
 const metaTitle = "Where Winds Meet 1st Anniversary Rewards: Windtail Express 12-Outfit Pick, Events, and Shop Prices";
@@ -33,6 +33,8 @@ const SOURCE_URLS = [
   "https://x.com/WhereWindsMeet_/status/2120637700524904525",
   "https://www.wherewindsmeetgame.com/news/official/AcrossAutumnWaters.html",
   "https://store.steampowered.com/news/app/3564740/view/1849192144183182",
+  "https://www.wherewindsmeetgame.com/news/official/1125devletter.html",
+  "https://www.wherewindsmeetgame.com/news/official/1126update.html",
 ] as const;
 
 const sources: { href: string; text: string }[] = [
@@ -66,7 +68,7 @@ const sources: { href: string; text: string }[] = [
   },
   {
     href: SOURCE_URLS[7],
-    text: "Official X: “Dual Spears officially arrives on November 26 (UTC)” (posted 2026-11-06 11:39:35 Asia/Shanghai). No clock time; do not rewrite as Beijing midnight.",
+    text: "Official X: “Dual Spears officially arrives on November 26 (UTC)” (posted 2026-11-06 11:39:35 Asia/Shanghai). No clock time; do not rewrite as Beijing midnight. Superseded by the 11-26 overview: update 05:00–10:00 (UTC+8).",
   },
   {
     href: SOURCE_URLS[8],
@@ -91,6 +93,14 @@ const sources: { href: string; text: string }[] = [
   {
     href: SOURCE_URLS[13],
     text: "Official Steam community announcement “Version 2.4 [Across Autumn Waters] Update Overview,” gid 1849192144183182, posted 2026-11-12 22:43:09 Asia/Shanghai (Steam API timestamp). Same images as source [13].",
+  },
+  {
+    href: SOURCE_URLS[14],
+    text: "Official site: Dev Letter | New Path [Bellstrike - Bolt] Arrives Nov 26 (11.25).",
+  },
+  {
+    href: SOURCE_URLS[15],
+    text: "Official site: [Across Autumn Waters] Version 2.4 Update Overview - November 26 (11.25); Steam gid 1850460852981100 (2026-11-25 20:59 UTC+8).",
   },
 ];
 
@@ -139,7 +149,7 @@ const faqs: { q: string; a: string; ld?: string }[] = [
   },
   {
     q: "Is Dual Spears an anniversary login reward?",
-    a: "No. Dual Spears is an announced martial art that officially arrives on November 26 (UTC), with no clock time published. It is not a login outfit grant and not a November 13 same-day unlock. See /guides/martial-arts-weapons.[8]",
+    a: "No. Dual Spears is the new Path [Bellstrike - Bolt], scheduled for the November 26 update (05:00–10:00 UTC+8). You learn its two spears in Kaifeng. It is not a login outfit grant. See /guides/martial-arts-weapons.[16]",
   },
   {
     q: "Are First Top-Up Reset, Flow of Echoes, and Soaring Record free login rewards?",
@@ -186,7 +196,7 @@ const related = [
   { href: "/guides/free-outfits#anniversary-login-outfit", label: "Free outfits" },
   { href: "/news#announced-anniversary", label: "Pinned news card" },
   { href: "/guides/patch-notes#announced-november", label: "Patch notes" },
-  { href: "/guides/martial-arts-weapons#dual-spears-announced", label: "Dual Spears timing" },
+  { href: "/guides/martial-arts-weapons#dual-spears-announced", label: "Bellstrike - Bolt (dual spears)" },
 ];
 
 export const metadata: Metadata = {
@@ -292,16 +302,15 @@ export default function AnniversaryGuidePage() {
 
       <section className="rounded-3xl border border-amber-500/30 bg-slate-950/85 p-6 shadow-2xl sm:p-8">
         <p className="text-xs font-semibold uppercase tracking-[0.25em] text-amber-200">
-          Guides · Global server · Announced, not live
+          Guides · Global server · Version 2.4
         </p>
         <h1 className="mt-3 text-balance text-3xl font-bold tracking-tight text-slate-50 sm:text-4xl">
           What are the Where Winds Meet 1st anniversary rewards?
         </h1>
         <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">
           Where Winds Meet’s first global anniversary is tied to the major update named Hutuo—<strong>Version 2.4</strong>.
-          Official copy now says Hutuo will officially go live <strong>following</strong> a non-downtime update on November 13,
-          from <strong>18:00 to 23:00 (UTC+8)</strong>.
-          <Cite n={11} /> Earlier official posts, including the rewards post’s <strong>November 13 (UTC)</strong> label, gave
+          Hutuo opened after the November 13 non-downtime update (18:00:00–22:59:59 UTC+8), and the anniversary events run from that update.
+          <Cite n={13} /> Earlier official posts, including the rewards post’s <strong>November 13 (UTC)</strong> label, gave
           a date without a clock; this page keeps those wordings and marks them as <strong>superseded</strong> by the more
           precise window. It does <strong>not</strong> treat 18:00 as the go-live time, and it does <strong>not</strong> treat
           23:00 as the start of the update. The longer launch-window explanation lives on{" "}
@@ -355,7 +364,7 @@ export default function AnniversaryGuidePage() {
             <thead className="text-xs uppercase tracking-wide text-slate-400">
               <tr>
                 <th className="px-3 py-2">Item</th>
-                <th className="px-3 py-2">Announced fact</th>
+                <th className="px-3 py-2">Official fact</th>
                 <th className="px-3 py-2">Limit of evidence</th>
               </tr>
             </thead>
@@ -392,7 +401,7 @@ export default function AnniversaryGuidePage() {
         </div>
         <p className="mt-4 text-sm leading-6 text-slate-300">
           Battlefield context lives on <Link href="/guides/hutuo" className="text-emerald-300 underline underline-offset-4">/guides/hutuo</Link>.
-          Dual Spears officially arrives on <strong>November 26 (UTC)</strong>, with no clock time published—separate from
+          The dual spear Path [Bellstrike - Bolt] is scheduled for the November 26 update (05:00–10:00 UTC+8), separate from
           the November 13 anniversary day. Do not rewrite that date as Beijing midnight.
           <Cite n={8} />
         </p>
@@ -615,7 +624,7 @@ export default function AnniversaryGuidePage() {
               <tr>
                 <th className="px-3 py-2">Item</th>
                 <th className="px-3 py-2">Official wording</th>
-                <th className="px-3 py-2">Window as announced</th>
+                <th className="px-3 py-2">Official window</th>
                 <th className="px-3 py-2">Price as published (Version 2.4 overview)</th>
                 <th className="px-3 py-2">Limits of evidence</th>
               </tr>
@@ -692,7 +701,7 @@ export default function AnniversaryGuidePage() {
               <tr>
                 <th className="px-3 py-2">Item</th>
                 <th className="px-3 py-2">Official type</th>
-                <th className="px-3 py-2">Window as announced</th>
+                <th className="px-3 py-2">Official window</th>
                 <th className="px-3 py-2">Price / cost as published (Version 2.4 overview)</th>
                 <th className="px-3 py-2">Limits of evidence</th>
               </tr>
@@ -777,7 +786,7 @@ export default function AnniversaryGuidePage() {
             <thead className="text-xs uppercase tracking-wide text-slate-400">
               <tr>
                 <th className="px-3 py-2">Appearance</th>
-                <th className="px-3 py-2">Window as announced</th>
+                <th className="px-3 py-2">Official window</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-800 text-slate-200">
@@ -867,7 +876,7 @@ export default function AnniversaryGuidePage() {
         <h2 className="text-2xl font-bold text-slate-50">What you can do now</h2>
         <ol className="list-decimal space-y-2 pl-5 text-sm leading-6 text-slate-300">
           <li>
-            Read <Link href="/guides/hutuo" className="text-emerald-300 underline underline-offset-4">/guides/hutuo</Link> for the November 13 opening window (goes live <strong>following</strong> a non-downtime update from 18:00 to 23:00 (UTC+8)) and for Dual Spears on <strong>November 26 (UTC)</strong>.
+            Read <Link href="/guides/hutuo" className="text-emerald-300 underline underline-offset-4">/guides/hutuo</Link> for how to unlock Hutuo, and <Link href="/guides/martial-arts-weapons" className="text-emerald-300 underline underline-offset-4">/guides/martial-arts-weapons</Link> for the dual spear Path [Bellstrike - Bolt] (November 26 update).
             <Cite n={[11, 8]} />
           </li>
           <li>Keep <Link href="/guides/free-outfits" className="text-emerald-300 underline underline-offset-4">/guides/free-outfits</Link> for permanent free cosmetics. Use this page for the Hutuo-specific categories.</li>

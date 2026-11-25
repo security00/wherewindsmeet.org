@@ -47,25 +47,26 @@ test("the news feed stays in manual array order instead of official-date order",
   assert.ok(newsItems[balance].date < newsItems[overview].date);
 });
 
-test("English news and patch notes use the 2026-11-06 editorial revision", () => {
-  assert.equal(LAST_VERIFIED, "2026-11-06");
+test("English news and patch notes use the 2026-11-26 Hutuo refresh", () => {
+  assert.equal(LAST_VERIFIED, "2026-11-26");
   const newsPage = read("app/(en)/news/page.tsx");
   const patchNotes = read("app/(en)/guides/patch-notes/page.tsx");
 
   assert.doesNotMatch(newsPage, /latestNewsDate/);
   assert.match(newsPage, /Updated \$\{LAST_VERIFIED\}/);
   assert.match(newsPage, /Updated \{NEWS_COPY_MODIFIED\}/);
-  assert.match(newsPage, /const NEWS_COPY_MODIFIED = "2026-11-13"/);
+  assert.match(newsPage, /const NEWS_COPY_MODIFIED = "2026-11-26"/);
   assert.match(newsPage, /dateModified: NEWS_COPY_MODIFIED/);
   assert.doesNotMatch(newsPage, /dateModified: LAST_VERIFIED/);
-  assert.match(patchNotes, /dateModified: LAST_VERIFIED/);
-  assert.equal(sitemapLastModifiedDay("/news", "2026-10-28"), "2026-11-13");
-  assert.equal(sitemapLastModifiedDay("/guides/patch-notes", "2026-10-28"), "2026-11-06");
+  assert.match(patchNotes, /dateModified: PAGE_MODIFIED/);
+  assert.match(patchNotes, /const PAGE_MODIFIED = "2026-11-26"/);
+  assert.equal(sitemapLastModifiedDay("/news", "2026-10-28"), "2026-11-26");
+  assert.equal(sitemapLastModifiedDay("/guides/patch-notes", "2026-10-28"), "2026-11-26");
 });
 
 test("translated and unrelated sitemap lastmods stay on their previous stamps", () => {
   const unchanged = {
-    "/": "2026-10-28",
+    "/": "2026-11-26",
     "/de": "2026-10-28",
     "/de/news": "2026-10-28",
     "/vn/news": "2026-10-28",
@@ -95,29 +96,21 @@ test("translated and unrelated sitemap lastmods stay on their previous stamps", 
   assert.match(read("app/(vn)/vn/news/page.tsx"), /dateModified: latestNewsDate/);
 });
 
-test("only the English pages edited in this batch move to 2026-11-06", () => {
-  const revised = [
-    "/guides",
-    "/guides/patch-notes",
-    "/guides/bosses",
-    "/guides/martial-arts-weapons",
-    "/guides/jiangnan-hangzhou",
-  ];
-
-  for (const path of revised) {
+test("the 2026-11-26 refresh dates the pages it rewrote and leaves the 11-06 pages", () => {
+  for (const path of ["/", "/guides", "/guides/patch-notes", "/guides/martial-arts-weapons", "/guides/hutuo", "/news"]) {
+    assert.equal(sitemapLastModifiedDay(path, "2026-10-28"), "2026-11-26", path);
+  }
+  for (const path of ["/guides/bosses", "/guides/jiangnan-hangzhou"]) {
     assert.equal(sitemapLastModifiedDay(path, "2026-10-28"), "2026-11-06", path);
   }
-
-  assert.equal(sitemapLastModifiedDay("/guides/hutuo", "2026-11-06"), "2026-11-13");
-  for (const path of ["/guides/anniversary", "/guides/free-outfits", "/guides/mount-tai-blizzard", "/guides/inn-character-record"]) {
+  for (const path of ["/guides/anniversary", "/guides/free-outfits", "/guides/mount-tai-blizzard", "/guides/inn-character-record", "/guides/codes"]) {
     assert.equal(sitemapLastModifiedDay(path), "2026-11-26");
   }
-  assert.equal(sitemapLastModifiedDay("/news", "2026-11-06"), "2026-11-13");
 
   assert.equal(sitemapLastModifiedDay("/de/guides/jiangnan-hangzhou"), undefined);
   assert.equal(sitemapLastModifiedDay("/vn/guides/jiangnan-hangzhou"), undefined);
   assert.match(
     read("components/guides/JiangnanHangzhouGuidePage.tsx"),
-    /dateModified: locale === "en" \? LAST_VERIFIED : \(freshness\?\.lastChecked \?\? "2026-08-23"\)/,
+    /dateModified: locale === "en" \? JIANGNAN_PAGE_MODIFIED : \(freshness\?\.lastChecked \?\? "2026-08-23"\)/,
   );
 });

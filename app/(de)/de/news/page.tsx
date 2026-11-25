@@ -3,13 +3,11 @@ import CdnImage from "@/components/CdnImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import Link from "next/link";
 import type { NewsType } from "@/lib/news";
-import { getContentFreshness } from "@/lib/contentFreshness";
 import { latestNewsDate, newsItems } from "@/lib/news.de";
 import { OfficialNewsCard } from "@/components/news/OfficialNewsCard";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
-const freshness = getContentFreshness("/news");
 
 export const metadata: Metadata = {
   title: "Where Winds Meet Nachrichten, Roadmap & Patch Notes (DE)",
@@ -71,7 +69,7 @@ export default function NewsPage() {
   const roadmapBlock = {
     title: "Roadmap / Nächste Updates (Beobachtungsliste)",
     summary:
-      "Letzter geprüfter Stand: Version 2.3 (15. Oktober), davor Version 2.2 (16. September). Version 2.1 mit den Patch Notes vom 5. September und der Übersicht zum 3. September steht vor den datierten 27.-August-, 20.-August-, Version-2.0-, Version-1.8-, Palace-, Xbox-, Hexi- und Qinchuan-Notizen.",
+      "Letzter geprüfter Stand: Version 2.4 [Across Autumn Waters]. Hutuo ist seit dem Update am 13. November offen. Details und Quellen auf der englischen News-Seite. Version 2.1 mit den Patch Notes vom 5. September und der Übersicht zum 3. September steht vor den datierten 27.-August-, 20.-August-, Version-2.0-, Version-1.8-, Palace-, Xbox-, Hexi- und Qinchuan-Notizen.",
     updated: lastUpdatedLabel,
     links: [
       { href: "/guides/tier-list", label: "China-Tierliste & Balance-Notizen" },
@@ -159,16 +157,16 @@ export default function NewsPage() {
             className="rounded-2xl border border-emerald-500/40 bg-emerald-500/10 p-4 text-sm text-emerald-50 shadow-inner shadow-emerald-900/40"
           >
             <div className="flex items-center justify-between gap-2">
-              <p className="font-semibold">AKTUELL: Version 2.3 / Friends from Afar (15. Oktober 2026)</p>
+              <p className="font-semibold">Letzter geprüfter Stand: Version 2.4 [Across Autumn Waters]</p>
               <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-100">
                 {lastUpdatedLabel}
               </span>
             </div>
             <p className="mt-2 text-emerald-100/90">
-              Geprüft für {freshness?.gameVersion ?? "Version 2.3 / 15. Oktober"}: Die offizielle{' '}
+              Hutuo ist seit dem Update am 13. November offen. Details und Quellen auf der englischen News-Seite.
+              Die frühere{' '}
               <a href="https://store.steampowered.com/news/app/3564740/view/1846651706675921" target="_blank" rel="noopener noreferrer" className="underline">Übersicht zu Version 2.3 vom 15. Oktober</a>
-              {' '}(Live-Update 5:00–12:00 Uhr UTC+8) bringt die neue Region Qingzhou – Eastern Peak, die Waffe Waist Drum mit dem Pfad
-              Silkbind – Wings, die Sekte Inkbound Order, drei Weltbosse und die Saison S5: Ever Aflame (15. Oktober bis 26. November).
+              {' '}bleibt als Historie (Qingzhou – Eastern Peak, Waist Drum, Silkbind – Wings, Inkbound Order).
             </p>
             <p className="mt-2 text-emerald-100/90">
               Vorherige Version: die{' '}

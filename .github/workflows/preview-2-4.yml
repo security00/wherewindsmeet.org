@@ -1,0 +1,35 @@
+name: Preview Worker (branch only)
+
+# Deploys this branch to a separate Worker. It does not run on main and
+# does not deploy wherewindsmeet-org. No IndexNow.
+on:
+  push:
+    branches:
+      - cursor/wwm-2-4-hutuo-refresh-c39f
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static assets
+        run: npm run cf:build
+
+      - name: Deploy preview Worker only
+        run: npx wrangler deploy --config wrangler.preview.toml
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}

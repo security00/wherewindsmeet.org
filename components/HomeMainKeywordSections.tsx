@@ -40,9 +40,9 @@ const content: Record<ContentLanguage, HomeContent> = {
     eyebrow: "Main Where Winds Meet hub",
     h1: "Where Winds Meet",
     subtitle:
-      "The updated Where Winds Meet guide hub for the open-world wuxia RPG, also searched as Where the Winds Meet: Version 2.3 Friends from Afar, Qingzhou, Hidden Mountain, codes, patch notes, tier lists, builds, bosses, interactive map routes, videos, and platform help for Xbox, PC, PS5, iOS, and Android players.",
-    updateLabel: "Version 2.3 / Friends from Afar (October 15)",
-    quickFacts: ["Free-to-play wuxia action RPG", "Xbox, PC, PS5, iOS, and Android", "Guides reviewed for Version 2.3"],
+      "The updated Where Winds Meet guide hub for the open-world wuxia RPG, also searched as Where the Winds Meet: Version 2.4 Across Autumn Waters, Hutuo, Hidden Mountain, codes, patch notes, tier lists, builds, bosses, interactive map routes, videos, and platform help for Xbox, PC, PS5, iOS, and Android players.",
+    updateLabel: "Version 2.4 / Across Autumn Waters (November 13)",
+    quickFacts: ["Free-to-play wuxia action RPG", "Xbox, PC, PS5, iOS, and Android", "Guides reviewed for Version 2.4"],
     ctas: [
       { href: "/news", label: "Latest News" },
       { href: "/guides/patch-notes", label: "Patch Notes" },
@@ -66,10 +66,11 @@ const content: Record<ContentLanguage, HomeContent> = {
       {
         title: "Latest update",
         body:
-          "The current Where Winds Meet content pass tracks Version 2.3 Friends from Afar (October 15: Qingzhou, the Waist Drum, the Inkbound Order), with Version 2.2 Perilous Eminence (September 16) as the previous version and Version 2.1 Clouded Revelation kept as history.",
+          "The current Where Winds Meet content pass tracks Version 2.4 Across Autumn Waters: Hutuo opened after the November 13 update, and the November 26 update (05:00–10:00 UTC+8) brings the dual spear Path [Bellstrike - Bolt] and Jianghu Tactics. Version 2.3 Friends from Afar (October 15) is the previous version and stays as history.",
         links: [
           { href: "/news#next-update", label: "News watch" },
           { href: "/guides/patch-notes#upcoming-nerfs", label: "Balance watch" },
+          { href: "/guides/hutuo", label: "How to unlock Hutuo" },
         ],
       },
       {
@@ -111,7 +112,7 @@ const content: Record<ContentLanguage, HomeContent> = {
       {
         question: "What is the latest Where Winds Meet update?",
         answer:
-          "The latest update is Version 2.3 Friends from Afar, live since October 15, 2026: the Qingzhou - Eastern Peak region, the Waist Drum weapon and Silkbind - Wings path, the Inkbound Order sect, and season S5: Ever Aflame. The previous version was Version 2.2 Perilous Eminence on September 16, 2026, which also closed the Reflection Temple entrance until Jiangnan arrives.",
+          "The current version is Version 2.4 Across Autumn Waters, which started with the November 13, 2026 update and opened the Hutuo region of Hidden Mountain. The latest official overview is for the November 26 update (05:00–10:00 UTC+8), which adds the dual spear Path [Bellstrike - Bolt] and the board mode Jianghu Tactics. The previous version was Version 2.3 Friends from Afar, live from October 15, 2026.",
       },
       {
         question: "Where can I find Where Winds Meet codes?",
@@ -141,9 +142,9 @@ const content: Record<ContentLanguage, HomeContent> = {
     eyebrow: "Hub chính cho Where Winds Meet",
     h1: "Where Winds Meet",
     subtitle:
-      "Hub hướng dẫn Where Winds Meet cho game wuxia open-world RPG: Version 2.1, Clouded Revelation, Hidden Mountain, code, patch notes, tier list, build, boss, bản đồ tương tác và thông tin nền tảng cho Xbox, PC, PS5, iOS, Android.",
-    updateLabel: "Version 2.1 / Clouded Revelation (27/8)",
-    quickFacts: ["Wuxia action RPG miễn phí", "Xbox, PC, PS5, iOS, Android", "Guide đã được rà soát cho Version 2.1"],
+      "Hub hướng dẫn Where Winds Meet cho game wuxia open-world RPG: Version 2.4, Across Autumn Waters, Hutuo, Hidden Mountain, code, patch notes, tier list, build, boss, bản đồ tương tác và thông tin nền tảng cho Xbox, PC, PS5, iOS, Android.",
+    updateLabel: "Version 2.4 / Across Autumn Waters (13/11)",
+    quickFacts: ["Wuxia action RPG miễn phí", "Xbox, PC, PS5, iOS, Android", "Guide đã được rà soát cho Version 2.4"],
     ctas: [
       { href: "/news", label: "Tin mới" },
       { href: "/guides/patch-notes", label: "Patch Notes" },
@@ -166,7 +167,7 @@ const content: Record<ContentLanguage, HomeContent> = {
       {
         title: "Cập nhật mới nhất",
         body:
-          "Nội dung hiện theo Version 2.1 và Clouded Revelation, gồm tổng quan ngày 27/8, patch notes ngày 20/8, Hidden Mountain và lịch sử Path Balance cũ hơn.",
+          "Nội dung hiện theo Version 2.4 Across Autumn Waters: Hutuo mở sau bản cập nhật ngày 13/11. Version 2.3 trở về trước được giữ làm lịch sử.",
         links: [
           { href: "/news#next-update", label: "Theo dõi tin mới" },
           { href: "/guides/patch-notes#upcoming-nerfs", label: "Theo dõi cân bằng" },
@@ -200,7 +201,7 @@ const content: Record<ContentLanguage, HomeContent> = {
       {
         question: "Cập nhật mới nhất của Where Winds Meet là gì?",
         answer:
-          "Hub này đã được kiểm tra theo Version 2.1 / Clouded Revelation, gồm tổng quan ngày 27/8 và patch notes ngày 20/8; Hidden Mountain và Path Balance được giữ làm lịch sử.",
+          "Hub này đã được kiểm tra theo Version 2.4 / Across Autumn Waters: Hutuo mở sau bản cập nhật ngày 13/11. Các phiên bản cũ hơn được giữ làm lịch sử.",
       },
       {
         question: "Tìm Where Winds Meet codes ở đâu?",
@@ -225,9 +226,9 @@ const content: Record<ContentLanguage, HomeContent> = {
     eyebrow: "Zentraler Where Winds Meet Hub",
     h1: "Where Winds Meet",
     subtitle:
-      "Der aktualisierte Where Winds Meet Guide-Hub zum Open-World-Wuxia-RPG: Version 2.1, Clouded Revelation, Hidden Mountain, Codes, Patch Notes, Tierlisten, Builds, Bosse, interaktive Karte und Plattformhilfe fuer Xbox, PC, PS5, iOS und Android.",
-    updateLabel: "Version 2.1 / Clouded Revelation (27. August)",
-    quickFacts: ["Free-to-play Wuxia Action-RPG", "Xbox, PC, PS5, iOS und Android", "Guides fuer Version 2.1 geprueft"],
+      "Der aktualisierte Where Winds Meet Guide-Hub zum Open-World-Wuxia-RPG: Version 2.4, Across Autumn Waters, Hutuo, Hidden Mountain, Codes, Patch Notes, Tierlisten, Builds, Bosse, interaktive Karte und Plattformhilfe fuer Xbox, PC, PS5, iOS und Android.",
+    updateLabel: "Version 2.4 / Across Autumn Waters (13. November)",
+    quickFacts: ["Free-to-play Wuxia Action-RPG", "Xbox, PC, PS5, iOS und Android", "Guides fuer Version 2.4 geprueft"],
     ctas: [
       { href: "/news", label: "Aktuelle News" },
       { href: "/guides/patch-notes", label: "Patch Notes" },
@@ -250,7 +251,7 @@ const content: Record<ContentLanguage, HomeContent> = {
       {
         title: "Neuestes Update",
         body:
-          "Der aktuelle Inhaltsstand folgt Version 2.1 und Clouded Revelation: dem Ueberblick vom 27. August, den Patch Notes vom 20. August, Hidden Mountain und der aelteren Path-Balance-Historie.",
+          "Der aktuelle Inhaltsstand folgt Version 2.4 Across Autumn Waters: Hutuo ist seit dem Update am 13. November offen. Version 2.3 und älter bleiben als Historie erhalten.",
         links: [
           { href: "/news#next-update", label: "News beobachten" },
           { href: "/guides/patch-notes#upcoming-nerfs", label: "Balance beobachten" },
@@ -284,7 +285,7 @@ const content: Record<ContentLanguage, HomeContent> = {
       {
         question: "Was ist das neueste Where Winds Meet Update?",
         answer:
-          "Dieser Hub ist auf Version 2.1 / Clouded Revelation geprueft, einschliesslich des Ueberblicks vom 27. August und der Patch Notes vom 20. August; Hidden Mountain und Path Balance bleiben als Historie erhalten.",
+          "Dieser Hub ist auf Version 2.4 / Across Autumn Waters geprueft: Hutuo ist seit dem Update am 13. November offen. Aeltere Versionen bleiben als Historie erhalten.",
       },
       {
         question: "Wo finde ich Where Winds Meet Codes?",

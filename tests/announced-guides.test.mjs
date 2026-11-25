@@ -34,7 +34,7 @@ test("Hutuo and anniversary ship English metadata without placeholder copy", () 
     assert.equal((source.match(/<h1 /g) ?? []).length, 1);
     assert.doesNotMatch(source, /EditorialPlaceholder|data-editorial-placeholder|\[WRITER\]/);
     assert.match(source, /Version 2\.4/);
-    assert.match(source, /2026-11-13 \(Asia\/Shanghai\)/);
+    assert.match(source, /2026-11-26 \(Asia\/Shanghai\)/);
     assert.match(source, /PAGE_PUBLISHED/);
     assert.doesNotMatch(source, /x-hutuo-launch-window/);
     assert.match(source, /datePublished: PAGE_PUBLISHED/);
@@ -43,8 +43,8 @@ test("Hutuo and anniversary ship English metadata without placeholder copy", () 
     assert.doesNotMatch(source, /\/(?:de|vn)\/guides\/(?:hutuo|anniversary)/);
   }
 
-  assert.match(hutuo, /What is the official Hutuo go-live window in Where Winds Meet\?/);
-  assert.match(hutuo, /After the Nov 13 18:00–23:00 \(UTC\+8\) update/);
+  assert.match(hutuo, /How do I unlock Hutuo in Where Winds Meet\?/);
+  assert.doesNotMatch(hutuo, /What is the official Hutuo go-live window in Where Winds Meet\?/);
   assert.doesNotMatch(hutuo, /When does Hutuo open in Where Winds Meet\?/);
   assert.doesNotMatch(hutuo, /Announced, not live/);
   assert.doesNotMatch(hutuo, /opens at 18:00|opens at 23:00/);
@@ -115,7 +115,8 @@ test("existing English pages carry the correction pack and not the old lead", ()
   const pinned = read("components/news/PinnedAnnouncements.tsx");
   assert.match(news, /PinnedAnnouncements/);
   assert.match(pinned, /id="announced-hutuo"/);
-  assert.match(pinned, /Next announced major beat: Hutuo/);
+  assert.match(pinned, /Is Hutuo out\? Yes, since the November 13 Version 2\.4 update/);
+  assert.doesNotMatch(pinned, /Next announced major beat: Hutuo/);
   assert.match(pinned, /Version 2\.4/);
   assert.match(pinned, /18:00–23:00 \(UTC\+8\)/);
   assert.match(pinned, /November 26 \(UTC\)/);
@@ -124,21 +125,22 @@ test("existing English pages carry the correction pack and not the old lead", ()
   assert.match(pinned, /1849192144183182/);
   assert.match(pinned, /1849192144183200/);
   assert.doesNotMatch(pinned, /remains gid[\s\S]{0,40}1847920302233930/);
-  assert.match(pinned, /PINNED_LAST_VERIFIED_LABEL = "2026-11-13 \(Asia\/Shanghai\)"/);
+  assert.match(pinned, /PINNED_LAST_VERIFIED_LABEL = "2026-11-26 \(Asia\/Shanghai\)"/);
   assert.match(pinned, /Last verified \{PINNED_LAST_VERIFIED_LABEL\}/);
-  assert.match(pinned, /does not claim that Hutuo is live/);
+  assert.doesNotMatch(pinned, /does not claim that Hutuo is live/);
   assert.match(pinned, /November 26 \(UTC\)/);
-  assert.match(pinned, /November 23 \(date only\)/);
+  assert.match(pinned, /November 24 at 10:00 \(UTC\+8\)/);
+  assert.doesNotMatch(pinned, /November 23 \(date only\)/);
   assert.doesNotMatch(pinned, /scheduled, not live/);
   assert.doesNotMatch(pinned, /Scheduled global update · Not live/);
   assert.doesNotMatch(pinned, /late-November martial art|Dual Spears: late November|does not number the update/);
   assert.doesNotMatch(news, /No Version 2\.4 date has been announced yet/);
-  assert.doesNotMatch(news, /Version 2\.4 is live|Hutuo is already live/);
+  assert.doesNotMatch(news, /does not claim that Hutuo is live|go-live window/);
   assert.doesNotMatch(news, /Version 2\.3 is live/);
   assert.match(news, /What is the latest Where Winds Meet update\?/);
-  assert.match(news, /November 26 \(UTC\), not on November 13/);
-  assert.match(news, /gid 1849192144183182/);
-  assert.match(news, /gid 1849192144183200/);
+  assert.match(news, /November 26 update \(05:00–10:00 UTC\+8\)/);
+  assert.match(news, /1126update\.html/);
+  assert.match(news, /Bellstrike - Bolt/);
   assert.doesNotMatch(news, /Steam has not published a Version 2\.4/);
 
   assert.match(patchNotes, /id="announced-november"/);
@@ -150,17 +152,22 @@ test("existing English pages carry the correction pack and not the old lead", ()
   assert.match(patchNotes, /1029update\.html/);
   assert.match(patchNotes, /does not transcribe a bullet summary/);
   assert.match(patchNotes, /\[superseded\]/);
-  assert.match(patchNotes, /late November/);
-  assert.doesNotMatch(patchNotes, /2\.4/);
+  assert.match(patchNotes, /Version 2\.4 \[Across Autumn Waters\]/);
+  assert.match(patchNotes, /what changed in Version 2\.4\?/);
+  assert.doesNotMatch(patchNotes, /late November/);
 
   assert.match(bosses, /Updated 2026-11-06/);
   assert.match(bosses, /Version 2\.3 Friends From Afar/);
   assert.match(bosses, /Version 2\.1\.3 \/ September 2026/);
   assert.match(bosses, /id="hutuo-announced"/);
-  assert.match(bosses, /No Hutuo boss names are added here/);
+  assert.match(bosses, /Wayfarer Bingshen and Yelu Abuli/);
+  assert.match(bosses, /Unlock the Hutuo region in Hidden Mountain/);
+  assert.doesNotMatch(bosses, /No Hutuo boss names are added here/);
 
   assert.match(martial, /id="dual-spears-announced"/);
-  assert.match(martial, /late November 2026/);
+  assert.match(martial, /Bellstrike - Bolt/);
+  assert.match(martial, /scheduled for the <strong>November 26<\/strong> live update/);
+  assert.doesNotMatch(martial, /late November 2026/);
   assert.match(martial, /Yuen Woo-ping/);
   assert.doesNotMatch(martial, /\/guides\/dual-spears/);
 
@@ -241,11 +248,12 @@ test("launch-window citations are appended and 18:00 is not the go-live time", (
   assert.match(hutuo, /1849192144183182/);
   assert.match(hutuo, /1849192144183200/);
   assert.doesNotMatch(hutuo, /does <strong>not<\/strong> write[\s\S]{0,80}that Steam has published Version 2\.4/);
-  assert.match(hutuo, /What is the official Hutuo go-live window\?/);
-  assert.match(hutuo, /Has this page confirmed that Hutuo is live\?/);
-  assert.match(hutuo, /does not claim that Hutuo is live/);
+  assert.match(hutuo, /Is Hutuo live in Where Winds Meet\?/);
+  assert.match(hutuo, /How do I unlock Hutuo\?/);
+  assert.doesNotMatch(hutuo, /Has this page confirmed that Hutuo is live\?/);
+  assert.doesNotMatch(hutuo, /does not claim that Hutuo is live/);
   assert.doesNotMatch(hutuo, /Is Hutuo live today \(2026-11-13\)/);
-  assert.match(hutuo, /Not as of this page’s check on 2026-11-13, before the update window/);
-  assert.match(hutuo, /<h1[^>]*>\s*What is the official Hutuo go-live window in Where Winds Meet\?/);
+  assert.doesNotMatch(hutuo, /Not as of this page’s check on 2026-11-13, before the update window/);
+  assert.match(hutuo, /<h1[^>]*>\s*How do I unlock Hutuo in Where Winds Meet\?/);
   assert.equal((hutuo.match(/<h1 /g) ?? []).length, 1);
 });

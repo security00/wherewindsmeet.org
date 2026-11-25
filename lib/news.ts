@@ -60,6 +60,94 @@ type OfficialNewsRow = [
 // site can pin items out of strict date order, so news pages should not sort it.
 const officialNewsRows: OfficialNewsRow[] = [
   [
+    "november-26-version-2-4-update-overview",
+    "[Across Autumn Waters] Version 2.4 Update Overview - November 26",
+    "2026-11-25",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/1126update.html",
+    "Live update on November 26, 2026, 05:00–10:00 (UTC+8). Adds the board mode [Jianghu Tactics] (permanent, updated by season) and the dual spear Path [Bellstrike - Bolt]: [Trialedge Spear] from defeating [Ding Yuan] in Kaifeng's Martial Fellowship, [Peakwane Spear] from exploring [Fairgrounds - Beast Reverie] in Kaifeng. Armament Drill trial event to December 3, 2026, 04:59:59. Steam: https://store.steampowered.com/news/app/3564740/view/1850460852981100",
+  ],
+  [
+    "november-25-dev-letter-bellstrike-bolt",
+    "Dev Letter | Light to Pursue, Heavy to Counter: New Path [Bellstrike - Bolt] Arrives Nov 26",
+    "2026-11-25",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/1125devletter.html",
+    "The Light Spear [Trialedge Spear] pursues; the Heavy Spear [Peakwane Spear] parries and counters. Varied Combos [Rainhush Verdict] and [Windcalm Plunder] build shared Spear Momentum toward the [Lethal] state. The Dev Letter says the Path debuts on November 26.",
+  ],
+  [
+    "november-26-version-2-4-new-appearances",
+    "Version 2.4 New Appearances Overview - November 26",
+    "2026-11-24",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/1126appearance.html",
+    "Official appearance overview for the November 26 update. See the official post for items and end dates.",
+  ],
+  [
+    "november-23-dlss-5",
+    "Official DLSS 5 Custom Driver Available Now",
+    "2026-11-23",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/1123DLSS5.html",
+    "NVIDIA DLSS 5 support for GeForce RTX 50 Series GPUs on PC, which can be toggled on or off. This post gives November 23; the November 26 overview says DLSS 5 launched globally on November 24 at 10:00 (UTC+8).",
+  ],
+  [
+    "november-13-22-version-2-4-new-appearances",
+    "Version 2.4 New Appearances Overview - November 13&22",
+    "2026-11-19",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/1113appearance.html",
+    "Official appearance overview for the November 13 and November 22 beats. See the official post for items and end dates.",
+  ],
+  [
+    "november-22-version-2-4-update-overview",
+    "[Across Autumn Waters] Version 2.4 Update Overview - November 22",
+    "2026-11-18",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/1122update.html",
+    "From November 22, 2026 00:00:00: umbrella [Duskgem: Cosmic Canopy] and fan [Duskgem: Swaying Moon] in Draw - Echo Shop at [Sound Jade] ×2 (normally ×3) until January 20, 2027, 04:59:59; gauntlets [Hawk and Hound] for 60 [Echo Bead] in the Shop.",
+  ],
+  [
+    "november-10-dev-ama-recap",
+    "Dev AMA Recap (November 10)",
+    "2026-11-18",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/1110ama.html",
+    "Official recap of the November 10 developer AMA.",
+  ],
+  [
+    "first-anniversary-letter",
+    "Where Winds Meet 1st Anniversary: A Letter from Eric",
+    "2026-11-14",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/anniversaryletter.html",
+    "Official first-anniversary letter.",
+  ],
+  [
+    "version-2-4-across-autumn-waters-overview",
+    "[Across Autumn Waters] Version 2.4 Update Overview",
+    "2026-11-12",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/AcrossAutumnWaters.html",
+    "Version 2.4 opens with a non-downtime update on November 13, 2026, 18:00:00–22:59:59 (UTC+8). Following it, the Hutuo region opens: reach Lv. 32, complete [New Arrival in Kaifeng], then [Hutuo Memories]. Steam: https://store.steampowered.com/news/app/3564740/view/1849192144183182",
+  ],
+  [
+    "version-2-4-path-balance-november-13",
+    "Version 2.4 Path Balance Adjustment Announcement (November 13)",
+    "2026-11-12",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/1113PathBalance.html",
+    "Adds [Modulated Gear Recovery] (fully tuned Legendary gear used as Modulating material can be recovered within 7 days) and [Free Unlocked Set Switching], plus path balance changes. Steam: https://store.steampowered.com/news/app/3564740/view/1849192144183200",
+  ],
+  [
+    "november-9-dev-letter-hutuo",
+    "Version 2.4 Dev Letter | In Times of Turmoil, What Makes a True Hero?",
+    "2026-11-09",
+    "announcement",
+    "https://www.wherewindsmeetgame.com/news/official/1109devletter.html",
+    "Official Dev Letter: \"On November 13, Hutuo, the third region of Hidden Mountain, will officially open.\"",
+  ],
+  [
     "october-29-version-2-3-patch-notes",
     "Version 2.3 Patch Notes: Optimizations and Bug Fixes (October 29)",
     "2026-10-30",
@@ -713,6 +801,45 @@ export const newsItems: NewsItem[] = officialNewsRows.map(
             },
           ],
         }
-      : {}),
+      : id === "november-26-version-2-4-update-overview"
+        ? {
+            dateLabel: "Official site 2026-11-25 (date only) · Steam 2026-11-25 20:59 UTC+8",
+            sourcePublications: [
+              { publisher: "official-site" as const, date: "2026-11-25" },
+              {
+                publisher: "steam" as const,
+                date: "2026-11-25",
+                dateTime: "2026-11-25T20:59:00+08:00",
+                timeZone: "Asia/Shanghai",
+              },
+            ],
+          }
+        : id === "version-2-4-across-autumn-waters-overview"
+          ? {
+              dateLabel: "Official site 2026-11-12 (date only) · Steam 2026-11-12 22:43:09 UTC+8",
+              sourcePublications: [
+                { publisher: "official-site" as const, date: "2026-11-12" },
+                {
+                  publisher: "steam" as const,
+                  date: "2026-11-12",
+                  dateTime: "2026-11-12T22:43:09+08:00",
+                  timeZone: "Asia/Shanghai",
+                },
+              ],
+            }
+          : id === "version-2-4-path-balance-november-13"
+            ? {
+                dateLabel: "Official site 2026-11-12 (date only) · Steam 2026-11-12 22:46:44 UTC+8",
+                sourcePublications: [
+                  { publisher: "official-site" as const, date: "2026-11-12" },
+                  {
+                    publisher: "steam" as const,
+                    date: "2026-11-12",
+                    dateTime: "2026-11-12T22:46:44+08:00",
+                    timeZone: "Asia/Shanghai",
+                  },
+                ],
+              }
+            : {}),
   }),
 );

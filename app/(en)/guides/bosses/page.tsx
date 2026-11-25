@@ -7,8 +7,9 @@ import { OfficialMediaFigure } from "@/components/guides/OfficialMediaFigure";
 import { MediaPlaceholder } from "@/components/guides/MediaPlaceholder";
 import { bosses } from "@/lib/bosses";
 import { bossOldRaftsman, bossShuttlecock, bossTidewatcher } from "@/lib/officialQingzhouMedia";
-import { LAST_VERIFIED } from "@/lib/globalAnnouncements";
 import { buildHreflangAlternates } from "@/lib/hreflang";
+
+const BOSS_PAGE_MODIFIED = "2026-11-06";
 
 const baseUrl = "https://wherewindsmeet.org";
 
@@ -85,7 +86,7 @@ export default function BossesPage() {
       name: metadata.title,
       description: metadata.description,
       url: `${baseUrl}/guides/bosses`,
-      dateModified: LAST_VERIFIED,
+      dateModified: BOSS_PAGE_MODIFIED,
     },
     {
       "@context": "https://schema.org",
@@ -245,13 +246,12 @@ export default function BossesPage() {
       </section>
 
       <section id="hutuo-announced" className="rounded-3xl border border-amber-400/30 bg-slate-950/80 p-6">
-        <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">Upcoming · not a boss list</p>
-        <h2 className="mt-2 text-xl font-semibold text-slate-50">Hutuo is announced, without a boss roster</h2>
+        <p className="text-xs font-semibold uppercase tracking-wide text-amber-200">Version 2.4 · not a full boss list</p>
+        <h2 className="mt-2 text-xl font-semibold text-slate-50">Hutuo World Bosses listed by the Version 2.4 overview</h2>
         <p className="mt-2 text-sm leading-6 text-slate-300">
-          First global anniversary / Campaign Hutuo is scheduled for November 13. See{" "}
+          The Version 2.4 overview lists Wayfarer Bingshen and Yelu Abuli with the requirement “Unlock the Hutuo region in Hidden Mountain.” It does not give either one its own start clock. See{" "}
           <Link href="/guides/hutuo" className="text-emerald-300 underline underline-offset-4">/guides/hutuo</Link>.
-          No Hutuo boss names are added here. The cited announcements do not supply a verified Global English boss
-          roster, raid list, drop table, or entrance requirement for this hub.
+          Level gates, player counts, refresh times, and full drop tables are not published here.
         </p>
       </section>
 
