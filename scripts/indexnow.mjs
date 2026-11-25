@@ -2,16 +2,23 @@
 // Usage: npm run indexnow
 //        node scripts/indexnow.mjs --dry-run
 //
-// A fetch right after deploy can come back empty, cached, or as an HTML error
-// page, so this retries with backoff and bypasses caches. Sitemap indexes are
-// expanded to page URLs. Zero page URLs prints FAILED and exits non-zero.
+// Prefer the sitemap written by the build. Deploy runs `build:static` then
+// `cf:postbuild`, which leaves the file wrangler uploads at out/sitemap.xml.
+// `next build` without the static export leaves .next/server/app/sitemap.xml.body.
+// A missing or empty local file falls back to a live fetch with backoff.
+// Zero page URLs prints FAILED and exits non-zero.
 import { readFileSync } from "node:fs";
-import { pathToFileURL } from "node:url";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const ORIGIN = process.env.SITE_ORIGIN || "https://wherewindsmeet.org";
 const MAX_ATTEMPTS = 6;
 const RETRY_DELAYS_MS = [2000, 4000, 8000, 16000, 32000];
 const INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow";
+const repoRoot = resolve(fileURLToPath(new URL("..", import.meta.url)));
+
+/** Local sitemap files this repo actually produces. Deploy uploads the first one. */
+export const SITEMAP_ARTIFACTS = ["out/sitemap.xml", ".next/server/app/sitemap.xml.body"];
 
 function locPattern() {
   return /<(?:([\w.-]+):)?loc(?:\s[^>]*)?>([\s\S]*?)<\/(?:\1:)?loc>/gi;
@@ -161,6 +168,89 @@ function failureMessage(maxAttempts, last) {
   return `FAILED: Sitemap had no URLs after ${maxAttempts} attempts. Last HTTP ${status} ${type} (${bytes} bytes). Body: ${body || "(empty)"}`;
 }
 
+export function defaultArtifactPaths(root = repoRoot) {
+  return SITEMAP_ARTIFACTS.map((artifactPath) => resolve(root, artifactPath));
+}
+
+function displayArtifact(artifactPath) {
+  const normalized = String(artifactPath).split("\\").join("/");
+  const root = repoRoot.split("\\").join("/");
+  if (normalized.startsWith(`${root}/`)) return normalized.slice(root.length + 1);
+  return normalized;
+}
+
+function pageLocs(origin, xml) {
+  return unique(extractLocs(xml).filter((loc) => sameHost(origin, loc)));
+}
+
+function pagesFromArtifact(origin, xml, artifactPath, readFile) {
+  if (!isSitemapIndex(xml)) return pageLocs(origin, xml);
+  const dir = dirname(artifactPath);
+  const pages = [];
+  for (const child of extractLocs(xml)) {
+    if (!sameHost(origin, child)) continue;
+    let pathname;
+    try {
+      pathname = new URL(child).pathname.replace(/^\/+/, "");
+    } catch {
+      return [];
+    }
+    if (!pathname || pathname.includes("..")) return [];
+    let childXml;
+    try {
+      childXml = readFile(join(dir, pathname));
+    } catch {
+      return [];
+    }
+    if (isSitemapIndex(childXml)) return [];
+    pages.push(...pageLocs(origin, childXml));
+  }
+  return unique(pages);
+}
+
+function readArtifact(candidates, readFile) {
+  const missing = [];
+  for (const artifactPath of candidates) {
+    try {
+      return { found: true, artifactPath, xml: readFile(artifactPath) ?? "", missing };
+    } catch {
+      missing.push(displayArtifact(artifactPath));
+    }
+  }
+  return { found: false, artifactPath: "", xml: "", missing };
+}
+
+export async function resolveSitemapUrls(origin, options = {}) {
+  const log = options.log ?? ((message) => console.log(message));
+  const readFile = options.readFile ?? ((artifactPath) => readFileSync(artifactPath, "utf8"));
+  const candidates = options.artifactPaths ?? defaultArtifactPaths();
+  const found = readArtifact(candidates, readFile);
+  let artifactNote = `Build artifact not found (${found.missing.join(", ") || "none"}).`;
+
+  if (found.found) {
+    const label = displayArtifact(found.artifactPath);
+    const urls = pagesFromArtifact(origin, found.xml, found.artifactPath, readFile);
+    if (urls.length > 0) {
+      const source = `build artifact ${label}`;
+      log(`IndexNow: source ${source}, ${urls.length} URLs`);
+      return { urls, source };
+    }
+    artifactNote = `Build artifact ${label} had 0 URLs.`;
+    log(`IndexNow: ${artifactNote} Falling back to live fetch`);
+  } else {
+    log(`IndexNow: ${artifactNote} Falling back to live fetch`);
+  }
+
+  try {
+    const urls = await collectSitemapUrls(origin, options);
+    log(`IndexNow: source live fetch, ${urls.length} URLs`);
+    return { urls, source: "live fetch" };
+  } catch (error) {
+    const live = redact(error instanceof Error ? error.message : String(error));
+    throw new Error(live.includes("FAILED:") ? `${live} ${artifactNote}` : `FAILED: ${live} ${artifactNote}`);
+  }
+}
+
 export async function collectSitemapUrls(origin, options = {}) {
   const fetchImpl = options.fetchImpl ?? globalThis.fetch;
   const sleep = options.sleep ?? ((ms) => new Promise((resolve) => setTimeout(resolve, ms)));
@@ -209,10 +299,10 @@ export async function runIndexNow(options = {}) {
   const dryRun = options.dryRun ?? false;
   const log = options.log ?? ((message) => console.log(message));
   const fetchImpl = options.fetchImpl ?? globalThis.fetch;
-  const urls = await collectSitemapUrls(origin, { ...options, fetchImpl, log });
+  const { urls, source } = await resolveSitemapUrls(origin, { ...options, fetchImpl, log });
   if (dryRun) {
-    log(`IndexNow dry-run: parsed ${urls.length} URLs (not submitted)`);
-    return { submitted: false, count: urls.length };
+    log(`IndexNow dry-run: parsed ${urls.length} URLs from ${source} (not submitted)`);
+    return { submitted: false, count: urls.length, source };
   }
   const host = new URL(origin).host;
   const key = options.key || readKey();
@@ -223,12 +313,12 @@ export async function runIndexNow(options = {}) {
     body: JSON.stringify({ host, key, keyLocation: `${origin.replace(/\/$/, "")}/${key}.txt`, urlList: urls }),
   });
   const responseBody = await res.text();
-  log(`IndexNow: submitted ${urls.length} URLs -> HTTP ${res.status} ${res.statusText || ""}`.trim());
+  log(`IndexNow: submitted ${urls.length} URLs from ${source} -> HTTP ${res.status} ${res.statusText || ""}`.trim());
   if (responseBody) log(redact(responseBody).slice(0, 500));
   if (res.status !== 200 && res.status !== 202) {
     throw new Error(`FAILED: IndexNow HTTP ${res.status}`);
   }
-  return { submitted: true, count: urls.length, status: res.status };
+  return { submitted: true, count: urls.length, status: res.status, source };
 }
 
 async function main() {

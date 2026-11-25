@@ -159,6 +159,12 @@ test("indexnow expands a sitemap index and skips image locs", async () => {
   ]);
 });
 
+function missingFile() {
+  const error = new Error("ENOENT");
+  error.code = "ENOENT";
+  throw error;
+}
+
 test("indexnow dry-run parses URLs and does not submit", async () => {
   const { runIndexNow } = await import("../scripts/indexnow.mjs");
   const logs = [];
@@ -166,6 +172,8 @@ test("indexnow dry-run parses URLs and does not submit", async () => {
     origin: "https://wherewindsmeet.org",
     dryRun: true,
     key: "not-a-real-key",
+    artifactPaths: ["out/sitemap.xml"],
+    readFile: missingFile,
     sleep: async () => {},
     log: (message) => logs.push(message),
     fetchImpl: async (url) => {
@@ -174,7 +182,101 @@ test("indexnow dry-run parses URLs and does not submit", async () => {
     },
   });
 
-  assert.deepEqual(result, { submitted: false, count: 1 });
-  assert.match(logs.at(-1), /IndexNow dry-run: parsed 1 URLs \(not submitted\)/);
+  assert.deepEqual(result, { submitted: false, count: 1, source: "live fetch" });
+  assert.match(logs.at(-1), /IndexNow dry-run: parsed 1 URLs from live fetch \(not submitted\)/);
   assert.equal(logs.join("\n").includes("not-a-real-key"), false);
+});
+
+test("indexnow prefers a local build artifact over a live fetch", async () => {
+  const { resolveSitemapUrls } = await import("../scripts/indexnow.mjs");
+  const logs = [];
+  let fetched = 0;
+  const result = await resolveSitemapUrls("https://wherewindsmeet.org", {
+    artifactPaths: ["out/sitemap.xml", ".next/server/app/sitemap.xml.body"],
+    readFile(artifactPath) {
+      if (artifactPath === "out/sitemap.xml") return urlset(["https://wherewindsmeet.org/guides"]);
+      throw new Error(`unexpected read ${artifactPath}`);
+    },
+    fetchImpl: async () => {
+      fetched += 1;
+      throw new Error("live fetch should not run");
+    },
+    log: (message) => logs.push(message),
+  });
+
+  assert.equal(fetched, 0);
+  assert.deepEqual(result, {
+    urls: ["https://wherewindsmeet.org/guides"],
+    source: "build artifact out/sitemap.xml",
+  });
+  assert.match(logs.join("\n"), /source build artifact out\/sitemap\.xml, 1 URLs/);
+});
+
+test("indexnow uses the next build body when out/sitemap.xml is missing", async () => {
+  const { resolveSitemapUrls } = await import("../scripts/indexnow.mjs");
+  const result = await resolveSitemapUrls("https://wherewindsmeet.org", {
+    artifactPaths: ["out/sitemap.xml", ".next/server/app/sitemap.xml.body"],
+    readFile(artifactPath) {
+      if (artifactPath === "out/sitemap.xml") missingFile();
+      if (artifactPath === ".next/server/app/sitemap.xml.body") {
+        return urlset(["https://wherewindsmeet.org/news"]);
+      }
+      missingFile();
+    },
+    fetchImpl: async () => {
+      throw new Error("live fetch should not run");
+    },
+    log() {},
+  });
+
+  assert.deepEqual(result.urls, ["https://wherewindsmeet.org/news"]);
+  assert.equal(result.source, "build artifact .next/server/app/sitemap.xml.body");
+});
+
+test("indexnow falls back to a live fetch when the build artifact is missing", async () => {
+  const { resolveSitemapUrls } = await import("../scripts/indexnow.mjs");
+  const logs = [];
+  const result = await resolveSitemapUrls("https://wherewindsmeet.org", {
+    artifactPaths: ["out/sitemap.xml", ".next/server/app/sitemap.xml.body"],
+    readFile: missingFile,
+    sleep: async () => {
+      throw new Error("a successful live sitemap should not retry");
+    },
+    log: (message) => logs.push(message),
+    fetchImpl: async () => xmlResponse(urlset(["https://wherewindsmeet.org/tools"])),
+  });
+
+  assert.deepEqual(result, {
+    urls: ["https://wherewindsmeet.org/tools"],
+    source: "live fetch",
+  });
+  const text = logs.join("\n");
+  assert.match(text, /Build artifact not found \(out\/sitemap\.xml, \.next\/server\/app\/sitemap\.xml\.body\)/);
+  assert.match(text, /Falling back to live fetch/);
+  assert.match(text, /source live fetch, 1 URLs/);
+});
+
+test("indexnow falls back to a live fetch when the build artifact has no URLs", async () => {
+  const { resolveSitemapUrls } = await import("../scripts/indexnow.mjs");
+  const logs = [];
+  let fetched = 0;
+  const result = await resolveSitemapUrls("https://wherewindsmeet.org", {
+    artifactPaths: ["out/sitemap.xml"],
+    readFile() {
+      return "<urlset></urlset>";
+    },
+    sleep: async () => {
+      throw new Error("a successful live sitemap should not retry");
+    },
+    log: (message) => logs.push(message),
+    fetchImpl: async () => {
+      fetched += 1;
+      return xmlResponse(urlset(["https://wherewindsmeet.org/guides/codes"]));
+    },
+  });
+
+  assert.equal(fetched, 1);
+  assert.deepEqual(result.urls, ["https://wherewindsmeet.org/guides/codes"]);
+  assert.equal(result.source, "live fetch");
+  assert.match(logs.join("\n"), /Build artifact out\/sitemap\.xml had 0 URLs/);
 });
