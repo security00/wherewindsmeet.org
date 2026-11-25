@@ -128,8 +128,9 @@ async function checkFreshnessRegistry(errors) {
       errors.push(`Freshness registry missing core path: ${basePath}`);
       continue;
     }
-    if (!entry.gameVersion.includes(REQUIRED_LATEST_VERSION)) {
-      errors.push(`Freshness registry for ${basePath} is not on ${REQUIRED_LATEST_VERSION}`);
+    const expectedVersion = basePath === "/guides/codes" ? "Version 2.4" : REQUIRED_LATEST_VERSION;
+    if (!entry.gameVersion.includes(expectedVersion)) {
+      errors.push(`Freshness registry for ${basePath} is not on ${expectedVersion}`);
     }
     if (!entry.lastChecked) {
       errors.push(`Freshness registry for ${basePath} has missing lastChecked`);

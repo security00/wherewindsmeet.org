@@ -5,7 +5,7 @@ import { buildHreflangAlternates } from "@/lib/hreflang";
 export const metadata: Metadata = {
   title: "Where Winds Meet Codes November 2026: WWM Redeem-Codes & Einlösen",
   description:
-    "Where Winds Meet Codes für November 2026 (geprüft am 2026-11-25, Version 2.3): gemeldete WWM-Redeem-Codes zum Prüfen im Spiel, Einlöse-Schritte, Hinweise zu abgelaufenen Codes und Links zu Outfit- und Charakter-Codes.",
+    "Der Hutuo-Jubiläumscode mit offizieller Quelle, Anleitung zum Einlösen und Hinweisen zum Postfach. Dazu gemeldete Codes und Hilfe bei abgelaufenen Codes.",
   alternates: buildHreflangAlternates("/guides/codes", { canonicalLanguage: "de" }),
 };
 

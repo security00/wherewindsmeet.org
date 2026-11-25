@@ -12,7 +12,7 @@ const pageUrl = `${baseUrl}${guidePath}`;
 
 const LAST_VERIFIED = "2026-11-13";
 const LAST_VERIFIED_LABEL = "2026-11-13 (Asia/Shanghai)";
-const PAGE_MODIFIED = "2026-11-13";
+const PAGE_MODIFIED = "2026-11-26";
 
 const metaTitle = "Where Winds Meet 1st Anniversary Rewards: Windtail Express 12-Outfit Pick, Events, and Shop Prices";
 const metaDescription =
@@ -405,7 +405,8 @@ export default function AnniversaryGuidePage() {
           <p><strong>In-game — Melodies.</strong> Lingering Melody ×42 and Resonating Melody ×27 are listed under “Easy In-Game Rewards,” separate from the login outfit line.</p>
           <p><strong>November and December — 5 free outfits plus accessories.</strong> Confirmed only at that summary level. Set names, shop paths, and claim windows are unknown here. Do not assume they all unlock at the Hutuo launch minute.</p>
         </div>
-        <h3 className="text-xl font-bold text-slate-50">Windtail Express: which 12 outfits can you pick?</h3>
+        <h3 id="windtail-express" className="scroll-mt-24 text-xl font-bold text-slate-50">Windtail Express: which 12 outfits can you pick?</h3>
+        <p className="text-sm text-slate-300">Looking for the anniversary exchange code? <Link href="/guides/codes#anniversary-code" className="text-emerald-300 underline">Get the Hutuo code and redemption steps</Link>.</p>
         <p className="text-sm leading-6 text-slate-300">
           <strong>Event time:</strong> After the version update on November 13, 2026 to <strong>January 14, 2027, 04:59:59</strong> (no time zone stated).
           <Cite n={13} />
@@ -415,7 +416,7 @@ export default function AnniversaryGuidePage() {
           <Cite n={13} />
         </p>
         <p className="text-sm leading-6 text-slate-300">
-          Celestial Knot · Golden Aura · Crimson Sand · Ninth Pawnshop · Celestial Vanguard · Flicker of Faces · Magpie&apos;s Nocturne · Dragon Protector · Scorpion&apos;s Heart · Moonlit Inquiry · Flower of Youth · Veil Between
+          Celestial Knot · Golden Aura · Crimson Sand · Ninth Pawnshop · Celestial Vanguard · <Link href="/guides/flicker-of-faces" className="text-emerald-300 underline">Flicker of Faces</Link> · Magpie&apos;s Nocturne · Dragon Protector · Scorpion&apos;s Heart · Moonlit Inquiry · Flower of Youth · Veil Between
         </p>
         <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-slate-300">
           <li>Once claimed, the choice cannot be changed.</li>

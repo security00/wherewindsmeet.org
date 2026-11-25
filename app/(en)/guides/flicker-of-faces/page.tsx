@@ -22,14 +22,14 @@ const images = {
 };
 
 export const metadata: Metadata = {
-  title: "Flicker of Faces: Price, Voucher, Preview | Where Winds Meet",
+  title: "Flicker of Faces: Free Anniversary Outfit & Preview | Where Winds Meet",
   description:
-    "Flicker of Faces in Where Winds Meet: outfit preview, 2580 pearls price reference, Dec 25/26 listing time, and voucher stacking calculator (10% up to 5).",
+    "Preview Flicker of Faces and check the free Windtail Express anniversary selection window. Includes the original shop price and voucher calculator.",
   alternates: buildHreflangAlternates(slug),
   openGraph: {
-    title: "Flicker of Faces: Price, Voucher, Preview | Where Winds Meet",
+    title: "Flicker of Faces: Free Anniversary Outfit & Preview | Where Winds Meet",
     description:
-      "Flicker of Faces in Where Winds Meet: outfit preview, 2580 pearls price reference, Dec 25/26 listing time, and voucher stacking calculator (10% up to 5).",
+      "Preview Flicker of Faces and check the free Windtail Express anniversary selection window. Includes the original shop price and voucher calculator.",
     url: `${baseUrl}${slug}`,
     siteName: "Where Winds Meet Hub",
     images: [
@@ -40,9 +40,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Flicker of Faces: Price, Voucher, Preview | Where Winds Meet",
+    title: "Flicker of Faces: Free Anniversary Outfit & Preview | Where Winds Meet",
     description:
-      "Flicker of Faces in Where Winds Meet: outfit preview, 2580 pearls price reference, Dec 25/26 listing time, and voucher stacking calculator (10% up to 5).",
+      "Preview Flicker of Faces and check the free Windtail Express anniversary selection window. Includes the original shop price and voucher calculator.",
     images: [images.hero],
   },
 };
@@ -178,9 +178,10 @@ export default function FlickerOfFacesPage() {
               Where Winds Meet <span className="text-emerald-200">Flicker of Faces</span> – Preview, Price, Voucher
             </h1>
             <p className="max-w-3xl text-sm leading-relaxed text-slate-300 sm:text-base">
-              Searching <strong>“flicker of faces where winds meet”</strong> usually means one of two things: (1) the{" "}
-              <strong>Flicker of Faces</strong> Shop Appearance (outfit) and its discount vouchers, or (2) a face/makeup{" "}
-              “flicker” bug. This page covers both — starting with the cosmetic outfit.
+              Flicker of Faces is one of the twelve outfits in the Windtail Express anniversary selection.
+              You can choose one free outfit through January 14, 2027 at 04:59:59 (check the in-game timer).
+              Preview the outfit below before committing your choice.{" "}
+              <Link href="/guides/anniversary#windtail-express" className="text-emerald-300 underline">Compare the anniversary choices</Link>.
             </p>
             <div className="flex flex-wrap gap-2 text-xs">
               <a

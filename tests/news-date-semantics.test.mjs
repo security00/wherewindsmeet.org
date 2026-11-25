@@ -101,9 +101,7 @@ test("only the English pages edited in this batch move to 2026-11-06", () => {
     "/guides/patch-notes",
     "/guides/bosses",
     "/guides/martial-arts-weapons",
-    "/guides/free-outfits",
     "/guides/jiangnan-hangzhou",
-    "/guides/mount-tai-blizzard",
   ];
 
   for (const path of revised) {
@@ -111,7 +109,9 @@ test("only the English pages edited in this batch move to 2026-11-06", () => {
   }
 
   assert.equal(sitemapLastModifiedDay("/guides/hutuo", "2026-11-06"), "2026-11-13");
-  assert.equal(sitemapLastModifiedDay("/guides/anniversary", "2026-11-06"), "2026-11-13");
+  for (const path of ["/guides/anniversary", "/guides/free-outfits", "/guides/mount-tai-blizzard", "/guides/inn-character-record"]) {
+    assert.equal(sitemapLastModifiedDay(path), "2026-11-26");
+  }
   assert.equal(sitemapLastModifiedDay("/news", "2026-11-06"), "2026-11-13");
 
   assert.equal(sitemapLastModifiedDay("/de/guides/jiangnan-hangzhou"), undefined);

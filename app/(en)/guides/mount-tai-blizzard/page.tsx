@@ -60,6 +60,9 @@ export default function MountTaiBlizzardPage() {
         <p className="mt-3 text-xs text-slate-500">Last checked 2026-10-29 (Asia/Shanghai) · Unofficial fan hub. No invented solutions or damage numbers.</p>
       </section>
 
+      <p className="rounded-xl border border-emerald-500/30 p-4 text-slate-200">
+        Filling out the guest sheet? <Link href="/guides/inn-character-record" className="text-emerald-300 underline">Open the Inn Character Record answers</Link> and reveal only the guest you need.
+      </p>
       <OfficialMediaFigure item={mountTaiBlizzardInn} priority aspectClassName="aspect-[16/9]" />
 
       <section className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-8">

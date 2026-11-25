@@ -165,7 +165,8 @@ test("existing English pages carry the correction pack and not the old lead", ()
   assert.doesNotMatch(martial, /\/guides\/dual-spears/);
 
   assert.match(outfits, /id="anniversary-login-outfit"/);
-  assert.match(outfits, /href="\/guides\/anniversary"/);
+  assert.match(outfits, /href="\/guides\/anniversary#windtail-express"/);
+  assert.match(anniversary, /id="windtail-express"/);
   assert.match(outfits, /Swallow/);
   assert.match(outfits, /2114750643663716620/);
   assert.doesNotMatch(outfits, /\$150/);

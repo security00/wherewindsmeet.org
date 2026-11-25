@@ -50,9 +50,9 @@ export default function CosmeticsPage() {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="space-y-1">
             <p className="text-xs uppercase tracking-wide text-emerald-300">Trending</p>
-            <h2 className="text-xl font-semibold text-slate-50">Flicker of Faces (Shop Appearance)</h2>
+            <h2 className="text-xl font-semibold text-slate-50">Flicker of Faces</h2>
             <p className="text-sm text-slate-300">
-              Preview images, price reference, listing time, and how Flicker of Faces Voucher stacks (10% × up to 5).
+              Preview the outfit before using your free Windtail Express anniversary pick. The guide also covers the original shop price and vouchers.
             </p>
           </div>
           <Link

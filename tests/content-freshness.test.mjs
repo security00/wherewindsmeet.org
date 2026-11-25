@@ -104,10 +104,10 @@ test("core update surfaces record the latest official Version 2.1 review", () =>
     if (version23Paths.has(path)) {
       assert.equal(
         entry.lastChecked,
-        path === "/guides/codes" ? "2026-11-25" : "2026-10-29",
+        path === "/guides/codes" ? "2026-11-26" : "2026-10-29",
         `${path} review date`,
       );
-      assert.match(entry.gameVersion, /Version 2\.3/, `${path} game version`);
+      assert.match(entry.gameVersion, path === "/guides/codes" ? /Version 2\.4/ : /Version 2\.3/, `${path} game version`);
       assert.ok(
         path === "/guides/codes" ||
           entry.sourceUrls.includes("https://store.steampowered.com/news/app/3564740/view/1846651706675921"),

@@ -2,13 +2,13 @@ import Link from "next/link";
 import CdnImage from "@/components/CdnImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import { buildLocalizedPath } from "@/i18n/routing.mjs";
+import { HUTUO_POST } from "@/lib/globalAnnouncements";
 import { getContentFreshness } from "@/lib/contentFreshness";
 
 export type CodesGuideLanguage = "en" | "vi" | "de";
 
 const freshness = getContentFreshness("/guides/codes");
 const lastChecked = freshness?.lastChecked ?? "2026-06-03";
-const gameVersionLabel = freshness?.gameVersion ?? "Version 2.3 / October 15";
 
 const liveCodeFacts = [
   {
@@ -215,12 +215,14 @@ const copy = {
   en: {
     h1Before: "WWM Codes ",
     h1Highlight: "November 2026",
-    intro1: (checked: string, version: string) =>
-      `Updated ${checked}: November 25 re-check for ${version}. Steam news (app 3564740) and official site posts reviewed for this refresh—including the November 24 Version 2.4 New Appearances Overview (November 26), the November 23 Official DLSS 5 Custom Driver post, the November 19 Version 2.4 New Appearances Overview (November 13&22), the November 18 Version 2.4 Update Overview for November 22, the November 18 Dev AMA Recap (November 10), the November 14 official 1st Anniversary letter from Eric, the November 13 Steam anniversary update post, the November 12–13 Version 2.4 Across Autumn Waters overview, the November 13 path-balance announcement, the November 11 appearances overview, the November 9 Hutuo dev letter, the November 5 dual-spear preview, the November 3–4 Hutuo anniversary notes, the October 29 Version 2.3 patch notes, and the October 27 anniversary broadcast—still publish no new redeem-code list, so no new codes were added. Aggregator strings such as 1015QINGZHOU remain excluded until an official URL is attached. Codes below stay labeled Reported—not confirmed-active.`,
+    anniversaryTitle: "Hutuo anniversary redeem code",
+    anniversaryBody: "The anniversary roadmap lists this code. It gives no expiry date. Check the result in your game client, then collect accepted rewards from Mail.",
+    roadmapLabel: "Official Hutuo roadmap",
     intro2:
       "Important: the official news feed also reported that a leaked batch of 30 exchange codes was disabled in early May 2026. If a code from social media fails, it may simply be one of those disabled leak codes rather than a problem with your account.",
     reportedTitle: "Reported Codes ",
-    reportedHint: (checked: string) => `(verify in-game, checked ${checked})`,
+    reportedHint: "Verify in-game",
+    sourceChecked: "Roadmap checked",
     statusReported: "Reported",
     footnote:
       "* Codes are region-dependent and time-limited. Always check in-game. Leaked batches may already be disabled, and third-party Palace code reports are not official confirmations.",
@@ -321,12 +323,14 @@ const copy = {
   de: {
     h1Before: "WWM Codes ",
     h1Highlight: "November 2026",
-    intro1: (checked: string, version: string) =>
-      `Aktualisiert ${checked}: erneute Pruefung am 25. November fuer ${version}. Steam-News (App 3564740) und Beitraege der offiziellen Website—einschliesslich des Version-2.4-New-Appearances-Ueberblicks vom 24. November (26. November), des offiziellen DLSS-5-Custom-Driver-Beitrags vom 23. November, des Version-2.4-New-Appearances-Ueberblicks vom 19. November (13. und 22. November), des Version-2.4-Update-Ueberblicks vom 18. November fuer den 22. November, des Dev-AMA-Recaps vom 18. November (10. November), des offiziellen 1.-Anniversary-Briefs von Eric vom 14. November, des Steam-Anniversary-Update-Beitrags vom 13. November, des Version-2.4-Across-Autumn-Waters-Ueberblicks vom 12.–13. November, der Path-Balance-Ankuendigung vom 13. November, des Appearances-Ueberblicks vom 11. November, des Hutuo-Dev-Letters vom 9. November, der Doppel-Speer-Vorschau vom 5. November, der Hutuo-Anniversary-Notizen vom 3.–4. November, der Version-2.3-Patchnotes vom 29. Oktober und der Anniversary-Uebertragung vom 27. Oktober—veroeffentlichen weiterhin keine neue Redeem-Code-Liste, daher wurden keine neuen Codes hinzugefuegt. Aggregator-Strings wie 1015QINGZHOU bleiben ausgeschlossen, bis eine offizielle URL vorliegt. Codes unten bleiben als Gemeldet gekennzeichnet—nicht als bestaetigt-aktiv.`,
+    anniversaryTitle: "Jubiläumscode für Hutuo",
+    anniversaryBody: "Die Jubiläums-Roadmap nennt diesen Code ohne Ablaufdatum. Prüfe das Ergebnis beim Einlösen im Spiel und hole die Belohnung im Postfach ab.",
+    roadmapLabel: "Offizielle Hutuo-Roadmap",
     intro2:
       "Wichtig: Der offizielle News-Feed meldete auch, dass ein geleakter Batch von 30 Exchange Codes Anfang Mai 2026 deaktiviert wurde. Scheitert ein Social-Media-Code, kann es einer dieser deaktivierten Leak-Codes sein—nicht zwingend ein Account-Problem.",
     reportedTitle: "Gemeldete Codes ",
-    reportedHint: (checked: string) => `(im Spiel pruefen, Stand ${checked})`,
+    reportedHint: "Im Spiel prüfen",
+    sourceChecked: "Roadmap geprüft am",
     statusReported: "Gemeldet",
     footnote:
       "* Codes sind regionsabhaengig und zeitlich begrenzt. Immer im Spiel pruefen. Geleakte Batches koennen bereits deaktiviert sein; Drittanbieter-Palace-Meldungen sind keine offiziellen Bestaetigungen.",
@@ -423,12 +427,14 @@ const copy = {
   vi: {
     h1Before: "WWM Codes ",
     h1Highlight: "Tháng 11/2026",
-    intro1: (checked: string, version: string) =>
-      `Cập nhật ${checked}: kiểm tra lại ngày 25/11 cho ${version}. Tin Steam (app 3564740) và bài trên trang chính thức—gồm tổng quan ngoại hình mới Version 2.4 ngày 24/11 (26/11), bài Official DLSS 5 Custom Driver ngày 23/11, tổng quan ngoại hình mới Version 2.4 ngày 19/11 (13&22/11), tổng quan cập nhật Version 2.4 ngày 18/11 cho ngày 22/11, recap Dev AMA ngày 18/11 (10/11), thư kỷ niệm 1 năm chính thức của Eric ngày 14/11, bài cập nhật kỷ niệm trên Steam ngày 13/11, tổng quan Version 2.4 Across Autumn Waters ngày 12–13/11, thông báo cân bằng đường tu ngày 13/11, tổng quan ngoại hình ngày 11/11, thư dev Hutuo ngày 9/11, bản xem trước song thương ngày 5/11, ghi chú kỷ niệm Hutuo ngày 3–4/11, patch notes Version 2.3 ngày 29/10 và buổi phát sóng kỷ niệm ngày 27/10—vẫn không công bố danh sách redeem code mới, nên không thêm mã mới. Chuỗi chỉ có trên aggregator như 1015QINGZHOU vẫn bị loại cho đến khi có URL chính thức. Các mã bên dưới vẫn gắn nhãn Đã báo cáo—không phải đã xác nhận còn hiệu lực.`,
+    anniversaryTitle: "Mã đổi quà kỷ niệm Hutuo",
+    anniversaryBody: "Mã này xuất hiện trên lộ trình kỷ niệm. Nhà phát hành không ghi ngày hết hạn trên ảnh. Hãy kiểm tra kết quả trong game và nhận quà qua thư sau khi đổi thành công.",
+    roadmapLabel: "Lộ trình Hutuo chính thức",
     intro2:
       "Quan trọng: feed tin chính thức cũng báo một lô 30 exchange code bị lộ đã bị vô hiệu hóa đầu tháng 5/2026. Nếu mã từ mạng xã hội thất bại, có thể chỉ là một trong các mã leak đó chứ không phải lỗi tài khoản.",
     reportedTitle: "Mã đã báo cáo ",
-    reportedHint: (checked: string) => `(xác minh trong game, kiểm tra ${checked})`,
+    reportedHint: "Xác minh trong game",
+    sourceChecked: "Ngày kiểm tra lộ trình",
     statusReported: "Đã báo cáo",
     footnote:
       "* Mã phụ thuộc khu vực và có thời hạn. Luôn kiểm tra trong game. Lô bị lộ có thể đã bị tắt, và báo cáo mã Palace từ bên thứ ba không phải xác nhận chính thức.",
@@ -554,7 +560,16 @@ export default function CodesGuidePage({ language }: { language: CodesGuideLangu
             <span className="text-ink-gold">{t.h1Highlight}</span>
           </h1>
           <div className="max-w-3xl space-y-4 text-slate-300 leading-relaxed">
-            <p>{t.intro1(lastChecked, gameVersionLabel)}</p>
+            <section id="anniversary-code" className="space-y-2">
+              <h2 className="font-semibold text-slate-100">{t.anniversaryTitle}</h2>
+              <code className="select-all text-2xl font-bold tracking-wide text-emerald-200">1113HUTUOGO</code>
+              <p>{t.anniversaryBody}</p>
+              <p className="text-xs text-slate-400">{t.sourceChecked}: <time dateTime={lastChecked}>{lastChecked}</time></p>
+              <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-emerald-300">
+                <a className="underline" href={HUTUO_POST.url}>{t.roadmapLabel}</a>
+                <a className="underline" href="#how-to-redeem">{t.redeemReward}</a>
+              </div>
+            </section>
             <p>{t.intro2}</p>
           </div>
         </div>
@@ -563,7 +578,7 @@ export default function CodesGuidePage({ language }: { language: CodesGuideLangu
       <section className="space-y-6">
         <h2 className="text-2xl font-bold text-slate-100 border-brush inline-block pb-2">
           {t.reportedTitle}
-          <span className="text-sm font-normal text-slate-400 ml-2">{t.reportedHint(lastChecked)}</span>
+          <span className="text-sm font-normal text-slate-400 ml-2">{t.reportedHint}</span>
         </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {liveCodes.map((entry) => (

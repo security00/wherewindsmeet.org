@@ -26,8 +26,15 @@ const revised = new Set<string>(ENGLISH_BATCH_REVISED_PATHS);
 const WINDOW_PAGE_PATHS = new Set<string>(["/guides/hutuo", "/guides/anniversary", "/news"]);
 const WINDOW_PAGE_MODIFIED = "2026-11-13";
 
+const NOVEMBER_26_PATHS = new Set([
+  "/guides/inn-character-record", "/guides/npc-list", "/guides/mount-tai-blizzard",
+  "/guides/free-outfits", "/guides/anniversary", "/guides/cosmetics", "/guides/flicker-of-faces",
+  "/guides/codes", "/vn/guides/codes", "/de/guides/codes",
+]);
+
 /** Calendar day for a sitemap path. Inherited dates stay put unless the path itself was revised. */
 export function sitemapLastModifiedDay(path: string, inheritedDay?: string): string | undefined {
+  if (NOVEMBER_26_PATHS.has(path)) return "2026-11-26";
   if (WINDOW_PAGE_PATHS.has(path)) return WINDOW_PAGE_MODIFIED;
   if (revised.has(path)) return LAST_VERIFIED;
   return inheritedDay;

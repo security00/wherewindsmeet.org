@@ -65,7 +65,8 @@ test("authorized NPC media and all three reviewed locale routes ship in the site
 test("NPC pages separate the dated fact snapshot from the page modification date", () => {
   pages.forEach(([path, page]) => {
     assert.match(page, /2026-06-24/, `${path} keeps the factual snapshot date`);
-    assert.match(page, /dateModified:\s*"2026-08-29"/, `${path} publishes the page modification date`);
+    const modified = path.startsWith("app/(en)/") ? "2026-11-26" : "2026-08-29";
+    assert.ok(page.includes(`dateModified: "${modified}"`), `${path} publishes the page modification date`);
   });
 });
 

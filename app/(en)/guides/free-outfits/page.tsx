@@ -1,26 +1,25 @@
 import type { Metadata } from "next";
 import CdnImage from "@/components/CdnImage";
 import Link from "next/link";
-import { LAST_VERIFIED } from "@/lib/globalAnnouncements";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 
 const baseUrl = "https://wherewindsmeet.org";
 
+const pageTitle = "Where Winds Meet Free Outfits: Anniversary Pick, Quest Sets & Hairstyles";
+const pageDescription = "Find the free Windtail Express anniversary outfit and its claim deadline, then look up quest outfits, sect sets and hairstyles by how you earn them.";
+
 export const metadata: Metadata = {
-  title: "How do you get free outfits in Where Winds Meet?",
-  description:
-    "Paths for free Where Winds Meet outfits, sets, and hairstyles from events, quests, redeem codes, and social rewards. The official anniversary 12-outfit pick is summarized on the anniversary page and is not copied into the tables here. Claim the free tier first; rewards can change with patches.",
+  title: pageTitle,
+  description: pageDescription,
   alternates: buildHreflangAlternates("/guides/free-outfits"),
   openGraph: {
-    title: "How do you get free outfits in Where Winds Meet?",
-    description:
-      "Paths for free Where Winds Meet outfits, sets, and hairstyles from events, quests, redeem codes, and social rewards. The official anniversary 12-outfit pick is summarized on the anniversary page and is not copied into the tables here. Claim the free tier first; rewards can change with patches.",
+    title: pageTitle,
+    description: pageDescription,
     url: `${baseUrl}/guides/free-outfits`,
   },
   twitter: {
-    title: "How do you get free outfits in Where Winds Meet?",
-    description:
-      "Paths for free Where Winds Meet outfits, sets, and hairstyles from events, quests, redeem codes, and social rewards. The official anniversary 12-outfit pick is summarized on the anniversary page and is not copied into the tables here. Claim the free tier first; rewards can change with patches.",
+    title: pageTitle,
+    description: pageDescription,
   },
 };
 
@@ -136,7 +135,7 @@ export default function FreeOutfitsPage() {
       name: metadata.title,
       description: metadata.description,
       url: `${baseUrl}/guides/free-outfits`,
-      dateModified: LAST_VERIFIED,
+      dateModified: "2026-11-26",
     },
     {
       "@context": "https://schema.org",
@@ -268,22 +267,18 @@ export default function FreeOutfitsPage() {
             How do you get free outfits in Where Winds Meet?
           </h1>
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
-            A concise hub for zero-cost or low-cost outfits, accessories, hairstyles, and dyes—prioritizing current events, codes, achievements, and social rewards so you don’t waste premium currency on items you can earn for free.
-            If you came here searching for Where Winds Meet free outfits, this page front-loads the exact paths so you can claim them fast.
-          </p>
-          <p className="text-xs text-slate-400">
-            Note: rewards shift with patches. Always claim the free tier first, then decide if paid upgrades are worth it. In-game notices and official posts take priority if details change.
+            Looking for a set you can earn through play? First Step comes from the “Another New Wing” quest in Heaven Has No Pier.
+            Browse the sets below for quest and sect rewards, or check the anniversary choice before its event closes.
           </p>
           <div
             id="anniversary-login-outfit"
             className="space-y-3 rounded-2xl border border-amber-400/30 bg-slate-950/70 p-4 text-sm leading-6 text-slate-200"
           >
             <p>
-              <strong>Anniversary (Hutuo) — read before assuming every free outfit is a login reward.</strong>{" "}
-              Official anniversary rewards split a login pick of 1 of 12 outfits from in-game Lingering Melody ×42
-              and Resonating Melody ×27. More November and December free outfits are summarized without full names.
-              Those outfits are not added to the tables below. Details:{" "}
-              <Link href="/guides/anniversary" className="text-emerald-300 underline underline-offset-4">/guides/anniversary</Link>.
+              <strong>Free anniversary outfit: Windtail Express.</strong>{" "}
+              Log in and choose one of twelve outfits, including Flicker of Faces. The selection is final.
+              The published window ends January 14, 2027 at 04:59:59. Check the event timer for your local cutoff.{" "}
+              <Link href="/guides/anniversary#windtail-express" className="text-emerald-300 underline underline-offset-4">Compare all 12 outfits before choosing</Link>.
               Update hub:{" "}
               <Link href="/guides/hutuo" className="text-emerald-300 underline underline-offset-4">/guides/hutuo</Link>.
             </p>
@@ -478,7 +473,7 @@ export default function FreeOutfitsPage() {
           {checklist.map((item) => (
             <li key={item} className="flex gap-3">
               <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
-              <span>{item} (keeps you on track for Where Winds Meet free outfits and dyes).</span>
+              <span>{item}</span>
             </li>
           ))}
         </ul>

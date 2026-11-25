@@ -50,6 +50,7 @@ const staticEntries: Entry[] = [
   { path: "/guides/hutuo", changeFrequency: "daily", priority: 0.86, lastModified: new Date("2026-11-13") },
   { path: "/guides/anniversary", changeFrequency: "daily", priority: 0.86, lastModified: new Date("2026-11-13") },
   { path: "/guides/mount-tai-blizzard", changeFrequency: "weekly", priority: 0.84, lastModified: priorSharedLastModified },
+  { path: "/guides/inn-character-record", changeFrequency: "monthly", priority: 0.8 },
   { path: "/guides/cast-in-currents", changeFrequency: "weekly", priority: 0.84, lastModified: priorSharedLastModified },
   { path: "/guides/spirit-of-the-grove", changeFrequency: "weekly", priority: 0.84, lastModified: priorSharedLastModified },
   { path: "/guides/warehouse", changeFrequency: "weekly", priority: 0.8, lastModified: priorSharedLastModified },

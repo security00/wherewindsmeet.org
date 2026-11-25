@@ -332,7 +332,7 @@ export default function NpcListPage() {
       name: metadata.title,
       description: metadata.description,
       url: `${baseUrl}/guides/npc-list`,
-      dateModified: "2026-08-29",
+      dateModified: "2026-11-26",
     },
     {
       "@context": "https://schema.org",
@@ -375,6 +375,9 @@ export default function NpcListPage() {
                 className="inline-flex items-center gap-2 rounded-full border border-emerald-400/50 bg-emerald-500/10 px-4 py-2 text-xs font-semibold text-emerald-100 transition hover:border-emerald-300/80 hover:text-emerald-50"
               >
                 🗂️ Browse dated NPC directory
+              </Link>
+              <Link href="/guides/inn-character-record" className="self-center text-sm font-semibold text-emerald-300 underline">
+                Mount Tai Blizzard: Inn Character Record answers
               </Link>
               <Link
                 href="/guides/qin-caiwei"
