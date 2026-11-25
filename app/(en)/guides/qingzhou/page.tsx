@@ -3,9 +3,9 @@ import Link from "next/link";
 import CdnImage from "@/components/CdnImage";
 import { HomeHubBacklink } from "@/components/HomeHubBacklink";
 import { LiteYouTubeEmbed } from "@/components/LiteYouTubeEmbed";
-import { MediaPlaceholder } from "@/components/guides/MediaPlaceholder";
 import { OfficialMediaFigure } from "@/components/guides/OfficialMediaFigure";
 import { getContentFreshness } from "@/lib/contentFreshness";
+import { qingzhouGuideOfficialMapStill } from "@/lib/officialMapCaptures";
 import { buildHreflangAlternates } from "@/lib/hreflang";
 import {
   bossOldRaftsman,
@@ -557,11 +557,7 @@ export default function QingzhouGuidePage() {
         </p>
         <div className="mt-4 grid gap-4 md:grid-cols-2">
           <OfficialMediaFigure item={devLetter1028Cover} />
-          <MediaPlaceholder
-            slot="Qingzhou / Penglai map"
-            alt="Official interactive map — Qingzhou with Penglai after October 29 (pin totals not claimed)."
-            expectation="Pending a capture of the official map layer. Do not invent marker counts."
-          />
+          <OfficialMediaFigure item={qingzhouGuideOfficialMapStill} aspectClassName="aspect-[1188/937]" />
         </div>
       </section>
 
